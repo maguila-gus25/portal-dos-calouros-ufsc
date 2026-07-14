@@ -23,22 +23,23 @@ uma **aplicação web React + Python**.
 ┌───────────────────────▼───────────────────────┐
 │   BACKEND — Python + FastAPI                    │
 │   Hospedagem: Render                            │
-│   ├── Content layer: lê Markdown de content/    │
+│   ├── Content layer: lê Markdown de docs/       │
 │   └── DB layer: SQLite→Postgres (dados dinâmicos)│
 └──────────┬───────────────────────┬─────────────┘
            │                       │
    ┌───────▼────────┐     ┌────────▼─────────┐
-   │  content/*.md   │     │  Banco de dados  │
+   │   docs/*.md     │     │  Banco de dados  │
    │ (institucional) │     │ (histórias, etc.)│
-   │ versionado/PR   │     │  v1.1 em diante  │
+   │ FONTE ÚNICA/PR  │     │  v1.1 em diante  │
    └────────────────┘     └──────────────────┘
 ```
 
-**Princípio híbrido:** o conteúdo institucional (coordenações, RU, links, datas,
-mapa) continua em **Markdown versionado** — contribuição por Pull Request, fonte
-única da verdade. O backend lê esses arquivos e os expõe como JSON. Os dados
-**dinâmicos** (histórias, feedback e, no futuro, comentários e avaliações) vivem no
-**banco de dados**.
+**Princípio híbrido + fonte única:** o conteúdo institucional (coordenações, RU,
+links, datas, mapa) vive em **um único lugar** — os arquivos Markdown de `docs/`.
+Você edita **um arquivo** e o site inteiro atualiza; não há conteúdo duplicado. O
+backend lê esses arquivos e os expõe como JSON (contribuição por Pull Request). Os
+dados **dinâmicos** (histórias, feedback e, no futuro, comentários e avaliações)
+vivem no **banco de dados**.
 
 ---
 
@@ -59,7 +60,7 @@ mapa) continua em **Markdown versionado** — contribuição por Pull Request, f
 |------|---------|--------|
 | Framework | **FastAPI** | Rápido, tipado (Pydantic), docs automáticas (OpenAPI) |
 | Runtime | **Uvicorn** | Servidor ASGI |
-| Markdown | **python-frontmatter + markdown-it-py** | Ler `content/*.md` com metadados |
+| Markdown | **python-frontmatter + markdown-it-py** | Ler `docs/*.md` com metadados |
 | Banco | **SQLAlchemy** + SQLite (dev) → **PostgreSQL** (prod) | Simples no início, robusto na produção |
 | Validação | **Pydantic v2** | Schemas de entrada/saída |
 | Deploy | **Render** | Web service Python grátis |
@@ -73,7 +74,8 @@ mapa) continua em **Markdown versionado** — contribuição por Pull Request, f
 
 ```
 portal-dos-calouros-ufsc/
-├── content/                 ← CONTEÚDO institucional (Markdown, fonte da verdade)
+├── docs/                    ← FONTE ÚNICA do conteúdo (Markdown) — editar aqui
+│   │   ── conteúdo servido pela API (mapeado por slug no loader) ──
 │   ├── coordenacoes.md
 │   ├── carteira-ru.md
 │   ├── links-importantes.md
@@ -81,15 +83,22 @@ portal-dos-calouros-ufsc/
 │   ├── atleticas-e-festas.md
 │   ├── instagrams.md
 │   ├── mapa.md
-│   └── cursos/
-│       └── <curso>.md       ← fichas por curso (com frontmatter)
+│   ├── historias-e-feedbacks.md
+│   ├── cursos/
+│   │   └── <curso>.md       ← fichas por curso (com frontmatter)
+│   │   ── documentação de dev (NÃO servida pela API) ──
+│   ├── README.md            ← índice
+│   ├── arquitetura.md       ← este arquivo
+│   ├── identidade-visual.md
+│   ├── product-backlog.md
+│   └── _modelo-curso.md
 │
 ├── backend/                 ← API Python (FastAPI)
 │   ├── app/
 │   │   ├── main.py          ← cria o app, CORS, inclui routers
-│   │   ├── core/config.py   ← settings (env vars)
+│   │   ├── core/config.py   ← settings (env vars): DOCS_DIR, CORS, DB
 │   │   ├── api/routes/      ← content.py, courses.py, search.py, (v1.1) stories.py
-│   │   ├── content/loader.py← lê e parseia content/*.md → modelos
+│   │   ├── content/loader.py← lê e parseia docs/*.md → modelos (mapa slug→arquivo)
 │   │   ├── models/          ← schemas Pydantic + models SQLAlchemy
 │   │   └── db/session.py    ← engine e sessão do banco
 │   ├── tests/
@@ -109,17 +118,15 @@ portal-dos-calouros-ufsc/
 │   ├── vite.config.ts
 │   └── tailwind.config.js
 │
-├── docs/                    ← DOCUMENTAÇÃO do projeto (dev)
-│   ├── arquitetura.md       ← este arquivo
-│   ├── identidade-visual.md
-│   ├── product-backlog.md
-│   └── ...
 └── README.md
 ```
 
-> **Migração:** hoje o conteúdo está em `docs/`. A separação `content/` (conteúdo)
-> vs `docs/` (documentação de desenvolvimento) é um passo de migração — ver
-> backlog **B-29**. Os links entre arquivos serão ajustados no mesmo PR da migração.
+> **Fonte única:** o conteúdo **fica em `docs/`** — sem pasta `content/` separada.
+> Assim você altera a informação em **um só lugar** e o site reflete. O loader do
+> backend tem um **mapa explícito `slug → arquivo`** (ex.: `coordenacoes` →
+> `docs/coordenacoes.md`); os arquivos de documentação de dev (`arquitetura.md`,
+> `product-backlog.md`, `identidade-visual.md`, `README.md`, `_modelo-curso.md`)
+> **não** são servidos como conteúdo.
 
 ---
 
@@ -224,7 +231,7 @@ arquitetura acima comporta todas (ver épicos novos no [backlog](product-backlog
 |----------------|-------------|----------|
 | **Avaliação de professores** | Tabela `ProfessorReview`, moderação, autenticação leve | Difamação: moderar; considerar termos de uso |
 | **Simulador de grade (tipo MatrUFSC)** | Dados de turmas/horários (fonte: CAGR), motor de conflitos no front | Obter dados de horários de forma sustentável; respeitar termos da UFSC |
-| **Blog** | Tabela `Post` (ou Markdown em `content/blog/`), página de listagem | Curadoria editorial |
+| **Blog** | Tabela `Post` (ou Markdown em `docs/blog/`), página de listagem | Curadoria editorial |
 | **Comentários** | Tabela `Comment`, moderação, autenticação | Spam e moderação |
 | **Monetização (divulgação)** | Slots de anúncio/parceria no front, painel simples | Transparência (marcar como publicidade), LGPD se houver rastreio |
 
@@ -240,9 +247,10 @@ arquitetura acima comporta todas (ver épicos novos no [backlog](product-backlog
 |---|---------|------------------------|--------|
 | 1 | Backend = API só de conteúdo na v1 | Backend com CMS/admin desde já | Menor complexidade; conteúdo institucional muda pouco |
 | 2 | Conteúdo híbrido (Markdown + DB) | Tudo no banco | Mantém contribuição por PR e simplicidade |
-| 3 | Vite/React em vez de Next.js | Next.js (SSR) | Simplicidade; SEO resolvível depois se necessário |
-| 4 | SQLite → PostgreSQL | Postgres desde o dia 1 | Zero setup no início |
-| 5 | Front na Vercel, back no Render | Tudo serverless na Vercel | FastAPI roda melhor como serviço dedicado |
-| 6 | Identidade própria de estudantes | Usar identidade da UFSC | Projeto **não** é oficial |
+| 3 | Conteúdo é **fonte única em `docs/`** | Pasta `content/` separada | Editar a informação em **um só lugar**; o site reflete |
+| 4 | Vite/React em vez de Next.js | Next.js (SSR) | Simplicidade; SEO resolvível depois se necessário |
+| 5 | SQLite → PostgreSQL | Postgres desde o dia 1 | Zero setup no início |
+| 6 | Front na Vercel, back no Render | Tudo serverless na Vercel | FastAPI roda melhor como serviço dedicado |
+| 7 | Identidade branco + azul (estilo Facebook) | Identidade da UFSC / paleta autoral chamativa | Familiar e limpa; deixa claro que **não** é oficial |
 
 > Este documento é vivo. Mudou uma decisão? Atualize a tabela acima e o diagrama.

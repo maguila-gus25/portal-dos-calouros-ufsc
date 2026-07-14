@@ -89,14 +89,15 @@ e a proposta de marca em **[docs/identidade-visual.md](docs/identidade-visual.md
 - **Frontend:** React + Vite + TypeScript + Tailwind CSS — hospedado na **Vercel**.
 - **Backend:** Python + **FastAPI** — hospedado no **Render**. É uma **API que serve
   o conteúdo** ao React.
-- **Conteúdo híbrido:** o institucional (coordenações, RU, links, datas) continua em
-  **Markdown versionado** (contribuição por Pull Request); o backend lê e serve como
-  JSON. Dados **dinâmicos** (histórias, feedback e, no futuro, comentários/avaliações)
-  ficam em **banco** (SQLite → PostgreSQL).
+- **Conteúdo híbrido, fonte única:** o institucional (coordenações, RU, links, datas)
+  fica em **um só lugar** — os Markdown de **`docs/`** (contribuição por Pull Request);
+  você edita **um arquivo** e o site atualiza. O backend lê e serve como JSON. Dados
+  **dinâmicos** (histórias, feedback e, no futuro, comentários/avaliações) ficam em
+  **banco** (SQLite → PostgreSQL).
 
 ```
 Calouro ──HTTPS──> React (Vercel) ──JSON──> FastAPI (Render)
-                                              ├── content/*.md (institucional)
+                                              ├── docs/*.md (institucional, fonte única)
                                               └── banco (dinâmico, v1.1+)
 ```
 

@@ -89,7 +89,7 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-29 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **separar `content/` (conteúdo) de `docs/` (dev)**, para **o backend ler o conteúdo**. |
+| B-29 | 🔴 Must | 🟢 P | ⬜ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
 | B-30 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
 | B-31 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o loader que lê `content/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
 | B-32 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
@@ -157,7 +157,7 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 Agora que a arquitetura é **React + Python** (E8), o foco é levantar a plataforma:
 
-1. **B-29** — separar `content/` de `docs/`.
+1. **B-29** — mapa `slug → arquivo` sobre `docs/` (fonte única, sem mover nada).
 2. **B-30 + B-31** — esqueleto do backend FastAPI + loader de Markdown.
 3. **B-32 + B-33** — esqueleto do frontend + páginas consumindo a API.
 4. **B-35** — rodapé fixo "não é site oficial da UFSC".
