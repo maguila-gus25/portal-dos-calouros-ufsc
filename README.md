@@ -149,8 +149,8 @@ Enquanto o site não existe, esse frontmatter é opcional — o conteúdo em tex
 
 ## Roadmap
 
-- [ ] **v0 — Estrutura (atual):** esqueleto de docs por tema + modelo de curso.
-- [ ] **v0.1 — Conteúdo CTC:** preencher coordenações, RU, links e datas com fontes oficiais.
+- [x] **v0 — Estrutura:** esqueleto de docs por tema + modelo de curso.
+- [x] **v0.1 — Conteúdo CTC:** coordenações, RU, links e datas preenchidos com fontes oficiais (jul/2026).
 - [ ] **v0.2 — Fichas de curso:** uma ficha por curso do CTC.
 - [ ] **v0.3 — Histórias:** primeiros relatos de veteranos.
 - [ ] **v1 — Site:** publicar o portal como site estático gerado a partir de `docs/`.
