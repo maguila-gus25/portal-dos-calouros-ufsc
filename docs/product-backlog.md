@@ -31,6 +31,11 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | E5 | Contribuição e governança | Facilitar e revisar contribuições | contínuo |
 | E6 | Confiabilidade e manutenção | Manter dados atualizados e corretos | contínuo |
 | E7 | Expansão para outros centros | Replicar para CSE, CCS, CFH… | v2 |
+| E8 | Plataforma React + Python | Migrar o portal para app web (ver [arquitetura](arquitetura.md)) | v1 |
+| E9 | Avaliação de professores | Alunos avaliam professores/disciplinas (moderado) | futuro |
+| E10 | Simulador de grade | Montar grade de horários (tipo MatrUFSC) | futuro |
+| E11 | Blog + comentários | Conteúdo editorial e interação | futuro |
+| E12 | Monetização por divulgação | Anúncios/parcerias claramente marcados | futuro |
 
 ---
 
@@ -65,15 +70,62 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. |
 | B-14 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. |
 
-### E4 — Site/web app
+### E4 — Site/web app (substituído pela plataforma React + Python — ver E8)
+
+> A abordagem "site estático gerado do Markdown" foi **substituída** pela
+> arquitetura **React + Python** (ver [arquitetura.md](arquitetura.md)). Itens de
+> valor abaixo continuam válidos e foram reaproveitados em E8.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
 | B-15 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. |
-| B-16 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **o site gerado do Markdown de `docs/`** (Astro/Docusaurus), para **não duplicar conteúdo**. |
-| B-17 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. |
-| B-18 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy automático a cada merge** (GitHub Pages/Vercel), para **publicar sem esforço**. |
-| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor**. |
+| B-17 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. |
+| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor** (v1.1). |
+
+### E8 — Plataforma React + Python
+
+Ver [arquitetura.md](arquitetura.md). Frontend Vite/React/TS/Tailwind na Vercel;
+backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-29 | 🔴 Must | 🟢 P | ⬜ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
+| B-30 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
+| B-31 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o loader que lê `content/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
+| B-32 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
+| B-33 | 🔴 Must | 🟡 M | ⬜ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
+| B-34 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
+| B-35 | 🔴 Must | 🟢 P | ⬜ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
+| B-36 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. |
+| B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
+| B-38 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
+
+### E9 — Avaliação de professores (futuro)
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-39 | 🟡 Could | 🔴 G | ⬜ | Como **calouro**, quero **ver e deixar avaliações de professores/disciplinas**, para **escolher melhor minhas matérias**. |
+| B-40 | 🔴 Must (do épico) | 🟡 M | ⬜ | Como **mantenedor**, quero **moderação e termos de uso** nas avaliações, para **evitar difamação**. |
+
+### E10 — Simulador de grade (futuro)
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-41 | 🟡 Could | 🔴 G | ⬜ | Como **calouro**, quero **montar minha grade de horários** (tipo MatrUFSC), para **planejar o semestre**. |
+| B-42 | 🔴 Must (do épico) | 🟡 M | ⬜ | Como **mantenedor**, quero **uma fonte sustentável de dados de turmas/horários** (CAGR), para **alimentar o simulador**. |
+
+### E11 — Blog + comentários (futuro)
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-43 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **ler um blog** com dicas e novidades, para **me manter por dentro**. |
+| B-44 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **comentar** (moderado, com login leve), para **interagir**. |
+
+### E12 — Monetização por divulgação (futuro)
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-45 | 🟡 Could | 🟡 M | ⬜ | Como **mantenedor**, quero **espaços de divulgação/parceria** claramente marcados como publicidade, para **sustentar o projeto**. |
 
 ### E5 — Contribuição e governança
 
@@ -103,12 +155,15 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 ## Sprint sugerido (próximos passos)
 
-Foco recomendado para a próxima leva de trabalho (todos pequenos/médios e de alto valor):
+Agora que a arquitetura é **React + Python** (E8), o foco é levantar a plataforma:
 
-1. **B-06** — extrair datas exatas do PDF do calendário 2026.
-2. **B-09** — gerar as 13 fichas de curso a partir do modelo.
-3. **B-21** — templates de issue e PR.
-4. **B-24** — CI de checagem de links quebrados.
+1. **B-29** — mapa `slug → arquivo` sobre `docs/` (fonte única, sem mover nada).
+2. **B-30 + B-31** — esqueleto do backend FastAPI + loader de Markdown.
+3. **B-32 + B-33** — esqueleto do frontend + páginas consumindo a API.
+4. **B-35** — rodapé fixo "não é site oficial da UFSC".
+
+Em paralelo (conteúdo, independem do código): **B-06** (datas do calendário) e
+**B-09** (13 fichas de curso).
 
 ## Critérios de aceite (itens de referência)
 

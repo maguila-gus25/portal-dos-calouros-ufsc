@@ -19,6 +19,8 @@ Comece pelo tema que te interessa:
 - 📄 [Modelo de ficha de curso](_modelo-curso.md) — template para adicionar um curso
 
 ## Projeto
+- 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
+- 🎨 [Identidade Visual](identidade-visual.md) — marca de estudantes (não oficial)
 - 📋 [Product Backlog](product-backlog.md) — épicos, histórias e prioridades
 
 > Voltar para a [visão geral do projeto](../README.md).
