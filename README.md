@@ -159,7 +159,8 @@ Enquanto o site não existe, esse frontmatter é opcional — o conteúdo em tex
 ## Como contribuir
 
 Toda contribuição é bem-vinda — principalmente preencher os campos `_A preencher_`
-com informação **verificada**. Veja o [guia de contribuição](CONTRIBUTING.md).
+com informação **verificada**. Veja o [guia de contribuição](CONTRIBUTING.md) e o
+[Product Backlog](docs/product-backlog.md) para saber o que priorizar.
 
 Regra de ouro: **cite a fonte** (link da coordenação, print do e-mail oficial,
 página da UFSC). Sem fonte, o campo fica em branco.
