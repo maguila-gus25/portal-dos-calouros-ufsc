@@ -78,72 +78,31 @@ proposital: preferimos um campo em branco a um telefone errado.
 
 ---
 
-## O portal como site (visão de produto)
+## O portal como aplicação (visão de produto)
 
-Hoje o conteúdo vive em Markdown (legível direto no GitHub). O objetivo é evoluir
-para um **site / web app** público, fácil de navegar no celular no primeiro dia de
-aula. Esta seção documenta a direção técnica para quem for construir.
+O portal vai evoluir de repositório de Markdown para uma **aplicação web
+React + Python**. O detalhamento técnico está em **[docs/arquitetura.md](docs/arquitetura.md)**
+e a proposta de marca em **[docs/identidade-visual.md](docs/identidade-visual.md)**.
 
-### Arquitetura proposta
+### Resumo da arquitetura
+
+- **Frontend:** React + Vite + TypeScript + Tailwind CSS — hospedado na **Vercel**.
+- **Backend:** Python + **FastAPI** — hospedado no **Render**. É uma **API que serve
+  o conteúdo** ao React.
+- **Conteúdo híbrido:** o institucional (coordenações, RU, links, datas) continua em
+  **Markdown versionado** (contribuição por Pull Request); o backend lê e serve como
+  JSON. Dados **dinâmicos** (histórias, feedback e, no futuro, comentários/avaliações)
+  ficam em **banco** (SQLite → PostgreSQL).
 
 ```
-┌────────────────────────────────────────────────────┐
-│                    Calouro (celular)                │
-└───────────────────────┬────────────────────────────┘
-                        │ HTTPS
-┌───────────────────────▼────────────────────────────┐
-│        Frontend estático (SSG) — site do portal     │
-│   Páginas geradas a partir dos arquivos Markdown     │
-│   de docs/ + fichas de curso                         │
-└───────────────────────┬────────────────────────────┘
-                        │ build time
-┌───────────────────────▼────────────────────────────┐
-│   Conteúdo versionado (este repositório, docs/*.md)  │
-│   Fonte única da verdade — editável via Pull Request │
-└─────────────────────────────────────────────────────┘
+Calouro ──HTTPS──> React (Vercel) ──JSON──> FastAPI (Render)
+                                              ├── content/*.md (institucional)
+                                              └── banco (dinâmico, v1.1+)
 ```
 
-Princípio central: **o conteúdo continua em Markdown neste repositório** e o site
-é gerado a partir dele. Assim qualquer pessoa contribui por Pull Request sem
-precisar mexer em código, e o site nunca fica dessincronizado da documentação.
-
-### Stack sugerida
-
-Opção recomendada (simples, gratuita de hospedar, ótima em mobile):
-
-- **Gerador de site estático:** [Astro](https://astro.build) ou
-  [Docusaurus](https://docusaurus.io) — ambos consomem Markdown direto.
-- **Hospedagem:** GitHub Pages, Vercel ou Netlify (deploy automático a cada merge).
-- **Busca:** Pagefind (busca client-side, sem servidor).
-- **Mapa:** incorporar o mapa oficial da UFSC / Google Maps ou uma imagem anotada.
-
-> A stack não está cravada — a decisão foi manter em aberto no nível de
-> ferramenta, exigindo apenas que o site seja gerado a partir do Markdown de
-> `docs/`. Veja [Roadmap](#roadmap).
-
-### Modelo de dados
-
-Cada **curso** pode ser descrito por um bloco de _frontmatter_ no topo da sua
-ficha, o que permite gerar cards e filtros no site depois:
-
-```yaml
----
-curso: Ciências da Computação
-centro: CTC
-grau: Bacharelado
-turno: Diurno
-coordenacao:
-  nome: _A preencher_
-  email: _A preencher_
-  telefone: _A preencher_
-  sala: _A preencher_
-atletica: _A preencher_
-instagram_curso: _A preencher_
----
-```
-
-Enquanto o site não existe, esse frontmatter é opcional — o conteúdo em texto já
-é suficiente para ler no GitHub.
+**Não oficial:** rodapé fixo em toda página — *"Projeto independente feito por
+estudantes. Não é um site oficial da UFSC."* Ver [arquitetura](docs/arquitetura.md)
+e [identidade](docs/identidade-visual.md).
 
 ---
 
@@ -151,9 +110,11 @@ Enquanto o site não existe, esse frontmatter é opcional — o conteúdo em tex
 
 - [x] **v0 — Estrutura:** esqueleto de docs por tema + modelo de curso.
 - [x] **v0.1 — Conteúdo CTC:** coordenações, RU, links e datas preenchidos com fontes oficiais (jul/2026).
-- [ ] **v0.2 — Fichas de curso:** uma ficha por curso do CTC.
-- [ ] **v0.3 — Histórias:** primeiros relatos de veteranos.
-- [ ] **v1 — Site:** publicar o portal como site estático gerado a partir de `docs/`.
+- [x] **v0.5 — Arquitetura:** definição React + Python e identidade visual.
+- [ ] **v0.6 — Fichas de curso:** uma ficha por curso do CTC.
+- [ ] **v1 — Plataforma:** frontend React + API FastAPI (busca + páginas por curso).
+- [ ] **v1.1 — Dinâmico:** mapa interativo + formulário de histórias/feedback.
+- [ ] **Futuro:** avaliação de professores, simulador de grade (tipo MatrUFSC), blog, comentários, monetização por divulgação.
 - [ ] **v2 — Outros centros:** replicar a estrutura para CSE, CCS, CFH, etc.
 
 ## Como contribuir
