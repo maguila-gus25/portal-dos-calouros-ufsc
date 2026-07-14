@@ -1,8 +1,8 @@
 # 🎨 Identidade Visual — Portal dos Calouros UFSC
 
-Proposta de identidade **própria**, de estudantes para estudantes. Deliberadamente
-**diferente** da identidade institucional da UFSC (que é azul-marinho/preto com o
-brasão), para deixar claro que este é um **projeto independente e não oficial**.
+Identidade **própria**, de estudantes para estudantes, no estilo **limpo branco + azul**
+(referência: interface do Facebook). Familiar, direto e confiável — sem parecer
+template genérico.
 
 > ⚠️ **Regra inegociável:** não usar o brasão, o logotipo nem as cores oficiais da
 > UFSC de forma que sugira que o site é dela. Em toda página, rodapé fixo:
@@ -10,75 +10,84 @@ brasão), para deixar claro que este é um **projeto independente e não oficial
 
 ## Conceito
 
-**Florianópolis é uma ilha.** A marca bebe dessa vibe costeira e acolhedora: o
-calouro está "chegando na ilha". Tom amigável, moderno, sem cara de órgão público.
-Ideia-guia: *um mapa/bússola que te orienta ao chegar.*
+Interface **branca com azul**, cinza claro de fundo, cartões brancos — o padrão
+"rede social" que todo calouro já conhece de cor. Nada de gradientes chamativos ou
+fontes decorativas. A informação é a estrela; o visual só organiza e dá confiança.
 
-- **Nome/wordmark:** "Portal dos Calouros" com "UFSC" como subtítulo menor (para
-  contexto, não para se passar por oficial).
-- **Personalidade:** acolhedor, direto, jovem, confiável.
-- **Mascote (opcional, futuro):** um farol ou uma bússola simpática — guia quem chega.
+- **Nome/wordmark:** "Portal dos Calouros" com "UFSC" como subtítulo menor (contexto,
+  não para se passar por oficial).
+- **Personalidade:** confiável, familiar, objetivo, acessível.
+- **Referência de UI:** Facebook — barra superior branca, azul de ação, cartões
+  brancos sobre fundo cinza claro.
 
 ## Paleta de cores
 
-Paleta costeira (teal + coral + areia), distinta do azul institucional da UFSC.
+Branco + azul, com cinzas neutros para texto e fundos (mesma lógica do Facebook).
 
 | Papel | Nome | Hex | Uso |
 |-------|------|-----|-----|
-| Primária | Maré (teal) | `#0F766E` | Cabeçalho, links, botões primários |
-| Primária clara | Maré 400 | `#2DD4BF` | Hover, detalhes, realces |
-| Acento | Coral | `#F97362` | Chamadas de ação, destaques, badges |
-| Apoio | Areia | `#FCD9A8` | Fundos de destaque suave, tags |
-| Tinta | Grafite | `#1F2937` | Texto principal |
-| Neutro | Névoa | `#F1F5F9` | Fundos de seção |
-| Fundo | Branco | `#FFFFFF` | Base |
-| Sucesso | Verde | `#16A34A` | Confirmações |
-| Alerta | Âmbar | `#D97706` | Avisos (ex.: "confirmar valor") |
+| Primária | Azul | `#1877F2` | Cabeçalho, links, botões primários, destaques |
+| Primária (hover) | Azul escuro | `#166FE5` | Estado de hover/press dos botões |
+| Ação positiva | Verde | `#42B72A` | Botões de confirmação (ex.: "Enviar história") |
+| Fundo do app | Cinza claro | `#F0F2F5` | Fundo geral das páginas |
+| Superfície | Branco | `#FFFFFF` | Cartões, barras, caixas de conteúdo |
+| Borda | Cinza borda | `#CED0D4` | Divisórias e contornos de cartão |
+| Texto principal | Quase preto | `#1C1E21` | Títulos e corpo |
+| Texto secundário | Cinza texto | `#65676B` | Legendas, metadados, descrições |
+| Alerta | Âmbar | `#B26A00` | Avisos (ex.: "confirmar valor vigente") |
 
-### Modo escuro
+### Modo escuro (estilo Facebook dark)
 | Papel | Hex |
 |-------|-----|
-| Fundo | `#0B1220` |
-| Superfície | `#111827` |
-| Texto | `#E5E7EB` |
-| Primária | `#2DD4BF` |
-| Acento | `#FB7185` |
+| Fundo do app | `#18191A` |
+| Superfície | `#242526` |
+| Borda | `#3E4042` |
+| Texto principal | `#E4E6EB` |
+| Texto secundário | `#B0B3B8` |
+| Primária (azul) | `#2D88FF` |
 
-> A paleta passou pela lógica de contraste (texto grafite sobre claro e texto claro
-> sobre fundo escuro atendem WCAG AA). Ajustar tons finos na implementação do
-> Tailwind (`tailwind.config.js`), expondo como `brand.mare`, `brand.coral`, etc.
+> Contraste: texto `#1C1E21` sobre branco e `#E4E6EB` sobre `#18191A` atendem WCAG AA.
+> Expor no Tailwind como `brand.blue`, `brand.blueDark`, `bg.app`, `bg.surface`, etc.
 
 ## Tipografia
 
-- **Títulos:** Poppins (SemiBold/Bold) — geométrica, amigável.
-- **Texto:** Inter (Regular/Medium) — altíssima legibilidade em telas.
-- Ambas gratuitas (Google Fonts). No app, carregar via `@fontsource` para não
-  depender de CDN externo.
+**Fontes de sistema**, como o Facebook faz — carregam instantâneas, sem CDN, e
+passam a sensação de app nativo:
+
+```
+font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+             Helvetica, Arial, sans-serif;
+```
+
+- **Títulos:** mesma família, peso **bold** (600–700).
+- **Texto:** peso normal (400) / medium (500).
+- Sem fonte decorativa. A hierarquia vem de **tamanho e peso**, não de troca de fonte.
 
 ## Logo (direção)
 
-Conceito de wordmark + símbolo:
-- **Símbolo:** um **pin de mapa** cujo "furo" é um **chapéu de formatura** estilizado
-  (ou uma bússola). Traço simples, 2 cores (Maré + Coral).
-- **Wordmark:** "Portal dos Calouros" em Poppins; "UFSC" menor, em cinza, ao lado —
-  nunca com aparência de selo oficial.
-- Versões: colorida (fundo claro), monocromática (fundo escuro), só símbolo (favicon).
+- **Símbolo:** um **quadrado azul arredondado** (como o "f" do Facebook) com um
+  ícone branco dentro — um **chapéu de formatura** ou a inicial **"C"** de Calouros.
+- **Wordmark:** "Portal dos Calouros" em fonte de sistema bold, cor `#1C1E21`;
+  "UFSC" menor em cinza — nunca com aparência de selo oficial.
+- Versões: azul sobre branco, branco sobre azul (para o header), só símbolo (favicon).
 
-> A arte final (SVG) é um item de backlog. Posso gerar uma primeira versão do
-> wordmark/símbolo em SVG quando você quiser.
+> Arte final (SVG) é item de backlog. Posso gerar a primeira versão quando quiser.
 
-## Componentes-chave de UI
+## Componentes-chave de UI (padrão Facebook)
 
-- **Header:** logo à esquerda, busca no centro, menu de seções.
-- **Footer (obrigatório):** o aviso de "não oficial" + links de fontes e "como contribuir".
-- **Card de seção/curso:** ícone + título + resumo; cores da paleta por categoria.
-- **Badge "fonte oficial":** selo pequeno indicando que o dado veio de canal oficial.
+- **Header:** barra **branca** fixa no topo, logo azul à esquerda, busca no centro,
+  menu à direita. Sombra sutil embaixo.
+- **Cartões:** brancos, cantos arredondados (~8px), borda/sombra leve, sobre fundo
+  cinza `#F0F2F5`.
+- **Botões:** primário azul `#1877F2` (texto branco); confirmação verde `#42B72A`.
+- **Footer (obrigatório):** o aviso de "não oficial" + fontes + "como contribuir".
+- **Badge "fonte oficial":** selo azul-claro indicando dado vindo de canal oficial.
 - **Badge "publicidade":** quando houver divulgação/monetização, sempre marcada.
 
 ## Tom de voz
 
 - Fala de "você" com o calouro. Frases curtas. Explica siglas.
-- Acolhedor, nunca burocrático. Ex.: *"Chegou agora? Respira. A gente te explica o RU."*
+- Acolhedor e direto, sem burocracia. Ex.: *"Chegou agora? A gente te explica o RU."*
 - Honesto sobre limites: quando algo não está confirmado, diz que não está.
 
 ## Acessibilidade
@@ -89,6 +98,5 @@ Conceito de wordmark + símbolo:
 
 ---
 
-> Esta identidade é uma **proposta inicial** para aprovação. Nada aqui é definitivo —
-> ajuste cores, nome e tom conforme sua preferência antes de a gente aplicar no
-> frontend.
+> Identidade **branco + azul** (estilo Facebook), como definido. Ajuste tons, nome e
+> tom conforme sua preferência antes de a gente aplicar no frontend.
