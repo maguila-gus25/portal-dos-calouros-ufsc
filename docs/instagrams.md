@@ -8,11 +8,13 @@ perfis falsos existem.
 
 | Perfil | O que posta | @ |
 |--------|-------------|---|
-| UFSC (oficial) | Comunicados institucionais, notícias | _A preencher_ |
-| PRAE UFSC | Bolsas, auxílios, RU, moradia | _A preencher_ |
-| Restaurante Universitário (RU) | Cardápio, avisos do RU | _A preencher_ |
-| Biblioteca Universitária | Horários, eventos, dicas de estudo | _A preencher_ |
-| CTC — Centro Tecnológico | Notícias do centro | _A preencher_ |
+| UFSC (oficial) | Comunicados institucionais, notícias | [@universidadeufsc](https://www.instagram.com/universidadeufsc/) |
+| Reitoria UFSC | Gestão da universidade | [@reitoria.ufsc](https://www.instagram.com/reitoria.ufsc/) |
+| Biblioteca Universitária | Horários, eventos, dicas de estudo | [@bu.ufsc](https://www.instagram.com/bu.ufsc/) |
+| UFSC Sustentável | Sustentabilidade no campus | [@ufscsustentavel](https://www.instagram.com/ufscsustentavel/) |
+| PRAE UFSC | Bolsas, auxílios, RU, moradia | _A preencher_ (confirmar @ oficial) |
+| Restaurante Universitário (RU) | Cardápio, avisos do RU | _A preencher_ (confirmar @ oficial) |
+| CTC — Centro Tecnológico | Notícias do centro | _A preencher_ (confirmar @ oficial) |
 
 ## Estudantil / representação
 

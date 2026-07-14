@@ -1,42 +1,69 @@
 # 🍽️ Carteira do RU (Restaurante Universitário)
 
-O **RU** é o restaurante universitário da UFSC — refeição barata (e, em muitos
-casos, gratuita para quem tem bolsa/isenção). Para comer, você precisa estar
-cadastrado no sistema do RU e ter crédito. Este é o guia de sobrevivência.
+O **RU** é o restaurante universitário da UFSC — refeição muito barata (e gratuita
+para quem tem isenção). Para comer, você precisa estar cadastrado no sistema do RU.
+Este é o guia de sobrevivência.
 
-> ⚠️ Valores, endereços de sistema e regras de isenção mudam com frequência.
-> Os campos abaixo estão como `_A preencher_` para serem confirmados na fonte
-> oficial da **PRAE (Pró-Reitoria de Assuntos Estudantis)** antes de publicar.
-> Comece por: <https://prae.ufsc.br>.
+> ✅ Informações dos canais oficiais (PRAE e RU), verificadas em julho/2026.
+> **Valores e horários mudam** — confirme sempre em <https://ru.ufsc.br/>.
 
-## Passo a passo (modelo a confirmar)
+## Links oficiais
 
-1. **Tenha seu vínculo ativo** — matrícula confirmada no curso.
-2. **Acesse o sistema do RU** — _A preencher_ (link oficial do sistema/portal do RU).
-3. **Faça o cadastro** com matrícula e dados pessoais — _A preencher_ (o que é exigido).
-4. **Adicione crédito / saldo** — _A preencher_ (formas de pagamento aceitas: Pix, boleto, presencial?).
-5. **Na catraca do RU**, identifique-se — _A preencher_ (é carteirinha física, app, matrícula, biometria?).
+| O que | Link |
+|-------|------|
+| Site do RU | <https://ru.ufsc.br/> |
+| RU na PRAE | <https://prae.ufsc.br/ru/> |
+| Perguntas frequentes (FAQ) | <https://ru.ufsc.br/faq/> |
+| Cadastro / 2ª via de acesso | <https://ru.ufsc.br/acesso-com-cadastro-2o-via/> |
+| Horários de funcionamento | <https://ru.ufsc.br/horario-de-funcionamento/> |
+| Isenção (gratuidade) | <https://prae.ufsc.br/isencao-alimentacao/> |
+| Sistema de benefícios da PRAE | <https://beneficiosprae.sistemas.ufsc.br/> |
 
-## Valores da refeição
+## Como se cadastrar (passo a passo)
 
-- **Estudante de graduação:** _A preencher_
-- **Isenção (bolsistas / vulnerabilidade):** _A preencher_ (como solicitar via PRAE)
-- **Refeições servidas:** _A preencher_ (almoço e janta? café?)
+1. **Tenha matrícula ativa** no curso de graduação.
+2. **Acesse o sistema de cadastro do RU** e faça o registro — ver
+   [Acesso com cadastro](https://ru.ufsc.br/acesso-com-cadastro-2o-via/).
+3. **Adicione crédito** para pagar as refeições (o valor é debitado a cada refeição).
+4. **Na catraca**, identifique-se com sua matrícula/cartão conforme orientação do RU.
+
+> Dúvidas sobre cadastro e cartão: **Setor de Cartão do RU — (48) 3721-8503**.
+
+## Valores e refeições
+
+- **Refeição subsidiada para estudante:** historicamente **R$ 1,50** (valor
+  subsidiado pela universidade). ⚠️ **Confirme o valor vigente** em
+  <https://ru.ufsc.br/faq/> — pode ter sido reajustado.
+- **Refeições servidas:** almoço e jantar.
+- **Isenção (gratuidade):** para quem tem **Cadastro PRAE** aprovado (renda
+  deferida). Solicita-se em <https://beneficiosprae.sistemas.ufsc.br/>. Detalhes
+  e critérios em <https://prae.ufsc.br/isencao-alimentacao/>.
 
 ## Horários e locais
 
-- **RU Trindade (perto do CTC):** _A preencher_ (horário de almoço e janta)
-- **Outros RUs / campus:** _A preencher_
+- **RU Trindade** (o mais perto do CTC): fica no Campus Reitor João David Ferreira
+  Lima, Trindade. Horários atualizados em <https://ru.ufsc.br/horario-de-funcionamento/>.
 - Localização no [mapa da universidade](mapa.md).
+- **Contatos do RU:** recepção (48) 3721-4922 · secretaria (48) 3721-9203 ·
+  cartão (48) 3721-8503.
 
-## Dúvidas frequentes
+## Restrições alimentares
 
-- **Perdi a carteirinha / esqueci o acesso** → _A preencher_ (procedimento).
-- **Sou calouro e ainda não tenho matrícula ativa** → _A preencher_.
-- **Tenho restrição alimentar** → _A preencher_ (opção vegetariana/vegana costuma existir; confirmar).
+O RU costuma oferecer **opção vegetariana**. Confirme os detalhes atuais no
+[FAQ do RU](https://ru.ufsc.br/faq/).
 
-## Fontes para preencher
+---
 
-- PRAE — <https://prae.ufsc.br>
-- Procure por "Restaurante Universitário" / "RU" no site da PRAE.
-- Confirme também no perfil oficial do RU (ver [Instagrams](instagrams.md)).
+## Carteira de estudante (meia-entrada)
+
+Diferente da carteira do RU, a **Carteira de Identificação Estudantil** dá direito
+a **meia-entrada** em cinema, shows e eventos em todo o Brasil. Na UFSC, é emitida
+pelo **DCE**:
+
+- **Onde:** <https://dce.ufsc.br/> (sistema de emissão — login pelo acesso unificado UFSC).
+- **Custo e prazo:** cerca de **R$ 25,00**, entrega em até ~15 dias (confirmar valores atuais).
+- **Retirada (Campus Trindade/CCA):** sede do DCE, Seg–Sex das 10h às 18h.
+
+> Existe também a **CIE nacional** (mutirões periódicos com emissão na hora) —
+> fique de olho nas [notícias da UFSC](https://noticias.ufsc.br/) e no
+> [DCE](https://dce.ufsc.br/).

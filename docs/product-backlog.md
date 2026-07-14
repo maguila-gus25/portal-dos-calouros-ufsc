@@ -1,0 +1,132 @@
+# 📋 Product Backlog — Portal dos Calouros UFSC
+
+Backlog de produto do portal. Serve para priorizar o que construir primeiro e dar
+visão do todo. Vive junto do [roadmap do README](../README.md#roadmap) — o roadmap
+mostra as ondas (v0, v0.1…), este backlog detalha os itens.
+
+- **Formato das histórias:** _Como **<persona>**, quero **<objetivo>**, para **<benefício>**._
+- **Prioridade (MoSCoW):** 🔴 Must · 🟠 Should · 🟡 Could · ⚪ Won't (agora)
+- **Estimativa (tamanho):** 🟢 P (pequeno) · 🟡 M (médio) · 🔴 G (grande)
+- **Status:** ⬜ A fazer · 🚧 Em andamento · ✅ Feito
+
+## Personas
+
+| Persona | Quem é | Precisa de |
+|---------|--------|-----------|
+| **Calouro** | Recém-chegado ao CTC, perdido na burocracia | Informação confiável, rápida, no celular |
+| **Veterano/contribuidor** | Aluno que quer ajudar a manter o portal | Editar fácil, sem saber programar |
+| **Mantenedor** | Quem cuida do repositório/projeto | Estrutura organizada, revisão, qualidade |
+| **Coordenação/servidor** | Setor oficial que quer divulgar dados | Um canal onde a informação certa apareça |
+
+---
+
+## Épicos
+
+| # | Épico | Objetivo | Onda |
+|---|-------|----------|------|
+| E1 | Conteúdo essencial do CTC | Reunir as infos que o calouro mais busca | v0–v0.2 |
+| E2 | Fichas por curso | Uma página por curso do CTC | v0.2 |
+| E3 | Vida universitária | Atléticas, festas, perfis, histórias | v0.3 |
+| E4 | Site/web app | Publicar o portal como site navegável | v1 |
+| E5 | Contribuição e governança | Facilitar e revisar contribuições | contínuo |
+| E6 | Confiabilidade e manutenção | Manter dados atualizados e corretos | contínuo |
+| E7 | Expansão para outros centros | Replicar para CSE, CCS, CFH… | v2 |
+
+---
+
+## Backlog priorizado
+
+### E1 — Conteúdo essencial do CTC
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-01 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **os contatos das coordenações do meu curso**, para **resolver matrícula e burocracia**. |
+| B-02 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **saber como usar o RU e a isenção**, para **comer barato desde o 1º dia**. |
+| B-03 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **os links dos sistemas (CAGR, Moodle, e-mail)**, para **acessar minha vida acadêmica**. |
+| B-04 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **as datas do calendário acadêmico**, para **não perder prazos**. |
+| B-05 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o mapa e endereços do campus**, para **me localizar no primeiro dia**. |
+| B-06 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. |
+| B-07 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **saber configurar o Wi‑Fi (eduroam) e o e-mail no celular**, para **usar a rede da UFSC**. |
+
+### E2 — Fichas por curso
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-08 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. |
+| B-09 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
+| B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
+
+### E3 — Vida universitária
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-11 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. |
+| B-12 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. |
+| B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. |
+| B-14 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. |
+
+### E4 — Site/web app
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-15 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. |
+| B-16 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **o site gerado do Markdown de `docs/`** (Astro/Docusaurus), para **não duplicar conteúdo**. |
+| B-17 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. |
+| B-18 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy automático a cada merge** (GitHub Pages/Vercel), para **publicar sem esforço**. |
+| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor**. |
+
+### E5 — Contribuição e governança
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-20 | 🔴 Must | 🟢 P | ✅ | Como **contribuidor**, quero **um guia de contribuição claro**, para **saber como ajudar**. |
+| B-21 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. |
+| B-22 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. |
+| B-23 | 🟡 Could | 🟢 P | ⬜ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. |
+
+### E6 — Confiabilidade e manutenção
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-24 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. |
+| B-25 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. |
+| B-26 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. |
+
+### E7 — Expansão para outros centros
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-27 | ⚪ Won't (agora) | 🔴 G | ⬜ | Como **calouro de outro centro (CSE/CCS…)**, quero **as mesmas infos do meu centro**, para **me virar também**. |
+| B-28 | ⚪ Won't (agora) | 🟡 M | ⬜ | Como **mantenedor**, quero **um modelo de centro reutilizável**, para **replicar a estrutura**. |
+
+---
+
+## Sprint sugerido (próximos passos)
+
+Foco recomendado para a próxima leva de trabalho (todos pequenos/médios e de alto valor):
+
+1. **B-06** — extrair datas exatas do PDF do calendário 2026.
+2. **B-09** — gerar as 13 fichas de curso a partir do modelo.
+3. **B-21** — templates de issue e PR.
+4. **B-24** — CI de checagem de links quebrados.
+
+## Critérios de aceite (itens de referência)
+
+**B-08 — Ficha por curso**
+- [ ] Um arquivo em `docs/cursos/<curso>.md` por curso do CTC.
+- [ ] Segue o [modelo](_modelo-curso.md), com coordenação preenchida (fonte oficial).
+- [ ] Linkada no índice de `docs/README.md`.
+
+**B-16 — Site gerado do Markdown**
+- [ ] `docs/*.md` é a fonte única — nada de conteúdo duplicado no código.
+- [ ] Build passa localmente e no CI.
+- [ ] Navegável e legível no celular (mobile-first).
+
+**B-24 — Checagem de links**
+- [ ] Workflow de CI roda um link-checker nos `.md`.
+- [ ] Falha o build (ou abre issue) quando um link retorna erro.
+
+---
+
+> Este backlog é vivo: reordene, adicione e refine conforme o projeto evolui.
+> Cada item pode virar uma **issue** no GitHub usando o ID (ex.: `B-09`) no título.

@@ -18,6 +18,9 @@ Comece pelo tema que te interessa:
 ## Cursos
 - 📄 [Modelo de ficha de curso](_modelo-curso.md) — template para adicionar um curso
 
+## Projeto
+- 📋 [Product Backlog](product-backlog.md) — épicos, histórias e prioridades
+
 > Voltar para a [visão geral do projeto](../README.md).
 
 ---

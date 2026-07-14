@@ -9,17 +9,20 @@ achar os lugares que você mais vai usar como calouro do CTC.
 
 ## Mapa oficial
 
-- **Mapa oficial da UFSC:** _A preencher_ (link do mapa do campus no site da UFSC)
-- **Google Maps — Campus Trindade:** _A preencher_
+- **Mapa e endereços da UFSC:** <https://ufsc.br/mapa-e-enderecos/>
+- **Localização do CTC:** <https://portasabertas.ctc.ufsc.br/localizacao/>
+- **Endereço do Campus Trindade:** Campus Reitor João David Ferreira Lima,
+  Rua Roberto Sampaio Gonzaga, Trindade, Florianópolis – SC, CEP 88040-900.
+- **Google Maps — Campus Trindade:** _A preencher_ (confirmar link/pino oficial)
 
 ## Onde fica o quê (essencial para o CTC)
 
 | Local | Onde fica | Observações |
 |-------|-----------|-------------|
-| Prédios do CTC | _A preencher_ | Onde ficam a maioria das aulas de engenharia/computação |
-| Coordenação do seu curso | _A preencher_ | Ver [Coordenações](coordenacoes.md) |
-| RU (Restaurante Universitário) | _A preencher_ | Ver [Carteira do RU](carteira-ru.md) |
-| Biblioteca Universitária (BU) | _A preencher_ | Salas de estudo, empréstimo |
+| Prédios do CTC | Campus Trindade — ver [localização do CTC](https://portasabertas.ctc.ufsc.br/localizacao/) | Maioria das aulas de engenharia/computação |
+| Coordenação do seu curso | Prédio do departamento do curso | Ver [Coordenações](coordenacoes.md) |
+| RU (Restaurante Universitário) | Campus Trindade | Ver [Carteira do RU](carteira-ru.md) |
+| Biblioteca Universitária (BU) | Setor D — Acesso Trindade, CEP 88040-900 | Salas de estudo, empréstimo |
 | Secretaria / DAE | _A preencher_ | Documentos e histórico |
 | Xerox / papelaria | _A preencher_ | |
 | Pontos de ônibus | _A preencher_ | Linhas que atendem a UFSC |
