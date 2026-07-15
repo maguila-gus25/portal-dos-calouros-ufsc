@@ -50,7 +50,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-03 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **os links dos sistemas (CAGR, Moodle, e-mail)**, para **acessar minha vida acadêmica**. |
 | B-04 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **as datas do calendário acadêmico**, para **não perder prazos**. |
 | B-05 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o mapa e endereços do campus**, para **me localizar no primeiro dia**. |
-| B-06 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. |
+| B-06 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. Extraído do PDF oficial 2026 (Res. 214/2025/CUn). |
 | B-07 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **saber configurar o Wi‑Fi (eduroam) e o e-mail no celular**, para **usar a rede da UFSC**. |
 
 ### E2 — Fichas por curso
@@ -65,8 +65,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-11 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. |
-| B-12 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. |
+| B-11 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. 9 atléticas do CTC + festas tradicionais preenchidas. |
+| B-12 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. PRAE/RU/CTC/PROAFE + CAs confirmados. |
 | B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. |
 | B-14 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. |
 
@@ -161,16 +161,16 @@ B-33 e B-35.
 refinamento visual com dark mode (B-38).
 **Sprint 3 concluído (v0.8):** deploy configs (B-36), link-check CI (B-24) e
 suite pytest do backend.
+**Sprint 4 concluído (v0.9):** calendário 2026 (B-06), atléticas + festas
+(B-11), instagrams oficiais (B-12) e fichas com CA/atlética/IG.
 
-**Próximo sprint (v0.9) — proposta:**
+**Próximo sprint (v1.0) — proposta:**
 
 1. **Deploy real** — criar as contas Vercel + Render e rodar o playbook em
    `docs/deploy.md`.
-2. **B-06** — datas exatas de trancamento/ajuste do calendário acadêmico
-   (fonte: PDF oficial).
-3. **Preenchimento** — `atleticas-e-festas.md` e `instagrams.md` com
-   dados verificados (fonte: perfis oficiais no Instagram).
-4. **B-08** — vida do curso nas 13 fichas (depende dos preenchimentos acima).
+2. **B-07** — configurar Wi-Fi (eduroam) e e-mail no celular.
+3. **B-14** — canal para envio de histórias de veteranos (formulário/PR guide).
+4. **B-08 remanescente** — dicas de veterano nas fichas (via contribuição comunitária).
 
 ## Critérios de aceite (itens de referência)
 
