@@ -49,12 +49,55 @@ julho/2026 — se algum quebrar, confirme e abra um Pull Request.
 | **Notícias UFSC** | <https://noticias.ufsc.br/> |
 | **DCE (Diretório Central dos Estudantes)** | <https://dce.ufsc.br/> |
 
+## Wi-Fi no campus (eduroam)
+
+O campus tem cobertura sem fio em todas as unidades. Há duas redes disponíveis:
+
+| Rede | Para quem | Como entrar |
+|------|-----------|-------------|
+| **eduroam** | Alunos e servidores UFSC + visitantes de outras universidades conveniadas | Configuração manual (abaixo) |
+| **redeUFSCSemFio2** | Alunos e servidores UFSC | Mesmas credenciais, configuração mais simples |
+
+### Configuração do eduroam (Android e iPhone)
+
+1. Vá em **Configurações → Wi-Fi** e escolha a rede **eduroam**.
+2. Preencha os campos:
+   - **Método EAP:** TTLS
+   - **Autenticação de fase 2:** PAP
+   - **Domínio:** `ufsc.br`
+   - **Identidade / Usuário:** `seu.idufsc@ufsc.br`
+   - **Senha:** a senha do seu idUFSC
+3. Salve e conecte.
+
+> **Pré-requisito:** você precisa ter ativado seu idUFSC em <https://idufsc.ufsc.br/>.
+> Se ainda não fez isso, faça primeiro — o mesmo login vale para CAGR, Moodle e e-mail.
+
+**Tutoriais oficiais (SeTIC):** <https://wireless.ufsc.br/configuracao/> ·
+<https://setic.ufsc.br/servicos/redeufsc/redeufsc-sem-fio/>
+
+---
+
+## E-mail institucional no celular
+
+Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e configurar:
+
+1. **Solicite o e-mail:** <https://calouros.ufsc.br/email/>
+2. **Acesse pelo navegador (Webmail):** <https://webmail.ufsc.br/>
+3. **Configure no celular** usando os tutoriais oficiais da SeTIC:
+   - Android (Gmail): <https://otrs.setic.ufsc.br/otrs/public.pl?Action=PublicFAQZoom&ItemID=2149>
+   - Android (app E-mail): <https://otrs.setic.ufsc.br/otrs/public.pl?Action=PublicFAQZoom&ItemID=2148>
+   - iPhone / iPad: <https://otrs.setic.ufsc.br/otrs/public.pl?Action=PublicFAQZoom&ItemID=2152>
+
+> O e-mail institucional é necessário para inscrições em bolsas, editais da PRAE,
+> comunicados oficiais e acesso a alguns sistemas internos.
+
+---
+
 ## Utilidades do dia a dia
 
 - **Restaurante Universitário (RU):** ver [guia da carteira do RU](carteira-ru.md) · <https://ru.ufsc.br/>
 - **Carteira de estudante / meia-entrada (DCE):** ver [carteira do RU](carteira-ru.md#carteira-de-estudante-meia-entrada) · <https://dce.ufsc.br/>
 - **Mapa do campus:** ver [mapa](mapa.md) · <https://ufsc.br/mapa-e-enderecos/>
-- **Eduroam / Wi-Fi:** _A preencher_ (procurar "eduroam" em <https://setic.ufsc.br/>)
 
 > Achou um link quebrado ou desatualizado? Abra um Pull Request. Veja
 > [como contribuir](../CONTRIBUTING.md).
