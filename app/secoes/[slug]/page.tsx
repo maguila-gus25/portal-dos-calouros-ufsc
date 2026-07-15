@@ -1,8 +1,12 @@
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSection } from "@/lib/content";
+import { getSection, listSections } from "@/lib/content";
 import type { Metadata } from "next";
+
+export function generateStaticParams() {
+  return listSections().map((s) => ({ slug: s.slug }));
+}
 
 interface Props {
   params: Promise<{ slug: string }>;

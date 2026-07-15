@@ -2,8 +2,12 @@ import { ChevronLeft, Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { type ElementType, type ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCourse } from "@/lib/content";
+import { getCourse, listCourses } from "@/lib/content";
 import type { Metadata } from "next";
+
+export function generateStaticParams() {
+  return listCourses().map((c) => ({ slug: c.slug }));
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
