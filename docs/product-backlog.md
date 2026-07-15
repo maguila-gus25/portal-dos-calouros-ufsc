@@ -57,8 +57,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. |
-| B-09 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. Estrutura pronta (B-09); falta preencher vida do curso/dicas. |
+| B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 
 ### E3 — Vida universitária
@@ -94,11 +94,11 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 | B-31 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o loader que lê `docs/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
 | B-32 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
 | B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
-| B-34 | 🟠 Should | 🟢 P | 🚧 | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. Endpoint pronto; UI pendente. |
+| B-34 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
 | B-35 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
 | B-36 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. |
 | B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
-| B-38 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
+| B-38 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -155,18 +155,17 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 ## Sprint sugerido (próximos passos)
 
-**Sprint 1 concluído (v0.6):** fundação da plataforma entregue — B-29, B-30,
-B-31, B-32, B-33 e B-35. Ver `SPRINT.md` para retrospectiva.
+**Sprint 1 concluído (v0.6):** fundação da plataforma — B-29, B-30, B-31, B-32,
+B-33 e B-35.
+**Sprint 2 concluído (v0.7):** busca (B-34), 13 fichas de curso (B-09) e
+refinamento visual com dark mode (B-38).
 
-**Próximo sprint (v0.7):**
+**Próximo sprint (v0.8) — proposta:**
 
-1. **B-34** — UI de busca (endpoint `/api/search` já existe).
-2. **B-36** — deploy Vercel (frontend) + Render (backend).
-3. **B-38** — refinar aplicação da identidade visual em todos os componentes.
-4. **B-09** — gerar as 13 fichas de curso a partir do modelo (`content-editor`).
-
-Em paralelo (conteúdo, independem do código): **B-06** (datas do calendário)
-e **B-09** (13 fichas de curso).
+1. **B-36** — deploy Vercel (frontend) + Render (backend).
+2. **B-08** — preencher "vida do curso" (CA, atlética, dicas) das fichas.
+3. **B-06** — datas exatas de trancamento/ajuste do calendário acadêmico.
+4. **B-24** — verificação automática de links quebrados (CI).
 
 ## Critérios de aceite (itens de referência)
 

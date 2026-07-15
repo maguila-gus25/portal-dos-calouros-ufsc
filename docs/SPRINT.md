@@ -1,46 +1,56 @@
-# Sprint 1 — Fundação da Plataforma
+# Sprints — Portal dos Calouros UFSC
 
-## Objetivo
-Levantar o esqueleto end-to-end da plataforma: backend FastAPI lendo `docs/*.md` como JSON e frontend React+Vite consumindo essa API, com o rodapé "não oficial" desde o dia 1.
+> Gerado e mantido pelo Scrum Master. Use `/sprint-plan` para iniciar um novo sprint.
 
-## Histórias
-| História | ID | Agente | Status |
-|----------|----|--------|--------|
-| Mapa slug→arquivo sobre `docs/` | B-29 | backend-dev | ✅ Done |
-| Esqueleto do backend FastAPI (health, config, CORS) | B-30 | backend-dev | ✅ Done |
-| Loader que lê `docs/*.md` e serve como JSON | B-31 | backend-dev | ✅ Done |
-| Esqueleto do frontend Vite/React/Tailwind | B-32 | frontend-dev | ✅ Done |
-| Páginas de seções e curso consumindo a API | B-33 | frontend-dev | ✅ Done |
-| Rodapé fixo "não é site oficial da UFSC" | B-35 | frontend-dev | ✅ Done |
-
-## Definition of Done
-- [x] Backend implementado em `backend/` com estrutura FastAPI padrão
-- [x] `/api/sections/coordenacoes` retorna o conteúdo de `docs/coordenacoes.md` como JSON
-- [x] Frontend implementado em `frontend/` com Vite + React + TS + Tailwind
-- [x] Home lista as seções; página de seção renderiza o Markdown
-- [x] Rodapé "não é site oficial da UFSC" aparece em todas as páginas
-- [x] `README.md` atualizado com a nova estrutura
-
-## Retrospectiva
-
-- **Entregue:** backend FastAPI completo (health, sections, courses, search) com loader
-  de Markdown e mapa `SLUG_MAP` explícito; frontend Vite+React+TS+Tailwind com Layout
-  (Header + Footer obrigatório), páginas Home/Section/Courses/Course consumindo a API
-  via TanStack Query; identidade visual Facebook aplicada como tokens Tailwind
-  customizados; ambos os README de cada pacote.
-- **Adiado:**
-  - **B-34** (busca `/api/search` na UI) — endpoint já existe no backend, falta o
-    componente de busca no header e a `SearchPage`.
-  - **B-36** (deploy Vercel + Render) — código pronto, falta configurar os projetos.
-  - **B-37** (envio de histórias/feedback com banco) — v1.1, ainda sem urgência.
-  - **B-38** (aplicação plena da identidade visual em todos os componentes) —
-    parcialmente já feito via tokens; refinamentos ficam pro próximo sprint.
-- **Para o próximo sprint:** rodar `npm install` + `pip install -r requirements.txt`
-  e validar a integração ponta a ponta manualmente (ou via skill `verify`) antes
-  de mais features. Considerar adicionar `pytest` mínimo no backend.
+Nenhum sprint ativo no momento. Rode `/sprint-plan` para começar.
 
 ---
 
 ## Sprints Anteriores
 
-_Nenhum sprint concluído antes do Sprint 1._
+### Sprint 2 — Busca, conteúdo e polimento visual (concluído em 2026-07-15)
+
+**Objetivo:** UI de busca conectada ao endpoint existente, geração de todas as 13
+fichas de curso do CTC com dados de coordenação já verificados, e refinamentos
+visuais (dark mode, badges).
+
+| História | ID | Status |
+|----------|----|--------|
+| UI de busca (input no header + página de resultados) | B-34 | ✅ |
+| 13 fichas de curso do CTC com coordenação verificada | B-09 | ✅ |
+| Refinamentos visuais (dark mode, badges, hover) | B-38 | ✅ |
+
+**Retrospectiva:**
+- **Entregue:** `SearchInput` no header + `SearchPage` consumindo `/api/search` com
+  destaque do termo via `<mark>`. Todos os 13 cursos do CTC agora têm ficha em
+  `docs/cursos/` com frontmatter YAML (coordenação com fonte oficial) e corpo
+  seguindo o modelo com `_A preencher_` onde ainda falta info. Dark mode toggle
+  no header, tokens Tailwind atualizados, componente `Badge` reutilizável nos
+  cards de curso, hover mais evidente (translate + shadow-lg).
+- **Adiado:** `B-36` (deploy Vercel + Render) — precisa de contas configuradas
+  pelo usuário. `B-37` (envio de histórias/feedback) — v1.1.
+- **Para o próximo sprint:** validar tudo rodando end-to-end (`pip install` +
+  `npm install` + `npm run dev` + `uvicorn`), começar preenchimento dos campos
+  `_A preencher_` nas fichas (turno de cada curso, atlética, empresa júnior,
+  dicas), e planejar deploy.
+
+### Sprint 1 — Fundação da Plataforma (concluído em 2026-07-14)
+
+**Objetivo:** Levantar o esqueleto end-to-end da plataforma: backend FastAPI
+lendo `docs/*.md` como JSON e frontend React+Vite consumindo essa API, com o
+rodapé "não oficial" desde o dia 1.
+
+| História | ID | Status |
+|----------|----|--------|
+| Mapa slug→arquivo sobre `docs/` | B-29 | ✅ |
+| Esqueleto do backend FastAPI | B-30 | ✅ |
+| Loader que lê `docs/*.md` e serve como JSON | B-31 | ✅ |
+| Esqueleto do frontend Vite/React/Tailwind | B-32 | ✅ |
+| Páginas de seções e curso consumindo a API | B-33 | ✅ |
+| Rodapé fixo "não é site oficial da UFSC" | B-35 | ✅ |
+
+**Retrospectiva:** backend FastAPI completo (health, sections, courses, search)
+com loader de Markdown e mapa `SLUG_MAP` explícito. Frontend Vite+React+TS+
+Tailwind com Layout (Header + Footer obrigatório), páginas Home/Section/Courses/
+Course consumindo a API via TanStack Query. Identidade Facebook aplicada como
+tokens Tailwind.
