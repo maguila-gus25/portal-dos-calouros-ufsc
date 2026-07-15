@@ -1,0 +1,26 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
