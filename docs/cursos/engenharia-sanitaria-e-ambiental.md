@@ -3,7 +3,7 @@ curso: Engenharia Sanitária e Ambiental
 slug: engenharia-sanitaria-e-ambiental
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: sanitaria@contato.ufsc.br
   telefone: (48) 3721-9423
@@ -17,10 +17,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia Sanitária e Ambiental
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
-- **Duração:** _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://ens.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Saneamento básico, abastecimento de água, tratamento de esgoto e gestão de resíduos sólidos.
 
 ## Coordenação
 - **E-mail:** sanitaria@contato.ufsc.br
@@ -32,7 +32,7 @@ ultima_verificacao: "julho/2026"
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
 - **Atlética:** **AESA** — [@aesaufsc](https://www.instagram.com/aesaufsc/) · [site oficial](https://atleticaesa.ufsc.br/)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **EJESAM** — Empresa Júnior de Engenharia Sanitária e Ambiental
 - **Instagrams / perfis:** [@ens_ufsc](https://www.instagram.com/ens_ufsc/) (curso) · [@saesa.ufsc](https://www.instagram.com/saesa.ufsc/) (Semana Acadêmica)
 
 ## Dicas de veterano

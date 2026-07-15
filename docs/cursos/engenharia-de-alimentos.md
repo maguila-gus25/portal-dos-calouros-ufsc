@@ -3,7 +3,7 @@ curso: Engenharia de Alimentos
 slug: engenharia-de-alimentos
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: eng.alimentos@contato.ufsc.br
   telefone: (48) 3721-4061
@@ -17,10 +17,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia de Alimentos
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
 - **Duração:** _A preencher_
 - **Página oficial do curso:** <https://engalimentos.grad.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Ciência e tecnologia da produção, conservação e controle de qualidade de alimentos industrializados.
 
 ## Coordenação
 - **E-mail:** eng.alimentos@contato.ufsc.br

@@ -3,7 +3,7 @@ curso: Engenharia Civil
 slug: engenharia-civil
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: coord.ecv@contato.ufsc.br
   telefone: (48) 3721-2116
@@ -17,10 +17,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia Civil
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
-- **Duração:** _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://ecv.grad.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Projeto e construção de estruturas, infraestrutura urbana, sistemas hidráulicos e fundações.
 
 ## Coordenação
 - **E-mail:** coord.ecv@contato.ufsc.br

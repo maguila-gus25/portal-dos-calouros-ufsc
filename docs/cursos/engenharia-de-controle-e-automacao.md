@@ -3,7 +3,7 @@ curso: Engenharia de Controle e Automação
 slug: engenharia-de-controle-e-automacao
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: eas@contato.ufsc.br
   telefone: (48) 3721-4849
@@ -17,11 +17,11 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia de Controle e Automação
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
 - **Duração:** _A preencher_
 - **Página oficial do curso:** <https://automacao.ufsc.br/>
 - **Guia do estudante:** <https://automacao.ufsc.br/guia-do-estudante/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Sistemas de controle automático, robótica, instrumentação industrial e automação de processos.
 
 ## Coordenação
 - **E-mail:** eas@contato.ufsc.br (secretaria do curso / EAS)

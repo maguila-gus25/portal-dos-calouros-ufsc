@@ -3,7 +3,7 @@ curso: Arquitetura e Urbanismo
 slug: arquitetura-e-urbanismo
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: arquitetura@contato.ufsc.br
   telefone: (48) 3721-9275
@@ -17,10 +17,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Arquitetura e Urbanismo
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
-- **Duração:** _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://arquitetura.paginas.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Projeto arquitetônico, planejamento urbano e design de edificações considerando função, estética e técnica.
 
 ## Coordenação
 - **E-mail:** arquitetura@contato.ufsc.br
@@ -30,7 +30,7 @@ ultima_verificacao: "julho/2026"
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
+- **Centro Acadêmico:** **CALA** (Centro Acadêmico Livre de Arquitetura) — [@calaufsc](https://www.instagram.com/calaufsc/)
 - **Atlética:** **ATARQ** — [@atarq.ufsc](https://www.instagram.com/atarq.ufsc/)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:** [@arqurb.ufsc](https://www.instagram.com/arqurb.ufsc/) — perfil do curso

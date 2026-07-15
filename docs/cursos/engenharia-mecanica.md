@@ -3,7 +3,7 @@ curso: Engenharia Mecânica
 slug: engenharia-mecanica
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: mecanica@contato.ufsc.br
   telefone: (48) 3721-9267
@@ -18,10 +18,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia Mecânica
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
 - **Duração:** _A preencher_
 - **Página oficial do curso:** <https://engenhariamecanica.paginas.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Projeto de máquinas e mecanismos, termodinâmica, dinâmica dos fluidos e processos de manufatura.
 
 ## Coordenação
 - **E-mail:** mecanica@contato.ufsc.br
@@ -33,7 +33,7 @@ ultima_verificacao: "julho/2026"
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
+- **Centro Acadêmico:** **CAME** (Centro Acadêmico de Engenharia Mecânica) — <https://came.ufsc.br/>
 - **Atlética:** **ATM UFSC** — [@atmufsc](https://www.instagram.com/atmufsc/) (compartilhada com Engenharia de Materiais; tricampeã da Copa CTC)
 - **Empresa júnior:** _A preencher_
 - **Departamento:** [@emc.ufsc](https://www.instagram.com/emc.ufsc/) — perfil oficial do EMC

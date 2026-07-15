@@ -3,7 +3,7 @@ curso: Engenharia Química
 slug: engenharia-quimica
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: eng.quimica@contato.ufsc.br
   telefone: (48) 3721-2503
@@ -17,10 +17,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia Química
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
 - **Duração:** _A preencher_
 - **Página oficial do curso:** <https://cenq.paginas.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Processos industriais de transformação química, operações unitárias, petroquímica e controle de qualidade.
 
 ## Coordenação
 - **E-mail:** eng.quimica@contato.ufsc.br (departamento: eqa@contato.ufsc.br)

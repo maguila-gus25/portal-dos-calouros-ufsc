@@ -3,7 +3,7 @@ curso: Engenharia de Produção
 slug: engenharia-de-producao
 centro: CTC
 grau: Bacharelado
-turno: _A preencher_
+turno: Diurno
 coordenacao:
   email: engenharia.producao@contato.ufsc.br
   telefone: (48) 3721-7056
@@ -18,10 +18,10 @@ ultima_verificacao: "julho/2026"
 # 📄 Engenharia de Produção
 
 ## Sobre o curso
-- **Grau / turno:** Bacharelado / _A preencher_
+- **Grau / turno:** Bacharelado / Diurno
 - **Duração:** _A preencher_
 - **Página oficial do curso:** <https://producao.ufsc.br/>
-- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+- **Resumo:** Otimização de processos produtivos, gestão da qualidade, logística e engenharia econômica.
 
 > Existem as habilitações **Plena** e **Civil/Elétrica/Mecânica (CEM)** —
 > confira em [producaoplena](https://producaoplena.paginas.ufsc.br/) e
@@ -37,10 +37,10 @@ ultima_verificacao: "julho/2026"
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
+- **Centro Acadêmico:** **CALIPRO** (Centro Acadêmico Livre de Engenharia de Produção) — <https://caliproufsc.wordpress.com/>
 - **Atlética:** **A7** (Associação Atlética Edvaldo de Souza) — [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) (tetracampeã da Copa CTC)
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Empresa júnior:** **EJEP** — Empresa Júnior de Engenharia de Produção
+- **Instagrams / perfis:** ver [Instagrams do portal](../instagrams.md)
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).
