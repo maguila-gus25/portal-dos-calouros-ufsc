@@ -89,13 +89,13 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-29 | 🔴 Must | 🟢 P | ⬜ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
-| B-30 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
-| B-31 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o loader que lê `content/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
-| B-32 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
-| B-33 | 🔴 Must | 🟡 M | ⬜ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
-| B-34 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
-| B-35 | 🔴 Must | 🟢 P | ⬜ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
+| B-29 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
+| B-30 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
+| B-31 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o loader que lê `docs/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
+| B-32 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
+| B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
+| B-34 | 🟠 Should | 🟢 P | 🚧 | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. Endpoint pronto; UI pendente. |
+| B-35 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
 | B-36 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. |
 | B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
 | B-38 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
@@ -155,15 +155,18 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 ## Sprint sugerido (próximos passos)
 
-Agora que a arquitetura é **React + Python** (E8), o foco é levantar a plataforma:
+**Sprint 1 concluído (v0.6):** fundação da plataforma entregue — B-29, B-30,
+B-31, B-32, B-33 e B-35. Ver `SPRINT.md` para retrospectiva.
 
-1. **B-29** — mapa `slug → arquivo` sobre `docs/` (fonte única, sem mover nada).
-2. **B-30 + B-31** — esqueleto do backend FastAPI + loader de Markdown.
-3. **B-32 + B-33** — esqueleto do frontend + páginas consumindo a API.
-4. **B-35** — rodapé fixo "não é site oficial da UFSC".
+**Próximo sprint (v0.7):**
 
-Em paralelo (conteúdo, independem do código): **B-06** (datas do calendário) e
-**B-09** (13 fichas de curso).
+1. **B-34** — UI de busca (endpoint `/api/search` já existe).
+2. **B-36** — deploy Vercel (frontend) + Render (backend).
+3. **B-38** — refinar aplicação da identidade visual em todos os componentes.
+4. **B-09** — gerar as 13 fichas de curso a partir do modelo (`content-editor`).
+
+Em paralelo (conteúdo, independem do código): **B-06** (datas do calendário)
+e **B-09** (13 fichas de curso).
 
 ## Critérios de aceite (itens de referência)
 

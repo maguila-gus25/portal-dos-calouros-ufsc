@@ -107,13 +107,38 @@ e [identidade](docs/identidade-visual.md).
 
 ---
 
+## Rodar localmente
+
+O projeto agora é um monorepo com `backend/` (FastAPI) e `frontend/` (Vite/React).
+
+```bash
+# Backend (Python 3.11+)
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1   # Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+uvicorn app.main:app --reload --port 8000
+
+# Frontend (Node 20+)
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+- Backend: <http://localhost:8000> (docs interativas em `/docs`)
+- Frontend: <http://localhost:5173>
+
 ## Roadmap
 
 - [x] **v0 — Estrutura:** esqueleto de docs por tema + modelo de curso.
 - [x] **v0.1 — Conteúdo CTC:** coordenações, RU, links e datas preenchidos com fontes oficiais (jul/2026).
 - [x] **v0.5 — Arquitetura:** definição React + Python e identidade visual.
-- [ ] **v0.6 — Fichas de curso:** uma ficha por curso do CTC.
-- [ ] **v1 — Plataforma:** frontend React + API FastAPI (busca + páginas por curso).
+- [x] **v0.6 — Plataforma (fundação):** backend FastAPI + frontend Vite/React entregues no Sprint 1 (jul/2026).
+- [ ] **v0.7 — UI de busca + deploy:** UI para `/api/search`, Vercel + Render.
+- [ ] **v0.8 — Fichas de curso:** uma ficha por curso do CTC.
+- [ ] **v1 — Plataforma completa:** frontend + API estáveis com todo o conteúdo.
 - [ ] **v1.1 — Dinâmico:** mapa interativo + formulário de histórias/feedback.
 - [ ] **Futuro:** avaliação de professores, simulador de grade (tipo MatrUFSC), blog, comentários, monetização por divulgação.
 - [ ] **v2 — Outros centros:** replicar a estrutura para CSE, CCS, CFH, etc.
