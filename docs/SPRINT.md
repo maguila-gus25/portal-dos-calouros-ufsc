@@ -32,6 +32,33 @@
 
 ---
 
+## Sprint 6 — Confiabilidade e governança (v1.1) — concluído em 2026-07-15
+
+**Objetivo:** Tornar cada dado rastreável no tempo (B-25), definir responsáveis de
+revisão por área (B-22), automatizar o lembrete semestral de atualização (B-26) e
+fechar B-23 (já coberto pelo PR template do Sprint 5).
+
+| História | ID | Status |
+|----------|----|--------|
+| Data da última verificação em cada seção/curso | B-25 | ✅ |
+| CODEOWNERS — responsáveis por área | B-22 | ✅ |
+| Rotina semestral de revisão (issue recorrente no CI) | B-26 | ✅ |
+| Checklist "fonte oficial" no PR | B-23 | ✅ (PR template já cobre) |
+
+**Retrospectiva:**
+- **Entregue:** Rodapé `_Última verificação: julho/2026_` adicionado aos 8 docs de
+  conteúdo (coordenações, RU, datas, atléticas, instagrams, mapa, links, histórias).
+  Campo `ultima_verificacao: "julho/2026"` adicionado ao frontmatter das 13 fichas
+  de curso. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por
+  todas as áreas. Workflow `revisao-semestral.yml` criado: abre issue automática todo
+  1º de fevereiro e 1º de agosto com checklist de itens críticos e menos críticos.
+  B-23 fechado — PR template já inclui checklist "fonte oficial" desde o Sprint 5.
+  Corrigido URL errado (gustavohramos → maguila-gus25) em `historias-e-feedbacks.md`.
+- **Para o próximo sprint:** deploy real (Vercel + Render — ação humana), B-13
+  (primeiras histórias via issues), B-15/B-17 (fechar como cobertos por E8).
+
+---
+
 ## Sprints Anteriores
 
 ### Sprint 4 — Conteúdo pesado: calendário, atléticas e Instagrams (concluído em 2026-07-15)

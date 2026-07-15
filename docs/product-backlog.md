@@ -78,8 +78,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-15 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. |
-| B-17 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. |
+| B-15 | 🟠 Should | 🔴 G | ✅ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. Coberto pela plataforma React (E8 / B-32 + B-33). |
+| B-17 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. Coberto por B-34 (UI de busca + `/api/search`). |
 | B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor** (v1.1). |
 
 ### E8 — Plataforma React + Python
@@ -133,16 +133,16 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 |----|-----------|------|--------|----------|
 | B-20 | 🔴 Must | 🟢 P | ✅ | Como **contribuidor**, quero **um guia de contribuição claro**, para **saber como ajudar**. |
 | B-21 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. 4 templates de issue (história, conteúdo, link quebrado, sugestão) + PR template criados em `.github/`. |
-| B-22 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. |
-| B-23 | 🟡 Could | 🟢 P | ⬜ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. |
+| B-22 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por todas as áreas. |
+| B-23 | 🟡 Could | 🟢 P | ✅ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. Coberto pelo PR template (`.github/pull_request_template.md`) criado no Sprint 5. |
 
 ### E6 — Confiabilidade e manutenção
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
 | B-24 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. Workflow lychee em PR + schedule semanal. |
-| B-25 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. |
-| B-26 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. |
+| B-25 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. Rodapé `_Última verificação: julho/2026_` nos 8 docs de conteúdo; campo `ultima_verificacao` no frontmatter das 13 fichas de curso. |
+| B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
 
 ### E7 — Expansão para outros centros
 
@@ -165,14 +165,16 @@ suite pytest do backend.
 (B-11), instagrams oficiais (B-12) e fichas com CA/atlética/IG.
 **Sprint 5 concluído (v1.0):** eduroam + e‑mail no celular (B-07), templates de
 issue/PR (B-21) e canal de histórias de veteranos (B-14).
+**Sprint 6 concluído (v1.1):** data de verificação em todos os docs (B-25),
+CODEOWNERS (B-22), rotina semestral (B-26), B-23 fechado, B-15/B-17 fechados por E8.
 
-**Próximo sprint (v1.1) — proposta:**
+**Próximo sprint (v1.2) — proposta:**
 
 1. **Deploy real** — criar as contas Vercel + Render e rodar o playbook em
-   `docs/deploy.md` (ação do mantenedor humano).
-2. **B-13** — coletar primeiras histórias de veteranos via issues (canal já aberto).
-3. **B-25** — exibir data da última verificação em cada seção.
-4. **B-22** — CODEOWNERS (responsáveis por área para revisão de PRs).
+   `docs/deploy.md` (ação do mantenedor humano — pré-requisito para tudo abaixo).
+2. **B-13** — publicar primeiras histórias de veteranos (coletar via issues abertas).
+3. **B-37** — endpoint e UI de envio de histórias/feedback com banco (v1.1 da API).
+4. **B-19** — mapa interativo com marcadores (RU, BU, prédios) — após deploy.
 
 ## Critérios de aceite (itens de referência)
 
