@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cursos do CTC — Portal dos Calouros UFSC",
+  description: "Fichas de todos os 13 cursos do CTC da UFSC — coordenação, atlética, CA, dicas de veterano e mais.",
 };
 
 export default function CoursesPage() {

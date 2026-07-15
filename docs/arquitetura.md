@@ -1,7 +1,6 @@
-# 🏗️ Arquitetura — Portal dos Calouros UFSC
+# Arquitetura — Portal dos Calouros UFSC
 
-Documento de arquitetura da evolução do portal de um repositório de Markdown para
-uma **aplicação web React + Python**.
+Documento de arquitetura da plataforma web do portal.
 
 > **Projeto independente, feito por estudantes. NÃO é um site oficial da UFSC.**
 > Esse aviso é parte da arquitetura: aparece no rodapé de toda página (ver
@@ -15,66 +14,70 @@ uma **aplicação web React + Python**.
 └───────────────────────┬───────────────────────┘
                         │ HTTPS
 ┌───────────────────────▼───────────────────────┐
-│   FRONTEND — React + Vite + TS + Tailwind      │
-│   Hospedagem: Vercel                            │
-│   Consome a API por fetch (TanStack Query)      │
-└───────────────────────┬───────────────────────┘
-                        │ HTTPS (JSON) — VITE_API_URL
-┌───────────────────────▼───────────────────────┐
-│   BACKEND — Python + FastAPI                    │
-│   Hospedagem: Render                            │
-│   ├── Content layer: lê Markdown de docs/       │
-│   └── DB layer: SQLite→Postgres (dados dinâmicos)│
+│   Next.js 15 App Router (Vercel)               │
+│   ├── app/           ← páginas SSG/SSR         │
+│   ├── app/api/       ← Route Handlers (JSON)   │
+│   ├── lib/content.ts ← loader Markdown         │
+│   └── docs/*.md      ← FONTE ÚNICA             │
 └──────────┬───────────────────────┬─────────────┘
            │                       │
    ┌───────▼────────┐     ┌────────▼─────────┐
    │   docs/*.md     │     │  Banco de dados  │
-   │ (institucional) │     │ (histórias, etc.)│
-   │ FONTE ÚNICA/PR  │     │  v1.1 em diante  │
+   │ (institucional) │     │ (futuro: Prisma) │
+   │  FONTE ÚNICA    │     │  v1.1 em diante  │
    └────────────────┘     └──────────────────┘
 ```
 
-**Princípio híbrido + fonte única:** o conteúdo institucional (coordenações, RU,
-links, datas, mapa) vive em **um único lugar** — os arquivos Markdown de `docs/`.
-Você edita **um arquivo** e o site inteiro atualiza; não há conteúdo duplicado. O
-backend lê esses arquivos e os expõe como JSON (contribuição por Pull Request). Os
-dados **dinâmicos** (histórias, feedback e, no futuro, comentários e avaliações)
-vivem no **banco de dados**.
+**Princípio de fonte única:** o conteúdo institucional (coordenações, RU, links,
+datas, mapa) vive em **um único lugar** — os arquivos Markdown de `docs/`. O loader
+em `lib/content.ts` lê esses arquivos com `gray-matter` + `marked` e os expõe como
+JSON via Route Handlers. Contribuição por Pull Request. Os dados **dinâmicos**
+(histórias, feedback) ficarão no banco de dados a partir da v1.1.
 
 ---
 
 ## Stack
 
-### Frontend
 | Item | Escolha | Porquê |
 |------|---------|--------|
-| Framework | **React 18 + Vite** | SPA rápida, build simples, ótimo DX |
+| Framework | **Next.js 15 App Router** | Full-stack em um serviço; SSG nativo para docs/; Route Handlers para API |
 | Linguagem | **TypeScript** | Segurança de tipos, menos bugs |
 | Estilo | **Tailwind CSS** | Mobile-first, rápido, consistente |
-| Roteamento | **React Router** | Páginas por seção/curso |
-| Dados | **TanStack Query** | Cache e estado de requisições à API |
-| Deploy | **Vercel** | Grátis, deploy automático por push |
-
-### Backend
-| Item | Escolha | Porquê |
-|------|---------|--------|
-| Framework | **FastAPI** | Rápido, tipado (Pydantic), docs automáticas (OpenAPI) |
-| Runtime | **Uvicorn** | Servidor ASGI |
-| Markdown | **python-frontmatter + markdown-it-py** | Ler `docs/*.md` com metadados |
-| Banco | **SQLAlchemy** + SQLite (dev) → **PostgreSQL** (prod) | Simples no início, robusto na produção |
-| Validação | **Pydantic v2** | Schemas de entrada/saída |
-| Deploy | **Render** | Web service Python grátis |
-
-> A API já vem com documentação interativa em `/docs` (Swagger) e `/redoc`,
-> nativas do FastAPI.
+| Loader de Markdown | **gray-matter + marked** | Ler `docs/*.md` com frontmatter YAML |
+| Deploy | **Vercel** | Deploy automático por push, sem backend separado |
+| Banco (v1.1+) | **Prisma** + SQLite (dev) → **PostgreSQL** (prod) | Simples no início, robusto na produção |
 
 ---
 
-## Estrutura do repositório (monorepo)
+## Estrutura do repositório
 
 ```
 portal-dos-calouros-ufsc/
-├── docs/                    ← FONTE ÚNICA do conteúdo (Markdown) — editar aqui
+├── app/
+│   ├── api/
+│   │   ├── health/route.ts
+│   │   ├── sections/route.ts
+│   │   ├── sections/[slug]/route.ts
+│   │   ├── courses/route.ts
+│   │   ├── courses/[slug]/route.ts
+│   │   └── search/route.ts
+│   ├── busca/page.tsx
+│   ├── cursos/page.tsx
+│   ├── cursos/[slug]/page.tsx
+│   ├── secoes/[slug]/page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx              ← Home
+│   ├── providers.tsx
+│   └── not-found.tsx
+│
+├── components/               ← Header, Footer, SearchInput, Badge, NavLinks,
+│                                ThemeToggle, SearchResults…
+│
+├── lib/
+│   └── content.ts            ← loader de Markdown (mapa slug→arquivo)
+│
+├── docs/                     ← FONTE ÚNICA do conteúdo (Markdown) — editar aqui
 │   │   ── conteúdo servido pela API (mapeado por slug no loader) ──
 │   ├── coordenacoes.md
 │   ├── carteira-ru.md
@@ -85,46 +88,26 @@ portal-dos-calouros-ufsc/
 │   ├── mapa.md
 │   ├── historias-e-feedbacks.md
 │   ├── cursos/
-│   │   └── <curso>.md       ← fichas por curso (com frontmatter)
+│   │   └── <curso>.md        ← fichas por curso (com frontmatter)
 │   │   ── documentação de dev (NÃO servida pela API) ──
-│   ├── README.md            ← índice
-│   ├── arquitetura.md       ← este arquivo
+│   ├── README.md             ← índice
+│   ├── arquitetura.md        ← este arquivo
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
 │   └── _modelo-curso.md
 │
-├── backend/                 ← API Python (FastAPI)
-│   ├── app/
-│   │   ├── main.py          ← cria o app, CORS, inclui routers
-│   │   ├── core/config.py   ← settings (env vars): DOCS_DIR, CORS, DB
-│   │   ├── api/routes/      ← content.py, courses.py, search.py, (v1.1) stories.py
-│   │   ├── content/loader.py← lê e parseia docs/*.md → modelos (mapa slug→arquivo)
-│   │   ├── models/          ← schemas Pydantic + models SQLAlchemy
-│   │   └── db/session.py    ← engine e sessão do banco
-│   ├── tests/
-│   ├── requirements.txt (ou pyproject.toml)
-│   └── README.md
-│
-├── frontend/                ← App React (Vite)
-│   ├── src/
-│   │   ├── main.tsx
-│   │   ├── App.tsx
-│   │   ├── pages/           ← Home, Coordenacoes, RU, Curso, Busca...
-│   │   ├── components/      ← Layout, Footer (com o aviso "não oficial"), Card...
-│   │   ├── lib/api.ts       ← client da API (usa VITE_API_URL)
-│   │   └── styles/
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── tailwind.config.js
-│
+├── public/
+├── next.config.ts
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+├── vercel.json
 └── README.md
 ```
 
-> **Fonte única:** o conteúdo **fica em `docs/`** — sem pasta `content/` separada.
-> Assim você altera a informação em **um só lugar** e o site reflete. O loader do
-> backend tem um **mapa explícito `slug → arquivo`** (ex.: `coordenacoes` →
-> `docs/coordenacoes.md`); os arquivos de documentação de dev (`arquitetura.md`,
+> **Fonte única:** o conteúdo **fica em `docs/`**. O loader em `lib/content.ts` tem
+> um **mapa explícito `slug → arquivo`** (ex.: `coordenacoes` →
+> `docs/coordenacoes.md`). Os arquivos de documentação de dev (`arquitetura.md`,
 > `product-backlog.md`, `identidade-visual.md`, `README.md`, `_modelo-curso.md`)
 > **não** são servidos como conteúdo.
 
@@ -132,7 +115,7 @@ portal-dos-calouros-ufsc/
 
 ## API (v1)
 
-Base: `/api`. Respostas em JSON. Documentação automática em `/docs`.
+Base: `/api`. Route Handlers Next.js. Respostas em JSON.
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -193,16 +176,13 @@ Post (blog)      id, titulo, slug, corpo_md, autor, publicado_em
 
 ## Deploy e ambientes
 
-| Camada | Serviço | Variáveis de ambiente |
-|--------|---------|-----------------------|
-| Frontend | **Vercel** | `VITE_API_URL` (URL do backend) |
-| Backend | **Render** | `DATABASE_URL`, `CORS_ORIGINS`, `ENV` |
+| Serviço | Variáveis de ambiente |
+|---------|-----------------------|
+| **Vercel** | Nenhuma obrigatória no momento; `NEXT_PUBLIC_SITE_URL` para SEO (opcional) |
 
-- **CORS:** o backend libera apenas a origem do frontend (`CORS_ORIGINS`).
-- **CI/CD:** push na branch → Vercel builda o frontend; Render redeploya o backend.
-- **Domínio:** começa com os subdomínios grátis (`*.vercel.app` / `*.onrender.com`);
-  domínio próprio é opcional depois.
-- **Banco:** SQLite em dev (arquivo local); PostgreSQL gerenciado no Render em prod.
+- **CI/CD:** push para `main` → Vercel builda e deploya automaticamente.
+- **Domínio:** começa com o subdomínio grátis `*.vercel.app`; domínio próprio é opcional depois.
+- **Banco (v1.1+):** SQLite em dev (arquivo local); PostgreSQL gerenciado em prod.
 
 ---
 
@@ -252,5 +232,25 @@ arquitetura acima comporta todas (ver épicos novos no [backlog](product-backlog
 | 5 | SQLite → PostgreSQL | Postgres desde o dia 1 | Zero setup no início |
 | 6 | Front na Vercel, back no Render | Tudo serverless na Vercel | FastAPI roda melhor como serviço dedicado |
 | 7 | Identidade branco + azul (estilo Facebook) | Identidade da UFSC / paleta autoral chamativa | Familiar e limpa; deixa claro que **não** é oficial |
+| 8 | Migração para Next.js 15 App Router full-stack | Manter Vite + FastAPI separados | Elimina latência de rede entre frontend e backend; simplifica para um único serviço na Vercel; aproveita SSG nativo do Next.js para servir `docs/` sem backend separado |
+
+### ADR-8: Migração para Next.js 15 App Router (2026-07-15)
+
+**Contexto:** a stack Vite (frontend) + FastAPI/Render (backend) exigia dois serviços
+independentes, latência de rede entre eles, configuração de CORS e variáveis de
+ambiente de URL. O conteúdo do portal é majoritariamente estático (Markdown em
+`docs/`), o que favorece SSG.
+
+**Decisão:** migrar para Next.js 15 App Router full-stack hospedado inteiramente na
+Vercel. O frontend usa SSG/SSR nativo; a API é implementada como Route Handlers em
+`app/api/`. O loader de Markdown (`lib/content.ts`) usa `gray-matter` + `marked` —
+equivalente funcional ao `python-frontmatter` + `markdown-it-py` do backend Python
+descartado.
+
+**Consequências:**
+- Não há mais backend Python nem deploy no Render.
+- Todos os agentes (backend-dev, frontend-dev) devem operar no mesmo projeto Next.js.
+- Banco de dados futuro (v1.1+) será integrado via Prisma, não SQLAlchemy.
+- ADR-4 (Vite em vez de Next.js) e ADR-6 (Vercel + Render) ficam supersedidos por este ADR.
 
 > Este documento é vivo. Mudou uma decisão? Atualize a tabela acima e o diagrama.

@@ -1,24 +1,15 @@
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSection, listSections } from "@/lib/content";
+import { getSection } from "@/lib/content";
 import type { Metadata } from "next";
-
-export function generateStaticParams() {
-  return listSections().map((s) => ({ slug: s.slug }));
-}
-
-interface Props {
-  params: Promise<{ slug: string }>;
-}
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const section = getSection(slug);
-  if (!section) return { title: "Seção não encontrada" };
+export async function generateMetadata(): Promise<Metadata> {
+  const section = getSection("checklist");
+  if (!section) return { title: "Checklist não encontrado" };
   const title = `${section.title} — Portal dos Calouros UFSC`;
   const description = section.description;
   return {
@@ -28,14 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "website",
-      url: `${BASE_URL}/secoes/${slug}`,
+      url: `${BASE_URL}/checklist`,
     },
   };
 }
 
-export default async function SectionPage({ params }: Props) {
-  const { slug } = await params;
-  const section = getSection(slug);
+export default function ChecklistPage() {
+  const section = getSection("checklist");
   if (!section) notFound();
 
   return (

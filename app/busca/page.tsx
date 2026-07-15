@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Busca — Portal dos Calouros UFSC",
+  description: "Busque por coordenação, RU, datas, atléticas, cursos e muito mais no Portal dos Calouros UFSC.",
 };
 
 interface Props {

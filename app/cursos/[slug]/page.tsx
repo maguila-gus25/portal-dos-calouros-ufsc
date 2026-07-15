@@ -13,11 +13,25 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const course = getCourse(slug);
   if (!course) return { title: "Curso não encontrado" };
-  return { title: `${course.title} — Portal dos Calouros UFSC` };
+  const title = `${course.title} — Portal dos Calouros UFSC`;
+  const description = `${course.title} — coordenação, atlética, CA e dicas para o CTC da UFSC.`;
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `${BASE_URL}/cursos/${slug}`,
+    },
+  };
 }
 
 interface CoordenacaoMeta {

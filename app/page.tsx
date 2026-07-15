@@ -1,6 +1,6 @@
 import {
-  BookOpen, Building2, Calendar, Camera, ChevronRight,
-  Link2, Map, Trophy, Utensils, type LucideIcon,
+  BookOpen, Building2, Calendar, Camera, CheckSquare, ChevronRight,
+  HelpCircle, Link2, Map, Trophy, Utensils, type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { SearchInput } from "@/components/SearchInput";
@@ -15,6 +15,8 @@ const SECTION_ICONS: Record<string, LucideIcon> = {
   instagrams: Camera,
   mapa: Map,
   historias: BookOpen,
+  faq: HelpCircle,
+  checklist: CheckSquare,
 };
 
 const SECTION_COLORS: Record<string, string> = {
@@ -26,6 +28,8 @@ const SECTION_COLORS: Record<string, string> = {
   instagrams: "icon-pink",
   mapa: "icon-teal",
   historias: "icon-amber",
+  faq: "icon-teal",
+  checklist: "icon-green",
 };
 
 export default function Home() {

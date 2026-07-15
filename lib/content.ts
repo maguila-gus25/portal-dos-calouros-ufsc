@@ -48,6 +48,13 @@ const SLUG_MAP: Record<string, { file: string; title: string; description: strin
   instagrams: { file: "instagrams.md", title: "Instagrams e perfis", description: "Perfis oficiais e estudantis para acompanhar.", icon: "📸" },
   mapa: { file: "mapa.md", title: "Mapa da universidade", description: "Onde ficam os prédios, RU, biblioteca, coordenações.", icon: "🗺️" },
   historias: { file: "historias-e-feedbacks.md", title: "Histórias e feedbacks", description: "Relatos de veteranos e como enviar o seu.", icon: "💬" },
+  faq: { file: "faq.md", title: "FAQ — Perguntas frequentes", description: "Respostas rápidas para as dúvidas mais comuns dos calouros do CTC da UFSC.", icon: "❓" },
+  checklist: {
+    file: "checklist-primeira-semana.md",
+    title: "Checklist da primeira semana",
+    description: "O que fazer nos primeiros dias como calouro do CTC da UFSC — passo a passo, em ordem de urgência.",
+    icon: "✅"
+  },
 };
 
 function renderMd(md: string): string {

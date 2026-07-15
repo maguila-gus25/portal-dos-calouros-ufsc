@@ -15,6 +15,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |---------|--------|-----------|
 | **Calouro** | Recém-chegado ao CTC, perdido na burocracia | Informação confiável, rápida, no celular |
 | **Veterano/contribuidor** | Aluno que quer ajudar a manter o portal | Editar fácil, sem saber programar |
+| **Moderador** | Veterano de confiança que revisa conteúdo enviado | Ferramentas simples para aprovar/rejeitar sem precisar do banco |
 | **Mantenedor** | Quem cuida do repositório/projeto | Estrutura organizada, revisão, qualidade |
 | **Coordenação/servidor** | Setor oficial que quer divulgar dados | Um canal onde a informação certa apareça |
 
@@ -31,11 +32,12 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | E5 | Contribuição e governança | Facilitar e revisar contribuições | contínuo |
 | E6 | Confiabilidade e manutenção | Manter dados atualizados e corretos | contínuo |
 | E7 | Expansão para outros centros | Replicar para CSE, CCS, CFH… | v2 |
-| E8 | Plataforma React + Python | Migrar o portal para app web (ver [arquitetura](arquitetura.md)) | v1 |
+| E8 | Plataforma Next.js 15 | App web full-stack Next.js 15 App Router na Vercel (ver [arquitetura](arquitetura.md)) | v1 ✅ |
 | E9 | Avaliação de professores | Alunos avaliam professores/disciplinas (moderado) | futuro |
 | E10 | Simulador de grade | Montar grade de horários (tipo MatrUFSC) | futuro |
 | E11 | Blog + comentários | Conteúdo editorial e interação | futuro |
 | E12 | Monetização por divulgação | Anúncios/parcerias claramente marcados | futuro |
+| E13 | Autenticação e moderação | Login leve + painel de moderação para conteúdo dinâmico | v2 |
 
 ---
 
@@ -52,6 +54,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-05 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o mapa e endereços do campus**, para **me localizar no primeiro dia**. |
 | B-06 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. Extraído do PDF oficial 2026 (Res. 214/2025/CUn). |
 | B-07 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **saber configurar o Wi‑Fi (eduroam) e o e-mail no celular**, para **usar a rede da UFSC**. Seção adicionada em `links-importantes.md` com config EAP-TTLS/PAP e tutoriais oficiais SeTIC. |
+| B-52 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **um FAQ com as dúvidas mais frequentes** (matrícula, trancamento, DP, reprovação, CAA, bolsas), para **resolver sem precisar perguntar para ninguém**. `docs/faq.md` com 16 perguntas verificadas + página `/faq` no site + adicionado ao SLUG_MAP e sitemap. |
+| B-53 | 🟡 Could | 🟡 M | ✅ | Como **calouro na primeira semana**, quero **um checklist passo a passo** (RU, IDUFSC, eduroam, Moodle, e-mail, CA), para **não esquecer nada essencial nos primeiros dias**. `docs/checklist-primeira-semana.md` + página `/checklist` + task list items estilizados no `prose-content`. |
 
 ### E2 — Fichas por curso
 
@@ -80,25 +84,34 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-15 | 🟠 Should | 🔴 G | ✅ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. Coberto pela plataforma React (E8 / B-32 + B-33). |
 | B-17 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. Coberto por B-34 (UI de busca + `/api/search`). |
-| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor** (v1.1). |
+| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor**. Implementar com Leaflet.js ou Google Maps Embed API (pré-requisito: B-50 não necessário). |
 
-### E8 — Plataforma React + Python
+### E8 — Plataforma Next.js 15
 
-Ver [arquitetura.md](arquitetura.md). Frontend Vite/React/TS/Tailwind na Vercel;
-backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
+> **Migração de arquitetura (2026-07-15):** a stack original (Vite/React + FastAPI no
+> Render) foi substituída por **Next.js 15 App Router** (full-stack, tudo na Vercel).
+> As Route Handlers de `app/api/` substituem o backend Python; o loader de Markdown
+> vive em `lib/content.ts`. O banco de dados (v1.1+) será adicionado via Prisma direto
+> no Next.js. Ver [arquitetura.md](arquitetura.md) para o diagrama atualizado.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-29 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
-| B-30 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
-| B-31 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o loader que lê `docs/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
-| B-32 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
-| B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
-| B-34 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
+| B-29 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. Implementado em `lib/content.ts`. |
+| B-30 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **rotas de API** (health, sections, courses, search), para **ter a base da API**. Implementado como Next.js Route Handlers em `app/api/` (substituiu o FastAPI). |
+| B-31 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o loader que lê `docs/*.md` e serve como JSON**, para **expor o conteúdo à API**. Implementado em `lib/content.ts`. |
+| B-32 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do frontend Next.js/Tailwind**, para **ter a base do site**. App Router com layout, pages e componentes em `app/` e `components/`. |
+| B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo o conteúdo**, para **navegar**. Páginas SSG em `app/secoes/[slug]/` e `app/cursos/[slug]/`. |
+| B-34 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search` + página `/busca`), para **achar rápido**. |
 | B-35 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
-| B-36 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. Configs prontas (`vercel.json`, `render.yaml`, `docs/deploy.md`); falta criar as contas. |
-| B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
+| B-36 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **deploy automático na Vercel**, para **publicar a cada push**. `vercel.json` + `outputFileTracingIncludes` configurados; deploy ativo. |
+| B-37 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **enviar histórias/feedback pelo site** (formulário + banco + moderação), para **contribuir sem precisar do GitHub** (v1.1). Requer Prisma + Postgres no Next.js. |
 | B-38 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
+| B-46 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **atualizar CLAUDE.md e arquitetura.md para Next.js 15**, para **manter a documentação técnica fiel ao código real**. CLAUDE.md reescrito; arquitetura.md com diagrama, tabela de stack, estrutura de pastas e ADR-8 atualizados. |
+| B-47 | 🟠 Should | 🟡 M | ✅ | Como **calouro que busca no Google**, quero **o portal bem indexado** (meta tags dinâmicas, OG image, `sitemap.xml`, `robots.txt`), para **encontrar a informação fácil**. `app/sitemap.ts`, `app/robots.ts` criados; `generateMetadata` com `description` + `openGraph` em todas as páginas. |
+| B-48 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **instalar o portal no celular como app** (PWA — `manifest.json`, ícone 192/512, `theme-color`), para **acessar offline e sem abrir o navegador**. |
+| B-49 | 🟠 Should | 🟡 M | ⬜ | Como **calouro com deficiência visual**, quero **navegar o portal com leitor de tela e teclado** (audit WCAG AA — contrastes, alt texts, focus rings, landmarks), para **ter acesso igualitário**. |
+| B-50 | 🟠 Should | 🔴 G | ⬜ | Como **mantenedor**, quero **banco de dados no Next.js** (Prisma + SQLite em dev → Postgres em prod), para **persistir histórias, feedback e future features dinâmicas** (pré-requisito de B-37). |
+| B-51 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -127,6 +140,19 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 |----|-----------|------|--------|----------|
 | B-45 | 🟡 Could | 🟡 M | ⬜ | Como **mantenedor**, quero **espaços de divulgação/parceria** claramente marcados como publicidade, para **sustentar o projeto**. |
 
+### E13 — Autenticação e moderação (v2)
+
+> Pré-requisito técnico de B-37 (envio de histórias), B-39 (avaliações) e B-44
+> (comentários). A v1 não tem login; quando conteúdo dinâmico entrar, auth leve
+> via OAuth é o caminho recomendado (ver ADR em [arquitetura.md](arquitetura.md)).
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-56 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **fazer login com minha conta Google** (OAuth2), para **submeter histórias e avaliações com identidade verificável** e reduzir spam. |
+| B-57 | 🔴 Must (do épico) | 🟡 M | ⬜ | Como **moderador**, quero **um painel simples** (lista de pendentes + botões aprovar/rejeitar), para **revisar histórias e feedbacks antes de publicar** sem precisar editar o banco direto. |
+| B-58 | 🔴 Must (do épico) | 🟢 P | ⬜ | Como **mantenedor**, quero **regras de moderação documentadas** (o que aprova, o que rejeita, como tratar difamação), para **guiar moderadores voluntários com consistência**. |
+| B-59 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **login alternativo via conta UFSC (IdUFSC/SAML)**, para **garantir que apenas estudantes da UFSC possam submeter conteúdo** (requer parceria ou integração com a SeTIC). |
+
 ### E5 — Contribuição e governança
 
 | ID | Prioridade | Tam. | Status | História |
@@ -143,6 +169,8 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 | B-24 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. Workflow lychee em PR + schedule semanal. |
 | B-25 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. Rodapé `_Última verificação: julho/2026_` nos 8 docs de conteúdo; campo `ultima_verificacao` no frontmatter das 13 fichas de curso. |
 | B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
+| B-54 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. Roda em `ubuntu-latest` no GitHub Actions. |
+| B-55 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. |
 
 ### E7 — Expansão para outros centros
 
@@ -167,14 +195,37 @@ suite pytest do backend.
 issue/PR (B-21) e canal de histórias de veteranos (B-14).
 **Sprint 6 concluído (v1.1):** data de verificação em todos os docs (B-25),
 CODEOWNERS (B-22), rotina semestral (B-26), B-23 fechado, B-15/B-17 fechados por E8.
+**Sprint 7 — migração Next.js 15 (v1.2) — concluído em 2026-07-15:** stack migrada
+de Vite/React + FastAPI (Render) para **Next.js 15 App Router full-stack** na Vercel
+(B-30/B-32 reimplementados, B-36 atualizado, `vercel.json` ajustado para SSG +
+`outputFileTracingIncludes`). Backend Python e frontend Vite removidos do monorepo.
+**Sprint 8 — Encontrável e Documentado (v1.3) — concluído em 2026-07-15:** B-46 (CLAUDE.md
++ arquitetura.md atualizados), B-47 (sitemap.xml, robots.txt, OG tags em todas as páginas),
+B-52 (FAQ 16 perguntas + página /faq), B-53 (checklist da 1ª semana + página /checklist).
+Fix de task list items no prose-content (CSS).
 
-**Próximo sprint (v1.2) — proposta:**
+**Próximo sprint (v1.4) — proposta:**
 
-1. **Deploy real** — criar as contas Vercel + Render e rodar o playbook em
-   `docs/deploy.md` (ação do mantenedor humano — pré-requisito para tudo abaixo).
-2. **B-13** — publicar primeiras histórias de veteranos (coletar via issues abertas).
-3. **B-37** — endpoint e UI de envio de histórias/feedback com banco (v1.1 da API).
-4. **B-19** — mapa interativo com marcadores (RU, BU, prédios) — após deploy.
+1. **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
+   e de qualquer feature dinâmica futura).
+2. **B-13** — publicar primeiras histórias de veteranos (coletar via issues já abertas
+   com o template `historia-veterano.yml`).
+3. **B-19** — mapa interativo com marcadores (Leaflet.js — RU, BU, prédios).
+4. **B-49** — audit e correções de acessibilidade WCAG AA.
+
+**Radar (v1.5):**
+
+- **B-37** — formulário de envio de histórias/feedback no site (depende de B-50).
+- **B-54** — testes E2E com Playwright no CI.
+- **B-48** — PWA instalável no celular.
+- **B-51** — analytics de privacidade (Vercel Analytics).
+
+**Horizonte (v2.0):**
+
+- **B-56 + B-57** — autenticação OAuth + painel de moderação (E13).
+- **B-39 + B-40** — avaliação de professores com moderação (E9, depende de E13).
+- **B-41 + B-42** — simulador de grade de horários (E10).
+- **B-27 + B-28** — expansão para outros centros (E7).
 
 ## Critérios de aceite (itens de referência)
 
@@ -191,6 +242,79 @@ CODEOWNERS (B-22), rotina semestral (B-26), B-23 fechado, B-15/B-17 fechados por
 **B-24 — Checagem de links**
 - [ ] Workflow de CI roda um link-checker nos `.md`.
 - [ ] Falha o build (ou abre issue) quando um link retorna erro.
+
+**B-46 — Docs técnicas para Next.js 15**
+- [ ] `CLAUDE.md` descreve a stack atual (Next.js 15, sem FastAPI/Render).
+- [ ] `docs/arquitetura.md` tem diagrama e ADRs atualizados.
+- [ ] `docs/deploy.md` descreve apenas Vercel (sem Render).
+
+**B-47 — SEO básico**
+- [ ] Cada página tem `<title>` e `<meta description>` únicos via `generateMetadata`.
+- [ ] OG tags (`og:title`, `og:description`, `og:url`) presentes.
+- [ ] `public/sitemap.xml` lista todas as seções e cursos.
+- [ ] `public/robots.txt` presente e permissivo.
+
+**B-48 — PWA instalável**
+- [ ] `public/manifest.json` com nome, ícone 192×192 e 512×512, `theme_color`.
+- [ ] Tag `<link rel="manifest">` no `<head>`.
+- [ ] Chrome exibe o prompt "Instalar aplicativo" no celular.
+
+**B-49 — Acessibilidade WCAG AA**
+- [ ] Todas as imagens têm `alt` descritivo.
+- [ ] Contraste de texto ≥ 4.5:1 em fundo claro e escuro.
+- [ ] Navegação completa por teclado (Tab/Enter/Esc).
+- [ ] Landmarks HTML semânticos (`<nav>`, `<main>`, `<footer>`).
+- [ ] Leitor de tela (NVDA ou VoiceOver) anuncia seções corretamente.
+
+**B-50 — Banco de dados Next.js**
+- [ ] Prisma instalado com schema inicial (`Story`, `Feedback`).
+- [ ] Migração SQLite funciona localmente.
+- [ ] Variável `DATABASE_URL` documentada em `.env.example`.
+- [ ] Em prod (Vercel): Postgres externo (Neon ou Supabase free tier).
+
+**B-51 — Analytics de privacidade**
+- [ ] Vercel Analytics ou Plausible integrado sem cookies de rastreio.
+- [ ] Dashboard mostra pageviews por rota.
+- [ ] Aviso de privacidade no rodapé ou política de dados.
+
+**B-52 — FAQ dos calouros**
+- [ ] Arquivo `docs/faq.md` com ≥ 10 perguntas frequentes e respostas verificadas.
+- [ ] Cada resposta tem link para a fonte oficial (UFSC, DAE, CAA, PRAE…).
+- [ ] Seção de FAQ acessível na home ou no menu de navegação.
+- [ ] Campos sem resposta oficial ficam como `_A preencher_`.
+
+**B-53 — Checklist da primeira semana**
+- [ ] Arquivo `docs/checklist-primeira-semana.md` com ≥ 8 itens ordenados por urgência.
+- [ ] Itens cobrem: IDUFSC, RU, eduroam, Moodle, e-mail, CAGR, CA do curso.
+- [ ] Página `/checklist` exibe os itens como lista interativa no site.
+
+**B-54 — Testes E2E com Playwright**
+- [ ] Playwright instalado como dev dependency; config em `playwright.config.ts`.
+- [ ] Testes cobrem: home carrega, busca retorna resultado, seção exibe conteúdo, curso exibe ficha.
+- [ ] Workflow `.github/workflows/e2e.yml` roda em PRs para `main`.
+- [ ] Falha bloqueia merge se qualquer teste quebrar.
+
+**B-55 — Lighthouse CI**
+- [ ] `lighthouserc.json` com thresholds: Performance ≥ 90, Accessibility ≥ 90, SEO ≥ 90.
+- [ ] Workflow roda Lighthouse CI em PRs para `main` (usa `lhci autorun`).
+- [ ] Falha em qualquer threshold bloqueia merge.
+
+**B-56 — Autenticação OAuth Google**
+- [ ] NextAuth.js (Auth.js v5) configurado com provider Google.
+- [ ] Sessão persistida com JWT; nenhum dado pessoal gravado além de `id` e `email` (hash).
+- [ ] Botão "Entrar com Google" visível apenas em páginas que exigem auth (submissão).
+- [ ] Usuário não autenticado pode ler tudo; só não pode submeter.
+
+**B-57 — Painel de moderação**
+- [ ] Rota `/admin/moderacao` protegida por role `MODERATOR` no banco.
+- [ ] Lista pendentes com texto, curso e data de envio.
+- [ ] Botões Aprovar / Rejeitar (com campo de motivo opcional).
+- [ ] Aprovação publica imediatamente; rejeição envia e-mail de notificação (opcional).
+
+**B-58 — Regras de moderação documentadas**
+- [ ] Arquivo `docs/moderacao.md` com critérios claros (o que aprova, o que rejeita).
+- [ ] Cobre: difamação, dados pessoais, conteúdo ofensivo, spam, informação falsa.
+- [ ] Linkado no painel de moderação e no CONTRIBUTING.md.
 
 ---
 

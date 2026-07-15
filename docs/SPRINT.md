@@ -4,128 +4,136 @@
 
 ---
 
-## Sprint 5 — Publicação e Comunidade (v1.0) — concluído em 2026-07-15
+## Sprint 8 — Encontrável e Documentado (v1.3)
 
-**Objetivo:** Tornar o portal público e pronto para receber contribuições — deploy real
-(Vercel + Render), guia de Wi‑Fi/e-mail para calouros (B-07), templates de issue/PR
-(B-21) e canal oficial para envio de histórias de veteranos (B-14).
+**Objetivo:** Tornar o portal encontrável na web (SEO) e a base técnica confiável
+(documentação atualizada para Next.js 15), além de entregar o FAQ e o checklist da
+primeira semana — o conteúdo que o calouro mais precisa nos primeiros dias.
 
-| História | ID | Status |
-|----------|----|--------|
-| Wi‑Fi eduroam + e‑mail no celular | B-07 | ✅ |
-| Templates de issue e PR no GitHub | B-21 | ✅ |
-| Canal de contribuição de histórias | B-14 | ✅ |
-| Deploy real Vercel + Render | — | ⬜ (aguardando criação de contas) |
+| História | ID | Agente | Status |
+|----------|----|--------|--------|
+| Atualizar CLAUDE.md e arquitetura.md para Next.js 15 | B-46 | architect | Done ✅ |
+| SEO: generateMetadata por página + sitemap.xml + robots.txt | B-47 | frontend-dev | Done ✅ |
+| FAQ dos calouros — docs/faq.md + página /faq | B-52 | content-editor → frontend-dev | Done ✅ |
+| Checklist da primeira semana — docs/ + página /checklist | B-53 | content-editor → frontend-dev | Done ✅ |
 
-**Retrospectiva:**
-- **Entregue:** Seção completa de eduroam em `links-importantes.md` com configuração
-  passo a passo (EAP-TTLS/PAP, credencial `idufsc@ufsc.br`) e links para tutoriais
-  oficiais da SeTIC. Seção de e-mail institucional com links para os FAQs de Android
-  (Gmail + app E-mail) e iPhone. Quatro issue templates YAML (história de veterano,
-  atualização de conteúdo, link quebrado, sugestão) e PR template com checklist de
-  fonte oficial. CONTRIBUTING.md atualizado com instrução direta de envio de histórias.
-  `historias-e-feedbacks.md` atualizado com links diretos para cada template.
-- **Não entregou:** Deploy real — requer que o mantenedor crie as contas Vercel e
-  Render e siga o playbook em `docs/deploy.md`. Configs de código já prontas (B-36 ✅).
-- **Para o próximo sprint:** deploy real (ação humana), B-13 (coletar primeiras histórias
-  via issues), B-25 (data de verificação nos dados), B-22 (CODEOWNERS).
+> **B-53 é condicional:** entra se B-52 terminar sem consumir toda a capacidade do sprint.
+> Em caso de restrição de tempo, B-53 vai para o radar do Sprint 9.
 
----
+**Ordem de execução (dependências):**
+1. B-46 e a parte `content-editor` de B-52 rodam **em paralelo** (ambos são tarefas de
+   documentação/conteúdo sem sobreposição de arquivos).
+2. B-47 (frontend-dev SEO) roda **em paralelo** com B-46 e B-52 content-editor.
+3. A parte `frontend-dev` de B-52 roda **após** o content-editor entregar `docs/faq.md`.
+4. B-53 roda **após** B-52 ser concluído, se houver capacidade.
 
-## Sprint 6 — Confiabilidade e governança (v1.1) — concluído em 2026-07-15
+## Definition of Done
 
-**Objetivo:** Tornar cada dado rastreável no tempo (B-25), definir responsáveis de
-revisão por área (B-22), automatizar o lembrete semestral de atualização (B-26) e
-fechar B-23 (já coberto pelo PR template do Sprint 5).
+- [x] `npm run lint` passa
+- [x] `npm run build` passa (37 páginas geradas, sem erros)
+- [x] `ui-ux-review` sem findings bloqueadores (1 blocker de task list CSS corrigido)
+- [x] `docs/product-backlog.md` atualizado com novos status (✅ para itens concluídos)
+- [x] README atualizado — stack, estrutura, roadmap e equipe de agentes atualizados
 
-| História | ID | Status |
-|----------|----|--------|
-| Data da última verificação em cada seção/curso | B-25 | ✅ |
-| CODEOWNERS — responsáveis por área | B-22 | ✅ |
-| Rotina semestral de revisão (issue recorrente no CI) | B-26 | ✅ |
-| Checklist "fonte oficial" no PR | B-23 | ✅ (PR template já cobre) |
+## Retrospectiva
 
-**Retrospectiva:**
-- **Entregue:** Rodapé `_Última verificação: julho/2026_` adicionado aos 8 docs de
-  conteúdo (coordenações, RU, datas, atléticas, instagrams, mapa, links, histórias).
-  Campo `ultima_verificacao: "julho/2026"` adicionado ao frontmatter das 13 fichas
-  de curso. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por
-  todas as áreas. Workflow `revisao-semestral.yml` criado: abre issue automática todo
-  1º de fevereiro e 1º de agosto com checklist de itens críticos e menos críticos.
-  B-23 fechado — PR template já inclui checklist "fonte oficial" desde o Sprint 5.
-  Corrigido URL errado (gustavohramos → maguila-gus25) em `historias-e-feedbacks.md`.
-- **Para o próximo sprint:** deploy real (Vercel + Render — ação humana), B-13
-  (primeiras histórias via issues), B-15/B-17 (fechar como cobertos por E8).
+- **Entregue:** B-46 — CLAUDE.md e arquitetura.md reescritos para Next.js 15 (ADR-8 adicionado).
+  B-47 — `app/sitemap.ts`, `app/robots.ts` criados; `generateMetadata` com `description` e
+  `openGraph` em todas as páginas (home, busca, cursos, seções, cursos/[slug]).
+  B-52 — `docs/faq.md` com 16 perguntas verificadas, página `/faq`, entrada no SLUG_MAP e
+  sitemap; FAQ aparece na home como 9ª seção e é indexado pela busca.
+  B-53 — `docs/checklist-primeira-semana.md`, página `/checklist`, ícone na home grid.
+  Fix de blocker UI/UX: task list items (`- [ ]`) estilizados corretamente no
+  `prose-content` via CSS com `accent-color` brand-blue.
+  README regenerado com stack, estrutura, roadmap v1.3 e equipe de agentes.
+- **Adiado:** B-13 (histórias de veteranos) — bloqueado por conteúdo externo (nenhuma
+  submissão real via issue template ainda). B-50 (banco Prisma) — item G preservado para
+  sprint dedicado junto com B-37.
+- **Para o próximo sprint (v1.4):** B-50 (banco), B-13 (histórias), B-19 (mapa interativo),
+  B-49 (acessibilidade WCAG AA). Minor pendente: alinhar `docs/identidade-visual.md` para
+  refletir uso de Poppins via Google Fonts (decisão tomada em sprint anterior, doc não
+  atualizado).
 
 ---
 
 ## Sprints Anteriores
 
-### Sprint 4 — Conteúdo pesado: calendário, atléticas e Instagrams (concluído em 2026-07-15)
+### Sprint 8 — Encontrável e Documentado (v1.3) — concluído em 2026-07-15
 
-**Objetivo:** Preencher o que estava travado por falta de fonte — datas do
-calendário 2026 completo, atléticas de cada curso do CTC e Instagrams oficiais
-confirmados — sem inventar dados.
+**Objetivo:** SEO, documentação técnica atualizada, FAQ e checklist da primeira semana.
 
-| História | ID | Status |
-|----------|----|--------|
-| Datas completas 2026 do calendário oficial (Res. 214/2025/CUn) | B-06 | ✅ |
-| Preencher 9 atléticas do CTC + festas tradicionais | — | ✅ |
-| Confirmar @s oficiais PRAE, RU, CTC, PROAFE | — | ✅ |
-| Enriquecer 13 fichas de curso com CA + atlética + IG | B-08 (parcial) | 🚧 |
+**Entregue:** CLAUDE.md + arquitetura.md reescritos para Next.js 15 (B-46); sitemap.xml,
+robots.txt e OG tags em todas as páginas (B-47); FAQ com 16 perguntas + página /faq (B-52);
+checklist da primeira semana + página /checklist (B-53). Fix de CSS para task list items.
+README regenerado. Lint ✅ Build ✅ 37 páginas SSG.
 
-**Retrospectiva:**
-- **Entregue:** Extração completa do PDF do calendário oficial 2026 (Res.
-  Normativa 214/2025/CUn) — todas as datas de matrícula, ajustes, trancamentos
-  (22/05 e 23/09), recuperação e recesso; feriados de Florianópolis; previsão
-  2027. Ficha do calendário-academico-2026 movida do lugar errado. Nove
-  atléticas do CTC confirmadas via WebSearch nos Instagrams oficiais:
-  A5, ATEC, ATACA, LE (@ateelufsc), ATM, A7, ATEQA, AESA, ATARQ. Festas
-  tradicionais documentadas (Copa CTC, Copa Calouro, Trotes Integrados,
-  Interatléticas). Perfis oficiais UFSC (PRAE, RU, CTC, PROAFE) confirmados
-  em `instagrams.md`. Cada uma das 13 fichas de curso agora traz atlética,
-  CA (onde há) e IG do curso, sempre com link para a fonte.
-- **Não entregou (mantém 🚧):** "vida do curso" ainda tem `_A preencher_` em
-  empresa júnior, dicas de veterano, resumo do curso e onde estudar. Isso
-  precisa vir de veteranos reais, não de busca web.
-- **Para o próximo sprint:** deploy real (Vercel + Render), preenchimento
-  dos campos de PRAE/RU não críticos (`_A preencher_` restantes), e começar
-  as dicas de veterano via canal de contribuição comunitária.
+---
 
-### Sprint 3 — Deploy, CI e testes (concluído em 2026-07-15)
+### Sprint 7 — Migração Next.js 15 (v1.2) — concluído em 2026-07-15
 
-**Objetivo:** Deixar o projeto pronto para publicar (Vercel + Render), colocar
-validação automática de links e blindar o backend com testes.
+**Objetivo:** Migrar a stack de Vite/React + FastAPI (Render) para Next.js 15 App Router
+full-stack, hospedado inteiramente na Vercel.
 
-| História | ID | Status |
-|----------|----|--------|
-| Configs de deploy Vercel (frontend) + Render (backend) | B-36 | ✅ (código pronto; contas a criar) |
-| Link-checker no CI com lychee (PR + schedule semanal) | B-24 | ✅ |
-| Suite pytest para health, sections, courses e search | — | ✅ |
+**Entregue:** App Router com Route Handlers (`app/api/`), loader de Markdown em
+`lib/content.ts`, páginas SSG para seções e cursos, Tailwind configurado, `vercel.json`
+ajustado com `outputFileTracingIncludes` para servir `docs/` em produção. Backend Python
+e frontend Vite removidos do monorepo.
 
-### Sprint 2 — Busca, conteúdo e polimento visual (concluído em 2026-07-15)
+---
 
-**Objetivo:** UI de busca conectada ao endpoint existente, geração de todas as 13
-fichas de curso do CTC com dados de coordenação já verificados, e refinamentos
-visuais (dark mode, badges).
+### Sprint 6 — Confiabilidade e governança (v1.1) — concluído em 2026-07-15
 
-| História | ID | Status |
-|----------|----|--------|
-| UI de busca (input no header + página de resultados) | B-34 | ✅ |
-| 13 fichas de curso do CTC com coordenação verificada | B-09 | ✅ |
-| Refinamentos visuais (dark mode, badges, hover) | B-38 | ✅ |
+**Objetivo:** Tornar cada dado rastreável no tempo (B-25), definir responsáveis de revisão
+por área (B-22) e automatizar o lembrete semestral de atualização (B-26).
 
-### Sprint 1 — Fundação da Plataforma (concluído em 2026-07-14)
+**Entregue:** Rodapé `_Última verificação: julho/2026_` nos 8 docs; campo
+`ultima_verificacao` nas 13 fichas de curso; `.github/CODEOWNERS`; workflow
+`revisao-semestral.yml`. B-23 fechado (PR template cobre).
 
-**Objetivo:** Levantar o esqueleto end-to-end da plataforma: backend FastAPI
-lendo `docs/*.md` como JSON e frontend React+Vite consumindo essa API, com o
-rodapé "não oficial" desde o dia 1.
+---
 
-| História | ID | Status |
-|----------|----|--------|
-| Mapa slug→arquivo sobre `docs/` | B-29 | ✅ |
-| Esqueleto do backend FastAPI | B-30 | ✅ |
-| Loader que lê `docs/*.md` e serve como JSON | B-31 | ✅ |
-| Esqueleto do frontend Vite/React/Tailwind | B-32 | ✅ |
-| Páginas de seções e curso consumindo a API | B-33 | ✅ |
-| Rodapé fixo "não é site oficial da UFSC" | B-35 | ✅ |
+### Sprint 5 — Publicação e Comunidade (v1.0) — concluído em 2026-07-15
+
+**Objetivo:** Guia de Wi-Fi/e-mail para calouros (B-07), templates de issue/PR (B-21)
+e canal de histórias de veteranos (B-14).
+
+**Entregue:** Seção eduroam (EAP-TTLS/PAP) + e-mail institucional em
+`links-importantes.md`; 4 issue templates YAML + PR template; CONTRIBUTING.md e
+`historias-e-feedbacks.md` atualizados com links diretos para submissão.
+Não entregou: deploy real (aguarda criação de contas Vercel/Render — ação humana).
+
+---
+
+### Sprint 4 — Conteúdo pesado: calendário, atléticas e Instagrams (v0.9) — concluído em 2026-07-15
+
+**Objetivo:** Preencher datas do calendário 2026, atléticas e perfis Instagram confirmados.
+
+**Entregue:** Extração completa do calendário oficial 2026 (Res. 214/2025/CUn); 9
+atléticas do CTC confirmadas; perfis PRAE/RU/CTC/PROAFE; 13 fichas de curso com
+atlética, CA e IG. Mantém 🚧: empresa júnior, dicas de veterano, resumo e onde
+estudar — precisam vir de veteranos reais.
+
+---
+
+### Sprint 3 — Deploy, CI e testes (v0.8) — concluído em 2026-07-15
+
+**Objetivo:** Configs de deploy (Vercel + Render), link-checker no CI e suite de testes.
+
+**Entregue:** `vercel.json`, `render.yaml`, `docs/deploy.md`; workflow lychee (PR +
+schedule semanal); suite pytest para health/sections/courses/search.
+
+---
+
+### Sprint 2 — Busca, conteúdo e polimento visual (v0.7) — concluído em 2026-07-15
+
+**Objetivo:** UI de busca, 13 fichas de curso e refinamentos visuais.
+
+**Entregue:** B-34 (busca), B-09 (13 fichas), B-38 (dark mode, badges, hover).
+
+---
+
+### Sprint 1 — Fundação da Plataforma (v0.6) — concluído em 2026-07-14
+
+**Objetivo:** Esqueleto end-to-end da plataforma (backend FastAPI + frontend Vite).
+
+**Entregue:** B-29, B-30, B-31, B-32, B-33, B-35.

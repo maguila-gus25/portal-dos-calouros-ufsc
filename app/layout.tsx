@@ -7,6 +7,14 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Portal dos Calouros UFSC — CTC",
   description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
+  openGraph: {
+    title: "Portal dos Calouros UFSC — CTC",
+    description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
+    url: "https://portal-dos-calouros-ufsc.vercel.app",
+    siteName: "Portal dos Calouros UFSC",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

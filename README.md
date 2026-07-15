@@ -1,5 +1,6 @@
 # Portal dos Calouros UFSC
 
+<!-- manual:start -->
 > Tudo o que quem acaba de chegar na UFSC precisa saber, reunido em um lugar só.
 
 O **Portal dos Calouros** é uma iniciativa feita por estudantes, para estudantes.
@@ -13,136 +14,112 @@ datas que não pode perder e histórias de quem já passou por isso.
 Florianópolis). A estrutura foi pensada para crescer e cobrir outros centros
 depois.
 
----
-
-## Índice
-
-- [Para quem é isso](#para-quem-é-isso)
-- [O que o portal oferece](#o-que-o-portal-oferece)
-- [Como o conteúdo está organizado](#como-o-conteúdo-está-organizado)
-- [O portal como site (visão de produto)](#o-portal-como-site-visão-de-produto)
-  - [Arquitetura proposta](#arquitetura-proposta)
-  - [Stack sugerida](#stack-sugerida)
-  - [Modelo de dados](#modelo-de-dados)
-- [Roadmap](#roadmap)
-- [Como contribuir](#como-contribuir)
-- [Princípios](#princípios-do-conteúdo)
-- [Licença](#licença)
+> **Projeto independente feito por estudantes. Não é um site oficial da UFSC.**
+<!-- manual:end -->
 
 ---
 
-## Para quem é isso
+## Stack
 
-- **Calouros do CTC** que chegaram agora e estão perdidos.
-- **Veteranos e centros/atléticas** que querem ajudar a manter as informações.
-- **Coordenações e servidores** que queiram divulgar dados oficiais para os novos alunos.
+| Camada | Tecnologia | Deploy |
+|--------|-----------|--------|
+| **Aplicação** | Next.js 15 App Router + TypeScript + Tailwind CSS | Vercel (auto-deploy em `main`) |
+| **Conteúdo** | Markdown em `docs/` lido via `lib/content.ts` (gray-matter + marked) | Fonte única |
+| **API** | Next.js Route Handlers em `app/api/` | Embutido no Next.js |
 
-## O que o portal oferece
+Sem backend separado. Sem banco de dados na v1 (Prisma + Postgres planejado para v1.1 — ver [backlog](docs/product-backlog.md)).
 
-| Seção | O que você encontra | Arquivo |
-|-------|---------------------|---------|
-| 🏛️ Coordenações | Nome, e-mail, telefone, sala e horário de atendimento das coordenações de cada curso do CTC | [`docs/coordenacoes.md`](docs/coordenacoes.md) |
-| 🍽️ Carteira do RU | Passo a passo para se cadastrar e usar o Restaurante Universitário | [`docs/carteira-ru.md`](docs/carteira-ru.md) |
-| 🔗 Links importantes | CAGR, Moodle, SETIC, e-mail institucional, PRAE, biblioteca e afins | [`docs/links-importantes.md`](docs/links-importantes.md) |
-| 🎉 Atléticas e festas | As atléticas de cada curso e as festas tradicionais | [`docs/atleticas-e-festas.md`](docs/atleticas-e-festas.md) |
-| 📸 Instagrams e perfis | Perfis oficiais e estudantis para acompanhar a UFSC | [`docs/instagrams.md`](docs/instagrams.md) |
-| 🗺️ Mapa da universidade | Onde ficam os prédios, RU, biblioteca, coordenações | [`docs/mapa.md`](docs/mapa.md) |
-| 📅 Datas importantes | Matrícula, início das aulas, trancamento, recesso, calendário acadêmico | [`docs/datas-importantes.md`](docs/datas-importantes.md) |
-| 💬 Histórias e feedbacks | Relatos de veteranos e como enviar o seu | [`docs/historias-e-feedbacks.md`](docs/historias-e-feedbacks.md) |
+## Como rodar localmente
 
-> Cada curso do CTC também tem sua ficha própria, seguindo o
-> [modelo de curso](docs/_modelo-curso.md).
+```bash
+npm install
+npm run dev      # servidor Next.js em localhost:3000
+npm run build    # build de produção (SSG)
+npm run lint     # ESLint
+```
 
-## Como o conteúdo está organizado
+## Estrutura
 
 ```
 portal-dos-calouros-ufsc/
-├── README.md                 ← você está aqui (visão do projeto)
-├── CONTRIBUTING.md           ← como ajudar a preencher/corrigir
-└── docs/
-    ├── README.md             ← índice navegável do conteúdo
-    ├── coordenacoes.md
-    ├── carteira-ru.md
-    ├── links-importantes.md
-    ├── atleticas-e-festas.md
-    ├── instagrams.md
-    ├── mapa.md
-    ├── datas-importantes.md
-    ├── historias-e-feedbacks.md
-    └── _modelo-curso.md       ← template para adicionar um curso novo
+├── app/                  ← páginas e Route Handlers (Next.js App Router)
+│   ├── api/              ← /api/health, /api/sections, /api/courses, /api/search
+│   ├── busca/            ← página de busca
+│   ├── checklist/        ← checklist da primeira semana
+│   ├── cursos/           ← listagem e fichas por curso
+│   ├── faq/              ← perguntas frequentes
+│   └── secoes/[slug]/    ← seções de conteúdo (coordenações, RU, links…)
+├── components/           ← Header, Footer, SearchInput, Badge…
+├── lib/
+│   └── content.ts        ← loader de Markdown: slug → docs/*.md
+├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
+│   ├── cursos/           ← fichas por curso (13 cursos do CTC)
+│   ├── arquitetura.md    ← decisões técnicas e ADRs
+│   ├── identidade-visual.md
+│   ├── product-backlog.md
+│   └── SPRINT.md         ← sprint atual e histórico
+└── .claude/              ← equipe de agentes, skills e comandos Scrum
 ```
 
-Sempre que uma informação ainda **não foi confirmada com fonte oficial**, ela
-aparece marcada como `_A preencher_` com uma nota de onde buscar. Isso é
-proposital: preferimos um campo em branco a um telefone errado.
+## Conteúdo (`docs/`)
 
----
+| Seção | O que você encontra | Arquivo |
+|-------|---------------------|---------|
+| 🏛️ Coordenações | E-mail, telefone, sala e horário das coordenações do CTC | [`coordenacoes.md`](docs/coordenacoes.md) |
+| 🍽️ Carteira do RU | Como se cadastrar e usar o Restaurante Universitário | [`carteira-ru.md`](docs/carteira-ru.md) |
+| 🔗 Links importantes | CAGR, Moodle, e-mail, eduroam, PRAE | [`links-importantes.md`](docs/links-importantes.md) |
+| 📅 Datas importantes | Calendário acadêmico 2026 completo | [`datas-importantes.md`](docs/datas-importantes.md) |
+| 🎉 Atléticas e festas | Atléticas de cada curso, festas tradicionais | [`atleticas-e-festas.md`](docs/atleticas-e-festas.md) |
+| 📸 Instagrams e perfis | Perfis oficiais e estudantis para seguir | [`instagrams.md`](docs/instagrams.md) |
+| 🗺️ Mapa da universidade | Prédios, RU, BU, coordenações no campus | [`mapa.md`](docs/mapa.md) |
+| 💬 Histórias e feedbacks | Relatos de veteranos e como enviar o seu | [`historias-e-feedbacks.md`](docs/historias-e-feedbacks.md) |
+| ❓ FAQ | Perguntas frequentes dos calouros | [`faq.md`](docs/faq.md) |
+| ✅ Checklist | O que fazer na primeira semana | [`checklist-primeira-semana.md`](docs/checklist-primeira-semana.md) |
 
-## O portal como aplicação (visão de produto)
+Cada curso do CTC tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
 
-O portal vai evoluir de repositório de Markdown para uma **aplicação web
-React + Python**. O detalhamento técnico está em **[docs/arquitetura.md](docs/arquitetura.md)**
-e a proposta de marca em **[docs/identidade-visual.md](docs/identidade-visual.md)**.
+## Equipe de Agentes
 
-### Resumo da arquitetura
+Este projeto é construído e mantido por uma equipe de subagentes do Claude Code seguindo um processo Scrum leve.
 
-- **Frontend:** React + Vite + TypeScript + Tailwind CSS — hospedado na **Vercel**.
-- **Backend:** Python + **FastAPI** — hospedado no **Render**. É uma **API que serve
-  o conteúdo** ao React.
-- **Conteúdo híbrido, fonte única:** o institucional (coordenações, RU, links, datas)
-  fica em **um só lugar** — os Markdown de **`docs/`** (contribuição por Pull Request);
-  você edita **um arquivo** e o site atualiza. O backend lê e serve como JSON. Dados
-  **dinâmicos** (histórias, feedback e, no futuro, comentários/avaliações) ficam em
-  **banco** (SQLite → PostgreSQL).
+| Agente | Papel |
+|--------|-------|
+| `scrum-master` | Coordena a equipe e conduz rituais Scrum — sprint planning, run e review |
+| `product-owner` | Mantém o backlog priorizado e define critérios de aceite |
+| `architect` | Decisões técnicas de design — estrutura, escolha de libs, ADRs |
+| `frontend-dev` | Implementa e modifica UI — páginas Next.js, componentes, Tailwind |
+| `backend-dev` | Lógica server-side — Route Handlers, loader de Markdown, schemas |
+| `content-editor` | Cria e revisa conteúdo em `docs/*.md` com fontes verificadas |
+| `tester` | Roda `npm run lint` + `npm run build` e reporta pass/fail |
+| `debugger` | Investiga e corrige falhas de build, tipo e lint |
+| `ui-ux-designer` | Decisões de design visual, paleta, tipografia, acessibilidade |
 
-```
-Calouro ──HTTPS──> React (Vercel) ──JSON──> FastAPI (Render)
-                                              ├── docs/*.md (institucional, fonte única)
-                                              └── banco (dinâmico, v1.1+)
-```
+**Slash commands disponíveis:**
 
-**Não oficial:** rodapé fixo em toda página — *"Projeto independente feito por
-estudantes. Não é um site oficial da UFSC."* Ver [arquitetura](docs/arquitetura.md)
-e [identidade](docs/identidade-visual.md).
+| Comando | O que faz |
+|---------|-----------|
+| `/sprint-plan` | Grooming do backlog e planejamento do próximo sprint em `docs/SPRINT.md` |
+| `/sprint-run` | Executa o sprint planejado despachando subagentes em ordem de dependência |
+| `/sprint-review` | Fecha o sprint: lint/build/ui-ux-review, atualiza backlog e README |
+| `/sprint-cycle` | Ciclo completo: plan → (confirmação) → run → review |
+| `/standup` | Check de progresso/bloqueios (read-only) |
 
----
-
-## Rodar localmente
-
-O projeto agora é um monorepo com `backend/` (FastAPI) e `frontend/` (Vite/React).
-
-```bash
-# Backend (Python 3.11+)
-cd backend
-python -m venv .venv
-.venv\Scripts\Activate.ps1   # Linux/macOS: source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-uvicorn app.main:app --reload --port 8000
-
-# Frontend (Node 20+)
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-```
-
-- Backend: <http://localhost:8000> (docs interativas em `/docs`)
-- Frontend: <http://localhost:5173>
+Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](docs/SPRINT.md) para o trabalho atual.
 
 ## Roadmap
 
-- [x] **v0 — Estrutura:** esqueleto de docs por tema + modelo de curso.
-- [x] **v0.1 — Conteúdo CTC:** coordenações, RU, links e datas preenchidos com fontes oficiais (jul/2026).
-- [x] **v0.5 — Arquitetura:** definição React + Python e identidade visual.
-- [x] **v0.6 — Plataforma (fundação):** backend FastAPI + frontend Vite/React entregues no Sprint 1 (jul/2026).
-- [x] **v0.7 — Busca + fichas + polimento:** UI de busca, 13 fichas do CTC e dark mode entregues no Sprint 2 (jul/2026).
-- [x] **v0.8 — Deploy configs + CI + testes:** configs Vercel/Render, link-checker (lychee) e suite pytest entregues no Sprint 3 (jul/2026).
-- [x] **v0.9 — Conteúdo pesado:** calendário 2026 completo, 9 atléticas do CTC, festas tradicionais e Instagrams oficiais entregues no Sprint 4 (jul/2026).
-- [ ] **v1.0 — Deploy real + comunidade:** publicar o portal na Vercel/Render e abrir canal de contribuição para dicas de veterano.
-- [ ] **v1.1 — Dinâmico:** mapa interativo + formulário de histórias/feedback.
-- [ ] **Futuro:** avaliação de professores, simulador de grade (tipo MatrUFSC), blog, comentários, monetização por divulgação.
-- [ ] **v2 — Outros centros:** replicar a estrutura para CSE, CCS, CFH, etc.
+- [x] **v0–v0.5** — Conteúdo do CTC, arquitetura e identidade visual definidos
+- [x] **v0.6** — Fundação: Next.js 15 App Router + loader de Markdown + API routes (Sprint 1)
+- [x] **v0.7** — Busca, 13 fichas de curso, dark mode (Sprint 2)
+- [x] **v0.8** — Deploy Vercel, CI link-checker (Sprint 3)
+- [x] **v0.9** — Calendário 2026, atléticas, Instagrams, fichas enriquecidas (Sprint 4)
+- [x] **v1.0** — eduroam, templates de issue/PR, canal de histórias (Sprint 5)
+- [x] **v1.1** — Data de verificação, CODEOWNERS, rotina semestral (Sprint 6)
+- [x] **v1.2** — Migração para Next.js 15 App Router full-stack na Vercel (Sprint 7)
+- [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
+- [ ] **v1.4** — Banco de dados (Prisma), formulário de histórias, mapa interativo, acessibilidade WCAG AA
+- [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
+- [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
 
 ## Como contribuir
 
@@ -159,11 +136,10 @@ página da UFSC). Sem fonte, o campo fica em branco.
 2. **Fonte oficial sempre que possível** — link para a página da UFSC/coordenação.
 3. **Linguagem de quem está chegando** — sem jargão, explicando as siglas.
 4. **Mobile-first** — o calouro vai ler isso no celular, na fila do RU.
-5. **Fácil de manter** — Markdown simples, um tema por arquivo.
+5. **Fácil de manter** — Markdown simples, fonte única em `docs/`.
 
 ## Licença
 
-Conteúdo sob [Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-BR)
-(sugerido — confirmar antes de publicar). Este é um projeto **não oficial**, feito
-por estudantes, sem vínculo formal com a administração da UFSC. Informações
-oficiais devem sempre ser confirmadas nos canais da universidade.
+Conteúdo sob [Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-BR).
+Projeto **não oficial**, feito por estudantes, sem vínculo com a administração da UFSC.
+Informações oficiais devem sempre ser confirmadas nos canais da universidade.

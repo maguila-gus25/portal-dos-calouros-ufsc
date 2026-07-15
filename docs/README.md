@@ -9,6 +9,7 @@ Comece pelo tema que te interessa:
 - 🔗 [Links importantes](links-importantes.md) — CAGR, Moodle, e-mail, PRAE, biblioteca
 - 🗺️ [Mapa da universidade](mapa.md) — onde fica cada prédio
 - 📅 [Datas importantes](datas-importantes.md) — matrícula, aulas, trancamento, recesso
+- ❓ [FAQ — Perguntas frequentes](faq.md) — as dúvidas mais comuns dos calouros do CTC
 
 ## Vida universitária
 - 🎉 [Atléticas e festas](atleticas-e-festas.md) — por curso
