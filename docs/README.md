@@ -40,6 +40,7 @@ Cada curso tem uma ficha própria (coordenação, atlética, vida do curso, dica
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
 - 🎨 [Identidade Visual](identidade-visual.md) — marca de estudantes (não oficial)
 - 📋 [Product Backlog](product-backlog.md) — épicos, histórias e prioridades
+- 🚀 [Deploy](deploy.md) — publicar na Vercel (frontend) + Render (backend)
 
 > Voltar para a [visão geral do projeto](../README.md).
 
