@@ -18,6 +18,17 @@ uvicorn app.main:app --reload --port 8000
 
 Docs interativas: <http://localhost:8000/docs>
 
+## Testes
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+Cobertura atual: healthcheck, listagem e leitura de seções (com validação da
+fonte única), listagem e leitura de cursos, e busca (`/api/search`). Rodar
+antes de cada PR.
+
 ## Endpoints
 
 | Método | Rota | Descrição |
