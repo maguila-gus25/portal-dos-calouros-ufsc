@@ -11,6 +11,7 @@ coordenacao:
   site: https://arquitetura.paginas.ufsc.br/
 atletica: ATARQ — @atarq.ufsc
 instagram_curso: "@arqurb.ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Arquitetura e Urbanismo

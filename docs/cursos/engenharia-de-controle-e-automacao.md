@@ -11,6 +11,7 @@ coordenacao:
   site: https://automacao.ufsc.br/
 atletica: ATACA — @atacaufsc
 instagram_curso: "@ecaufscfloripa"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia de Controle e Automação

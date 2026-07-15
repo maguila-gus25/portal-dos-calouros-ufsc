@@ -12,6 +12,7 @@ coordenacao:
   site: https://producao.ufsc.br/
 atletica: A7 (Atlética Edvaldo de Souza) — @a7atletica
 instagram_curso: _A preencher_
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia de Produção

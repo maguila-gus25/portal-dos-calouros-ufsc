@@ -11,6 +11,7 @@ coordenacao:
   site: https://ens.ufsc.br/
 atletica: AESA — @aesaufsc
 instagram_curso: "@ens_ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia Sanitária e Ambiental

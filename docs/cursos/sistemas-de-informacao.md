@@ -11,6 +11,7 @@ coordenacao:
   site: https://sin.ufsc.br/
 atletica: A5 — @a5ufsc
 instagram_curso: _A preencher_
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Sistemas de Informação

@@ -112,3 +112,7 @@ Não confie em datas de terceiros — confira sempre a fonte.
 
 Assim que sair o calendário, **jogue essas datas no seu Google Calendar** com
 lembrete alguns dias antes. Um prazo perdido custa um semestre.
+
+---
+
+_Última verificação: julho/2026 (base: Res. Normativa 214/2025/CUn) · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

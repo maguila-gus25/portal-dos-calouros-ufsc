@@ -11,6 +11,7 @@ coordenacao:
   site: https://cenq.paginas.ufsc.br/
 atletica: ATEQA — @ateqaufsc
 instagram_curso: "@caleqa_ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia Química

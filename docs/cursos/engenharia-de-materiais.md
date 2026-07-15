@@ -11,6 +11,7 @@ coordenacao:
   site: https://materiais.grad.ufsc.br/
 atletica: ATM UFSC — @atmufsc
 instagram_curso: _A preencher_
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia de Materiais

@@ -11,6 +11,7 @@ coordenacao:
   site: https://ecv.grad.ufsc.br/
 atletica: ATEC — @atecufsc
 instagram_curso: "@calec.ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia Civil

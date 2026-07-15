@@ -59,3 +59,7 @@ desde 2014.
 
 > **Trote e festas são opcionais.** Participe do que te fizer bem e respeite
 > seus limites. Não existe "obrigação de ir".
+
+---
+
+_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

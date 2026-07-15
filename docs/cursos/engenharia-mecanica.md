@@ -12,6 +12,7 @@ coordenacao:
   site: https://engenhariamecanica.paginas.ufsc.br/
 atletica: ATM UFSC — @atmufsc
 instagram_curso: "@emc.ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia Mecânica

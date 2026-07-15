@@ -11,6 +11,7 @@ coordenacao:
   site: https://geltro.ufsc.br/
 atletica: Ateel — @ateelufsc
 instagram_curso: _A preencher_
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia Eletrônica

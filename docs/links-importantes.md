@@ -101,3 +101,7 @@ Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e config
 
 > Achou um link quebrado ou desatualizado? Abra um Pull Request. Veja
 > [como contribuir](../CONTRIBUTING.md).
+
+---
+
+_Última verificação: julho/2026 · [Reportar link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)_

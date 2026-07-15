@@ -11,6 +11,7 @@ coordenacao:
   site: https://engalimentos.grad.ufsc.br/
 atletica: ATEQA — @ateqaufsc
 instagram_curso: "@eng_ali_ufsc"
+ultima_verificacao: "julho/2026"
 ---
 
 # 📄 Engenharia de Alimentos

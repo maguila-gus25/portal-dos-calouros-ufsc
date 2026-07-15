@@ -8,7 +8,7 @@ diferente. É o coração humano do portal.
 
 A forma mais simples é abrir uma **issue no repositório** — sem precisar saber Git:
 
-**[→ Clique aqui para enviar sua história](https://github.com/gustavohramos/portal-dos-calouros-ufsc/issues/new?template=historia-veterano.yml)**
+**[→ Clique aqui para enviar sua história](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=historia-veterano.yml)**
 
 O formulário pede: título, curso/ano, texto do relato e — opcionalmente — como assinar.
 Você pode usar seu nome, um apelido ou ficar **anônimo**. A equipe inclui o relato
@@ -43,8 +43,8 @@ Copie o bloco abaixo para adicionar a sua:
 ## Feedback sobre o próprio portal
 
 Achou algo errado, faltando ou confuso no portal? Conta pra gente:
-- **[Conteúdo errado / desatualizado](https://github.com/gustavohramos/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)** — correção com fonte oficial
-- **[Link quebrado](https://github.com/gustavohramos/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)** — URL que não abre mais
-- **[Sugestão](https://github.com/gustavohramos/portal-dos-calouros-ufsc/issues/new?template=sugestao.yml)** — nova seção, funcionalidade ou melhoria
+- **[Conteúdo errado / desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)** — correção com fonte oficial
+- **[Link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)** — URL que não abre mais
+- **[Sugestão](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=sugestao.yml)** — nova seção, funcionalidade ou melhoria
 
 Feedback de calouro é o que mantém este projeto útil.
