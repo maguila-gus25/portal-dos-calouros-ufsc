@@ -71,7 +71,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-11 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. 9 atléticas do CTC + festas tradicionais preenchidas. |
 | B-12 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. PRAE/RU/CTC/PROAFE + CAs confirmados. |
-| B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. |
+| B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. Bloqueado: nenhuma submissão real via `historia-veterano.yml` confirmada ainda; não entra no sprint sem ao menos 2 histórias reais aprovadas via PR. |
 | B-14 | 🟡 Could | 🟡 M | ✅ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. Issue template `historia-veterano.yml` criado; link direto em `historias-e-feedbacks.md` e `CONTRIBUTING.md`. |
 
 ### E4 — Site/web app (substituído pela plataforma React + Python — ver E8)
@@ -84,7 +84,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-15 | 🟠 Should | 🔴 G | ✅ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. Coberto pela plataforma React (E8 / B-32 + B-33). |
 | B-17 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. Coberto por B-34 (UI de busca + `/api/search`). |
-| B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor**. Implementar com Leaflet.js ou Google Maps Embed API (pré-requisito: B-50 não necessário). |
+| B-19 | 🟡 Could | 🟡 M | ✅ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor**. `app/mapa/page.tsx` + `components/MapView.tsx` (Leaflet.js, SSR-safe via dynamic import); 7 marcadores com legenda flutuante; tile layer OpenStreetMap; URL canônica `/mapa`. |
 
 ### E8 — Plataforma Next.js 15
 
@@ -109,8 +109,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-46 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **atualizar CLAUDE.md e arquitetura.md para Next.js 15**, para **manter a documentação técnica fiel ao código real**. CLAUDE.md reescrito; arquitetura.md com diagrama, tabela de stack, estrutura de pastas e ADR-8 atualizados. |
 | B-47 | 🟠 Should | 🟡 M | ✅ | Como **calouro que busca no Google**, quero **o portal bem indexado** (meta tags dinâmicas, OG image, `sitemap.xml`, `robots.txt`), para **encontrar a informação fácil**. `app/sitemap.ts`, `app/robots.ts` criados; `generateMetadata` com `description` + `openGraph` em todas as páginas. |
 | B-48 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **instalar o portal no celular como app** (PWA — `manifest.json`, ícone 192/512, `theme-color`), para **acessar offline e sem abrir o navegador**. |
-| B-49 | 🟠 Should | 🟡 M | ⬜ | Como **calouro com deficiência visual**, quero **navegar o portal com leitor de tela e teclado** (audit WCAG AA — contrastes, alt texts, focus rings, landmarks), para **ter acesso igualitário**. |
-| B-50 | 🟠 Should | 🔴 G | ⬜ | Como **mantenedor**, quero **banco de dados no Next.js** (Prisma + SQLite em dev → Postgres em prod), para **persistir histórias, feedback e future features dinâmicas** (pré-requisito de B-37). |
+| B-49 | 🟠 Should | 🟡 M | ✅ | Como **calouro com deficiência visual**, quero **navegar o portal com leitor de tela e teclado** (audit WCAG AA — contrastes, alt texts, focus rings, landmarks), para **ter acesso igualitário**. `ink.secondary` → `#4B5563` (7.6:1); `brand.blueButton` → `#1565C0` para botões; skip link; foco visível; text-shadow no hero; badge info color; aria-hidden/aria-label em componentes. |
+| B-50 | 🟠 Should | 🔴 G | ⬜ | Como **mantenedor**, quero **banco de dados no Next.js** (Prisma + SQLite em dev → Postgres em prod), para **persistir histórias, feedback e future features dinâmicas** (pré-requisito de B-37). Aguarda co-planejamento com B-37 + E13 (auth + moderação) no mesmo sprint para ter caso de uso visível ao calouro. |
 | B-51 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. |
 
 ### E9 — Avaliação de professores (futuro)
@@ -169,7 +169,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-24 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. Workflow lychee em PR + schedule semanal. |
 | B-25 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. Rodapé `_Última verificação: julho/2026_` nos 8 docs de conteúdo; campo `ultima_verificacao` no frontmatter das 13 fichas de curso. |
 | B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
-| B-54 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. Roda em `ubuntu-latest` no GitHub Actions. |
+| B-54 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. `playwright.config.ts` + `e2e/smoke.spec.ts` (8 testes, 8/8 passed); `.github/workflows/e2e.yml` (push + PR → main, chromium, artifacts). |
 | B-55 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. |
 
 ### E7 — Expansão para outros centros
@@ -204,21 +204,36 @@ de Vite/React + FastAPI (Render) para **Next.js 15 App Router full-stack** na Ve
 B-52 (FAQ 16 perguntas + página /faq), B-53 (checklist da 1ª semana + página /checklist).
 Fix de task list items no prose-content (CSS).
 
-**Próximo sprint (v1.4) — proposta:**
+**Sprint 9 — Acessível, Navegável e Testado (v1.4) — proposta:**
 
-1. **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
-   e de qualquer feature dinâmica futura).
-2. **B-13** — publicar primeiras histórias de veteranos (coletar via issues já abertas
-   com o template `historia-veterano.yml`).
-3. **B-19** — mapa interativo com marcadores (Leaflet.js — RU, BU, prédios).
-4. **B-49** — audit e correções de acessibilidade WCAG AA.
+1. **B-49** — audit e correções de acessibilidade WCAG AA (contrastes, foco, aria-labels,
+   landmarks) — Should, M. Sem dependências; 37 páginas SSG publicadas tornam este o
+   momento ideal antes de adicionar mais páginas dinâmicas.
+2. **B-19** — mapa interativo com marcadores (Leaflet.js — RU, BU, prédios CTC) —
+   Could, M. Sem dependências; conteúdo-fonte já existe em `docs/mapa.md`; valor direto
+   para o calouro no celular na fila do RU.
+3. **B-54** — testes E2E com Playwright no CI (home, busca, seção, curso) — Should, M.
+   Sem dependências; protege regressões com o pipeline que agora cobre 37 páginas SSG.
+
+> Itens excluídos desta proposta e motivo:
+> - **B-50** (banco de dados, Prisma): pré-requisito técnico de B-37, mas B-37 depende
+>   também de E13 (auth + moderação). Entregar só o Prisma sem caso de uso visível ao
+>   calouro não agrega valor de produto. Mantido no Radar até B-37 e E13 serem
+>   co-planejados no mesmo sprint.
+> - **B-13** (histórias de veteranos): bloqueado por conteúdo externo — nenhuma submissão
+>   real confirmada via issue template `historia-veterano.yml`. Inventar dados viola a
+>   regra "Confiável antes de completo". Permanece A fazer até haver ao menos 2 histórias
+>   reais aprovadas via PR/issue.
 
 **Radar (v1.5):**
 
-- **B-37** — formulário de envio de histórias/feedback no site (depende de B-50).
-- **B-54** — testes E2E com Playwright no CI.
-- **B-48** — PWA instalável no celular.
-- **B-51** — analytics de privacidade (Vercel Analytics).
+- **B-48** — PWA instalável no celular (Could, P — sem dependências).
+- **B-51** — analytics de privacidade: Vercel Analytics (Could, P — sem dependências).
+- **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
+  e de qualquer feature dinâmica futura). Entrar no radar somente quando B-37 + E13
+  forem planejados juntos.
+- **B-13** — primeiras histórias de veteranos (desbloqueado assim que houver submissões
+  reais via `historia-veterano.yml`).
 
 **Horizonte (v2.0):**
 

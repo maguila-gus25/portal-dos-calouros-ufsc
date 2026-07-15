@@ -48,6 +48,7 @@ portal-dos-calouros-ufsc/
 │   ├── checklist/        ← checklist da primeira semana
 │   ├── cursos/           ← listagem e fichas por curso
 │   ├── faq/              ← perguntas frequentes
+│   ├── mapa/             ← mapa interativo do campus (Leaflet.js)
 │   └── secoes/[slug]/    ← seções de conteúdo (coordenações, RU, links…)
 ├── components/           ← Header, Footer, SearchInput, Badge…
 ├── lib/
@@ -71,7 +72,7 @@ portal-dos-calouros-ufsc/
 | 📅 Datas importantes | Calendário acadêmico 2026 completo | [`datas-importantes.md`](docs/datas-importantes.md) |
 | 🎉 Atléticas e festas | Atléticas de cada curso, festas tradicionais | [`atleticas-e-festas.md`](docs/atleticas-e-festas.md) |
 | 📸 Instagrams e perfis | Perfis oficiais e estudantis para seguir | [`instagrams.md`](docs/instagrams.md) |
-| 🗺️ Mapa da universidade | Prédios, RU, BU, coordenações no campus | [`mapa.md`](docs/mapa.md) |
+| 🗺️ Mapa da universidade | Mapa interativo com marcadores do campus (Leaflet.js) | [`mapa.md`](docs/mapa.md) |
 | 💬 Histórias e feedbacks | Relatos de veteranos e como enviar o seu | [`historias-e-feedbacks.md`](docs/historias-e-feedbacks.md) |
 | ❓ FAQ | Perguntas frequentes dos calouros | [`faq.md`](docs/faq.md) |
 | ✅ Checklist | O que fazer na primeira semana | [`checklist-primeira-semana.md`](docs/checklist-primeira-semana.md) |
@@ -117,7 +118,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.1** — Data de verificação, CODEOWNERS, rotina semestral (Sprint 6)
 - [x] **v1.2** — Migração para Next.js 15 App Router full-stack na Vercel (Sprint 7)
 - [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
-- [ ] **v1.4** — Banco de dados (Prisma), formulário de histórias, mapa interativo, acessibilidade WCAG AA
+- [x] **v1.4** — Acessibilidade WCAG AA, mapa interativo (Leaflet.js), testes E2E Playwright no CI (Sprint 9)
+- [ ] **v1.5** — Banco de dados (Prisma), formulário de histórias, Lighthouse CI, PWA
 - [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
 - [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
 

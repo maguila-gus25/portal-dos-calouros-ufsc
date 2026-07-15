@@ -9,6 +9,7 @@ const config: Config = {
         brand: {
           blue: "#1877F2",
           blueHover: "#166FE5",
+          blueButton: "#1565C0",
           green: "#42B72A",
           violet: "#7C3AED",
           violetHover: "#6D28D9",
@@ -24,7 +25,7 @@ const config: Config = {
         },
         ink: {
           primary: "#111827",
-          secondary: "#6B7280",
+          secondary: "#4B5563",
           alert: "#B45309",
         },
       },

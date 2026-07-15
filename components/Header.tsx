@@ -26,7 +26,7 @@ export function Header() {
           placeholder="Buscar…"
         />
 
-        <nav className="order-2 sm:order-3 ml-auto flex items-center gap-2 sm:gap-4">
+        <nav aria-label="Navegação principal" className="order-2 sm:order-3 ml-auto flex items-center gap-2 sm:gap-4">
           <NavLinks />
           <ThemeToggle />
         </nav>

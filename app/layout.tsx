@@ -21,10 +21,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-blue focus:text-white focus:font-semibold focus:shadow-lg"
+        >
+          Pular para o conteúdo
+        </a>
         <Providers>
           <div className="min-h-screen flex flex-col bg-bg-app text-ink-primary">
             <Header />
-            <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-6">
+            <main id="main-content" className="flex-1 mx-auto w-full max-w-6xl px-4 py-6">
               {children}
             </main>
             <Footer />

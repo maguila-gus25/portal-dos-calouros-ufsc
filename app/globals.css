@@ -65,7 +65,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-4 py-2 text-sm font-semibold text-white transition-all duration-150 hover:bg-brand-blueHover hover:shadow-md focus-visible:outline-brand-blue;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blueButton px-4 py-2 text-sm font-semibold text-white transition-all duration-150 hover:bg-[#0D47A1] hover:shadow-md focus-visible:outline-brand-blue;
   }
 
   .section-icon-wrapper {

@@ -32,6 +32,13 @@ const SECTION_COLORS: Record<string, string> = {
   checklist: "icon-green",
 };
 
+// Seções com páginas dedicadas (URL canônica diferente de /secoes/<slug>)
+const SECTION_DEDICATED_ROUTES: Record<string, string> = {
+  faq: "/faq",
+  checklist: "/checklist",
+  mapa: "/mapa",
+};
+
 export default function Home() {
   const sections = listSections();
 
@@ -57,7 +64,7 @@ export default function Home() {
             <br />
             <span className="text-blue-200">para começar na UFSC</span>
           </h1>
-          <p className="text-white/75 mt-4 text-base max-w-md mx-auto leading-relaxed">
+          <p className="text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.35)] mt-4 text-base max-w-md mx-auto leading-relaxed">
             Guia feito por estudantes, sem complicação. Não é oficial, mas é feito com carinho pra você.
           </p>
           <div className="mt-7 max-w-md mx-auto hero-search">
@@ -87,11 +94,12 @@ export default function Home() {
 function SectionCard({ section }: { section: SectionSummary }) {
   const Icon = SECTION_ICONS[section.slug] ?? BookOpen;
   const colorClass = SECTION_COLORS[section.slug] ?? "icon-blue";
+  const href = SECTION_DEDICATED_ROUTES[section.slug] ?? `/secoes/${section.slug}`;
 
   return (
     <li>
       <Link
-        href={`/secoes/${section.slug}`}
+        href={href}
         className="card p-5 flex flex-col gap-3 no-underline hover:border-brand-blue hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-150 group h-full"
       >
         <div className={`section-icon-wrapper ${colorClass}`}>

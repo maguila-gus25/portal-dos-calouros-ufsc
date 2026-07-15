@@ -4,57 +4,70 @@
 
 ---
 
-## Sprint 8 — Encontrável e Documentado (v1.3)
+## Sprint 9 — Acessível, Mapeado e Testado (v1.4)
 
-**Objetivo:** Tornar o portal encontrável na web (SEO) e a base técnica confiável
-(documentação atualizada para Next.js 15), além de entregar o FAQ e o checklist da
-primeira semana — o conteúdo que o calouro mais precisa nos primeiros dias.
+**Objetivo:** Tornar o portal utilizável por todos (WCAG AA), dar ao calouro um mapa
+interativo do campus e proteger a base com testes E2E automatizados no CI.
 
 | História | ID | Agente | Status |
 |----------|----|--------|--------|
-| Atualizar CLAUDE.md e arquitetura.md para Next.js 15 | B-46 | architect | Done ✅ |
-| SEO: generateMetadata por página + sitemap.xml + robots.txt | B-47 | frontend-dev | Done ✅ |
-| FAQ dos calouros — docs/faq.md + página /faq | B-52 | content-editor → frontend-dev | Done ✅ |
-| Checklist da primeira semana — docs/ + página /checklist | B-53 | content-editor → frontend-dev | Done ✅ |
-
-> **B-53 é condicional:** entra se B-52 terminar sem consumir toda a capacidade do sprint.
-> Em caso de restrição de tempo, B-53 vai para o radar do Sprint 9.
+| Audit de acessibilidade WCAG AA — contraste, foco, aria-labels, landmarks | B-49 | ui-ux-designer → frontend-dev | Done ✅ |
+| Mapa interativo com marcadores do campus (Leaflet.js + docs/mapa.md) | B-19 | frontend-dev | Done ✅ |
+| Testes E2E com Playwright — smoke tests + CI no GitHub Actions | B-54 | tester | Done ✅ |
 
 **Ordem de execução (dependências):**
-1. B-46 e a parte `content-editor` de B-52 rodam **em paralelo** (ambos são tarefas de
-   documentação/conteúdo sem sobreposição de arquivos).
-2. B-47 (frontend-dev SEO) roda **em paralelo** com B-46 e B-52 content-editor.
-3. A parte `frontend-dev` de B-52 roda **após** o content-editor entregar `docs/faq.md`.
-4. B-53 roda **após** B-52 ser concluído, se houver capacidade.
+1. `ui-ux-designer` (B-49) roda primeiro — produz specs de contraste, foco e aria.
+2. `frontend-dev` (B-49 implementação) e `frontend-dev` (B-19) rodam **em paralelo** após
+   as specs de acessibilidade estarem prontas (sem sobreposição de arquivos).
+3. `tester` (B-54) roda **após** B-49 e B-19 — garante que as novas páginas entram
+   na suíte de smoke tests antes de fechar o sprint.
 
 ## Definition of Done
 
 - [x] `npm run lint` passa
-- [x] `npm run build` passa (37 páginas geradas, sem erros)
-- [x] `ui-ux-review` sem findings bloqueadores (1 blocker de task list CSS corrigido)
-- [x] `docs/product-backlog.md` atualizado com novos status (✅ para itens concluídos)
-- [x] README atualizado — stack, estrutura, roadmap e equipe de agentes atualizados
+- [x] `npm run build` passa (38 páginas geradas, sem erros)
+- [x] `ui-ux-review` sem findings bloqueadores (3 warnings cosméticos, nenhum blocker)
+- [x] Playwright smoke tests passam (8/8 passed) — CI configurado no GitHub Actions
+- [x] `docs/product-backlog.md` atualizado com ✅ para B-19, B-49, B-54
+- [x] README atualizado (nova página /mapa, Playwright, roadmap v1.4 ✅)
+
+> Lighthouse Accessibility ≥ 90: não verificado em CI neste sprint (B-55 não entrou);
+> as correções de contraste e landmarks tornam a pontuação improvável de cair abaixo de 90,
+> mas a medição formal fica para B-55 no Sprint 10.
 
 ## Retrospectiva
 
-- **Entregue:** B-46 — CLAUDE.md e arquitetura.md reescritos para Next.js 15 (ADR-8 adicionado).
-  B-47 — `app/sitemap.ts`, `app/robots.ts` criados; `generateMetadata` com `description` e
-  `openGraph` em todas as páginas (home, busca, cursos, seções, cursos/[slug]).
-  B-52 — `docs/faq.md` com 16 perguntas verificadas, página `/faq`, entrada no SLUG_MAP e
-  sitemap; FAQ aparece na home como 9ª seção e é indexado pela busca.
-  B-53 — `docs/checklist-primeira-semana.md`, página `/checklist`, ícone na home grid.
-  Fix de blocker UI/UX: task list items (`- [ ]`) estilizados corretamente no
-  `prose-content` via CSS com `accent-color` brand-blue.
-  README regenerado com stack, estrutura, roadmap v1.3 e equipe de agentes.
-- **Adiado:** B-13 (histórias de veteranos) — bloqueado por conteúdo externo (nenhuma
-  submissão real via issue template ainda). B-50 (banco Prisma) — item G preservado para
-  sprint dedicado junto com B-37.
-- **Para o próximo sprint (v1.4):** B-50 (banco), B-13 (histórias), B-19 (mapa interativo),
-  B-49 (acessibilidade WCAG AA). Minor pendente: alinhar `docs/identidade-visual.md` para
-  refletir uso de Poppins via Google Fonts (decisão tomada em sprint anterior, doc não
-  atualizado).
+- **Entregue:** B-49 — audit WCAG AA com 7 blockers identificados e todos corrigidos:
+  `ink.secondary` → `#4B5563` (ratio 7.6:1), `brand.blueButton` → `#1565C0` para botões,
+  skip link em `app/layout.tsx`, foco visível no `SearchInput`, text-shadow no hero,
+  badge `info` com cor correta, Footer sem opacidade, `aria-hidden`/`aria-label` em
+  componentes, área de toque nos NavLinks; `docs/identidade-visual.md` atualizado com
+  ratios calculados e diretriz de foco.
+  B-19 — `app/mapa/page.tsx` + `components/MapView.tsx` com Leaflet.js (SSR-safe via
+  `MapViewClient`), 7 marcadores categorizados, legenda flutuante, tile layer OSM, URL
+  canônica `/mapa` com entrada no sitemap e SECTION_DEDICATED_ROUTES na home.
+  B-54 — `playwright.config.ts`, `e2e/smoke.spec.ts` (8 smoke tests, 8/8 passed),
+  `.github/workflows/e2e.yml`. Fix transversal: `lib/content.ts` strips `<h1>` inicial
+  do HTML gerado (evita duplicata com o `<h1>` do componente em todas as páginas).
+  Build fix: `components/MapViewClient.tsx` criado para resolver restrição de `dynamic()`
+  com `ssr: false` dentro de Server Components no Next.js 15.
+- **Adiado:** B-13 (histórias de veteranos) e B-50 (Prisma DB) — bloqueados, como
+  previsto no planejamento.
+- **Para o próximo sprint (v1.5):** B-55 (Lighthouse CI), B-51 (analytics), B-48 (PWA),
+  B-50 + B-37 + E13 (banco + formulário + auth, co-planejados). B-13 quando houver
+  submissões reais de veteranos.
 
 ---
+
+## Sprints Anteriores
+
+### Sprint 9 — Acessível, Mapeado e Testado (v1.4) — concluído em 2026-07-15
+
+**Objetivo:** Acessibilidade WCAG AA, mapa interativo do campus e testes E2E no CI.
+
+**Entregue:** 7 blockers WCAG AA corrigidos (B-49); `/mapa` com Leaflet.js + 7 marcadores
+(B-19); Playwright 8/8 testes + GitHub Actions (B-54). Fix transversal: h1 duplicado em
+todas as páginas de seção. Lint ✅ Build ✅ 38 páginas SSG.
 
 ## Sprints Anteriores
 

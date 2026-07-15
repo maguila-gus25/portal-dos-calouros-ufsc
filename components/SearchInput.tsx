@@ -32,7 +32,7 @@ export function SearchInput({ initialQuery = "", className = "", placeholder = "
         value={value}
         onChange={(e) => setValue(e.target.value)}
         minLength={2}
-        className="w-full rounded-full bg-bg-app border border-transparent focus:border-brand-blue focus:bg-surface pl-8 pr-4 py-1.5 text-sm text-ink-primary placeholder-ink-secondary outline-none transition-colors duration-150"
+        className="w-full rounded-full bg-bg-app border border-transparent focus:border-brand-blue focus:bg-surface pl-8 pr-4 py-1.5 text-sm text-ink-primary placeholder-ink-secondary transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
       />
     </form>
   );

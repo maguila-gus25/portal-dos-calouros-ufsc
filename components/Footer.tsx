@@ -21,7 +21,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <p className="text-xs mt-4 text-ink-secondary/70">
+        <p className="text-xs mt-4 text-ink-secondary">
           © {year} Portal dos Calouros UFSC — Conteúdo aberto e mantido pela comunidade estudantil.
         </p>
       </div>

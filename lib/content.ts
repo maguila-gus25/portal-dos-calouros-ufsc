@@ -58,7 +58,9 @@ const SLUG_MAP: Record<string, { file: string; title: string; description: strin
 };
 
 function renderMd(md: string): string {
-  return marked(md, { async: false }) as string;
+  const html = marked(md, { async: false }) as string;
+  // Strip the leading <h1> — page components render section.title as <h1> already
+  return html.replace(/^<h1[^>]*>[\s\S]*?<\/h1>\s*/i, "");
 }
 
 export function listSections(): SectionSummary[] {

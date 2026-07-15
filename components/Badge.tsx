@@ -4,7 +4,7 @@ type Variant = "default" | "info" | "success" | "warn";
 
 const variantClass: Record<Variant, string> = {
   default: "bg-bg-app text-ink-secondary",
-  info: "bg-brand-blue/10 text-brand-blue",
+  info: "bg-brand-blue/10 text-brand-blueButton",
   success: "bg-brand-green/10 text-brand-green",
   warn: "bg-ink-alert/10 text-ink-alert",
 };
