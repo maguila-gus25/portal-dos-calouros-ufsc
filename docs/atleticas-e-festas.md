@@ -15,7 +15,7 @@ a forma mais rápida de entrar na vida universitária.
 | Ciências da Computação · Sistemas de Informação | **A5** | [@a5ufsc](https://www.instagram.com/a5ufsc/) | Atende os cursos do INE |
 | Engenharia Civil | **ATEC** | [@atecufsc](https://www.instagram.com/atecufsc/) | Fundada em 2013 |
 | Engenharia de Controle e Automação | **ATACA** ("Nação Hiena") | [@atacaufsc](https://www.instagram.com/atacaufsc/) | Contato: diretoria.ataca.ufsc@gmail.com |
-| Engenharia Elétrica · Engenharia Eletrônica | **Atlética LE** | [@ateelufsc](https://www.instagram.com/ateelufsc/) | Atende os dois cursos do EEL |
+| Engenharia Elétrica · Engenharia Eletrônica | **Ateel** | [@ateelufsc](https://www.instagram.com/ateelufsc/) | Atende os dois cursos do EEL |
 | Engenharia Mecânica · Engenharia de Materiais | **ATM UFSC** | [@atmufsc](https://www.instagram.com/atmufsc/) | Tricampeã da Copa CTC e Copa Calouro |
 | Engenharia de Produção | **A7** (Atlética Edvaldo de Souza) | [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) | Tetracampeã da Copa CTC |
 | Engenharia Química · Engenharia de Alimentos | **ATEQA** | [@ateqaufsc](https://www.instagram.com/ateqaufsc/) | Atende os dois cursos do EQA |

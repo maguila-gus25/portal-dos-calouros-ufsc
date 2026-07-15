@@ -37,7 +37,7 @@ Fonte: [Atléticas e festas](atleticas-e-festas.md).
 | Ciências da Computação · Sistemas de Informação | A5 | [@a5ufsc](https://www.instagram.com/a5ufsc/) |
 | Engenharia Civil | ATEC | [@atecufsc](https://www.instagram.com/atecufsc/) |
 | Engenharia de Controle e Automação | ATACA | [@atacaufsc](https://www.instagram.com/atacaufsc/) |
-| Engenharia Elétrica · Eletrônica | Atlética LE | [@ateelufsc](https://www.instagram.com/ateelufsc/) |
+| Engenharia Elétrica · Eletrônica | Ateel | [@ateelufsc](https://www.instagram.com/ateelufsc/) |
 | Engenharia Mecânica · Materiais | ATM UFSC | [@atmufsc](https://www.instagram.com/atmufsc/) |
 | Engenharia de Produção | A7 | [@a7atletica](https://www.instagram.com/a7atletica/) |
 | Engenharia Química · Alimentos | ATEQA | [@ateqaufsc](https://www.instagram.com/ateqaufsc/) |
