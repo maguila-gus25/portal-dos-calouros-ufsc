@@ -9,7 +9,7 @@ coordenacao:
   telefone: (48) 3721-2265
   sala: Depto. de Engenharia Elétrica e Eletrônica (EEL/CTC)
   site: https://geel.ufsc.br/
-atletica: Atlética LE — @atleticale.ufsc
+atletica: Atlética LE — @ateelufsc
 instagram_curso: _A preencher_
 ---
 
@@ -30,7 +30,7 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** **Atlética LE** — [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/) (compartilhada com Engenharia Eletrônica)
+- **Atlética:** **Atlética LE** — [@ateelufsc](https://www.instagram.com/ateelufsc/) (compartilhada com Engenharia Eletrônica)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
 

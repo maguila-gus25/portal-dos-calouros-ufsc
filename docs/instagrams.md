@@ -12,9 +12,11 @@ Perfis falsos existem — confirme sempre no próprio Instagram antes de compart
 | Reitoria UFSC | Gestão da universidade | [@reitoria.ufsc](https://www.instagram.com/reitoria.ufsc/) |
 | Biblioteca Universitária | Horários, eventos, dicas de estudo | [@bu.ufsc](https://www.instagram.com/bu.ufsc/) |
 | UFSC Sustentável | Sustentabilidade no campus | [@ufscsustentavel](https://www.instagram.com/ufscsustentavel/) |
-| PRAE UFSC | Bolsas, auxílios, RU, moradia | _A preencher_ (confirmar @ oficial) |
-| Restaurante Universitário (RU) | Cardápio, avisos do RU | _A preencher_ (confirmar @ oficial) |
-| CTC — Centro Tecnológico | Notícias do centro | _A preencher_ (confirmar @ oficial) |
+| PRAE UFSC | Bolsas, auxílios, RU, moradia | [@prae.ufsc](https://www.instagram.com/prae.ufsc/) |
+| Restaurante Universitário (RU) | Cardápio, avisos do RU | [@ru360ufsc](https://www.instagram.com/ru360ufsc/) — perfil oficial do RU |
+| CTC — Centro Tecnológico | Notícias do centro | [@ctc.ufsc](https://www.instagram.com/ctc.ufsc/) |
+| PROAFE UFSC | Ações afirmativas e permanência | [@proafe.ufsc](https://www.instagram.com/proafe.ufsc/) |
+| Centro Tecnológico de Portas Abertas | Divulgação dos cursos do CTC | [@ctcportasabertas](https://www.instagram.com/ctcportasabertas/) |
 
 ## Estudantil / representação
 
@@ -22,7 +24,7 @@ Perfis falsos existem — confirme sempre no próprio Instagram antes de compart
 |--------|---------|---|
 | **LAUFSC** — Liga das Atléticas | Casa das atléticas UFSC desde 2014 | [@laufsc](https://www.instagram.com/laufsc/) |
 | **Recepção de Calouros UFSC** | Cronograma da recepção | [site oficial](https://calouros.ufsc.br/) |
-| DCE (Diretório Central dos Estudantes) | Representação geral dos alunos | _A preencher_ |
+| DCE (Diretório Central dos Estudantes) | Representação geral dos alunos | site: <https://dce.ufsc.br/> · Instagram: _A preencher_ (confirmar diretamente com o DCE) |
 | Centro Acadêmico do seu curso | Representação do curso | ver tabela por curso abaixo |
 | Atlética do seu curso | Esporte e festas | ver [Atléticas e festas](atleticas-e-festas.md) |
 
@@ -35,7 +37,7 @@ Fonte: [Atléticas e festas](atleticas-e-festas.md).
 | Ciências da Computação · Sistemas de Informação | A5 | [@a5ufsc](https://www.instagram.com/a5ufsc/) |
 | Engenharia Civil | ATEC | [@atecufsc](https://www.instagram.com/atecufsc/) |
 | Engenharia de Controle e Automação | ATACA | [@atacaufsc](https://www.instagram.com/atacaufsc/) |
-| Engenharia Elétrica · Eletrônica | Atlética LE | [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/) |
+| Engenharia Elétrica · Eletrônica | Atlética LE | [@ateelufsc](https://www.instagram.com/ateelufsc/) |
 | Engenharia Mecânica · Materiais | ATM UFSC | [@atmufsc](https://www.instagram.com/atmufsc/) |
 | Engenharia de Produção | A7 | [@a7atletica](https://www.instagram.com/a7atletica/) |
 | Engenharia Química · Alimentos | ATEQA | [@ateqaufsc](https://www.instagram.com/ateqaufsc/) |

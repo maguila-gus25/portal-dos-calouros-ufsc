@@ -9,7 +9,7 @@ coordenacao:
   telefone: (48) 3721-6446
   sala: Depto. de Engenharia Elétrica e Eletrônica (EEL/CTC)
   site: https://geltro.ufsc.br/
-atletica: Atlética LE — @atleticale.ufsc
+atletica: Atlética LE — @ateelufsc
 instagram_curso: _A preencher_
 ---
 
