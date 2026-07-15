@@ -1,0 +1,41 @@
+---
+curso: Engenharia Sanitária e Ambiental
+slug: engenharia-sanitaria-e-ambiental
+centro: CTC
+grau: Bacharelado
+turno: _A preencher_
+coordenacao:
+  email: sanitaria@contato.ufsc.br
+  telefone: (48) 3721-9423
+  sala: Depto. de Engenharia Sanitária e Ambiental (ENS/CTC), Caixa Postal 476
+  site: https://ens.ufsc.br/
+atletica: _A preencher_
+instagram_curso: _A preencher_
+---
+
+# 📄 Engenharia Sanitária e Ambiental
+
+## Sobre o curso
+- **Grau / turno:** Bacharelado / _A preencher_
+- **Duração:** _A preencher_
+- **Página oficial do curso:** <https://ens.ufsc.br/>
+- **Resumo:** _A preencher_ (uma frase sobre o que se estuda)
+
+## Coordenação
+- **E-mail:** sanitaria@contato.ufsc.br
+- **Telefone:** (48) 3721-9423
+- **Prédio:** Depto. de Engenharia Sanitária e Ambiental (ENS/CTC), Caixa Postal 476
+
+(ver também [Coordenações](../coordenacoes.md))
+
+## Vida do curso
+- **Centro Acadêmico:** _A preencher_
+- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Empresa júnior:** _A preencher_
+- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+
+## Dicas de veterano
+- _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).
+
+## Onde estudar / salas
+- _A preencher_ (laboratórios, salas de estudo do ENS — ver [Mapa](../mapa.md)).

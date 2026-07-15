@@ -15,8 +15,26 @@ Comece pelo tema que te interessa:
 - 📸 [Instagrams e perfis](instagrams.md) — quem seguir para se manter por dentro
 - 💬 [Histórias e feedbacks](historias-e-feedbacks.md) — relatos de veteranos
 
-## Cursos
-- 📄 [Modelo de ficha de curso](_modelo-curso.md) — template para adicionar um curso
+## Cursos do CTC
+
+Cada curso tem uma ficha própria (coordenação, atlética, vida do curso, dicas de veterano):
+
+- 📄 [Ciências da Computação](cursos/ciencias-da-computacao.md)
+- 📄 [Sistemas de Informação](cursos/sistemas-de-informacao.md)
+- 📄 [Engenharia de Controle e Automação](cursos/engenharia-de-controle-e-automacao.md)
+- 📄 [Engenharia Civil](cursos/engenharia-civil.md)
+- 📄 [Engenharia Elétrica](cursos/engenharia-eletrica.md)
+- 📄 [Engenharia Eletrônica](cursos/engenharia-eletronica.md)
+- 📄 [Engenharia Mecânica](cursos/engenharia-mecanica.md)
+- 📄 [Engenharia de Produção](cursos/engenharia-de-producao.md)
+- 📄 [Engenharia de Materiais](cursos/engenharia-de-materiais.md)
+- 📄 [Engenharia Química](cursos/engenharia-quimica.md)
+- 📄 [Engenharia de Alimentos](cursos/engenharia-de-alimentos.md)
+- 📄 [Engenharia Sanitária e Ambiental](cursos/engenharia-sanitaria-e-ambiental.md)
+- 📄 [Arquitetura e Urbanismo](cursos/arquitetura-e-urbanismo.md)
+
+> Adicionar um curso novo? Copie o [modelo de ficha](_modelo-curso.md) para
+> `cursos/<slug>.md` e preencha com fonte oficial.
 
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
