@@ -1,0 +1,57 @@
+name: "Compartilhar história de veterano"
+description: "Envie seu relato sobre como foi começar na UFSC para ajudar os calouros."
+title: "[História] "
+labels: ["historia", "conteudo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por compartilhar! Sua história vai ao ar em `docs/historias-e-feedbacks.md`
+        após uma revisão rápida (só verificamos se não há dados sensíveis de terceiros).
+
+        Você pode assinar com nome, apelido ou de forma **anônima** — basta deixar em branco.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título curto
+      description: Uma frase que resuma sua história (ex. "A semana que me perdi no CTC")
+      placeholder: ex. Como sobrevivi ao primeiro semestre de Eng. Elétrica
+    validations:
+      required: true
+
+  - type: input
+    id: curso_ano
+    attributes:
+      label: Curso e ano de ingresso
+      placeholder: ex. Engenharia Civil — 2025/1
+    validations:
+      required: true
+
+  - type: input
+    id: autoria
+    attributes:
+      label: Como assinar (opcional)
+      description: Nome, apelido ou deixe em branco para "Anônimo"
+      placeholder: ex. João S. ou anônimo
+
+  - type: textarea
+    id: historia
+    attributes:
+      label: Sua história
+      description: >
+        O que te pegou de surpresa? O que te ajudou? Um conselho para quem está chegando?
+        Escreva à vontade — não precisa ser longo.
+      placeholder: "Quando cheguei no primeiro dia..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: consentimento
+    attributes:
+      label: Confirmação
+      options:
+        - label: Não incluí dados pessoais de outras pessoas (telefone, endereço, etc.).
+          required: true
+        - label: Concordo que o relato seja publicado no portal (projeto não oficial, feito por estudantes).
+          required: true

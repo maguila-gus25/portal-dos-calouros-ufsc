@@ -35,13 +35,26 @@ lápis no arquivo) — ele cria o fork e o Pull Request para você.
   ninguém sem consentimento.
 - **Tom acolhedor e neutro:** o portal é para todo mundo que está chegando.
 
+## Como enviar sua história de veterano
+
+Se você já passou por um semestre na UFSC e quer ajudar quem está chegando,
+compartilhe um relato. É rápido e não precisa saber usar Git:
+
+1. Abra uma [issue "Compartilhar história de veterano"](../../issues/new?template=historia-veterano.yml)
+   no repositório.
+2. Preencha o formulário (título, curso, relato). Pode ser anônimo.
+3. Pronto — a equipe inclui no arquivo `docs/historias-e-feedbacks.md` e fecha a issue.
+
+**O que contar:** o que te pegou de surpresa, o que te ajudou, um conselho para
+quem está chegando. Sem tamanho mínimo — uma frase já vale.
+
 ## O que precisa de gente agora
 
 Veja o [Roadmap no README](README.md#roadmap). Prioridades:
-1. Coordenações do CTC (e-mail, telefone, sala).
-2. Guia da carteira do RU confirmado com a PRAE.
-3. Links oficiais (CAGR, Moodle, e-mail institucional).
-4. Datas do calendário acadêmico vigente.
+1. **Histórias de veteranos** — qualquer curso, qualquer semestre.
+2. Dicas por curso nas fichas em `docs/cursos/<curso>.md` (campos `dicas_veterano`).
+3. Verificar se os contatos das coordenações ainda estão corretos.
+4. Testar e reportar links quebrados.
 
 ## Dúvidas
 
