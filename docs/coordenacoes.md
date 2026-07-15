@@ -118,3 +118,7 @@ Para o calouro não se perder:
 - **PROGRAD (Pró-Reitoria de Graduação)** → (48) 3721-2994.
 
 Mais links desses setores em [Links importantes](links-importantes.md).
+
+---
+
+_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

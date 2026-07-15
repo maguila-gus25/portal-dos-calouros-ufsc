@@ -1,0 +1,62 @@
+name: Revisão semestral de conteúdo
+
+# Dispara no início de cada semestre: 1º de fevereiro e 1º de agosto
+on:
+  schedule:
+    - cron: "0 9 1 2 *"   # 1º de fevereiro às 09h UTC
+    - cron: "0 9 1 8 *"   # 1º de agosto às 09h UTC
+  workflow_dispatch:       # permite rodar manualmente
+
+jobs:
+  abrir-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Determinar semestre atual
+        id: semestre
+        run: |
+          MES=$(date +%-m)
+          ANO=$(date +%Y)
+          if [ "$MES" -le 6 ]; then
+            echo "label=${ANO}/1" >> "$GITHUB_OUTPUT"
+          else
+            echo "label=${ANO}/2" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Abrir issue de revisão semestral
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const semestre = '${{ steps.semestre.outputs.label }}';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Revisão semestral] Atualizar conteúdo para ${semestre}`,
+              labels: ['manutencao', 'revisao-semestral'],
+              body: [
+                '## Checklist de revisão semestral',
+                '',
+                'Início do semestre ' + semestre + ' — hora de conferir se os dados continuam corretos.',
+                '',
+                '### Conteúdo crítico (verificar toda vez)',
+                '- [ ] `docs/datas-importantes.md` — conferir se o calendário acadêmico vigente está carregado.',
+                '- [ ] `docs/coordenacoes.md` — ligar/enviar e-mail para confirmar telefones e salas.',
+                '- [ ] `docs/carteira-ru.md` — verificar valor atual da refeição e procedimento de isenção.',
+                '- [ ] `docs/links-importantes.md` — testar os principais links (CAGR, Moodle, idUFSC, Webmail).',
+                '',
+                '### Conteúdo que muda menos (checar a cada 2 semestres)',
+                '- [ ] `docs/atleticas-e-festas.md` — atléticas ativas, novos Instagrams.',
+                '- [ ] `docs/instagrams.md` — confirmar @s ainda ativos.',
+                '- [ ] `docs/mapa.md` — prédios / salas renomeados ou desativados.',
+                '- [ ] `docs/cursos/` — coordenadores, e-mails, telefones de cada ficha.',
+                '',
+                '### Depois de atualizar',
+                '- [ ] Atualizar `ultima_verificacao` no frontmatter dos cursos alterados.',
+                '- [ ] Atualizar o rodapé de verificação nos docs alterados.',
+                '- [ ] Fechar esta issue com link para os PRs de atualização.',
+                '',
+                '---',
+                '_Gerado automaticamente pelo workflow `.github/workflows/revisao-semestral.yml`._',
+              ].join('\n'),
+            });

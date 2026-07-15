@@ -1,0 +1,22 @@
+# Responsáveis por área — Portal dos Calouros UFSC
+# Quem está listado aqui é automaticamente adicionado como reviewer nos PRs
+# que tocam os arquivos correspondentes.
+
+# Mantenedor principal: revisor padrão de tudo
+* @maguila-gus25
+
+# Conteúdo institucional (docs/)
+docs/coordenacoes.md @maguila-gus25
+docs/carteira-ru.md @maguila-gus25
+docs/datas-importantes.md @maguila-gus25
+docs/atleticas-e-festas.md @maguila-gus25
+docs/instagrams.md @maguila-gus25
+docs/mapa.md @maguila-gus25
+docs/links-importantes.md @maguila-gus25
+docs/historias-e-feedbacks.md @maguila-gus25
+docs/cursos/ @maguila-gus25
+
+# Infraestrutura e CI
+.github/ @maguila-gus25
+backend/ @maguila-gus25
+frontend/ @maguila-gus25

@@ -50,25 +50,25 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-03 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **os links dos sistemas (CAGR, Moodle, e-mail)**, para **acessar minha vida acadêmica**. |
 | B-04 | 🔴 Must | 🟢 P | ✅ | Como **calouro**, quero **as datas do calendário acadêmico**, para **não perder prazos**. |
 | B-05 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o mapa e endereços do campus**, para **me localizar no primeiro dia**. |
-| B-06 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. |
-| B-07 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **saber configurar o Wi‑Fi (eduroam) e o e-mail no celular**, para **usar a rede da UFSC**. |
+| B-06 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **as datas exatas de trancamento e ajuste** extraídas do PDF do calendário, para **planejar o semestre**. Extraído do PDF oficial 2026 (Res. 214/2025/CUn). |
+| B-07 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **saber configurar o Wi‑Fi (eduroam) e o e-mail no celular**, para **usar a rede da UFSC**. Seção adicionada em `links-importantes.md` com config EAP-TTLS/PAP e tutoriais oficiais SeTIC. |
 
 ### E2 — Fichas por curso
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. |
-| B-09 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. Turno, duração (parcial), resumo, CA e EJ preenchidos para todos os 13 cursos. Faltam: dicas de veterano, onde estudar (precisam de veteranos reais), email SIN, durações não confirmadas. |
+| B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 
 ### E3 — Vida universitária
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-11 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. |
-| B-12 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. |
+| B-11 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **saber as atléticas e festas do meu curso**, para **entrar na vida universitária**. 9 atléticas do CTC + festas tradicionais preenchidas. |
+| B-12 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **os perfis oficiais e estudantis para seguir**, para **me manter informado**. PRAE/RU/CTC/PROAFE + CAs confirmados. |
 | B-13 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ler histórias de veteranos**, para **me sentir menos perdido**. |
-| B-14 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. |
+| B-14 | 🟡 Could | 🟡 M | ✅ | Como **veterano**, quero **um jeito simples de enviar minha história** (formulário/PR), para **contribuir**. Issue template `historia-veterano.yml` criado; link direto em `historias-e-feedbacks.md` e `CONTRIBUTING.md`. |
 
 ### E4 — Site/web app (substituído pela plataforma React + Python — ver E8)
 
@@ -78,8 +78,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-15 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. |
-| B-17 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. |
+| B-15 | 🟠 Should | 🔴 G | ✅ | Como **calouro**, quero **um site navegável no celular**, para **consultar sem abrir o GitHub**. Coberto pela plataforma React (E8 / B-32 + B-33). |
+| B-17 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **busca dentro do site**, para **achar rápido o que preciso**. Coberto por B-34 (UI de busca + `/api/search`). |
 | B-19 | 🟡 Could | 🟡 M | ⬜ | Como **calouro**, quero **um mapa interativo com marcadores** (RU, BU, prédios), para **me localizar melhor** (v1.1). |
 
 ### E8 — Plataforma React + Python
@@ -89,16 +89,16 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-29 | 🔴 Must | 🟢 P | ⬜ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
-| B-30 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
-| B-31 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o loader que lê `content/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
-| B-32 | 🔴 Must | 🟡 M | ⬜ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
-| B-33 | 🔴 Must | 🟡 M | ⬜ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
-| B-34 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
-| B-35 | 🔴 Must | 🟢 P | ⬜ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
-| B-36 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. |
+| B-29 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **um mapa `slug → arquivo` sobre `docs/`** (sem mover nada), para **o backend servir o conteúdo mantendo a fonte única**. |
+| B-30 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do backend FastAPI** (health, config, CORS), para **ter a base da API**. |
+| B-31 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o loader que lê `docs/*.md` e serve como JSON**, para **expor o conteúdo à API**. |
+| B-32 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **o esqueleto do frontend Vite/React/Tailwind**, para **ter a base do site**. |
+| B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
+| B-34 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
+| B-35 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
+| B-36 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. Configs prontas (`vercel.json`, `render.yaml`, `docs/deploy.md`); falta criar as contas. |
 | B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
-| B-38 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
+| B-38 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -132,17 +132,17 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
 | B-20 | 🔴 Must | 🟢 P | ✅ | Como **contribuidor**, quero **um guia de contribuição claro**, para **saber como ajudar**. |
-| B-21 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. |
-| B-22 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. |
-| B-23 | 🟡 Could | 🟢 P | ⬜ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. |
+| B-21 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. 4 templates de issue (história, conteúdo, link quebrado, sugestão) + PR template criados em `.github/`. |
+| B-22 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por todas as áreas. |
+| B-23 | 🟡 Could | 🟢 P | ✅ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. Coberto pelo PR template (`.github/pull_request_template.md`) criado no Sprint 5. |
 
 ### E6 — Confiabilidade e manutenção
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-24 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. |
-| B-25 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. |
-| B-26 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. |
+| B-24 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. Workflow lychee em PR + schedule semanal. |
+| B-25 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. Rodapé `_Última verificação: julho/2026_` nos 8 docs de conteúdo; campo `ultima_verificacao` no frontmatter das 13 fichas de curso. |
+| B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
 
 ### E7 — Expansão para outros centros
 
@@ -155,15 +155,26 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 ## Sprint sugerido (próximos passos)
 
-Agora que a arquitetura é **React + Python** (E8), o foco é levantar a plataforma:
+**Sprint 1 concluído (v0.6):** fundação da plataforma — B-29, B-30, B-31, B-32,
+B-33 e B-35.
+**Sprint 2 concluído (v0.7):** busca (B-34), 13 fichas de curso (B-09) e
+refinamento visual com dark mode (B-38).
+**Sprint 3 concluído (v0.8):** deploy configs (B-36), link-check CI (B-24) e
+suite pytest do backend.
+**Sprint 4 concluído (v0.9):** calendário 2026 (B-06), atléticas + festas
+(B-11), instagrams oficiais (B-12) e fichas com CA/atlética/IG.
+**Sprint 5 concluído (v1.0):** eduroam + e‑mail no celular (B-07), templates de
+issue/PR (B-21) e canal de histórias de veteranos (B-14).
+**Sprint 6 concluído (v1.1):** data de verificação em todos os docs (B-25),
+CODEOWNERS (B-22), rotina semestral (B-26), B-23 fechado, B-15/B-17 fechados por E8.
 
-1. **B-29** — mapa `slug → arquivo` sobre `docs/` (fonte única, sem mover nada).
-2. **B-30 + B-31** — esqueleto do backend FastAPI + loader de Markdown.
-3. **B-32 + B-33** — esqueleto do frontend + páginas consumindo a API.
-4. **B-35** — rodapé fixo "não é site oficial da UFSC".
+**Próximo sprint (v1.2) — proposta:**
 
-Em paralelo (conteúdo, independem do código): **B-06** (datas do calendário) e
-**B-09** (13 fichas de curso).
+1. **Deploy real** — criar as contas Vercel + Render e rodar o playbook em
+   `docs/deploy.md` (ação do mantenedor humano — pré-requisito para tudo abaixo).
+2. **B-13** — publicar primeiras histórias de veteranos (coletar via issues abertas).
+3. **B-37** — endpoint e UI de envio de histórias/feedback com banco (v1.1 da API).
+4. **B-19** — mapa interativo com marcadores (RU, BU, prédios) — após deploy.
 
 ## Critérios de aceite (itens de referência)
 

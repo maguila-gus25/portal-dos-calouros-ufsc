@@ -1,0 +1,32 @@
+name: "Link quebrado"
+description: "Reportar um link que está fora do ar ou redireciona para lugar errado."
+title: "[Link quebrado] "
+labels: ["link-quebrado", "manutencao"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: URL quebrada
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: arquivo
+    attributes:
+      label: Onde está esse link no repositório
+      placeholder: "docs/links-importantes.md"
+    validations:
+      required: true
+
+  - type: input
+    id: substituto
+    attributes:
+      label: Nova URL (se souber)
+      placeholder: "https://... (deixe em branco se não souber)"
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto (opcional)
+      placeholder: "O link do Webmail não abre desde..."

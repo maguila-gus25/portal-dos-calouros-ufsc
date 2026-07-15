@@ -107,13 +107,39 @@ e [identidade](docs/identidade-visual.md).
 
 ---
 
+## Rodar localmente
+
+O projeto agora é um monorepo com `backend/` (FastAPI) e `frontend/` (Vite/React).
+
+```bash
+# Backend (Python 3.11+)
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1   # Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+uvicorn app.main:app --reload --port 8000
+
+# Frontend (Node 20+)
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+- Backend: <http://localhost:8000> (docs interativas em `/docs`)
+- Frontend: <http://localhost:5173>
+
 ## Roadmap
 
 - [x] **v0 — Estrutura:** esqueleto de docs por tema + modelo de curso.
 - [x] **v0.1 — Conteúdo CTC:** coordenações, RU, links e datas preenchidos com fontes oficiais (jul/2026).
 - [x] **v0.5 — Arquitetura:** definição React + Python e identidade visual.
-- [ ] **v0.6 — Fichas de curso:** uma ficha por curso do CTC.
-- [ ] **v1 — Plataforma:** frontend React + API FastAPI (busca + páginas por curso).
+- [x] **v0.6 — Plataforma (fundação):** backend FastAPI + frontend Vite/React entregues no Sprint 1 (jul/2026).
+- [x] **v0.7 — Busca + fichas + polimento:** UI de busca, 13 fichas do CTC e dark mode entregues no Sprint 2 (jul/2026).
+- [x] **v0.8 — Deploy configs + CI + testes:** configs Vercel/Render, link-checker (lychee) e suite pytest entregues no Sprint 3 (jul/2026).
+- [x] **v0.9 — Conteúdo pesado:** calendário 2026 completo, 9 atléticas do CTC, festas tradicionais e Instagrams oficiais entregues no Sprint 4 (jul/2026).
+- [ ] **v1.0 — Deploy real + comunidade:** publicar o portal na Vercel/Render e abrir canal de contribuição para dicas de veterano.
 - [ ] **v1.1 — Dinâmico:** mapa interativo + formulário de histórias/feedback.
 - [ ] **Futuro:** avaliação de professores, simulador de grade (tipo MatrUFSC), blog, comentários, monetização por divulgação.
 - [ ] **v2 — Outros centros:** replicar a estrutura para CSE, CCS, CFH, etc.

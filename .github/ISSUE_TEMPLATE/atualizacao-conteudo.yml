@@ -1,0 +1,53 @@
+name: "Atualização de conteúdo"
+description: "Reportar informação desatualizada, incorreta ou que precisa de complemento."
+title: "[Conteúdo] "
+labels: ["conteudo", "precisa-de-fonte"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ajuda valiosa! Mantemos cada dado com fonte oficial — cole o link da fonte
+        ao preencher o campo abaixo.
+
+  - type: dropdown
+    id: arquivo
+    attributes:
+      label: Arquivo afetado
+      options:
+        - docs/coordenacoes.md
+        - docs/carteira-ru.md
+        - docs/links-importantes.md
+        - docs/datas-importantes.md
+        - docs/atleticas-e-festas.md
+        - docs/instagrams.md
+        - docs/mapa.md
+        - docs/historias-e-feedbacks.md
+        - "docs/cursos/<algum-curso>.md"
+        - Outro (descreva abaixo)
+    validations:
+      required: true
+
+  - type: textarea
+    id: dado_atual
+    attributes:
+      label: O que está errado ou faltando
+      placeholder: "O telefone da coordenação de Eng. Civil mudou para..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: dado_correto
+    attributes:
+      label: Dado correto
+      placeholder: "Novo número: (48) 3721-XXXX"
+    validations:
+      required: true
+
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte oficial (link)
+      description: Página da UFSC, coordenação, Instagram oficial, calendário, etc.
+      placeholder: "https://..."
+    validations:
+      required: true

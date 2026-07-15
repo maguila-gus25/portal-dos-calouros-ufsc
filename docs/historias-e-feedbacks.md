@@ -6,12 +6,17 @@ diferente. É o coração humano do portal.
 
 ## Como enviar sua história
 
-Você pode contribuir de duas formas:
-1. **Pull Request** adicionando sua história abaixo (veja [como contribuir](../CONTRIBUTING.md)).
-2. **Formulário / canal de coleta:** _A preencher_ (link do formulário, se houver).
+A forma mais simples é abrir uma **issue no repositório** — sem precisar saber Git:
 
-Ao enviar, você pode assinar com nome, apelido ou de forma anônima. Nada de dados
-sensíveis de outras pessoas.
+**[→ Clique aqui para enviar sua história](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=historia-veterano.yml)**
+
+O formulário pede: título, curso/ano, texto do relato e — opcionalmente — como assinar.
+Você pode usar seu nome, um apelido ou ficar **anônimo**. A equipe inclui o relato
+aqui e fecha a issue.
+
+Prefere abrir um Pull Request? Veja [como contribuir](../CONTRIBUTING.md) — é bem-vindo também.
+
+Nada de dados sensíveis de outras pessoas (telefones, endereços pessoais, etc.).
 
 ## Modelo de história
 
@@ -38,7 +43,8 @@ Copie o bloco abaixo para adicionar a sua:
 ## Feedback sobre o próprio portal
 
 Achou algo errado, faltando ou confuso no portal? Conta pra gente:
-- **Abra uma issue** no repositório, ou
-- **Canal de feedback:** _A preencher_.
+- **[Conteúdo errado / desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)** — correção com fonte oficial
+- **[Link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)** — URL que não abre mais
+- **[Sugestão](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=sugestao.yml)** — nova seção, funcionalidade ou melhoria
 
-Feedback de calouro é o que mantém este projeto útil. 🙌
+Feedback de calouro é o que mantém este projeto útil.

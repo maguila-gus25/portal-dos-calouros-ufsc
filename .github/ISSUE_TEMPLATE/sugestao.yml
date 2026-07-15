@@ -1,0 +1,31 @@
+name: "Sugestão"
+description: "Propor uma melhoria, nova seção ou funcionalidade para o portal."
+title: "[Sugestão] "
+labels: ["sugestao"]
+body:
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de sugestão
+      options:
+        - Novo conteúdo (tema que não existe ainda)
+        - Melhoria em conteúdo existente
+        - Funcionalidade do site
+        - Design / navegação
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descreva sua sugestão
+      placeholder: "Seria útil ter uma seção sobre..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por que isso ajudaria os calouros?
+      placeholder: "Porque no primeiro semestre..."
