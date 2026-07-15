@@ -56,7 +56,7 @@ export function CoursePage() {
           <p className="text-xs font-medium text-brand-blue uppercase tracking-wide">
             {data.centro}
           </p>
-          <h1 className="text-2xl font-bold leading-snug">{data.title}</h1>
+          <h1 className="font-heading text-2xl font-bold leading-snug">{data.title}</h1>
           <p className="text-ink-secondary text-sm mt-0.5">
             {[data.grau, data.turno].filter(Boolean).join(" · ")}
           </p>

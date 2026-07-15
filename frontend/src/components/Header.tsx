@@ -6,22 +6,26 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `text-sm font-medium transition-colors duration-150 ${
-    isActive ? "text-brand-blue" : "text-ink-secondary hover:text-ink-primary"
+    isActive
+      ? "text-brand-blue"
+      : "text-ink-secondary hover:text-ink-primary"
   }`;
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm border-b border-surface-border shadow-card">
+    <header className="sticky top-0 z-40 bg-white/90 dark:bg-bg-darkSurface/90 backdrop-blur-md border-b border-surface-border shadow-card">
       <div className="mx-auto max-w-6xl px-4 py-3 flex flex-wrap items-center gap-3">
         <Link to="/" className="flex items-center gap-2.5 shrink-0 no-underline">
           <div
             aria-hidden
-            className="w-9 h-9 rounded-xl bg-brand-blue text-white flex items-center justify-center"
+            className="w-9 h-9 rounded-xl bg-hero-gradient text-white flex items-center justify-center shadow-sm"
           >
-            <GraduationCap size={20} />
+            <GraduationCap size={18} />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-ink-primary font-bold text-sm">Portal dos Calouros</span>
+            <span className="font-heading font-bold text-sm text-ink-primary">
+              Portal dos Calouros
+            </span>
             <span className="text-ink-secondary text-xs">UFSC — CTC</span>
           </div>
         </Link>

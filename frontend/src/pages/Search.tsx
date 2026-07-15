@@ -19,7 +19,7 @@ export function SearchPage() {
   return (
     <div className="space-y-4">
       <section className="card p-6 sm:p-8">
-        <h1 className="text-2xl font-bold">Busca</h1>
+        <h1 className="font-heading text-2xl font-bold">Busca</h1>
         <p className="text-ink-secondary text-sm mt-1">
           Procure por coordenação, curso, atlética, RU, datas…
         </p>

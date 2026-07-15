@@ -32,7 +32,7 @@ export function SectionPage() {
     <article className="space-y-4">
       <BackLink />
       <header className="card p-6 sm:p-8">
-        <h1 className="text-2xl font-bold leading-snug">{data.title}</h1>
+        <h1 className="font-heading text-2xl font-bold leading-snug">{data.title}</h1>
         <p className="text-ink-secondary mt-1">{data.description}</p>
       </header>
 
