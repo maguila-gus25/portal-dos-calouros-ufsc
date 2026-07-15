@@ -1,3 +1,4 @@
+import { ChevronLeft } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
 
@@ -12,7 +13,7 @@ export function SectionPage() {
     enabled: Boolean(slug),
   });
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading label="Carregando conteúdo…" />;
   if (isError) {
     const message =
       error instanceof Error && error.message.includes("404")
@@ -30,19 +31,12 @@ export function SectionPage() {
   return (
     <article className="space-y-4">
       <BackLink />
-      <header className="card p-6">
-        <div className="flex items-center gap-3">
-          <span aria-hidden className="text-3xl">
-            {data.icon}
-          </span>
-          <div>
-            <h1 className="text-2xl font-bold">{data.title}</h1>
-            <p className="text-ink-secondary text-sm">{data.description}</p>
-          </div>
-        </div>
+      <header className="card p-6 sm:p-8">
+        <h1 className="text-2xl font-bold leading-snug">{data.title}</h1>
+        <p className="text-ink-secondary mt-1">{data.description}</p>
       </header>
 
-      <div className="card p-6">
+      <div className="card p-6 sm:p-8">
         <div
           className="prose-content"
           dangerouslySetInnerHTML={{ __html: data.content_html }}
@@ -54,8 +48,12 @@ export function SectionPage() {
 
 function BackLink() {
   return (
-    <Link to="/" className="text-sm text-brand-blue hover:underline">
-      ← Voltar para o início
+    <Link
+      to="/"
+      className="inline-flex items-center gap-1 text-sm text-brand-blue hover:underline"
+    >
+      <ChevronLeft size={15} aria-hidden />
+      Voltar para o início
     </Link>
   );
 }
