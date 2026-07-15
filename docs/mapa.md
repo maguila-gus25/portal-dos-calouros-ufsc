@@ -13,7 +13,8 @@ achar os lugares que você mais vai usar como calouro do CTC.
 - **Localização do CTC:** <https://portasabertas.ctc.ufsc.br/localizacao/>
 - **Endereço do Campus Trindade:** Campus Reitor João David Ferreira Lima,
   Rua Roberto Sampaio Gonzaga, Trindade, Florianópolis – SC, CEP 88040-900.
-- **Google Maps — Campus Trindade:** _A preencher_ (confirmar link/pino oficial)
+- **Mapa interativo do campus (oficial):** <https://estrutura.ufsc.br/mapa/>
+- **Mapas técnicos detalhados (DPAE):** <https://dpae.ufsc.br/mapas/> (Google Maps com código e ano de cada prédio)
 
 ## Onde fica o quê (essencial para o CTC)
 
@@ -23,10 +24,11 @@ achar os lugares que você mais vai usar como calouro do CTC.
 | Coordenação do seu curso | Prédio do departamento do curso | Ver [Coordenações](coordenacoes.md) |
 | RU (Restaurante Universitário) | Campus Trindade | Ver [Carteira do RU](carteira-ru.md) |
 | Biblioteca Universitária (BU) | Setor D — Acesso Trindade, CEP 88040-900 | Salas de estudo, empréstimo |
-| Secretaria / DAE | _A preencher_ | Documentos e histórico |
-| Xerox / papelaria | _A preencher_ | |
-| Pontos de ônibus | _A preencher_ | Linhas que atendem a UFSC |
-| Farmácia / atendimento de saúde no campus | _A preencher_ | |
+| Secretaria / DAE | Prédio Reitoria II, Sala 01 (térreo), Salas 102–103 (1º andar) — Rua Des. Vitor Lima, 222 | Histórico, atestados, diplomas — <https://dae.ufsc.br/> |
+| Xerox / papelaria | _A preencher_ | (confirmar com veteranos do seu curso) |
+| Pontos de ônibus | Terminal Integrado Trindade (TITRI) — principal acesso ao campus | Linhas 470, 471, 469, 477 entre outras; ver <https://cale.ufsc.br/index.php/guia-dos-calouros/locomocao> |
+| Farmácia Escola UFSC | Rua Delfino Conti, 100, Trindade | Medicamentos pelo SUS, no campus — <https://farmaciaescola.ccs.ufsc.br/> |
+| Hospital Universitário (HU) | Rua Professora Maria Flora Pausewang, Campus Trindade | Atendimento SUS, dentro do campus — <https://hu.ufsc.br/> |
 
 ## Como se localizar no primeiro dia
 
