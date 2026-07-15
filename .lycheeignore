@@ -1,0 +1,15 @@
+# URLs a ignorar no link-check. Um regex por linha.
+
+# Placeholders de conteúdo ainda não preenchido.
+^_A preencher_
+
+# Domínios que exigem login ou bloqueiam bots.
+^https?://(www\.)?instagram\.com/
+
+# URLs do próprio deploy (podem não existir antes do primeiro deploy).
+^https?://portal-dos-calouros-ufsc\.vercel\.app
+^https?://portal-calouros-api\.onrender\.com
+
+# Localhost (referências em docs de dev).
+^https?://localhost
+^https?://127\.0\.0\.1

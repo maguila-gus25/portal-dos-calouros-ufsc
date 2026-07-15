@@ -1,0 +1,69 @@
+name: Link Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - ".lycheeignore"
+      - ".github/workflows/link-check.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - ".lycheeignore"
+      - ".github/workflows/link-check.yml"
+  schedule:
+    # Segunda-feira, 09h UTC (06h BRT) — pega links que quebraram no meio do tempo.
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    name: Verifica links em Markdown
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rodar lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Escanear todos os Markdown do repo, seguindo relativas.
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,204,206,301,302,403,429
+            --max-concurrency 8
+            --timeout 20
+            --exclude-mail
+            './**/*.md'
+          fail: false
+          output: ./lychee-report.md
+
+      - name: Fazer upload do relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee-report.md
+
+      - name: Criar issue com links quebrados
+        if: env.lychee_exit_code != '0' && github.event_name == 'schedule'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🔗 Link Check — links quebrados encontrados"
+          content-filepath: ./lychee-report.md
+          labels: |
+            link-check
+            docs
+
+      - name: Falhar o job se houver links quebrados (PR / push)
+        if: env.lychee_exit_code != '0' && github.event_name != 'schedule'
+        run: |
+          echo "Links quebrados encontrados. Ver o relatório no artifact."
+          cat ./lychee-report.md
+          exit 1
