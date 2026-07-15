@@ -9,7 +9,7 @@ coordenacao:
   telefone: (48) 3721-4016
   sala: Centro Tecnológico (CTC), Caixa Postal 476
   site: https://materiais.grad.ufsc.br/
-atletica: _A preencher_
+atletica: ATM UFSC — @atmufsc
 instagram_curso: _A preencher_
 ---
 
@@ -31,7 +31,7 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **ATM UFSC** — [@atmufsc](https://www.instagram.com/atmufsc/) (compartilhada com Engenharia Mecânica; tricampeã da Copa CTC)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
 

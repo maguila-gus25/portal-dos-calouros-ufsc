@@ -9,8 +9,8 @@ coordenacao:
   telefone: (48) 3721-9423
   sala: Depto. de Engenharia Sanitária e Ambiental (ENS/CTC), Caixa Postal 476
   site: https://ens.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: AESA — @aesaufsc
+instagram_curso: "@ens_ufsc"
 ---
 
 # 📄 Engenharia Sanitária e Ambiental
@@ -30,9 +30,9 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **AESA** — [@aesaufsc](https://www.instagram.com/aesaufsc/) · [site oficial](https://atleticaesa.ufsc.br/)
 - **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Instagrams / perfis:** [@ens_ufsc](https://www.instagram.com/ens_ufsc/) (curso) · [@saesa.ufsc](https://www.instagram.com/saesa.ufsc/) (Semana Acadêmica)
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).

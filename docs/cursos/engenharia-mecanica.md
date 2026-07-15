@@ -10,8 +10,8 @@ coordenacao:
   sala: Depto. de Engenharia Mecânica (EMC/CTC)
   atendimento: Seg–Sex, 07h–11h e 12h–17h (confirmar no site)
   site: https://engenhariamecanica.paginas.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: ATM UFSC — @atmufsc
+instagram_curso: "@emc.ufsc"
 ---
 
 # 📄 Engenharia Mecânica
@@ -33,9 +33,9 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **ATM UFSC** — [@atmufsc](https://www.instagram.com/atmufsc/) (compartilhada com Engenharia de Materiais; tricampeã da Copa CTC)
 - **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Departamento:** [@emc.ufsc](https://www.instagram.com/emc.ufsc/) — perfil oficial do EMC
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).

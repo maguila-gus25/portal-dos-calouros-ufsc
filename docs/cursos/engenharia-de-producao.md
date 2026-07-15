@@ -10,7 +10,7 @@ coordenacao:
   sala: Prédio EPS/CTC, térreo, Sala A005
   atendimento: Seg–Sex, 08h–12h e 13h–17h (confirmar no site)
   site: https://producao.ufsc.br/
-atletica: _A preencher_
+atletica: A7 (Atlética Edvaldo de Souza) — @a7atletica
 instagram_curso: _A preencher_
 ---
 
@@ -37,7 +37,7 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **A7** (Associação Atlética Edvaldo de Souza) — [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) (tetracampeã da Copa CTC)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
 

@@ -9,8 +9,8 @@ coordenacao:
   telefone: (48) 3721-2503
   sala: Depto. de Engenharia Química e Engenharia de Alimentos (EQA/CTC)
   site: https://cenq.paginas.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: ATEQA — @ateqaufsc
+instagram_curso: "@caleqa_ufsc"
 ---
 
 # 📄 Engenharia Química
@@ -30,10 +30,10 @@ instagram_curso: _A preencher_
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Centro Acadêmico:** **CALEQA** (Centro Acadêmico Livre de Engenharia Química e de Alimentos) — [@caleqa_ufsc](https://www.instagram.com/caleqa_ufsc/)
+- **Atlética:** **ATEQA** — [@ateqaufsc](https://www.instagram.com/ateqaufsc/) (compartilhada com Engenharia de Alimentos)
 - **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Instagrams / perfis:** ver [Instagrams](../instagrams.md)
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).

@@ -10,7 +10,7 @@ coordenacao:
   sala: Prédio do INE (CTC), térreo, Sala 103
   atendimento: Seg–Sex, 08h–12h e 13h–15h (confirmar no site)
   site: https://cco.ufsc.br/
-atletica: _A preencher_
+atletica: A5 — @a5ufsc
 instagram_curso: _A preencher_
 ---
 
@@ -33,7 +33,7 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **A5** — [@a5ufsc](https://www.instagram.com/a5ufsc/) (compartilhada com Sistemas de Informação)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
 

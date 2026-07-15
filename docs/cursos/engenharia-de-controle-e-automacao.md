@@ -9,8 +9,8 @@ coordenacao:
   telefone: (48) 3721-4849
   sala: Depto. de Engenharia de Automação e Sistemas (EAS/CTC)
   site: https://automacao.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: ATACA — @atacaufsc
+instagram_curso: "@ecaufscfloripa"
 ---
 
 # 📄 Engenharia de Controle e Automação
@@ -32,9 +32,9 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Atlética:** **ATACA** ("Nação Hiena") — [@atacaufsc](https://www.instagram.com/atacaufsc/)
+- **Empresa júnior:** Autojun (confirmar @)
+- **Instagrams / perfis:** [@ecaufscfloripa](https://www.instagram.com/ecaufscfloripa/) (perfil do curso)
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).

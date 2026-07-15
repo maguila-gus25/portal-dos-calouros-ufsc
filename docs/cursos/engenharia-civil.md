@@ -9,8 +9,8 @@ coordenacao:
   telefone: (48) 3721-2116
   sala: Prédio ECV/CTC, bloco de integração, Sala 104C (1º andar)
   site: https://ecv.grad.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: ATEC — @atecufsc
+instagram_curso: "@calec.ufsc"
 ---
 
 # 📄 Engenharia Civil
@@ -29,10 +29,10 @@ instagram_curso: _A preencher_
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Centro Acadêmico:** **CALEC** (Centro Acadêmico Livre de Engenharia Civil) — [@calec.ufsc](https://www.instagram.com/calec.ufsc/)
+- **Atlética:** **ATEC** — [@atecufsc](https://www.instagram.com/atecufsc/) (fundada em 2013)
 - **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **PET:** [@pet.ecv.ufsc](https://www.instagram.com/pet.ecv.ufsc/) — PET Engenharia Civil UFSC
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).

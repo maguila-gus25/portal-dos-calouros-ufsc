@@ -9,8 +9,8 @@ coordenacao:
   telefone: (48) 3721-9275
   sala: Rua Eng. Agrônomo Andrey Cristian Ferreira, s/n, Campus Trindade, CEP 88040-535
   site: https://arquitetura.paginas.ufsc.br/
-atletica: _A preencher_
-instagram_curso: _A preencher_
+atletica: ATARQ — @atarq.ufsc
+instagram_curso: "@arqurb.ufsc"
 ---
 
 # 📄 Arquitetura e Urbanismo
@@ -30,9 +30,9 @@ instagram_curso: _A preencher_
 
 ## Vida do curso
 - **Centro Acadêmico:** _A preencher_
-- **Atlética:** _A preencher_ (ver [Atléticas e festas](../atleticas-e-festas.md))
+- **Atlética:** **ATARQ** — [@atarq.ufsc](https://www.instagram.com/atarq.ufsc/)
 - **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Instagrams / perfis:** [@arqurb.ufsc](https://www.instagram.com/arqurb.ufsc/) — perfil do curso
 
 ## Dicas de veterano
 - _A preencher_ (disciplinas puxadas do 1º semestre, professores, materiais).
