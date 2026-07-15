@@ -2,7 +2,33 @@
 
 > Gerado e mantido pelo Scrum Master. Use `/sprint-plan` para iniciar um novo sprint.
 
-Nenhum sprint ativo no momento. Rode `/sprint-plan` para começar.
+---
+
+## Sprint 5 — Publicação e Comunidade (v1.0) — concluído em 2026-07-15
+
+**Objetivo:** Tornar o portal público e pronto para receber contribuições — deploy real
+(Vercel + Render), guia de Wi‑Fi/e-mail para calouros (B-07), templates de issue/PR
+(B-21) e canal oficial para envio de histórias de veteranos (B-14).
+
+| História | ID | Status |
+|----------|----|--------|
+| Wi‑Fi eduroam + e‑mail no celular | B-07 | ✅ |
+| Templates de issue e PR no GitHub | B-21 | ✅ |
+| Canal de contribuição de histórias | B-14 | ✅ |
+| Deploy real Vercel + Render | — | ⬜ (aguardando criação de contas) |
+
+**Retrospectiva:**
+- **Entregue:** Seção completa de eduroam em `links-importantes.md` com configuração
+  passo a passo (EAP-TTLS/PAP, credencial `idufsc@ufsc.br`) e links para tutoriais
+  oficiais da SeTIC. Seção de e-mail institucional com links para os FAQs de Android
+  (Gmail + app E-mail) e iPhone. Quatro issue templates YAML (história de veterano,
+  atualização de conteúdo, link quebrado, sugestão) e PR template com checklist de
+  fonte oficial. CONTRIBUTING.md atualizado com instrução direta de envio de histórias.
+  `historias-e-feedbacks.md` atualizado com links diretos para cada template.
+- **Não entregou:** Deploy real — requer que o mantenedor crie as contas Vercel e
+  Render e siga o playbook em `docs/deploy.md`. Configs de código já prontas (B-36 ✅).
+- **Para o próximo sprint:** deploy real (ação humana), B-13 (coletar primeiras histórias
+  via issues), B-25 (data de verificação nos dados), B-22 (CODEOWNERS).
 
 ---
 
