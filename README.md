@@ -137,7 +137,8 @@ npm run dev
 - [x] **v0.5 — Arquitetura:** definição React + Python e identidade visual.
 - [x] **v0.6 — Plataforma (fundação):** backend FastAPI + frontend Vite/React entregues no Sprint 1 (jul/2026).
 - [x] **v0.7 — Busca + fichas + polimento:** UI de busca, 13 fichas do CTC e dark mode entregues no Sprint 2 (jul/2026).
-- [ ] **v0.8 — Deploy + preenchimento:** Vercel + Render, "vida do curso" das fichas, verificação de links no CI.
+- [x] **v0.8 — Deploy configs + CI + testes:** configs Vercel/Render, link-checker (lychee) e suite pytest entregues no Sprint 3 (jul/2026).
+- [ ] **v0.9 — Deploy real + conteúdo:** publicar o portal, preencher atléticas/instagrams e "vida do curso" das fichas.
 - [ ] **v1 — Plataforma completa:** frontend + API estáveis com todo o conteúdo.
 - [ ] **v1.1 — Dinâmico:** mapa interativo + formulário de histórias/feedback.
 - [ ] **Futuro:** avaliação de professores, simulador de grade (tipo MatrUFSC), blog, comentários, monetização por divulgação.

@@ -8,6 +8,31 @@ Nenhum sprint ativo no momento. Rode `/sprint-plan` para começar.
 
 ## Sprints Anteriores
 
+### Sprint 3 — Deploy, CI e testes (concluído em 2026-07-15)
+
+**Objetivo:** Deixar o projeto pronto para publicar (Vercel + Render), colocar
+validação automática de links e blindar o backend com testes.
+
+| História | ID | Status |
+|----------|----|--------|
+| Configs de deploy Vercel (frontend) + Render (backend) | B-36 | ✅ (código pronto; contas a criar) |
+| Link-checker no CI com lychee (PR + schedule semanal) | B-24 | ✅ |
+| Suite pytest para health, sections, courses e search | — | ✅ |
+
+**Retrospectiva:**
+- **Entregue:** `frontend/vercel.json` + `render.yaml` como Blueprint,
+  `docs/deploy.md` com o passo a passo dos dois serviços incluindo a amarra
+  CORS_ORIGINS ↔ VITE_API_URL. Workflow `link-check.yml` roda lychee em push/PR
+  e semanalmente (abre issue no schedule quando quebra). `.lycheeignore` cobre
+  placeholders, Instagram e URLs de deploy futuras. Suite pytest com 15+ testes
+  cobrindo health, listagem e leitura de seções (com validação da fonte única),
+  cursos e busca; `requirements-dev.txt` e `pyproject.toml` configuram o
+  ambiente de teste.
+- **Adiado:** Deploy real (precisa que o usuário crie as contas Vercel + Render).
+- **Para o próximo sprint:** rodar o deploy real e amarrar as URLs, começar a
+  preencher os `_A preencher_` das atléticas/instagrams (destravar B-08), e
+  iniciar B-06 (datas exatas do calendário acadêmico via PDF oficial).
+
 ### Sprint 2 — Busca, conteúdo e polimento visual (concluído em 2026-07-15)
 
 **Objetivo:** UI de busca conectada ao endpoint existente, geração de todas as 13
@@ -19,20 +44,6 @@ visuais (dark mode, badges).
 | UI de busca (input no header + página de resultados) | B-34 | ✅ |
 | 13 fichas de curso do CTC com coordenação verificada | B-09 | ✅ |
 | Refinamentos visuais (dark mode, badges, hover) | B-38 | ✅ |
-
-**Retrospectiva:**
-- **Entregue:** `SearchInput` no header + `SearchPage` consumindo `/api/search` com
-  destaque do termo via `<mark>`. Todos os 13 cursos do CTC agora têm ficha em
-  `docs/cursos/` com frontmatter YAML (coordenação com fonte oficial) e corpo
-  seguindo o modelo com `_A preencher_` onde ainda falta info. Dark mode toggle
-  no header, tokens Tailwind atualizados, componente `Badge` reutilizável nos
-  cards de curso, hover mais evidente (translate + shadow-lg).
-- **Adiado:** `B-36` (deploy Vercel + Render) — precisa de contas configuradas
-  pelo usuário. `B-37` (envio de histórias/feedback) — v1.1.
-- **Para o próximo sprint:** validar tudo rodando end-to-end (`pip install` +
-  `npm install` + `npm run dev` + `uvicorn`), começar preenchimento dos campos
-  `_A preencher_` nas fichas (turno de cada curso, atlética, empresa júnior,
-  dicas), e planejar deploy.
 
 ### Sprint 1 — Fundação da Plataforma (concluído em 2026-07-14)
 
@@ -48,9 +59,3 @@ rodapé "não oficial" desde o dia 1.
 | Esqueleto do frontend Vite/React/Tailwind | B-32 | ✅ |
 | Páginas de seções e curso consumindo a API | B-33 | ✅ |
 | Rodapé fixo "não é site oficial da UFSC" | B-35 | ✅ |
-
-**Retrospectiva:** backend FastAPI completo (health, sections, courses, search)
-com loader de Markdown e mapa `SLUG_MAP` explícito. Frontend Vite+React+TS+
-Tailwind com Layout (Header + Footer obrigatório), páginas Home/Section/Courses/
-Course consumindo a API via TanStack Query. Identidade Facebook aplicada como
-tokens Tailwind.

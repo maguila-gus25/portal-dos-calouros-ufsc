@@ -96,7 +96,7 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 | B-33 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **as páginas de seções e de curso consumindo a API**, para **navegar o conteúdo**. |
 | B-34 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **o endpoint e a UI de busca** (`/api/search`), para **achar rápido**. |
 | B-35 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **o rodapé fixo "não é site oficial da UFSC"**, para **não confundir com a instituição**. |
-| B-36 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. |
+| B-36 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **deploy do front na Vercel e do back no Render**, para **publicar automaticamente**. Configs prontas (`vercel.json`, `render.yaml`, `docs/deploy.md`); falta criar as contas. |
 | B-37 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **enviar histórias/feedback** (banco + moderação), para **contribuir** (v1.1). |
 | B-38 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
 
@@ -140,7 +140,7 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-24 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. |
+| B-24 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **verificação automática de links quebrados** (CI), para **manter os links vivos**. Workflow lychee em PR + schedule semanal. |
 | B-25 | 🟠 Should | 🟢 P | ⬜ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. |
 | B-26 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. |
 
@@ -159,13 +159,18 @@ backend FastAPI no Render; conteúdo híbrido (Markdown + banco).
 B-33 e B-35.
 **Sprint 2 concluído (v0.7):** busca (B-34), 13 fichas de curso (B-09) e
 refinamento visual com dark mode (B-38).
+**Sprint 3 concluído (v0.8):** deploy configs (B-36), link-check CI (B-24) e
+suite pytest do backend.
 
-**Próximo sprint (v0.8) — proposta:**
+**Próximo sprint (v0.9) — proposta:**
 
-1. **B-36** — deploy Vercel (frontend) + Render (backend).
-2. **B-08** — preencher "vida do curso" (CA, atlética, dicas) das fichas.
-3. **B-06** — datas exatas de trancamento/ajuste do calendário acadêmico.
-4. **B-24** — verificação automática de links quebrados (CI).
+1. **Deploy real** — criar as contas Vercel + Render e rodar o playbook em
+   `docs/deploy.md`.
+2. **B-06** — datas exatas de trancamento/ajuste do calendário acadêmico
+   (fonte: PDF oficial).
+3. **Preenchimento** — `atleticas-e-festas.md` e `instagrams.md` com
+   dados verificados (fonte: perfis oficiais no Instagram).
+4. **B-08** — vida do curso nas 13 fichas (depende dos preenchimentos acima).
 
 ## Critérios de aceite (itens de referência)
 
