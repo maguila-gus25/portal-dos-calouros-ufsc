@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 import { SearchInput } from "./SearchInput";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `text-sm font-medium ${
@@ -26,13 +27,14 @@ export function Header() {
 
         <SearchInput className="order-3 sm:order-2 basis-full sm:basis-auto sm:ml-4 sm:flex-1 sm:max-w-sm" />
 
-        <nav className="order-2 sm:order-3 ml-auto flex items-center gap-4">
+        <nav className="order-2 sm:order-3 ml-auto flex items-center gap-2 sm:gap-4">
           <NavLink to="/" end className={navLinkClass}>
             Início
           </NavLink>
           <NavLink to="/cursos" className={navLinkClass}>
             Cursos
           </NavLink>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

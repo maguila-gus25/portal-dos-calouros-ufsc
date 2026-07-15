@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
+import { Badge } from "@/components/Badge";
 import { ErrorBox, Loading } from "@/components/StateMessages";
 import { api, type CourseSummary } from "@/lib/api";
 
@@ -38,16 +39,25 @@ export function CoursesPage() {
 }
 
 function CourseCard({ course }: { course: CourseSummary }) {
+  const isPending = (v: unknown) =>
+    typeof v === "string" && v.startsWith("_A preencher_");
+
   return (
     <li>
       <Link
         to={`/cursos/${course.slug}`}
-        className="card p-4 block no-underline hover:border-brand-blue transition-colors"
+        className="card p-4 block no-underline hover:border-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all"
       >
         <h3 className="font-semibold text-ink-primary">{course.title}</h3>
-        <p className="text-sm text-ink-secondary mt-1">
-          {[course.grau, course.turno].filter(Boolean).join(" • ") || "—"}
-        </p>
+        <div className="flex flex-wrap gap-1.5 mt-2">
+          {course.grau && !isPending(course.grau) && (
+            <Badge variant="info">{course.grau}</Badge>
+          )}
+          {course.turno && !isPending(course.turno) && (
+            <Badge>{course.turno}</Badge>
+          )}
+          {course.centro && <Badge>{course.centro}</Badge>}
+        </div>
       </Link>
     </li>
   );
