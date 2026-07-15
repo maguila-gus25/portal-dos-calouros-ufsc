@@ -1,3 +1,4 @@
+import { SearchX } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useSearchParams } from "react-router-dom";
 
@@ -17,26 +18,40 @@ export function SearchPage() {
 
   return (
     <div className="space-y-4">
-      <section className="card p-6">
-        <h1 className="text-2xl font-bold">Buscar</h1>
+      <section className="card p-6 sm:p-8">
+        <h1 className="text-2xl font-bold">Busca</h1>
         <p className="text-ink-secondary text-sm mt-1">
-          Procure por coordenação, curso, atlética, disciplina, data…
+          Procure por coordenação, curso, atlética, RU, datas…
         </p>
-        <SearchInput initialQuery={q} className="mt-4" />
+        <SearchInput
+          initialQuery={q}
+          className="mt-4"
+          placeholder="O que você quer saber?"
+        />
       </section>
 
       {q.length < 2 && (
-        <div className="card p-6 text-ink-secondary">
-          Digite pelo menos 2 caracteres para buscar.
+        <div className="card p-6 text-ink-secondary text-sm">
+          Digite pelo menos 2 caracteres para começar a busca.
         </div>
       )}
 
-      {q.length >= 2 && (isLoading || isFetching) && <Loading />}
+      {q.length >= 2 && (isLoading || isFetching) && (
+        <Loading label={`Buscando por "${q}"…`} />
+      )}
       {q.length >= 2 && isError && <ErrorBox />}
 
       {q.length >= 2 && data && data.length === 0 && !isLoading && (
-        <div className="card p-6 text-ink-secondary">
-          Nenhum resultado para <strong>&ldquo;{q}&rdquo;</strong>.
+        <div className="card p-8 flex flex-col items-center text-center gap-3">
+          <SearchX size={32} className="text-ink-secondary/40" />
+          <div>
+            <p className="font-medium text-ink-primary">
+              Nenhum resultado para "{q}"
+            </p>
+            <p className="text-sm text-ink-secondary mt-1">
+              Tente outras palavras ou navegue pelos temas na página inicial.
+            </p>
+          </div>
         </div>
       )}
 
@@ -44,7 +59,7 @@ export function SearchPage() {
         <section aria-label="Resultados">
           <p className="text-sm text-ink-secondary mb-3">
             {data.length} resultado{data.length > 1 ? "s" : ""} para{" "}
-            <strong>&ldquo;{q}&rdquo;</strong>
+            <strong className="text-ink-primary">"{q}"</strong>
           </p>
           <ul className="space-y-3">
             {data.map((result) => (
@@ -68,13 +83,12 @@ function ResultItem({ result, query }: { result: SearchResult; query: string }) 
     <li>
       <Link
         to={to}
-        className="card p-4 block no-underline hover:border-brand-blue transition-colors"
+        className="card p-4 block no-underline hover:border-brand-blue hover:shadow-card-hover transition-all duration-150"
       >
         <div className="flex items-center gap-2 text-xs">
           <span className="rounded-full bg-brand-blue/10 text-brand-blue px-2 py-0.5 font-medium">
             {badge}
           </span>
-          <span className="text-ink-secondary">{result.slug}</span>
         </div>
         <h3 className="font-semibold text-ink-primary mt-2">{result.title}</h3>
         <p className="text-sm text-ink-secondary mt-1">
