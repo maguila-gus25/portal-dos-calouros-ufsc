@@ -108,10 +108,10 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-38 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **aplicar a [identidade visual](identidade-visual.md)** (cores, fontes, logo), para **dar cara ao portal**. |
 | B-46 | 🔴 Must | 🟢 P | ✅ | Como **mantenedor**, quero **atualizar CLAUDE.md e arquitetura.md para Next.js 15**, para **manter a documentação técnica fiel ao código real**. CLAUDE.md reescrito; arquitetura.md com diagrama, tabela de stack, estrutura de pastas e ADR-8 atualizados. |
 | B-47 | 🟠 Should | 🟡 M | ✅ | Como **calouro que busca no Google**, quero **o portal bem indexado** (meta tags dinâmicas, OG image, `sitemap.xml`, `robots.txt`), para **encontrar a informação fácil**. `app/sitemap.ts`, `app/robots.ts` criados; `generateMetadata` com `description` + `openGraph` em todas as páginas. |
-| B-48 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **instalar o portal no celular como app** (PWA — `manifest.json`, ícone 192/512, `theme-color`), para **acessar offline e sem abrir o navegador**. |
+| B-48 | 🟡 Could | 🟢 P | ✅ | Como **calouro**, quero **instalar o portal no celular como app** (PWA — `manifest.json`, ícone 192/512, `theme-color`), para **acessar offline e sem abrir o navegador**. `public/manifest.json` com name/short_name/start_url/display/background_color/theme_color/#1877F2/icons 192+512; ícones SVG placeholder geométrico na cor primária em `public/icons/`; script `generate_icons.py` para PNGs; `manifest` e `viewport.themeColor` via metadata API do Next.js 15 em `app/layout.tsx`. |
 | B-49 | 🟠 Should | 🟡 M | ✅ | Como **calouro com deficiência visual**, quero **navegar o portal com leitor de tela e teclado** (audit WCAG AA — contrastes, alt texts, focus rings, landmarks), para **ter acesso igualitário**. `ink.secondary` → `#4B5563` (7.6:1); `brand.blueButton` → `#1565C0` para botões; skip link; foco visível; text-shadow no hero; badge info color; aria-hidden/aria-label em componentes. |
 | B-50 | 🟠 Should | 🔴 G | ⬜ | Como **mantenedor**, quero **banco de dados no Next.js** (Prisma + SQLite em dev → Postgres em prod), para **persistir histórias, feedback e future features dinâmicas** (pré-requisito de B-37). Aguarda co-planejamento com B-37 + E13 (auth + moderação) no mesmo sprint para ter caso de uso visível ao calouro. |
-| B-51 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. |
+| B-51 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. `@vercel/analytics` instalado; `<Analytics />` inserido em `app/layout.tsx` após `{children}`; nota de privacidade no `Footer.tsx`: "Usamos Vercel Analytics para contar visitas sem armazenar dados pessoais.". Sem cookies de rastreio. |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -170,7 +170,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-25 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **ver a data da última verificação** de cada dado, para **saber se está atual**. Rodapé `_Última verificação: julho/2026_` nos 8 docs de conteúdo; campo `ultima_verificacao` no frontmatter das 13 fichas de curso. |
 | B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
 | B-54 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. `playwright.config.ts` + `e2e/smoke.spec.ts` (8 testes, 8/8 passed); `.github/workflows/e2e.yml` (push + PR → main, chromium, artifacts). |
-| B-55 | 🟡 Could | 🟢 P | ⬜ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. |
+| B-55 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. `lighthouserc.json` na raiz com assertions performance/accessibility/seo >= 0.9; `.github/workflows/lighthouse.yml` em PRs para main com `npm run build && npx lhci autorun`; artifact do report salvo por 30 dias; `@lhci/cli` adicionado como devDependency. |
 
 ### E7 — Expansão para outros centros
 
@@ -204,31 +204,32 @@ de Vite/React + FastAPI (Render) para **Next.js 15 App Router full-stack** na Ve
 B-52 (FAQ 16 perguntas + página /faq), B-53 (checklist da 1ª semana + página /checklist).
 Fix de task list items no prose-content (CSS).
 
-**Sprint 9 — Acessível, Navegável e Testado (v1.4) — proposta:**
+**Sprint 9 — Acessível, Mapeado e Testado (v1.4) — concluído em 2026-07-16:** B-49
+(audit WCAG AA — 7 blockers corrigidos, contrastes, skip link, foco, aria-labels,
+landmarks); B-19 (mapa interativo Leaflet.js, 7 marcadores, /mapa); B-54 (Playwright
+8/8 smoke tests, GitHub Actions CI). Fix transversal: h1 duplicado em páginas de seção.
+Lint e Build passam; 38 páginas SSG.
 
-1. **B-49** — audit e correções de acessibilidade WCAG AA (contrastes, foco, aria-labels,
-   landmarks) — Should, M. Sem dependências; 37 páginas SSG publicadas tornam este o
-   momento ideal antes de adicionar mais páginas dinâmicas.
-2. **B-19** — mapa interativo com marcadores (Leaflet.js — RU, BU, prédios CTC) —
-   Could, M. Sem dependências; conteúdo-fonte já existe em `docs/mapa.md`; valor direto
-   para o calouro no celular na fila do RU.
-3. **B-54** — testes E2E com Playwright no CI (home, busca, seção, curso) — Should, M.
-   Sem dependências; protege regressões com o pipeline que agora cobre 37 páginas SSG.
+**Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5) — proposta:**
 
-> Itens excluídos desta proposta e motivo:
-> - **B-50** (banco de dados, Prisma): pré-requisito técnico de B-37, mas B-37 depende
->   também de E13 (auth + moderação). Entregar só o Prisma sem caso de uso visível ao
->   calouro não agrega valor de produto. Mantido no Radar até B-37 e E13 serem
->   co-planejados no mesmo sprint.
-> - **B-13** (histórias de veteranos): bloqueado por conteúdo externo — nenhuma submissão
->   real confirmada via issue template `historia-veterano.yml`. Inventar dados viola a
->   regra "Confiável antes de completo". Permanece A fazer até haver ao menos 2 histórias
->   reais aprovadas via PR/issue.
+1. **B-55** — Lighthouse CI (Performance ≥ 90, Accessibility ≥ 90, SEO ≥ 90) — Could, P.
+   Roda primeiro por ser CI puro: sem mudança de código do app, e estabelece o teto de
+   qualidade que valida os outros dois entregáveis do sprint.
+2. **B-48** — PWA instalável no celular (`manifest.json`, ícones 192/512, `theme-color`) —
+   Could, P. Sem dependências de conteúdo; máximo impacto mobile com custo mínimo.
+3. **B-51** — analytics de privacidade (Vercel Analytics, sem cookies) — Could, P.
+   Sem dependências; fecha a trinca "encontrável + acessível + medido" da v1.
 
-**Radar (v1.5):**
+> Itens excluídos e motivo:
+> - **B-50 / B-37 / E13** (banco + formulário + auth): escopo grande (G), precisa
+>   co-planejamento no mesmo sprint para ter caso de uso visível ao calouro. Mantido
+>   no Horizonte.
+> - **B-13** (histórias de veteranos): ainda sem submissões reais confirmadas via
+>   `historia-veterano.yml`. Inventar dados viola "Confiável antes de completo".
+> - **B-10** (dicas de veterano por disciplina): mesmo bloqueio de conteúdo real que B-13.
 
-- **B-48** — PWA instalável no celular (Could, P — sem dependências).
-- **B-51** — analytics de privacidade: Vercel Analytics (Could, P — sem dependências).
+**Radar (v2.0):**
+
 - **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
   e de qualquer feature dinâmica futura). Entrar no radar somente quando B-37 + E13
   forem planejados juntos.

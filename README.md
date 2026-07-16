@@ -119,7 +119,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.2** — Migração para Next.js 15 App Router full-stack na Vercel (Sprint 7)
 - [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
 - [x] **v1.4** — Acessibilidade WCAG AA, mapa interativo (Leaflet.js), testes E2E Playwright no CI (Sprint 9)
-- [ ] **v1.5** — Banco de dados (Prisma), formulário de histórias, Lighthouse CI, PWA
+- [x] **v1.5** — PWA instalável (manifest + ícones), Vercel Analytics, Lighthouse CI (Sprint 10)
+- [ ] **v1.6** — Banco de dados (Prisma), formulário de histórias, arte final dos ícones PWA
 - [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
 - [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
 

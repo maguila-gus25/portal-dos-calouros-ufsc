@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Portal dos Calouros UFSC — CTC",
   description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
+  manifest: "/manifest.json",
   openGraph: {
     title: "Portal dos Calouros UFSC — CTC",
     description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
@@ -15,6 +17,10 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1877F2",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
