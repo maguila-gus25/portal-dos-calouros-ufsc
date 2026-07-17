@@ -1,7 +1,10 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": ".next",
+      "startServerCommand": "npm run start",
+      "startServerReadyPattern": "Ready in",
+      "startServerReadyTimeout": 30000,
+      "numberOfRuns": 1,
       "url": ["http://localhost:3000/", "http://localhost:3000/busca", "http://localhost:3000/cursos"]
     },
     "assert": {

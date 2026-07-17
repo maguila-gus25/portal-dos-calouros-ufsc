@@ -130,6 +130,22 @@ Performance, Acessibilidade e SEO a cada PR daqui em diante.
 ou logo definitivo do portal) quando o design estiver pronto. Considerar B-50 + B-37 + E13
 como bloco integrado (banco + histórias + auth) para desbloquear conteúdo dinâmico da v2.
 
+### Reconciliação pós-merge (2026-07-16)
+
+O Sprint 10 foi implementado **duas vezes em paralelo** (uma branch local e o PR #3 mergeado
+no `main`). Após o merge, as duas versões foram reconciliadas mantendo a melhor implementação
+de cada peça, sem duplicação:
+
+- **PWA:** migrado do `public/manifest.json` estático (+ `metadata.manifest`) para o idiomático
+  `app/manifest.ts` (`MetadataRoute.Manifest`, type-safe, gera `/manifest.webmanifest` e injeta
+  o `<link rel="manifest">` automaticamente). Os ícones SVG+PNG em `public/icons/` e o script
+  `scripts/generate-icons-minimal.mjs` foram mantidos.
+- **Lighthouse CI:** `lighthouserc.json` corrigido de `staticDistDir: ".next"` (inválido para
+  app SSG servido — `.next` não é um site estático plano) para
+  `startServerCommand: "npm run start"`, a forma correta de auditar um app Next.js sem
+  `output: export`. Sem essa correção o gate falharia ao coletar em todo PR.
+- Analytics, Footer, ícones e `@lhci/cli` (devDependency) permaneceram como no `main`.
+
 ---
 
 ## Sprints Anteriores

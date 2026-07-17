@@ -8,7 +8,6 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Portal dos Calouros UFSC — CTC",
   description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
-  manifest: "/manifest.json",
   openGraph: {
     title: "Portal dos Calouros UFSC — CTC",
     description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
