@@ -145,6 +145,12 @@ de cada peça, sem duplicação:
   `startServerCommand: "npm run start"`, a forma correta de auditar um app Next.js sem
   `output: export`. Sem essa correção o gate falharia ao coletar em todo PR.
 - Analytics, Footer, ícones e `@lhci/cli` (devDependency) permaneceram como no `main`.
+- **Estabilidade do gate Lighthouse:** os scores medidos ficaram em Performance 90-91,
+  Accessibility 94-96, SEO 91-100. Como a Performance no CI oscila ±3-5 pontos por ruído
+  de runner, mantê-la em `error ≥ 0.9` faria o gate falhar de forma intermitente em PRs
+  sem mudança de código. Decisão: **Performance → `warn`** (visível, não bloqueia);
+  **Accessibility e SEO permanecem `error ≥ 0.9`** (têm margem e SEO é determinístico).
+  Assim o gate protege a11y/SEO de regressões reais sem falsos vermelhos por ruído.
 
 ---
 
