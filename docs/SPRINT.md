@@ -4,157 +4,102 @@
 
 ---
 
-## Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5)
+## Sprint 11 — Confiável e Documentada de Verdade (v1.6)
 
-**Objetivo:** Fechar a v1 com três melhorias de plataforma sem risco de conteúdo: tornar
-o portal instalável no celular como PWA, medir o uso real com analytics sem rastreio
-pessoal, e enforcar um teto automatizado de qualidade (Lighthouse CI) que proteja
-Performance, Acessibilidade e SEO a cada PR daqui em diante.
+**Objetivo:** Fechar as dívidas de confiabilidade que sobraram da v1 — sem inventar
+conteúdo de veterano nem depender de banco/auth (v2). Alinhar a documentação de deploy à
+arquitetura real (Next.js/Vercel), blindar o coração da fonte única (`lib/content.ts`) com
+testes unitários, e completar apenas os campos de curso que têm fonte oficial checável.
 
-| Historia | ID | Prioridade / Tam. | Status |
-|----------|----|-------------------|--------|
-| Lighthouse CI — thresholds Perf/A11y/SEO >= 90 no CI | B-55 | Could / P | Feito |
-| PWA instalavel — manifest.json, icones 192/512, theme-color | B-48 | Could / P | Feito |
-| Analytics de privacidade — Vercel Analytics sem cookies | B-51 | Could / P | Feito |
+| História | ID | Agente | Prioridade / Tam. | Status |
+|----------|----|--------|-------------------|--------|
+| Corrigir `docs/deploy.md` + `docs/README.md` para a arquitetura real (Next.js/Vercel-only) | B-60 | content-editor | Should / P | Not Started |
+| Testes unitários (Vitest) para `lib/content.ts` — o loader da fonte única | B-62 | backend-dev | Should / M | Not Started |
+| Preencher campos de curso verificáveis via fonte oficial (duração, e-mail SIN, CA, Instagram) | B-61 | content-editor | Should / M | Not Started |
 
-### Criterios de aceite detalhados
+### Critérios de aceite detalhados
 
-**B-55 — Lighthouse CI**
+**B-60 — `docs/deploy.md` e `docs/README.md` atualizados para Next.js/Vercel**
 
-- [x] `lighthouserc.json` na raiz com assertions: `categories:performance >= 0.9`,
-      `categories:accessibility >= 0.9`, `categories:seo >= 0.9`.
-- [x] Workflow `.github/workflows/lighthouse.yml` roda em PRs para `main`
-      usando `lhci autorun` contra o build de producao (`npm run build && lhci autorun`).
-- [x] Falha em qualquer threshold bloqueia merge (status check obrigatorio).
-- [x] Resultado do relatorio Lighthouse salvo como artifact do workflow (retencao 30 dias).
+- [ ] `docs/deploy.md` descreve **apenas** deploy Next.js full-stack na Vercel — nenhuma
+      menção a Render, `render.yaml`, `frontend/vercel.json`, `VITE_API_URL` ou CORS entre serviços.
+- [ ] Seção de banco de dados do `deploy.md` reescrita para o plano real (Prisma + SQLite dev
+      → Postgres gerenciado tipo Neon/Supabase em prod), referenciando B-50.
+- [ ] `docs/README.md`: linha do épico "Arquitetura" não diz mais "React + Python"; linha
+      "Deploy" não diz mais "Vercel (frontend) + Render (backend)".
+- [ ] Nenhum arquivo servido pela API (`SLUG_MAP` de `lib/content.ts`) é alterado — mudança
+      restrita a docs de desenvolvedor.
 
-**B-48 — PWA instalavel**
+**B-62 — Testes unitários para `lib/content.ts`**
 
-- [x] `public/manifest.json` com: `name`, `short_name`, `start_url: "/"`,
-      `display: "standalone"`, `background_color`, `theme_color` (#1877F2),
-      array `icons` com entradas 192x192 e 512x512 (PNG).
-- [x] Icones `public/icons/icon-192.png` e `public/icons/icon-512.png` criados
-      (placeholder geometrico SVG na cor primaria; PNGs gerados via `scripts/generate_icons.py`).
-- [x] Tag `<link rel="manifest" href="/manifest.json">` presente no `<head>`
-      via `app/layout.tsx` (metadata API Next.js 15: `manifest: "/manifest.json"`).
-- [x] Meta `<meta name="theme-color" content="#1877F2">` no `<head>`
-      via `export const viewport: Viewport = { themeColor: "#1877F2" }` em `app/layout.tsx`.
-- [ ] Chrome DevTools > Application > Manifest nao exibe erros. (verificacao manual apos deploy)
-- [ ] Chrome no Android exibe o banner "Adicionar a tela inicial" (verificacao manual apos deploy).
+- [ ] Vitest instalado como devDependency, com config mínima rodando contra `lib/`.
+- [ ] Casos: `listSections()` retorna as seções mapeadas; `getSection()` retorna `null` para
+      slug inexistente e dados corretos para slug válido; `listCourses()` retorna os cursos de
+      `docs/cursos/`; `getCourse()` resolve pelo campo `slug` do frontmatter e retorna `null`
+      para slug inexistente; `search("")` retorna `[]`; `search()` encontra por título de curso
+      e por conteúdo de seção.
+- [ ] Novo script `npm run test:unit` roda a suíte localmente.
+- [ ] CI roda `test:unit` em PRs para `main` e bloqueia merge em falha.
+- [ ] Nenhum arquivo em `docs/*.md` é alterado por esta história.
 
-**B-51 — Analytics de privacidade**
+**B-61 — Campos de curso verificáveis via fonte oficial**
 
-- [x] `@vercel/analytics` instalado e `<Analytics />` inserido em `app/layout.tsx`.
-- [ ] Nenhum cookie de rastreio definido (verificavel via DevTools > Application > Cookies).
-- [ ] Dashboard Vercel Analytics exibe pageviews por rota apos primeiro deploy.
-- [x] Rodape exibe nota de privacidade: "Usamos Vercel Analytics para contar visitas
-      sem armazenar dados pessoais." (texto curto, sem link externo obrigatorio).
-- [x] `docs/product-backlog.md` atualizado com B-51 marcado como feito.
+- [ ] Duração (semestres) preenchida nas fichas ainda `_A preencher_`, com página oficial do
+      curso (PPC/grade) como fonte.
+- [ ] Centro Acadêmico preenchido onde falta, com fonte oficial.
+- [ ] E-mail de coordenação de Sistemas de Informação preenchido a partir de fonte oficial.
+- [ ] `instagram_curso` preenchido **apenas** onde existir perfil oficial confirmável; sem
+      perfil identificável, o campo **permanece** `_A preencher_` — proibido inventar.
+- [ ] `ultima_verificacao` atualizado em todo arquivo tocado.
+- [ ] "Dicas de veterano", "Onde estudar" e "Empresa júnior" **não** são alterados (fora de
+      escopo — ver B-08/B-10).
+- [ ] Commit cita a URL da fonte oficial usada para cada dado novo.
 
-### Ordem de execucao recomendada e dependencias
+### Ordem de execução e dependências
 
-1. **B-55 primeiro** — e CI puro: nenhuma mudanca no codigo do app, apenas adicionar
-   `lighthouserc.json` e o workflow. Estabelece o teto que validara os proximos dois
-   entregaveis antes do merge.
-2. **B-48 segundo** — adiciona arquivos estaticos (`manifest.json`, icones) e duas
-   linhas em `layout.tsx`. Independente de B-55, mas a pontuacao PWA do Lighthouse
-   sobe com o manifest presente; ter B-55 antes confirma isso automaticamente.
-3. **B-51 terceiro** — instala uma dependencia npm e adiciona um componente ao layout.
-   Sem dependencias de B-48 ou B-55; pode rodar em paralelo com B-48 se houver dois
-   agentes, mas a ordem serial e mais segura para evitar conflito em `layout.tsx`.
+1. **B-60 primeiro** — texto puro, zero dependências; corrige uma fonte ativa de confusão
+   para contribuidores. Toca `docs/deploy.md` e `docs/README.md`.
+2. **B-62 segundo** — toca `package.json`/CI e `lib/`; não toca `docs/*.md`. Serial após
+   B-60 para evitar conflito de PR, mas independente em arquivos.
+3. **B-61 por último** — único item que exige pesquisa externa contra páginas oficiais da
+   UFSC; maior risco de conclusão parcial. Os outros dois entregam valor mesmo se B-61 não
+   fechar 100%. Toca `docs/cursos/*.md`.
 
-> Nao ha dependencias bloqueantes entre os tres itens. A ordem acima minimiza conflitos
-> em `app/layout.tsx` (B-48 e B-51 editam o mesmo arquivo).
+> Sem dependências bloqueantes entre os três. B-60 e B-61 são ambos content-editor mas
+> tocam arquivos disjuntos (`deploy.md`/`README.md` vs. `cursos/*.md`).
 
-### Definicao de Pronto (sprint inteiro)
+### Definition of Done (sprint inteiro)
 
-- [x] `npm run lint` passa sem erros.
-- [x] `npm run build` passa (38+ paginas SSG, sem erros de build).
-- [x] Lighthouse CI workflow adicionado e passando no branch do sprint.
-- [ ] Chrome DevTools confirma manifest sem erros (B-48). (verificacao manual apos deploy)
-- [ ] Vercel Analytics aparece no dashboard apos deploy de preview (B-51). (verificacao apos deploy)
-- [x] `docs/product-backlog.md` com B-48, B-51, B-55 marcados como feito.
-- [x] `docs/SPRINT.md` com retrospectiva preenchida antes de fechar o sprint.
+- [ ] `npm run lint` passa (frontend)
+- [ ] `npm run build` passa (frontend)
+- [ ] `npm run test:unit` passa (novo — B-62)
+- [ ] ui-ux-review sem findings bloqueadores (ou N/A: sprint sem mudança de UI)
+- [ ] `docs/product-backlog.md` atualizado com novos status
+- [ ] README atualizado se houve mudança estrutural
 
-### O que NAO entra e por que
+### O que NÃO entra e por quê
 
-| Item | Motivo da exclusao |
+| Item | Motivo da exclusão |
 |------|--------------------|
-| B-50 (Prisma + banco) | Escopo grande (G); requer co-planejamento com B-37 + E13 no mesmo sprint para ter caso de uso visivel ao calouro. |
-| B-37 (formulario de historias) | Depende de B-50 e de E13 (auth + moderacao). Nao entra sem banco e login prontos. |
-| B-13 (historias de veteranos) | Bloqueado: nenhuma submissao real confirmada via `historia-veterano.yml`. Inventar dados viola "Confiavel antes de completo". |
-| B-10 (dicas por disciplina) | Mesmo bloqueio de conteudo real que B-13. |
-| B-56 / E13 (auth OAuth) | Horizonte v2.0; sem caso de uso na v1 sem banco. |
-
----
-
-## Retrospectiva do Sprint 10
-
-**Concluido em:** 2026-07-16
-
-**Entregue:**
-- **B-55** — `lighthouserc.json` (Perf/A11y/SEO ≥ 0.9) + `.github/workflows/lighthouse.yml`
-  que roda `npm ci && npm run build && npx lhci autorun` em PRs para `main`. `@lhci/cli`
-  como devDependency.
-- **B-48** — `public/manifest.json` completo (name/short_name/start_url/display/
-  background_color/theme_color #1877F2); ícones reais 192×512 gerados como PNGs sólidos
-  #1877F2 via `scripts/generate-icons-minimal.mjs` (Node builtin, zlib DEFLATE nível 9,
-  ~413B e ~1.5KB); versões SVG com letra "C" branca para browsers que suportam;
-  `manifest: "/manifest.json"` em `metadata` e `themeColor: "#1877F2"` em `viewport`
-  do `app/layout.tsx` (metadata API do Next.js 15).
-- **B-51** — `@vercel/analytics@^1.5.0` instalado do registry (não stub); `<Analytics />`
-  de `@vercel/analytics/next` no `<body>` do layout; nota de privacidade curta no
-  `Footer.tsx`.
-
-**O que foi bem:**
-- Sequência serial B-55 → B-48 → B-51 evitou conflitos em `app/layout.tsx` como planejado.
-- `npm run lint` sem warnings; `npm run build` verde com 38 páginas SSG.
-- Scripts de geração de ícones consolidados em um único script Node minimalista (sem
-  dependência externa).
-
-**Ajustes durante a execução:**
-- Primeira tentativa de `frontend-dev` criou stub falso de `@vercel/analytics` em
-  `node_modules/`; substituído por `npm install` real do registry (package-lock regenerado).
-- PNGs iniciais ficaram enormes (787KB) por usar DEFLATE sem compressão; script trocado
-  para `zlib.deflateSync` nativo do Node.
-- Scripts de ícones redundantes (Python + canvas) removidos; sobrou apenas o Node minimal.
-
-**Verificações manuais pendentes (pós-deploy Vercel):**
-- Chrome DevTools > Application > Manifest sem erros.
-- Dashboard Vercel Analytics recebendo pageviews.
-- Chrome no Android exibindo banner "Adicionar à tela inicial".
-
-**Adiado:** Nenhum item fora do escopo do sprint.
-
-**Para o próximo sprint:** Substituir os ícones PWA placeholder por arte final (letra "C"
-ou logo definitivo do portal) quando o design estiver pronto. Considerar B-50 + B-37 + E13
-como bloco integrado (banco + histórias + auth) para desbloquear conteúdo dinâmico da v2.
-
-### Reconciliação pós-merge (2026-07-16)
-
-O Sprint 10 foi implementado **duas vezes em paralelo** (uma branch local e o PR #3 mergeado
-no `main`). Após o merge, as duas versões foram reconciliadas mantendo a melhor implementação
-de cada peça, sem duplicação:
-
-- **PWA:** migrado do `public/manifest.json` estático (+ `metadata.manifest`) para o idiomático
-  `app/manifest.ts` (`MetadataRoute.Manifest`, type-safe, gera `/manifest.webmanifest` e injeta
-  o `<link rel="manifest">` automaticamente). Os ícones SVG+PNG em `public/icons/` e o script
-  `scripts/generate-icons-minimal.mjs` foram mantidos.
-- **Lighthouse CI:** `lighthouserc.json` corrigido de `staticDistDir: ".next"` (inválido para
-  app SSG servido — `.next` não é um site estático plano) para
-  `startServerCommand: "npm run start"`, a forma correta de auditar um app Next.js sem
-  `output: export`. Sem essa correção o gate falharia ao coletar em todo PR.
-- Analytics, Footer, ícones e `@lhci/cli` (devDependency) permaneceram como no `main`.
-- **Estabilidade do gate Lighthouse:** os scores medidos ficaram em Performance 90-91,
-  Accessibility 94-96, SEO 91-100. Como a Performance no CI oscila ±3-5 pontos por ruído
-  de runner, mantê-la em `error ≥ 0.9` faria o gate falhar de forma intermitente em PRs
-  sem mudança de código. Decisão: **Performance → `warn`** (visível, não bloqueia);
-  **Accessibility e SEO permanecem `error ≥ 0.9`** (têm margem e SEO é determinístico).
-  Assim o gate protege a11y/SEO de regressões reais sem falsos vermelhos por ruído.
+| B-50 / B-37 / E13 (banco + form + auth) | Escopo grande; precisa co-planejamento como um bloco único. Sem caso de uso visível ao calouro isolado. |
+| B-13 (histórias de veteranos) | Sem submissão real via `historia-veterano.yml`. Inventar viola "confiável antes de completo". |
+| B-10 (dicas por disciplina) | Mesmo bloqueio de conteúdo real. |
+| B-08 (fechamento total da ficha) | Só a fatia verificável (B-61) entra; a fatia dependente de veterano permanece aberta. |
 
 ---
 
 ## Sprints Anteriores
+
+### Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5) — concluído em 2026-07-16
+
+**Objetivo:** Fechar a v1 com três melhorias de plataforma sem risco de conteúdo — PWA
+instalável, analytics sem rastreio pessoal e um teto automatizado de qualidade (Lighthouse CI).
+
+**Entregue:** B-48 (PWA idiomático via `app/manifest.ts` + ícones 192/512), B-51 (Vercel
+Analytics sem cookies + nota de privacidade no Footer), B-55 (`lighthouserc.json` +
+`.github/workflows/lighthouse.yml`). Pós-merge: reconciliação de implementação duplicada
+(PWA migrado para `app/manifest.ts`; Lighthouse corrigido para `startServerCommand`;
+Performance como `warn` para evitar flakiness, Accessibility/SEO como `error ≥ 0.9`).
 
 ### Sprint 9 — Acessivel, Mapeado e Testado (v1.4) — concluido em 2026-07-16
 

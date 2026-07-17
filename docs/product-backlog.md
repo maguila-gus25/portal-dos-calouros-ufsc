@@ -61,8 +61,9 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. Turno, duração (parcial), resumo, CA e EJ preenchidos para todos os 13 cursos. Faltam: dicas de veterano, onde estudar (precisam de veteranos reais), email SIN, durações não confirmadas. |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. Turno, duração (parcial), resumo, CA e EJ preenchidos para a maioria dos 13 cursos. A fatia **verificável via fonte oficial** (duração, e-mail SIN, CA faltante, Instagram oficial) foi desmembrada em **B-61**. A fatia bloqueada (dicas de veterano, onde estudar) permanece aqui sem previsão até haver veteranos reais — ver B-10. |
 | B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
+| B-61 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **campos de curso ainda em `_A preencher_` (duração, e-mail da coordenação de SIN, Centro Acadêmico, Instagram oficial) confirmados via página oficial do curso**, para **ter a ficha mais completa sem depender de relatos de veteranos**. Escopo fechado: só campos com fonte institucional checável (site oficial do curso/CA). Não toca "Dicas de veterano", "Onde estudar" nem "Empresa júnior" (ver B-10, B-08). |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 
 ### E3 — Vida universitária
@@ -112,6 +113,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-49 | 🟠 Should | 🟡 M | ✅ | Como **calouro com deficiência visual**, quero **navegar o portal com leitor de tela e teclado** (audit WCAG AA — contrastes, alt texts, focus rings, landmarks), para **ter acesso igualitário**. `ink.secondary` → `#4B5563` (7.6:1); `brand.blueButton` → `#1565C0` para botões; skip link; foco visível; text-shadow no hero; badge info color; aria-hidden/aria-label em componentes. |
 | B-50 | 🟠 Should | 🔴 G | ⬜ | Como **mantenedor**, quero **banco de dados no Next.js** (Prisma + SQLite em dev → Postgres em prod), para **persistir histórias, feedback e future features dinâmicas** (pré-requisito de B-37). Aguarda co-planejamento com B-37 + E13 (auth + moderação) no mesmo sprint para ter caso de uso visível ao calouro. |
 | B-51 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. `@vercel/analytics` instalado; `<Analytics />` inserido em `app/layout.tsx` após `{children}`; nota de privacidade no `Footer.tsx`: "Usamos Vercel Analytics para contar visitas sem armazenar dados pessoais.". Sem cookies de rastreio. |
+| B-60 | 🟠 Should | 🟢 P | ⬜ | Como **mantenedor/contribuidor novo**, quero **`docs/deploy.md` e `docs/README.md` descrevendo a arquitetura real** (Next.js 15 full-stack só na Vercel), para **não seguir um guia de deploy obsoleto** (Render, `render.yaml`, `frontend/vercel.json`, `VITE_API_URL` não existem mais desde a migração do Sprint 7). Gap remanescente do critério de aceite de B-46 (que não cobriu `deploy.md`). |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -171,6 +173,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
 | B-54 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. `playwright.config.ts` + `e2e/smoke.spec.ts` (8 testes, 8/8 passed); `.github/workflows/e2e.yml` (push + PR → main, chromium, artifacts). |
 | B-55 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. `lighthouserc.json` na raiz com assertions performance/accessibility/seo >= 0.9; `.github/workflows/lighthouse.yml` em PRs para main com `npm run build && npx lhci autorun`; artifact do report salvo por 30 dias; `@lhci/cli` adicionado como devDependency. |
+| B-62 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **testes unitários para `lib/content.ts`** (o loader que lê `docs/*.md` — o coração da fonte única), para **detectar regressões no parsing/slug-mapping antes do build ou do E2E**. Cobre `listSections`, `getSection`, `listCourses`, `getCourse` (inclusive resolução por `slug` do frontmatter) e `search` (query vazia, match por título, match por conteúdo, slug inexistente). |
 
 ### E7 — Expansão para outros centros
 
@@ -210,15 +213,33 @@ landmarks); B-19 (mapa interativo Leaflet.js, 7 marcadores, /mapa); B-54 (Playwr
 8/8 smoke tests, GitHub Actions CI). Fix transversal: h1 duplicado em páginas de seção.
 Lint e Build passam; 38 páginas SSG.
 
-**Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5) — proposta:**
+**Sprint 10 concluído (v1.5):** PWA instalável (B-48), analytics de privacidade sem
+cookies (B-51) e teto de qualidade via Lighthouse CI (B-55, Accessibility/SEO em
+`error ≥ 0.9`, Performance em `warn` por ruído de runner). Com isso, todos os itens
+Must/Should da plataforma v1 estão ✅.
 
-1. **B-55** — Lighthouse CI (Performance ≥ 90, Accessibility ≥ 90, SEO ≥ 90) — Could, P.
-   Roda primeiro por ser CI puro: sem mudança de código do app, e estabelece o teto de
-   qualidade que valida os outros dois entregáveis do sprint.
-2. **B-48** — PWA instalável no celular (`manifest.json`, ícones 192/512, `theme-color`) —
-   Could, P. Sem dependências de conteúdo; máximo impacto mobile com custo mínimo.
-3. **B-51** — analytics de privacidade (Vercel Analytics, sem cookies) — Could, P.
-   Sem dependências; fecha a trinca "encontrável + acessível + medido" da v1.
+**Sprint 11 — Confiável e Documentada de Verdade (v1.6) — proposta:**
+
+Com a v1 fechada e a maioria dos itens grandes restantes bloqueados por banco/auth (v2)
+ou por falta de conteúdo real de veteranos, este sprint foca em três lacunas pequenas,
+sem risco de conteúdo, que aumentam a confiabilidade do que já existe — em vez de
+inventar trabalho novo só para preencher o sprint.
+
+1. **B-60** — corrigir `docs/deploy.md` e `docs/README.md`, que ainda descrevem a stack
+   antiga (Render, `render.yaml`, Vite, `VITE_API_URL`) removida na migração do Sprint 7 —
+   Should, P. Roda primeiro: é edição de texto pura, zero dependência, e remove uma fonte
+   ativa de confusão para quem tentar fazer deploy ou contribuir hoje.
+2. **B-62** — testes unitários para `lib/content.ts` — Should, M. Roda em segundo: também
+   não depende de B-60, mas toca `package.json`/CI, então evitar paralelismo com B-60
+   (que também mexe em texto solto) reduz o risco de PRs conflitantes. Fecha uma lacuna
+   real: o loader da fonte única não tem nenhum teste hoje, só é coberto indiretamente
+   pelo build e pelo E2E.
+3. **B-61** — preencher em `docs/cursos/*.md` os campos que têm fonte oficial checável
+   (duração, e-mail da coordenação de SIN, Centro Acadêmico faltante, Instagram oficial)
+   sem tocar nos campos bloqueados por veteranos — Should, M. Roda por último: é o único
+   item que exige pesquisa em fontes externas (páginas oficiais dos cursos/CAs), então tem
+   o maior risco de não fechar 100% dos campos no tempo do sprint; os outros dois itens já
+   entregam valor mesmo se este ficar parcial.
 
 > Itens excluídos e motivo:
 > - **B-50 / B-37 / E13** (banco + formulário + auth): escopo grande (G), precisa
@@ -227,6 +248,8 @@ Lint e Build passam; 38 páginas SSG.
 > - **B-13** (histórias de veteranos): ainda sem submissões reais confirmadas via
 >   `historia-veterano.yml`. Inventar dados viola "Confiável antes de completo".
 > - **B-10** (dicas de veterano por disciplina): mesmo bloqueio de conteúdo real que B-13.
+> - **B-08** (fechamento total da ficha de curso): a fatia verificável virou B-61; a
+>   fatia de veterano continua bloqueada, então B-08 em si não entra fechado no sprint.
 
 **Radar (v2.0):**
 
@@ -331,6 +354,28 @@ Lint e Build passam; 38 páginas SSG.
 - [ ] Arquivo `docs/moderacao.md` com critérios claros (o que aprova, o que rejeita).
 - [ ] Cobre: difamação, dados pessoais, conteúdo ofensivo, spam, informação falsa.
 - [ ] Linkado no painel de moderação e no CONTRIBUTING.md.
+
+**B-60 — `docs/deploy.md` e `docs/README.md` atualizados para Next.js/Vercel**
+- [ ] `docs/deploy.md` descreve **apenas** deploy Next.js full-stack na Vercel — nenhuma menção a Render, `render.yaml`, `frontend/vercel.json`, `VITE_API_URL` ou CORS entre serviços.
+- [ ] Seção de banco de dados do `deploy.md` reescrita para o plano real (Prisma + SQLite dev → Postgres gerenciado tipo Neon/Supabase em prod), referenciando B-50 em vez de "Render → New → PostgreSQL".
+- [ ] `docs/README.md`: linha do épico "Arquitetura" não diz mais "React + Python"; linha "Deploy" não diz mais "Vercel (frontend) + Render (backend)".
+- [ ] Nenhum arquivo servido pela API (`lib/content.ts` `SLUG_MAP`) é alterado — mudança restrita a docs de desenvolvedor.
+
+**B-61 — Campos de curso verificáveis via fonte oficial**
+- [ ] Duração (semestres) preenchida nas fichas ainda `_A preencher_` (engenharia-de-alimentos, engenharia-de-controle-e-automacao, engenharia-quimica, engenharia-eletrica, engenharia-mecanica, engenharia-de-producao, engenharia-eletronica), com página oficial do curso (PPC/grade) como fonte.
+- [ ] Centro Acadêmico preenchido em engenharia-de-controle-e-automacao.md e engenharia-sanitaria-e-ambiental.md, com fonte oficial (site do CA ou do curso).
+- [ ] E-mail de coordenação de Sistemas de Informação preenchido (frontmatter `coordenacao.email` + corpo) a partir de fonte oficial (ex.: `https://sin.ufsc.br/coordenacao/`).
+- [ ] `instagram_curso` preenchido apenas onde existir perfil oficial confirmável; sem perfil identificável, o campo **permanece** `_A preencher_` — proibido inventar ou "chutar" um @ que pareça certo.
+- [ ] `ultima_verificacao` atualizado em todo arquivo tocado.
+- [ ] "Dicas de veterano", "Onde estudar" e "Empresa júnior" **não** são alterados nesta história (fora de escopo — ver B-08/B-10).
+- [ ] PR/commit cita a URL da fonte oficial usada para cada dado novo.
+
+**B-62 — Testes unitários para `lib/content.ts`**
+- [ ] Test runner (Vitest) instalado como devDependency, com config mínima rodando contra `lib/`.
+- [ ] Casos cobertos: `listSections()` retorna as seções mapeadas; `getSection()` retorna `null` para slug inexistente e dados corretos para slug válido; `listCourses()` retorna os cursos de `docs/cursos/`; `getCourse()` resolve pelo campo `slug` do frontmatter (não pelo nome do arquivo) e retorna `null` para slug inexistente; `search("")` retorna `[]`; `search()` encontra resultado por título de curso e por conteúdo de seção.
+- [ ] Novo script `npm run test:unit` roda a suíte localmente.
+- [ ] CI roda `test:unit` em PRs para `main` e bloqueia merge em falha (job novo ou adicionado a um workflow existente).
+- [ ] Nenhum arquivo em `docs/*.md` é alterado por esta história.
 
 ---
 
