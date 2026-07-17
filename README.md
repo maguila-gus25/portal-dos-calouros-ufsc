@@ -26,8 +26,11 @@ depois.
 | **Aplicação** | Next.js 15 App Router + TypeScript + Tailwind CSS | Vercel (auto-deploy em `main`) |
 | **Conteúdo** | Markdown em `docs/` lido via `lib/content.ts` (gray-matter + marked) | Fonte única |
 | **API** | Next.js Route Handlers em `app/api/` | Embutido no Next.js |
+| **PWA** | `app/manifest.ts` + ícones 192/512 — instalável na tela inicial | — |
+| **Analytics** | `@vercel/analytics` — sem cookies, sem PII | Vercel |
+| **CI/Qualidade** | Playwright (E2E) · Lighthouse CI (Perf/A11y/SEO ≥ 90) · lychee (link-check) | GitHub Actions |
 
-Sem backend separado. Sem banco de dados na v1 (Prisma + Postgres planejado para v1.1 — ver [backlog](docs/product-backlog.md)).
+Sem backend separado. Sem banco de dados na v1 (Prisma + Postgres planejado para v2.0 — ver [backlog](docs/product-backlog.md)).
 
 ## Como rodar localmente
 
@@ -119,8 +122,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.2** — Migração para Next.js 15 App Router full-stack na Vercel (Sprint 7)
 - [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
 - [x] **v1.4** — Acessibilidade WCAG AA, mapa interativo (Leaflet.js), testes E2E Playwright no CI (Sprint 9)
-- [ ] **v1.5** — Banco de dados (Prisma), formulário de histórias, Lighthouse CI, PWA
-- [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
+- [x] **v1.5** — PWA instalável, analytics de privacidade (sem cookies), Lighthouse CI (Perf/A11y/SEO ≥ 90) (Sprint 10)
+- [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, painel de moderação, avaliação de professores
 - [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
 
 ## Como contribuir

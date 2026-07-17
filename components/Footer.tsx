@@ -24,6 +24,9 @@ export function Footer() {
         <p className="text-xs mt-4 text-ink-secondary">
           © {year} Portal dos Calouros UFSC — Conteúdo aberto e mantido pela comunidade estudantil.
         </p>
+        <p className="text-xs mt-1 text-ink-secondary">
+          Usamos analytics sem cookies e sem rastreamento pessoal.
+        </p>
       </div>
     </footer>
   );

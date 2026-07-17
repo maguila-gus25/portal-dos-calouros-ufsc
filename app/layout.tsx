@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/Header";
@@ -15,6 +16,10 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1877F2",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

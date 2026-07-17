@@ -4,62 +4,78 @@
 
 ---
 
-## Sprint 9 — Acessível, Mapeado e Testado (v1.4)
+## Sprint 10 — Instalável, Medido e Auditado (v1.5)
 
-**Objetivo:** Tornar o portal utilizável por todos (WCAG AA), dar ao calouro um mapa
-interativo do campus e proteger a base com testes E2E automatizados no CI.
+**Objetivo:** Deixar o portal instalável no celular (PWA), medir o uso de forma
+privada (sem cookies/rastreio) e criar um gate de qualidade automático (Lighthouse CI)
+que protege os ganhos de acessibilidade, SEO e performance a cada PR.
 
 | História | ID | Agente | Status |
 |----------|----|--------|--------|
-| Audit de acessibilidade WCAG AA — contraste, foco, aria-labels, landmarks | B-49 | ui-ux-designer → frontend-dev | Done ✅ |
-| Mapa interativo com marcadores do campus (Leaflet.js + docs/mapa.md) | B-19 | frontend-dev | Done ✅ |
-| Testes E2E com Playwright — smoke tests + CI no GitHub Actions | B-54 | tester | Done ✅ |
+| Analytics de privacidade (Vercel Analytics, sem cookies) + aviso de privacidade | B-51 | frontend-dev | Done ✅ |
+| PWA instalável (`manifest.json`, ícones 192/512, `theme-color`, `<link rel="manifest">`) | B-48 | frontend-dev | Done ✅ |
+| Lighthouse CI (Performance/Accessibility/SEO ≥ 90) em PRs para `main` | B-55 | tester | Done ✅ |
 
 **Ordem de execução (dependências):**
-1. `ui-ux-designer` (B-49) roda primeiro — produz specs de contraste, foco e aria.
-2. `frontend-dev` (B-49 implementação) e `frontend-dev` (B-19) rodam **em paralelo** após
-   as specs de acessibilidade estarem prontas (sem sobreposição de arquivos).
-3. `tester` (B-54) roda **após** B-49 e B-19 — garante que as novas páginas entram
-   na suíte de smoke tests antes de fechar o sprint.
+1. `frontend-dev` (B-51) roda primeiro — script único no `app/layout.tsx`, zero risco de UI,
+   começa a coletar dados reais de uso desde já.
+2. `frontend-dev` (B-48) — `manifest.json`, ícones e `theme-color`; usa a paleta de
+   `docs/identidade-visual.md`. Roda depois de B-51 (ambos tocam `app/layout.tsx`, então
+   **sequencial**, não paralelo, para evitar conflito de arquivo).
+3. `tester` (B-55) roda **por último** — audita o estado final do sprint (já com analytics
+   e PWA) e configura o gate `lhci autorun` em `.github/workflows/`.
 
 ## Definition of Done
 
-- [x] `npm run lint` passa
-- [x] `npm run build` passa (38 páginas geradas, sem erros)
-- [x] `ui-ux-review` sem findings bloqueadores (3 warnings cosméticos, nenhum blocker)
-- [x] Playwright smoke tests passam (8/8 passed) — CI configurado no GitHub Actions
-- [x] `docs/product-backlog.md` atualizado com ✅ para B-19, B-49, B-54
-- [x] README atualizado (nova página /mapa, Playwright, roadmap v1.4 ✅)
-
-> Lighthouse Accessibility ≥ 90: não verificado em CI neste sprint (B-55 não entrou);
-> as correções de contraste e landmarks tornam a pontuação improvável de cair abaixo de 90,
-> mas a medição formal fica para B-55 no Sprint 10.
+- [x] `npm run lint` passa (sem warnings/erros)
+- [x] `npm run build` passa (39 páginas SSG, incl. `/manifest.webmanifest`)
+- [x] `ui-ux-review` sem findings bloqueadores (1 nota informativa sobre `themeColor` no `viewport` export — correto/inevitável)
+- [x] Lighthouse CI configurado com thresholds ≥ 90 (Performance/Accessibility/SEO), nível `error`
+- [x] `docs/product-backlog.md` atualizado com ✅ para B-48, B-51, B-55
+- [x] README atualizado (PWA, analytics, Lighthouse CI)
 
 ## Retrospectiva
 
-- **Entregue:** B-49 — audit WCAG AA com 7 blockers identificados e todos corrigidos:
-  `ink.secondary` → `#4B5563` (ratio 7.6:1), `brand.blueButton` → `#1565C0` para botões,
-  skip link em `app/layout.tsx`, foco visível no `SearchInput`, text-shadow no hero,
-  badge `info` com cor correta, Footer sem opacidade, `aria-hidden`/`aria-label` em
-  componentes, área de toque nos NavLinks; `docs/identidade-visual.md` atualizado com
-  ratios calculados e diretriz de foco.
-  B-19 — `app/mapa/page.tsx` + `components/MapView.tsx` com Leaflet.js (SSR-safe via
-  `MapViewClient`), 7 marcadores categorizados, legenda flutuante, tile layer OSM, URL
-  canônica `/mapa` com entrada no sitemap e SECTION_DEDICATED_ROUTES na home.
-  B-54 — `playwright.config.ts`, `e2e/smoke.spec.ts` (8 smoke tests, 8/8 passed),
-  `.github/workflows/e2e.yml`. Fix transversal: `lib/content.ts` strips `<h1>` inicial
-  do HTML gerado (evita duplicata com o `<h1>` do componente em todas as páginas).
-  Build fix: `components/MapViewClient.tsx` criado para resolver restrição de `dynamic()`
-  com `ssr: false` dentro de Server Components no Next.js 15.
-- **Adiado:** B-13 (histórias de veteranos) e B-50 (Prisma DB) — bloqueados, como
-  previsto no planejamento.
-- **Para o próximo sprint (v1.5):** B-55 (Lighthouse CI), B-51 (analytics), B-48 (PWA),
-  B-50 + B-37 + E13 (banco + formulário + auth, co-planejados). B-13 quando houver
-  submissões reais de veteranos.
+- **Entregue:**
+  - **B-51 (analytics de privacidade):** `@vercel/analytics` instalado; `<Analytics />` em
+    `app/layout.tsx` (sem cookies, sem PII); aviso "Usamos analytics sem cookies e sem
+    rastreamento pessoal." no rodapé (`components/Footer.tsx`).
+  - **B-48 (PWA instalável):** `app/manifest.ts` gera `/manifest.webmanifest` (display
+    standalone, `start_url: "/"`, `theme_color`/`background_color` da paleta); `export const
+    viewport: Viewport = { themeColor: "#1877F2" }` no layout (forma idiomática Next.js 15,
+    sem warning de build); ícones `public/icon-192.png` e `public/icon-512.png` gerados via
+    gerador PNG puro em Node (fundo `#1877F2` + marca "C" branca, `purpose: any` + `maskable`).
+  - **B-55 (Lighthouse CI):** `lighthouserc.json` (assertions `error`, `minScore: 0.9` em
+    performance/accessibility/seo) + `.github/workflows/lighthouse.yml` (`lhci autorun` em
+    push/PR → main, via `npx @lhci/cli`, sem poluir `package.json`). Audita `/`, `/faq` e
+    `/cursos/ciencias-da-computacao`.
+- **Adiado:** B-50 (Prisma/DB) e B-13 (histórias de veteranos) — bloqueados, como previsto:
+  B-50 aguarda co-planejamento com B-37 + E13 (auth/moderação); B-13 aguarda submissões reais.
+- **Percalços de processo:** o agente do B-48 travou (stream watchdog, 600s) após escrever
+  `manifest.ts` + `viewport`, mas antes de gerar os ícones PNG. O Scrum Master inspecionou o
+  working tree, confirmou o que já estava pronto e gerou os ícones diretamente (sem
+  ImageMagick no ambiente — usou um encoder PNG puro em Node). Lição: em stall, verificar o
+  estado parcial no disco antes de re-despachar; muitas vezes falta só o passo final.
+- **`/mapa` fora do gate Lighthouse:** Leaflet + tiles externos do OpenStreetMap tornam o
+  score de Performance instável em CI. Auditar o mapa exigiria um budget de performance
+  separado — dívida técnica registrada para uma futura rodada (possível B-55b).
+- **Para o próximo sprint (v1.6):** radar vazio de itens Could/P sem dependência. Próximo
+  grooming deve reavaliar B-10 (dicas de veterano por disciplina) ou puxar do Horizonte v2.0
+  se B-13/E13 destravarem. O gate Lighthouse agora protege a11y/SEO/perf a cada PR.
 
 ---
 
 ## Sprints Anteriores
+
+### Sprint 10 — Instalável, Medido e Auditado (v1.5) — concluído em 2026-07-16
+
+**Objetivo:** PWA instalável, analytics sem cookies e gate de qualidade Lighthouse CI.
+
+**Entregue:** B-51 (`@vercel/analytics` + aviso de privacidade no rodapé); B-48 (PWA —
+`app/manifest.ts`, `viewport.themeColor`, ícones 192/512); B-55 (Lighthouse CI com
+thresholds ≥ 90 em Perf/A11y/SEO). Lint ✅ Build ✅ 39 páginas SSG.
+
+---
 
 ### Sprint 9 — Acessível, Mapeado e Testado (v1.4) — concluído em 2026-07-15
 
@@ -69,7 +85,7 @@ interativo do campus e proteger a base com testes E2E automatizados no CI.
 (B-19); Playwright 8/8 testes + GitHub Actions (B-54). Fix transversal: h1 duplicado em
 todas as páginas de seção. Lint ✅ Build ✅ 38 páginas SSG.
 
-## Sprints Anteriores
+---
 
 ### Sprint 8 — Encontrável e Documentado (v1.3) — concluído em 2026-07-15
 
