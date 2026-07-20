@@ -32,7 +32,7 @@ ultima_verificacao: "julho/2026"
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
+- **Centro Acadêmico:** **CAECA** (Centro Acadêmico de Engenharia de Controle e Automação) — <https://caeca.ufsc.br/>
 - **Atlética:** **ATACA** ("Nação Hiena") — [@atacaufsc](https://www.instagram.com/atacaufsc/)
 - **Empresa júnior:** Autojun (confirmar @)
 - **Instagrams / perfis:** [@ecaufscfloripa](https://www.instagram.com/ecaufscfloripa/) (perfil do curso)

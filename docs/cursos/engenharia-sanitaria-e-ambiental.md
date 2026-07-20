@@ -30,7 +30,7 @@ ultima_verificacao: "julho/2026"
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
-- **Centro Acadêmico:** _A preencher_
+- **Centro Acadêmico:** **CALESA** (Centro Acadêmico Livre de Engenharia Sanitária e Ambiental) — [@calesaufsc](https://www.instagram.com/calesaufsc/) · <https://calesa.ufsc.br/>
 - **Atlética:** **AESA** — [@aesaufsc](https://www.instagram.com/aesaufsc/) · [site oficial](https://atleticaesa.ufsc.br/)
 - **Empresa júnior:** **EJESAM** — Empresa Júnior de Engenharia Sanitária e Ambiental
 - **Instagrams / perfis:** [@ens_ufsc](https://www.instagram.com/ens_ufsc/) (curso) · [@saesa.ufsc](https://www.instagram.com/saesa.ufsc/) (Semana Acadêmica)
