@@ -210,6 +210,14 @@ landmarks); B-19 (mapa interativo Leaflet.js, 7 marcadores, /mapa); B-54 (Playwr
 8/8 smoke tests, GitHub Actions CI). Fix transversal: h1 duplicado em páginas de seção.
 Lint e Build passam; 38 páginas SSG.
 
+**Sprint 11 — Vida do curso completa (avanço em B-08) — concluído em 2026-07-20:**
+completados os 2 Centros Acadêmicos que faltavam nas fichas de curso — **CAECA**
+(Eng. de Controle e Automação, <https://caeca.ufsc.br/>) e **CALESA** (Eng.
+Sanitária e Ambiental, <https://calesa.ufsc.br/> · [@calesaufsc](https://www.instagram.com/calesaufsc/)).
+Com isso, **100% das 13 fichas do CTC têm Centro Acadêmico preenchido com fonte
+oficial**. B-08 segue 🚧 (faltam dicas de veterano e "onde estudar", que dependem
+de veteranos reais).
+
 **Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5) — proposta:**
 
 1. **B-55** — Lighthouse CI (Performance ≥ 90, Accessibility ≥ 90, SEO ≥ 90) — Could, P.
