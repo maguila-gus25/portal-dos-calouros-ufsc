@@ -10,7 +10,7 @@ coordenacao:
   sala: Prédio do INE (CTC), térreo, Sala 103
   site: https://sin.ufsc.br/
 atletica: A5 — @a5ufsc
-instagram_curso: _A preencher_
+instagram_curso: CASIN — @casin.ufsc
 ultima_verificacao: "julho/2026"
 ---
 
@@ -23,7 +23,7 @@ ultima_verificacao: "julho/2026"
 - **Resumo:** Desenvolvimento e gestão de sistemas de software voltados a processos de negócio e tomada de decisão.
 
 ## Coordenação
-- **E-mail:** _A preencher_ (ver <https://sin.ufsc.br/contato/>)
+- **E-mail:** sin@contato.ufsc.br0
 - **Telefone:** (48) 3721-4701
 - **Sala / prédio:** Prédio do INE (CTC), térreo, Sala 103
 - **Coordenação:** <https://sin.ufsc.br/coordenacao/>
