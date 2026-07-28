@@ -10,17 +10,17 @@ a forma mais rápida de entrar na vida universitária.
 
 ## Atléticas por curso (CTC)
 
-| Curso(s) | Atlética | Instagram | Observações |
-|----------|----------|-----------|-------------|
-| Ciências da Computação · Sistemas de Informação | **A5** | [@a5ufsc](https://www.instagram.com/a5ufsc/) | Atende os cursos do INE |
-| Engenharia Civil | **ATEC** | [@atecufsc](https://www.instagram.com/atecufsc/) | Fundada em 2013 |
-| Engenharia de Controle e Automação | **ATACA** ("Nação Hiena") | [@atacaufsc](https://www.instagram.com/atacaufsc/) | Contato: diretoria.ataca.ufsc@gmail.com |
-| Engenharia Elétrica · Engenharia Eletrônica | **Ateel** | [@ateelufsc](https://www.instagram.com/ateelufsc/) | Atende os dois cursos do EEL |
-| Engenharia Mecânica · Engenharia de Materiais | **ATM UFSC** | [@atmufsc](https://www.instagram.com/atmufsc/) | Tricampeã da Copa CTC e Copa Calouro |
-| Engenharia de Produção | **A7** (Atlética Edvaldo de Souza) | [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) | Tetracampeã da Copa CTC |
-| Engenharia Química · Engenharia de Alimentos | **ATEQA** | [@ateqaufsc](https://www.instagram.com/ateqaufsc/) | Atende os dois cursos do EQA |
-| Engenharia Sanitária e Ambiental | **AESA** | [@aesaufsc](https://www.instagram.com/aesaufsc/) · [site](https://atleticaesa.ufsc.br/) | |
-| Arquitetura e Urbanismo | **ATARQ** | [@atarq.ufsc](https://www.instagram.com/atarq.ufsc/) | |
+| Curso(s) | Atlética | Instagram |
+|----------|----------|-----------|
+| Ciências da Computação · Sistemas de Informação | **A5** | [@a5ufsc](https://www.instagram.com/a5ufsc/) |
+| Engenharia Civil | **ATEC** | [@atecufsc](https://www.instagram.com/atecufsc/) |
+| Engenharia de Controle e Automação | **ATACA** | [@atacaufsc](https://www.instagram.com/atacaufsc/) |
+| Engenharia Elétrica · Engenharia Eletrônica | **Ateel** | [@ateelufsc](https://www.instagram.com/ateelufsc/) |
+| Engenharia Mecânica · Engenharia de Materiais | **ATM UFSC** | [@atmufsc](https://www.instagram.com/atmufsc/) |
+| Engenharia de Produção | **A7** | [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) |
+| Engenharia Química · Engenharia de Alimentos | **ATEQA** | [@ateqaufsc](https://www.instagram.com/ateqaufsc/) |
+| Engenharia Sanitária e Ambiental | **AESA** | [@aesaufsc](https://www.instagram.com/aesaufsc/) · [site](https://atleticaesa.ufsc.br/) |
+| Arquitetura e Urbanismo | **ATARQ** | [@atarq.ufsc](https://www.instagram.com/atarq.ufsc/) |
 
 > Alguns cursos compartilham atlética por proximidade de currículo/departamento
 > (INE, EEL, EMC/Materiais, EQA). Isso é o padrão do CTC.
