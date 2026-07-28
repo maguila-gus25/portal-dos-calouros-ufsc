@@ -165,10 +165,10 @@ export default function MapView() {
     <div className="relative w-full rounded-xl overflow-hidden border border-surface-border shadow-card">
       {/* Legenda */}
       <div className="absolute top-3 right-3 z-[1000] bg-surface/95 backdrop-blur-sm border border-surface-border rounded-lg p-3 shadow-card-hover">
-        <p className="text-xs font-semibold text-ink-primary mb-2">Legenda</p>
+        <p className="text-xs font-semibold text-gray-900 mb-2">Legenda</p>
         <ul className="space-y-1.5">
           {(Object.keys(CATEGORY_COLORS) as MapMarker["category"][]).map((cat) => (
-            <li key={cat} className="flex items-center gap-2 text-xs text-ink-primary">
+            <li key={cat} className="flex items-center gap-2 text-xs text-gray-900">
               <span
                 className="w-3 h-3 rounded-full flex-shrink-0"
                 style={{ backgroundColor: CATEGORY_COLORS[cat] }}
