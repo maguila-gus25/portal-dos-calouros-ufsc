@@ -19,14 +19,14 @@ export default async function SearchPage({ searchParams }: Props) {
   return (
     <div className="space-y-4">
       <section className="card p-6 sm:p-8">
-        <h1 className="font-heading text-2xl font-bold">Busca</h1>
-        <p className="text-ink-secondary text-sm mt-1">
+        <h1 className="text-2xl font-bold">Busca</h1>
+        <p className="text-muted-foreground text-sm mt-1">
           Procure por coordenação, curso, atlética, RU, datas…
         </p>
         <SearchInput initialQuery={query} className="mt-4" placeholder="O que você quer saber?" />
       </section>
 
-      <Suspense fallback={<div className="card p-6 text-ink-secondary text-sm">Carregando resultados…</div>}>
+      <Suspense fallback={<div className="card p-6 text-muted-foreground text-sm">Carregando resultados…</div>}>
         <SearchResults query={query} />
       </Suspense>
     </div>

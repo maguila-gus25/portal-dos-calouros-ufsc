@@ -14,23 +14,23 @@ export default function CoursesPage() {
 
   return (
     <div className="space-y-6">
-      <section className="bg-hero-gradient rounded-2xl px-8 py-10 text-white shadow-hero">
+      <section className="bg-hero-gradient rounded-lg px-8 py-10 text-white">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
             <GraduationCap size={20} />
           </div>
           <span className="text-white/70 text-sm font-medium">CTC — Centro Tecnológico</span>
         </div>
-        <h1 className="font-heading text-3xl font-bold">Cursos do CTC</h1>
+        <h1 className="text-3xl font-bold">Cursos do CTC</h1>
         <p className="text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.35)] mt-1 max-w-md leading-relaxed text-sm">
           Fichas por curso — coordenação, atlética, centro acadêmico, dicas de veterano e muito mais.
         </p>
       </section>
 
       {courses.length === 0 && (
-        <div className="card p-10 text-center text-ink-secondary">
+        <div className="card p-10 text-center text-muted-foreground">
           <GraduationCap size={32} className="mx-auto mb-3 opacity-30" />
-          <p className="font-medium text-ink-primary">Nenhuma ficha publicada ainda.</p>
+          <p className="font-medium text-foreground">Nenhuma ficha publicada ainda.</p>
           <p className="text-sm mt-1">Em breve as fichas de todos os cursos do CTC estarão aqui.</p>
         </div>
       )}
@@ -55,13 +55,13 @@ function CourseCard({ course }: { course: CourseSummary }) {
     <li>
       <Link
         href={`/cursos/${course.slug}`}
-        className="card p-5 flex items-start gap-3 no-underline hover:border-brand-blue hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-150 group h-full"
+        className="card p-5 flex items-start gap-3 no-underline hover:border-primary hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-150 group h-full"
       >
         <div className="section-icon-wrapper icon-blue mt-0.5">
           <GraduationCap size={18} aria-hidden />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-ink-primary text-sm leading-snug">{course.title}</h3>
+          <h3 className="font-semibold text-foreground text-sm leading-snug">{course.title}</h3>
           <div className="flex flex-wrap gap-1.5 mt-2">
             {course.grau && !isPending(course.grau) && <Badge variant="info">{course.grau}</Badge>}
             {course.turno && !isPending(course.turno) && <Badge>{course.turno}</Badge>}
@@ -69,7 +69,7 @@ function CourseCard({ course }: { course: CourseSummary }) {
         </div>
         <ChevronRight
           size={15}
-          className="text-ink-secondary/30 group-hover:text-brand-blue flex-shrink-0 mt-1 transition-colors duration-150"
+          className="text-gray-400 group-hover:text-primary flex-shrink-0 mt-1 transition-colors duration-150"
           aria-hidden
         />
       </Link>

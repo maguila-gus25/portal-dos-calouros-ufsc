@@ -59,23 +59,23 @@ export default async function CoursePage({ params }: Props) {
 
   return (
     <article className="space-y-4">
-      <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-brand-blue hover:underline">
+      <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os cursos
       </Link>
 
       <header className="card p-6 sm:p-8">
         <div className="flex flex-col gap-1">
-          <p className="text-xs font-medium text-brand-blue uppercase tracking-wide">{course.centro}</p>
-          <h1 className="font-heading text-2xl font-bold leading-snug">{course.title}</h1>
-          <p className="text-ink-secondary text-sm mt-0.5">
+          <p className="text-xs font-medium text-primary uppercase tracking-wide">{course.centro}</p>
+          <h1 className="text-2xl font-bold leading-snug">{course.title}</h1>
+          <p className="text-muted-foreground text-sm mt-0.5">
             {[course.grau, course.turno].filter(Boolean).join(" · ")}
           </p>
         </div>
 
         {coordenacao && (
-          <div className="mt-6 pt-5 border-t border-surface-border">
-            <h2 className="text-xs font-semibold text-ink-secondary uppercase tracking-wide mb-3">Coordenação</h2>
+          <div className="mt-6 pt-5 border-t border-border">
+            <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">Coordenação</h2>
             <dl className="grid gap-3 sm:grid-cols-2">
               {coordenacao.email && (
                 <ContactItem icon={Mail} label="E-mail">
@@ -117,10 +117,10 @@ function ContactItem({
 }) {
   return (
     <div className={`flex items-start gap-2.5 ${className}`}>
-      <Icon size={15} className="text-brand-blue flex-shrink-0 mt-0.5" aria-hidden />
+      <Icon size={15} className="text-primary flex-shrink-0 mt-0.5" aria-hidden />
       <div className="min-w-0">
-        <dt className="text-xs text-ink-secondary">{label}</dt>
-        <dd className="text-sm text-ink-primary mt-0.5 font-medium">{children}</dd>
+        <dt className="text-xs text-muted-foreground">{label}</dt>
+        <dd className="text-sm text-foreground mt-0.5 font-medium">{children}</dd>
       </div>
     </div>
   );

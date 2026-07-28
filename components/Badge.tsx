@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 type Variant = "default" | "info" | "success" | "warn";
 
 const variantClass: Record<Variant, string> = {
-  default: "bg-bg-app text-ink-secondary",
-  info: "bg-brand-blue/10 text-brand-blueButton",
-  success: "bg-brand-green/10 text-brand-green",
-  warn: "bg-ink-alert/10 text-ink-alert",
+  default: "bg-muted text-muted-foreground",
+  info: "bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400",
+  success: "bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400",
+  warn: "bg-amber-100 text-amber-700 dark:bg-amber-900/20 dark:text-amber-400",
 };
 
 interface BadgeProps {
