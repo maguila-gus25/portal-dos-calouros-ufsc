@@ -178,6 +178,10 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-27 | ⚪ Won't (agora) | 🔴 G | ⬜ | Como **calouro de outro centro (CSE/CCS…)**, quero **as mesmas infos do meu centro**, para **me virar também**. |
 | B-28 | ⚪ Won't (agora) | 🟡 M | ⬜ | Como **mantenedor**, quero **um modelo de centro reutilizável**, para **replicar a estrutura**. |
+| B-60 | 🟠 Should | 🔴 G | ⬜ | Como **calouro de qualquer centro da UFSC Florianópolis**, quero **conteúdo sobre meu centro** (coordenações, atléticas, links úteis), para **me virar no primeiro dia mesmo não sendo do CTC**. Cobre: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CCA (Itacorubi), CED, CDS (Centro de Desportos e Saúde), CA (Araranguá), CA (Joinville). |
+| B-61 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **fichas dos cursos de todos os centros da UFSC Florianópolis**, para **ter informações do meu curso independente do centro**. Seguir o mesmo modelo de `docs/cursos/<slug>.md` já usado no CTC; incluir cursos do CCA que fica em Itacorubi (Agronomia, Zootecnia, Aquicultura, Eng. de Aquicultura, Eng. Agronômica, Medicina Veterinária, Recursos Naturais). |
+| B-62 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **ver no mapa interativo os pontos de interesse de todos os centros da UFSC Florianópolis** — incluindo o CCA em Itacorubi (fora do campus Trindade) —, para **me localizar em qualquer parte dos campi**. Centros: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CED, CDS e CCA (Itacorubi, -27.582124, -48.504339). Coordenadas verificadas pelo mantenedor em 2026-07-28. |
+| B-63 | 🟠 Should | 🟡 M | ⬜ | Como **calouro**, quero **filtrar o mapa por categoria** (Centros Acadêmicos, Alimentação, Saúde, Transporte, Biblioteca, Serviços), para **encontrar rapidamente o que preciso sem ver todos os marcadores ao mesmo tempo**. UI: botões/chips de filtro acima do mapa; marcadores filtrados visualmente por cor ou ícone por categoria. |
 
 ---
 
@@ -249,7 +253,10 @@ de veteranos reais).
 - **B-56 + B-57** — autenticação OAuth + painel de moderação (E13).
 - **B-39 + B-40** — avaliação de professores com moderação (E9, depende de E13).
 - **B-41 + B-42** — simulador de grade de horários (E10).
-- **B-27 + B-28** — expansão para outros centros (E7).
+- **B-27 + B-28** — modelo genérico de centro reutilizável (E7).
+- **B-60** — conteúdo de todos os centros da UFSC Florianópolis (E7, G).
+- **B-61** — fichas de cursos de todos os centros, incluindo CCA em Itacorubi (E7, G).
+- **B-62 + B-63** — mapa com pontos de todos os centros (incl. CCA) + filtro por categoria (E7, M+M). Candidatos ao próximo sprint por serem extensões diretas do mapa já existente.
 
 ## Critérios de aceite (itens de referência)
 
