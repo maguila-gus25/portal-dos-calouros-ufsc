@@ -31,7 +31,7 @@ const CATEGORY_LABELS: Record<MapMarker["category"], string> = {
   admin: "Administração",
   health: "Saúde",
   transport: "Transporte",
-  teaching: "Centros Acadêmicos",
+  teaching: "Centros",
 };
 
 export const CAMPUS_MARKERS: MapMarker[] = [
@@ -321,10 +321,10 @@ export default function MapView() {
         {/* Legenda — absolute dentro do sub-wrapper do mapa (Finding 2) */}
         <div className="absolute top-3 right-3 z-[1000] bg-surface/95 backdrop-blur-sm border border-surface-border rounded-lg p-3 shadow-card-hover">
           {/* Finding 5: text-ink-primary em vez de text-gray-900 */}
-          <p className="text-xs font-semibold text-ink-primary mb-2">Legenda</p>
+          <p className="text-xs font-semibold text-gray-900 mb-2">Legenda</p>
           <ul className="space-y-1.5">
             {(Object.keys(CATEGORY_COLORS) as MapMarker["category"][]).map((cat) => (
-              <li key={cat} className="flex items-center gap-2 text-xs text-ink-primary">
+              <li key={cat} className="flex items-center gap-2 text-xs text-gray-900">
                 <span
                   className="w-3 h-3 rounded-full flex-shrink-0"
                   style={{ backgroundColor: CATEGORY_COLORS[cat] }}
