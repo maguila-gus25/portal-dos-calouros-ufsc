@@ -36,56 +36,56 @@ const CATEGORY_LABELS: Record<MapMarker["category"], string> = {
 
 export const CAMPUS_MARKERS: MapMarker[] = [
   {
-    lat: -27.5971,
-    lng: -48.5229,
+    lat: -27.60292639265232,
+    lng: -48.52156942962812,
     name: "RU — Restaurante Universitário",
     description:
       "Principal refeição do calouro. Almoço e jantar a preços subsidiados. Ver a seção Carteira do RU para se cadastrar.",
     category: "food",
   },
   {
-    lat: -27.5966,
-    lng: -48.521,
+    lat: -27.599661859468497,
+    lng: -48.51967097507556,
     name: "BU — Biblioteca Universitária",
     description:
       "Salas de estudo, acervo físico e digital, empréstimo de livros. Setor D — Acesso Trindade, CEP 88040-900.",
     category: "study",
   },
   {
-    lat: -27.6005,
-    lng: -48.52,
+    lat: -27.600262636788255,
+    lng: -48.51772754485346,
     name: "CTC — Centro Tecnológico",
     description:
       "Prédios dos cursos de Engenharia e Computação. Maioria das aulas dos cursos do CTC. Ver mapa oficial em portasabertas.ctc.ufsc.br/localizacao/",
     category: "teaching",
   },
   {
-    lat: -27.596,
-    lng: -48.5195,
+    lat: -27.59707976322521,
+    lng: -48.52216766351573,
     name: "DAE — Divisão de Administração Escolar",
     description:
       "Prédio Reitoria II, Sala 01 (térreo), Salas 102–103 (1º andar) — Rua Des. Vitor Lima, 222. Emissão de histórico, atestados e diplomas. dae.ufsc.br",
     category: "admin",
   },
   {
-    lat: -27.595,
-    lng: -48.518,
+    lat: -27.58404164685532,
+    lng: -48.522770833555626,
     name: "TITRI — Terminal Integrado Trindade",
     description:
       "Principal acesso ao campus por ônibus. Linhas 470, 471, 469, 477 entre outras. Ver guia de locomoção em cale.ufsc.br.",
     category: "transport",
   },
   {
-    lat: -27.5975,
-    lng: -48.5215,
+    lat: -27.598324100782396,
+    lng: -48.51955445365848,
     name: "Farmácia Escola UFSC",
     description:
       "Medicamentos pelo SUS, dentro do campus. Rua Delfino Conti, 100, Trindade. farmaciaescola.ccs.ufsc.br",
     category: "health",
   },
   {
-    lat: -27.599,
-    lng: -48.519,
+    lat: -27.597280134692472,
+    lng: -48.51879326018042,
     name: "HU — Hospital Universitário",
     description:
       "Rua Professora Maria Flora Pausewang, Campus Trindade. Atendimento SUS, dentro do campus. hu.ufsc.br",
@@ -168,7 +168,7 @@ export default function MapView() {
         <p className="text-xs font-semibold text-ink-primary mb-2">Legenda</p>
         <ul className="space-y-1.5">
           {(Object.keys(CATEGORY_COLORS) as MapMarker["category"][]).map((cat) => (
-            <li key={cat} className="flex items-center gap-2 text-xs text-ink-secondary">
+            <li key={cat} className="flex items-center gap-2 text-xs text-ink-primary">
               <span
                 className="w-3 h-3 rounded-full flex-shrink-0"
                 style={{ backgroundColor: CATEGORY_COLORS[cat] }}
