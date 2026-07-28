@@ -4,6 +4,132 @@
 
 ---
 
+## Sprint 12 — Mapa Completo: Todos os Centros da UFSC + Filtro por Categoria (v1.6)
+
+**Objetivo:** Expandir o mapa interativo do campus para cobrir todos os centros da UFSC
+Florianópolis — incluindo o CCA em Itacorubi, geograficamente separado do Campus Trindade —
+e adicionar um sistema de filtro por categoria para que o calouro encontre rapidamente
+o que precisa quando o mapa tem muitos marcadores.
+
+| Historia | ID | Prioridade / Tam. | Status |
+|----------|----|-------------------|--------|
+| Mapa com pontos de todos os centros da UFSC (incl. CCA Itacorubi) | B-62 | Should / M | A fazer |
+| Filtro por categoria no mapa (chips: Centros, Alimentação, Saúde…) | B-63 | Should / M | A fazer |
+
+### Criterios de aceite detalhados
+
+**B-62 — Mapa com todos os centros da UFSC**
+
+- [ ] Marcadores adicionados para os centros do Campus Trindade: CCE, CCS, CCJ, CFH,
+      CFM, CCB, CSE, CED, CDS — com coordenadas fornecidas pelo mantenedor em 2026-07-28.
+- [ ] Marcador do CCA em Itacorubi (coords: -27.5697, -48.4863) com popup destacando
+      "⚠️ Localizado em Itacorubi — ~4 km do Campus Trindade · Rua Admar Gonzaga, 1346".
+- [ ] Label da categoria "teaching" atualizado de "Ensino / CTC" para "Centros Academicos"
+      em `CATEGORY_LABELS` em `components/MapView.tsx`.
+- [ ] Mapa usa `map.fitBounds()` para ajustar o zoom e mostrar tanto o Campus Trindade
+      quanto o CCA em Itacorubi simultaneamente ao carregar.
+- [ ] `aria-label` do container do mapa atualizado: "Mapa interativo dos campi da UFSC
+      Florianopolis com marcadores de pontos de interesse".
+- [ ] `npm run lint` e `npm run build` passam.
+
+**B-63 — Filtro por categoria no mapa**
+
+- [ ] Chips/botoes de filtro renderizados acima do mapa, dentro de `MapView.tsx`,
+      com as categorias: Todos, Centros Academicos, Alimentacao, Saude, Transporte,
+      Estudo / Biblioteca, Administracao.
+- [ ] "Todos" ativo por padrao; clicar numa categoria filtra os marcadores; clicar
+      de novo (ou "Todos") desfaz o filtro.
+- [ ] Marcadores mostrados/ocultos em tempo real com `addTo(map)` / `removeFrom(map)`
+      do Leaflet — sem re-montar o mapa.
+- [ ] Refs dos marcadores Leaflet guardados em `markerLayersRef` para manipulacao
+      imperativa eficiente.
+- [ ] Chips acessiveis por teclado (`<button>` nativo), com `aria-pressed` indicando
+      estado ativo.
+- [ ] Layout dos chips: scroll horizontal em mobile (overflow-x: auto), wrap em desktop.
+- [ ] `npm run lint` e `npm run build` passam.
+
+### Ordem de execucao e dependencias
+
+1. **B-62 primeiro** — adiciona marcadores e ajusta labels de categoria.
+   Pré-requisito de B-63: o filtro precisa dos marcadores reais para fazer sentido.
+2. **B-63 segundo** — implementa estado de filtro e UI sobre os marcadores expandidos.
+   Sem dependencias externas alem de B-62.
+
+### Notas tecnicas para os agentes
+
+**B-62 — Coordenadas dos centros (verificar antes de usar):**
+
+| Centro | Coordenadas verificadas (lat, lng) | Referencia |
+|--------|-----------------------------------|------------|
+| CCE | -27.6009829301275, -48.52141492932045 | Campus Trindade |
+| CCS | -27.59919258520732, -48.51762121161074 | Campus Trindade |
+| CCJ | -27.598497640726105, -48.522066575101306 | Campus Trindade |
+| CFH | -27.60213042929666, -48.52322292193917 | Campus Trindade |
+| CFM | -27.601411120065425, -48.52380552762934 | Campus Trindade |
+| CCB | -27.59832906280479, -48.51465289648096 | Campus Trindade |
+| CSE | -27.599022119647845, -48.52152701695787 | Campus Trindade |
+| CED | -27.60214617175289, -48.523073290850284 | Campus Trindade |
+| CDS | -27.6038314630442, -48.51962283349618 | Campus Trindade (Centro de Desportos e Saude) |
+| CCA | -27.582124154997455, -48.5043389382004 | Itacorubi — fora do Campus Trindade |
+
+> Coordenadas fornecidas pelo mantenedor do projeto em 2026-07-28. Usar exatamente esses valores.
+
+**B-63 — Arquitetura do filtro:**
+
+```tsx
+// Estado: null = "Todos", string = categoria ativa
+const [activeCategory, setActiveCategory] = useState<MapMarker["category"] | null>(null);
+
+// Ref para pares {marker: L.Marker, category}
+const markerLayersRef = useRef<{ lMarker: L.Marker; category: MapMarker["category"] }[]>([]);
+
+// useEffect que reage ao filtro (separado do useEffect de init do mapa)
+useEffect(() => {
+  if (!mapRef.current) return;
+  markerLayersRef.current.forEach(({ lMarker, category }) => {
+    if (activeCategory === null || category === activeCategory) {
+      lMarker.addTo(mapRef.current!);
+    } else {
+      lMarker.removeFrom(mapRef.current!);
+    }
+  });
+}, [activeCategory]);
+```
+
+### Definicao de Pronto (sprint inteiro)
+
+- [ ] Todos os marcadores de centros com coordenadas verificadas presentes no mapa.
+- [ ] CCA aparece no mapa com localizacao em Itacorubi e popup de aviso.
+- [ ] Filtro por categoria funciona e e acessivel por teclado.
+- [ ] `npm run lint` passa sem erros.
+- [ ] `npm run build` passa (SSG completo).
+- [ ] Testes E2E do Playwright passam (`npx playwright test`).
+- [ ] `docs/product-backlog.md` com B-62 e B-63 marcados como Feito.
+- [ ] `docs/SPRINT.md` com retrospectiva preenchida antes de fechar.
+
+### O que NAO entra e por que
+
+| Item | Motivo da exclusao |
+|------|--------------------|
+| B-60 (conteudo de todos os centros) | G — requer levantamento de dados de 11+ centros; muito conteudo para um sprint |
+| B-61 (fichas de todos os cursos) | G — dezenas de cursos; mesmo motivo de B-60 |
+| B-50 + B-37 + E13 | Horizonte v2.0; banco + auth + moderacao como bloco integrado |
+| B-13 (historias de veteranos) | Bloqueado: sem submissoes reais confirmadas |
+
+---
+
+## Sprint 11 — Vida do Curso Completa — concluido em 2026-07-20
+
+**Objetivo (micro-sprint):** Preencher os 2 Centros Academicos que faltavam nas fichas
+de curso do CTC para atingir 100% de cobertura.
+
+**Entregue:** CAECA (Eng. de Controle e Automacao, caeca.ufsc.br) e CALESA (Eng.
+Sanitaria e Ambiental, calesa.ufsc.br / @calesaufsc) adicionados as fichas de curso.
+Com isso, 100% das 13 fichas do CTC tem Centro Academico preenchido com fonte oficial.
+B-08 segue Em andamento (faltam dicas de veterano e "onde estudar").
+
+---
+
 ## Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5)
 
 **Objetivo:** Fechar a v1 com três melhorias de plataforma sem risco de conteúdo: tornar
