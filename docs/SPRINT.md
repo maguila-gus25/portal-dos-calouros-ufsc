@@ -13,8 +13,8 @@ o que precisa quando o mapa tem muitos marcadores.
 
 | Historia | ID | Prioridade / Tam. | Status |
 |----------|----|-------------------|--------|
-| Mapa com pontos de todos os centros da UFSC (incl. CCA Itacorubi) | B-62 | Should / M | A fazer |
-| Filtro por categoria no mapa (chips: Centros, Alimentação, Saúde…) | B-63 | Should / M | A fazer |
+| Mapa com pontos de todos os centros da UFSC (incl. CCA Itacorubi) | B-62 | Should / M | Feito |
+| Filtro por categoria no mapa (chips: Centros, Alimentação, Saúde…) | B-63 | Should / M | Feito |
 
 ### Criterios de aceite detalhados
 
@@ -115,6 +115,39 @@ useEffect(() => {
 | B-61 (fichas de todos os cursos) | G — dezenas de cursos; mesmo motivo de B-60 |
 | B-50 + B-37 + E13 | Horizonte v2.0; banco + auth + moderacao como bloco integrado |
 | B-13 (historias de veteranos) | Bloqueado: sem submissoes reais confirmadas |
+
+### Retrospectiva do Sprint 12
+
+**Concluído em:** 2026-07-28
+
+**Entregue:**
+- **B-62** — 10 novos marcadores em `components/MapView.tsx`: CCE, CCS, CCJ, CFH, CFM,
+  CCB, CSE, CED, CDS no Campus Trindade + CCA em Itacorubi (-27.582124, -48.504339)
+  com aviso de localização no popup. Label renomeado de "Ensino / CTC" para "Centros
+  Acadêmicos". `fitBounds` ajusta automaticamente o viewport para cobrir os dois campi.
+  Coordenadas fornecidas e verificadas pelo mantenedor em 2026-07-28.
+- **B-63** — Barra de chips de filtro por categoria acima do mapa (`<button aria-pressed>`).
+  Estado `activeCategory` (`null` = "Todos"); segundo `useEffect` faz `addTo`/`removeFrom`
+  nos refs Leaflet sem re-montar o mapa. `DARK_BG_CATEGORIES` garante contraste WCAG AA
+  correto em cada cor de categoria ativa.
+
+**Findings ui-ux-review corrigidos antes do merge:**
+- Blocker: tap target `py-1` → `py-2 min-h-[36px]` nos chips
+- Major: legenda reestruturada em sub-wrapper `relative` do mapa, eliminando sobreposição com chips
+- Major: chips ativos food/admin/teaching `text-white` → `text-gray-900`; "Todos" `bg-brand-blue` → `bg-[#1565C0]`
+- Minor: chips inativos `text-ink-secondary` → `text-ink-primary`
+- Minor: legenda `text-gray-900` → `text-ink-primary`
+
+**Verificações finais:** lint ✅ · build 39 páginas SSG ✅ · Playwright 8/8 ✅
+
+**O que foi bem:**
+- Coordenadas do mantenedor eliminaram risco de marcador no lugar errado.
+- `fitBounds` cobriu Campus Trindade + CCA Itacorubi automaticamente.
+- Infraestrutura de categorias já existia — B-63 foi puramente aditivo, zero refactor.
+- ui-ux-review detectou sobreposição legenda/chips antes do merge — ritual vale a pena.
+
+**Para o próximo sprint:** B-60 em micro-sprints por centro (começar pelo CCA e CSE),
+ou B-37 + E13 (histórias + auth) se houver submissões reais acumuladas.
 
 ---
 
