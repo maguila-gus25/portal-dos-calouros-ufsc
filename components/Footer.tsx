@@ -1,11 +1,11 @@
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-16 border-t border-surface-border bg-surface">
-      <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-ink-secondary">
+    <footer className="mt-16 border-t border-border bg-card">
+      <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted-foreground">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="space-y-1">
-            <p className="font-semibold text-ink-primary">
+            <p className="font-semibold text-foreground">
               Projeto independente feito por estudantes. Não é um site oficial da UFSC.
             </p>
             <p>Informações oficiais devem sempre ser confirmadas nos canais da UFSC.</p>
@@ -15,16 +15,16 @@ export function Footer() {
               href="https://github.com/maguila-gus25/portal-dos-calouros-ufsc"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-blue hover:underline font-medium"
+              className="text-primary hover:underline font-medium"
             >
               Contribuir no GitHub
             </a>
           </div>
         </div>
-        <p className="text-xs mt-4 text-ink-secondary">
+        <p className="text-xs mt-4 text-muted-foreground">
           © {year} Portal dos Calouros UFSC — Conteúdo aberto e mantido pela comunidade estudantil.
         </p>
-        <p className="text-xs mt-1 text-ink-secondary">
+        <p className="text-xs mt-1 text-muted-foreground">
           Usamos Vercel Analytics para contar visitas sem armazenar dados pessoais.
         </p>
       </div>

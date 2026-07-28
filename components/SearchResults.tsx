@@ -9,7 +9,7 @@ interface Props {
 export function SearchResults({ query }: Props) {
   if (query.length < 2) {
     return (
-      <div className="card p-6 text-ink-secondary text-sm">
+      <div className="card p-6 text-muted-foreground text-sm">
         Digite pelo menos 2 caracteres para começar a busca.
       </div>
     );
@@ -20,10 +20,10 @@ export function SearchResults({ query }: Props) {
   if (results.length === 0) {
     return (
       <div className="card p-8 flex flex-col items-center text-center gap-3">
-        <SearchX size={32} className="text-ink-secondary/40" />
+        <SearchX size={32} className="text-gray-400" />
         <div>
-          <p className="font-medium text-ink-primary">Nenhum resultado para &ldquo;{query}&rdquo;</p>
-          <p className="text-sm text-ink-secondary mt-1">
+          <p className="font-medium text-foreground">Nenhum resultado para &ldquo;{query}&rdquo;</p>
+          <p className="text-sm text-muted-foreground mt-1">
             Tente outras palavras ou navegue pelos temas na página inicial.
           </p>
         </div>
@@ -33,9 +33,9 @@ export function SearchResults({ query }: Props) {
 
   return (
     <section aria-label="Resultados">
-      <p className="text-sm text-ink-secondary mb-3">
+      <p className="text-sm text-muted-foreground mb-3">
         {results.length} resultado{results.length > 1 ? "s" : ""} para{" "}
-        <strong className="text-ink-primary">&ldquo;{query}&rdquo;</strong>
+        <strong className="text-foreground">&ldquo;{query}&rdquo;</strong>
       </p>
       <ul className="space-y-3">
         {results.map((result) => (
@@ -54,13 +54,13 @@ function ResultItem({ result, query }: { result: SearchResult; query: string }) 
     <li>
       <Link
         href={href}
-        className="card p-4 block no-underline hover:border-brand-blue hover:shadow-card-hover transition-all duration-150"
+        className="card p-4 block no-underline hover:border-primary hover:shadow-card-hover transition-all duration-150"
       >
         <div className="flex items-center gap-2 text-xs">
-          <span className="rounded-full bg-brand-blue/10 text-brand-blue px-2 py-0.5 font-medium">{badge}</span>
+          <span className="rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 px-2 py-0.5 font-medium">{badge}</span>
         </div>
-        <h3 className="font-semibold text-ink-primary mt-2">{result.title}</h3>
-        <p className="text-sm text-ink-secondary mt-1">
+        <h3 className="font-semibold text-foreground mt-2">{result.title}</h3>
+        <p className="text-sm text-muted-foreground mt-1">
           <Highlight text={result.snippet} query={query} />
         </p>
       </Link>
@@ -87,7 +87,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
     <>
       {parts.map((p, i) =>
         p.match ? (
-          <mark key={i} className="bg-brand-blue/20 text-ink-primary rounded px-0.5">{p.text}</mark>
+          <mark key={i} className="bg-blue-100 dark:bg-blue-800/40 text-foreground rounded px-0.5">{p.text}</mark>
         ) : (
           <span key={i}>{p.text}</span>
         ),

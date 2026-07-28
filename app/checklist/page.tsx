@@ -30,14 +30,14 @@ export default function ChecklistPage() {
 
   return (
     <article className="space-y-4">
-      <Link href="/" className="inline-flex items-center gap-1 text-sm text-brand-blue hover:underline">
+      <Link href="/" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Voltar para o início
       </Link>
 
       <header className="card p-6 sm:p-8">
-        <h1 className="font-heading text-2xl font-bold leading-snug">{section.title}</h1>
-        <p className="text-ink-secondary mt-1">{section.description}</p>
+        <h1 className="text-2xl font-bold leading-snug">{section.title}</h1>
+        <p className="text-muted-foreground mt-1">{section.description}</p>
       </header>
 
       <div className="card p-6 sm:p-8">

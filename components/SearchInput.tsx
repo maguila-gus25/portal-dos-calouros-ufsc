@@ -24,7 +24,7 @@ export function SearchInput({ initialQuery = "", className = "", placeholder = "
   return (
     <form role="search" onSubmit={handleSubmit} className={`relative flex items-center ${className}`}>
       <label htmlFor="search-input" className="sr-only">Buscar no portal</label>
-      <Search size={15} className="absolute left-3 text-ink-secondary pointer-events-none" aria-hidden />
+      <Search size={15} className="absolute left-3 text-muted-foreground pointer-events-none" aria-hidden />
       <input
         id="search-input"
         type="search"
@@ -32,7 +32,7 @@ export function SearchInput({ initialQuery = "", className = "", placeholder = "
         value={value}
         onChange={(e) => setValue(e.target.value)}
         minLength={2}
-        className="w-full rounded-full bg-bg-app border border-transparent focus:border-brand-blue focus:bg-surface pl-8 pr-4 py-1.5 text-sm text-ink-primary placeholder-ink-secondary transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+        className="w-full rounded-full bg-muted border border-transparent focus:border-primary focus:bg-card pl-8 pr-4 py-1.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       />
     </form>
   );
