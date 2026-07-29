@@ -178,7 +178,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-27 | ⚪ Won't (agora) | 🔴 G | ⬜ | Como **calouro de outro centro (CSE/CCS…)**, quero **as mesmas infos do meu centro**, para **me virar também**. |
 | B-28 | ⚪ Won't (agora) | 🟡 M | ⬜ | Como **mantenedor**, quero **um modelo de centro reutilizável**, para **replicar a estrutura**. |
-| B-60 | 🟠 Should | 🔴 G | ⬜ | Como **calouro de qualquer centro da UFSC Florianópolis**, quero **conteúdo sobre meu centro** (coordenações, atléticas, links úteis), para **me virar no primeiro dia mesmo não sendo do CTC**. Cobre: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CCA (Itacorubi), CED, CDS (Centro de Desportos e Saúde), CA (Araranguá), CA (Joinville). |
+| B-60 | 🟠 Should | 🔴 G | 🚧 | Como **calouro de qualquer centro da UFSC Florianópolis**, quero **conteúdo sobre meu centro** (coordenações, atléticas, links úteis), para **me virar no primeiro dia mesmo não sendo do CTC**. Cobre: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CCA (Itacorubi), CED, CDS (Centro de Desportos e Saúde), CA (Araranguá), CA (Joinville). **Sprint 13:** infraestrutura multi-centro implementada (`docs/centros/`, `app/centros/[slug]`, `app/api/centros/`); CCA e CSE publicados com coordenações, CAs, atléticas e festas verificados. Faltam: CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS e campi de Joinville e Araranguá. |
 | B-61 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **fichas dos cursos de todos os centros da UFSC Florianópolis**, para **ter informações do meu curso independente do centro**. Seguir o mesmo modelo de `docs/cursos/<slug>.md` já usado no CTC; incluir cursos do CCA que fica em Itacorubi (Agronomia, Zootecnia, Aquicultura, Eng. de Aquicultura, Eng. Agronômica, Medicina Veterinária, Recursos Naturais). |
 | B-62 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **ver no mapa interativo os pontos de interesse de todos os centros da UFSC Florianópolis** — incluindo o CCA em Itacorubi (fora do campus Trindade) —, para **me localizar em qualquer parte dos campi**. 10 centros adicionados (CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CED, CDS, CCA-Itacorubi) com coordenadas verificadas; `fitBounds` cobre os dois campi; label renomeado para "Centros Acadêmicos". |
 | B-63 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **filtrar o mapa por categoria** (Centros Acadêmicos, Alimentação, Saúde, Transporte, Biblioteca, Administração), para **encontrar rapidamente o que preciso sem ver todos os marcadores ao mesmo tempo**. Chips `<button aria-pressed>` acima do mapa; `useEffect` reage ao filtro com `addTo`/`removeFrom` Leaflet; toggle ao clicar categoria ativa volta para "Todos". |
@@ -222,23 +222,21 @@ Com isso, **100% das 13 fichas do CTC têm Centro Acadêmico preenchido com font
 oficial**. B-08 segue 🚧 (faltam dicas de veterano e "onde estudar", que dependem
 de veteranos reais).
 
-**Sprint 10 — Instalável, Medido e Com Teto de Qualidade (v1.5) — proposta:**
+**Sprint 13 — Infraestrutura Multi-Centro + CCA e CSE (v1.7) — concluído em 2026-07-29:**
+Infraestrutura `docs/centros/` + `app/centros/[slug]` + `app/api/centros/` implementada.
+CCA (4 cursos, Itacorubi) e CSE (5 cursos, Trindade) publicados com coordenações, CAs, atléticas
+e festas verificados. Popups do mapa integrados. B-60 passa para 🚧 Em andamento.
 
-1. **B-55** — Lighthouse CI (Performance ≥ 90, Accessibility ≥ 90, SEO ≥ 90) — Could, P.
-   Roda primeiro por ser CI puro: sem mudança de código do app, e estabelece o teto de
-   qualidade que valida os outros dois entregáveis do sprint.
-2. **B-48** — PWA instalável no celular (`manifest.json`, ícones 192/512, `theme-color`) —
-   Could, P. Sem dependências de conteúdo; máximo impacto mobile com custo mínimo.
-3. **B-51** — analytics de privacidade (Vercel Analytics, sem cookies) — Could, P.
-   Sem dependências; fecha a trinca "encontrável + acessível + medido" da v1.
+**Sprint 14 — Próximos centros B-60 (candidatos):**
 
-> Itens excluídos e motivo:
-> - **B-50 / B-37 / E13** (banco + formulário + auth): escopo grande (G), precisa
->   co-planejamento no mesmo sprint para ter caso de uso visível ao calouro. Mantido
->   no Horizonte.
-> - **B-13** (histórias de veteranos): ainda sem submissões reais confirmadas via
->   `historia-veterano.yml`. Inventar dados viola "Confiável antes de completo".
-> - **B-10** (dicas de veterano por disciplina): mesmo bloqueio de conteúdo real que B-13.
+1. **B-60 (CCE + CCS)** — Should, M. Dois centros de perfil alto (Comunicação + Saúde);
+   infraestrutura pronta — é só conteúdo. CCE: Jornalismo, Letras, Design, Cinema, Artes.
+   CCS: Medicina, Enfermagem, Farmácia, Odontologia, Nutrição.
+2. **B-61 (fichas CCA)** — Should, M. 4 cursos confirmados (Agronomia, CTA, Eng. Aquicultura,
+   Zootecnia); modelo `docs/cursos/<slug>.md` já existe e pode ser reaproveitado.
+
+> Alternativa: **B-13** (histórias de veteranos) — desbloqueado assim que houver submissões
+> reais via `historia-veterano.yml`.
 
 **Radar (v2.0):**
 
@@ -253,10 +251,9 @@ de veteranos reais).
 - **B-56 + B-57** — autenticação OAuth + painel de moderação (E13).
 - **B-39 + B-40** — avaliação de professores com moderação (E9, depende de E13).
 - **B-41 + B-42** — simulador de grade de horários (E10).
-- **B-27 + B-28** — modelo genérico de centro reutilizável (E7).
-- **B-60** — conteúdo de todos os centros da UFSC Florianópolis (E7, G).
-- **B-61** — fichas de cursos de todos os centros, incluindo CCA em Itacorubi (E7, G).
-- **B-62 + B-63** — mapa com pontos de todos os centros (incl. CCA) + filtro por categoria (E7, M+M). Candidatos ao próximo sprint por serem extensões diretas do mapa já existente.
+- **B-27 + B-28** — modelo genérico de centro reutilizável (E7, agora coberto pela infra multi-centro).
+- **B-60** — restante dos centros: CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá (🚧 CCA + CSE feitos).
+- **B-61** — fichas de cursos de todos os centros além do CTC (🚧 CCA em aberto).
 
 ## Critérios de aceite (itens de referência)
 
