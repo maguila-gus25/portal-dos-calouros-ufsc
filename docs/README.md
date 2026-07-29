@@ -37,6 +37,12 @@ Cada curso tem uma ficha própria (coordenação, atlética, vida do curso, dica
 > Adicionar um curso novo? Copie o [modelo de ficha](_modelo-curso.md) para
 > `cursos/<slug>.md` e preencha com fonte oficial.
 
+## Outros Centros da UFSC
+
+Fichas de centros fora do Campus Trindade, com informações de localização, coordenações, CAs, atléticas e transporte:
+
+- [Centro de Ciências Agrárias (CCA) — Itacorubi](centros/cca.md)
+
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
 - 🎨 [Identidade Visual](identidade-visual.md) — marca de estudantes (não oficial)

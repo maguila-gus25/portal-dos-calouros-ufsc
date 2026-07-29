@@ -39,6 +39,18 @@ export interface SearchResult {
   snippet: string;
 }
 
+export interface CenterSummary {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+export interface Center extends CenterSummary {
+  metadata: Record<string, unknown>;
+  content_md: string;
+  content_html: string;
+}
+
 const SLUG_MAP: Record<string, { file: string; title: string; description: string; icon: string }> = {
   coordenacoes: { file: "coordenacoes.md", title: "Coordenações", description: "Contatos das coordenações de cada curso do CTC.", icon: "🏛️" },
   ru: { file: "carteira-ru.md", title: "Carteira do RU", description: "Como se cadastrar e usar o Restaurante Universitário.", icon: "🍽️" },
@@ -124,6 +136,45 @@ export function getCourse(slug: string): Course | null {
       centro: data.centro ?? null,
       grau: data.grau ?? null,
       turno: data.turno ?? null,
+      metadata: data as Record<string, unknown>,
+      content_md: content,
+      content_html: renderMd(content),
+    };
+  }
+  return null;
+}
+
+function iterCenterFiles(): string[] {
+  const centersDir = path.join(DOCS_DIR, "centros");
+  if (!fs.existsSync(centersDir)) return [];
+  return fs.readdirSync(centersDir)
+    .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
+    .sort()
+    .map((f) => path.join(centersDir, f));
+}
+
+export function listCenters(): CenterSummary[] {
+  return iterCenterFiles().map((filePath) => {
+    const { data } = matter(fs.readFileSync(filePath, "utf-8"));
+    const slug = String(data.slug ?? path.basename(filePath, ".md"));
+    return {
+      slug,
+      title: String(data.titulo ?? slug),
+      description: String(data.descricao ?? ""),
+    };
+  });
+}
+
+export function getCenter(slug: string): Center | null {
+  for (const filePath of iterCenterFiles()) {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const { content, data } = matter(raw);
+    const currentSlug = String(data.slug ?? path.basename(filePath, ".md"));
+    if (currentSlug !== slug) continue;
+    return {
+      slug: currentSlug,
+      title: String(data.titulo ?? slug),
+      description: String(data.descricao ?? ""),
       metadata: data as Record<string, unknown>,
       content_md: content,
       content_html: renderMd(content),

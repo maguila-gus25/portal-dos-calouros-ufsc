@@ -148,17 +148,21 @@ npm run build  # build de produção
 npm run lint   # ESLint
 ```
 
-## Fluxo de trabalho com Git (GitHub Flow)
+## Fluxo de trabalho com Git
 
-- **`main` é sempre deployável** — nunca commitar diretamente nela.
-- Todo trabalho vai em uma **branch de feature** criada a partir de `main`:
+**Estratégia obrigatória: [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow).**
+Nunca use Git Flow, trunk-based sem branch, ou qualquer outra estratégia.
+
+Regras inegociáveis:
+- **`main` é sempre deployável** — nunca commitar ou dar push direto em `main`.
+- **Todo trabalho vai em branch de feature** criada a partir de `main`:
   - `feat/nome-descritivo` — nova funcionalidade
   - `fix/nome-do-bug` — correção de bug
   - `docs/o-que-mudou` — documentação técnica
   - `content/o-que-mudou` — conteúdo do portal (`docs/*.md`)
 - Commits atômicos e frequentes na branch (ver `.claude/skills/commit-conventions/`).
 - Ao terminar: abrir **Pull Request** para `main` com descrição clara do que mudou e por quê.
-- Merge para `main` após revisão. Deletar a branch após o merge.
+- Merge para `main` após revisão. **Deletar a branch após o merge.**
 - Push para `main` dispara auto-deploy na Vercel.
 
 ## Deploy
@@ -169,10 +173,10 @@ npm run lint   # ESLint
 
 - CI/CD: push para `main` → Vercel builda e deploya automaticamente.
 
-## Próximos passos (Sprint 8)
+## Próximos passos (Sprint 14)
 
 Ver `docs/product-backlog.md` para o backlog completo. Prioridade imediata:
 
-1. **B-47** — SEO: `sitemap.xml`, `robots.txt`, `generateMetadata` com OG tags
-2. **B-52** — FAQ dos calouros (`docs/faq.md` + página `/faq`)
-3. **B-53** — Checklist da primeira semana
+1. **B-60 (CCE + CCS)** — próximos centros: Comunicação e Expressão + Ciências da Saúde
+2. **B-61 (fichas CCA)** — 4 cursos do CCA (Agronomia, CTA, Eng. Aquicultura, Zootecnia)
+3. **B-13** — histórias de veteranos (quando houver submissões reais via `historia-veterano.yml`)

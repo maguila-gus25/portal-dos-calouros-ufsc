@@ -11,6 +11,7 @@ export interface MapMarker {
   name: string;
   description: string;
   category: "food" | "study" | "admin" | "health" | "transport" | "teaching";
+  link?: string;
 }
 
 const CAMPUS_CENTER = { lat: -27.5997, lng: -48.5202 };
@@ -144,6 +145,7 @@ export const CAMPUS_MARKERS: MapMarker[] = [
     description:
       "Administração, Ciências Contábeis, Ciências Econômicas e Serviço Social.",
     category: "teaching",
+    link: "/centros/cse",
   },
   {
     lat: -27.60214617175289,
@@ -166,6 +168,7 @@ export const CAMPUS_MARKERS: MapMarker[] = [
     description:
       "⚠️ Localizado em Itacorubi — ~2,4 km do Campus Trindade. Agronomia, Zootecnia, Aquicultura e Medicina Veterinária. Rua Admar Gonzaga, 1346, Itacorubi.",
     category: "teaching",
+    link: "/centros/cca",
   },
 ];
 
@@ -241,7 +244,10 @@ export default function MapView() {
           .bindPopup(
             `<strong style="font-size:0.9rem;display:block;margin-bottom:4px">${marker.name}</strong>` +
               `<span style="font-size:0.75rem;color:#4B5563;display:block;margin-bottom:6px">${categoryLabel}</span>` +
-              `<span style="font-size:0.8rem;line-height:1.4">${marker.description}</span>`,
+              `<span style="font-size:0.8rem;line-height:1.4">${marker.description}</span>` +
+              (marker.link
+                ? `<a href="${marker.link}" style="display:block;margin-top:8px;padding:10px 0;font-size:0.8rem;color:#1565C0;font-weight:600;text-decoration:underline">Ver página do centro →</a>`
+                : ""),
             { maxWidth: 240, className: "leaflet-popup-portal" }
           );
       });
@@ -320,11 +326,10 @@ export default function MapView() {
       <div className="relative">
         {/* Legenda — absolute dentro do sub-wrapper do mapa (Finding 2) */}
         <div className="absolute top-3 right-3 z-[1000] bg-surface/95 backdrop-blur-sm border border-surface-border rounded-lg p-3 shadow-card-hover">
-          {/* Finding 5: text-ink-primary em vez de text-gray-900 */}
-          <p className="text-xs font-semibold text-gray-900 mb-2">Legenda</p>
+          <p className="text-xs font-semibold text-ink-primary mb-2">Legenda</p>
           <ul className="space-y-1.5">
             {(Object.keys(CATEGORY_COLORS) as MapMarker["category"][]).map((cat) => (
-              <li key={cat} className="flex items-center gap-2 text-xs text-gray-900">
+              <li key={cat} className="flex items-center gap-2 text-xs text-ink-primary">
                 <span
                   className="w-3 h-3 rounded-full flex-shrink-0"
                   style={{ backgroundColor: CATEGORY_COLORS[cat] }}
