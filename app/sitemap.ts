@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { listSections, listCourses } from "@/lib/content";
+import { listSections, listCourses, listCenters } from "@/lib/content";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
@@ -7,6 +7,7 @@ const BASE_URL =
 export default function sitemap(): MetadataRoute.Sitemap {
   const sections = listSections();
   const courses = listCourses();
+  const centers = listCenters();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -61,5 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...sectionRoutes, ...courseRoutes];
+  const centerRoutes: MetadataRoute.Sitemap = centers.map((center) => ({
+    url: `${BASE_URL}/centros/${center.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...sectionRoutes, ...courseRoutes, ...centerRoutes];
 }
