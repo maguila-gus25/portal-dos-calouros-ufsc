@@ -4,174 +4,112 @@
 
 ---
 
-## Sprint 13 — Infraestrutura Multi-Centro + CCA e CSE (B-60 micro-sprint, v1.7)
+## Sprint 14 — Próximos Centros: CCE + CCS (B-60 micro-sprint, v1.8)
 
-**Objetivo:** Estabelecer a infraestrutura de conteúdo multi-centro (nova rota `/centros/[slug]`,
-funções `getCenter`/`listCenters` em `lib/content.ts`, modelo `docs/centros/<slug>.md`) e
-publicar CCA (Itacorubi) e CSE (Campus Trindade) como os dois primeiros centros além do CTC —
-integrando com o mapa já existente.
+**Objetivo:** Publicar os próximos dois centros do Campus Trindade sobre a infraestrutura
+multi-centro já pronta (Sprint 13): **CCE** (Centro de Comunicação e Expressão) e **CCS**
+(Centro de Ciências da Saúde). Trabalho essencialmente de conteúdo — os marcadores já
+existem no mapa desde o Sprint 12; falta apenas o `.md` de cada centro e o link do popup.
 
 | História | ID | Prioridade / Tam. | Status |
 |----------|----|-------------------|--------|
-| Infraestrutura multi-centro + conteúdo do CCA e CSE (piloto B-60) | B-60 (parcial) | Should / M | A fazer |
+| Conteúdo do CCE (Comunicação e Expressão) — B-60 parcial | B-60 (CCE) | Should / M | Not Started |
+| Conteúdo do CCS (Ciências da Saúde) — B-60 parcial | B-60 (CCS) | Should / M | Not Started |
+| Links dos popups CCE e CCS no mapa + verificação | B-60 (mapa) | Should / P | Not Started |
+
+### Nota de escopo (correção do grooming)
+
+**CCS ≠ CSE.** O Sprint 13 publicou o **CSE** (Centro Sócio-Econômico — Administração,
+Contábeis, Economia, Serviço Social), que já tem `docs/centros/cse.md` e `link: "/centros/cse"`
+no mapa. Este sprint trata do **CCS** (Centro de Ciências da Saúde — Medicina, Enfermagem,
+Farmácia, Odontologia, Nutrição), um centro **distinto** que ainda não tem página. Ambos os
+centros deste sprint — CCE e CCS — são novos: seus marcadores existem no mapa (linhas 96–111
+de `components/MapView.tsx`) mas **sem** campo `link`.
 
 ### Critérios de aceite detalhados
 
-**B-60 (parcial) — Infraestrutura + CCA + CSE**
+**B-60 (CCE) — `docs/centros/cce.md`**
 
-- [ ] `docs/centros/cca.md` criado com frontmatter YAML (`slug: cca`, `titulo`, `descricao`,
-      `ultima_verificacao`) e seções: Coordenações, Centros Acadêmicos (CA), Atléticas,
-      Links Úteis. Campos sem fonte oficial ficam como `_A preencher_`.
-- [ ] `docs/centros/cse.md` criado com a mesma estrutura do CCA. Campos não confirmados
-      ficam como `_A preencher_`.
-- [ ] `lib/content.ts` atualizado: funções `listCenters()` e `getCenter(slug)` leem
-      `docs/centros/*.md` (excluindo arquivos `_modelo*`), seguindo o mesmo padrão de
-      `listCourses()`/`getCourse()`.
-- [ ] Rota `app/api/centros/[slug]/route.ts` retorna o conteúdo do centro como JSON
-      (consistência com `/api/sections/[slug]`).
-- [ ] Rota `app/api/centros/route.ts` lista todos os centros disponíveis.
-- [ ] Página `app/centros/[slug]/page.tsx` renderiza o conteúdo com SSG
-      (`generateStaticParams` baseado em `listCenters()`), com `generateMetadata` com
-      título e descrição únicos por centro.
-- [ ] Popup do marcador CCA no mapa (`components/MapView.tsx`) inclui link para
-      `/centros/cca`.
-- [ ] Popup do marcador CSE no mapa inclui link para `/centros/cse`.
-- [ ] `app/sitemap.ts` atualizado para incluir rotas `/centros/[slug]` dinamicamente.
+- [ ] Frontmatter YAML: `slug: cce`, `titulo: "Centro de Comunicação e Expressão (CCE)"`,
+      `descricao` (uma frase, cursos principais), `ultima_verificacao: "julho/2026"`.
+- [ ] Seção **Contatos do Centro** — direção (nome, e-mail), site oficial `cce.ufsc.br`,
+      Instagram se houver. Campos não confirmados como `_A preencher_`.
+- [ ] Seção **Cursos de Graduação** — lista dos cursos do CCE (Jornalismo, Letras —
+      Português/Estrangeiras/Libras, Design, Cinema, Artes Cênicas, Animação, etc.),
+      confirmada em fonte oficial (`cce.ufsc.br`). Não inventar cursos.
+- [ ] Seção **Coordenações de Curso** — por curso, com e-mail/telefone quando houver fonte;
+      `_A preencher_` quando não confirmado.
+- [ ] Seção **Centros Acadêmicos** e **Atléticas** por curso (ou `_A preencher_`).
+- [ ] Seção **Links Úteis** (site do centro, secretaria integrada, apoio estudantil).
+- [ ] Rodapé `_Última verificação: julho/2026_`.
+
+**B-60 (CCS) — `docs/centros/ccs.md`**
+
+- [ ] Mesma estrutura do CCE, com `slug: ccs`, `titulo: "Centro de Ciências da Saúde (CCS)"`.
+- [ ] Cursos verificados em `ccs.ufsc.br`: Medicina, Enfermagem, Farmácia, Odontologia,
+      Nutrição (confirmar se há outros — ex.: Fonoaudiologia, Gerontologia). Não inventar.
+- [ ] Coordenações, CAs e atléticas por curso com fonte oficial ou `_A preencher_`.
+- [ ] Rodapé `_Última verificação: julho/2026_`.
+
+**B-60 (mapa) — `components/MapView.tsx`**
+
+- [ ] Marcador CCE (linha ~96) recebe `link: "/centros/cce"`.
+- [ ] Marcador CCS (linha ~104) recebe `link: "/centros/ccs"`.
+- [ ] Nenhuma outra alteração de comportamento do mapa.
+
+**Verificação (sprint inteiro)**
+
 - [ ] `npm run lint` passa sem erros.
-- [ ] `npm run build` passa (SSG — páginas `/centros/cca` e `/centros/cse` incluídas).
+- [ ] `npm run build` passa (SSG — páginas `/centros/cce` e `/centros/ccs` geradas
+      automaticamente pelo loader, sem código novo além do link do mapa).
 - [ ] Testes E2E do Playwright passam sem regressões.
+- [ ] `app/sitemap.ts` já inclui as novas rotas automaticamente (varre `listCenters()`) —
+      confirmar no build.
 
 ### Ordem de execução e dependências
 
-1. **Loader** (`lib/content.ts`) — adicionar `listCenters()`/`getCenter()` e a interface
-   `Center`. Pré-requisito de todas as etapas seguintes.
-2. **Conteúdo** (`docs/centros/cca.md` e `docs/centros/cse.md`) — pesquisar dados
-   reais a partir de fontes oficiais (`cca.ufsc.br`, `cse.ufsc.br`). Pode rodar em
-   paralelo com a etapa 1.
-3. **API e Frontend** (`app/api/centros/` e `app/centros/`) — criar rotas e página
-   de renderização. Depende do loader (etapa 1).
-4. **Integração Mapa** (`components/MapView.tsx`) — adicionar links nos popups de CCA
-   e CSE. Depende das páginas existirem (etapa 3).
-5. **Sitemap** (`app/sitemap.ts`) — adicionar entradas `/centros/*`. Depende do loader.
+1. **Conteúdo** (`docs/centros/cce.md` e `docs/centros/ccs.md`) — `content-editor`, em
+   paralelo. Pesquisar fontes oficiais (`cce.ufsc.br`, `ccs.ufsc.br`). Sem dependência de código.
+2. **Integração Mapa** (`components/MapView.tsx`) — `frontend-dev` adiciona os dois `link`.
+   Independente do conteúdo (as páginas são geradas pelo loader), mas o link só faz sentido
+   com o `.md` presente; pode rodar em paralelo e ser validado no build final.
+3. **Verificação** — `tester` roda lint + build + Playwright.
 
 ### Notas técnicas para os agentes
 
-**Estrutura do frontmatter de `docs/centros/<slug>.md`:**
+- Modelo a seguir: `docs/centros/cca.md` e `docs/centros/cse.md` (estrutura já validada no
+  Sprint 13). Copiar a organização de seções desses arquivos.
+- **Regra inegociável:** campos sem fonte oficial ficam `_A preencher_` — nunca inventar
+  coordenações, e-mails ou nomes. Toda informação exige link oficial da UFSC.
+- O loader `listCenters()`/`getCenter()` já varre `docs/centros/*.md` excluindo `_modelo*` —
+  nada a mudar em `lib/content.ts`.
 
-```yaml
----
-slug: cca
-titulo: "Centro de Ciências Agrárias (CCA)"
-descricao: "Centro localizado em Itacorubi (fora do Campus Trindade), com cursos de Agronomia, Zootecnia, Medicina Veterinária e afins."
-ultima_verificacao: "julho/2026"
----
-```
+**Slugs de centro para o mapa:**
 
-**Interface a adicionar em `lib/content.ts`:**
-
-```typescript
-export interface CenterSummary {
-  slug: string;
-  title: string;
-  description: string;
-}
-
-export interface Center extends CenterSummary {
-  metadata: Record<string, unknown>;
-  content_md: string;
-  content_html: string;
-}
-```
-
-**Funções a adicionar em `lib/content.ts`:**
-
-```typescript
-function iterCenterFiles(): string[] {
-  const centersDir = path.join(DOCS_DIR, "centros");
-  if (!fs.existsSync(centersDir)) return [];
-  return fs.readdirSync(centersDir)
-    .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
-    .sort()
-    .map((f) => path.join(centersDir, f));
-}
-
-export function listCenters(): CenterSummary[] { ... }
-export function getCenter(slug: string): Center | null { ... }
-```
-
-**Slugs de centro para o mapa (`components/MapView.tsx`):**
-
-| Centro | Slug para link |
-|--------|---------------|
-| CCA | `cca` |
-| CSE | `cse` |
+| Centro | Marcador (linha aprox.) | Slug para link |
+|--------|-------------------------|----------------|
+| CCE | 96–103 | `cce` |
+| CCS | 104–111 | `ccs` |
 
 ### Definição de Pronto (sprint inteiro)
 
-- [ ] `docs/centros/cca.md` e `docs/centros/cse.md` criados com dados verificados ou `_A preencher_`.
-- [ ] Páginas `/centros/cca` e `/centros/cse` acessíveis no servidor local.
-- [ ] Popups CCA e CSE no mapa têm link para as respectivas páginas.
+- [ ] `docs/centros/cce.md` e `docs/centros/ccs.md` criados com dados verificados ou `_A preencher_`.
+- [ ] Páginas `/centros/cce` e `/centros/ccs` acessíveis (geradas no build SSG).
+- [ ] Popups CCE e CCS no mapa têm link para as respectivas páginas.
 - [ ] `npm run lint` passa sem erros.
 - [ ] `npm run build` passa (SSG completo, novas páginas incluídas).
 - [ ] Testes E2E Playwright passam sem regressões.
-- [ ] `docs/product-backlog.md` atualizado (B-60 marcado como 🚧 Em andamento).
+- [ ] `docs/product-backlog.md` atualizado (B-60 segue 🚧 — CCE e CCS publicados).
 - [ ] `docs/SPRINT.md` com retrospectiva preenchida antes de fechar.
 
 ### O que NÃO entra e por que
 
 | Item | Motivo da exclusão |
 |------|--------------------|
-| Demais centros (CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS) | Escopo futuro — validar arquitetura com 2 centros antes de escalar |
-| B-61 (fichas de cursos do CCA e CSE) | Sprint separado; cursos do CCA (~7) e CSE (~5) são escopo próprio após validar a infra |
+| Demais centros (CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá) | Escopo futuro — micro-sprints de 2 centros por vez; B-60 segue 🚧 |
+| B-61 (fichas de cursos do CCA/CCE/CCS) | Épico E2 distinto; não misturar com E7 no mesmo sprint |
 | B-50 + B-37 + E13 | Horizonte v2.0; banco + auth + moderação como bloco integrado |
 | B-13 (histórias de veteranos) | Bloqueado: sem submissões reais confirmadas via `historia-veterano.yml` |
-
-### Retrospectiva do Sprint 13
-
-**Concluído em:** 2026-07-29
-
-**Entregue:**
-- **Infraestrutura multi-centro** — `lib/content.ts` ganhou `CenterSummary`, `Center`, `iterCenterFiles()`,
-  `listCenters()` e `getCenter()`, seguindo o padrão exato de cursos. `app/api/centros/route.ts` e
-  `app/api/centros/[slug]/route.ts` criadas. `app/sitemap.ts` atualizado para incluir `/centros/*`
-  dinamicamente. Arquitetura pronta para receber mais centros sem tocar no código — basta criar
-  `docs/centros/<slug>.md`.
-- **B-60 (CCA)** — `docs/centros/cca.md` com 4 cursos verificados (Agronomia, CTA, Eng. Aquicultura,
-  Zootecnia), coordenações com telefones e e-mails, CAs (CAAGRO, CACTA, CALEA, CAZoot), atléticas
-  (ATAG, ATZoot), eventos (SEAGRO, SEMAZOOT, SACTA), RU próprio em Itacorubi, guia de transporte
-  (linha 165). Nota: lista de cursos corrigida para 4 (backlog mencionava 7 — Medicina Veterinária
-  e Recursos Naturais não têm graduação ativa no CCA; confirmado via cca.ufsc.br).
-- **B-60 (CSE)** — `docs/centros/cse.md` com 5 cursos, todas coordenações com e-mails e telefones
-  verificados, CAs (CAAD, CACIC, CALE, CARI, CALISS), atléticas (Atlética ADM, ATACC, ATECO),
-  festas (Apocalipse, Internação, SAAD). Dados da direção (Profª. Casagrande) verificados em
-  cse.ufsc.br/equipe/.
-- **Integração mapa** — campo `link?: string` adicionado à interface `MapMarker`; popups de CCA e
-  CSE incluem link "Ver página do centro →" para `/centros/cca` e `/centros/cse`.
-
-**Findings ui-ux-review corrigidos antes do merge:**
-- Major: tap target do link no popup (`display:inline-block`) abaixo de 44px → `display:block;padding:10px 0`
-- Minor: legenda com `text-gray-900` → token `text-ink-primary` (linhas 330 e 333)
-
-**Verificações finais:** lint ✅ · build 42 páginas SSG ✅ · Playwright 8/8 ✅
-
-**O que foi bem:**
-- Arquitetura "basta criar o .md" validada: adicionar CSE após CCA foi só conteúdo, zero código extra.
-- Content-editors pesquisaram fontes oficiais com disciplina — muitos campos `_A preencher_` honestos
-  em vez de dados inventados.
-- Coordenações do CCA e CSE com telefones e WhatsApp verificados — alta utilidade imediata para calouros.
-
-**Lições aprendidas:**
-- CCA tem 4 cursos de graduação, não 7 como o backlog indicava — o B-61 precisará ser revisado
-  para refletir a lista real antes do próximo sprint de fichas.
-- Popup Leaflet com `inline-block` não satisfaz tap target — usar `display:block` com padding
-  vertical é o padrão correto em HTML injetado no Leaflet.
-
-**Para o próximo sprint (candidatos):**
-- **B-60 (demais centros)** — CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS em micro-sprints de 2–3
-  centros por vez (infraestrutura já pronta — é só conteúdo).
-- **B-61 (fichas de cursos do CCA)** — 4 cursos confirmados; modelo `docs/cursos/<slug>.md` já existe.
-- **B-13 (histórias de veteranos)** — desbloqueado assim que houver submissões reais via
-  `historia-veterano.yml`.
 
 ---
 
@@ -485,6 +423,18 @@ de cada peça, sem duplicação:
 ---
 
 ## Sprints Anteriores
+
+### Sprint 13 — Infraestrutura Multi-Centro + CCA e CSE (v1.7) — concluido em 2026-07-29
+
+**Objetivo:** Infraestrutura de conteúdo multi-centro (`docs/centros/`, `app/centros/[slug]`,
+`app/api/centros/`, `listCenters()`/`getCenter()` em `lib/content.ts`) e publicar os dois
+primeiros centros além do CTC: CCA (Itacorubi) e CSE (Trindade).
+
+**Entregue:** loader + rotas + páginas SSG + sitemap dinâmico para `/centros/*`; `docs/centros/cca.md`
+(4 cursos verificados) e `docs/centros/cse.md` (5 cursos verificados) com coordenações, CAs, atléticas
+e festas; popups de CCA e CSE no mapa com link "Ver página do centro →". lint ✅ · build 42 páginas
+SSG ✅ · Playwright 8/8 ✅. B-60 passou a 🚧 Em andamento. Lição: CCA tem 4 cursos (não 7); popup
+Leaflet exige `display:block` para satisfazer tap target.
 
 ### Sprint 9 — Acessivel, Mapeado e Testado (v1.4) — concluido em 2026-07-16
 
