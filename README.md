@@ -45,6 +45,7 @@ portal-dos-calouros-ufsc/
 ├── app/                  ← páginas e Route Handlers (Next.js App Router)
 │   ├── api/              ← /api/health, /api/sections, /api/courses, /api/search
 │   ├── busca/            ← página de busca
+│   ├── centros/[slug]/   ← páginas por centro da UFSC (CCA, CSE, CCE, CCS…)
 │   ├── checklist/        ← checklist da primeira semana
 │   ├── cursos/           ← listagem e fichas por curso
 │   ├── faq/              ← perguntas frequentes
@@ -55,6 +56,7 @@ portal-dos-calouros-ufsc/
 │   └── content.ts        ← loader de Markdown: slug → docs/*.md
 ├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
 │   ├── cursos/           ← fichas por curso (13 cursos do CTC)
+│   ├── centros/          ← fichas por centro (CCA, CSE, CCE, CCS)
 │   ├── arquitetura.md    ← decisões técnicas e ADRs
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
@@ -120,9 +122,12 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
 - [x] **v1.4** — Acessibilidade WCAG AA, mapa interativo (Leaflet.js), testes E2E Playwright no CI (Sprint 9)
 - [x] **v1.5** — PWA instalável (manifest + ícones), Vercel Analytics, Lighthouse CI (Sprint 10)
-- [ ] **v1.6** — Banco de dados (Prisma), formulário de histórias, arte final dos ícones PWA
+- [x] **v1.6** — Mapa com todos os centros da UFSC + filtro por categoria (Sprint 12)
+- [x] **v1.7** — Infraestrutura multi-centro + páginas de CCA e CSE (Sprint 13)
+- [x] **v1.8** — Centros CCE (Comunicação e Expressão) e CCS (Ciências da Saúde) (Sprint 14)
+- [ ] **v1.9** — Banco de dados (Prisma), formulário de histórias, arte final dos ícones PWA
 - [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
-- [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
+- [ ] **Futuro** — Simulador de grade, blog, centros restantes (CCJ, CFH, CFM, CCB, CED, CDS…)
 
 ## Como contribuir
 

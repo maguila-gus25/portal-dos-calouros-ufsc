@@ -13,9 +13,9 @@ existem no mapa desde o Sprint 12; falta apenas o `.md` de cada centro e o link 
 
 | História | ID | Prioridade / Tam. | Status |
 |----------|----|-------------------|--------|
-| Conteúdo do CCE (Comunicação e Expressão) — B-60 parcial | B-60 (CCE) | Should / M | In Progress |
-| Conteúdo do CCS (Ciências da Saúde) — B-60 parcial | B-60 (CCS) | Should / M | In Progress |
-| Links dos popups CCE e CCS no mapa + verificação | B-60 (mapa) | Should / P | In Progress |
+| Conteúdo do CCE (Comunicação e Expressão) — B-60 parcial | B-60 (CCE) | Should / M | Done |
+| Conteúdo do CCS (Ciências da Saúde) — B-60 parcial | B-60 (CCS) | Should / M | Done |
+| Links dos popups CCE e CCS no mapa + verificação | B-60 (mapa) | Should / P | Done |
 
 ### Nota de escopo (correção do grooming)
 
@@ -110,6 +110,39 @@ de `components/MapView.tsx`) mas **sem** campo `link`.
 | B-61 (fichas de cursos do CCA/CCE/CCS) | Épico E2 distinto; não misturar com E7 no mesmo sprint |
 | B-50 + B-37 + E13 | Horizonte v2.0; banco + auth + moderação como bloco integrado |
 | B-13 (histórias de veteranos) | Bloqueado: sem submissões reais confirmadas via `historia-veterano.yml` |
+
+## Retrospectiva
+
+**Concluído em:** 2026-07-30
+
+- **Entregue:**
+  - **B-60 (CCE)** — `docs/centros/cce.md` com direção (Sergio Romanelli/Rodrigo Acosta,
+    eleição 2025–2029), coordenações de Jornalismo, Design/Design de Produto/Animação, Cinema,
+    Artes Cênicas, Letras (Português, Línguas Estrangeiras, Libras presencial/EaD) e Secretariado
+    Executivo; CAs (CALJ, CADe, CACine, CALL); atléticas (AAGB, Atlética Letras); festas (SAJOR, MAÇÃ).
+    ~12 campos `_A preencher_` honestos. Sem e-mails pessoais de terceiros publicados.
+  - **B-60 (CCS)** — `docs/centros/ccs.md` com 6 cursos confirmados (Medicina, Enfermagem, Farmácia,
+    Odontologia, Nutrição, Fonoaudiologia); direção verificada (Fabrício Neves/Moretti-Pires);
+    secretarias de curso, CAs (CALIMED, CALEnf, CAF, CAOQA, CALIFONO), atléticas (AAAMED, Athena),
+    NAPA. ~18 campos `_A preencher_`. Excluídos Gerontologia (extensão) e Fisioterapia (Araranguá).
+  - **B-60 (mapa)** — links `/centros/cce` e `/centros/ccs` nos popups dos marcadores CCE e CCS
+    (`components/MapView.tsx`), reutilizando o padrão já auditado de CSE/CCA.
+- **Verificações finais:** lint ✅ · build 44 páginas SSG ✅ (incluindo `/centros/cce` e `/centros/ccs`) ·
+  ui-ux-review sem findings (mudança aditiva sobre padrões já auditados). Deploy Vercel Ready confirmou
+  o build de forma independente.
+- **Adiado:** demais centros (CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá) — B-60 segue 🚧 em
+  micro-sprints; B-61 (fichas de curso) fica para épico E2 separado.
+- **Para o próximo sprint:**
+  - **Dívida de infra de teste:** os E2E do Playwright **não rodaram** — o ambiente tem Chromium
+    revisão 1194, mas `@playwright/test ^1.61.1` espera a 1228. Alinhar a versão do browser no CI
+    (ou fixar `@playwright/test` numa versão compatível) antes do próximo sprint que dependa de E2E.
+  - **Correção de processo:** o grooming do product-owner confundiu **CCS** (Ciências da Saúde) com
+    **CSE** (Sócio-Econômico) por causa das siglas parecidas e quase reduziu o escopo pela metade.
+    O scrum-master pegou o erro cruzando com os marcadores do mapa. Lição: validar siglas de centro
+    contra `components/MapView.tsx` no planejamento.
+  - **Dívida transversal (opcional):** envolver `<table>` do `.prose-content` em contêiner
+    `overflow-x-auto` para tabelas largas com e-mails longos em telas de 375px (afeta todas as
+    páginas de centro/curso, não só as deste sprint).
 
 ---
 
