@@ -13,9 +13,9 @@ existem no mapa desde o Sprint 12; falta apenas o `.md` de cada centro e o link 
 
 | História | ID | Prioridade / Tam. | Status |
 |----------|----|-------------------|--------|
-| Conteúdo do CCE (Comunicação e Expressão) — B-60 parcial | B-60 (CCE) | Should / M | Not Started |
-| Conteúdo do CCS (Ciências da Saúde) — B-60 parcial | B-60 (CCS) | Should / M | Not Started |
-| Links dos popups CCE e CCS no mapa + verificação | B-60 (mapa) | Should / P | Not Started |
+| Conteúdo do CCE (Comunicação e Expressão) — B-60 parcial | B-60 (CCE) | Should / M | In Progress |
+| Conteúdo do CCS (Ciências da Saúde) — B-60 parcial | B-60 (CCS) | Should / M | In Progress |
+| Links dos popups CCE e CCS no mapa + verificação | B-60 (mapa) | Should / P | In Progress |
 
 ### Nota de escopo (correção do grooming)
 

@@ -100,6 +100,7 @@ export const CAMPUS_MARKERS: MapMarker[] = [
     description:
       "Jornalismo, Letras, Artes, Cinema e Design. Bloco principal do CCE.",
     category: "teaching",
+    link: "/centros/cce",
   },
   {
     lat: -27.59919258520732,
@@ -108,6 +109,7 @@ export const CAMPUS_MARKERS: MapMarker[] = [
     description:
       "Medicina, Enfermagem, Farmácia, Odontologia e Nutrição. Bloco principal do CCS.",
     category: "teaching",
+    link: "/centros/ccs",
   },
   {
     lat: -27.598497640726105,
