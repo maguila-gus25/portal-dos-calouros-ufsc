@@ -1,7 +1,7 @@
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCenter, listCenters } from "@/lib/content";
+import { getCenter, listCenters, listCourses } from "@/lib/content";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -38,11 +38,15 @@ export default async function CenterPage({ params }: Props) {
   const center = getCenter(slug);
   if (!center) notFound();
 
+  const courses = listCourses().filter(
+    (c) => (c.centro ?? "").toUpperCase() === slug.toUpperCase()
+  );
+
   return (
     <article className="space-y-4">
-      <Link href="/" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+      <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
-        Voltar para o início
+        Todos os centros
       </Link>
 
       <header className="card p-6 sm:p-8">
@@ -56,6 +60,37 @@ export default async function CenterPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: center.content_html }}
         />
       </div>
+
+      {courses.length > 0 && (
+        <section className="space-y-3" aria-labelledby="cursos-do-centro">
+          <h2 id="cursos-do-centro" className="text-lg font-bold text-foreground">Cursos deste centro</h2>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((course) => (
+              <li key={course.slug}>
+                <Link
+                  href={`/cursos/${course.slug}`}
+                  className="card p-4 flex items-start gap-3 no-underline hover:border-primary hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-150 group h-full"
+                >
+                  <div className="section-icon-wrapper icon-blue mt-0.5">
+                    <GraduationCap size={18} aria-hidden />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-foreground text-sm leading-snug">{course.title}</p>
+                    {course.turno && (
+                      <p className="text-xs text-muted-foreground mt-0.5">{course.turno}</p>
+                    )}
+                  </div>
+                  <ChevronRight
+                    size={15}
+                    className="text-gray-400 group-hover:text-primary flex-shrink-0 mt-1"
+                    aria-hidden
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }

@@ -17,7 +17,7 @@ export function Header() {
           </div>
           <div className="flex flex-col leading-tight">
             <span className="font-semibold text-sm text-foreground">Portal dos Calouros</span>
-            <span className="text-muted-foreground text-xs">UFSC — CTC</span>
+            <span className="text-muted-foreground text-xs">UFSC</span>
           </div>
         </Link>
 

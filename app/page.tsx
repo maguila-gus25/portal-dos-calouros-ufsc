@@ -1,17 +1,15 @@
 import {
   BookOpen, Building2, Calendar, Camera, CheckSquare, ChevronRight,
-  HelpCircle, Link2, Map, Trophy, Utensils, type LucideIcon,
+  HelpCircle, Link2, Map, Utensils, type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { SearchInput } from "@/components/SearchInput";
 import { listSections, type SectionSummary } from "@/lib/content";
 
 const SECTION_ICONS: Record<string, LucideIcon> = {
-  coordenacoes: Building2,
   ru: Utensils,
   links: Link2,
   datas: Calendar,
-  atleticas: Trophy,
   instagrams: Camera,
   mapa: Map,
   historias: BookOpen,
@@ -20,11 +18,9 @@ const SECTION_ICONS: Record<string, LucideIcon> = {
 };
 
 const SECTION_COLORS: Record<string, string> = {
-  coordenacoes: "icon-blue",
   ru: "icon-green",
   links: "icon-violet",
   datas: "icon-orange",
-  atleticas: "icon-rose",
   instagrams: "icon-pink",
   mapa: "icon-teal",
   historias: "icon-amber",
@@ -38,8 +34,10 @@ const SECTION_DEDICATED_ROUTES: Record<string, string> = {
   mapa: "/mapa",
 };
 
+const HIDDEN_SECTIONS = new Set(["coordenacoes", "atleticas"]);
+
 export default function Home() {
-  const sections = listSections();
+  const sections = listSections().filter((s) => !HIDDEN_SECTIONS.has(s.slug));
 
   return (
     <div className="space-y-8">
@@ -56,7 +54,7 @@ export default function Home() {
         />
         <div className="relative">
           <span className="inline-block bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wide">
-            CTC · Campus Trindade · Florianópolis
+            UFSC · Florianópolis
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
             Tudo que você precisa
@@ -85,6 +83,32 @@ export default function Home() {
             <SectionCard key={section.slug} section={section} />
           ))}
         </ul>
+      </section>
+
+      {/* Card de destaque: Centros */}
+      <section aria-labelledby="centros-heading">
+        <h2 id="centros-heading" className="text-xl font-bold mb-4 text-foreground">
+          Centros e cursos
+        </h2>
+        <Link
+          href="/centros"
+          className="card p-5 flex items-center gap-4 no-underline hover:border-primary hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-150 group"
+        >
+          <div className="section-icon-wrapper icon-blue">
+            <Building2 size={22} aria-hidden />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-foreground text-sm leading-snug">Centros da UFSC</h3>
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+              CTC, CCA, CSE, CCE, CCS — coordenações, atléticas, CAs e fichas de curso por centro.
+            </p>
+          </div>
+          <ChevronRight
+            size={15}
+            className="text-gray-400 group-hover:text-primary flex-shrink-0 transition-colors duration-150"
+            aria-hidden
+          />
+        </Link>
       </section>
     </div>
   );
