@@ -42,6 +42,15 @@ Cada curso tem uma ficha própria (coordenação, atlética, vida do curso, dica
 Fichas de centros fora do Campus Trindade, com informações de localização, coordenações, CAs, atléticas e transporte:
 
 - [Centro de Ciências Agrárias (CCA) — Itacorubi](centros/cca.md)
+- [Centro Socioeconômico (CSE) — Campus Trindade](centros/cse.md)
+- [Centro de Comunicação e Expressão (CCE) — Campus Trindade](centros/cce.md)
+
+### Cursos do CCA (Itacorubi)
+
+- [Agronomia](cursos/agronomia.md)
+- [Ciência e Tecnologia de Alimentos](cursos/ciencia-e-tecnologia-de-alimentos.md)
+- [Engenharia de Aquicultura](cursos/engenharia-de-aquicultura.md)
+- [Zootecnia](cursos/zootecnia.md)
 
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)

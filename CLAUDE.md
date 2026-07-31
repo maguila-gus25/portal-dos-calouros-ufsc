@@ -173,10 +173,10 @@ Regras inegociáveis:
 
 - CI/CD: push para `main` → Vercel builda e deploya automaticamente.
 
-## Próximos passos (Sprint 14)
+## Próximos passos (Sprint 15)
 
 Ver `docs/product-backlog.md` para o backlog completo. Prioridade imediata:
 
-1. **B-60 (CCE + CCS)** — próximos centros: Comunicação e Expressão + Ciências da Saúde
-2. **B-61 (fichas CCA)** — 4 cursos do CCA (Agronomia, CTA, Eng. Aquicultura, Zootecnia)
+1. **B-60 (CCJ + CFH + CFM)** — próximos centros: Ciências Jurídicas, Filosofia e Ciências Humanas, Ciências Físicas e Matemáticas
+2. **B-61 (fichas CSE)** — 5 cursos do CSE (centro já publicado — só criar os `.md` dos cursos)
 3. **B-13** — histórias de veteranos (quando houver submissões reais via `historia-veterano.yml`)

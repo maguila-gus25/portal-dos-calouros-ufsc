@@ -178,8 +178,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 |----|-----------|------|--------|----------|
 | B-27 | ⚪ Won't (agora) | 🔴 G | ⬜ | Como **calouro de outro centro (CSE/CCS…)**, quero **as mesmas infos do meu centro**, para **me virar também**. |
 | B-28 | ⚪ Won't (agora) | 🟡 M | ⬜ | Como **mantenedor**, quero **um modelo de centro reutilizável**, para **replicar a estrutura**. |
-| B-60 | 🟠 Should | 🔴 G | 🚧 | Como **calouro de qualquer centro da UFSC Florianópolis**, quero **conteúdo sobre meu centro** (coordenações, atléticas, links úteis), para **me virar no primeiro dia mesmo não sendo do CTC**. Cobre: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CCA (Itacorubi), CED, CDS (Centro de Desportos e Saúde), CA (Araranguá), CA (Joinville). **Sprint 13:** infraestrutura multi-centro implementada (`docs/centros/`, `app/centros/[slug]`, `app/api/centros/`); CCA e CSE publicados com coordenações, CAs, atléticas e festas verificados. Faltam: CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS e campi de Joinville e Araranguá. |
-| B-61 | 🟠 Should | 🔴 G | ⬜ | Como **calouro**, quero **fichas dos cursos de todos os centros da UFSC Florianópolis**, para **ter informações do meu curso independente do centro**. Seguir o mesmo modelo de `docs/cursos/<slug>.md` já usado no CTC; incluir cursos do CCA que fica em Itacorubi (Agronomia, Zootecnia, Aquicultura, Eng. de Aquicultura, Eng. Agronômica, Medicina Veterinária, Recursos Naturais). |
+| B-60 | 🟠 Should | 🔴 G | 🚧 | Como **calouro de qualquer centro da UFSC Florianópolis**, quero **conteúdo sobre meu centro** (coordenações, atléticas, links úteis), para **me virar no primeiro dia mesmo não sendo do CTC**. Cobre: CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CCA (Itacorubi), CED, CDS (Centro de Desportos e Saúde), CA (Araranguá), CA (Joinville). **Sprint 13:** infraestrutura + CCA + CSE. **Sprint 14:** CCE (9 cursos, diretoria, CAs, atléticas) e CCS (6 cursos, diretoria, CAs, atléticas) publicados. Faltam: CCJ, CFH, CFM, CCB, CED, CDS e campi de Joinville e Araranguá. |
+| B-61 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **fichas dos cursos de todos os centros da UFSC Florianópolis**, para **ter informações do meu curso independente do centro**. Seguir o mesmo modelo de `docs/cursos/<slug>.md` já usado no CTC. **Sprint 14:** 4 fichas do CCA criadas (Agronomia, Ciência e Tecnologia de Alimentos, Engenharia de Aquicultura, Zootecnia). Faltam: cursos do CSE, CCE, CCS e demais centros. |
 | B-62 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **ver no mapa interativo os pontos de interesse de todos os centros da UFSC Florianópolis** — incluindo o CCA em Itacorubi (fora do campus Trindade) —, para **me localizar em qualquer parte dos campi**. 10 centros adicionados (CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CED, CDS, CCA-Itacorubi) com coordenadas verificadas; `fitBounds` cobre os dois campi; label renomeado para "Centros Acadêmicos". |
 | B-63 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **filtrar o mapa por categoria** (Centros Acadêmicos, Alimentação, Saúde, Transporte, Biblioteca, Administração), para **encontrar rapidamente o que preciso sem ver todos os marcadores ao mesmo tempo**. Chips `<button aria-pressed>` acima do mapa; `useEffect` reage ao filtro com `addTo`/`removeFrom` Leaflet; toggle ao clicar categoria ativa volta para "Todos". |
 
@@ -227,13 +227,17 @@ Infraestrutura `docs/centros/` + `app/centros/[slug]` + `app/api/centros/` imple
 CCA (4 cursos, Itacorubi) e CSE (5 cursos, Trindade) publicados com coordenações, CAs, atléticas
 e festas verificados. Popups do mapa integrados. B-60 passa para 🚧 Em andamento.
 
-**Sprint 14 — Próximos centros B-60 (candidatos):**
+**Sprint 14 — Mais Centros: CCE + CCS + Fichas CCA (v1.8) — concluído em 2026-07-30:**
+CCE (9 cursos, diretoria, CAs, atléticas, eventos) e CCS (6 cursos, diretoria, CAs,
+atléticas, eventos) publicados. 4 fichas de cursos do CCA criadas (Agronomia, CTA,
+Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 
-1. **B-60 (CCE + CCS)** — Should, M. Dois centros de perfil alto (Comunicação + Saúde);
-   infraestrutura pronta — é só conteúdo. CCE: Jornalismo, Letras, Design, Cinema, Artes.
-   CCS: Medicina, Enfermagem, Farmácia, Odontologia, Nutrição.
-2. **B-61 (fichas CCA)** — Should, M. 4 cursos confirmados (Agronomia, CTA, Eng. Aquicultura,
-   Zootecnia); modelo `docs/cursos/<slug>.md` já existe e pode ser reaproveitado.
+**Sprint 15 — Próximos centros B-60 (candidatos):**
+
+1. **B-60 (CCJ + CFH + CFM)** — Should, M. Próximos centros; infraestrutura pronta — só conteúdo.
+2. **B-61 (fichas CSE)** — Should, M. 5 cursos do CSE (ADM, CC, CI, RI, Ciências Sociais);
+   centro já publicado, modelo pronto.
+3. **B-08** — dicas de veterano e "onde estudar" nas fichas CTC — desbloqueado com submissões reais.
 
 > Alternativa: **B-13** (histórias de veteranos) — desbloqueado assim que houver submissões
 > reais via `historia-veterano.yml`.
