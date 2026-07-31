@@ -4,7 +4,112 @@
 
 ---
 
-## Sprint 15 — Navegação por Centro: reestruturação arquitetural (v1.9)
+## Sprint 16 — Cauda da E14 + Fichas dos Cursos do CSE (v1.10)
+
+**Objetivo:** Fechar a "cauda" da reestruturação de navegação (E14) — link de atalho para
+cursos na página de centro (B-71) e documentação técnica atualizada (B-72) — e **completar o
+CSE**, publicando as fichas dos seus 5 cursos de graduação para que o calouro que navega
+`/centros/cse → curso` não encontre mais uma ficha inexistente. Prioridade de produto:
+**terminar o que já foi anunciado como pronto antes de abrir novos centros**.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Link "Ver os cursos deste centro" no topo de `/centros/[slug]` | B-71 | Could / P | frontend-dev | Not Started |
+| Atualizar `CLAUDE.md` e `docs/arquitetura.md` para a nova navegação | B-72 | Could / M | content-editor | Not Started |
+| Fichas dos 5 cursos do CSE (B-61 parcial) | B-61 (CSE) | Should / M | content-editor | Not Started |
+
+### Critérios de aceite detalhados
+
+**B-71 — Link "Ver cursos" no topo da página de centro**
+- [ ] `app/centros/[slug]/page.tsx`: quando o centro tem ≥ 1 curso, renderizar um link/botão
+      "Ver os cursos do [título do centro]" com `href="#cursos-do-centro"` **antes** do bloco
+      `.prose-content` (o anchor `id="cursos-do-centro"` já existe, criado no B-66).
+- [ ] Se o centro não tem cursos, o link **não** é renderizado.
+- [ ] Estilo consistente com a identidade visual (azul primário, acessível por teclado,
+      tap target ≥ 44px).
+- [ ] `npm run lint` e `npm run build` passam.
+
+**B-72 — Documentação técnica da nova navegação**
+- [ ] `CLAUDE.md`: "Estrutura do repositório" inclui `app/centros/page.tsx` (índice) e
+      `app/centros/[slug]/page.tsx` (centro + cursos do centro).
+- [ ] `CLAUDE.md`: seção "API" lista `/api/centros` e `/api/centros/{slug}`.
+- [ ] `CLAUDE.md`: "Próximos passos" reflete o estado real pós-Sprint 16 (Sprint 17 = B-60
+      CCJ/CFH/CFM + demais fichas).
+- [ ] `docs/arquitetura.md`: fluxo de navegação do usuário atualizado para
+      `/ → /centros → /centros/[slug] → /cursos/[slug]`.
+- [ ] Nenhum arquivo de documentação menciona "portal do CTC" como identidade principal —
+      sempre "Portal dos Calouros UFSC".
+
+**B-61 (parcial CSE) — Fichas dos 5 cursos do CSE**
+- [ ] 5 arquivos criados seguindo `docs/_modelo-curso.md`, com `centro: CSE` no frontmatter:
+      `docs/cursos/administracao.md`, `ciencias-contabeis.md`, `ciencias-economicas.md`,
+      `relacoes-internacionais.md`, `servico-social.md`.
+- [ ] Coordenação, CA e atlética reaproveitados de `docs/centros/cse.md` (já verificados);
+      campos sem fonte oficial ficam como `_A preencher_` — **nunca inventar**.
+- [ ] Frontmatter usa `~` (null YAML) para campos vazios, não texto verboso
+      (lição do Sprint 14 — evita render quebrado no template).
+- [ ] Turno/grau/duração confirmados no Guia de Cursos UFSC de cada curso.
+- [ ] `npm run build` inclui SSG das 5 novas páginas de curso.
+- [ ] `/centros/cse` mostra os 5 cards de curso (B-66) apontando para as novas fichas.
+
+### Ordem de execução e dependências
+
+```
+Wave única (paralelo — arquivos disjuntos, zero conflito):
+  B-71  frontend-dev    — app/centros/[slug]/page.tsx (código)
+  B-72  content-editor  — CLAUDE.md + docs/arquitetura.md (docs técnicas)
+  B-61  content-editor  — docs/cursos/*.md (5 fichas CSE, conteúdo institucional)
+
+Depois:
+  tester — lint + build + Playwright 8/8
+```
+
+### Slugs e fontes oficiais (B-61/CSE)
+
+| Curso | Slug do arquivo | Fonte oficial |
+|-------|-----------------|---------------|
+| Administração | `administracao` | https://administracao.ufsc.br/ · https://guiadecursos.ufsc.br/administracao/ |
+| Ciências Contábeis | `ciencias-contabeis` | https://cienciascontabeis.ufsc.br/ · https://guiadecursos.ufsc.br/ciencias-contabeis/ |
+| Ciências Econômicas | `ciencias-economicas` | https://economia.ufsc.br/ · https://guiadecursos.ufsc.br/ciencias-economicas/ |
+| Relações Internacionais | `relacoes-internacionais` | https://ri.ufsc.br/ · https://guiadecursos.ufsc.br/relacoes-internacionais/ |
+| Serviço Social | `servico-social` | https://servicosocial.ufsc.br/ · https://guiadecursos.ufsc.br/servico-social/ |
+
+### Definition of Done
+- [ ] `npm run lint` passa (frontend)
+- [ ] `npm run build` passa (SSG com 5 novas fichas de curso — total ~53 páginas)
+- [ ] Playwright 8/8 sem regressões
+- [ ] `/centros/cse` exibe link "Ver cursos" (B-71) + 5 cards apontando para fichas existentes
+- [ ] ui-ux-review sem findings bloqueadores
+- [ ] `docs/product-backlog.md` atualizado (B-71 ✅, B-72 ✅, B-61 avança)
+- [ ] `CLAUDE.md`/`arquitetura.md` refletem a navegação por centro (B-72)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| B-60 (CCJ + CFH + CFM) | Prioridade nº 1 do CLAUDE.md, mas adiada: abrir 3 centros novos sem fichas de curso replica o problema que o CSE tem hoje. Entra no Sprint 17 assim que o CSE fechar. |
+| B-08 (dicas de veterano) / B-13 (histórias) | Bloqueados — dependem de veteranos reais; não inventar conteúdo. |
+| B-50 / B-37 / E13 (banco + auth + moderação) | Horizonte v2.0 — bloco integrado, fora de escopo. |
+
+---
+
+## Sprint 15 — Navegação por Centro: reestruturação arquitetural (v1.9) — concluído em 2026-07-30
+
+**Objetivo:** Transformar o portal de "portal do CTC com centros extras" para "portal da UFSC
+organizado por centro" (`Home → /centros → /centros/ctc → cursos`), removendo "CTC" do header.
+
+**Entregue:** B-64 (`docs/centros/ctc.md` — CTC entra em `listCenters()`); B-67 (header/hero/nav
+sem "CTC"); B-65 (página `/centros` com grid de centros + sitemap); B-66 (`/centros/[slug]` lista
+os cursos do centro, filtrando por `centro`); B-68 (`/cursos` → `permanentRedirect("/centros")`);
+B-69 (redirects 301 de `/secoes/coordenacoes` e `/secoes/atleticas` → `/centros/ctc`);
+B-70 (home sem cards Coordenações/Atléticas via `HIDDEN_SECTIONS`, novo card "Centros e cursos").
+Findings ui-ux-review corrigidos (filtro `HIDDEN_SECTIONS`, aria-labels). lint ✅ · build 50
+páginas SSG ✅ · Playwright 8/8 ✅.
+
+<details>
+<summary>Detalhamento completo do Sprint 15 (histórias, critérios, retrospectiva)</summary>
+
+### Sprint 15 — versão detalhada
 
 **Objetivo:** Transformar o portal de "portal do CTC com centros extras" para "portal da UFSC
 organizado por centro". O calouro navega: Home → /centros → /centros/ctc → cursos do CTC.
@@ -149,6 +254,8 @@ Wave 2 (após B-64):
 - **B-72** — atualizar CLAUDE.md e arquitetura.md para refletir a nova identidade (Could, M).
 - **B-60** — mais centros: CCJ, CFH, CFM (só conteúdo, infra pronta).
 - **B-61** — fichas dos cursos do CSE (5 cursos, centro já publicado).
+
+</details>
 
 ---
 
