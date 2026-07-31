@@ -38,6 +38,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | E11 | Blog + comentários | Conteúdo editorial e interação | futuro |
 | E12 | Monetização por divulgação | Anúncios/parcerias claramente marcados | futuro |
 | E13 | Autenticação e moderação | Login leve + painel de moderação para conteúdo dinâmico | v2 |
+| E14 | Navegação por centro | Reestruturar header, home e rotas para hierarquia real por centro | v1.9 |
 
 ---
 
@@ -183,6 +184,26 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-62 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **ver no mapa interativo os pontos de interesse de todos os centros da UFSC Florianópolis** — incluindo o CCA em Itacorubi (fora do campus Trindade) —, para **me localizar em qualquer parte dos campi**. 10 centros adicionados (CCE, CCS, CCJ, CFH, CFM, CCB, CSE, CED, CDS, CCA-Itacorubi) com coordenadas verificadas; `fitBounds` cobre os dois campi; label renomeado para "Centros Acadêmicos". |
 | B-63 | 🟠 Should | 🟡 M | ✅ | Como **calouro**, quero **filtrar o mapa por categoria** (Centros Acadêmicos, Alimentação, Saúde, Transporte, Biblioteca, Administração), para **encontrar rapidamente o que preciso sem ver todos os marcadores ao mesmo tempo**. Chips `<button aria-pressed>` acima do mapa; `useEffect` reage ao filtro com `addTo`/`removeFrom` Leaflet; toggle ao clicar categoria ativa volta para "Todos". |
 
+### E14 — Navegação por centro (reestruturação arquitetural)
+
+> Decisão do mantenedor (2026-07-30): o portal cresceu para além do CTC. A navegação
+> precisa refletir isso — o calouro de Agronomia não deve enxergar o portal como
+> "portal do CTC com uma seção extra". As histórias deste épico convertem a estrutura
+> de navegação plana em uma hierarquia real por centro, sem quebrar URLs existentes
+> e sem perder conteúdo já publicado.
+
+| ID | Prioridade | Tam. | Status | História |
+|----|-----------|------|--------|----------|
+| B-64 | 🔴 Must | 🟡 M | ✅ | Como **mantenedor**, quero **criar `docs/centros/ctc.md`** com o conteúdo institucional do CTC (coordenações, atléticas, links, lista de cursos), para **o CTC entrar na infraestrutura multi-centro como os demais centros**. |
+| B-65 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **uma página `/centros`** listando todos os centros disponíveis no portal, para **encontrar meu centro sem saber de antemão a URL**. |
+| B-66 | 🔴 Must | 🟡 M | ✅ | Como **calouro**, quero **ver os cursos do meu centro dentro da página `/centros/[slug]`**, para **navegar do centro diretamente para o curso sem passar por uma lista global**. |
+| B-67 | 🔴 Must | 🟢 P | ✅ | Como **usuário**, quero **que o header/nav não mencione "CTC"**, para **perceber que o portal cobre todos os centros da UFSC, não só o CTC**. |
+| B-68 | 🟠 Should | 🟢 P | ✅ | Como **calouro de outro centro**, quero **que `/cursos` me redirecione para `/centros`** em vez de listar apenas os cursos do CTC, para **não ser enganado achando que o portal só tem cursos do CTC**. |
+| B-69 | 🟠 Should | 🟢 P | ✅ | Como **calouro do CTC que bookmarkeu `/secoes/coordenacoes` ou `/secoes/atleticas`**, quero **ser redirecionado para `/centros/ctc`** em vez de ver um 404, para **não perder o acesso ao conteúdo**. |
+| B-70 | 🟠 Should | 🟢 P | ✅ | Como **calouro**, quero **que as seções "Coordenações" e "Atléticas e festas" deixem de aparecer no grid global da home** (pois passam a ser conteúdo de centro), para **a home não misturar conteúdo CTC-específico com conteúdo UFSC-geral**. |
+| B-71 | 🟡 Could | 🟢 P | ⬜ | Como **calouro**, quero **que a página `/centros/[slug]` exiba um link "Ver todos os cursos deste centro"** no topo do conteúdo, antes do texto corrido, para **chegar rápido às fichas de curso sem ler o HTML todo**. |
+| B-72 | 🟡 Could | 🟡 M | ⬜ | Como **mantenedor**, quero **que `docs/CLAUDE.md` e `docs/arquitetura.md` reflitam a nova hierarquia de navegação** (rota `/centros`, hero sem CTC, SLUG_MAP sem coordenacoes/atleticas), para **não confundir agentes futuros**. |
+
 ---
 
 ## Sprint sugerido (próximos passos)
@@ -232,15 +253,26 @@ CCE (9 cursos, diretoria, CAs, atléticas, eventos) e CCS (6 cursos, diretoria, 
 atléticas, eventos) publicados. 4 fichas de cursos do CCA criadas (Agronomia, CTA,
 Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 
-**Sprint 15 — Próximos centros B-60 (candidatos):**
+**Sprint 15 — Reestruturação de navegação por centro (v1.9) — candidatos:**
 
-1. **B-60 (CCJ + CFH + CFM)** — Should, M. Próximos centros; infraestrutura pronta — só conteúdo.
-2. **B-61 (fichas CSE)** — Should, M. 5 cursos do CSE (ADM, CC, CI, RI, Ciências Sociais);
-   centro já publicado, modelo pronto.
-3. **B-08** — dicas de veterano e "onde estudar" nas fichas CTC — desbloqueado com submissões reais.
+> Prioridade: terminar a reestruturação arquitetural (E14) antes de adicionar mais conteúdo.
+> Os itens abaixo formam uma sequência coesa — todos dependem de B-64 (ctc.md) ser feito primeiro.
 
-> Alternativa: **B-13** (histórias de veteranos) — desbloqueado assim que houver submissões
-> reais via `historia-veterano.yml`.
+1. **B-64** — `docs/centros/ctc.md` (content-editor) — Must, M. Pré-requisito de B-65, B-66 e B-69.
+   Coletar de: `docs/coordenacoes.md`, `docs/atleticas-e-festas.md` e as 13 fichas de curso do CTC.
+2. **B-67** — Remover "CTC" do header (frontend-dev) — Must, P. Linha única em `components/Header.tsx`.
+   Pode rodar em paralelo com B-64.
+3. **B-65** — Página `/centros` (frontend-dev) — Must, M. Depende de B-64 (CTC precisa estar
+   em `listCenters()` para aparecer no índice).
+4. **B-66** — Cursos do centro em `/centros/[slug]` (frontend-dev) — Must, M. Depende de B-64 e B-65.
+5. **B-68** — Redirect `/cursos` para `/centros` (frontend-dev) — Should, P. Pode ser feito junto com B-65.
+6. **B-69** — Redirect `/secoes/coordenacoes` e `/secoes/atleticas` (frontend-dev) — Should, P.
+   Depende de B-64 existir.
+7. **B-70** — Remover "Coordenações" e "Atléticas" do SLUG_MAP da home (frontend-dev) — Should, P.
+   Depende de B-66 estar funcionando (garantia de que o conteúdo tem destino alternativo).
+
+> Alternativa se o mantenedor quiser mais conteúdo antes da refatoração:
+> **B-60 (CCJ + CFH + CFM)** e **B-61 (fichas CSE)** — ambos puramente de conteúdo, zero código.
 
 **Radar (v2.0):**
 
@@ -249,6 +281,7 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
   forem planejados juntos.
 - **B-13** — primeiras histórias de veteranos (desbloqueado assim que houver submissões
   reais via `historia-veterano.yml`).
+- **B-71 + B-72** — link de atalho para cursos na página de centro e atualização da documentação técnica (Could, Sprint 15 ou 16).
 
 **Horizonte (v2.0):**
 
@@ -256,8 +289,8 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 - **B-39 + B-40** — avaliação de professores com moderação (E9, depende de E13).
 - **B-41 + B-42** — simulador de grade de horários (E10).
 - **B-27 + B-28** — modelo genérico de centro reutilizável (E7, agora coberto pela infra multi-centro).
-- **B-60** — restante dos centros: CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá (🚧 CCA + CSE feitos).
-- **B-61** — fichas de cursos de todos os centros além do CTC (🚧 CCA em aberto).
+- **B-60** — restante dos centros: CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá (CCA, CSE, CCE, CCS feitos).
+- **B-61** — fichas de cursos de todos os centros além do CTC e CCA (🚧 em aberto).
 
 ## Critérios de aceite (itens de referência)
 
@@ -347,6 +380,77 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 - [ ] Arquivo `docs/moderacao.md` com critérios claros (o que aprova, o que rejeita).
 - [ ] Cobre: difamação, dados pessoais, conteúdo ofensivo, spam, informação falsa.
 - [ ] Linkado no painel de moderação e no CONTRIBUTING.md.
+
+**B-64 — `docs/centros/ctc.md`**
+- [ ] Arquivo `docs/centros/ctc.md` criado com frontmatter YAML: `slug: ctc`, `titulo: "Centro Tecnológico (CTC)"`, `descricao`, `ultima_verificacao`.
+- [ ] Seções obrigatórias no corpo: Sobre o CTC, Coordenações (link para `/secoes/coordenacoes` ou conteúdo resumido), Atléticas e festas (extraído de `docs/atleticas-e-festas.md`), Links úteis do CTC, Cursos (lista dos 13 slugs com link para `/cursos/<slug>`).
+- [ ] Conteúdo extraído de `docs/coordenacoes.md` e `docs/atleticas-e-festas.md` — sem duplicar texto corrido; referenciar as seções existentes ou copiar apenas o essencial.
+- [ ] Campos sem fonte oficial ficam como `_A preencher_`, nunca inventados.
+- [ ] `listCenters()` em `lib/content.ts` passa a retornar o CTC junto dos demais centros.
+- [ ] `npm run build` inclui SSG de `/centros/ctc`.
+- [ ] `npm run lint` passa sem erros.
+
+**B-65 — Página `/centros` (índice de todos os centros)**
+- [ ] Arquivo `app/centros/page.tsx` criado com `generateStaticParams` desnecessário (página estática simples).
+- [ ] Renderiza um card por centro retornado por `listCenters()` — slug, título, descrição.
+- [ ] Link de cada card aponta para `/centros/<slug>`.
+- [ ] Metadata: `title: "Centros — Portal dos Calouros UFSC"`, `description` genérico sobre a UFSC.
+- [ ] O CTC aparece na lista (depende de B-64).
+- [ ] `app/sitemap.ts` inclui `/centros` (a rota raiz, não só `/centros/[slug]`).
+- [ ] Mobile-first: cards empilhados em 1 coluna no celular, 2 ou 3 colunas em telas maiores.
+- [ ] Acessível por teclado; cada card é um `<a>` ou `<Link>` com texto significativo.
+
+**B-66 — Cursos do centro na página `/centros/[slug]`**
+- [ ] `lib/content.ts`: `listCourses()` já expõe `centro` no `CourseSummary` — usar isso para filtrar cursos por centro.
+- [ ] `app/centros/[slug]/page.tsx`: após o bloco de conteúdo HTML do centro, renderizar uma seção "Cursos deste centro" com os cursos filtrados por `center.slug.toUpperCase()` (ex.: `CTC`, `CCA`).
+- [ ] Cada curso listado como card ou item com link para `/cursos/<slug>`.
+- [ ] Se o centro não tiver nenhum curso em `docs/cursos/`, a seção não é renderizada (sem estado de erro visível).
+- [ ] CTC deve exibir seus 13 cursos; CCA deve exibir Agronomia, CTA, Eng. Aquicultura, Zootecnia (depende de B-64 para o CTC).
+- [ ] `npm run build` passa sem erros.
+- [ ] Playwright: novo smoke test verifica que `/centros/ctc` contém pelo menos um link de curso.
+
+**B-67 — Remover "CTC" do header/nav global**
+- [ ] `components/Header.tsx`: linha `<span className="text-muted-foreground text-xs">UFSC — CTC</span>` alterada para `<span className="text-muted-foreground text-xs">UFSC</span>` (ou similar sem mencionar CTC).
+- [ ] `app/page.tsx` (hero): o badge `CTC · Campus Trindade · Florianópolis` alterado para `Campus Trindade · Florianópolis` (sem mencionar CTC explicitamente como âncora do portal).
+- [ ] Nenhuma outra referência a "CTC" no layout global (`app/layout.tsx`, `components/Header.tsx`, `components/Footer.tsx`, `components/NavLinks.tsx`) além de contexto de conteúdo.
+- [ ] Título/descrição da aba em `app/layout.tsx` (metadata raiz) não menciona "CTC" — apenas "Portal dos Calouros UFSC".
+- [ ] `npm run lint` e `npm run build` passam.
+
+**B-68 — `/cursos` redireciona para `/centros`**
+- [ ] `app/cursos/page.tsx` substituída por redirect permanente (HTTP 301) para `/centros`, usando `redirect("/centros")` do `next/navigation` ou `permanentRedirect("/centros")` do Next.js 15.
+- [ ] Alternativa aceita: manter a listagem de cursos, mas com um banner "Navegue por centro:" com links para `/centros/<slug>` e um aviso de que a lista abaixo inclui todos os centros.
+- [ ] Se for redirect puro: `app/sitemap.ts` remove `/cursos` da lista de rotas.
+- [ ] `npm run lint` e `npm run build` passam sem erros.
+- [ ] Playwright: smoke test que acessava `/cursos` é atualizado para a nova realidade (ou novo teste em `/centros` substitui o antigo).
+
+**B-69 — Redirects de legado: `/secoes/coordenacoes` e `/secoes/atleticas`**
+- [ ] Acessar `/secoes/coordenacoes` retorna HTTP 301 para `/centros/ctc` (ou para `/centros/ctc#coordenacoes` se a âncora existir na página).
+- [ ] Acessar `/secoes/atleticas` retorna HTTP 301 para `/centros/ctc` (ou `/centros/ctc#atleticas`).
+- [ ] Implementação: pode ser via `next.config.ts` (bloco `redirects`) ou via `app/secoes/[slug]/page.tsx` com lógica de redirect por slug específico.
+- [ ] Os dois slugs (`coordenacoes` e `atleticas`) continuam no `SLUG_MAP` de `lib/content.ts` — o conteúdo não é removido, apenas o acesso direto via seção global é redirecionado.
+- [ ] Alternativa aceita: manter as páginas de seção funcionando (sem redirect), mas removê-las do grid da home (coberto por B-70). Escolher uma das duas abordagens e ser consistente.
+- [ ] `npm run build` passa.
+
+**B-70 — Remover "Coordenações" e "Atléticas" do grid da home**
+- [ ] `lib/content.ts`: os slugs `coordenacoes` e `atleticas` são removidos do `SLUG_MAP` ou excluídos do retorno de `listSections()`.
+- [ ] `app/page.tsx`: o grid "O que você quer saber?" não exibe mais cartões de "Coordenações" e "Atléticas e festas".
+- [ ] A home passa a ter 8 seções (de 10 para 8): RU, links, datas, instagrams, mapa, histórias, FAQ, checklist.
+- [ ] Considerar adicionar um card "Centros e cursos" apontando para `/centros` para substituir o espaço visual.
+- [ ] Nenhuma quebra de rota: os arquivos `docs/coordenacoes.md` e `docs/atleticas-e-festas.md` permanecem intactos (fonte de conteúdo para `docs/centros/ctc.md`).
+- [ ] `npm run lint` e `npm run build` passam.
+- [ ] Playwright: smoke tests atualizados — nenhum teste que dependia dos cards de coordenações/atleticas na home quebra silenciosamente.
+
+**B-71 — Link "Ver cursos" no topo da página de centro**
+- [ ] `app/centros/[slug]/page.tsx`: se `listCourses().filter(c => c.centro?.toLowerCase() === slug)` retornar pelo menos 1 resultado, renderizar um link/botão "Ver os cursos do [título do centro]" imediatamente antes do bloco `prose-content`.
+- [ ] Link aponta para o anchor `#cursos-do-centro` dentro da mesma página (seção renderizada por B-66), usando `href="#cursos-do-centro"`.
+- [ ] Se não houver cursos, o link não é renderizado.
+
+**B-72 — Atualizar CLAUDE.md e arquitetura.md para a nova navegação**
+- [ ] `CLAUDE.md`: seção "Estrutura do repositório" atualizada com `app/centros/page.tsx` (índice) e `app/centros/[slug]/page.tsx` (centro + cursos do centro).
+- [ ] `CLAUDE.md`: seção "API" lista `/api/centros` e `/api/centros/[slug]` (já existem, mas podem não estar documentados).
+- [ ] `CLAUDE.md`: "Próximos passos" aponta para o estado real pós-Sprint 15.
+- [ ] `docs/arquitetura.md`: diagrama/descrição de navegação do usuário atualizado para refletir o fluxo `/ → /centros → /centros/[slug] → /cursos/[slug]`.
+- [ ] Nenhum arquivo de documentação menciona "portal do CTC" como identidade principal — sempre "Portal dos Calouros UFSC".
 
 ---
 

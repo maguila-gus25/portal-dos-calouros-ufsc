@@ -16,7 +16,7 @@ export function NavLinks() {
   return (
     <>
       <Link href="/" className={linkClass("/", true)}>Início</Link>
-      <Link href="/cursos" className={linkClass("/cursos")}>Cursos</Link>
+      <Link href="/centros" className={linkClass("/centros")}>Centros</Link>
     </>
   );
 }
