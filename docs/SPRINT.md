@@ -4,6 +4,154 @@
 
 ---
 
+## Sprint 15 — Navegação por Centro: reestruturação arquitetural (v1.9)
+
+**Objetivo:** Transformar o portal de "portal do CTC com centros extras" para "portal da UFSC
+organizado por centro". O calouro navega: Home → /centros → /centros/ctc → cursos do CTC.
+O header para de dizer "CTC". O CTC entra na infraestrutura multi-centro como os demais.
+
+| História | ID | Prioridade / Tam. | Status |
+|----------|----|-------------------|--------|
+| Criar `docs/centros/ctc.md` com conteúdo do CTC | B-64 | Must / M | Feito |
+| Remover "CTC" do header e badge hero | B-67 | Must / P | Feito |
+| Página `/centros` — índice de todos os centros | B-65 | Must / M | Feito |
+| Cursos do centro em `/centros/[slug]` | B-66 | Must / M | Feito |
+| Redirect `/cursos` → `/centros` | B-68 | Should / P | Feito |
+| Redirects `/secoes/coordenacoes` e `/secoes/atleticas` → `/centros/ctc` | B-69 | Should / P | Feito |
+| Remover "Coordenações" e "Atléticas" do grid da home | B-70 | Should / P | Feito |
+
+### Critérios de aceite detalhados
+
+**B-64 — `docs/centros/ctc.md`**
+- [ ] Arquivo criado com frontmatter `slug: ctc`, `titulo`, `descricao`, `ultima_verificacao`.
+- [ ] Seção **Coordenações** consolidada de `docs/coordenacoes.md` (ou link para ela).
+- [ ] Seção **Atléticas e festas** consolidada de `docs/atleticas-e-festas.md` (ou link).
+- [ ] Seção **Cursos** listando os 13 cursos do CTC com links para `/cursos/<slug>`.
+- [ ] `listCenters()` retorna o CTC (slug `ctc`) junto com CCA, CSE, CCE, CCS.
+
+**B-67 — Header e hero sem "CTC"**
+- [ ] `components/Header.tsx:20` — subtítulo `"UFSC — CTC"` → `"UFSC"`.
+- [ ] `app/page.tsx:59` — badge `"CTC · Campus Trindade · Florianópolis"` → `"UFSC · Florianópolis"`.
+- [ ] `components/NavLinks.tsx:19` — link `/cursos` → `/centros` com label "Centros".
+- [ ] `app/cursos/page.tsx` metadata title/description — remover referências a "CTC".
+
+**B-65 — Página `/centros`**
+- [ ] `app/centros/page.tsx` criado com SSG.
+- [ ] Lista todos os centros retornados por `listCenters()` em grid mobile-first.
+- [ ] Cada card mostra nome, descrição e link para `/centros/[slug]`.
+- [ ] `generateMetadata` com título "Centros da UFSC — Portal dos Calouros".
+- [ ] Entra no sitemap (`app/sitemap.ts`).
+
+**B-66 — Cursos do centro em `/centros/[slug]`**
+- [ ] `app/centros/[slug]/page.tsx` atualizado: após o HTML do centro, exibe seção "Cursos deste centro".
+- [ ] Filtra `listCourses()` pelo campo `centro === slug.toUpperCase()` (ex: slug `ctc` → `centro: "CTC"`).
+- [ ] Se não houver cursos, a seção não aparece (sem estado vazio forçado).
+- [ ] Cards de curso usam o mesmo componente `CourseCard` de `/cursos` (ou inline equivalente).
+
+**B-68 — Redirect `/cursos`**
+- [ ] `app/cursos/page.tsx` substituída por redirect permanente para `/centros`
+      via `permanentRedirect("/centros")` do Next.js, ou
+- [ ] Alternativa: banner "Os cursos agora estão organizados por centro →" com link para `/centros`.
+
+**B-69 — Redirects de legado**
+- [ ] Acesso a `/secoes/coordenacoes` redireciona para `/centros/ctc`.
+- [ ] Acesso a `/secoes/atleticas` redireciona para `/centros/ctc`.
+- [ ] Implementação via `next.config.ts` redirects (array `redirects`) ou lógica na página de seção.
+- [ ] As demais seções (`/secoes/ru`, `/secoes/links`, etc.) continuam funcionando normalmente.
+
+**B-70 — Home sem Coordenações/Atléticas**
+- [ ] `SECTION_ICONS`, `SECTION_COLORS` e `SECTION_DEDICATED_ROUTES` em `app/page.tsx` sem
+      entradas `coordenacoes` e `atleticas`.
+- [ ] O SLUG_MAP em `lib/content.ts` mantém `coordenacoes` e `atleticas` (API continua funcionando
+      e os redirects de B-69 dependem disso); apenas a home para de exibi-los.
+- [ ] Home exibe novo card "Centros e cursos" linkando para `/centros` com ícone `Building2`.
+- [ ] Grid da home fica com 9 cards (eram 10: -2 CTC-específicos +1 novo Centros).
+
+### Ordem de execução e dependências
+
+```
+Wave 1 (paralelo):
+  B-64  content-editor — cria docs/centros/ctc.md
+  B-67  frontend-dev   — remove "CTC" do header, badge e nav
+
+Wave 2 (após B-64):
+  B-65 + B-66 + B-68 + B-69 + B-70  frontend-dev — todas as mudanças de UI/routing
+```
+
+### Definição de Pronto (sprint inteiro)
+
+- [ ] `/centros` lista todos os 5 centros (CTC, CCA, CSE, CCE, CCS).
+- [ ] `/centros/ctc` exibe conteúdo do CTC + lista dos 13 cursos.
+- [ ] `/centros/cca` exibe conteúdo do CCA + lista dos 4 cursos.
+- [ ] Header diz "UFSC" (sem "CTC").
+- [ ] `/cursos` redireciona para `/centros`.
+- [ ] `/secoes/coordenacoes` redireciona para `/centros/ctc`.
+- [ ] Home não exibe mais cards "Coordenações" e "Atléticas"; exibe card "Centros".
+- [ ] `npm run lint` passa sem erros.
+- [ ] `npm run build` passa (SSG com `/centros` + 5 rotas `/centros/[slug]`).
+- [ ] Playwright 8/8 sem regressões (ajustar testes se necessário).
+- [ ] `docs/product-backlog.md` com B-64–B-70 marcados como Feito.
+
+### O que NÃO entra e por que
+
+| Item | Motivo |
+|------|--------|
+| B-71 (link âncora "Ver cursos") | Could — melhoria de UX; entra no próximo sprint |
+| B-72 (atualizar CLAUDE.md/arquitetura.md) | Could — documentação técnica; entra no próximo sprint |
+| B-60 (mais centros) | Conteúdo — não misturar com refatoração arquitetural |
+| B-61 (fichas CSE) | Idem |
+
+### Retrospectiva do Sprint 15
+
+**Concluído em:** 2026-07-30
+
+**Entregue:**
+- **B-64** — `docs/centros/ctc.md` com tabela de referência rápida das 13 coordenações,
+  atléticas com Instagram, lista dos 13 cursos com links — CTC agora em `listCenters()`.
+- **B-67** — `components/Header.tsx`: subtítulo `"UFSC — CTC"` → `"UFSC"`.
+  `app/page.tsx`: badge hero `"CTC · Campus Trindade · Florianópolis"` → `"UFSC · Florianópolis"`.
+  `components/NavLinks.tsx`: link `/cursos` "Cursos" → `/centros` "Centros".
+  `app/cursos/page.tsx`: metadata e H1 sem referências a "CTC".
+- **B-65** — `app/centros/page.tsx` criado: hero + grid de centros via `listCenters()`;
+  `/centros` adicionado ao sitemap (prioridade 0.9).
+- **B-66** — `app/centros/[slug]/page.tsx` atualizado: seção "Cursos deste centro" filtrando
+  `listCourses()` por `centro === slug` — CTC mostra 13 cursos, CCA mostra 4, etc.
+  Back-link atualizado para "Todos os centros" (`/centros`).
+- **B-68** — `app/cursos/page.tsx` substituída por `permanentRedirect("/centros")`.
+- **B-69** — `next.config.ts` com redirects 301: `/secoes/coordenacoes` e `/secoes/atleticas`
+  → `/centros/ctc`.
+- **B-70** — `app/page.tsx`: `coordenacoes` e `atleticas` filtradas do grid via `HIDDEN_SECTIONS`;
+  nova seção "Centros e cursos" com card linking `/centros`.
+
+**Findings ui-ux-review corrigidos antes do merge:**
+- Major: `listSections()` retornava `coordenacoes` e `atleticas` mesmo após remoção dos ícones —
+  cards apareciam com ícone fallback `BookOpen`. Fix: `HIDDEN_SECTIONS` filter em `app/page.tsx`.
+- Minor ×2: `aria-hidden` faltando no ícone do hero de `/centros`; `aria-labelledby` faltando
+  na seção "Cursos deste centro".
+
+**Verificações finais:** lint ✅ · build 50 páginas SSG ✅ · Playwright 8/8 ✅
+
+**O que foi bem:**
+- A separação wave 1 (conteúdo + texto) → wave 2 (UI/routing) funcionou perfeitamente;
+  zero conflitos entre agentes.
+- O princípio "basta criar o .md" se confirmou: CTC entrou na infra de centros sem modificar
+  `lib/content.ts` — só um arquivo de conteúdo novo.
+- Redirect `/cursos` → `/centros` via `permanentRedirect` foi a solução mais limpa;
+  mantém backward-compat sem código morto.
+
+**Lições aprendidas:**
+- Remover entradas de um mapa de configuração (SECTION_ICONS) não basta se a fonte de dados
+  (`listSections()`) ainda retorna os itens. Sempre verificar se o dado é filtrado na origem
+  ou no render — neste caso o filtro precisou ser explícito no componente.
+
+**Para o próximo sprint (candidatos):**
+- **B-71** — link âncora "Ver cursos" no topo das páginas de centro (Could, P).
+- **B-72** — atualizar CLAUDE.md e arquitetura.md para refletir a nova identidade (Could, M).
+- **B-60** — mais centros: CCJ, CFH, CFM (só conteúdo, infra pronta).
+- **B-61** — fichas dos cursos do CSE (5 cursos, centro já publicado).
+
+---
+
 ## Sprint 14 — Mais Centros: CCE + CCS + Fichas dos Cursos do CCA (v1.8)
 
 **Objetivo:** Ampliar a cobertura do portal com dois centros de alto impacto (CCE e CCS)
