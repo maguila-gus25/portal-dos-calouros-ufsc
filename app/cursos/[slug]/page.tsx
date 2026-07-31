@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = getCourse(slug);
   if (!course) return { title: "Curso não encontrado" };
   const title = `${course.title} — Portal dos Calouros UFSC`;
-  const description = `${course.title} — coordenação, atlética, CA e dicas para o CTC da UFSC.`;
+  const description = `${course.title} — coordenação, atlética, CA e dicas para calouros da UFSC.`;
   return {
     title,
     description,

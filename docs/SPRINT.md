@@ -4,6 +4,174 @@
 
 ---
 
+## Sprint 14 — Mais Centros: CCE + CCS + Fichas dos Cursos do CCA (v1.8)
+
+**Objetivo:** Ampliar a cobertura do portal com dois centros de alto impacto (CCE e CCS)
+criando somente arquivos de conteúdo — zero código novo — e publicar as fichas dos 4 cursos
+de graduação do CCA seguindo o modelo já estabelecido. Valida definitivamente o princípio
+"basta criar o .md" da arquitetura multi-centro.
+
+| História | ID | Prioridade / Tam. | Status |
+|----------|----|-------------------|--------|
+| Mais centros B-60: CCE + CCS (Comunicação e Saúde) | B-60 (parcial) | Should / M | Feito |
+| Fichas dos cursos do CCA (B-61 parcial: 4 cursos) | B-61 (parcial) | Should / M | Feito |
+
+### Critérios de aceite detalhados
+
+**B-60 — CCE + CCS**
+
+- [ ] `docs/centros/cce.md` com frontmatter YAML (`slug: cce`, `titulo`, `descricao`,
+      `ultima_verificacao`) e seções: Coordenações, CAs, Atléticas, Links Úteis.
+- [ ] `docs/centros/ccs.md` com mesma estrutura.
+- [ ] Dados verificados em `cce.ufsc.br` e `ccs.ufsc.br`; campos sem confirmação ficam
+      como `_A preencher_`.
+- [ ] `npm run build` inclui SSG das páginas `/centros/cce` e `/centros/ccs`.
+- [ ] `npm run lint` passa sem erros.
+- [ ] Playwright 8/8 sem regressão.
+
+**B-61 (parcial) — Fichas dos cursos do CCA (4 cursos)**
+
+- [ ] `docs/cursos/agronomia.md` com `centro: CCA` no frontmatter; coordenação com
+      e-mail e telefone verificados em fonte oficial.
+- [ ] `docs/cursos/ciencia-e-tecnologia-de-alimentos.md` — idem.
+- [ ] `docs/cursos/engenharia-de-aquicultura.md` — idem.
+- [ ] `docs/cursos/zootecnia.md` — idem.
+- [ ] Cada ficha segue o template `_modelo-curso.md` (frontmatter YAML + seções:
+      Sobre o curso / Coordenação / Vida do curso / Dicas de veterano / Onde estudar).
+- [ ] `npm run build` inclui SSG das 4 novas páginas de curso.
+- [ ] `npm run lint` passa sem erros.
+- [ ] Playwright 8/8 sem regressão.
+
+### Ordem de execução e dependências
+
+1. **CCE** (content-editor pesquisa cce.ufsc.br) — pode rodar em paralelo com CCS e fichas CCA.
+2. **CCS** (content-editor pesquisa ccs.ufsc.br) — pode rodar em paralelo com CCE e fichas CCA.
+3. **Fichas CCA** (content-editor pesquisa cca.ufsc.br/cursos) — pode rodar em paralelo com CCE e CCS.
+4. **Tester** roda lint + build + Playwright sobre todos os arquivos criados.
+
+> Todo o Sprint 14 é puramente de conteúdo — nenhuma linha de TypeScript/React precisa ser
+> tocada. A infraestrutura multi-centro já suporta tudo.
+
+### Notas técnicas para os agentes
+
+**Frontmatter obrigatório para centros (`docs/centros/<slug>.md`):**
+
+```yaml
+---
+slug: cce
+titulo: "Centro de Comunicação e Expressão (CCE)"
+descricao: "..."
+ultima_verificacao: "julho/2026"
+---
+```
+
+**Frontmatter obrigatório para cursos do CCA (`docs/cursos/<slug>.md`):**
+
+```yaml
+---
+slug: agronomia
+curso: Agronomia
+centro: CCA
+grau: Bacharelado
+turno: Diurno
+coordenacao:
+  nome: _A preencher_
+  email: _A preencher_
+  telefone: _A preencher_
+  sala: _A preencher_
+atletica: _A preencher_
+instagram_curso: _A preencher_
+---
+```
+
+**Slugs dos cursos do CCA:**
+
+| Curso | Slug do arquivo |
+|-------|----------------|
+| Agronomia | `agronomia` |
+| Ciência e Tecnologia de Alimentos | `ciencia-e-tecnologia-de-alimentos` |
+| Engenharia de Aquicultura | `engenharia-de-aquicultura` |
+| Zootecnia | `zootecnia` |
+
+**Fontes oficiais a consultar:**
+
+| Centro / Curso | URL |
+|----------------|-----|
+| CCE | https://cce.ufsc.br/ |
+| CCS | https://ccs.ufsc.br/ |
+| Agronomia (CCA) | https://cca.ufsc.br/agronomia/ |
+| CTA (CCA) | https://cca.ufsc.br/ciencia-tecnologia-alimentos/ |
+| Eng. Aquicultura (CCA) | https://cca.ufsc.br/aquicultura/ |
+| Zootecnia (CCA) | https://cca.ufsc.br/zootecnia/ |
+
+### Definição de Pronto (sprint inteiro)
+
+- [ ] `docs/centros/cce.md` e `docs/centros/ccs.md` criados com dados verificados ou `_A preencher_`.
+- [ ] 4 fichas de curso do CCA criadas (`agronomia.md`, `ciencia-e-tecnologia-de-alimentos.md`,
+      `engenharia-de-aquicultura.md`, `zootecnia.md`).
+- [ ] Páginas `/centros/cce`, `/centros/ccs`, `/cursos/agronomia`, `/cursos/ciencia-e-tecnologia-de-alimentos`,
+      `/cursos/engenharia-de-aquicultura`, `/cursos/zootecnia` acessíveis.
+- [ ] `npm run lint` passa sem erros.
+- [ ] `npm run build` passa (SSG com 6 novas páginas — total ~48).
+- [ ] Playwright 8/8 sem regressões.
+- [ ] `docs/product-backlog.md` atualizado (B-60 continua 🚧; B-61 passa para 🚧 Em andamento).
+- [ ] `docs/SPRINT.md` com retrospectiva preenchida antes de fechar.
+
+### O que NÃO entra e por que
+
+| Item | Motivo |
+|------|--------|
+| Demais centros B-60 (CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá) | Escopo futuro — validar padrão de conteúdo com CCE e CCS antes de escalar |
+| B-61 (fichas dos cursos do CSE) | Sprint separado — CSE tem 5 cursos e escopo próprio |
+| B-13 (histórias de veteranos) | Bloqueado: sem submissões reais via `historia-veterano.yml` |
+| B-37 / B-50 / E13 | Horizonte v2.0 — banco + auth + moderação como bloco integrado |
+
+### Retrospectiva do Sprint 14
+
+**Concluído em:** 2026-07-30
+
+**Entregue:**
+- **B-60 (CCE)** — `docs/centros/cce.md` com 9 cursos presenciais (Animação, Artes Cênicas,
+  Cinema, Design, Design de Produto, Jornalismo, Letras Estrangeiras, Letras Português,
+  Secretariado Executivo) + cursos EaD; diretoria Romanelli/Acosta Pereira (2025–2029);
+  CAs: CADe, CALJ, CALL, CACine, CAAC; atléticas AAGB Graus Bons e Atlética de Letras;
+  eventos SACine e Semana de Letras verificados.
+- **B-60 (CCS)** — `docs/centros/ccs.md` com 6 cursos (Enfermagem, Farmácia, Fonoaudiologia,
+  Medicina, Nutrição, Odontologia); diretoria Neves/Moretti Pires; CAs: CALEnf, CAF,
+  CALIFONO, CALIMED, CAOQA; atléticas AAA-MED, ALFA, Atlética de Letras; eventos
+  SAMED, JAF, EAAO verificados; endereço Rua Delfino Conti confirmado.
+- **B-61 (fichas CCA — 4 cursos)** — `docs/cursos/agronomia.md`, `ciencia-e-tecnologia-de-alimentos.md`,
+  `engenharia-de-aquicultura.md`, `zootecnia.md`; coordenadores e telefones verificados;
+  CAs (CAAGRO, CAEAQUI, CAZoot) e atléticas (ATAG, ATZOOT) com links confirmados;
+  nota de localização Itacorubi em todas as fichas.
+
+**Findings ui-ux-review corrigidos antes do merge:**
+- Major ×3: campos `turno`, `email`, `sala`, `atendimento` com texto verboso `_A preencher_ — verificar em <URL>` no frontmatter renderizavam como texto solto no header card e como link `mailto:` quebrado → substituídos por `~` (null YAML) para supressão limpa pelo template
+- Minor: meta description hardcoded `"dicas para o CTC da UFSC"` em `app/cursos/[slug]/page.tsx:21` → corrigido para `"dicas para calouros da UFSC"` (independente de centro)
+
+**Verificações finais:** lint ✅ · build 48 páginas SSG ✅ · Playwright 8/8 ✅
+
+**O que foi bem:**
+- Sprint 100% de conteúdo confirmado: 6 novos arquivos `.md`, zero linhas de TypeScript/React
+  adicionadas. A arquitetura multi-centro do Sprint 13 absorveu CCE e CCS sem nenhum atrito.
+- Os 3 blocos (CCE, CCS, fichas CCA) rodaram em paralelo e todos concluíram sem conflitos.
+- Content-editors foram disciplinados com `_A preencher_` — dados sem fonte oficial foram
+  corretamente sinalizados em vez de inventados.
+
+**Lições aprendidas:**
+- Campos de frontmatter que ficam em branco devem usar `~` (null YAML), nunca texto verboso.
+  Texto explicativo de "por que está em branco" pertence ao corpo do markdown, não ao frontmatter.
+  Isso previne renderização incorreta no template (link mailto quebrado, texto de URL no header).
+- Meta description de cursos hardcoded para CTC — corrigida agora, mas indica que o template
+  de curso foi concebido apenas para CTC. A expansão para outros centros exigiu essa correção.
+
+**Para o próximo sprint (candidatos):**
+- **B-60 (CCJ + CFH + CFM)** — próximos centros; infraestrutura pronta, só conteúdo.
+- **B-61 (fichas CSE)** — 5 cursos do CSE já têm centro publicado; modelo pronto.
+- **B-08** — dicas de veterano nas fichas do CTC, quando houver submissões reais.
+
+---
+
 ## Sprint 13 — Infraestrutura Multi-Centro + CCA e CSE (B-60 micro-sprint, v1.7)
 
 **Objetivo:** Estabelecer a infraestrutura de conteúdo multi-centro (nova rota `/centros/[slug]`,
