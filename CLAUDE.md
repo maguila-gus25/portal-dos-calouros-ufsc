@@ -41,9 +41,13 @@ portal-dos-calouros-ufsc/
 │   │   ├── sections/[slug]/route.ts
 │   │   ├── courses/route.ts
 │   │   ├── courses/[slug]/route.ts
+│   │   ├── centros/route.ts
+│   │   ├── centros/[slug]/route.ts
 │   │   └── search/route.ts
 │   ├── busca/page.tsx
-│   ├── cursos/page.tsx
+│   ├── centros/page.tsx      ← índice de todos os centros
+│   ├── centros/[slug]/page.tsx ← página do centro + cursos daquele centro
+│   ├── cursos/page.tsx       ← redirect permanente para /centros
 │   ├── cursos/[slug]/page.tsx
 │   ├── secoes/[slug]/page.tsx
 │   ├── globals.css
@@ -56,7 +60,7 @@ portal-dos-calouros-ufsc/
 │                                ThemeToggle, SearchResults…
 │
 ├── lib/
-│   └── content.ts            ← loader de Markdown (mapa slug→arquivo)
+│   └── content.ts            ← loader de Markdown (mapa slug→arquivo; listCenters/getCenter)
 │
 ├── docs/                     ← FONTE ÚNICA do conteúdo (Markdown)
 │   │   ── conteúdo servido pela API ──
@@ -68,6 +72,8 @@ portal-dos-calouros-ufsc/
 │   ├── instagrams.md         ← perfis oficiais e estudantis para acompanhar
 │   ├── mapa.md               ← orientação no campus (prédios, RU, BU)
 │   ├── historias-e-feedbacks.md ← relatos de veteranos
+│   ├── centros/              ← fichas por centro de ensino (frontmatter YAML)
+│   │   └── <slug-do-centro>.md    (ctc, cca, cse, cce, ccs)
 │   └── cursos/               ← fichas por curso (frontmatter YAML)
 │       └── <slug-do-curso>.md
 │   │   ── documentação de dev (NÃO servida pela API) ──
@@ -121,6 +127,8 @@ Base: `/api`.
 | GET | `/api/sections/{slug}` | Conteúdo de uma seção |
 | GET | `/api/courses` | Lista cursos do CTC |
 | GET | `/api/courses/{slug}` | Ficha de um curso |
+| GET | `/api/centros` | Lista centros de ensino disponíveis |
+| GET | `/api/centros/{slug}` | Ficha de um centro (com seus cursos) |
 | GET | `/api/search?q=` | Busca no conteúdo |
 
 ## Identidade visual
@@ -173,10 +181,14 @@ Regras inegociáveis:
 
 - CI/CD: push para `main` → Vercel builda e deploya automaticamente.
 
-## Próximos passos (Sprint 15)
+## Próximos passos (pós-Sprint 16)
 
-Ver `docs/product-backlog.md` para o backlog completo. Prioridade imediata:
+Sprint 16 entregou: **B-71** (link de atalho para os cursos na página de centro),
+**B-72** (esta atualização de documentação técnica) e parte do **B-61** (5 fichas
+de curso do CSE).
+
+Ver `docs/product-backlog.md` para o backlog completo. Prioridade imediata (Sprint 17):
 
 1. **B-60 (CCJ + CFH + CFM)** — próximos centros: Ciências Jurídicas, Filosofia e Ciências Humanas, Ciências Físicas e Matemáticas
-2. **B-61 (fichas CSE)** — 5 cursos do CSE (centro já publicado — só criar os `.md` dos cursos)
+2. **B-61 (fichas CCE + CCS)** — fichas de curso restantes desses centros (CCE e CCS já publicados — só criar os `.md` dos cursos)
 3. **B-13** — histórias de veteranos (quando houver submissões reais via `historia-veterano.yml`)
