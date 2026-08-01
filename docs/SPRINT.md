@@ -13,11 +13,11 @@ seção de "visualizador de markdown" em UI estruturada.
 
 | História | ID | Issue | Prioridade / Tam. | Agente | Status |
 |----------|----|-------|-------------------|--------|--------|
-| Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | Not Started |
-| Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | Not Started |
-| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | Not Started |
-| Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | Not Started |
-| Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | Not Started |
+| Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | In Progress |
+| Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | In Progress |
+| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | In Progress |
+| Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | In Progress |
+| Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | In Progress |
 
 > **Fora deste sprint:** #46 (enviar sugestões) — adiado por decisão do mantenedor (depende de
 > escolha de abordagem/infra: Google Form vs. Route Handler + e-mail).
