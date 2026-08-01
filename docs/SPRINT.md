@@ -14,9 +14,9 @@ CSE**, publicando as fichas dos seus 5 cursos de graduação para que o calouro 
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Link "Ver os cursos deste centro" no topo de `/centros/[slug]` | B-71 | Could / P | frontend-dev | In Progress |
-| Atualizar `CLAUDE.md` e `docs/arquitetura.md` para a nova navegação | B-72 | Could / M | content-editor | In Progress |
-| Fichas dos 5 cursos do CSE (B-61 parcial) | B-61 (CSE) | Should / M | content-editor | In Progress |
+| Link "Ver os cursos deste centro" no topo de `/centros/[slug]` | B-71 | Could / P | frontend-dev | Done |
+| Atualizar `CLAUDE.md` e `docs/arquitetura.md` para a nova navegação | B-72 | Could / M | content-editor | Done |
+| Fichas dos 5 cursos do CSE (B-61 parcial) | B-61 (CSE) | Should / M | content-editor | Done |
 
 ### Critérios de aceite detalhados
 
@@ -90,6 +90,60 @@ Depois:
 | B-60 (CCJ + CFH + CFM) | Prioridade nº 1 do CLAUDE.md, mas adiada: abrir 3 centros novos sem fichas de curso replica o problema que o CSE tem hoje. Entra no Sprint 17 assim que o CSE fechar. |
 | B-08 (dicas de veterano) / B-13 (histórias) | Bloqueados — dependem de veteranos reais; não inventar conteúdo. |
 | B-50 / B-37 / E13 (banco + auth + moderação) | Horizonte v2.0 — bloco integrado, fora de escopo. |
+
+### Retrospectiva do Sprint 16
+
+**Concluído em:** 2026-08-01
+
+**Entregue:**
+- **B-71** — `app/centros/[slug]/page.tsx`: botão "Ver os cursos do {centro}" (`.btn-primary`,
+  `href="#cursos-do-centro"`, ícone `ArrowRight aria-hidden`) renderizado antes do `.prose-content`
+  quando o centro tem cursos; oculto quando não há. Full-width no mobile, `sm:w-auto` no desktop.
+- **B-72** — `CLAUDE.md` (estrutura do repo com `app/centros` + `app/api/centros`; tabela de API
+  com `/api/centros` e `/api/centros/{slug}`; próximos passos pós-Sprint 16) e `docs/arquitetura.md`
+  (fluxo `/ → /centros → /centros/[slug] → /cursos/[slug]`, infraestrutura multi-centro, ADR-9).
+- **B-61 (parcial CSE)** — 5 fichas de curso: `administracao`, `ciencias-contabeis`,
+  `ciencias-economicas`, `relacoes-internacionais`, `servico-social` (todas `centro: CSE`).
+  Coordenação, CA e atlética reaproveitados de `docs/centros/cse.md` (já verificados); campos sem
+  fonte confirmada como `_A preencher_`/`~`. `docs/README.md` com seção dos cursos do CSE.
+
+**Findings ui-ux-review:**
+- Nenhum blocker/major. 1 minor **pré-existente** (fora de escopo): contraste do token `.btn-primary`
+  em dark mode (~3.4:1, branco sobre `--primary` `217 91% 62%`) — herdado, também usado em
+  `not-found.tsx`; candidato a issue própria (`--primary-button` dedicado no dark, como o B-49 fez no light).
+
+**Verificações finais:** lint ✅ · build 55 páginas SSG ✅ (5 rotas de curso CSE confirmadas) ·
+Playwright 8/8 ✅.
+
+**Nota de infraestrutura (Playwright):** o `tester` inicialmente reportou Playwright bloqueado —
+`npx playwright install` é rejeitado pelo proxy da organização (`cdn.playwright.dev` fora da
+allowlist). O ambiente já traz Chromium pré-instalado em `/opt/pw-browsers`, mas o `@playwright/test`
+do projeto espera um build de `chrome-headless-shell` mais novo (1228) que o pré-instalado (1194).
+Solução: rodar apontando `launchOptions.executablePath` para `/opt/pw-browsers/chromium` (Chromium
+completo, sem a checagem de versão do headless-shell) — 8/8 passaram. Esse override foi só para a
+verificação local; **não** foi commitado (o CI do GitHub instala os browsers normalmente).
+
+**O que foi bem:**
+- "Terminar > começar": priorizar as fichas do CSE (centro já publicado, mas com cursos sem ficha)
+  em vez de abrir novos centros eliminou uma experiência quebrada real (`/centros/cse → curso → 404`).
+- Wave única com 3 agentes em paralelo (código + docs técnicas + conteúdo) sem conflito — arquivos
+  totalmente disjuntos, como planejado.
+- O `content-editor` foi disciplinado com a regra de ouro sob adversidade: com os domínios `*.ufsc.br`
+  retornando 403 a fetch direto, usou busca indexada como fallback, detectou números contraditórios
+  (duração de Contábeis/Econômicas) e deixou `_A preencher_` em vez de chutar.
+
+**Lições aprendidas:**
+- Fetch direto a `*.ufsc.br` está bloqueado neste ambiente (403). Para conteúdo que dependa desses
+  sites, reaproveitar dados já verificados em arquivos existentes (`docs/centros/*.md`) é mais
+  confiável que re-pesquisar; sinalizar com "Nota" quando um campo vier de busca indexada.
+- Playwright neste ambiente exige `executablePath` apontando para o Chromium pré-instalado — não
+  tentar `playwright install` (bloqueado por política). Vale considerar deixar isso documentado para
+  o `tester` (ex.: em CLAUDE.md ou no próprio `playwright.config.ts` via env guard).
+
+**Para o próximo sprint (Sprint 17, candidatos):**
+- **B-60** — CCJ + CFH + CFM (conteúdo de centro; infra pronta).
+- **B-61** — fichas de curso do CCE e CCS (centros já publicados).
+- **Dívida técnica** — token `--primary-button` dedicado para dark mode (finding do ui-ux-review).
 
 ---
 
