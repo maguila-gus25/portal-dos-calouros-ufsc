@@ -4,7 +4,117 @@
 
 ---
 
-## Sprint 16 — Cauda da E14 + Fichas dos Cursos do CSE (v1.10)
+## Sprint 17 — Correções, Navegação e UI das Seções (v1.11)
+
+**Objetivo:** Endereçar issues do mantenedor abertas no GitHub: dois fixes rápidos (mapa do CFM,
+nome do site), reintroduzir acesso direto aos cursos (aba "Cursos" + listagem global), divulgar
+ferramentas da comunidade (MyFUFSC/MatrUFSC) e dar um primeiro passo em transformar as páginas de
+seção de "visualizador de markdown" em UI estruturada.
+
+| História | ID | Issue | Prioridade / Tam. | Agente | Status |
+|----------|----|-------|-------------------|--------|--------|
+| Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | Not Started |
+| Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | Not Started |
+| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | Not Started |
+| Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | Not Started |
+| Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | Not Started |
+
+> **Fora deste sprint:** #46 (enviar sugestões) — adiado por decisão do mantenedor (depende de
+> escolha de abordagem/infra: Google Form vs. Route Handler + e-mail).
+
+### Critérios de aceite detalhados
+
+**B-76 (#39) — Coordenadas do CFM**
+- [ ] Em `components/MapView.tsx` (array de marcadores, entrada "CFM — Centro de Ciências Físicas e Matemáticas"),
+      trocar as coordenadas atuais (`-27.601411120065425, -48.52380552762934`) por
+      **lat `-27.5994566`, lng `-48.5233276`** (fornecidas pelo mantenedor).
+- [ ] `npm run lint` e `npm run build` passam; marcador aparece na nova posição.
+
+**B-77 (#40) — Nome do site sem "CTC"**
+- [ ] `app/layout.tsx`: `metadata.title`, `metadata.description`, `openGraph.title` e
+      `openGraph.description` deixam de mencionar "CTC". Título → `"Portal dos Calouros UFSC"`
+      (ou `"Portal dos Calouros UFSC · Florianópolis"`); descrição fala de "calouros da UFSC
+      (Florianópolis)", não "do CTC".
+- [ ] Nenhuma outra string de UI global menciona "UFSC — CTC" / "UFSC CTC". (A frase em
+      `app/page.tsx:103` que **lista** os centros — "CTC, CCA, CSE…" — é conteúdo legítimo e permanece.)
+- [ ] `npm run lint` e `npm run build` passam.
+
+**B-74 (#47) — MyFUFSC e MatrUFSC**
+- [ ] Subseção "Ferramentas da comunidade" em `docs/links-importantes.md` (não criar slug novo,
+      para não reabrir mudança de home/API neste sprint).
+- [ ] MyFUFSC: o que é, para que serve, como baixar (links **verificados**; se app store não
+      confirmável, `_A preencher_`).
+- [ ] MatrUFSC: o que é, para que serve, link de acesso **verificado**.
+- [ ] Deixar explícito que são **projetos independentes da comunidade**, não oficiais da UFSC.
+- [ ] Nenhuma URL inventada — o que não confirmar fica `_A preencher_`.
+
+**B-75 (#45) — Aba "Cursos" + listagem global**
+- [ ] `app/cursos/page.tsx`: substituir o `permanentRedirect("/centros")` (do B-68) por uma
+      página que **lista todos os cursos de todos os centros** via `listCourses()`, agrupados por
+      centro (ou com badge do centro em cada card), cada um linkando `/cursos/<slug>`.
+- [ ] `components/NavLinks.tsx`: adicionar `<Link href="/cursos">Cursos</Link>` ao lado de "Centros",
+      ativo (`text-primary`) quando `pathname` começa com `/cursos`.
+- [ ] `app/sitemap.ts`: reincluir `/cursos` na lista de rotas.
+- [ ] Mobile-first (cards empilham no celular); acessível por teclado.
+- [ ] **Nota de reconciliação:** isto reverte parcialmente o B-68. Agora é coerente — a lista é
+      "todos os cursos da UFSC por centro", não mais "só cursos do CTC". Registrar como ADR-10 em
+      `docs/arquitetura.md` (feito junto do B-75 ou como parte da doc; opcional neste sprint).
+- [ ] `npm run lint` e `npm run build` passam; Playwright ajustado se algum teste dependia do
+      redirect de `/cursos`.
+
+**B-73 (#48) — UI estruturada das seções (primeiro passo)**
+- [ ] `lib/content.ts` passa a expor dados estruturados (frontmatter + blocos) além de `content_html`,
+      **mantendo `docs/*.md` como fonte única** (sem duplicar conteúdo em código).
+- [ ] **Pelo menos 3 seções** com componente de UI dedicado em `components/sections/` (ex.:
+      Coordenações → cards com copiar e-mail + link `tel:`; Links → grid de cards; Datas → lista/timeline
+      com badge). Sugestão de priorização: Coordenações, Links e Datas.
+- [ ] `app/secoes/[slug]/page.tsx` seleciona o componente dedicado quando existir, com **fallback
+      `.prose-content`** para as demais seções.
+- [ ] Contatos têm ação direta (copiar / discador); links externos abrem em nova aba com
+      `rel="noopener noreferrer"`.
+- [ ] Mobile-first; `npm run lint` e `npm run build` passam; Playwright sem regressão.
+
+### Ordem de execução e dependências
+
+```
+Wave 1 (paralelo — arquivos disjuntos):
+  B-76 + B-77  frontend-dev(A)  — MapView.tsx (coords) + layout.tsx (metadados). Fixes triviais.
+  B-74         content-editor   — docs/links-importantes.md.
+
+Wave 2:
+  B-75  frontend-dev(B) — app/cursos/page.tsx + NavLinks.tsx + sitemap.ts.
+
+Wave 3 (isolada — item grande, mexe em lib/content.ts):
+  B-73  frontend-dev(C) — loader + components/sections/* + app/secoes/[slug]/page.tsx.
+
+Depois:
+  tester — lint + build + Playwright (com Chromium pré-instalado em /opt/pw-browsers).
+```
+
+> Waves 2 e 3 são sequenciais (não paralelas) para evitar corrida no working tree / `npm run build`
+> entre tarefas de frontend na mesma checkout. Wave 1 mistura frontend trivial + conteúdo sem conflito.
+
+### Definition of Done
+- [ ] `npm run lint` passa (frontend)
+- [ ] `npm run build` passa (SSG; `/cursos` volta a gerar página)
+- [ ] Playwright sem regressões (ajustar teste do `/cursos` se necessário)
+- [ ] Marcador do CFM na posição correta; nenhum "UFSC — CTC" nos metadados
+- [ ] `/cursos` lista todos os cursos e a aba "Cursos" aparece na topbar
+- [ ] ≥ 3 seções com UI dedicada; `docs/*.md` continua fonte única
+- [ ] ui-ux-review sem findings bloqueadores
+- [ ] `docs/product-backlog.md` atualizado; issues #39, #40, #45, #47, #48 referenciadas
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| #46 (enviar sugestões) | Adiado por decisão do mantenedor — depende de escolher abordagem (Google Form vs. Route Handler + e-mail) e infra. |
+| B-60 / B-61 (mais centros/fichas) | Não pedidos neste recorte; entram em sprint de conteúdo próprio. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+---
+
+## Sprint 16 — Cauda da E14 + Fichas dos Cursos do CSE (v1.10) — concluído em 2026-08-01
 
 **Objetivo:** Fechar a "cauda" da reestruturação de navegação (E14) — link de atalho para
 cursos na página de centro (B-71) e documentação técnica atualizada (B-72) — e **completar o
