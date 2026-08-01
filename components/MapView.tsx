@@ -125,8 +125,8 @@ export const CAMPUS_MARKERS: MapMarker[] = [
     category: "teaching",
   },
   {
-    lat: -27.601411120065425,
-    lng: -48.52380552762934,
+    lat: -27.5994566,
+    lng: -48.5233276,
     name: "CFM — Centro de Ciências Físicas e Matemáticas",
     description: "Física, Química, Matemática e Oceanografia.",
     category: "teaching",

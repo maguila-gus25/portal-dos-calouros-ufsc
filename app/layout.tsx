@@ -13,11 +13,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portal dos Calouros UFSC — CTC",
-  description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
+  title: "Portal dos Calouros UFSC",
+  description: "Guia feito por estudantes para calouros da UFSC (Florianópolis). Coordenações, RU, links, datas, atléticas e muito mais.",
   openGraph: {
-    title: "Portal dos Calouros UFSC — CTC",
-    description: "Guia feito por estudantes para calouros do CTC da UFSC. Coordenações, RU, links, datas, atléticas e muito mais.",
+    title: "Portal dos Calouros UFSC",
+    description: "Guia feito por estudantes para calouros da UFSC (Florianópolis). Coordenações, RU, links, datas, atléticas e muito mais.",
     url: "https://portal-dos-calouros-ufsc.vercel.app",
     siteName: "Portal dos Calouros UFSC",
     locale: "pt_BR",

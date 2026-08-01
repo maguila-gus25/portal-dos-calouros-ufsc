@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Portal dos Calouros UFSC",
     short_name: "Calouros UFSC",
-    description: "Guia feito por estudantes para calouros do CTC da UFSC.",
+    description: "Guia feito por estudantes para calouros da UFSC (Florianópolis).",
     start_url: "/",
     display: "standalone",
     background_color: "#F0F2F5",

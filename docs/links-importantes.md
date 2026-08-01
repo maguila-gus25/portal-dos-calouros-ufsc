@@ -93,6 +93,63 @@ Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e config
 
 ---
 
+## Ferramentas da comunidade
+
+Além dos sistemas oficiais, existem ferramentas feitas por estudantes que ajudam
+bastante no dia a dia acadêmico. **Elas não são sites/apps oficiais da UFSC** —
+são projetos independentes mantidos pela comunidade estudantil. Use sempre o
+CAGR como fonte oficial em caso de dúvida ou divergência.
+
+### MatrUFSC — para montar a grade na hora da matrícula
+
+**O que é:** uma ferramenta web independente, feita por ex-alunos da UFSC, para
+ajudar a planejar a matrícula. Você escolhe as disciplinas que quer cursar e
+ela monta as combinações possíveis de turmas, avisando quando há choque de
+horário — bem mais visual do que tentar montar a grade "no olho" dentro do
+CAGR.
+
+**Para que serve:** montar a grade de horários antes de se matricular, comparar
+turmas de um mesmo componente curricular e conferir rapidamente se os horários
+batem entre si.
+
+**Quando usar:** durante o período de matrícula de calouros e nos períodos de
+ajuste de matrícula de cada semestre (ver [datas importantes](datas-importantes.md)).
+
+**Como acessar:** <https://matrufsc.github.io/>
+
+> **Atenção:** o MatrUFSC **não é um site oficial da UFSC** e não substitui a
+> matrícula em si — ela continua sendo feita pelo CAGR
+> (<https://cagr.sistemas.ufsc.br/>). Os horários das turmas são obtidos a
+> partir de dados do próprio CAGR, então sempre confirme sua matrícula por lá
+> depois de montar a grade no MatrUFSC.
+
+### MyFUFSC — app para acompanhar notas, faltas e grade
+
+**O que seria:** um aplicativo de celular (iOS/Android) que centraliza notas,
+faltas, grade horária e outras informações do CAGR em uma interface mais
+amigável — útil para consultar rapidamente do celular, sem precisar abrir o
+CAGR no navegador a todo momento.
+
+> **Nota de verificação (agosto/2026):** não encontramos, nas buscas
+> realizadas, um aplicativo com o nome exato **"MyFUFSC"** publicado na App
+> Store ou na Play Store. Existem apps independentes de estudantes com
+> propósito parecido — por exemplo, **Nossa UFSC**
+> (iOS: <https://apps.apple.com/br/app/nossa-ufsc/id1623504046> · Android:
+> <https://play.google.com/store/apps/details?id=com.portal.ufsc>), que importa
+> a grade de horários, avisa sobre o cardápio do RU e manda lembretes de
+> provas, e **Minha UFSC**
+> (Android: <https://play.google.com/store/apps/details?id=br.ufsc.minhaufsc.kmp>).
+> Nenhum dos dois pôde ser confirmado como sendo o app referido como
+> "MyFUFSC" nesta tarefa.
+>
+> _A preencher_ — antes de recomendar um app específico por nome no Portal,
+> confirmar: (1) o nome exato do aplicativo pretendido, (2) se o
+> desenvolvedor/projeto ainda está ativo e atualizado, e (3) os links oficiais
+> nas lojas (App Store / Play Store). Todos os apps de terceiros citados acima
+> **não são oficiais da UFSC**.
+
+---
+
 ## Utilidades do dia a dia
 
 - **Restaurante Universitário (RU):** ver [guia da carteira do RU](carteira-ru.md) · <https://ru.ufsc.br/>
@@ -104,4 +161,4 @@ Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e config
 
 ---
 
-_Última verificação: julho/2026 · [Reportar link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)_
+_Última verificação: agosto/2026 · [Reportar link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)_
