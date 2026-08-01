@@ -52,6 +52,7 @@ portal-dos-calouros-ufsc/
 │   ├── mapa/             ← mapa interativo do campus (Leaflet.js)
 │   └── secoes/[slug]/    ← seções de conteúdo (RU, links, datas…)
 ├── components/           ← Header, Footer, SearchInput, Badge…
+│   └── sections/         ← UI dedicada por seção (links, datas, RU) + fallback prose
 ├── lib/
 │   └── content.ts        ← loader de Markdown: slug → docs/*.md
 ├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
@@ -126,6 +127,7 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.7–v1.8** — Infraestrutura multi-centro + CCA, CSE, CCE, CCS publicados (Sprints 13–14)
 - [x] **v1.9** — Navegação por centro: `/centros` como raiz, header sem "CTC" (Sprint 15)
 - [x] **v1.10** — Fichas dos cursos do CSE + atalho de cursos na página de centro (Sprint 16)
+- [x] **v1.11** — Fixes (mapa CFM, nome do site), aba "Cursos" + listagem global, ferramentas da comunidade, UI estruturada das seções (Sprint 17)
 - [ ] **Próximo** — Mais centros (CCJ, CFH, CFM…) e fichas de curso restantes (CCE, CCS)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores

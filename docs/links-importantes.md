@@ -93,6 +93,58 @@ Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e config
 
 ---
 
+## Ferramentas da comunidade
+
+Além dos sistemas oficiais, existem ferramentas feitas por estudantes que ajudam
+bastante no dia a dia acadêmico. **Elas não são sites/apps oficiais da UFSC** —
+são projetos independentes mantidos pela comunidade estudantil. Use sempre o
+CAGR como fonte oficial em caso de dúvida ou divergência.
+
+### MatrUFSC — para montar a grade na hora da matrícula
+
+**O que é:** uma ferramenta web independente, feita por ex-alunos da UFSC, para
+ajudar a planejar a matrícula. Você escolhe as disciplinas que quer cursar e
+ela monta as combinações possíveis de turmas, avisando quando há choque de
+horário — bem mais visual do que tentar montar a grade "no olho" dentro do
+CAGR.
+
+**Para que serve:** montar a grade de horários antes de se matricular, comparar
+turmas de um mesmo componente curricular e conferir rapidamente se os horários
+batem entre si.
+
+**Quando usar:** durante o período de matrícula de calouros e nos períodos de
+ajuste de matrícula de cada semestre (ver [datas importantes](datas-importantes.md)).
+
+**Como acessar:** <https://matrufsc.github.io/>
+
+> **Atenção:** o MatrUFSC **não é um site oficial da UFSC** e não substitui a
+> matrícula em si — ela continua sendo feita pelo CAGR
+> (<https://cagr.sistemas.ufsc.br/>). Os horários das turmas são obtidos a
+> partir de dados do próprio CAGR, então sempre confirme sua matrícula por lá
+> depois de montar a grade no MatrUFSC.
+
+### MyUFSC — para planejar os semestres pelo histórico síntese
+
+**O que é:** uma ferramenta web independente, feita pela comunidade, que ajuda
+a **planejar os próximos semestres a partir do seu histórico síntese**. A partir
+do que você já cursou, ela dá uma visão de como organizar as disciplinas que
+faltam ao longo do curso.
+
+**Para que serve:** enxergar o caminho até a formatura — o que já foi concluído,
+o que ainda falta e como distribuir as disciplinas restantes pelos próximos
+semestres, ajudando a planejar a matrícula com mais calma.
+
+**Quando usar:** ao planejar a grade de cada semestre e para acompanhar seu
+progresso no curso ao longo do tempo.
+
+**Como acessar:** <https://myufsc.vercel.app/>
+
+> **Atenção:** o MyUFSC **não é um site oficial da UFSC** — é um projeto
+> independente da comunidade. Confirme sempre os dados do seu histórico e da sua
+> matrícula no CAGR (<https://cagr.sistemas.ufsc.br/>).
+
+---
+
 ## Utilidades do dia a dia
 
 - **Restaurante Universitário (RU):** ver [guia da carteira do RU](carteira-ru.md) · <https://ru.ufsc.br/>
@@ -104,4 +156,4 @@ Alunos de graduação recebem um e-mail `@grad.ufsc.br`. Para solicitar e config
 
 ---
 
-_Última verificação: julho/2026 · [Reportar link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)_
+_Última verificação: agosto/2026 · [Reportar link quebrado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=link-quebrado.yml)_
