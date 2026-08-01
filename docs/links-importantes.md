@@ -123,30 +123,25 @@ ajuste de matrícula de cada semestre (ver [datas importantes](datas-importantes
 > partir de dados do próprio CAGR, então sempre confirme sua matrícula por lá
 > depois de montar a grade no MatrUFSC.
 
-### MyFUFSC — app para acompanhar notas, faltas e grade
+### MyUFSC — para planejar os semestres pelo histórico síntese
 
-**O que seria:** um aplicativo de celular (iOS/Android) que centraliza notas,
-faltas, grade horária e outras informações do CAGR em uma interface mais
-amigável — útil para consultar rapidamente do celular, sem precisar abrir o
-CAGR no navegador a todo momento.
+**O que é:** uma ferramenta web independente, feita pela comunidade, que ajuda
+a **planejar os próximos semestres a partir do seu histórico síntese**. A partir
+do que você já cursou, ela dá uma visão de como organizar as disciplinas que
+faltam ao longo do curso.
 
-> **Nota de verificação (agosto/2026):** não encontramos, nas buscas
-> realizadas, um aplicativo com o nome exato **"MyFUFSC"** publicado na App
-> Store ou na Play Store. Existem apps independentes de estudantes com
-> propósito parecido — por exemplo, **Nossa UFSC**
-> (iOS: <https://apps.apple.com/br/app/nossa-ufsc/id1623504046> · Android:
-> <https://play.google.com/store/apps/details?id=com.portal.ufsc>), que importa
-> a grade de horários, avisa sobre o cardápio do RU e manda lembretes de
-> provas, e **Minha UFSC**
-> (Android: <https://play.google.com/store/apps/details?id=br.ufsc.minhaufsc.kmp>).
-> Nenhum dos dois pôde ser confirmado como sendo o app referido como
-> "MyFUFSC" nesta tarefa.
->
-> _A preencher_ — antes de recomendar um app específico por nome no Portal,
-> confirmar: (1) o nome exato do aplicativo pretendido, (2) se o
-> desenvolvedor/projeto ainda está ativo e atualizado, e (3) os links oficiais
-> nas lojas (App Store / Play Store). Todos os apps de terceiros citados acima
-> **não são oficiais da UFSC**.
+**Para que serve:** enxergar o caminho até a formatura — o que já foi concluído,
+o que ainda falta e como distribuir as disciplinas restantes pelos próximos
+semestres, ajudando a planejar a matrícula com mais calma.
+
+**Quando usar:** ao planejar a grade de cada semestre e para acompanhar seu
+progresso no curso ao longo do tempo.
+
+**Como acessar:** <https://myufsc.vercel.app/>
+
+> **Atenção:** o MyUFSC **não é um site oficial da UFSC** — é um projeto
+> independente da comunidade. Confirme sempre os dados do seu histórico e da sua
+> matrícula no CAGR (<https://cagr.sistemas.ufsc.br/>).
 
 ---
 

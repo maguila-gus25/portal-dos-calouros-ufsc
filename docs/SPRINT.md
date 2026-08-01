@@ -15,7 +15,7 @@ seção de "visualizador de markdown" em UI estruturada.
 |----------|----|-------|-------------------|--------|--------|
 | Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | Done |
 | Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | Done |
-| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | Done (MyFUFSC pendente) |
+| Ferramentas da comunidade: MyUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | Done |
 | Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | Done |
 | Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | Done |
 
@@ -124,8 +124,8 @@ Depois:
   O `content-editor`/`frontend-dev` detectou a ocorrência extra no `manifest.ts` (fora do escopo literal),
   que foi corrigida por ser claramente parte da intenção do #40.
 - **B-74 (#47)** — seção "Ferramentas da comunidade" em `docs/links-importantes.md`: **MatrUFSC**
-  publicado com link verificado (`matrufsc.github.io`); **MyFUFSC não pôde ser confirmado** e ficou
-  `_A preencher_` com nota honesta e duas alternativas reais mapeadas (Nossa UFSC, Minha UFSC).
+  (`matrufsc.github.io`) e **MyUFSC** (`myufsc.vercel.app` — planeja semestres pelo histórico síntese;
+  link confirmado pelo mantenedor após o `content-editor` deixar `_A preencher_` por não achar "MyFUFSC").
 - **B-75 (#45)** — `/cursos` deixou de ser `permanentRedirect` e voltou como **listagem global de todos
   os cursos agrupados por centro**; aba "Cursos" adicionada em `components/NavLinks.tsx`; `/cursos`
   reincluído no `app/sitemap.ts`. Reverte parcialmente o B-68, agora coerente (multi-centro).
@@ -157,8 +157,7 @@ Depois:
   verificação de links via WebSearch cruzando fontes é o caminho, sempre registrando a incerteza.
 
 **Pendências / follow-up:**
-- **#47 / MyFUFSC** — precisa do mantenedor confirmar o app exato e o link (ou decidir por "Nossa UFSC"/
-  "Minha UFSC"). Enquanto isso, fica `_A preencher_`.
+- **#47 / MyUFSC** — resolvido: o mantenedor confirmou o app (`myufsc.vercel.app`); publicado.
 - **#48 / B-73** — é o primeiro passo (3 seções). Seções restantes (instagrams, historias) podem ganhar
   UI dedicada num sprint futuro.
 - **Dívida técnica** — token `--primary-button` dedicado para dark mode.
