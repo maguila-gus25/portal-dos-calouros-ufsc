@@ -52,6 +52,14 @@ Fichas de centros fora do Campus Trindade, com informações de localização, c
 - [Engenharia de Aquicultura](cursos/engenharia-de-aquicultura.md)
 - [Zootecnia](cursos/zootecnia.md)
 
+### Cursos do CSE (Campus Trindade)
+
+- [Administração](cursos/administracao.md)
+- [Ciências Contábeis](cursos/ciencias-contabeis.md)
+- [Ciências Econômicas](cursos/ciencias-economicas.md)
+- [Relações Internacionais](cursos/relacoes-internacionais.md)
+- [Serviço Social](cursos/servico-social.md)
+
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
 - 🎨 [Identidade Visual](identidade-visual.md) — marca de estudantes (não oficial)
