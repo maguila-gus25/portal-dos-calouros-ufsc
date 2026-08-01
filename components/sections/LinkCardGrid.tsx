@@ -54,7 +54,7 @@ export function LinkCardGrid({ table }: { table: TableBlock }) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-1.5 min-h-[32px] transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-2 min-h-[44px] transition-colors"
                 >
                   <ExternalLink size={12} aria-hidden />
                   {hostnameLabel(url)}
@@ -64,7 +64,7 @@ export function LinkCardGrid({ table }: { table: TableBlock }) {
                 <a
                   key={`phone-${idx}`}
                   href={`tel:${phone.replace(/[^\d+]/g, "")}`}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-foreground bg-muted hover:bg-border rounded-full px-3 py-1.5 min-h-[32px] transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-foreground bg-muted hover:bg-border rounded-full px-3 py-2 min-h-[44px] transition-colors"
                 >
                   <Phone size={12} aria-hidden />
                   {phone}
@@ -74,7 +74,7 @@ export function LinkCardGrid({ table }: { table: TableBlock }) {
                 <a
                   key={`email-${idx}`}
                   href={`mailto:${email}`}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-foreground bg-muted hover:bg-border rounded-full px-3 py-1.5 min-h-[32px] transition-colors break-all"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-foreground bg-muted hover:bg-border rounded-full px-3 py-2 min-h-[44px] transition-colors break-all"
                 >
                   <Mail size={12} aria-hidden />
                   {email}
