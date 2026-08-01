@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import type { Token, Tokens } from "marked";
 
 const DOCS_DIR = path.join(process.cwd(), "docs");
 
@@ -12,9 +13,31 @@ export interface SectionSummary {
   icon: string;
 }
 
+/** Rendered inline markdown (bold, links, code…) alongside the raw source text. */
+export interface InlineContent {
+  text: string;
+  html: string;
+}
+
+export type SectionBlock =
+  | { type: "heading"; depth: number; text: string; html: string }
+  | { type: "paragraph"; html: string }
+  | { type: "list"; ordered: boolean; items: InlineContent[] }
+  | {
+      type: "table";
+      align: Array<"left" | "center" | "right" | null>;
+      header: InlineContent[];
+      rows: InlineContent[][];
+    }
+  | { type: "blockquote"; html: string }
+  | { type: "code"; text: string; lang?: string }
+  | { type: "hr" };
+
 export interface Section extends SectionSummary {
   content_md: string;
   content_html: string;
+  /** Structured blocks derived from parsing content_md — used by dedicated UI components. */
+  blocks: SectionBlock[];
   metadata: Record<string, unknown>;
 }
 
@@ -75,6 +98,84 @@ function renderMd(md: string): string {
   return html.replace(/^<h1[^>]*>[\s\S]*?<\/h1>\s*/i, "");
 }
 
+/** Renders raw inline markdown (e.g. a heading/paragraph/table-cell's `.text`) to HTML. */
+function inlineHtml(text: string): string {
+  return marked.parseInline(text, { async: false }) as string;
+}
+
+/** Renders a list item's tokens (which may include nested block content) to HTML, unwrapping a single wrapping <p> for tight lists. */
+function listItemHtml(tokens: Token[]): string {
+  const html = marked.parser(tokens, { async: false }) as string;
+  const match = html.match(/^<p>([\s\S]*)<\/p>\s*$/);
+  return (match ? match[1] : html).trim();
+}
+
+/**
+ * Parses raw markdown into structured blocks (headings, paragraphs, lists, tables…) using
+ * marked's own lexer — no content is duplicated or hand-authored here, it's all derived from
+ * the same docs/*.md source used for content_html.
+ */
+export function parseBlocks(md: string): SectionBlock[] {
+  const tokens = marked.lexer(md, { gfm: true });
+  const blocks: SectionBlock[] = [];
+
+  for (const token of tokens) {
+    switch (token.type) {
+      case "heading": {
+        const heading = token as Tokens.Heading;
+        // Strip the leading H1 — page components render section.title as <h1> already.
+        if (heading.depth === 1 && blocks.length === 0) continue;
+        blocks.push({ type: "heading", depth: heading.depth, text: heading.text, html: inlineHtml(heading.text) });
+        break;
+      }
+      case "paragraph": {
+        const paragraph = token as Tokens.Paragraph;
+        blocks.push({ type: "paragraph", html: inlineHtml(paragraph.text) });
+        break;
+      }
+      case "list": {
+        const list = token as Tokens.List;
+        blocks.push({
+          type: "list",
+          ordered: list.ordered,
+          items: list.items.map((item: Tokens.ListItem) => ({ text: item.text, html: listItemHtml(item.tokens) })),
+        });
+        break;
+      }
+      case "table": {
+        const table = token as Tokens.Table;
+        blocks.push({
+          type: "table",
+          align: table.align,
+          header: table.header.map((cell: Tokens.TableCell) => ({ text: cell.text, html: inlineHtml(cell.text) })),
+          rows: table.rows.map((row: Tokens.TableCell[]) =>
+            row.map((cell) => ({ text: cell.text, html: inlineHtml(cell.text) }))
+          ),
+        });
+        break;
+      }
+      case "blockquote": {
+        const blockquote = token as Tokens.Blockquote;
+        blocks.push({ type: "blockquote", html: marked.parser(blockquote.tokens, { async: false }) as string });
+        break;
+      }
+      case "code": {
+        const code = token as Tokens.Code;
+        blocks.push({ type: "code", text: code.text, lang: code.lang });
+        break;
+      }
+      case "hr":
+        blocks.push({ type: "hr" });
+        break;
+      // "space" and any other block types are not meaningful for structured UI — skip them.
+      default:
+        break;
+    }
+  }
+
+  return blocks;
+}
+
 export function listSections(): SectionSummary[] {
   return Object.entries(SLUG_MAP).map(([slug, meta]) => ({
     slug,
@@ -97,6 +198,7 @@ export function getSection(slug: string): Section | null {
     icon: meta.icon,
     content_md: content,
     content_html: renderMd(content),
+    blocks: parseBlocks(content),
     metadata: data as Record<string, unknown>,
   };
 }

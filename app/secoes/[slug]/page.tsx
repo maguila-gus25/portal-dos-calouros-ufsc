@@ -1,8 +1,19 @@
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSection, listSections } from "@/lib/content";
+import { getSection, listSections, type Section } from "@/lib/content";
 import type { Metadata } from "next";
+import type { ReactElement } from "react";
+import { DatasSection } from "@/components/sections/DatasSection";
+import { LinksSection } from "@/components/sections/LinksSection";
+import { RuSection } from "@/components/sections/RuSection";
+
+// Slugs with dedicated, structured UI. Everything else keeps the `.prose-content` fallback.
+const SECTION_COMPONENTS: Record<string, (props: { section: Section }) => ReactElement> = {
+  links: ({ section }) => <LinksSection blocks={section.blocks} />,
+  datas: ({ section }) => <DatasSection blocks={section.blocks} />,
+  ru: ({ section }) => <RuSection blocks={section.blocks} />,
+};
 
 export function generateStaticParams() {
   return listSections().map((s) => ({ slug: s.slug }));
@@ -38,6 +49,8 @@ export default async function SectionPage({ params }: Props) {
   const section = getSection(slug);
   if (!section) notFound();
 
+  const DedicatedComponent = SECTION_COMPONENTS[slug];
+
   return (
     <article className="space-y-4">
       <Link href="/" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
@@ -50,12 +63,16 @@ export default async function SectionPage({ params }: Props) {
         <p className="text-muted-foreground mt-1">{section.description}</p>
       </header>
 
-      <div className="card p-6 sm:p-8">
-        <div
-          className="prose-content"
-          dangerouslySetInnerHTML={{ __html: section.content_html }}
-        />
-      </div>
+      {DedicatedComponent ? (
+        <DedicatedComponent section={section} />
+      ) : (
+        <div className="card p-6 sm:p-8">
+          <div
+            className="prose-content"
+            dangerouslySetInnerHTML={{ __html: section.content_html }}
+          />
+        </div>
+      )}
     </article>
   );
 }
