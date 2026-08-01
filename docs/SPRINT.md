@@ -14,9 +14,9 @@ CSE**, publicando as fichas dos seus 5 cursos de graduação para que o calouro 
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Link "Ver os cursos deste centro" no topo de `/centros/[slug]` | B-71 | Could / P | frontend-dev | Not Started |
-| Atualizar `CLAUDE.md` e `docs/arquitetura.md` para a nova navegação | B-72 | Could / M | content-editor | Not Started |
-| Fichas dos 5 cursos do CSE (B-61 parcial) | B-61 (CSE) | Should / M | content-editor | Not Started |
+| Link "Ver os cursos deste centro" no topo de `/centros/[slug]` | B-71 | Could / P | frontend-dev | In Progress |
+| Atualizar `CLAUDE.md` e `docs/arquitetura.md` para a nova navegação | B-72 | Could / M | content-editor | In Progress |
+| Fichas dos 5 cursos do CSE (B-61 parcial) | B-61 (CSE) | Should / M | content-editor | In Progress |
 
 ### Critérios de aceite detalhados
 
