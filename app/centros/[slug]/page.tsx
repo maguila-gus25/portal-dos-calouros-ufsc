@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCenter, listCenters, listCourses } from "@/lib/content";
@@ -53,6 +53,16 @@ export default async function CenterPage({ params }: Props) {
         <h1 className="text-2xl font-bold leading-snug">{center.title}</h1>
         <p className="text-muted-foreground mt-1">{center.description}</p>
       </header>
+
+      {courses.length > 0 && (
+        <Link
+          href="#cursos-do-centro"
+          className="btn-primary min-h-[44px] w-full sm:w-auto"
+        >
+          Ver os cursos do {center.title}
+          <ArrowRight size={16} aria-hidden />
+        </Link>
+      )}
 
       <div className="card p-6 sm:p-8">
         <div
