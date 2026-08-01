@@ -13,11 +13,11 @@ seção de "visualizador de markdown" em UI estruturada.
 
 | História | ID | Issue | Prioridade / Tam. | Agente | Status |
 |----------|----|-------|-------------------|--------|--------|
-| Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | In Progress |
-| Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | In Progress |
-| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | In Progress |
-| Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | In Progress |
-| Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | In Progress |
+| Corrigir coordenadas do marcador do CFM no mapa | B-76 | #39 | Must (fix) / P | frontend-dev | Done |
+| Renomear "UFSC — CTC" → "UFSC · Florianópolis" nos metadados | B-77 | #40 | Must (fix) / P | frontend-dev | Done |
+| Ferramentas da comunidade: MyFUFSC e MatrUFSC | B-74 | #47 | Should / P | content-editor | Done (MyFUFSC pendente) |
+| Aba "Cursos" na topbar + listagem global de cursos em `/cursos` | B-75 | #45 | Should / M | frontend-dev | Done |
+| Páginas de seção com UI estruturada (≥ 3 seções) | B-73 | #48 | Should / G | frontend-dev | Done |
 
 > **Fora deste sprint:** #46 (enviar sugestões) — adiado por decisão do mantenedor (depende de
 > escolha de abordagem/infra: Google Form vs. Route Handler + e-mail).
@@ -111,6 +111,62 @@ Depois:
 | #46 (enviar sugestões) | Adiado por decisão do mantenedor — depende de escolher abordagem (Google Form vs. Route Handler + e-mail) e infra. |
 | B-60 / B-61 (mais centros/fichas) | Não pedidos neste recorte; entram em sprint de conteúdo próprio. |
 | B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+### Retrospectiva do Sprint 17
+
+**Concluído em:** 2026-08-01
+
+**Entregue:**
+- **B-76 (#39)** — coordenadas do marcador do CFM em `components/MapView.tsx` corrigidas para
+  `lat -27.5994566, lng -48.5233276` (fornecidas pelo mantenedor).
+- **B-77 (#40)** — "CTC" removido dos metadados: `app/layout.tsx` (title/description/OG) e
+  `app/manifest.ts` (description do PWA) → "Portal dos Calouros UFSC" / "calouros da UFSC (Florianópolis)".
+  O `content-editor`/`frontend-dev` detectou a ocorrência extra no `manifest.ts` (fora do escopo literal),
+  que foi corrigida por ser claramente parte da intenção do #40.
+- **B-74 (#47)** — seção "Ferramentas da comunidade" em `docs/links-importantes.md`: **MatrUFSC**
+  publicado com link verificado (`matrufsc.github.io`); **MyFUFSC não pôde ser confirmado** e ficou
+  `_A preencher_` com nota honesta e duas alternativas reais mapeadas (Nossa UFSC, Minha UFSC).
+- **B-75 (#45)** — `/cursos` deixou de ser `permanentRedirect` e voltou como **listagem global de todos
+  os cursos agrupados por centro**; aba "Cursos" adicionada em `components/NavLinks.tsx`; `/cursos`
+  reincluído no `app/sitemap.ts`. Reverte parcialmente o B-68, agora coerente (multi-centro).
+- **B-73 (#48)** — primeiro passo da UI estruturada: `lib/content.ts` expõe `Section.blocks`
+  (via `marked.lexer`, `docs/` segue fonte única) e 3 seções ganharam componentes dedicados —
+  **links** (grid de cards com chips mailto/tel/link externo), **datas** (timeline `<dt>/<dd>` sem
+  overflow no mobile), **ru** (passos numerados + alertas amber). Fallback `.prose-content` mantido
+  para as demais seções.
+
+**Findings ui-ux-review:**
+- Nenhum blocker. 1 minor corrigido no mesmo sprint: tap target dos chips de contato do
+  `LinkCardGrid` (`min-h-[32px]` → `min-h-[44px] py-2`). 1 minor pré-existente registrado como dívida
+  (contraste do token `--primary` no dark mode nos marcadores decorativos).
+
+**Verificações finais:** lint ✅ · build 55 páginas SSG ✅ (`/cursos` agora estático) · Playwright 8/8 ✅.
+
+**O que foi bem:**
+- Ondas com dependência bem sequenciadas: fixes triviais + conteúdo em paralelo (wave 1), depois os
+  dois itens grandes de frontend isolados (waves 2 e 3) — zero corrida de build no working tree.
+- `content-editor` seguiu a regra de ouro sob pressão: sem conseguir confirmar "MyFUFSC", não inventou
+  link — deixou `_A preencher_` e propôs alternativas verificáveis.
+- `frontend-dev` do B-73 manteve `docs/` como fonte única (parse de tokens, nada hardcoded) e preservou
+  o fallback, sem quebrar as seções não migradas.
+
+**Lições aprendidas:**
+- Ao mexer em identidade/nome do site, a busca precisa cobrir também `app/manifest.ts` (PWA) e não só
+  `app/layout.tsx` — o texto institucional aparece em mais de um lugar.
+- WebFetch continua bloqueado (403) para praticamente todos os domínios externos neste ambiente;
+  verificação de links via WebSearch cruzando fontes é o caminho, sempre registrando a incerteza.
+
+**Pendências / follow-up:**
+- **#47 / MyFUFSC** — precisa do mantenedor confirmar o app exato e o link (ou decidir por "Nossa UFSC"/
+  "Minha UFSC"). Enquanto isso, fica `_A preencher_`.
+- **#48 / B-73** — é o primeiro passo (3 seções). Seções restantes (instagrams, historias) podem ganhar
+  UI dedicada num sprint futuro.
+- **Dívida técnica** — token `--primary-button` dedicado para dark mode.
+
+**Para o próximo sprint (candidatos):**
+- **B-60** (CCJ + CFH + CFM) e **B-61** (fichas CCE/CCS) — conteúdo.
+- **#46** (enviar sugestões) — quando o mantenedor escolher a abordagem.
+- Continuar **#48** (mais seções com UI dedicada).
 
 ---
 
