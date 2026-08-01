@@ -34,6 +34,33 @@ em `lib/content.ts` lê esses arquivos com `gray-matter` + `marked` e os expõe 
 JSON via Route Handlers. Contribuição por Pull Request. Os dados **dinâmicos**
 (histórias, feedback) ficarão no banco de dados a partir da v1.1.
 
+### Navegação por centro (Sprint 15+)
+
+O portal cresceu de "só CTC" para todos os centros de ensino da UFSC. A
+navegação do calouro segue o fluxo:
+
+```
+/  ──>  /centros  ──>  /centros/[slug]  ──>  /cursos/[slug]
+(home)   (índice de     (ficha do centro,      (ficha do
+         centros)        já lista os cursos     curso)
+                         daquele centro)
+```
+
+- `/centros` (`app/centros/page.tsx`) lista todos os centros via `listCenters()`.
+- `/centros/[slug]` (`app/centros/[slug]/page.tsx`) renderiza a ficha do centro
+  (`getCenter(slug)`) **e** os cursos daquele centro, filtrando
+  `listCourses()` pelo campo `centro` do frontmatter de cada curso.
+- `/cursos` (`app/cursos/page.tsx`) hoje é apenas um `permanentRedirect("/centros")`
+  — a listagem de cursos "solta" foi substituída pela navegação por centro.
+- Redirects 301 legados em `next.config.ts` (`/secoes/coordenacoes` e
+  `/secoes/atleticas` → `/centros/ctc`) preservam links antigos apontados para o
+  CTC, já que esse conteúdo virou parte da ficha do centro.
+- Conteúdo dos centros vive em `docs/centros/<slug>.md` (frontmatter YAML, mesmo
+  padrão das fichas de curso). O loader expõe `listCenters()` / `getCenter()` em
+  `lib/content.ts`, e as rotas `GET /api/centros` e `GET /api/centros/{slug}`
+  servem esses dados como JSON — mesma arquitetura de fonte única do restante do
+  conteúdo institucional.
+
 ---
 
 ## Stack
@@ -60,9 +87,13 @@ portal-dos-calouros-ufsc/
 │   │   ├── sections/[slug]/route.ts
 │   │   ├── courses/route.ts
 │   │   ├── courses/[slug]/route.ts
+│   │   ├── centros/route.ts
+│   │   ├── centros/[slug]/route.ts
 │   │   └── search/route.ts
 │   ├── busca/page.tsx
-│   ├── cursos/page.tsx
+│   ├── centros/page.tsx      ← índice de todos os centros (listCenters)
+│   ├── centros/[slug]/page.tsx ← ficha do centro + cursos daquele centro
+│   ├── cursos/page.tsx       ← permanentRedirect("/centros")
 │   ├── cursos/[slug]/page.tsx
 │   ├── secoes/[slug]/page.tsx
 │   ├── globals.css
@@ -75,7 +106,7 @@ portal-dos-calouros-ufsc/
 │                                ThemeToggle, SearchResults…
 │
 ├── lib/
-│   └── content.ts            ← loader de Markdown (mapa slug→arquivo)
+│   └── content.ts            ← loader de Markdown (mapa slug→arquivo; listCenters/getCenter)
 │
 ├── docs/                     ← FONTE ÚNICA do conteúdo (Markdown) — editar aqui
 │   │   ── conteúdo servido pela API (mapeado por slug no loader) ──
@@ -87,6 +118,8 @@ portal-dos-calouros-ufsc/
 │   ├── instagrams.md
 │   ├── mapa.md
 │   ├── historias-e-feedbacks.md
+│   ├── centros/
+│   │   └── <centro>.md       ← fichas por centro (com frontmatter): ctc, cca, cse, cce, ccs
 │   ├── cursos/
 │   │   └── <curso>.md        ← fichas por curso (com frontmatter)
 │   │   ── documentação de dev (NÃO servida pela API) ──
@@ -124,6 +157,8 @@ Base: `/api`. Route Handlers Next.js. Respostas em JSON.
 | GET | `/api/sections/{slug}` | Conteúdo de uma seção (ex.: `coordenacoes`, `ru`, `links`) em HTML/estruturado |
 | GET | `/api/courses` | Lista dos cursos do CTC (a partir do frontmatter das fichas) |
 | GET | `/api/courses/{slug}` | Ficha de um curso |
+| GET | `/api/centros` | Lista os centros de ensino disponíveis (`docs/centros/`) |
+| GET | `/api/centros/{slug}` | Ficha de um centro |
 | GET | `/api/search?q=` | Busca no conteúdo institucional |
 
 ### v1.1 (com banco de dados)
@@ -233,6 +268,7 @@ arquitetura acima comporta todas (ver épicos novos no [backlog](product-backlog
 | 6 | Front na Vercel, back no Render | Tudo serverless na Vercel | FastAPI roda melhor como serviço dedicado |
 | 7 | Identidade branco + azul (estilo Facebook) | Identidade da UFSC / paleta autoral chamativa | Familiar e limpa; deixa claro que **não** é oficial |
 | 8 | Migração para Next.js 15 App Router full-stack | Manter Vite + FastAPI separados | Elimina latência de rede entre frontend e backend; simplifica para um único serviço na Vercel; aproveita SSG nativo do Next.js para servir `docs/` sem backend separado |
+| 9 | Navegação reestruturada por centro de ensino (`/centros/[slug]` lista cursos do centro) | Manter `/cursos` como listagem plana de todos os cursos | Portal deixou de ser só do CTC (épico E14); navegar por centro escala melhor conforme mais centros/cursos são adicionados |
 
 ### ADR-8: Migração para Next.js 15 App Router (2026-07-15)
 
@@ -252,5 +288,35 @@ descartado.
 - Todos os agentes (backend-dev, frontend-dev) devem operar no mesmo projeto Next.js.
 - Banco de dados futuro (v1.1+) será integrado via Prisma, não SQLAlchemy.
 - ADR-4 (Vite em vez de Next.js) e ADR-6 (Vercel + Render) ficam supersedidos por este ADR.
+
+### ADR-9: Navegação reestruturada por centro de ensino (2026-07-29, Sprint 15)
+
+**Contexto:** o portal nasceu focado só no CTC (Centro Tecnológico), com `/cursos`
+listando todas as fichas de curso em uma lista plana e `/secoes/coordenacoes` +
+`/secoes/atleticas` cobrindo só o CTC. O épico **E14** expandiu o escopo para
+todos os centros de ensino da UFSC (CCA, CSE, CCE, CCS publicados até o Sprint 15,
+além do CTC), o que tornou a listagem plana de cursos pouco escalável e a
+identidade "portal do CTC" desatualizada.
+
+**Decisão:** introduzir `docs/centros/<slug>.md` como fonte única do conteúdo de
+cada centro (mesmo padrão de frontmatter YAML das fichas de curso), com
+`listCenters()`/`getCenter()` em `lib/content.ts` e as rotas `GET /api/centros` e
+`GET /api/centros/{slug}`. A navegação do calouro passa a ser
+`/ → /centros → /centros/[slug] → /cursos/[slug]`: a página de cada centro lista
+os cursos daquele centro (filtrando `listCourses()` pelo campo `centro`).
+`/cursos` vira um `permanentRedirect("/centros")`, e os links legados
+`/secoes/coordenacoes` e `/secoes/atleticas` (conteúdo específico do CTC) recebem
+redirect 301 para `/centros/ctc` em `next.config.ts`. Header, hero e navegação
+deixam de mencionar "CTC" como identidade do portal.
+
+**Consequências:**
+- `docs/cursos/<slug>.md` continua sendo a fonte única das fichas de curso; o
+  campo `centro` do frontmatter agora determina em qual página de centro o curso
+  aparece listado.
+- Links antigos para `/cursos` e para as seções de coordenações/atléticas do CTC
+  continuam funcionando via redirect permanente (301), sem quebrar SEO nem
+  favoritos salvos por usuários.
+- Novos centros (B-60: CCJ, CFH, CFM) só exigem criar `docs/centros/<slug>.md` —
+  nenhuma mudança de código é necessária para listá-los em `/centros`.
 
 > Este documento é vivo. Mudou uma decisão? Atualize a tabela acima e o diagrama.

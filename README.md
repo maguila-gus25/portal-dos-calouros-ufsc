@@ -43,18 +43,20 @@ npm run lint     # ESLint
 ```
 portal-dos-calouros-ufsc/
 ├── app/                  ← páginas e Route Handlers (Next.js App Router)
-│   ├── api/              ← /api/health, /api/sections, /api/courses, /api/search
+│   ├── api/              ← /api/health, /api/sections, /api/courses, /api/centros, /api/search
 │   ├── busca/            ← página de busca
+│   ├── centros/          ← índice de centros (/centros) e página por centro (/centros/[slug])
 │   ├── checklist/        ← checklist da primeira semana
-│   ├── cursos/           ← listagem e fichas por curso
+│   ├── cursos/           ← fichas por curso (/cursos redireciona para /centros)
 │   ├── faq/              ← perguntas frequentes
 │   ├── mapa/             ← mapa interativo do campus (Leaflet.js)
-│   └── secoes/[slug]/    ← seções de conteúdo (coordenações, RU, links…)
+│   └── secoes/[slug]/    ← seções de conteúdo (RU, links, datas…)
 ├── components/           ← Header, Footer, SearchInput, Badge…
 ├── lib/
 │   └── content.ts        ← loader de Markdown: slug → docs/*.md
 ├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
-│   ├── cursos/           ← fichas por curso (13 cursos do CTC)
+│   ├── centros/          ← fichas por centro (ctc, cca, cse, cce, ccs)
+│   ├── cursos/           ← fichas por curso (CTC + CCA + CSE)
 │   ├── arquitetura.md    ← decisões técnicas e ADRs
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
@@ -77,7 +79,7 @@ portal-dos-calouros-ufsc/
 | ❓ FAQ | Perguntas frequentes dos calouros | [`faq.md`](docs/faq.md) |
 | ✅ Checklist | O que fazer na primeira semana | [`checklist-primeira-semana.md`](docs/checklist-primeira-semana.md) |
 
-Cada curso do CTC tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
+O portal é organizado por **centro**: `/centros` lista todos os centros publicados (CTC, CCA, CSE, CCE, CCS) e cada `/centros/<slug>` mostra o conteúdo do centro e os seus cursos. Cada curso tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
 
 ## Equipe de Agentes
 
@@ -120,9 +122,13 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.3** — SEO (sitemap, robots, OG tags), FAQ, checklist 1ª semana, docs atualizados (Sprint 8)
 - [x] **v1.4** — Acessibilidade WCAG AA, mapa interativo (Leaflet.js), testes E2E Playwright no CI (Sprint 9)
 - [x] **v1.5** — PWA instalável (manifest + ícones), Vercel Analytics, Lighthouse CI (Sprint 10)
-- [ ] **v1.6** — Banco de dados (Prisma), formulário de histórias, arte final dos ícones PWA
-- [ ] **v2.0** — Autenticação OAuth, painel de moderação, avaliação de professores
-- [ ] **Futuro** — Simulador de grade, blog, outros centros (CSE, CCS, CFH…)
+- [x] **v1.6** — Mapa com todos os centros da UFSC + filtro por categoria (Sprint 12)
+- [x] **v1.7–v1.8** — Infraestrutura multi-centro + CCA, CSE, CCE, CCS publicados (Sprints 13–14)
+- [x] **v1.9** — Navegação por centro: `/centros` como raiz, header sem "CTC" (Sprint 15)
+- [x] **v1.10** — Fichas dos cursos do CSE + atalho de cursos na página de centro (Sprint 16)
+- [ ] **Próximo** — Mais centros (CCJ, CFH, CFM…) e fichas de curso restantes (CCE, CCS)
+- [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
+- [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 
 ## Como contribuir
 
