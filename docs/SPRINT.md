@@ -4,7 +4,89 @@
 
 ---
 
-## Sprint 17 — Correções, Navegação e UI das Seções (v1.11)
+## Sprint 18 — Fechamento: cursos do CCS, mais centros e cauda da UI de seções (v1.12)
+
+**Objetivo:** Sprint de fechamento (conteúdo + cauda de UI), sem abrir arquitetura nova. Completar o
+**CCS** publicando as fichas dos seus 6 cursos (hoje `/centros/ccs → curso` cai em ficha inexistente —
+mesmo problema que o CSE tinha antes do Sprint 16), adicionar **3 novos centros** (CCJ, CFH, CFM),
+terminar a **UI estruturada das seções** (instagrams + historias, #48/B-73) e quitar a **dívida do token
+de botão no dark mode**. Princípio: **terminar o que já está publicado antes de abrir mais frentes**.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Fichas dos 6 cursos do CCS (B-61 parcial) | B-61 (CCS) | Should / M | content-editor | Not Started |
+| Novos centros: CCJ + CFH + CFM (B-60 parcial) | B-60 (CCJ/CFH/CFM) | Should / M | content-editor | Not Started |
+| UI estruturada: seções instagrams e historias (#48 cont.) | B-73 (cont.) | Should / M | frontend-dev | Not Started |
+| Token `--primary-button` dedicado p/ dark mode (dívida técnica) | B-78 | Could / P | frontend-dev | Not Started |
+
+### Critérios de aceite detalhados
+
+**B-61 (parcial CCS) — 6 fichas de curso**
+- [ ] 6 arquivos `docs/cursos/<slug>.md` com `centro: CCS`: `enfermagem`, `farmacia`,
+      `fonoaudiologia`, `medicina`, `nutricao`, `odontologia`.
+- [ ] Coordenação/CA/atlética reaproveitados de `docs/centros/ccs.md` (verificado no Sprint 14).
+- [ ] Campos sem fonte confirmada como `~` (null YAML), nunca texto verboso (lição do Sprint 14).
+- [ ] `/centros/ccs` passa a exibir 6 cards de curso com destino válido; build gera as 6 páginas.
+
+**B-60 (parcial) — CCJ + CFH + CFM**
+- [ ] 3 arquivos `docs/centros/<slug>.md` (`ccj`, `cfh`, `cfm`) com frontmatter YAML
+      (`slug`, `titulo`, `descricao`, `ultima_verificacao`) e seções: Coordenações/Diretoria, CAs,
+      Atléticas, Links úteis. Dados sem fonte oficial ficam `_A preencher_`.
+- [ ] `/centros` passa a listar 8 centros; build gera `/centros/ccj`, `/centros/cfh`, `/centros/cfm`.
+
+**B-73 (cont. #48) — UI estruturada: instagrams e historias**
+- [ ] Componente dedicado para `instagrams` (grid de cards de perfil: nome, @handle, link, badge
+      oficial/estudantil) e para `historias` (lista de relatos com destaque), consumindo `Section.blocks`.
+- [ ] Registrados em `app/secoes/[slug]/page.tsx` ao lado de links/datas/ru; fallback `.prose-content`
+      mantido para as demais. `docs/*.md` segue fonte única.
+- [ ] Mobile-first; links externos com `rel="noopener noreferrer"`; tap targets ≥ 44px.
+
+**B-78 — token de botão no dark mode**
+- [ ] Novo token (ex.: `--primary-button` ou override em dark) para `.btn-primary` (e usos equivalentes,
+      ex. `not-found.tsx`) com contraste ≥ 4.5:1 de branco sobre o fundo do botão **em dark mode**.
+- [ ] Não altera a paleta do modo claro (B-49 já resolvido lá).
+- [ ] Documentar o ratio em `docs/identidade-visual.md`.
+
+### Ordem de execução e dependências
+
+```
+Wave única (paralelo — arquivos disjuntos, zero conflito):
+  B-61 (CCS)  content-editor A  — docs/cursos/*.md (6 fichas)
+  B-60        content-editor B  — docs/centros/{ccj,cfh,cfm}.md
+  B-73 cont.  frontend-dev      — components/sections/* + app/secoes/[slug]/page.tsx
+  B-78        frontend-dev      — globals.css / tailwind.config.ts + docs/identidade-visual.md
+              (B-73 e B-78 no mesmo agente, em sequência, para evitar corrida de build)
+Depois:
+  tester — lint + build + Playwright (Chromium pré-instalado em /opt/pw-browsers)
+```
+
+### Fontes oficiais
+
+**B-60 (centros):** CCJ https://ccj.ufsc.br/ · CFH https://cfh.ufsc.br/ · CFM https://cfm.ufsc.br/
+**B-61 (cursos CCS):** dados-base em `docs/centros/ccs.md`; complementar com os sites de cada curso
+(enf.ufsc.br, farmacia.ufsc.br, fonoaudiologia.ufsc.br, medicina.ufsc.br, nutricao.ufsc.br,
+odontologia.ufsc.br) e o Guia de Cursos UFSC. Fetch a `*.ufsc.br` costuma dar 403 aqui — usar
+WebSearch cruzando fontes e sinalizar incerteza; nunca inventar.
+
+### Definition of Done
+- [ ] `npm run lint` passa · `npm run build` passa (SSG com 6 fichas CCS + 3 centros novos)
+- [ ] Playwright sem regressões
+- [ ] `/centros/ccs` mostra 6 cursos; `/centros` lista 8 centros; seções instagrams/historias com UI dedicada
+- [ ] ui-ux-review sem findings bloqueadores (e dívida do token de botão no dark fechada)
+- [ ] `docs/product-backlog.md` atualizado (B-60, B-61, B-73, B-78) · README se houver mudança estrutural
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| B-61 (CCE, 9 cursos) | Maior que CCS; somado aos outros itens estouraria um único `/sprint-run`. Próximo (Sprint 19). |
+| B-60 (CCB, CED, CDS, Joinville, Araranguá) | Ritmo de 2–3 centros por sprint; resto no radar. |
+| #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor** — escolher abordagem (Google Form vs. Route Handler + e-mail vs. link de issue) antes de virar história. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+---
+
+## Sprint 17 — Correções, Navegação e UI das Seções (v1.11) — concluído em 2026-08-01
 
 **Objetivo:** Endereçar issues do mantenedor abertas no GitHub: dois fixes rápidos (mapa do CFM,
 nome do site), reintroduzir acesso direto aos cursos (aba "Cursos" + listagem global), divulgar
