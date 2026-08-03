@@ -4,7 +4,66 @@
 
 ---
 
-## Sprint 18 — Fechamento: cursos do CCS, mais centros e cauda da UI de seções (v1.12)
+## Sprint 19 — Fechamento do CCE: fichas dos 9 cursos (v1.13)
+
+**Objetivo:** Completar o **CCE** publicando as fichas dos seus 9 cursos de graduação presenciais.
+O CCE está publicado desde o Sprint 14, mas `/centros/cce → curso` cai em ficha inexistente — o
+mesmo débito que os Sprints 16 (CSE) e 18 (CCS) já corrigiram para os outros centros. Princípio:
+**terminar o que já está publicado antes de abrir novas frentes**. Com o CCE, todos os 5 centros
+de conteúdo original (CTC, CCA, CSE, CCS, CCE) passam a ter fichas de curso completas.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote A (5) | B-61 (CCE-A) | Should / M | content-editor | Not Started |
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote B (4) | B-61 (CCE-B) | Should / M | content-editor | Not Started |
+
+### Critérios de aceite detalhados
+
+**B-61 (parcial CCE) — 9 fichas de curso**
+- [ ] 9 arquivos `docs/cursos/<slug>.md` com `centro: CCE`, divididos em 2 lotes paralelos:
+  - **Lote A:** `animacao`, `artes-cenicas`, `cinema`, `design`, `design-de-produto`.
+  - **Lote B:** `jornalismo`, `letras-estrangeiras`, `letras-portugues`, `secretariado-executivo`.
+- [ ] Coordenação/CA/atlética reaproveitados de `docs/centros/cce.md` (verificado no Sprint 14).
+- [ ] Campos sem fonte confirmada como `~` (null YAML) no frontmatter, nunca texto verboso (lição Sprint 14).
+- [ ] Grau/turno/duração via Guia de Cursos UFSC/site do curso; incertezas/contradições ficam `_A preencher_` (lição Sprint 16).
+- [ ] "Dicas de veterano"/"Onde estudar" ficam `_A preencher_` (dependem de veteranos reais).
+- [ ] `/centros/cce` passa a exibir os 9 cursos com destino válido; build gera as 9 páginas.
+
+### Ordem de execução e dependências
+
+```
+Wave única (2 content-editors em paralelo — arquivos disjuntos):
+  B-61 (CCE-A)  content-editor A  — docs/cursos/{animacao,artes-cenicas,cinema,design,design-de-produto}.md
+  B-61 (CCE-B)  content-editor B  — docs/cursos/{jornalismo,letras-estrangeiras,letras-portugues,secretariado-executivo}.md
+Depois:
+  tester — lint + build + Playwright (Chromium pré-instalado em /opt/pw-browsers)
+```
+
+### Fontes oficiais (B-61/CCE)
+Dados-base em `docs/centros/cce.md`; complementar com: design.ufsc.br, jornalismo.ufsc.br,
+cinema.ufsc.br, sites do DAC (Artes Cênicas/Animação), DLLE (Letras Estrangeiras/Secretariado),
+Letras-Português, e https://guiadecursos.ufsc.br/<curso>/. Fetch a `*.ufsc.br` costuma dar 403
+neste ambiente — usar WebSearch cruzando fontes; nunca inventar.
+
+### Definition of Done
+- [ ] `npm run lint` passa · `npm run build` passa (SSG com 9 fichas novas)
+- [ ] Playwright sem regressões
+- [ ] `/centros/cce` mostra 9 cursos; todos os 5 centros originais com fichas completas
+- [ ] ui-ux-review sem findings bloqueadores (conteúdo servido pelo template existente — auditoria leve)
+- [ ] `docs/product-backlog.md` atualizado (B-61)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| B-60 (CCB, CED, CDS, Joinville, Araranguá) | Mantendo o ritmo; entram em sprint de centros próprio. |
+| Fichas de CCJ/CFH/CFM (publicados no Sprint 18) | Muitos cursos (CFH tem 9, CFM 5); cada um é um sprint de fichas próprio depois do CCE. |
+| #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor** — escolher abordagem antes de virar história. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+---
+
+## Sprint 18 — Fechamento: cursos do CCS, mais centros e cauda da UI de seções (v1.12) — concluído em 2026-08-03
 
 **Objetivo:** Sprint de fechamento (conteúdo + cauda de UI), sem abrir arquitetura nova. Completar o
 **CCS** publicando as fichas dos seus 6 cursos (hoje `/centros/ccs → curso` cai em ficha inexistente —
