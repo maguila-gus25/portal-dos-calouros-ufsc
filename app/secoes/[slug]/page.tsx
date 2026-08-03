@@ -5,6 +5,8 @@ import { getSection, listSections, type Section } from "@/lib/content";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { DatasSection } from "@/components/sections/DatasSection";
+import { HistoriasSection } from "@/components/sections/HistoriasSection";
+import { InstagramSection } from "@/components/sections/InstagramSection";
 import { LinksSection } from "@/components/sections/LinksSection";
 import { RuSection } from "@/components/sections/RuSection";
 
@@ -13,6 +15,8 @@ const SECTION_COMPONENTS: Record<string, (props: { section: Section }) => ReactE
   links: ({ section }) => <LinksSection blocks={section.blocks} />,
   datas: ({ section }) => <DatasSection blocks={section.blocks} />,
   ru: ({ section }) => <RuSection blocks={section.blocks} />,
+  instagrams: ({ section }) => <InstagramSection blocks={section.blocks} />,
+  historias: ({ section }) => <HistoriasSection blocks={section.blocks} />,
 };
 
 export function generateStaticParams() {

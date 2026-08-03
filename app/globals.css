@@ -12,6 +12,8 @@
     --popover-foreground: 0 0% 9%;
     --primary: 217 91% 52%;
     --primary-foreground: 0 0% 100%;
+    /* Dedicated button background token — see `.dark` below for why this isn't just `--primary`. */
+    --primary-button: 217 91% 52%;
     --secondary: 220 13% 91%;
     --secondary-foreground: 0 0% 9%;
     --muted: 220 13% 91%;
@@ -35,6 +37,10 @@
     --popover-foreground: 0 0% 96%;
     --primary: 217 91% 62%;
     --primary-foreground: 0 0% 100%;
+    /* --primary is lightened for legibility as *text/links* on the dark surface, but that same
+       lightness makes white-on-primary buttons fail WCAG AA (~3.4:1). Use a darker shade just
+       for button backgrounds so `.btn-primary` keeps ≥4.5:1 contrast with white text. */
+    --primary-button: 217 91% 45%;
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 18%;
