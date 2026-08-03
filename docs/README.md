@@ -44,6 +44,10 @@ Fichas de centros fora do Campus Trindade, com informações de localização, c
 - [Centro de Ciências Agrárias (CCA) — Itacorubi](centros/cca.md)
 - [Centro Socioeconômico (CSE) — Campus Trindade](centros/cse.md)
 - [Centro de Comunicação e Expressão (CCE) — Campus Trindade](centros/cce.md)
+- [Centro de Ciências da Saúde (CCS) — Campus Trindade](centros/ccs.md)
+- [Centro de Ciências Jurídicas (CCJ) — Campus Trindade](centros/ccj.md)
+- [Centro de Filosofia e Ciências Humanas (CFH) — Campus Trindade](centros/cfh.md)
+- [Centro de Ciências Físicas e Matemáticas (CFM) — Campus Trindade](centros/cfm.md)
 
 ### Cursos do CCA (Itacorubi)
 
@@ -59,6 +63,15 @@ Fichas de centros fora do Campus Trindade, com informações de localização, c
 - [Ciências Econômicas](cursos/ciencias-economicas.md)
 - [Relações Internacionais](cursos/relacoes-internacionais.md)
 - [Serviço Social](cursos/servico-social.md)
+
+### Cursos do CCS (Campus Trindade)
+
+- [Enfermagem](cursos/enfermagem.md)
+- [Farmácia](cursos/farmacia.md)
+- [Fonoaudiologia](cursos/fonoaudiologia.md)
+- [Medicina](cursos/medicina.md)
+- [Nutrição](cursos/nutricao.md)
+- [Odontologia](cursos/odontologia.md)
 
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)
