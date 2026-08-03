@@ -4,7 +4,69 @@
 
 ---
 
-## Sprint 19 — Fechamento do CCE: fichas dos 9 cursos (v1.13)
+## Sprint 20 — Fichas de curso do CFM e do CCJ (v1.14)
+
+**Objetivo:** Dar fichas de curso aos centros publicados no Sprint 18 que já têm dados de coordenação
+verificados: **CFM** (Física, Matemática, Química, Meteorologia, Oceanografia) e **CCJ** (Direito).
+Continua o "terminar > começar": `/centros/cfm` e `/centros/ccj` hoje levam a cards de curso sem
+ficha. 6 fichas no total, tamanho comparável ao Sprint 18 (CCS). O CFH (9 cursos, com dados de
+coordenação mais escassos) fica para um sprint próprio depois.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Fichas do CFM + CCJ — lote A (Física, Matemática, Química) | B-61 (CFM-A) | Should / M | content-editor | Not Started |
+| Fichas do CFM + CCJ — lote B (Meteorologia, Oceanografia, Direito) | B-61 (CFM-B/CCJ) | Should / M | content-editor | Not Started |
+
+### Critérios de aceite detalhados
+
+**B-61 (parcial CFM + CCJ) — 6 fichas de curso**
+- [ ] 6 arquivos `docs/cursos/<slug>.md`, divididos em 2 lotes paralelos:
+  - **Lote A (`centro: CFM`):** `fisica`, `matematica`, `quimica`.
+  - **Lote B:** `meteorologia`, `oceanografia` (`centro: CFM`) + `direito` (`centro: CCJ`).
+- [ ] Coordenação/CA/atlética reaproveitados de `docs/centros/cfm.md` e `docs/centros/ccj.md`
+      (verificados no Sprint 18). Física/Matemática/Química têm habilitações Licenciatura+Bacharelado —
+      tratar num único arquivo por curso, mencionando as modalidades no corpo (como Letras Estrangeiras).
+- [ ] Campos sem fonte confirmada como `~` (null YAML) no frontmatter, nunca texto verboso (lição Sprint 14).
+      Ex.: coordenador de Oceanografia e de Direito ficam `~`/`_A preencher_` (não publicados).
+- [ ] Grau/turno/duração via Guia de Cursos UFSC/site do curso; incertezas/contradições ficam `_A preencher_`.
+- [ ] "Dicas de veterano"/"Onde estudar" ficam `_A preencher_` (dependem de veteranos reais).
+- [ ] `/centros/cfm` passa a exibir 5 cursos e `/centros/ccj` 1 curso, todos com destino válido; build gera as 6 páginas.
+
+### Ordem de execução e dependências
+
+```
+Wave única (2 content-editors em paralelo — arquivos disjuntos):
+  B-61 (CFM-A)      content-editor A  — docs/cursos/{fisica,matematica,quimica}.md
+  B-61 (CFM-B/CCJ)  content-editor B  — docs/cursos/{meteorologia,oceanografia,direito}.md
+Depois:
+  tester — lint + build + Playwright (Chromium pré-instalado em /opt/pw-browsers)
+```
+
+### Fontes oficiais
+Dados-base em `docs/centros/cfm.md` e `docs/centros/ccj.md`. Complementar com: fisica.ufsc.br,
+mtm.grad.ufsc.br, quimica.ufsc.br, meteorologia.grad.ufsc.br, ocn.cfm.ufsc.br/oceano.ufsc.br,
+ccj.ufsc.br, e https://guiadecursos.ufsc.br/<curso>/. Fetch a `*.ufsc.br` costuma dar 403 —
+usar WebSearch cruzando fontes; nunca inventar.
+
+### Definition of Done
+- [ ] `npm run lint` passa · `npm run build` passa (SSG com 6 fichas novas)
+- [ ] Playwright sem regressões
+- [ ] `/centros/cfm` mostra 5 cursos e `/centros/ccj` mostra Direito
+- [ ] ui-ux-review dispensável (conteúdo servido pelo template existente — sem mudança de UI)
+- [ ] `docs/product-backlog.md` atualizado (B-61)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Fichas do CFH (9 cursos) | Dados de coordenação de curso mais escassos em `cfh.md` (maioria `_A preencher_`); merece sprint próprio para pesquisa. |
+| B-60 (CCB, CED, CDS, Joinville, Araranguá) | Ritmo de conteúdo; entram depois. |
+| #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor.** |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+---
+
+## Sprint 19 — Fechamento do CCE: fichas dos 9 cursos (v1.13) — concluído em 2026-08-03
 
 **Objetivo:** Completar o **CCE** publicando as fichas dos seus 9 cursos de graduação presenciais.
 O CCE está publicado desde o Sprint 14, mas `/centros/cce → curso` cai em ficha inexistente — o
