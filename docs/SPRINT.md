@@ -14,8 +14,8 @@ coordenação mais escassos) fica para um sprint próprio depois.
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Fichas do CFM + CCJ — lote A (Física, Matemática, Química) | B-61 (CFM-A) | Should / M | content-editor | In Progress |
-| Fichas do CFM + CCJ — lote B (Meteorologia, Oceanografia, Direito) | B-61 (CFM-B/CCJ) | Should / M | content-editor | In Progress |
+| Fichas do CFM + CCJ — lote A (Física, Matemática, Química) | B-61 (CFM-A) | Should / M | content-editor | Done |
+| Fichas do CFM + CCJ — lote B (Meteorologia, Oceanografia, Direito) | B-61 (CFM-B/CCJ) | Should / M | content-editor | Done |
 
 ### Critérios de aceite detalhados
 
@@ -63,6 +63,32 @@ usar WebSearch cruzando fontes; nunca inventar.
 | B-60 (CCB, CED, CDS, Joinville, Araranguá) | Ritmo de conteúdo; entram depois. |
 | #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor.** |
 | B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+### Retrospectiva do Sprint 20
+
+**Concluído em:** 2026-08-03
+
+**Entregue:**
+- **B-61 (CFM)** — 5 fichas: `fisica`, `matematica`, `quimica`, `meteorologia`, `oceanografia`.
+- **B-61 (CCJ)** — 1 ficha: `direito` (inclui a empresa júnior Locus Iuris, confirmada com fonte própria).
+- Coordenação/CA/atlética reaproveitados de `docs/centros/cfm.md` e `ccj.md` (verificados no Sprint 18);
+  grau confirmado; turno/duração de várias (Física, Química, Bacharelado de Matemática) ficaram
+  `_A preencher_` por fontes divergentes/inacessíveis (403) — não estimados. `/centros/cfm` exibe 5
+  cursos e `/centros/ccj` exibe Direito.
+
+**Verificações finais:** lint ✅ · build **79 páginas** SSG ✅ (6 fichas novas) · Playwright 8/8 ✅.
+ui-ux-review dispensado (sprint 100% de conteúdo).
+
+**O que foi bem:**
+- Reuso de `cfm.md`/`ccj.md` (dados de coordenação verificados no Sprint 18) acelerou as fichas — a
+  decisão de priorizar CFM/CCJ sobre CFH (dados escassos) se confirmou acertada.
+- Regra de ouro mantida: turno/duração contraditórios deixados `_A preencher_`; coordenadores não
+  publicados (Oceanografia, Direito) marcados como `~` em vez de chutados.
+
+**Pendências / follow-up:**
+- **B-61** — falta o **CFH** (9 cursos, dados de coordenação escassos — exige pesquisa dedicada).
+- **B-60** — faltam centros CCB, CED, CDS + campi Joinville/Araranguá.
+- **#46** — segue bloqueado aguardando decisão de abordagem do mantenedor.
 
 ---
 
