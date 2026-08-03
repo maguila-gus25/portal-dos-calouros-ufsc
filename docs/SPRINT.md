@@ -14,10 +14,10 @@ de botão no dark mode**. Princípio: **terminar o que já está publicado antes
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Fichas dos 6 cursos do CCS (B-61 parcial) | B-61 (CCS) | Should / M | content-editor | Not Started |
-| Novos centros: CCJ + CFH + CFM (B-60 parcial) | B-60 (CCJ/CFH/CFM) | Should / M | content-editor | Not Started |
-| UI estruturada: seções instagrams e historias (#48 cont.) | B-73 (cont.) | Should / M | frontend-dev | Not Started |
-| Token `--primary-button` dedicado p/ dark mode (dívida técnica) | B-78 | Could / P | frontend-dev | Not Started |
+| Fichas dos 6 cursos do CCS (B-61 parcial) | B-61 (CCS) | Should / M | content-editor | Done |
+| Novos centros: CCJ + CFH + CFM (B-60 parcial) | B-60 (CCJ/CFH/CFM) | Should / M | content-editor | Done |
+| UI estruturada: seções instagrams e historias (#48 cont.) | B-73 (cont.) | Should / M | frontend-dev | Done |
+| Token `--primary-button` dedicado p/ dark mode (dívida técnica) | B-78 | Could / P | frontend-dev | Done |
 
 ### Critérios de aceite detalhados
 
@@ -83,6 +83,49 @@ WebSearch cruzando fontes e sinalizar incerteza; nunca inventar.
 | B-60 (CCB, CED, CDS, Joinville, Araranguá) | Ritmo de 2–3 centros por sprint; resto no radar. |
 | #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor** — escolher abordagem (Google Form vs. Route Handler + e-mail vs. link de issue) antes de virar história. |
 | B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+### Retrospectiva do Sprint 18
+
+**Concluído em:** 2026-08-01
+
+**Entregue:**
+- **B-61 (CCS)** — 6 fichas de curso (`enfermagem`, `farmacia`, `fonoaudiologia`, `medicina`,
+  `nutricao`, `odontologia`), reaproveitando dados verificados de `docs/centros/ccs.md`; grau/turno/
+  duração via WebSearch com nota de ressalva; coordenadores/atléticas sem fonte como `_A preencher_`.
+  `/centros/ccs` agora exibe os 6 cursos com destino válido.
+- **B-60 (CCJ + CFH + CFM)** — 3 centros novos: CCJ (Direito, CAXIF, AAD), CFH (9 cursos, direção
+  2023–2027, CAs CALPsi/CALH/CALIGEO/CALCS/CAFIL/CALANT), CFM (Física/Matemática/Química/Meteorologia/
+  Oceanografia, CAs e atléticas ATQ/AFIM). `/centros` passa a listar 8 centros.
+- **B-73 (cont. #48)** — `InstagramSection` (grid de perfis com badge oficial/estudantil, links em
+  nova aba) e `HistoriasSection` (relatos em cards destacados + empty-state), registrados no
+  `SECTION_COMPONENTS`; fallback `.prose-content` mantido para faq/checklist/mapa. `docs/` fonte única.
+- **B-78** — token `--primary-button` dedicado: dark `217 91% 45%` → branco **6.00:1** (AA com folga),
+  modo claro inalterado (4.73:1); ratios documentados em `docs/identidade-visual.md`.
+
+**Findings ui-ux-review:**
+- Nenhum blocker/major. A **dívida recorrente do token de botão no dark mode foi fechada** pelo B-78.
+  1 nit (badge `text-[10px]` na InstagramSection) — não bloqueante, sem ação.
+
+**Verificações finais:** lint ✅ · build **64 páginas** SSG ✅ (6 fichas CCS + 3 centros novos) ·
+Playwright 8/8 ✅.
+
+**O que foi bem:**
+- Wave única com 3 agentes (2 conteúdo + 1 frontend) em arquivos disjuntos — zero conflito, padrão
+  consolidado desde o Sprint 14/16.
+- "Terminar > começar" de novo: fechar o CCS (centro publicado sem fichas) antes de abrir o CCE maior.
+- Regra de ouro mantida sob 403 generalizado: content-editors cruzaram fontes via WebSearch e
+  marcaram `_A preencher_` onde não havia confirmação (coordenadores, algumas atléticas/durações).
+- Uma dívida técnica de acessibilidade arrastada por 3 sprints foi finalmente quitada (B-78).
+
+**Lições aprendidas:**
+- Introduzir um token semântico dedicado (`--primary-button`) em vez de reusar `--primary` é a forma
+  correta de resolver contraste de componente sem afetar texto/links — replicável para outros casos.
+
+**Pendências / follow-up:**
+- **B-61 (CCE, 9 cursos)** — próximo alvo de "terminar > começar" (Sprint 19).
+- **B-60** — faltam CCB, CED, CDS + campi Joinville/Araranguá.
+- **#46** — segue bloqueado aguardando decisão de abordagem do mantenedor.
+- **B-73** — seções faq/checklist/mapa ainda no fallback prose (têm páginas próprias; baixa prioridade).
 
 ---
 

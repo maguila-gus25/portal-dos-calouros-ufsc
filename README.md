@@ -80,7 +80,7 @@ portal-dos-calouros-ufsc/
 | ❓ FAQ | Perguntas frequentes dos calouros | [`faq.md`](docs/faq.md) |
 | ✅ Checklist | O que fazer na primeira semana | [`checklist-primeira-semana.md`](docs/checklist-primeira-semana.md) |
 
-O portal é organizado por **centro**: `/centros` lista todos os centros publicados (CTC, CCA, CSE, CCE, CCS) e cada `/centros/<slug>` mostra o conteúdo do centro e os seus cursos. Cada curso tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
+O portal é organizado por **centro**: `/centros` lista todos os centros publicados (CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM) e cada `/centros/<slug>` mostra o conteúdo do centro e os seus cursos. Cada curso tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
 
 ## Equipe de Agentes
 
@@ -128,7 +128,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.9** — Navegação por centro: `/centros` como raiz, header sem "CTC" (Sprint 15)
 - [x] **v1.10** — Fichas dos cursos do CSE + atalho de cursos na página de centro (Sprint 16)
 - [x] **v1.11** — Fixes (mapa CFM, nome do site), aba "Cursos" + listagem global, ferramentas da comunidade, UI estruturada das seções (Sprint 17)
-- [ ] **Próximo** — Mais centros (CCJ, CFH, CFM…) e fichas de curso restantes (CCE, CCS)
+- [x] **v1.12** — Fichas dos cursos do CCS, centros CCJ/CFH/CFM, UI de instagrams/historias, contraste do botão no dark (Sprint 18)
+- [ ] **Próximo** — Fichas do CCE + demais centros (CCB, CED, CDS, Joinville, Araranguá)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 
