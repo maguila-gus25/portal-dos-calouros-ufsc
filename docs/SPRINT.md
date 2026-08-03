@@ -14,8 +14,8 @@ de conteúdo original (CTC, CCA, CSE, CCS, CCE) passam a ter fichas de curso com
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Fichas dos 9 cursos do CCE (B-61 parcial) — lote A (5) | B-61 (CCE-A) | Should / M | content-editor | Not Started |
-| Fichas dos 9 cursos do CCE (B-61 parcial) — lote B (4) | B-61 (CCE-B) | Should / M | content-editor | Not Started |
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote A (5) | B-61 (CCE-A) | Should / M | content-editor | In Progress |
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote B (4) | B-61 (CCE-B) | Should / M | content-editor | In Progress |
 
 ### Critérios de aceite detalhados
 
