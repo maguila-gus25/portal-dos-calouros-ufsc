@@ -14,8 +14,8 @@ coordenação mais escassos) fica para um sprint próprio depois.
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Fichas do CFM + CCJ — lote A (Física, Matemática, Química) | B-61 (CFM-A) | Should / M | content-editor | Not Started |
-| Fichas do CFM + CCJ — lote B (Meteorologia, Oceanografia, Direito) | B-61 (CFM-B/CCJ) | Should / M | content-editor | Not Started |
+| Fichas do CFM + CCJ — lote A (Física, Matemática, Química) | B-61 (CFM-A) | Should / M | content-editor | In Progress |
+| Fichas do CFM + CCJ — lote B (Meteorologia, Oceanografia, Direito) | B-61 (CFM-B/CCJ) | Should / M | content-editor | In Progress |
 
 ### Critérios de aceite detalhados
 
