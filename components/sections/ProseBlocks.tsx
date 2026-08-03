@@ -49,7 +49,8 @@ export function ProseBlockGroup({ blocks }: { blocks: SectionBlock[] }) {
   );
 }
 
-function ProseBlock({ block }: { block: SectionBlock }) {
+/** Renders a single block using the same markup as `ProseBlockGroup`, without the wrapping card — for section components that need their own layout/highlighting around individual blocks. */
+export function ProseBlock({ block }: { block: SectionBlock }) {
   switch (block.type) {
     case "heading": {
       const Tag = `h${Math.min(block.depth, 6)}` as keyof JSX.IntrinsicElements;

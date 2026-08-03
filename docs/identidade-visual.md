@@ -86,6 +86,7 @@ WCAG 2.1 AA exige: **4.5:1** para texto normal (< 18pt / < 14pt bold),
 | `#E4E6EB` sobre `bg.dark` `#18191A` | **13.6:1** | Passa | Passa |
 | `#B0B3B8` sobre `bg.darkSurface` `#242526` | **7.61:1** | Passa | Passa |
 | `#2D88FF` sobre `bg.darkSurface` `#242526` | **5.90:1** | Passa | Passa |
+| `#FFFFFF` sobre `--primary-button` dark `#0A5ADB` (`.btn-primary`) | **6.00:1** | Passa | Passa |
 
 ### Pares a corrigir (blockers de contraste)
 
@@ -102,6 +103,26 @@ Para `btn-primary` (branco sobre azul), o texto é `font-semibold text-sm` (14px
 semibold = ≈ 10.5pt, abaixo dos 14pt bold necessários para "large text"). Isso
 é um blocker: mudar para `#1565C0` como cor de fundo do botão (ratio branco sobre
 `#1565C0` ≈ 6.5:1) ou engrossar o texto para `font-bold text-base`.
+
+**Correção aplicada (B-78):** o problema de dívida técnica recorrente do
+`ui-ux-review` — `--primary` em dark mode (`217 91% 62%`) dá apenas **~3.37:1**
+de contraste com texto branco, abaixo do mínimo de 4.5:1 — foi corrigido
+introduzindo um token **dedicado ao fundo de botão**, `--primary-button`, em
+`app/globals.css`:
+
+| Modo | `--primary` (texto/links) | `--primary-button` (fundo de `.btn-primary`) |
+|------|---------------------------|-----------------------------------------------|
+| Claro (`:root`) | `217 91% 52%` | `217 91% 52%` (igual — **não alterado**, já passava com ~4.73:1) |
+| Escuro (`.dark`) | `217 91% 62%` | `217 91% 45%` (mais escuro — branco sobre ele dá **6.00:1**) |
+
+`--primary` continua mais claro em dark mode porque também é usado como cor de
+**texto/link** sobre fundos escuros (`.prose-content a`, chips `text-primary`),
+onde precisa ser claro o bastante para se destacar do fundo — nesse uso o
+contraste medido é ~4.77:1 (texto azul-claro sobre `bg.darkSurface`), sem
+problema. O problema específico era **texto branco sobre fundo azul** (botão),
+que exige um azul mais escuro para o mesmo contraste — daí o token separado.
+`tailwind.config.ts` (`.btn-primary`) agora usa `hsl(var(--primary-button))`
+em vez de `hsl(var(--primary))`.
 
 ---
 

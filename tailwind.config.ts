@@ -99,7 +99,7 @@ const config: Config = {
           justifyContent: "center",
           gap: "0.5rem",
           borderRadius: "var(--radius)",
-          backgroundColor: "hsl(var(--primary))",
+          backgroundColor: "hsl(var(--primary-button))",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           paddingTop: "0.5rem",
