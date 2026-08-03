@@ -14,8 +14,8 @@ de conteúdo original (CTC, CCA, CSE, CCS, CCE) passam a ter fichas de curso com
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Fichas dos 9 cursos do CCE (B-61 parcial) — lote A (5) | B-61 (CCE-A) | Should / M | content-editor | In Progress |
-| Fichas dos 9 cursos do CCE (B-61 parcial) — lote B (4) | B-61 (CCE-B) | Should / M | content-editor | In Progress |
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote A (5) | B-61 (CCE-A) | Should / M | content-editor | Done |
+| Fichas dos 9 cursos do CCE (B-61 parcial) — lote B (4) | B-61 (CCE-B) | Should / M | content-editor | Done |
 
 ### Critérios de aceite detalhados
 
@@ -60,6 +60,38 @@ neste ambiente — usar WebSearch cruzando fontes; nunca inventar.
 | Fichas de CCJ/CFH/CFM (publicados no Sprint 18) | Muitos cursos (CFH tem 9, CFM 5); cada um é um sprint de fichas próprio depois do CCE. |
 | #46 (enviar sugestões) | **Bloqueado por decisão do mantenedor** — escolher abordagem antes de virar história. |
 | B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+### Retrospectiva do Sprint 19
+
+**Concluído em:** 2026-08-03
+
+**Entregue:**
+- **B-61 (CCE)** — 9 fichas de curso publicadas: `animacao`, `artes-cenicas`, `cinema`, `design`,
+  `design-de-produto` (lote A) e `jornalismo`, `letras-estrangeiras`, `letras-portugues`,
+  `secretariado-executivo` (lote B). Coordenação/CA/atlética reaproveitados de `docs/centros/cce.md`
+  (verificado no Sprint 14); grau/turno confirmados via WebSearch cruzando anexos de vestibular/CAGR;
+  durações e coordenadores contraditórios ou não publicados ficaram `_A preencher_`/`~`.
+- `/centros/cce` agora exibe os 9 cursos com destino válido. **Marco:** os 5 centros originais
+  (CTC, CCA, CSE, CCS, CCE) agora têm fichas de curso completas.
+
+**Verificações finais:** lint ✅ · build **73 páginas** SSG ✅ (9 fichas novas) · Playwright 8/8 ✅.
+ui-ux-review dispensado (sprint 100% de conteúdo, sem mudança de UI — usa o template de curso existente).
+
+**O que foi bem:**
+- Dividir as 9 fichas em 2 lotes paralelos (5 + 4) manteve o `/sprint-run` executável e sem conflito.
+- "Terminar > começar" concluído para os 5 centros originais — nenhum centro publicado fica mais
+  com cursos sem ficha.
+- Regra de ouro sustentada sob 403 generalizado: turno/grau confirmados por fontes cruzadas;
+  durações contraditórias (ex.: Artes Cênicas currículos 2008/2013) deixadas `_A preencher_` em vez de estimar.
+
+**Lições aprendidas:**
+- Para centros grandes (9 cursos), o padrão "reusar dados do `centros/<slug>.md` + 2 lotes paralelos"
+  é o mais eficiente; a pesquisa incremental por curso rende pouco quando o site oficial retorna 403.
+
+**Pendências / follow-up:**
+- **B-61** — faltam fichas de CCJ (Direito, 1), CFH (9) e CFM (5), publicados no Sprint 18.
+- **B-60** — faltam centros CCB, CED, CDS + campi Joinville/Araranguá.
+- **#46** — segue bloqueado aguardando decisão de abordagem do mantenedor.
 
 ---
 

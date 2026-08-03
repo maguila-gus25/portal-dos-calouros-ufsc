@@ -129,7 +129,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.10** — Fichas dos cursos do CSE + atalho de cursos na página de centro (Sprint 16)
 - [x] **v1.11** — Fixes (mapa CFM, nome do site), aba "Cursos" + listagem global, ferramentas da comunidade, UI estruturada das seções (Sprint 17)
 - [x] **v1.12** — Fichas dos cursos do CCS, centros CCJ/CFH/CFM, UI de instagrams/historias, contraste do botão no dark (Sprint 18)
-- [ ] **Próximo** — Fichas do CCE + demais centros (CCB, CED, CDS, Joinville, Araranguá)
+- [x] **v1.13** — Fichas dos 9 cursos do CCE — 5 centros originais (CTC/CCA/CSE/CCS/CCE) com fichas completas (Sprint 19)
+- [ ] **Próximo** — Fichas de CCJ/CFH/CFM + demais centros (CCB, CED, CDS, Joinville, Araranguá)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 
