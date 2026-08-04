@@ -181,14 +181,16 @@ Regras inegociáveis:
 
 - CI/CD: push para `main` → Vercel builda e deploya automaticamente.
 
-## Próximos passos (pós-Sprint 16)
+## Próximos passos (pós-Sprint 20)
 
-Sprint 16 entregou: **B-71** (link de atalho para os cursos na página de centro),
-**B-72** (esta atualização de documentação técnica) e parte do **B-61** (5 fichas
-de curso do CSE).
+Sprint 20 entregou: fichas de curso do **CFM** (5: Física, Matemática, Química, Meteorologia, Oceanografia) e do **CCJ** (1: Direito). Sprint 21 está criando as **9 fichas do CFH**.
 
-Ver `docs/product-backlog.md` para o backlog completo. Prioridade imediata (Sprint 17):
+**8 centros publicados:** CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM.
 
-1. **B-60 (CCJ + CFH + CFM)** — próximos centros: Ciências Jurídicas, Filosofia e Ciências Humanas, Ciências Físicas e Matemáticas
-2. **B-61 (fichas CCE + CCS)** — fichas de curso restantes desses centros (CCE e CCS já publicados — só criar os `.md` dos cursos)
-3. **B-13** — histórias de veteranos (quando houver submissões reais via `historia-veterano.yml`)
+**Estado do B-61 (fichas de curso):** CTC (13) ✅, CCA (4) ✅, CSE (5) ✅, CCE (9) ✅, CCS (6) ✅, CCJ (1) ✅, CFM (5) ✅, CFH (9) — em andamento no Sprint 21.
+
+Ver `docs/product-backlog.md` para o backlog completo. Após o Sprint 21:
+
+1. **B-61 (CFH)** — 9 fichas em andamento: Psicologia, Filosofia, História, Antropologia, Ciências Sociais, Museologia, Geografia, Geologia, Licenciatura Intercultural Indígena.
+2. **B-60 (CCB, CED, CDS)** — próximos centros a publicar: Ciências Biológicas, Educação, Desportos e Saúde + campi Joinville e Araranguá.
+3. **B-13** — histórias de veteranos (quando houver submissões reais via `historia-veterano.yml`).
