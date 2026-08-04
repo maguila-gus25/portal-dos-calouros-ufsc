@@ -4,6 +4,126 @@
 
 ---
 
+## Sprint 21 — Fichas de curso do CFH: 9 cursos das Humanidades (v1.15)
+
+**Objetivo:** Completar as fichas de curso do último centro publicado sem fichas: o **CFH** (Centro de
+Filosofia e Ciências Humanas). Após este sprint, todos os 8 centros publicados terão fichas completas.
+Princípio Matt Pocock: cada lote é um **tracer-bullet vertical slice** — arquivo `docs/cursos/*.md`
+criado → loader `listCourses()` o detecta automaticamente → `/centros/cfh` o renderiza → Playwright valida.
+Nenhum código novo necessário.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Fichas CFH — Lote A (Psicologia, Filosofia, História) | B-61 (CFH-A) | Should / M | content-editor | Done |
+| Fichas CFH — Lote B (Antropologia, Ciências Sociais, Museologia) | B-61 (CFH-B) | Should / M | content-editor | Done |
+| Fichas CFH — Lote C (Geografia, Geologia, Licenciatura Intercultural Indígena) | B-61 (CFH-C) | Should / M | content-editor | Done |
+| Atualizar CLAUDE.md para refletir estado pós-Sprint 20 | docs | Could / P | content-editor | Done |
+
+### Critérios de aceite detalhados
+
+**B-61 (parcial CFH) — 9 fichas de curso**
+
+- [ ] 9 arquivos `docs/cursos/<slug>.md`, divididos em 3 lotes paralelos:
+  - **Lote A:** `psicologia`, `filosofia`, `historia`.
+  - **Lote B:** `antropologia`, `ciencias-sociais`, `museologia`.
+  - **Lote C:** `geografia`, `geologia`, `licenciatura-intercultural-indigena`.
+- [ ] Frontmatter com `centro: CFH` em todos; CAs reaproveitados de `docs/centros/cfh.md`
+      (CALPsi, CAFIL, CALH, CALANT, CALCS, CAMUS, CALIGEO — Geologia e Licenciatura como `~`).
+- [ ] Coordenadores de curso: todos `~` (não publicados em fontes verificadas) — **nunca inventar**.
+- [ ] Atléticas CFH: `~` — nenhuma atlética verificada encontrada no Sprint 18.
+- [ ] Campos sem fonte confirmada como `~` (null YAML) no frontmatter, nunca texto verboso.
+- [ ] Grau/turno/duração via Guia de Cursos UFSC ou site do departamento; incertezas como `_A preencher_`.
+- [ ] Licenciatura Intercultural Indígena: ficha normal, slug `licenciatura-intercultural-indigena`,
+      todos os campos de coordenação e CA como `~` (dados não publicados).
+- [ ] `/centros/cfh` passa a exibir os 9 cursos com destino válido; build gera as 9 páginas.
+
+**Docs — CLAUDE.md atualizado**
+
+- [ ] Seção "Próximos passos" atualizada para refletir o estado real pós-Sprint 20 (não mais "pós-Sprint 16").
+- [ ] Lista dos centros publicados (8) e próximos passos reais (CFH fichas → CCB).
+
+### Ordem de execução e dependências (tracer-bullet vertical slices)
+
+```
+Wave 1 — 3 content-editors em paralelo (arquivos disjuntos, sem dependências entre lotes):
+  B-61 (CFH-A)  content-editor A  — docs/cursos/{psicologia,filosofia,historia}.md
+  B-61 (CFH-B)  content-editor B  — docs/cursos/{antropologia,ciencias-sociais,museologia}.md
+  B-61 (CFH-C)  content-editor C  — docs/cursos/{geografia,geologia,licenciatura-intercultural-indigena}.md
+
+Wave 2 — após Wave 1 (seam pré-acordado — lint + build + Playwright):
+  tester — npm run lint + npm run build (espera ≥ 88 páginas SSG) + Playwright 8/8
+
+Wave 3 — em paralelo com Wave 2 (zero dependência de código):
+  content-editor D — atualização CLAUDE.md "Próximos passos"
+```
+
+### Fontes oficiais (B-61/CFH)
+
+Dados-base em `docs/centros/cfh.md` (CAs, eventos). Complementar com:
+- Psicologia: <https://psicologia.ufsc.br/>
+- Filosofia: <https://filosofia.ufsc.br/>
+- História: <https://historia.paginas.ufsc.br/>
+- Antropologia: <https://antropologia.paginas.ufsc.br/>
+- Ciências Sociais: <https://cienciassociais.ufsc.br/>
+- Museologia: <https://museologia.ufsc.br/> (e-mail: museologia@contato.ufsc.br)
+- Geografia: <https://geografia.ufsc.br/>
+- Geologia: <https://geologia.ufsc.br/>
+- Licenciatura Intercultural: <https://cfh.ufsc.br/>
+- Guia de Cursos: <https://guiadecursos.ufsc.br/>
+
+> Fetch a `*.ufsc.br` costuma dar 403 neste ambiente — usar WebSearch cruzando fontes; nunca inventar.
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (SSG com ≥ 88 páginas — 79 atuais + 9 novas fichas CFH)
+- [ ] Playwright sem regressões (8/8)
+- [ ] `/centros/cfh` mostra os 9 cursos; todos os 8 centros publicados com fichas completas
+- [ ] CLAUDE.md "Próximos passos" atualizado para o estado real pós-Sprint 20
+- [ ] ui-ux-review dispensável (conteúdo servido pelo template existente — sem mudança de UI)
+- [ ] `docs/product-backlog.md` atualizado (B-61 → status final)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| B-60 (CCB, CED, CDS, Joinville, Araranguá) | "Terminar > começar": CFH fecha todas as fichas antes de abrir centros novos. |
+| B-73 (faq/checklist/mapa UI estruturada) | Baixa prioridade (páginas próprias já existem); fica para sprint de UX depois. |
+| #46 (enviar sugestões) | Bloqueado por decisão do mantenedor. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+
+### Retrospectiva do Sprint 21
+
+**Concluído em:** 2026-08-04
+
+**Entregue:**
+- **B-61 (CFH)** — 9 fichas: `psicologia`, `filosofia`, `historia`, `antropologia`, `ciencias-sociais`,
+  `museologia`, `geografia`, `geologia`, `licenciatura-intercultural-indigena`.
+- **Marco:** todos os 8 centros publicados (CTC, CCA, CSE, CCE, CCS, CCJ, CFM, CFH) agora têm fichas
+  de curso completas — **50 fichas no total**. B-61 fechado ✅.
+- **Bônus:** CA de Geologia (CAMP / @geologiaufsc / camp.ufsc.br) descoberto durante pesquisa —
+  dado ausente em `cfh.md`; atualizado durante o sprint-review.
+- **CLAUDE.md** atualizado: seção "Próximos passos" reflete o estado real pós-Sprint 20.
+- Coordenadores CFH: todos `~` (política correta — não publicados); turno da Licenciatura Intercultural
+  tratado como `~` com explicação no corpo (regime de Pedagogia da Alternância).
+
+**Verificações finais:** lint ✅ · build **88 páginas** SSG ✅ (9 fichas novas) · Playwright 8/8 ✅.
+ui-ux-review dispensado (sprint 100% de conteúdo).
+
+**O que foi bem:**
+- Aplicação da estratégia de tracer-bullet vertical slices (Matt Pocock): 3 lotes paralelos →
+  cada um entregou fichas completas de ponta a ponta (docs/ → render → Playwright) sem bloquear os demais.
+- Lote C foi além do esperado: encontrou o CA de Geologia (CAMP) que estava `_A preencher_` no cfh.md.
+- Sprint focado ("terminar > começar"): B-61 100% encerrado antes de abrir B-60.
+
+**Pendências / follow-up:**
+- **B-60** — próximos centros: CCB (Ciências Biológicas), CED (Educação), CDS (Desportos e Saúde),
+  campus Joinville e campus Araranguá.
+- **B-73** — UI estruturada das seções faq/checklist/mapa (baixa prioridade; páginas próprias já existem).
+- **#46** — segue bloqueado aguardando decisão de abordagem do mantenedor.
+
+---
+
 ## Sprint 20 — Fichas de curso do CFM e do CCJ (v1.14)
 
 **Objetivo:** Dar fichas de curso aos centros publicados no Sprint 18 que já têm dados de coordenação

@@ -142,7 +142,7 @@ O CFH oferece nove cursos de graduação:
 | Filosofia | Centro Acadêmico Livre de Filosofia | CAFIL | [@cafil_ufsc](https://www.instagram.com/cafil_ufsc/) |
 | Antropologia | Centro Acadêmico de Antropologia | CALANT | [@calant.ufsc](https://www.instagram.com/calant.ufsc/) |
 | Museologia | Centro Acadêmico Livre de Museologia | CAMUS | _A preencher_ — verificar via [Facebook do CAMUS](https://www.facebook.com/camusufsc/) |
-| Geologia | _A preencher_ — não encontrado em fontes verificadas | _A preencher_ | _A preencher_ |
+| Geologia | Centro Acadêmico Martelo de Prata | CAMP | [@geologiaufsc](https://www.instagram.com/geologiaufsc/) · [camp.ufsc.br](https://camp.ufsc.br/) |
 
 > Fontes: perfis verificados no Instagram e Facebook (verificado em agosto/2026)
 
