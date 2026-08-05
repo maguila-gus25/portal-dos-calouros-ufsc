@@ -134,7 +134,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.15** — Fichas dos 9 cursos do CFH — todos os 8 centros publicados com fichas completas (50 fichas total) (Sprint 21)
 - [x] **v1.16** — CCB publicado (Ciências Biológicas); UI estruturada das seções FAQ, checklist e mapa — B-73 ✅ fechado (Sprint 22)
 - [x] **v1.17** — CED publicado (Pedagogia, Ed. do Campo, Arquivologia, Biblioteconomia) + CDS publicado (Educação Física) — 11 centros (Sprint 23)
-- [ ] **Próximo** — Campi Joinville e Araranguá (B-60)
+- [x] **v1.18** — CTJ/Joinville (8 cursos) + CTS/Araranguá (5 cursos) — 13 centros, B-60 ✅ fechado (Sprint 24)
+- [ ] **Próximo** — Marcadores CTJ/CTS no mapa; histórias de veteranos (B-13); ou início da v2.0 (banco + auth)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 

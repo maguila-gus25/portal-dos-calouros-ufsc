@@ -48,6 +48,8 @@ Fichas de centros fora do Campus Trindade, com informações de localização, c
 - [Centro de Ciências Jurídicas (CCJ) — Campus Trindade](centros/ccj.md)
 - [Centro de Filosofia e Ciências Humanas (CFH) — Campus Trindade](centros/cfh.md)
 - [Centro de Ciências Físicas e Matemáticas (CFM) — Campus Trindade](centros/cfm.md)
+- [Centro Tecnológico de Joinville (CTJ) — Campus Joinville](centros/ctj.md)
+- [Centro de Ciências, Tecnologias e Saúde (CTS) — Campus Araranguá](centros/cts.md)
 
 ### Cursos do CCA (Itacorubi)
 
@@ -72,6 +74,25 @@ Fichas de centros fora do Campus Trindade, com informações de localização, c
 - [Medicina](cursos/medicina.md)
 - [Nutrição](cursos/nutricao.md)
 - [Odontologia](cursos/odontologia.md)
+
+### Cursos do CTJ (Campus Joinville)
+
+- [Ciência e Tecnologia (CTJ)](cursos/ciencia-e-tecnologia-ctj.md)
+- [Engenharia Aeroespacial](cursos/engenharia-aeroespacial.md)
+- [Engenharia Automotiva](cursos/engenharia-automotiva.md)
+- [Engenharia Civil de Infraestrutura](cursos/engenharia-civil-de-infraestrutura.md)
+- [Engenharia de Transportes e Logística](cursos/engenharia-de-transportes-e-logistica.md)
+- [Engenharia Ferroviária e Metroviária](cursos/engenharia-ferroviaria-e-metroviaria.md)
+- [Engenharia Mecatrônica](cursos/engenharia-mecatronica.md)
+- [Engenharia Naval](cursos/engenharia-naval.md)
+
+### Cursos do CTS (Campus Araranguá)
+
+- [Engenharia de Computação (Araranguá)](cursos/engenharia-de-computacao-ara.md)
+- [Engenharia de Energia](cursos/engenharia-de-energia.md)
+- [Fisioterapia](cursos/fisioterapia.md)
+- [Medicina (Araranguá)](cursos/medicina-ara.md)
+- [Tecnologias da Informação e Comunicação (TIC)](cursos/tic.md)
 
 ## Projeto
 - 🏗️ [Arquitetura](arquitetura.md) — plataforma React + Python (stack, API, deploy)

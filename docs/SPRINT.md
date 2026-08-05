@@ -4,6 +4,153 @@
 
 ---
 
+## Sprint 24 — CTJ (Joinville) + ARA (Araranguá) publicados — B-60 fechado (v1.18)
+
+**Objetivo:** Publicar os dois campi restantes do B-60 como vertical slices completos — o **CTJ**
+(Centro Tecnológico de Joinville) com suas engenharias e o **ARA/CTE** (Campus Araranguá) com seus
+cursos de saúde, computação e energia. Após este sprint: **B-60 ✅ fechado**, E7 concluído,
+todos os campi da UFSC Florianópolis cobertos.
+
+Sprint content-only: loader `listCourses()` e `listCenters()` detectam os novos arquivos
+automaticamente — nenhum código novo necessário. Mapa **não** entra neste sprint: marcadores de
+CTJ/ARA requerem coordenadas geográficas verificadas pelo mantenedor.
+
+Rastreabilidade GitHub: #60 (CTJ), #61 (ARA), #32 (umbrella B-60).
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CTJ — centro + fichas dos cursos de Joinville | B-60 (CTJ) | Should / M | content-editor | Done |
+| ARA — centro + fichas dos cursos de Araranguá | B-60 (ARA) | Should / M | content-editor | Done |
+
+### Critérios de aceite detalhados
+
+**B-60 (CTJ) — vertical slice completo**
+
+- [ ] `docs/centros/ctj.md` com frontmatter YAML: `slug: ctj`,
+      `titulo: "Centro Tecnológico de Joinville (CTJ)"`, coordenações (diretor/a, vice), e-mail,
+      CA(s), atlética(s), links úteis — tudo com fonte oficial (`ctj.ufsc.br`).
+- [ ] Centro marcado claramente como **Campus Joinville** (fora do campus Trindade).
+- [ ] Uma ficha `docs/cursos/<slug>.md` por curso de Joinville com `centro: CTJ`.
+      Cursos a verificar via `guiadecursos.ufsc.br` e `ctj.ufsc.br/graduacao/`:
+      Engenharia Automotiva, Engenharia Civil de Infraestrutura, Engenharia de Computação,
+      Engenharia Ferroviária e Metroviária, Engenharia de Infraestrutura, Engenharia Mecatrônica,
+      Engenharia Naval — confirmar lista completa e slugs únicos (evitar colisão com cursos
+      homônimos de outros centros, ex.: `computacao-ctj.md` se necessário).
+- [ ] Campos sem fonte verificada como `~` — **nunca inventar dados**.
+- [ ] `/centros/ctj` renderiza o centro + cursos com links válidos.
+- [ ] Build inclui todas as novas páginas SSG.
+
+**B-60 (ARA) — vertical slice completo**
+
+- [ ] Verificar o nome e slug correto do centro de Araranguá:
+      `ara.ufsc.br` ou `cte.ufsc.br` — pode ser CTE (Centro de Ciências, Tecnologias e Saúde).
+      Usar o slug e título que correspondem à nomenclatura oficial atual.
+- [ ] `docs/centros/ara.md` (ou `cte.md`) com frontmatter YAML adequado, coordenações,
+      CA(s), atlética(s), links úteis — tudo com fonte oficial.
+- [ ] Centro marcado claramente como **Campus Araranguá** (fora do campus Trindade).
+- [ ] Uma ficha por curso com `centro: ARA` (ou slug correto).
+      Cursos a verificar: Engenharia de Computação, Engenharia de Energia, Fisioterapia,
+      Medicina, Tecnologias da Informação e Comunicação (TIC) — confirmar via `guiadecursos.ufsc.br`.
+      Atenção: se "Engenharia de Computação" já existe como slug (ex. de Joinville ou outro centro),
+      usar sufixo distinguidor no slug.
+- [ ] Campos sem fonte verificada como `~`.
+- [ ] `/centros/ara` (ou `/centros/cte`) renderiza o centro + cursos com links válidos.
+
+### Conflito de slugs — atenção especial
+
+Alguns cursos podem ter nomes idênticos em campi diferentes (ex.: "Engenharia de Computação" em CTJ
+e em ARA). Regra: primeiro a ser criado usa o slug simples; o segundo usa sufixo de campus
+(ex.: `engenharia-de-computacao-ctj.md` e `engenharia-de-computacao-ara.md`). O content-editor
+deve verificar `docs/cursos/` antes de nomear qualquer arquivo.
+
+### Ordem de execução (tracer-bullet — arquivos completamente disjuntos)
+
+```
+Wave 1 — paralelo (zero dependência entre CTJ e ARA):
+  content-editor A — docs/centros/ctj.md
+                     docs/cursos/{eng-automotiva, eng-civil-infraestrutura, eng-computacao-ctj?,
+                                  eng-ferroviaria, eng-infraestrutura, eng-mecatronica,
+                                  eng-naval, ...}.md
+  content-editor B — docs/centros/ara.md (ou cte.md)
+                     docs/cursos/{eng-computacao-ara?, eng-energia, fisioterapia, medicina,
+                                  tic, ...}.md
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (espera ≥ 107 páginas: 97 + pelo menos 10 novas)
+                     + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária neste sprint.
+> Mapa: marcadores de CTJ/ARA entram em sprint futuro quando o mantenedor fornecer as
+> coordenadas geográficas verificadas.
+
+### Fontes oficiais
+
+**CTJ (Campus Joinville):**
+- Site do CTJ: <https://ctj.ufsc.br/>
+- Graduação: <https://ctj.ufsc.br/graduacao/>
+- Guia de Cursos: <https://guiadecursos.ufsc.br/>
+
+**ARA (Campus Araranguá):**
+- Site do campus: <https://ara.ufsc.br/>
+- Guia de Cursos: <https://guiadecursos.ufsc.br/>
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 107 páginas SSG)
+- [ ] Playwright sem regressões (8/8)
+- [ ] `/centros/ctj` e `/centros/ara` (ou `/centros/cte`) exibem os cursos com links válidos
+- [ ] `docs/product-backlog.md` atualizado — B-60 ✅, E7 concluído
+- [ ] `README.md` atualizado (v1.18 no roadmap)
+- [ ] Issues GitHub #60 e #61 fechadas; #32 (umbrella) fechada
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Marcadores CTJ/ARA no mapa | Requer coordenadas geográficas verificadas pelo mantenedor |
+| B-13 / B-08 / B-10 | Bloqueados — sem submissões reais de veteranos |
+| B-37 / B-50 / E13 | Horizonte v2 |
+
+### Retrospectiva do Sprint 24
+
+**Concluído em:** 2026-08-05
+
+**Entregue:**
+- **B-60 (CTJ)** — vertical slice completo: `docs/centros/ctj.md` + 8 fichas de curso.
+  CTJ é o 12º centro publicado. Descoberta: o campus Joinville tem **8 cursos** (não 7 esperados) —
+  inclui Ciência e Tecnologia e Engenharia Aeroespacial, não presentes na lista inicial.
+  Diretor (Prof. Diego Santos Greff) e vice-diretora (Profª. Elisete Zagheni) confirmados.
+  Coordenadores de todos os 8 cursos encontrados em `joinville.ufsc.br`.
+  Slug `ciencia-e-tecnologia-ctj.md` com sufixo para evitar ambiguidade futura.
+
+- **B-60 (CTS/ARA)** — vertical slice completo: `docs/centros/cts.md` + 5 fichas de curso.
+  CTS é o 13º centro publicado. Nome oficial: **Centro de Ciências, Tecnologias e Saúde (CTS)**
+  (não "ARA" — slug correto é `cts`). Diretora Melissa Negro Dellacqua (mandato 2025–2028)
+  confirmada. Dois slugs com sufixo `-ara`: `medicina-ara.md` (colisão com `medicina.md` do CCS)
+  e `engenharia-de-computacao-ara.md`.
+
+- **B-60 ✅ FECHADO** — todos os 13 agrupamentos de centros publicados.
+- **E7 (Expansão de centros) ✅ CONCLUÍDO** — épico finalizado.
+
+**Verificações finais:** lint ✅ · build **112 páginas** SSG ✅ · Playwright **8/8** ✅ ·
+ui-ux-review não necessária (sprint content-only).
+
+**O que foi bem:**
+- Paralelismo Wave 1 perfeito: dois content-editors em arquivos completamente disjuntos.
+- CTJ superou expectativas: 8 cursos encontrados (esperávamos ~7), incluindo Aeroespacial.
+- CTS: nome oficial verificado — evitou publicar com slug errado `ara`.
+- Gestão de colisão de slugs (`medicina-ara`, `engenharia-de-computacao-ara`) executada
+  autonomamente pelos content-editors sem intervenção do mantenedor.
+
+**Pendências / follow-up:**
+- Marcadores de CTJ e CTS no mapa interativo — requer coordenadas do mantenedor.
+- **B-08 / B-13 / B-10** — bloqueados sem submissões reais de veteranos.
+- Próximo: decidir próximo épico com o mantenedor (B-37 + B-50 + E13 para v2.0, ou outro).
+
+---
+
 ## Sprint 23 — CED + CDS publicados (v1.17)
 
 **Objetivo:** Publicar dois centros em paralelo como vertical slices completos — o **CED** (Centro de
