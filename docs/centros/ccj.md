@@ -23,9 +23,13 @@ O Centro de Ciências Jurídicas (CCJ) é o centro de ensino da UFSC dedicado ao
 ## Direção (2026)
 
 - **Diretora:** Profª. Drª. Carolina Medeiros Bahia
-- **Vice-Diretor(a):** _A preencher_ — verificar em <https://ccj.ufsc.br/equipe-2/>
+  - E-mail institucional: carolina.bahia@ufsc.br
+  - Portaria: nº 914/2023/GR
+- **Vice-Diretora:** Profª. Drª. Melissa Ely Melo
+  - E-mail institucional: melissa.melo@ufsc.br
+  - Portaria: nº 916/2023/GR
 
-> Fonte: <https://ccj.ufsc.br/equipe-2/> (verificado em agosto/2026)
+> Fonte: <https://ccj.ufsc.br/direcao/equipe/> (verificado em agosto/2026)
 
 ---
 
@@ -43,8 +47,10 @@ O CCJ oferece um curso de graduação:
 
 ### Direito
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://ccj.ufsc.br/coordenacao/equipe/>
-- **E-mail da coordenação:** direito@contato.ufsc.br
+- **Coordenador:** Prof. Francisco Quintanilha Véras Neto
+- **Vice-Coordenadora:** Profª. Chiavelli Facenda Falavigno
+- **E-mail institucional da coordenação (contato oficial):** direito@contato.ufsc.br
+  - Nota: o site <https://ccj.ufsc.br/coordenacao/equipe/> exibe e-mails Gmail pessoais dos professores; o contato institucional para alunos é `direito@contato.ufsc.br`
 - **Telefone:** (48) 3721-5601 / (48) 3721-5603 / (48) 3721-5604
 - **Departamento de Direito:** dir@contato.ufsc.br — (48) 3721-5602
 - **Localização:** Centro de Ciências Jurídicas, Campus Universitário, Trindade, Florianópolis — CEP 88040-900
@@ -120,5 +126,13 @@ Festa tradicional de recepção aos calouros de Direito, realizada no Centro de 
 - [PRAE — Pró-Reitoria de Permanência e Assuntos Estudantis](https://prae.ufsc.br/)
 
 ---
+
+## Fontes consultadas
+
+- <https://ccj.ufsc.br/direcao/equipe/> — diretora Carolina Medeiros Bahia (Portaria 914/2023/GR) e vice-diretora Melissa Ely Melo (Portaria 916/2023/GR), e-mails institucionais (verificado em agosto/2026)
+- <https://ccj.ufsc.br/coordenacao/equipe/> — coordenador Francisco Quintanilha Véras Neto e vice-coordenadora Chiavelli Facenda Falavigno; e-mails disponíveis no site são Gmail pessoais, não publicados aqui (verificado em agosto/2026)
+- <https://ccj.ufsc.br/canais-de-atendimento/> — e-mail geral, telefones da direção, NPJ e PPGD (verificado em agosto/2026)
+- <https://caxif.ufsc.br/> e Wikipedia — CAXIF (verificado em agosto/2026)
+- Perfil Instagram [@aadufsc](https://www.instagram.com/aadufsc/) — atlética (verificado em agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

@@ -2,7 +2,7 @@
 slug: ctc
 titulo: "Centro Tecnológico (CTC)"
 descricao: "Centro com 13 cursos de engenharia, arquitetura e computação. Localizado no Campus Trindade, em Florianópolis."
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # Centro Tecnológico (CTC)
@@ -17,11 +17,13 @@ O CTC é o maior centro da UFSC em número de cursos de engenharia e tecnologia.
 
 - **Site oficial:** <https://ctc.ufsc.br/>
 - **Portal do estudante CTC:** <https://portal.ctc.ufsc.br/alunos/>
-- **E-mail geral:** _A preencher_ — verificar em <https://ctc.ufsc.br/contato/>
-- **Telefone da direção:** _A preencher_ — verificar em <https://ctc.ufsc.br/contato/>
-- **Instagram:** _A preencher_ — verificar busca por `@ctc.ufsc` ou `@centrootecnologicoufsc`
+- **E-mail geral (Secretaria da Direção):** secretaria.ctc@contato.ufsc.br
+- **Telefone da Secretaria da Direção:** (48) 3721-9339 / (48) 3721-9340 / (48) 3721-9343 / (48) 3721-9837
+- **Portaria Hall CTC:** (48) 3721-9392
+- **Horário de atendimento:** segunda a sexta, 8h às 17h
+- **Instagram:** [@ctc_ufsc](https://www.instagram.com/ctc_ufsc/)
 
-> Fonte: <https://ctc.ufsc.br/> (verificado em julho/2026)
+> Fonte: <https://portal.ctc.ufsc.br/> (verificado em agosto/2026)
 
 ---
 
@@ -109,4 +111,11 @@ Liga organizadora: [LAUFSC](https://www.instagram.com/laufsc/) — liga das atl�
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+## Fontes consultadas
+
+- <https://portal.ctc.ufsc.br/> — e-mail da secretaria, telefones e Instagram da direção (verificado em agosto/2026)
+- <https://portasabertas.ctc.ufsc.br/localizacao/> — endereço e e-mail do projeto CTC de Portas Abertas
+- Busca web: "CTC UFSC Instagram @ctc_ufsc" — confirmado perfil [@ctc_ufsc](https://www.instagram.com/ctc_ufsc/) (agosto/2026)
+- Sites oficiais de cada coordenação — e-mails e telefones das coordenações (julho/2026)
+
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
