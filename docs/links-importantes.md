@@ -16,7 +16,7 @@ julho/2026 — se algum quebrar, confirme e abra um Pull Request.
 | O que é | Para quê serve | Link |
 |---------|----------------|------|
 | **CAGR** (Controle Acadêmico da Graduação) | Notas, matrícula em disciplinas, histórico, atestados | <https://cagr.sistemas.ufsc.br/> |
-| **Moodle (presencial)** | Ambiente virtual das disciplinas presenciais | <https://moodle.ufsc.br/> |
+| **Moodle (presencial)** | Ambiente virtual das disciplinas presenciais | <https://presencial.moodle.ufsc.br/> |
 | **Moodle (EaD)** | Disciplinas a distância | <https://ead.moodle.ufsc.br/> |
 | **idUFSC** | Sua conta única de acesso aos sistemas | <https://idufsc.ufsc.br/> |
 | **E-mail institucional (@grad.ufsc.br)** | Como solicitar | <https://calouros.ufsc.br/email/> |

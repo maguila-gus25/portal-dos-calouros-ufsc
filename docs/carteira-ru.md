@@ -4,7 +4,7 @@ O **RU** é o restaurante universitário da UFSC — refeição muito barata (e 
 para quem tem isenção). Para comer, você precisa estar cadastrado no sistema do RU.
 Este é o guia de sobrevivência.
 
-> ✅ Informações dos canais oficiais (PRAE e RU), verificadas em julho/2026.
+> ✅ Informações dos canais oficiais (PRAE e RU), verificadas em agosto/2026.
 > **Valores e horários mudam** — confirme sempre em <https://ru.ufsc.br/>.
 
 ## Links oficiais
@@ -31,9 +31,9 @@ Este é o guia de sobrevivência.
 
 ## Valores e refeições
 
-- **Refeição subsidiada para estudante:** historicamente **R$ 1,50** (valor
-  subsidiado pela universidade). ⚠️ **Confirme o valor vigente** em
-  <https://ru.ufsc.br/faq/> — pode ter sido reajustado.
+- **Refeição subsidiada para estudante (G1):** **R$ 1,50** (valor subsidiado
+  pela universidade — confirmado em agosto/2026 em ru.ufsc.br/venda-de-passe/).
+  Confirme o valor vigente em <https://ru.ufsc.br/venda-de-passe/> caso haja reajuste.
 - **Refeições servidas:** almoço e jantar.
 - **Isenção (gratuidade):** para quem tem **Cadastro PRAE** aprovado (renda
   deferida). Solicita-se em <https://beneficiosprae.sistemas.ufsc.br/>. Detalhes
@@ -70,4 +70,4 @@ pelo **DCE**:
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

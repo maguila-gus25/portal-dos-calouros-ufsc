@@ -6,7 +6,7 @@ e — sim — as festas mais famosas do semestre. Seguir a atlética do seu curs
 a forma mais rápida de entrar na vida universitária.
 
 > Fontes: Instagrams oficiais das próprias atléticas e páginas oficiais dos
-> cursos. Última verificação: julho/2026.
+> cursos. Última verificação: agosto/2026.
 
 ## Atléticas por curso (CTC)
 
@@ -62,4 +62,4 @@ desde 2014.
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
