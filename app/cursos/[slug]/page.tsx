@@ -20,8 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const course = getCourse(slug);
   if (!course) return { title: "Curso não encontrado" };
-  const title = `${course.title} — Portal dos Calouros UFSC`;
-  const description = `${course.title} — coordenação, atlética, CA e dicas para calouros da UFSC.`;
+  const titleBase = course.centro
+    ? `${course.title} — ${course.centro}`
+    : course.title;
+  const title = `${titleBase} — Portal dos Calouros UFSC`;
+  const grauPart = course.grau ? ` (${course.grau})` : "";
+  const centroPart = course.centro ? ` no ${course.centro}` : "";
+  const description = `Ficha do curso de ${course.title}${grauPart}${centroPart} da UFSC — coordenação, atlética, CA e dicas para calouros.`;
   return {
     title,
     description,
@@ -58,7 +63,7 @@ export default async function CoursePage({ params }: Props) {
   const coordenacao = getCoordenacao(course.metadata);
 
   return (
-    <article className="space-y-4">
+    <article className="space-y-4" aria-labelledby="titulo-curso">
       <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os cursos
@@ -67,7 +72,7 @@ export default async function CoursePage({ params }: Props) {
       <header className="card p-6 sm:p-8">
         <div className="flex flex-col gap-1">
           <p className="text-xs font-medium text-primary uppercase tracking-wide">{course.centro}</p>
-          <h1 className="text-2xl font-bold leading-snug">{course.title}</h1>
+          <h1 id="titulo-curso" className="text-2xl font-bold leading-snug">{course.title}</h1>
           <p className="text-muted-foreground text-sm mt-0.5">
             {[course.grau, course.turno].filter(Boolean).join(" · ")}
           </p>
@@ -95,7 +100,14 @@ export default async function CoursePage({ params }: Props) {
               )}
               {coordenacao.site && (
                 <ContactItem icon={Globe} label="Site" className="sm:col-span-2">
-                  <a href={coordenacao.site} target="_blank" rel="noopener noreferrer">{coordenacao.site}</a>
+                  <a
+                    href={coordenacao.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Site da coordenação de ${course.title} (abre em nova aba)`}
+                  >
+                    {coordenacao.site}
+                  </a>
                 </ContactItem>
               )}
             </dl>

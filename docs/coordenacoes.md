@@ -7,7 +7,7 @@ créditos e a maior parte da burocracia acadêmica.
 > ✅ Os contatos abaixo foram coletados dos **sites oficiais de cada curso** (links
 > na coluna "Fonte"). Telefones e e-mails mudam com o tempo — se encontrar algo
 > desatualizado, confirme no site oficial e abra um Pull Request.
-> Última verificação: julho/2026.
+> Última verificação: agosto/2026.
 
 ## Como ler esta página
 
@@ -121,4 +121,4 @@ Mais links desses setores em [Links importantes](links-importantes.md).
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

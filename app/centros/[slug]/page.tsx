@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const center = getCenter(slug);
   if (!center) return { title: "Centro não encontrado" };
   const title = `${center.title} — Portal dos Calouros UFSC`;
-  const description = center.description;
+  const description =
+    center.description ||
+    `Informações sobre o ${center.title} da UFSC para calouros — cursos, coordenações e dicas.`;
   return {
     title,
     description,
@@ -43,14 +45,14 @@ export default async function CenterPage({ params }: Props) {
   );
 
   return (
-    <article className="space-y-4">
+    <article className="space-y-4" aria-labelledby="titulo-centro">
       <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os centros
       </Link>
 
       <header className="card p-6 sm:p-8">
-        <h1 className="text-2xl font-bold leading-snug">{center.title}</h1>
+        <h1 id="titulo-centro" className="text-2xl font-bold leading-snug">{center.title}</h1>
         <p className="text-muted-foreground mt-1">{center.description}</p>
       </header>
 

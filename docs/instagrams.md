@@ -1,7 +1,7 @@
 # 📸 Instagrams e perfis para acompanhar
 
 A UFSC se comunica MUITO pelas redes. Seguir os perfis certos evita perder prazo,
-festa e oportunidade. Todos os @s abaixo foram verificados em julho/2026.
+festa e oportunidade. Todos os @s abaixo foram verificados em agosto/2026.
 Perfis falsos existem — confirme sempre no próprio Instagram antes de compartilhar.
 
 ## Oficiais da universidade
@@ -77,4 +77,4 @@ Fonte: [Atléticas e festas](atleticas-e-festas.md).
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

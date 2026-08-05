@@ -11,14 +11,14 @@ coordenacao:
   site: https://geltro.ufsc.br/
 atletica: Ateel — @ateelufsc
 instagram_curso: "@caeel.ufsc"
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia Eletrônica
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** curso bietápico — Bacharelado em Ciências Eletrônicas (mín. 6 semestres) + Engenharia Eletrônica (mín. 4 semestres adicionais); total mínimo de 10 semestres
 - **Página oficial do curso:** <https://geltro.ufsc.br/>
 - **Resumo:** Circuitos eletrônicos, dispositivos semicondutores, telecomunicações e sistemas embarcados.
 

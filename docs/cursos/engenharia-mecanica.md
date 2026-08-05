@@ -12,14 +12,14 @@ coordenacao:
   site: https://engenhariamecanica.paginas.ufsc.br/
 atletica: ATM UFSC — @atmufsc
 instagram_curso: "@emc.ufsc"
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia Mecânica
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** 10 semestres (período integral)
 - **Página oficial do curso:** <https://engenhariamecanica.paginas.ufsc.br/>
 - **Resumo:** Projeto de máquinas e mecanismos, termodinâmica, dinâmica dos fluidos e processos de manufatura.
 

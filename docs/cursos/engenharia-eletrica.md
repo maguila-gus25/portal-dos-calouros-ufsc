@@ -11,14 +11,14 @@ coordenacao:
   site: https://geel.ufsc.br/
 atletica: Ateel — @ateelufsc
 instagram_curso: "@caeel.ufsc"
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia Elétrica
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://geel.ufsc.br/>
 - **Resumo:** Geração, transmissão e uso de energia elétrica; sistemas de potência, automação e controle elétrico.
 

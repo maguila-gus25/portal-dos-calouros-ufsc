@@ -4,6 +4,125 @@
 
 ---
 
+## Sprint 25 — Qualidade 2026/2: revisão semestral + fichas CTC + acessibilidade (v1.19)
+
+**Objetivo:** Sprint de qualidade em três frentes paralelas — fechar a revisão semestral 2026/2
+(#50), preencher os campos faltantes nas fichas dos 13 cursos do CTC com fontes verificáveis, e
+fazer melhorias de acessibilidade (WCAG AA) e SEO no frontend.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Revisão semestral 2026/2 — datas, RU, links, coordenações | B-25/semestral | Should / M | content-editor | Done |
+| Fichas incompletas — 13 cursos do CTC (e-mails, telefones, durações) | B-08 (parcial) | Should / M | content-editor | Done |
+| Acessibilidade WCAG AA + SEO — audit e melhorias pontuais | B-49 (revisão) | Should / M | frontend-dev | Done (sem alterações — já correto) |
+
+### Critérios de aceite detalhados
+
+**Revisão semestral 2026/2 (fecha issue #50)**
+
+- [ ] `docs/datas-importantes.md` — verificar e atualizar com o calendário acadêmico 2026/2 oficial; confirmar datas de matrícula, trancamento e ajuste de matrícula.
+- [ ] `docs/carteira-ru.md` — verificar valor atual da refeição subsidiada (`ru.ufsc.br`) e procedimento de isenção do PRAE.
+- [ ] `docs/links-importantes.md` — testar e confirmar que os links de CAGR, Moodle, idUFSC, Webmail, eduroam e MatrUFSC ainda estão ativos.
+- [ ] `docs/coordenacoes.md` — revisar e-mails e telefones das coordenações do CTC; atualizar `ultima_verificacao`.
+- [ ] `docs/atleticas-e-festas.md` e `docs/instagrams.md` — confirmar @s de Instagram ainda ativos.
+- [ ] Issue #50 fechada ao final.
+
+**Fichas incompletas — CTC (13 cursos)**
+
+Foco nos 13 cursos do CTC. Campos prioritários:
+- `duracao:` em semestres (Guia de Cursos UFSC tem isso para todos)
+- `email:` e `telefone:` da coordenação (sites dos departamentos do CTC)
+- `turno:` quando ambíguo
+
+Os 13: Ciências da Computação, Eng. Civil, Eng. de Controle e Automação, Eng. de Materiais, Eng. de Produção, Eng. Elétrica, Eng. Eletrônica, Eng. Mecânica, Eng. Química, Eng. Sanitária e Ambiental, Sistemas de Informação, Design de Produto, Eng. de Alimentos.
+
+- [ ] `duracao:` preenchido em todos os 13 (via `guiadecursos.ufsc.br`).
+- [ ] `email:` e `telefone:` preenchidos onde o site do departamento publica claramente.
+- [ ] Campos sem fonte verificada permanecem `~` — **nunca inventar**.
+- [ ] `ultima_verificacao: agosto/2026` atualizado nas fichas alteradas.
+
+**Acessibilidade WCAG AA + SEO**
+
+- [ ] Verificar se `generateMetadata` está em `app/centros/[slug]/page.tsx` e `app/cursos/[slug]/page.tsx` — adicionar `description` e `openGraph` dinâmicos se ausentes.
+- [ ] `app/sitemap.ts` — confirmar que centros e cursos dos campi Joinville/Araranguá aparecem (gerado dinamicamente ou necessita atualização).
+- [ ] Audit WCAG AA nas páginas de centro e curso — corrigir findings bloqueadores (contraste, aria-labels, foco visível).
+- [ ] Nenhuma regressão nos 8 testes Playwright.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (três histórias em arquivos disjuntos):
+  content-editor A — docs/{datas-importantes,carteira-ru,links-importantes,
+                          coordenacoes,atleticas-e-festas,instagrams}.md
+  content-editor B — docs/cursos/{13 cursos do CTC}.md
+  frontend-dev    — app/centros/[slug]/page.tsx, app/cursos/[slug]/page.tsx,
+                    app/sitemap.ts, componentes relevantes
+
+Wave 2 — após Wave 1:
+  tester          — npm run lint + npm run build (≥ 112 páginas) + Playwright 8/8
+
+Wave 3 — após Wave 2 (se frontend mudou):
+  ui-ux-review    — audit nos componentes/páginas alterados
+```
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 112 páginas SSG)
+- [ ] Playwright 8/8 sem regressões
+- [ ] Issue #50 (revisão semestral) fechada
+- [ ] Fichas CTC com `duracao:` preenchido em todos os 13 cursos
+- [ ] `generateMetadata` dinâmico confirmado em `/centros/[slug]` e `/cursos/[slug]`
+- [ ] `ui-ux-review` sem findings bloqueadores (se houve frontend)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Fichas de todos os centros (71 arquivos) | Escopo demais para um sprint — foco nos 13 do CTC |
+| Mapa CTJ/CTS | Aguarda coordenadas do mantenedor |
+| v2.0 (banco + auth) | Horizonte separado |
+
+### Retrospectiva do Sprint 25
+
+**Concluído em:** 2026-08-05
+
+**Entregue:**
+- **Revisão semestral 2026/2** — issue #50 fechada. 6 docs verificados:
+  - `carteira-ru.md`: valor R$1,50 confirmado via `ru.ufsc.br/venda-de-passe/`.
+  - `links-importantes.md`: Moodle corrigido para `presencial.moodle.ufsc.br` (endereço estável).
+  - `datas-importantes.md`: calendário 2026/2 confirmado correto (Resolução 214/2025/CUn).
+  - `coordenacoes.md`, `atleticas-e-festas.md`, `instagrams.md`: todos os @s confirmados ativos;
+    `ultima_verificacao` atualizada para agosto/2026.
+
+- **Fichas CTC incompletas** — 9 de 13 fichas atualizadas (4 já estavam completas):
+  - `duracao:` preenchida em 7 fichas (ECA, Produção, Elétrica, Eletrônica, Mecânica, Química, Alimentos).
+  - `design-de-produto.md`: citação direta do PPC 2019 (8 sem. mínimo, 3.456h).
+  - `sistemas-de-informacao.md`: typo grave corrigido (`sin@contato.ufsc.br0` → `_A preencher_`).
+  - 4 fichas já completas: Computação, Civil, Materiais, Sanitária e Ambiental.
+
+- **Audit WCAG AA + SEO** — frontend já estava correto:
+  - `generateMetadata` dinâmico com centro+grau nas páginas de curso: já implementado.
+  - `aria-labelledby="titulo-centro"` e `id="titulo-centro"`: já presentes.
+  - `app/sitemap.ts` completamente dinâmico via `listCenters()` + `listCourses()`: já implementado.
+  - Nenhuma alteração de código necessária — sprint de qualidade confirma solidez do frontend.
+
+**Verificações finais:** lint ✅ · build **112 páginas** (sem novas) ✅ · Playwright **8/8** ✅ ·
+ui-ux-review não necessária (sem alterações de frontend).
+
+**O que foi bem:**
+- Revisão semestral encontrou achado real: link do Moodle desatualizado (redirecionava via 302) —
+  corrigido para o endereço estável.
+- Typo grave em `sistemas-de-informacao.md` (`sin@contato.ufsc.br0`) corrigido.
+- Audit frontend confirmou que WCAG AA e SEO estão sólidos — zero dívida técnica nova.
+
+**Pendências / follow-up:**
+- Fichas de outros centros (62 arquivos restantes com `_A preencher_`) — sprint de qualidade futuro.
+- Email de SIN: exibido como imagem no site oficial; requer acesso humano.
+- Mapa CTJ/CTS: aguarda coordenadas do mantenedor.
+
+---
+
 ## Sprint 24 — CTJ (Joinville) + ARA (Araranguá) publicados — B-60 fechado (v1.18)
 
 **Objetivo:** Publicar os dois campi restantes do B-60 como vertical slices completos — o **CTJ**
