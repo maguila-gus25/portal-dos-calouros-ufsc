@@ -21,7 +21,7 @@ ultima_verificacao: "julho/2026"
 ## Sobre o curso
 
 - **Grau / turno:** Bacharelado / Matutino (código 309) e Noturno (código 339)
-- **Duração:** _A preencher_ — verificar em <https://servicosocial.ufsc.br/descricao/> (a grade inclui estágio curricular obrigatório a partir da 6ª fase e TCC na 9ª fase, mas o total de semestres não foi confirmado por leitura direta da página)
+- **Duração:** 9 semestres — estágio obrigatório da 6ª à 8ª fase; TCC na 9ª fase
 - **Página oficial do curso:** <https://servicosocial.ufsc.br/>
 - **Resumo:** Forma assistentes sociais para atuação na formulação e execução de políticas e programas sociais nas áreas de saúde, educação, trabalho, justiça, assistência social e proteção a crianças, idosos e famílias.
 
@@ -42,9 +42,9 @@ ultima_verificacao: "julho/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** **CALISS** (Centro Acadêmico Livre de Serviço Social) — [@calissufsc](https://www.instagram.com/calissufsc/)
-- **Atlética:** _A preencher_ — não foi encontrada atlética específica do curso; verificar com o CALISS ([@calissufsc](https://www.instagram.com/calissufsc/))
-- **Empresa júnior:** _A preencher_
-- **Festa tradicional:** _A preencher_ — verificar com o CALISS ([@calissufsc](https://www.instagram.com/calissufsc/))
+- **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CALISS ([@calissufsc](https://www.instagram.com/calissufsc/))
+- **Empresa júnior:** _A preencher_ — não encontrado em agosto/2026
+- **Festa tradicional:** _A preencher_ — não encontrado em agosto/2026; verificar com o CALISS ([@calissufsc](https://www.instagram.com/calissufsc/))
 - **Instagrams / perfis:**
   - [@calissufsc](https://www.instagram.com/calissufsc/) — CALISS (Centro Acadêmico)
   - [@coordenacaodecursossoufsc](https://www.instagram.com/coordenacaodecursossoufsc/) — coordenação do curso
@@ -61,7 +61,8 @@ ultima_verificacao: "julho/2026"
 
 ---
 
-**Fontes consultadas (julho/2026):**
+**Fontes consultadas (julho/2026 — atualizado agosto/2026):**
 - `docs/centros/cse.md` — dados de coordenação, secretaria, CA e Instagram já verificados
-- <https://servicosocial.ufsc.br/> e <https://servicosocial.ufsc.br/descricao/> — grau, turnos e resumo do curso (acesso indireto via busca; página não carregou diretamente na verificação)
+- <https://servicosocial.ufsc.br/> e <https://servicosocial.ufsc.br/descricao/> — grau, turnos e resumo do curso
+- <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=309> — currículo 309 (matutino); duração 9 semestres confirmada por estrutura do currículo (verificado agosto/2026)
 - <https://www.instagram.com/calissufsc/> — CALISS

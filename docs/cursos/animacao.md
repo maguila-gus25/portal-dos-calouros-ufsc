@@ -5,7 +5,7 @@ centro: CCE
 grau: Bacharelado
 turno: Integral
 coordenacao:
-  nome: Gabriel de Souza Prime
+  nome: Gabriel de Souza Prim
   email: animacao@contato.ufsc.br
   telefone: "(48) 3721-3728"
   sala: Bloco A, 1º andar, Sala 140
@@ -21,7 +21,7 @@ ultima_verificacao: "agosto/2026"
 ## Sobre o curso
 
 - **Grau / turno:** Bacharelado / Integral
-- **Duração:** _A preencher_ — uma busca indireta (página oficial retornou erro 403 na verificação direta) indicou duração mínima de 7 semestres e máxima de 14 semestres, número compatível com a "duração média de três anos e meio" citada no Guia de Cursos da UFSC. Recomenda-se reconfirmar antes de publicar como definitivo, acessando diretamente <https://cagr.sistemas.ufsc.br/> ou <https://animacao.ufsc.br/>.
+- **Duração:** 7 fases (aproximadamente 3,5 anos) — confirmado em <https://vestibularunificado2024.ufsc.br/animacao/> e corroborado pelo Guia de Cursos UFSC (<https://guiadecursos.ufsc.br/animacao/>).
 - **Página oficial do curso:** <https://animacao.ufsc.br/>
 - **Resumo:** Forma profissionais para projetar, desenvolver e implementar produtos audiovisuais utilizando diferentes técnicas de animação. Curso criado em 2015, com primeira turma em 2016.1.
 
@@ -29,19 +29,19 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador:** Gabriel de Souza Prime — _A preencher_ (subcoordenador identificado em busca indireta: Nicholas Bruggner Grassi; recomenda-se reconfirmar em <https://cce.ufsc.br/coordenadoria-dos-cursos-de-graduacao/> ou <https://animacao.ufsc.br/>, pois o acesso direto às páginas retornou erro 403 durante a verificação)
+- **Coordenador:** Gabriel de Souza Prim (eleito em agosto/2025 — confirmado em <https://animacao.ufsc.br/>); subcoordenador: Nicholas Bruggner Grassi
 - **E-mail da secretaria:** animacao@contato.ufsc.br (secretaria compartilhada com Design e Design de Produto — Departamento de Expressão Gráfica, EGR)
 - **Telefone da secretaria:** (48) 3721-3728
 - **Sala:** Bloco A, 1º andar, Sala 140
-- **Atendimento:** _A preencher_ — verificar em <https://animacao.ufsc.br/>
+- **Atendimento:** _A preencher_ — não encontrado em agosto/2026
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
 - **Centro Acadêmico:** **CADe** — Centro Acadêmico de Design (compartilhado com Design e Design de Produto) — [@cade.ufsc](https://www.instagram.com/cade.ufsc/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CADe ([@cade.ufsc](https://www.instagram.com/cade.ufsc/))
-- **Empresa júnior:** _A preencher_
+- **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CADe ([@cade.ufsc](https://www.instagram.com/cade.ufsc/))
+- **Empresa júnior:** **Uipi** — Empresa Júnior de Design e Animação da UFSC — [@uipi.design](https://www.instagram.com/uipi.design/) — <https://uipi.ufsc.br/>
 - **Instagrams / perfis:**
   - [@cade.ufsc](https://www.instagram.com/cade.ufsc/) — CADe (Centro Acadêmico de Design, Design de Produto e Animação)
 
@@ -59,7 +59,9 @@ ultima_verificacao: "agosto/2026"
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — dados de coordenação compartilhada (EGR), secretaria, CA e atlética já verificados (julho/2026)
-- <https://animacao.ufsc.br/> — página oficial do curso (acesso direto bloqueado com erro 403 durante verificação; dados obtidos por indexação de busca)
+- <https://animacao.ufsc.br/> — coordenador Gabriel de Souza Prim (eleito agosto/2025) e subcoordenador Nicholas Bruggner Grassi
+- <https://vestibularunificado2024.ufsc.br/animacao/> — duração: 7 fases
 - <https://vestibularunificado2025.ufsc.br/files/2024/09/ANEXO-A1-e-A2-UFSC-2025.pdf> e <https://vestibularunificado2026.ufsc.br/files/2025/09/ANEXO-A1-e-A2-UFSC-2026.pdf> — turno confirmado como "ANIMAÇÃO — BEL — INTEGRAL"
-- <https://guiadecursos.ufsc.br/animacao/> — grau e duração média (acesso indireto)
+- <https://guiadecursos.ufsc.br/animacao/> — duração média de 3,5 anos (corrobora 7 fases)
+- <https://uipi.ufsc.br/> e <https://www.instagram.com/uipi.design/> — Uipi, empresa júnior de Design e Animação
 - <https://www.instagram.com/cade.ufsc/> — CADe

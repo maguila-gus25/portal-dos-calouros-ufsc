@@ -11,7 +11,7 @@ coordenacao:
   sala: Bloco C, 1º andar, Departamento de Ciência e Tecnologia de Alimentos — CCA
   atendimento: "Seg–Sex, 08h–11h30 e 12h30–17h"
   site: https://cta.ufsc.br/
-atletica: _A preencher_ — verificar se existe atlética para o curso
+atletica: ~
 instagram_curso: "@cta.ufsc"
 ultima_verificacao: "julho/2026"
 ---
@@ -42,9 +42,9 @@ ultima_verificacao: "julho/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar existência de CA para CTA
-- **Atlética:** _A preencher_ — verificar se existe atlética específica do curso
-- **Empresa júnior:** _A preencher_ — verificar em <https://cta.ufsc.br/>
+- **Centro Acadêmico:** _A preencher_ — não encontrado em agosto/2026; o CGEJ não lista CA ativo para CTA (verificar junto ao CCA)
+- **Atlética:** _A preencher_ — não encontrada em agosto/2026 (nenhuma atlética específica de CTA identificada)
+- **Empresa júnior:** **Caltech Consultoria em Alimentos** (fundada em 2004, vinculada ao CCA/UFSC) — <https://caltechconsultoria.com/> · presidencia@caltechconsultoria.com · (48) 3721-5396
 - **Instagrams / perfis:**
   - [@cta.ufsc](https://www.instagram.com/cta.ufsc/) — perfil oficial do Departamento de CTA
   - [@ccaufsc](https://www.instagram.com/ccaufsc/) — Centro de Ciências Agrárias
@@ -61,7 +61,9 @@ ultima_verificacao: "julho/2026"
 
 ---
 
-**Fontes consultadas (julho/2026):**
+**Fontes consultadas (julho–agosto/2026):**
 - <https://cta.ufsc.br/> — site oficial do curso
 - <https://cta.ufsc.br/informacoes-do-curso/> — turno Integral e duração de 9 semestres confirmados
+- <https://cta.ufsc.br/sacta/> — SACTA é evento acadêmico (não CA)
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Caltech Consultoria em Alimentos (CTA, fundada em 2004)
 - <https://www.instagram.com/cta.ufsc/> — perfil oficial

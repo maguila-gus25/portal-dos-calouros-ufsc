@@ -5,12 +5,12 @@ centro: CCE
 grau: Licenciatura e Bacharelado
 turno: ~
 coordenacao:
-  nome: ~
+  nome: Amanda Bruno de Mello
   email: cglle.cce@contato.ufsc.br
   telefone: "(48) 3721-9489"
   sala: Bloco A, 2º andar, Sala 220
-  atendimento: ~
-  site: ~
+  atendimento: "seg–sex 9h–12h30 · ter e sex 13h30–18h30 · seg, qua e qui 13h30–20h30"
+  site: https://coordlinguasestrangeiras.ufsc.br/
 atletica: Atlética de Letras UFSC — @atleticale.ufsc
 instagram_curso: "@call.ufsc"
 ultima_verificacao: "agosto/2026"
@@ -20,22 +20,28 @@ ultima_verificacao: "agosto/2026"
 
 ## Sobre o curso
 
-- **Grau / turno:** Licenciatura e Bacharelado — o curso é oferecido em cinco habilitações de língua: **Alemão, Espanhol, Francês, Inglês e Italiano**. O turno varia conforme a habilitação; _A preencher_ — verificar turno de cada habilitação em <https://lle.ufsc.br/graduacao/> e nos sites de cada língua (<https://alemao.ufsc.br/>, <https://espanhol.ufsc.br/>, <https://frances.ufsc.br/>, <https://ingles.ufsc.br/>).
-- **Duração:** _A preencher_ — verificar em <https://cagr.sistemas.ufsc.br/> (não confirmado com fonte confiável nesta verificação)
+- **Grau / turno:** Licenciatura e Bacharelado — o curso é oferecido em cinco habilitações de língua, com turno variável (confirmado via Vestibular Unificado UFSC 2023/2026 e site oficial):
+  - **Alemão** — Vespertino
+  - **Espanhol** — Matutino
+  - **Francês** — Matutino
+  - **Inglês** — Vespertino
+  - **Italiano** — Matutino
+- **Duração:** 8 fases em todas as habilitações — confirmado em <https://vestibularunificado2023.ufsc.br/letras-lingua-inglesa/> e <https://vestibularunificado2023.ufsc.br/letras-lingua-italiana/>; corroborado pela designação "ABI8" nos anexos do Vestibular Unificado 2026.
 - **Página oficial do curso:** <https://lle.ufsc.br/> (Departamento de Língua e Literatura Estrangeiras — DLLE) e <https://coordlinguasestrangeiras.ufsc.br/letras-linguas-estrangeiras/>
 - **Resumo:** Forma professores (Licenciatura) e pesquisadores/tradutores/profissionais de língua e literatura (Bacharelado) em uma das cinco habilitações oferecidas. Os quatro primeiros semestres compõem um ciclo básico comum às duas modalidades; a partir do 5º semestre o(a) estudante escolhe entre Licenciatura (com estágio supervisionado em Educação Básica) ou Bacharelado (com Trabalho de Conclusão de Curso).
 
-> **Nota:** informações sobre grau, ciclo básico e escolha de modalidade foram confirmadas via busca cruzando o site do DLLE (<https://lle.ufsc.br/graduacao/>). Turno e duração exatos por habilitação não puderam ser confirmados com uma fonte oficial diretamente acessada nesta verificação (WebFetch retornou 403 nas páginas `*.ufsc.br`) — recomenda-se reconfirmar antes de publicar como definitivo.
+> **Nota:** turnos e duração confirmados via páginas oficiais do Vestibular Unificado UFSC 2023 e 2026 (vestibularunificado2023.ufsc.br e vestibularunificado2026.ufsc.br — agosto/2026). Informações sobre ciclo básico e escolha de modalidade confirmadas via <https://lle.ufsc.br/graduacao/>.
 
 ## Coordenação
 
 Letras Estrangeiras compartilha secretaria com o curso de Secretariado Executivo (Departamento de Língua e Literatura Estrangeiras — DLLE).
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://coordlinguasestrangeiras.ufsc.br/letras-linguas-estrangeiras/>
+- **Coordenadora:** Prof.ª Dr.ª Amanda Bruno de Mello — confirmado em <https://coordlinguasestrangeiras.ufsc.br/equipe/>
+- **Subcoordenadora:** Prof.ª Dr.ª Maria Ester Moritz
 - **E-mail da secretaria:** cglle.cce@contato.ufsc.br
 - **Telefone:** (48) 3721-9489
 - **Sala / prédio:** Bloco A, 2º andar, Sala 220
-- **Atendimento:** _A preencher_ — verificar em <https://coordlinguasestrangeiras.ufsc.br/>
+- **Atendimento:** segunda a sexta, 9h–12h30; terça e sexta, 13h30–18h30; segunda, quarta e quinta, 13h30–20h30 — fonte: <https://coordlinguasestrangeiras.ufsc.br/> (verificado agosto/2026)
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -43,7 +49,7 @@ Letras Estrangeiras compartilha secretaria com o curso de Secretariado Executivo
 
 - **Centro Acadêmico:** **CALL** (Centro Acadêmico Livre de Letras e Secretariado Executivo) — [@call.ufsc](https://www.instagram.com/call.ufsc/)
 - **Atlética:** **Atlética de Letras UFSC** — [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Letraduz** — Serviços de linguagem personalizados (tradução, legendagem, revisão) — [@letraduz.ufsc](https://www.instagram.com/letraduz.ufsc/) — Sala 219, Bloco A, CCE — fonte: <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/>
 - **Evento tradicional:** **Semana de Letras da UFSC** — evento acadêmico anual organizado pelos departamentos de Letras (DLLV e DLLE), geralmente em agosto/setembro. Site: <https://semanadeletras.cce.ufsc.br/>
 - **Instagrams / perfis:**
   - [@call.ufsc](https://www.instagram.com/call.ufsc/) — CALL (Centro Acadêmico)
@@ -64,7 +70,11 @@ Letras Estrangeiras compartilha secretaria com o curso de Secretariado Executivo
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — dados de coordenação, secretaria, CA e atlética já verificados (julho/2026)
-- <https://lle.ufsc.br/graduacao/> — estrutura do curso (ciclo básico, habilitações, escolha Licenciatura/Bacharelado) (acesso indireto via busca)
-- <https://coordlinguasestrangeiras.ufsc.br/letras-linguas-estrangeiras/> — coordenação (acesso indireto via busca; nome do(a) coordenador(a) não confirmado com confiança suficiente)
+- <https://coordlinguasestrangeiras.ufsc.br/equipe/> — coordenadora Amanda Bruno de Mello e subcoordenadora Maria Ester Moritz
+- <https://coordlinguasestrangeiras.ufsc.br/> — horário de atendimento da secretaria
+- <https://vestibularunificado2023.ufsc.br/letras-lingua-inglesa/> — turno (Vespertino) e duração (8 fases) de Letras Inglês
+- <https://vestibularunificado2023.ufsc.br/letras-lingua-italiana/> — turno (Matutino) e duração (8 fases) de Letras Italiano
+- Vestibular Unificado UFSC 2026 — turno Alemão (Vespertino), Espanhol (Matutino), Francês (Matutino); designação "ABI8" confirma 8 fases
+- <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/> — Letraduz, empresa júnior de Letras
 - <https://www.instagram.com/call.ufsc/> — CALL
 - <https://www.instagram.com/atleticale.ufsc/> — Atlética de Letras

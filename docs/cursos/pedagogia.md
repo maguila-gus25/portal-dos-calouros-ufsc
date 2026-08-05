@@ -3,7 +3,7 @@ curso: Pedagogia
 slug: pedagogia
 centro: CED
 grau: Licenciatura
-turno: Diurno
+turno: Vespertino
 duracao: ~
 coordenacao:
   nome: Profa. Leila Procópia do Nascimento
@@ -13,9 +13,9 @@ coordenacao:
   sala: "Bloco B do CED, Sala 006 — Campus Trindade"
   site: https://pedagogia.ufsc.br/
 ca:
-  nome: ~
-  sigla: ~
-  instagram: ~
+  nome: Centro Acadêmico Livre de Pedagogia
+  sigla: CALPe
+  instagram: "@calpe_ufsc"
 atletica: ~
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
@@ -25,8 +25,8 @@ ultima_verificacao: "agosto/2026"
 
 ## Sobre o curso
 
-- **Grau / turno:** Licenciatura — turno **Diurno**
-- **Duração:** _A preencher_ — verificar em <https://pedagogia.ufsc.br/o-curso/> ou no CAGR
+- **Grau / turno:** Licenciatura — turno **Vespertino** (aulas das 13h30 às 18h)
+- **Duração:** 9 semestres (mínimo, para ingressantes a partir de 2009.1)
 - **Vagas:** 100 vagas por ano (50 por semestre)
 - **Página oficial do curso:** <https://pedagogia.ufsc.br/>
 - **Guia de Cursos UFSC:** <https://guiadecursos.ufsc.br/pedagogia/>
@@ -49,10 +49,12 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://pedagogia.ufsc.br/> ou junto ao CED
-- **Atlética:** _A preencher_ — verificar em <https://ced.ufsc.br/>
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** **CALPe** (Centro Acadêmico Livre de Pedagogia) — [@calpe_ufsc](https://www.instagram.com/calpe_ufsc/) (~1.908 seguidores em agosto/2026)
+- **Atlética:** _A preencher_ — não encontrada em agosto/2026
+- **Empresa júnior:** _A preencher_ — não encontrada em agosto/2026 (nenhuma EJ de Pedagogia listada pelo CGEJ/UFSC)
+- **Instagrams / perfis:**
+  - [@calpe_ufsc](https://www.instagram.com/calpe_ufsc/) — CALPe (Centro Acadêmico)
+  - [@pedagogiaufsc](https://www.instagram.com/pedagogiaufsc/) — perfil oficial do curso
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -70,6 +72,9 @@ _A preencher_ — CED, Bloco B, Campus Trindade (ver [Mapa](../mapa.md))
 - <https://guiadecursos.ufsc.br/pedagogia/> — descrição do curso e perfil do egresso
 - <https://pedagogia.ufsc.br/> — coordenação, e-mail, telefone, sala e horário de atendimento
 - <https://pedagogia.ufsc.br/o-curso/> — histórico (criado em 1960, reconhecido em 1975), grau de licenciatura
+- <https://pedagogia.ufsc.br/curriculo/> — turno Vespertino e duração mínima de 9 semestres (ingressantes de 2009.1)
 - <https://ced.ufsc.br/pedagogia/> — vagas: 100 por ano (50 por semestre)
+- <https://www.instagram.com/calpe_ufsc/> — CALPe (CA de Pedagogia)
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — nenhuma EJ de Pedagogia listada
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

@@ -34,7 +34,7 @@ ultima_verificacao: "agosto/2026"
 - **E-mail da secretaria:** jornalismo@contato.ufsc.br
 - **Telefone:** (48) 3721-9490
 - **Sala / prédio:** Bloco A, Sala 018
-- **Atendimento:** _A preencher_ — verificar em <https://jornalismo.ufsc.br/administracao/>
+- **Atendimento:** _A preencher_ — não encontrado em agosto/2026; contatos disponíveis: secretaria do departamento (48) 3721-9215, coordenadoria do curso (48) 3721-9490 — fonte: <https://jornalismo.ufsc.br/administracao/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -42,8 +42,8 @@ ultima_verificacao: "agosto/2026"
 
 - **Centro Acadêmico:** **CALJ** (Centro Acadêmico Livre de Jornalismo Adelmo Genro Filho) — [@calj.ufsc](https://www.instagram.com/calj.ufsc/)
 - **Atlética:** **AAGB** (Associação Atlética Graus Bons) — [@grausbonsufsc](https://www.instagram.com/grausbonsufsc/)
-- **Empresa júnior:** _A preencher_
-- **Festa/evento tradicional:** _A preencher_ — verificar com o CALJ ([@calj.ufsc](https://www.instagram.com/calj.ufsc/))
+- **Empresa júnior:** **Comunica!** — Empresa Júnior de Jornalismo da UFSC — [@comunicaempresajunior](https://www.instagram.com/comunicaempresajunior/)
+- **Festa/evento tradicional:** **SAJOR** — Semana Acadêmica de Jornalismo da UFSC — realizada anualmente pelo CALJ (já na 19ª edição em 2024, realizada de 4 a 8 de novembro) — fonte: <https://noticias.ufsc.br/event/19-semana-academica-de-jornalismo/>
 - **Instagrams / perfis:**
   - [@calj.ufsc](https://www.instagram.com/calj.ufsc/) — CALJ (Centro Acadêmico)
   - [@grausbonsufsc](https://www.instagram.com/grausbonsufsc/) — AAGB (Atlética)
@@ -62,8 +62,9 @@ ultima_verificacao: "agosto/2026"
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — dados de coordenação, secretaria, CA e atlética já verificados (julho/2026)
-- <https://jornalismo.ufsc.br/> e <https://jornalismo.ufsc.br/descricao/> — página oficial e resumo do curso (acesso indireto via busca)
-- Anexos A-1 do Vestibular Unificado UFSC/IFSC/IFC (2023/2025/2026) — turno do curso 415 (acesso indireto via busca; PDFs não carregados diretamente)
-- <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=415> — duração do currículo (acesso indireto via busca; página retornou 403 na verificação direta)
+- <https://jornalismo.ufsc.br/administracao/> — contatos da secretaria (dept. (48) 3721-9215; coordenadoria (48) 3721-9490; estágios (48) 3721-4833)
+- <https://noticias.ufsc.br/event/19-semana-academica-de-jornalismo/> — SAJOR (19ª edição em novembro/2024)
+- <https://www.instagram.com/comunicaempresajunior/> — Comunica! empresa júnior de Jornalismo
+- Anexos A-1 do Vestibular Unificado UFSC/IFSC/IFC (2023/2025/2026) — turno do curso 415
 - <https://www.instagram.com/calj.ufsc/> — CALJ
 - <https://www.instagram.com/grausbonsufsc/> — AAGB

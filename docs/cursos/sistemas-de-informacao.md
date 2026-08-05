@@ -5,7 +5,7 @@ centro: CTC
 grau: Bacharelado
 turno: Noturno
 coordenacao:
-  email: _A preencher_ — ver https://sin.ufsc.br/contato/
+  email: sin@contato.ufsc.br
   telefone: (48) 3721-4701
   sala: Prédio do INE (CTC), térreo, Sala 103
   site: https://sin.ufsc.br/
@@ -23,7 +23,7 @@ ultima_verificacao: "agosto/2026"
 - **Resumo:** Desenvolvimento e gestão de sistemas de software voltados a processos de negócio e tomada de decisão.
 
 ## Coordenação
-- **E-mail:** _A preencher_ — exibido como imagem no site; verificar em <https://sin.ufsc.br/coordenacao/>
+- **E-mail:** sin@contato.ufsc.br (lido da imagem anti-spam em agosto/2026)
 - **Telefone:** (48) 3721-4701
 - **Sala / prédio:** Prédio do INE (CTC), térreo, Sala 103
 - **Coordenação:** <https://sin.ufsc.br/coordenacao/>
@@ -33,7 +33,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 - **Centro Acadêmico:** **CASIN** (Centro Acadêmico de Sistemas de Informação) — <https://casin.ufsc.br/>
 - **Atlética:** **A5** — [@a5ufsc](https://www.instagram.com/a5ufsc/) (compartilhada com Ciências da Computação)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Pixel — Soluções Digitais** (Sistemas de Informação e Ciências da Computação) — [@ejpixel](https://www.instagram.com/ejpixel/) — <https://www.pixel.ufsc.br/>
 - **Instagrams / perfis:** ver [Instagrams do portal](../instagrams.md)
 
 ## Dicas de veterano

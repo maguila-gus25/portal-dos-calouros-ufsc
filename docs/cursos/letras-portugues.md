@@ -9,7 +9,7 @@ coordenacao:
   email: letrasportugues@contato.ufsc.br
   telefone: "(48) 3721-3777 ou (48) 3721-3779"
   sala: Bloco B, 2º andar, Sala 228
-  atendimento: ~
+  atendimento: "11h–19h (recesso: 11h–17h)"
   site: https://letrasportugues.grad.ufsc.br/
 atletica: Atlética de Letras UFSC — @atleticale.ufsc
 instagram_curso: ~
@@ -31,19 +31,19 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://letrasportugues.grad.ufsc.br/> (Departamento de Língua e Literatura Vernáculas — DLLV)
+- **Coordenador(a):** _A preencher_ — não encontrado em agosto/2026; verificar em <https://letrasportugues.grad.ufsc.br/>
 - **E-mail da secretaria:** letrasportugues@contato.ufsc.br
-- **Telefone:** (48) 3721-3777 ou (48) 3721-3779
-- **Sala / prédio:** Bloco B, 2º andar, Sala 228
-- **Atendimento:** _A preencher_ — verificar em <https://letrasportugues.grad.ufsc.br/>
+- **Telefone:** (48) 3721-3751 (secretaria do DLLV) · (48) 3721-3777 (coordenadoria)
+- **Sala / prédio:** Bloco B, 2º andar, Sala 228 (coordenadoria) · Sala 201-B (secretaria DLLV)
+- **Atendimento:** 11h–19h (em recesso: 11h–17h) — confirmado em <https://letrasportugues.grad.ufsc.br/> (agosto/2026)
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — não encontrado em fontes verificadas; verificar com o Departamento de Letras Vernáculas (DLLV)
+- **Centro Acadêmico:** **CALL** (Centro Acadêmico Livre de Letras — compartilhado com Letras Estrangeiras e Secretariado Executivo) — [@call.ufsc](https://www.instagram.com/call.ufsc/) — fonte: <https://estrutura.ufsc.br/centros-academicos/>
 - **Atlética:** **Atlética de Letras UFSC** — [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Letraduz** — Serviços de linguagem personalizados (tradução, legendagem, revisão) — [@letraduz.ufsc](https://www.instagram.com/letraduz.ufsc/) — Sala 219, Bloco A, CCE — nota: criada por estudantes de Letras Estrangeiras; verificar se atende também Letras Português — fonte: <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/>
 - **Evento tradicional:** **Semana de Letras da UFSC** — evento acadêmico anual organizado pelos departamentos de Letras (DLLV e DLLE), geralmente em agosto/setembro. Site: <https://semanadeletras.cce.ufsc.br/>
 - **Instagrams / perfis:**
   - [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/) — Atlética de Letras
@@ -63,7 +63,8 @@ ultima_verificacao: "agosto/2026"
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — dados de coordenação, secretaria e atlética já verificados (julho/2026)
-- <https://guiadecursos.ufsc.br/letras-portugues/> — turno e duração (acesso indireto via busca; página não carregou diretamente na verificação)
-- <https://letrasportugues.grad.ufsc.br/> — página oficial do curso
+- <https://letrasportugues.grad.ufsc.br/> — horário de atendimento (11h–19h) e contato da secretaria (48) 3721-3751
+- <https://estrutura.ufsc.br/centros-academicos/> — CALL como CA de Letras (compartilhado entre cursos do CCE)
+- <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/> — Letraduz (criada por estudantes de Letras Estrangeiras; relação com Letras Português a confirmar)
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=428> e `curso=426` — currículos diurno/noturno (acesso indireto via busca)
 - <https://www.instagram.com/atleticale.ufsc/> — Atlética de Letras
