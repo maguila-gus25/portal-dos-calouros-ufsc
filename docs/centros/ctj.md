@@ -9,8 +9,8 @@ site: https://joinville.ufsc.br/
 campus: Joinville
 ca: ~
 ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+atletica: "Atlética Camaleão"
+atletica_instagram: "@camaleaochegou"
 ultima_verificacao: agosto/2026
 ---
 
@@ -39,11 +39,11 @@ O CTJ abriga o **Departamento de Engenharias de Mobilidade (EMB)** como subunida
 - **Diretor:** Prof. Diego Santos Greff
   - Telefone: (47) 3204-7347 / (48) 3721-7347
   - Currículo Lattes: <http://lattes.cnpq.br/6331810128529531>
-  - E-mail: _A preencher_ — exibido como imagem no site; verificar em <https://joinville.ufsc.br/direcao/>
+  - E-mail: _A preencher_ — exibido como imagem anti-spam no site; a agenda vinculada ao embed público do Google Calendar usa `secdirctj@gmail.com` (secretaria), mas não é e-mail institucional do diretor; verificar e-mail @ufsc.br em <https://joinville.ufsc.br/direcao/>
 - **Vice-Diretora:** Prof.ª Elisete Santos da Silva Zagheni
   - Telefone: (47) 3204-7590 / (48) 3721-7590
   - Currículo Lattes: <http://lattes.cnpq.br/8720851642198159>
-  - E-mail: _A preencher_ — exibido como imagem no site; verificar em <https://joinville.ufsc.br/direcao/>
+  - E-mail: _A preencher_ — exibido como imagem anti-spam no site; verificar em <https://joinville.ufsc.br/direcao/>
 - **Diretor Administrativo:** Maycon Pscheidt
   - Telefone: (47) 3204-7415 / (48) 3721-2639
 
@@ -88,14 +88,36 @@ O CTJ oferece **8 cursos de graduação**, todos com grau de Bacharelado e turno
 
 ---
 
-## Centro Acadêmico e Atlética
+## Vida Estudantil
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://portaljoinville.paginas.ufsc.br/representacao-estudantil/> e junto à secretaria do campus
-- **Instagram do CA:** _A preencher_
-- **Atlética:** _A preencher_ — verificar perfis de estudantes no Instagram com a tag `#ufscjoinville` ou junto ao CA do campus
-- **Instagram da Atlética:** _A preencher_
+### Atlética
 
-> Nota: A busca em fontes públicas (agosto/2026) não encontrou registro público de CA ou atlética unificada para o campus Joinville. O campus pode ter organizações estudantis por curso. Verificar em <https://joinville.ufsc.br/> ou junto à Secretaria Acadêmica.
+O campus tem uma atlética unificada para todos os cursos:
+
+| Atlética | Instagram |
+|----------|-----------|
+| Atlética Camaleão | [@camaleaochegou](https://www.instagram.com/camaleaochegou/) |
+
+### Centros Acadêmicos por Curso
+
+O campus não possui um CA unificado. Cada curso tem seu próprio Centro Acadêmico ou Diretório Acadêmico:
+
+| Curso(s) | Entidade | Sigla | Instagram |
+|----------|----------|-------|-----------|
+| Ciência e Tecnologia | Centro Acadêmico de Ciência e Tecnologia | CALCTEC | [@calcteccientec](https://www.instagram.com/calcteccientec/) |
+| Engenharia Aeroespacial | Centro Acadêmico de Aeroespacial | CAAERO | [@caaero.ufsc](https://www.instagram.com/caaero.ufsc/) |
+| Engenharia Automotiva | Centro Acadêmico de Automotiva | CAAUTO | [@caautoufsc](https://www.instagram.com/caautoufsc/) |
+| Eng. Civil de Infraestrutura · Transportes · Ferroviária · Mecatrônica | Diretório Acadêmico | DALEM | [@dalem.ctj](https://www.instagram.com/dalem.ctj/) |
+| Engenharia Naval | Centro Acadêmico de Naval | CALNAV | [@calnav_ufsc](https://www.instagram.com/calnav_ufsc/) |
+
+> Nota: O frontmatter `ca:` está definido como `~` pois o campus não tem um CA único. As entidades acima foram verificadas pelos perfis no Instagram em agosto/2026.
+
+### Empresas Juniores (EJs)
+
+| EJ | Instagram | Site |
+|----|-----------|------|
+| ESATI Jr. | [@esatijr](https://www.instagram.com/esatijr/) | <https://esati.paginas.ufsc.br> |
+| ETECH Jr. | [@etechjr](https://www.instagram.com/etechjr/) | <https://etechjr.com.br> |
 
 ---
 
@@ -118,5 +140,16 @@ O campus ocupa 5 blocos com salas de aula, laboratórios, Restaurante Universit�
 - [Pós-Graduação CTJ](https://joinville.ufsc.br/pos-graduacao/)
 
 ---
+
+## Fontes consultadas
+
+- <https://joinville.ufsc.br/direcao/> — direção, telefones, Lattes (verificado em agosto/2026)
+- <https://joinville.ufsc.br/campus/> — dados gerais do campus
+- <https://secretariaacademica.joinville.ufsc.br/secretaria-academica/> — secretaria acadêmica
+- <https://joinville.ufsc.br/graduacao/> e <https://guiadecursos.ufsc.br/campus-joinville/> — cursos
+- <https://joinville.ufsc.br/coordenacoes-dos-cursos-de-graduacao/> — coordenações
+- Perfis Instagram verificados: [@camaleaochegou](https://www.instagram.com/camaleaochegou/), [@calcteccientec](https://www.instagram.com/calcteccientec/), [@caaero.ufsc](https://www.instagram.com/caaero.ufsc/), [@caautoufsc](https://www.instagram.com/caautoufsc/), [@dalem.ctj](https://www.instagram.com/dalem.ctj/), [@calnav_ufsc](https://www.instagram.com/calnav_ufsc/), [@esatijr](https://www.instagram.com/esatijr/), [@etechjr](https://www.instagram.com/etechjr/) (agosto/2026)
+- <https://etechjr.com.br> — site oficial da ETECH Jr.
+- <https://esati.paginas.ufsc.br> — site ESATI na página UFSC
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

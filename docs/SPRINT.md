@@ -4,6 +4,139 @@
 
 ---
 
+## Sprint 27 — Qualidade: fichas de centro + coordenadores CCS (v1.21)
+
+**Objetivo:** Duas frentes paralelas de qualidade de conteúdo — (A) propagar os dados do Sprint 26
+(Atlética Camaleão, CAs) para a ficha de centro do CTJ, e preencher campos faltantes nas fichas de
+centro CTC e CCJ; (B) pesquisar coordenadores das 6 fichas de curso do CCS (emails exibidos como
+imagens anti-spam nos sites dos departamentos) e completar atléticas/EJ ainda `_A preencher_`.
+Sprint content-only: nenhum código frontend necessário.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Fichas de centro: CTJ (propagar Sprint 26) + CTC + CCJ | B-08 (centros) | Should / M | content-editor | A fazer |
+| CCS — coordenadores (anti-spam) + atléticas/EJ (6 fichas) | B-08 (CCS) | Should / M | content-editor | A fazer |
+
+### Critérios de aceite detalhados
+
+**Fichas de centro (Story A)**
+
+- [ ] `docs/centros/ctj.md` — atualizar com dados já verificados no Sprint 26:
+      atlética (`Atlética Camaleão / @camaleaochegou`); CAs representativos do campus
+      (DALEM, CAAERO, CAAUTO, CALNAV, CALCTEC); EJs (ESATI, ETECH Jr.).
+      Tentar ler e-mails da direção (exibidos como imagem em `joinville.ufsc.br/direcao/`)
+      usando a técnica de download de imagem + leitura visual.
+- [ ] `docs/centros/ctc.md` — pesquisar:
+      e-mail geral do CTC (`ctc.ufsc.br/contato/`);
+      telefone da direção; Instagram oficial (`@ctc.ufsc` ou similar).
+- [ ] `docs/centros/ccj.md` — pesquisar:
+      vice-diretor(a) (`ccj.ufsc.br/equipe-2/`);
+      coordenador(a) de Direito com e-mail institucional (não Gmail pessoal).
+- [ ] Campos sem fonte verificada → `~` ou `_A preencher_`. Nunca inventar.
+
+**CCS — coordenadores + vida do curso (Story B)**
+
+- [ ] Fichas a atualizar (todas com `centro: CCS`):
+      `enfermagem`, `farmacia`, `fonoaudiologia`, `medicina`, `nutricao`, `odontologia`.
+- [ ] Para cada ficha, pesquisar coordenador(a) de curso via leitura de imagem anti-spam:
+      WebFetch na página → localizar `<img>` com e-mail → curl download → Read tool lê visualmente.
+      Sites: `enfermagem.ufsc.br`, `farmacia.ufsc.br`, `fonoaudiologia.grad.ufsc.br`,
+      `medicina.ufsc.br`, `nutricao.ufsc.br`, `odontologia.ufsc.br`.
+- [ ] Atléticas: pesquisar via Instagram dos CAs (CALIFONO, CALINUT, CAOQA) e busca web.
+- [ ] CALINUT — localizar Instagram e site oficial.
+- [ ] Empresa júnior para os 6 cursos via `empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/`.
+- [ ] Atualizar `docs/centros/ccs.md` com qualquer dado confirmado.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (arquivos completamente disjuntos):
+  content-editor A — docs/centros/{ctj, ctc, ccj}.md
+  content-editor B — docs/cursos/{enfermagem, farmacia, fonoaudiologia, medicina, nutricao, odontologia}.md
+                     docs/centros/ccs.md
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (≥ 112 páginas) + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária.
+
+### Fontes prioritárias
+
+**Story A:** CTJ: `joinville.ufsc.br/direcao/` (imagem) · CTC: `ctc.ufsc.br/contato/` · CCJ: `ccj.ufsc.br/equipe-2/` e `ccj.ufsc.br/coordenacao/equipe/`
+
+**Story B:** `enfermagem.ufsc.br/coordenacao/` · `farmacia.ufsc.br/coordenacao-de-graduacao/` · `fonoaudiologia.grad.ufsc.br/coordenacao/` · `medicina.ufsc.br/coordenacao-do-curso/` · `nutricao.ufsc.br/contato/` · `odontologia.ufsc.br/coordenacao/` · `empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/`
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 112 páginas SSG)
+- [ ] Playwright 8/8 sem regressões
+- [ ] `docs/centros/ctj.md` com atlética/CAs/EJs do Sprint 26 propagados
+- [ ] `docs/centros/ctc.md` e `docs/centros/ccj.md` com campos pesquisados
+- [ ] CCS: coordenadores preenchidos onde leitura de imagem permitiu; `~` onde não
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Dicas de veterano / Onde estudar | Dependem de submissões reais (B-10, B-13 — bloqueados) |
+| CFH / CFM coordenadores | Não publicados em fontes verificadas — mantém `~` |
+| B-37/B-50 (banco + histórias) | Horizonte v2 — decisão do mantenedor |
+
+### Retrospectiva do Sprint 27
+
+**Concluído em:** 2026-08-05
+
+**Entregue:**
+
+- **Centros (Story A):**
+  - `docs/centros/ctj.md` — Atlética Camaleão (`@camaleaochegou`) propagada do Sprint 26; tabela de CAs
+    por curso (CALCTEC, CAAERO, CAAUTO, DALEM×4, CALNAV) e EJs (ESATI, ETECH Jr.) adicionadas.
+    E-mail da direção ainda `_A preencher_` (anti-spam não contornou).
+  - `docs/centros/ctc.md` — e-mail `secretaria.ctc@contato.ufsc.br`, telefones
+    (48) 3721-9339/9340/9343/9837 e Instagram `@ctc_ufsc` preenchidos.
+  - `docs/centros/ccj.md` — Vice-Diretora Profª. Melissa Ely Melo (`melissa.melo@ufsc.br`)
+    e Diretora Carolina Medeiros Bahia (`carolina.bahia@ufsc.br`) com e-mails institucionais;
+    coordenador Francisco Quintanilha Véras Neto e vice-coordenadora Chiavelli Facenda Falavigno
+    confirmados (Gmails pessoais omitidos por política — contato institucional é `direito@contato.ufsc.br`).
+
+- **CCS (Story B):**
+  - **Todos os 6 coordenadores de curso encontrados** pela primeira vez:
+    Enfermagem (Diovane Ghignatti da Costa, mandato 2026–2028), Farmácia (Roberto Ferreira de Melo),
+    Fonoaudiologia (Fernanda Zucki Mathias), Medicina (Antonio Reis de Sá Junior),
+    Nutrição (Maurício Soares Leite + vice Francieli Cembranel), Odontologia (Ana Maria Hecke Alves).
+  - **Correção de dado errado:** atlética de Enfermagem estava como `@atleticale.ufsc` (que é a
+    atlética de Letras e Secretariado Executivo). A correta é **ATHENA** (`@atleticaathena`),
+    confirmada em `enfermagem.ufsc.br/entidades-estudantis/`. Corrigido em `enfermagem.md` e `ccs.md`.
+  - **Empresas Júnior:** EJEN (Enfermagem), EJIFAR (Farmácia), Qualifon Jr. (Fonoaudiologia),
+    Nutri Jr. (Nutrição). Medicina e Odontologia sem EJ na lista oficial do CGEJ — mantidas como
+    `_A preencher_`.
+  - Tabela de EJs adicionada a `docs/centros/ccs.md` (não existia).
+  - Atlética de Fonoaudiologia, Nutrição e Odontologia: não encontrada em fontes verificadas — `_A preencher_`.
+  - CALINUT Instagram: não encontrado — `_A preencher_`.
+
+**Verificações finais:** lint ✅ · build **112 páginas** SSG ✅ · Playwright **8/8** ✅ ·
+ui-ux-review não necessária (sprint content-only).
+
+**O que foi bem:**
+- Todos os 6 coordenadores CCS encontrados — resultado acima do esperado (esperávamos bloqueio por anti-spam).
+- Correção proativa de dado errado na atlética de Enfermagem: o agente identificou a inconsistência
+  sem instrução explícita — qualidade acima do planejado.
+- CTC: e-mail e Instagram encontrados via site alternativo (`portal.ctc.ufsc.br`) quando o principal retornou 403.
+- CCJ: e-mails institucionais encontrados via portarias no Boletim Oficial da UFSC — fonte mais confiável
+  que a página de equipe.
+
+**Pendências / follow-up:**
+- E-mail da direção do CTJ: exibido como imagem anti-spam — técnica não funcionou; candidato para
+  abordagem manual pelo mantenedor.
+- Atlética de Fonoaudiologia, Nutrição e Odontologia (CCS): não encontrada.
+- CALINUT Instagram: não encontrado.
+- EJ de Medicina e Odontologia: não listadas no CGEJ.
+- **B-08** — dicas de veterano e "onde estudar" continuam bloqueados.
+
+---
+
 ## Sprint 26 — Fichas CTJ + CTS: Vida do Curso (v1.20)
 
 **Objetivo:** Completar a seção "Vida do curso" nas 13 fichas dos campi de Joinville (CTJ, 8

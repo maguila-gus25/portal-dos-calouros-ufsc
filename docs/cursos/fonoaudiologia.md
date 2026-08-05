@@ -5,7 +5,7 @@ centro: CCS
 grau: Bacharelado
 turno: Diurno
 coordenacao:
-  nome: ~
+  nome: "Profa. Fernanda Zucki Mathias"
   email: fonoaudiologia@contato.ufsc.br
   telefone: "(48) 3721-6119"
   sala: CCS — Campus Universitário Reitor João David Ferreira Lima, s/n, Trindade, Florianópolis — CEP 88040-900
@@ -29,22 +29,26 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://fonoaudiologia.grad.ufsc.br/>
+- **Coordenadora:** Profa. Fernanda Zucki Mathias
+- **Subcoordenadora:** Profa. Maria Isabel D'Ávila Freitas
 - **E-mail da secretaria:** fonoaudiologia@contato.ufsc.br
-- **Telefone:** (48) 3721-6119
+- **Telefone:** (48) 3721-6119 / (48) 3721-2277
 - **Sala / prédio:** CCS — Campus Universitário Reitor João David Ferreira Lima, s/n, Trindade, Florianópolis — CEP 88040-900
 - **Atendimento:** presencial terças e sextas; remoto (e-mail) segunda, quarta e quinta; horário 08h às 12h e 13h às 17h
+
+> **Nota:** nome da coordenadora confirmado por resultado de busca via página do curso e departamento de Fonoaudiologia (agosto/2026). Recomenda-se confirmar diretamente em <https://fonoaudiologia.grad.ufsc.br/coordenacao/> antes de tratar como definitivo.
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
-- **Centro Acadêmico:** **CALIFONO** (Centro Acadêmico Livre de Fonoaudiologia) — [@califono.ufsc](https://www.instagram.com/califono.ufsc/) — [Facebook](https://www.facebook.com/califono/)
+- **Centro Acadêmico:** **CALIFONO** (Centro Acadêmico Livre de Fonoaudiologia) — [@califono.ufsc](https://www.instagram.com/califono.ufsc/) — [Facebook](https://www.facebook.com/califono/) — ufsc.ca.fono@gmail.com
 - **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CALIFONO ([@califono.ufsc](https://www.instagram.com/califono.ufsc/))
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Qualifon Jr.** (Empresa Júnior de Fonoaudiologia da UFSC) — [@qualifonjr](https://www.instagram.com/qualifonjr/) — <https://qualifonjr.com.br/>
 - **Evento tradicional:** _A preencher_ — verificar com o CALIFONO ([@califono.ufsc](https://www.instagram.com/califono.ufsc/)) os eventos acadêmicos tradicionais do curso
 - **Instagrams / perfis:**
   - [@califono.ufsc](https://www.instagram.com/califono.ufsc/) — CALIFONO (Centro Acadêmico)
+  - [@qualifonjr](https://www.instagram.com/qualifonjr/) — Qualifon Jr. (Empresa Júnior)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -59,7 +63,12 @@ ultima_verificacao: "agosto/2026"
 ---
 
 **Fontes consultadas (agosto/2026):**
-- `docs/centros/ccs.md` — dados de coordenação, secretaria e CA já verificados (julho/2026); atlética não encontrada
+- `docs/centros/ccs.md` — dados de secretaria e CA já verificados (julho/2026); atlética não encontrada
+- <https://fonoaudiologia.grad.ufsc.br/coordenacao/> — página de coordenação (nome da coordenadora obtido via resultado de busca; a página em si não exibe o nome no acesso direto via WebFetch)
+- Busca web "coordenadora fonoaudiologia UFSC 2025 2026 graduação" — retornou nome Fernanda Zucki Mathias como coordenadora (agosto/2026); recomenda-se confirmar diretamente no site
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Qualifon Jr. listada como EJ de Fonoaudiologia (verificado agosto/2026)
+- <https://www.instagram.com/qualifonjr/> e <https://qualifonjr.com.br/> — Instagram e site da Qualifon Jr. (verificado agosto/2026)
+- <https://fon.ufsc.br/qualifon-jr/> — Qualifon Jr. vinculada ao Departamento de Fonoaudiologia (verificado agosto/2026)
 - <https://fonoaudiologia.grad.ufsc.br/> — página oficial do curso
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=109> — duração e carga horária do currículo (acesso indireto via busca; página retornou 403 na verificação direta)
 - <https://www.instagram.com/califono.ufsc/> — CALIFONO

@@ -30,8 +30,10 @@ ultima_verificacao: "agosto/2026"
 ## Coordenação
 
 - **Coordenador:** Prof. Maurício Soares Leite
+- **Subcoordenadora:** Profa. Francieli Cembranel
 - **E-mail da coordenação:** coordenacao.nutricao@contato.ufsc.br
 - **E-mail da secretaria:** nutricao@contato.ufsc.br
+- **Chefe de Expediente:** Marcos T. Campos
 - **Telefone da coordenação:** (48) 3721-2222
 - **Telefone da secretaria:** (48) 3721-9486
 - **Sala / prédio:** CCS — Bloco C, 2º andar, Campus Universitário, Trindade, 88040-900, Florianópolis — SC
@@ -41,11 +43,13 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** **CALINUT** (Centro Acadêmico Livre de Nutrição) — instagram e site _A preencher_; verificar em <https://ntr.ufsc.br/alunos/>
+- **Centro Acadêmico:** **CALINUT** (Centro Acadêmico Livre de Nutrição) — instagram _A preencher_ (busca por @calinut não retornou perfil verificado); site _A preencher_ — verificar em <https://ntr.ufsc.br/alunos/>
 - **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CALINUT ou em <https://ntr.ufsc.br/alunos/>
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Nutri Jr.** (Empresa Júnior de Consultoria em Nutrição — primeira EJ de nutrição do Brasil, desde 1995) — [@nutri_jr](https://www.instagram.com/nutri_jr/) — <https://nutrijr.ufsc.br/>
 - **Evento tradicional:** _A preencher_ — verificar com o CALINUT os eventos acadêmicos tradicionais do curso
-- **Instagrams / perfis:** _A preencher_ (ver [Instagrams](../instagrams.md))
+- **Instagrams / perfis:**
+  - [@nutri_jr](https://www.instagram.com/nutri_jr/) — Nutri Jr. (Empresa Júnior)
+  - _A preencher_ (CALINUT — ver [Instagrams](../instagrams.md))
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md))
 
@@ -60,6 +64,10 @@ ultima_verificacao: "agosto/2026"
 ---
 
 **Fontes consultadas (agosto/2026):**
-- `docs/centros/ccs.md` — dados de coordenação e secretaria já verificados (julho/2026); CA e atlética não encontrados em fontes verificadas
+- `docs/centros/ccs.md` — dados de secretaria verificados (julho/2026); CA e atlética não encontrados em fontes verificadas
+- <https://nutricao.ufsc.br/2025/07/31/3325/> — Coordenador (Maurício Soares Leite) e Subcoordenadora (Francieli Cembranel) confirmados, agosto/2026
+- <https://ntr.ufsc.br/nutri-jr/> — Nutri Jr. listada com site e Instagram, agosto/2026
+- <https://www.instagram.com/nutri_jr/> e <https://nutrijr.ufsc.br/> — Instagram e site da Nutri Jr. (verificado agosto/2026)
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Nutri Jr. listada como EJ de Nutrição (verificado agosto/2026)
 - <https://nutricao.ufsc.br/> e <https://nutricao.ufsc.br/contato/> — página oficial do curso
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=9> — duração do currículo (acesso indireto via busca; página retornou 403 na verificação direta)

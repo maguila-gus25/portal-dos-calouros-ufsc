@@ -5,7 +5,7 @@ centro: CCS
 grau: Bacharelado
 turno: Integral
 coordenacao:
-  nome: ~
+  nome: "Profa. Dra. Ana Maria Hecke Alves"
   email: odontologia@contato.ufsc.br
   telefone: "(48) 3721-3461"
   sala: ~
@@ -29,7 +29,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://odontologia.ufsc.br/>
+- **Coordenadora:** Profa. Dra. Ana Maria Hecke Alves
+- **E-mail da coordenadora:** ana.hecke@ufsc.br
+- **Subcoordenadora:** Profa. Dra. Cláudia Ângela Maziero Volpato
+- **E-mail da subcoordenadora:** claudia.m.volpato@ufsc.br
 - **E-mail da secretaria:** odontologia@contato.ufsc.br
 - **Telefone:** (48) 3721-3461
 - **Sala / prédio:** _A preencher_ — verificar em <https://odontologia.ufsc.br/contato/>
@@ -41,7 +44,7 @@ ultima_verificacao: "agosto/2026"
 
 - **Centro Acadêmico:** **CAOQA** (Centro Acadêmico de Odontologia Quatro de Agosto) — [@caoqaufsc](https://www.instagram.com/caoqaufsc/) — <https://caoqa.ufsc.br/>
 - **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CAOQA ([@caoqaufsc](https://www.instagram.com/caoqaufsc/))
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** _A preencher_ — não identificada na lista oficial de EJs da UFSC (<https://empresasjuniores.paginas.ufsc.br/>); verificar com o CAOQA ([@caoqaufsc](https://www.instagram.com/caoqaufsc/))
 - **Evento tradicional:** **EAAO** (Encontro Acadêmico de Atualização em Odontologia) — evento acadêmico anual vinculado ao CAOQA, já com mais de 50 edições — [Facebook EAAO UFSC](https://www.facebook.com/eaaoufsc/)
 - **Instagrams / perfis:**
   - [@caoqaufsc](https://www.instagram.com/caoqaufsc/) — CAOQA (Centro Acadêmico)
@@ -59,7 +62,9 @@ ultima_verificacao: "agosto/2026"
 ---
 
 **Fontes consultadas (agosto/2026):**
-- `docs/centros/ccs.md` — dados de coordenação, secretaria, CA e evento tradicional já verificados (julho/2026); atlética não encontrada
+- `docs/centros/ccs.md` — dados de secretaria, CA e evento tradicional verificados (julho/2026); atlética não encontrada
+- <https://odontologia.ufsc.br/coordenacao/> — nome da coordenadora (Ana Maria Hecke Alves) e subcoordenadora (Cláudia Ângela Maziero Volpato), verificado agosto/2026
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Odontologia não listada entre as EJs da UFSC (verificado agosto/2026)
 - <https://odontologia.ufsc.br/> e <https://odontologia.ufsc.br/contato/> — página oficial do curso
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=104> — duração do currículo (acesso indireto via busca, dados incompletos; página retornou 403 na verificação direta)
 - <https://www.instagram.com/caoqaufsc/> — CAOQA
