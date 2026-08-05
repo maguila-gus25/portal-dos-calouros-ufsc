@@ -4,6 +4,128 @@
 
 ---
 
+## Sprint 23 — CED + CDS publicados (v1.17)
+
+**Objetivo:** Publicar dois centros em paralelo como vertical slices completos — o **CED** (Centro de
+Educação) com 4 fichas de curso (Pedagogia, Educação do Campo, Arquivologia, Biblioteconomia) e o
+**CDS** (Centro de Desportos e Saúde) com 1 ficha (Educação Física). Sprint content-only: nenhum
+código frontend novo necessário; loader `listCourses()` detecta automaticamente os novos `.md`.
+Após este sprint: 11 centros publicados.
+
+Rastreabilidade GitHub: #57 (CED), #58 (CDS).
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CED — centro + fichas (Pedagogia, Ed. do Campo, Arquivologia, Biblioteconomia) | B-60 (CED) | Should / M | content-editor | Done |
+| CDS — centro + ficha (Educação Física) | B-60 (CDS) | Should / P | content-editor | Done |
+
+### Critérios de aceite detalhados
+
+**B-60 (CED) — vertical slice completo**
+
+- [ ] `docs/centros/ced.md` com frontmatter YAML: `slug: ced`, `titulo: "Centro de Educação (CED)"`,
+      coordenações (diretor/a, vice), e-mail, CA(s), atlética(s), links úteis — tudo com fonte oficial.
+- [ ] Verificar via site oficial (`ced.ufsc.br`) se Arquivologia e Biblioteconomia estão sob o CED
+      (Departamento de Ciência da Informação dentro do CED); se confirmado, criar as fichas; se
+      pertencerem a centro separado, criar ficha do centro e criar apenas Pedagogia e Ed. do Campo.
+- [ ] `docs/cursos/pedagogia.md` com `centro: CED`, grau/turno/duração do Guia de Cursos UFSC.
+- [ ] `docs/cursos/educacao-do-campo.md` com `centro: CED`, grau/turno/duração confirmados.
+- [ ] `docs/cursos/arquivologia.md` com `centro: CED` (se confirmado), grau/turno/duração.
+- [ ] `docs/cursos/biblioteconomia.md` com `centro: CED` (se confirmado), grau/turno/duração.
+- [ ] Campos sem fonte verificada como `~` (nunca texto inventado).
+- [ ] `/centros/ced` renderiza o centro + cursos com links válidos; build gera as novas páginas SSG.
+
+**B-60 (CDS) — vertical slice completo**
+
+- [ ] `docs/centros/cds.md` com frontmatter YAML: `slug: cds`, `titulo: "Centro de Desportos (CDS)"`,
+      coordenações, CA, atlética, links úteis — tudo com fonte oficial.
+- [ ] `docs/cursos/educacao-fisica.md` com `centro: CDS`, habilitações (Licenciatura + Bacharelado),
+      turno, duração, e-mail (`edfisica@contato.ufsc.br`), telefone (`(48) 3721-4773`).
+- [ ] Campos sem fonte verificada como `~`.
+- [ ] `/centros/cds` renderiza o centro + 1 curso com link válido; build gera as novas páginas SSG.
+
+### Ordem de execução (tracer-bullet — arquivos completamente disjuntos)
+
+```
+Wave 1 — paralelo (zero dependência entre CED e CDS):
+  content-editor A — docs/centros/ced.md
+                     docs/cursos/{pedagogia,educacao-do-campo,arquivologia,biblioteconomia}.md
+  content-editor B — docs/centros/cds.md
+                     docs/cursos/educacao-fisica.md
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (espera ≥ 97 páginas: 90 + 7 novas) + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária neste sprint.
+
+### Fontes oficiais
+
+**CED:**
+- Site do CED: <https://ced.ufsc.br/>
+- Departamento de Ciência da Informação: <https://cin.ufsc.br/> (verificar subordinação ao CED)
+- Guia de Cursos UFSC: <https://guiadecursos.ufsc.br/>
+- Pedagogia: <https://pedagogia.grad.ufsc.br/>
+- Educação do Campo: <https://educacaodocampo.grad.ufsc.br/>
+
+**CDS:**
+- Site do CDS: <https://cds.ufsc.br/>
+- Educação Física: <https://def.ufsc.br/>
+- Guia de Cursos: <https://guiadecursos.ufsc.br/educacao-fisica/>
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 97 páginas SSG)
+- [ ] Playwright sem regressões (8/8)
+- [ ] `/centros/ced` exibe os cursos do CED com links válidos
+- [ ] `/centros/cds` exibe Educação Física com link válido
+- [ ] `docs/product-backlog.md` atualizado (B-60: 11 centros, CED ✅, CDS ✅)
+- [ ] Issues GitHub #57 e #58 fechadas
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Campus Joinville e Araranguá | Um agrupamento por sprint; CED/CDS primeiro por serem do campus Trindade. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+| B-37 / B-50 / E13 (banco + auth) | Horizonte v2. |
+
+### Retrospectiva do Sprint 23
+
+**Concluído em:** 2026-08-05
+
+**Entregue:**
+- **B-60 (CED)** — vertical slice completo: `docs/centros/ced.md` + 4 fichas de curso.
+  CED é o 10º centro publicado. Descoberta relevante: Arquivologia e Biblioteconomia estão
+  subordinadas ao Departamento de Ciência da Informação (CIN) **dentro** do CED — confirmado
+  via `ced.ufsc.br`. Todas as 4 fichas criadas com `centro: CED`. Dados ricos encontrados:
+  coordenadora de Pedagogia (Profa. Leila Procópia), e-mails institucionais, salas, coordenadores
+  de Arquivologia (Profa. Sonali Bedin) e Biblioteconomia (Prof. Marcelo Minghelli).
+- **B-60 (CDS)** — vertical slice completo: `docs/centros/cds.md` + `educacao-fisica.md`.
+  CDS é o 11º centro publicado. Dados completos: Diretor (Prof. Michel Angillo Saad), Vice-Diretor
+  (Prof. Luiz Guglielmo), Coordenadores de Ed. Física (Prof. Jaison Bassani + Prof. Ricardo Pimenta),
+  atlética AEF (Ada Carina Maliceski / @aefufsc) encontrada e documentada. CAEF (CA) listado como
+  oficial mas site histórico inacessível — registrado como `_A preencher_`.
+
+**Verificações finais:** lint ✅ · build **97 páginas** SSG ✅ · Playwright **8/8** ✅ ·
+ui-ux-review não necessária (sprint content-only, sem alterações de frontend).
+
+**O que foi bem:**
+- Paralelismo Wave 1 funcionou perfeitamente: dois content-editors em arquivos completamente disjuntos.
+- CDS surpreendeu positivamente: diretor/vice-diretor e coordenadores de curso todos publicados no
+  site oficial — dados muito mais completos que CFH no Sprint 21.
+- Descoberta de que Arquivologia/Biblioteconomia pertencem ao CED (via dep. CIN interno) resolvida
+  autonomamente pelo content-editor sem necessidade de intervenção do mantenedor.
+
+**Pendências / follow-up:**
+- **B-60** — faltam: campus Joinville (CJ) e campus Araranguá (ARA). Ritmo: 1 agrupamento por sprint.
+- CAEF (CA de Ed. Física): site histórico inacessível — verificar Instagram ou junto ao CDS.
+- Pedagogia: duração em semestres não publicada no site; CA e atlética `_A preencher_`.
+- **B-08 / B-13** — bloqueados sem submissões reais de veteranos.
+
+---
+
 ## Sprint 22 — CCB publicado + B-73 encerrado (v1.16)
 
 **Objetivo:** Dois fechamentos em paralelo — abrir o **CCB** como vertical slice completo (centro +
