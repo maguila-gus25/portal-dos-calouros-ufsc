@@ -11,7 +11,7 @@ coordenacao:
   site: https://sin.ufsc.br/
 atletica: A5 — @a5ufsc
 instagram_curso: CASIN — @casin.ufsc
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Sistemas de Informação
@@ -23,7 +23,7 @@ ultima_verificacao: "julho/2026"
 - **Resumo:** Desenvolvimento e gestão de sistemas de software voltados a processos de negócio e tomada de decisão.
 
 ## Coordenação
-- **E-mail:** sin@contato.ufsc.br0
+- **E-mail:** _A preencher_ — exibido como imagem no site; verificar em <https://sin.ufsc.br/coordenacao/>
 - **Telefone:** (48) 3721-4701
 - **Sala / prédio:** Prédio do INE (CTC), térreo, Sala 103
 - **Coordenação:** <https://sin.ufsc.br/coordenacao/>

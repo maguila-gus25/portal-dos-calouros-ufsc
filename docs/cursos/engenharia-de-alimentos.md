@@ -11,14 +11,14 @@ coordenacao:
   site: https://engalimentos.grad.ufsc.br/
 atletica: ATEQA — @ateqaufsc
 instagram_curso: "@eng_ali_ufsc"
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia de Alimentos
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** 10 semestres (mínimo 8)
 - **Página oficial do curso:** <https://engalimentos.grad.ufsc.br/>
 - **Resumo:** Ciência e tecnologia da produção, conservação e controle de qualidade de alimentos industrializados.
 

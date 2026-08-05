@@ -21,7 +21,7 @@ ultima_verificacao: "agosto/2026"
 ## Sobre o curso
 
 - **Grau / turno:** Bacharelado / Integral
-- **Duração:** _A preencher_ — uma busca indireta (página oficial retornou erro 403 na verificação direta) indicou duração mínima de 8 semestres e máxima de 14 semestres, compatível com a carga horária total de 3.456 h/a do curso. Recomenda-se reconfirmar antes de publicar como definitivo, acessando diretamente <https://cagr.sistemas.ufsc.br/> ou <https://designproduto.ufsc.br/>.
+- **Duração:** 8 semestres (mínimo), máximo 14 semestres; carga horária total de 3.456 h/a (fonte: currículo oficial em <https://designproduto.ufsc.br/files/2019/03/Curriculo-Design-Produto-2019.pdf> e CAGR curso 452).
 - **Página oficial do curso:** <https://designproduto.ufsc.br/>
 - **Resumo:** Forma bacharéis em Design com habilitação em Design de Produto, voltados ao desenvolvimento de produtos industriais com critérios de inovação, responsabilidade socioambiental e empreendedorismo. Curso criado em 2009.
 - **Vagas:** 40 anuais (20 no primeiro e 20 no segundo semestre), segundo divulgação oficial.

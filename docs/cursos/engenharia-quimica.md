@@ -11,14 +11,14 @@ coordenacao:
   site: https://cenq.paginas.ufsc.br/
 atletica: ATEQA — @ateqaufsc
 instagram_curso: "@caleqa_ufsc"
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia Química
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://cenq.paginas.ufsc.br/>
 - **Resumo:** Processos industriais de transformação química, operações unitárias, petroquímica e controle de qualidade.
 

@@ -12,14 +12,14 @@ coordenacao:
   site: https://producao.ufsc.br/
 atletica: A7 (Atlética Edvaldo de Souza) — @a7atletica
 instagram_curso: _A preencher_
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # 📄 Engenharia de Produção
 
 ## Sobre o curso
 - **Grau / turno:** Bacharelado / Diurno
-- **Duração:** _A preencher_
+- **Duração:** 10 semestres
 - **Página oficial do curso:** <https://producao.ufsc.br/>
 - **Resumo:** Otimização de processos produtivos, gestão da qualidade, logística e engenharia econômica.
 
