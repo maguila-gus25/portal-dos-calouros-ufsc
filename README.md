@@ -132,7 +132,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.13** — Fichas dos 9 cursos do CCE — 5 centros originais (CTC/CCA/CSE/CCS/CCE) com fichas completas (Sprint 19)
 - [x] **v1.14** — Fichas de curso do CFM (5) e do CCJ (Direito) (Sprint 20)
 - [x] **v1.15** — Fichas dos 9 cursos do CFH — todos os 8 centros publicados com fichas completas (50 fichas total) (Sprint 21)
-- [ ] **Próximo** — Demais centros: CCB, CED, CDS, Joinville, Araranguá (B-60)
+- [x] **v1.16** — CCB publicado (Ciências Biológicas); UI estruturada das seções FAQ, checklist e mapa — B-73 ✅ fechado (Sprint 22)
+- [ ] **Próximo** — Centros CED, CDS, Joinville, Araranguá (B-60)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 

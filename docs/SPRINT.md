@@ -4,6 +4,123 @@
 
 ---
 
+## Sprint 22 — CCB publicado + B-73 encerrado (v1.16)
+
+**Objetivo:** Dois fechamentos em paralelo — abrir o **CCB** como vertical slice completo (centro +
+ficha do único curso) e encerrar de vez o **B-73** adicionando UI estruturada às 3 seções que ainda
+usam fallback prose (`faq`, `checklist`, `mapa`). Após este sprint: 9 centros publicados, B-73 ✅.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CCB — centro + ficha de Ciências Biológicas | B-60 (CCB) | Should / M | content-editor | Done |
+| UI estruturada: FaqSection, ChecklistSection, MapaSection | B-73 | Should / M | frontend-dev | Done |
+
+### Critérios de aceite detalhados
+
+**B-60 (CCB) — vertical slice completo**
+
+- [ ] `docs/centros/ccb.md` com frontmatter YAML: `slug: ccb`, `titulo: "Centro de Ciências Biológicas (CCB)"`, coordenações, CAs, atléticas, links úteis — tudo com fonte oficial.
+- [ ] `docs/cursos/ciencias-biologicas.md` com `centro: CCB`, `grau: Bacharelado e Licenciatura`, turno diurno (e noturno para Licenciatura). Um único arquivo com as habilitações descritas no corpo.
+- [ ] Coordenador: `~` se não publicado em fonte verificada.
+- [ ] `/centros/ccb` renderiza o centro + 1 curso com link válido para `/cursos/ciencias-biologicas`.
+- [ ] Build inclui as novas páginas SSG.
+
+**B-73 — UI estruturada (3 seções restantes)**
+
+- [ ] `components/sections/FaqSection.tsx` — renderiza perguntas e respostas do FAQ como cards visuais (cada H2/H3 = pergunta, parágrafo seguinte = resposta). Mobile-first.
+- [ ] `components/sections/ChecklistSection.tsx` — renderiza itens de checklist (`- [ ]`) como cards com ícone de check. Mantém prose para blocos não-checklist.
+- [ ] `components/sections/MapaSection.tsx` — card prominente com link para `/mapa` (a página com Leaflet) + prose do restante do conteúdo.
+- [ ] `app/secoes/[slug]/page.tsx` — registrar `faq`, `checklist`, `mapa` em `SECTION_COMPONENTS`.
+- [ ] `npm run lint` e `npm run build` passam. Playwright 8/8 (sem regressões).
+- [ ] `ui-ux-review` sem findings bloqueadores.
+
+### Ordem de execução (tracer-bullet — arquivos completamente disjuntos)
+
+```
+Wave 1 — paralelo (zero dependência entre as duas histórias):
+  content-editor   — docs/centros/ccb.md + docs/cursos/ciencias-biologicas.md
+  frontend-dev     — components/sections/{FaqSection,ChecklistSection,MapaSection}.tsx
+                     + app/secoes/[slug]/page.tsx (registrar os 3 slugs)
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (espera ≥ 90 páginas) + Playwright 8/8
+
+Wave 3 — após Wave 2 (só se lint/build/Playwright passarem):
+  ui-ux-review     — auditar FaqSection, ChecklistSection e MapaSection
+```
+
+### Fontes oficiais (CCB)
+
+- Site do CCB: <https://portal.ccb.ufsc.br/>
+- Graduação: <https://cienciasbiologicas.grad.ufsc.br/>
+- Guia de Cursos: <https://guiadecursos.ufsc.br/ciencias-biologicas/>
+
+> CCB tem **1 curso de graduação presencial** — Ciências Biológicas — com habilitações Bacharelado
+> (diurno, 9 semestres) e Licenciatura (diurno e noturno). Único arquivo `ciencias-biologicas.md`.
+
+### Referências técnicas (B-73)
+
+- Padrão existente: ver `components/sections/DatasSection.tsx` (cards) e `RuSection.tsx` (steps).
+- Reutilizar `ProseBlocks.tsx` para blocos que não precisam de UI especial.
+- `app/secoes/[slug]/page.tsx` l.14–20: dict `SECTION_COMPONENTS` — adicionar `faq`, `checklist`, `mapa`.
+- `faq.md` tem estrutura H2/H3 + parágrafos; `checklist-primeira-semana.md` tem task-list items (`- [ ]`); `mapa.md` tem prose + links.
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 90 páginas SSG — 88 atuais + 1 CCB + 1 ciencias-biologicas)
+- [ ] Playwright sem regressões (8/8)
+- [ ] `/centros/ccb` exibe Ciências Biológicas com link válido
+- [ ] `/secoes/faq`, `/secoes/checklist` e `/secoes/mapa` renderizam componente dedicado (não fallback prose)
+- [ ] `ui-ux-review` sem findings bloqueadores nos 3 novos componentes
+- [ ] `docs/product-backlog.md` atualizado (B-60 🚧 + B-73 ✅)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| CED, CDS, Joinville, Araranguá | Um centro por sprint (ritmo validado); CCB fecha antes de abrir outros. |
+| B-08 / B-13 (veteranos) | Bloqueados — sem submissões reais. |
+| #46 (enviar sugestões) | Bloqueado por decisão do mantenedor. |
+| B-37 / B-50 / E13 (banco + auth) | Horizonte v2 — sem caso de uso desbloqueado. |
+
+### Retrospectiva do Sprint 22
+
+**Concluído em:** 2026-08-04
+
+**Entregue:**
+- **B-60 (CCB)** — vertical slice completo: `docs/centros/ccb.md` + `docs/cursos/ciencias-biologicas.md`.
+  CCB é o 9º centro publicado. Dados ricos encontrados: diretor (Prof. Dr. Rui Daniel S. Prediger),
+  vice-diretora, e-mails de coordenação, telefone, CA (CABio / @cabioufsc), atlética (ATLBIO /
+  @atleticabioufsc / Associação Atlética Acadêmica Vera Lícia), Semana Acadêmica da Biologia (XXV ed.).
+- **B-73 ✅ fechado** — 3 componentes novos em `components/sections/`:
+  - `FaqSection.tsx`: Q&A em cards visuais por categoria (H2) e questão (H3) com ícone HelpCircle.
+  - `ChecklistSection.tsx`: fases numeradas (H2) + itens `- [ ]` como cards com CheckCircle2.
+  - `MapaSection.tsx`: card CTA `btn-primary` → `/mapa` + prose. Fix de contraste dark mode aplicado
+    (botão `bg-primary` → `btn-primary` com `--primary-button` 6.00:1 — finding blocker do ui-ux-review).
+  - `app/secoes/[slug]/page.tsx`: `faq`, `checklist`, `mapa` registrados em `SECTION_COMPONENTS`.
+  - Todas as 8 seções do portal agora têm UI dedicada (nenhuma mais em fallback prose).
+
+**Verificações finais:** lint ✅ · build **90 páginas** SSG ✅ · Playwright **8/8** ✅ ·
+ui-ux-review ✅ (1 blocker encontrado e corrigido na mesma sessão — dark mode contrast em MapaSection).
+
+**O que foi bem:**
+- Paralelismo Wave 1 funcionou perfeitamente: content-editor e frontend-dev trabalharam em arquivos
+  completamente disjuntos sem nenhum conflito.
+- CCB surpreendeu positivamente: o content-editor encontrou dados muito mais ricos do que o CFH
+  (atlética, CA, eventos, e-mails de coordenação) — resultado de dados mais bem publicados pelo centro.
+- ui-ux-review capturou o re-uso incorreto de `bg-primary` no botão — exatamente o padrão que B-78
+  havia corrigido em outros componentes. Evidência de que a review é necessária após qualquer sprint
+  com código frontend.
+
+**Pendências / follow-up:**
+- **B-60** — faltam: CED (Centro de Educação), CDS (Centro de Desportos e Saúde), campus Joinville,
+  campus Araranguá. Ritmo: 1 centro por sprint.
+- **B-08 / B-13** — bloqueados sem submissões reais de veteranos.
+- **#46** — bloqueado aguardando decisão do mantenedor.
+
+---
+
 ## Sprint 21 — Fichas de curso do CFH: 9 cursos das Humanidades (v1.15)
 
 **Objetivo:** Completar as fichas de curso do último centro publicado sem fichas: o **CFH** (Centro de
