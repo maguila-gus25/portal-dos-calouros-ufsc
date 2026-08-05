@@ -4,10 +4,13 @@ import { notFound } from "next/navigation";
 import { getSection, listSections, type Section } from "@/lib/content";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
+import { ChecklistSection } from "@/components/sections/ChecklistSection";
 import { DatasSection } from "@/components/sections/DatasSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { HistoriasSection } from "@/components/sections/HistoriasSection";
 import { InstagramSection } from "@/components/sections/InstagramSection";
 import { LinksSection } from "@/components/sections/LinksSection";
+import { MapaSection } from "@/components/sections/MapaSection";
 import { RuSection } from "@/components/sections/RuSection";
 
 // Slugs with dedicated, structured UI. Everything else keeps the `.prose-content` fallback.
@@ -17,6 +20,9 @@ const SECTION_COMPONENTS: Record<string, (props: { section: Section }) => ReactE
   ru: ({ section }) => <RuSection blocks={section.blocks} />,
   instagrams: ({ section }) => <InstagramSection blocks={section.blocks} />,
   historias: ({ section }) => <HistoriasSection blocks={section.blocks} />,
+  faq: ({ section }) => <FaqSection blocks={section.blocks} />,
+  checklist: ({ section }) => <ChecklistSection blocks={section.blocks} />,
+  mapa: ({ section }) => <MapaSection blocks={section.blocks} />,
 };
 
 export function generateStaticParams() {
