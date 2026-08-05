@@ -11,7 +11,7 @@ coordenacao:
   atendimento: Seg–Sex, 08h–12h e 13h–17h (confirmar no site)
   site: https://producao.ufsc.br/
 atletica: A7 (Atlética Edvaldo de Souza) — @a7atletica
-instagram_curso: _A preencher_
+instagram_curso: "@engenhariadeproducao.ufsc"
 ultima_verificacao: "agosto/2026"
 ---
 
@@ -39,7 +39,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 - **Centro Acadêmico:** **CALIPRO** (Centro Acadêmico Livre de Engenharia de Produção) — <https://caliproufsc.wordpress.com/>
 - **Atlética:** **A7** (Associação Atlética Edvaldo de Souza) — [@a7atletica](https://www.instagram.com/a7atletica/) · [site](https://a7atletica.wixsite.com/ufsc) (tetracampeã da Copa CTC)
-- **Empresa júnior:** **EJEP** — Empresa Júnior de Engenharia de Produção
+- **Empresa júnior:** **EJEP** — Empresa Júnior de Engenharia de Produção (1ª EJ de Engenharia de Produção do Brasil) — [@ejepnoinsta](https://www.instagram.com/ejepnoinsta/) — <https://ejep.com.br/>
 - **Instagrams / perfis:** ver [Instagrams do portal](../instagrams.md)
 
 ## Dicas de veterano

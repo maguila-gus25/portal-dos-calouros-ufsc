@@ -21,7 +21,7 @@ ultima_verificacao: "agosto/2026"
 ## Sobre o curso
 
 - **Grau / turno:** Bacharelado / Noturno
-- **Duração:** _A preencher_ — busca indireta encontrou valores diferentes conforme a versão do currículo: mínima de 8 e máxima de 14 semestres no currículo 2008/1, e mínima de 9 e máxima de 14 semestres no currículo 2013/1. Como não foi possível confirmar qual currículo está vigente, verificar diretamente em <https://artescenicas.grad.ufsc.br/curriculo/> (acesso direto retornou erro 403 durante a verificação).
+- **Duração:** 8 fases — confirmado em <https://vestibularunificado2024.ufsc.br/artes-cenicas/>. Currículo vigente: 2013/1 (o currículo 2008/1 está extinto — confirmado em <https://artescenicas.grad.ufsc.br/curriculo/>).
 - **Página oficial do curso:** <https://artescenicas.grad.ufsc.br/>
 - **Resumo:** Curso implantado em 2008, oferece formação a partir de quatro eixos — dramaturgia, atuação, direção teatral e arte da performance — preparando profissionais para atuar como atores, diretores, dramaturgos, pesquisadores, críticos de teatro, performers e assessores culturais, entre outras atividades.
 
@@ -41,8 +41,8 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** **CAAC** — Centro Acadêmico de Artes Cênicas — [@caacufsc](https://www.instagram.com/caacufsc/) — [Facebook](https://www.facebook.com/CAcenicasUFSC/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CAAC ([@caacufsc](https://www.instagram.com/caacufsc/))
-- **Empresa júnior:** _A preencher_
+- **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CAAC ([@caacufsc](https://www.instagram.com/caacufsc/))
+- **Empresa júnior:** _A preencher_ — não encontrado em agosto/2026
 - **Eventos:** o Departamento de Artes (ART/CCE) realiza espetáculos e mostras ao longo do semestre; acompanhar em [@artescenicasufsc](https://www.instagram.com/artescenicasufsc/)
 - **Instagrams / perfis:**
   - [@caacufsc](https://www.instagram.com/caacufsc/) — CAAC (Centro Acadêmico)
@@ -62,7 +62,7 @@ ultima_verificacao: "agosto/2026"
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — coordenação, secretaria, CA e eventos já verificados (julho/2026), fonte original: <https://artescenicas.grad.ufsc.br/contato/>
-- <https://artescenicas.grad.ufsc.br/sobre-o-curso/> — resumo do curso (acesso direto bloqueado com erro 403 durante verificação; dados obtidos por indexação de busca)
-- Anexos oficiais do Vestibular Unificado UFSC 2018 (vestibular2018.ufsc.br) e 2023 (vestibular2023.ufsc.br / vestibularunificado2023.ufsc.br) — turno confirmado como "ARTES CÊNICAS — BEL — NOTURNO", curso 451
-- <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=451> — duração (acesso indireto via busca; valores divergentes entre currículos 2008/1 e 2013/1)
+- <https://vestibularunificado2024.ufsc.br/artes-cenicas/> — duração: 8 fases
+- <https://artescenicas.grad.ufsc.br/curriculo/> — currículo 2013/1 vigente (2008/1 extinto)
+- Anexos oficiais do Vestibular Unificado UFSC 2018 e 2023 — turno confirmado como "ARTES CÊNICAS — BEL — NOTURNO", curso 451
 - <https://www.instagram.com/caacufsc/> e <https://www.instagram.com/artescenicasufsc/>

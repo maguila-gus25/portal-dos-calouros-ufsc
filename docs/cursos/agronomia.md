@@ -3,7 +3,7 @@ curso: Agronomia
 slug: agronomia
 centro: CCA
 grau: Bacharelado
-turno: ~
+turno: Integral
 coordenacao:
   nome: Prof. Tiago Olivoto (coordenador) / Prof. Tiago Montagna (subcoordenador)
   email: ~
@@ -22,7 +22,7 @@ ultima_verificacao: "julho/2026"
 
 ## Sobre o curso
 
-- **Grau / turno:** Bacharelado / _A preencher_ — verificar em <https://agronomia.ufsc.br/>
+- **Grau / turno:** Bacharelado / Integral (períodos matutino e vespertino)
 - **Duração:** 10 semestres (5 anos)
 - **Página oficial do curso:** <https://agronomia.ufsc.br/>
 - **Secretaria do curso:** Eng. Agr. Gilmar Borsoi — (48) 3721-2920 (WhatsApp)
@@ -35,8 +35,8 @@ ultima_verificacao: "julho/2026"
 - **E-mail:** _A preencher_ — e-mail exibido como imagem no site; ligar para (48) 3721-5411 ou (48) 3721-5321
 - **Telefone:** (48) 3721-5411 (coordenador) / (48) 3721-5321 (subcoordenador)
 - **Secretaria:** (48) 3721-2920 (WhatsApp — Eng. Gilmar Borsoi)
-- **Sala / prédio:** _A preencher_ — verificar em <https://agronomia.ufsc.br/>
-- **Atendimento:** _A preencher_ — verificar em <https://agronomia.ufsc.br/>
+- **Sala / prédio:** _A preencher_ — não encontrado em agosto/2026
+- **Atendimento:** _A preencher_ — não encontrado em agosto/2026
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -44,7 +44,7 @@ ultima_verificacao: "julho/2026"
 
 - **Centro Acadêmico:** **CAAGRO** — [@caagroufsc](https://www.instagram.com/caagroufsc/) (Gestão Refazenda 2024–2025; e-mail: caagroccaufsc@gmail.com)
 - **Atlética:** **ATAG** (Associação Atlética de Agronomia UFSC) — [@atag.ufsc](https://www.instagram.com/atag.ufsc/)
-- **Empresa júnior:** _A preencher_ — verificar em <https://agronomia.ufsc.br/>
+- **Empresa júnior:** **ANALIZE** (Empresa Júnior de Assessoria Agropecuária & Aquícola, fundada em 2012) — atende Agronomia, Zootecnia e Aquicultura — <https://analize.cca.ufsc.br/> · contatoanalize@gmail.com · (48) 3721-6187
 - **Instagrams / perfis:**
   - [@caagroufsc](https://www.instagram.com/caagroufsc/) — CAAGRO (Centro Acadêmico)
   - [@atag.ufsc](https://www.instagram.com/atag.ufsc/) — Atlética de Agronomia
@@ -63,8 +63,11 @@ ultima_verificacao: "julho/2026"
 
 ---
 
-**Fontes consultadas (julho/2026):**
+**Fontes consultadas (julho–agosto/2026):**
 - <https://agronomia.ufsc.br/> — site oficial do curso
 - <https://vestibularunificado2023.ufsc.br/agronomia/> — duração de 10 semestres confirmada
+- <https://vestibularunificado2020.ufsc.br/cursos-ofertados/> — turno Integral confirmado
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — ANALIZE (cursos: Agronomia, Zootecnia, Aquicultura)
+- <https://analize.cca.ufsc.br/> — site da empresa júnior ANALIZE
 - <https://www.instagram.com/caagroufsc/> — CAAGRO
 - <https://www.instagram.com/atag.ufsc/> — ATAG

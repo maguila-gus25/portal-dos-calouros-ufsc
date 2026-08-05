@@ -3,7 +3,7 @@ curso: Licenciatura em Educação do Campo
 slug: educacao-do-campo
 centro: CED
 grau: Licenciatura
-turno: ~
+turno: Integral (Tempo Universidade — regime de alternância)
 duracao: "8 semestres"
 coordenacao:
   nome: ~
@@ -26,7 +26,7 @@ ultima_verificacao: "agosto/2026"
 
 ## Sobre o curso
 
-- **Grau / turno:** Licenciatura — turno _A preencher_ (o curso opera em regime de alternância; verificar turno formal em <https://educampo.grad.ufsc.br/>)
+- **Grau / turno:** Licenciatura — turno **Integral** durante o Tempo Universidade (regime de alternância: períodos no campus intercalados com Tempo Comunidade nos territórios)
 - **Duração:** 8 semestres (4 anos)
 - **Página oficial do curso:** <https://educampo.grad.ufsc.br/>
 - **Guia de Cursos UFSC:** <https://guiadecursos.ufsc.br/educacao-do-campo/>
@@ -44,7 +44,7 @@ ultima_verificacao: "agosto/2026"
   - Quarta: teletrabalho
   - Quinta: presencial
   - Sexta: teletrabalho
-- **Coordenador(a) geral:** _A preencher_ — verificar em <https://educampo.grad.ufsc.br/>
+- **Coordenador(a) geral:** _A preencher_ — não encontrado em agosto/2026 (o site lista coordenadores por fase/turma; verificar o coordenador geral diretamente em <https://educampo.grad.ufsc.br/coordenacao/>)
 
 > Nota: O site lista coordenadores por fase/turma (2ª fase: Prof. Juliano Espezim Soares Faria; 4ª fase: Prof. Emeson Tavares da Silva; 6ª fase: Profa. Gabriele Nigra Salgado; 8ª fase: Prof. Elizandro Maurício Brick). O coordenador geral do curso deve ser verificado diretamente em <https://educampo.grad.ufsc.br/coordenacao/>.
 
@@ -52,10 +52,11 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://educampo.grad.ufsc.br/> ou junto ao CED
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** _A preencher_ — não encontrado em agosto/2026 (o CGEJ e a listagem da UFSC não listam CA de Educação do Campo; verificar junto ao CED)
+- **Atlética:** _A preencher_ — não encontrada em agosto/2026
+- **Empresa júnior:** _A preencher_ — não encontrada em agosto/2026
+- **Instagrams / perfis:**
+  - [@peteducampo](https://www.instagram.com/peteducampo/) — PET EduCampo UFSC (Programa de Educação Tutorial)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -73,5 +74,8 @@ _A preencher_ — O curso ocorre predominantemente no CED (Campus Trindade) dura
 - <https://guiadecursos.ufsc.br/educacao-do-campo/> — grau, centro e metodologia da alternância
 - <https://educampo.grad.ufsc.br/> — e-mails, telefones, horário de atendimento da secretaria, coordenadores por fase
 - <https://ced.ufsc.br/> — vínculo com Departamento de Educação do Campo (EDC/CED)
+- <https://coperve.ufsc.br/processo-seletivo-educacao-do-campo/> — turno Integral durante o Tempo Universidade (regime de alternância presencial)
+- <https://www.instagram.com/peteducampo/> — PET EduCampo UFSC
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — nenhuma EJ de Educação do Campo listada
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

@@ -34,15 +34,15 @@ ultima_verificacao: "agosto/2026"
 - **E-mail da secretaria:** design@contato.ufsc.br (secretaria compartilhada com Design e Animação — Departamento de Expressão Gráfica, EGR); e-mail alternativo do departamento: egr@contato.ufsc.br
 - **Telefone da secretaria:** (48) 3721-3728
 - **Sala:** Bloco A, 1º andar, Sala 140
-- **Atendimento:** _A preencher_ — verificar em <https://designproduto.ufsc.br/>
+- **Atendimento:** _A preencher_ — não encontrado em agosto/2026
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
 - **Centro Acadêmico:** **CADe** — Centro Acadêmico de Design (compartilhado com Design e Animação) — [@cade.ufsc](https://www.instagram.com/cade.ufsc/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CADe ([@cade.ufsc](https://www.instagram.com/cade.ufsc/))
-- **Empresa júnior:** _A preencher_
+- **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CADe ([@cade.ufsc](https://www.instagram.com/cade.ufsc/))
+- **Empresa júnior:** **Uipi** — Empresa Júnior de Design e Animação da UFSC — [@uipi.design](https://www.instagram.com/uipi.design/) — <https://uipi.ufsc.br/>
 - **Instagrams / perfis:**
   - [@cade.ufsc](https://www.instagram.com/cade.ufsc/) — CADe (Centro Acadêmico de Design, Design de Produto e Animação)
 
@@ -60,7 +60,7 @@ ultima_verificacao: "agosto/2026"
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — coordenação compartilhada (EGR), secretaria, CA e atlética já verificados (julho/2026)
-- <https://designproduto.ufsc.br/> e <https://designproduto.ufsc.br/equipe/> — página oficial do curso (acesso direto bloqueado com erro 403 durante verificação; dados obtidos por indexação de busca)
+- <https://vestibularunificado2024.ufsc.br/design-de-produto/> — duração: 8 fases
 - <https://dados.coperve.ufsc.br/vestibular2023/resultado/resultado_452.pdf> — turno confirmado como "DESIGN DE PRODUTO — BEL — INTEGRAL"
-- <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=452> — duração e carga horária (acesso indireto via busca)
+- <https://uipi.ufsc.br/> e <https://www.instagram.com/uipi.design/> — Uipi, empresa júnior de Design e Animação
 - <https://www.instagram.com/cade.ufsc/> — CADe

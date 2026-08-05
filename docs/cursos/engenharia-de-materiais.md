@@ -10,7 +10,7 @@ coordenacao:
   sala: Centro Tecnológico (CTC), Caixa Postal 476
   site: https://materiais.grad.ufsc.br/
 atletica: ATM UFSC — @atmufsc
-instagram_curso: _A preencher_
+instagram_curso: "@camatufsc"
 ultima_verificacao: "julho/2026"
 ---
 
@@ -33,7 +33,7 @@ ultima_verificacao: "julho/2026"
 ## Vida do curso
 - **Centro Acadêmico:** **CAMAT** (Centro Acadêmico de Engenharia de Materiais) — <https://www.camat.ufsc.br/>
 - **Atlética:** **ATM UFSC** — [@atmufsc](https://www.instagram.com/atmufsc/) (compartilhada com Engenharia Mecânica; tricampeã da Copa CTC)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **EJEM** — Empresa Júnior de Engenharia de Materiais — [@ejem.ufsc](https://www.instagram.com/ejem.ufsc/) — <https://ejemateriais.com.br/>
 - **Instagrams / perfis:** ver [Instagrams do portal](../instagrams.md)
 
 ## Dicas de veterano

@@ -5,11 +5,11 @@ centro: CCE
 grau: Bacharelado
 turno: Noturno
 coordenacao:
-  nome: ~
+  nome: Amanda Bruno de Mello (coord. geral DLLE) / Maria Ester Moritz (coord. área SE)
   email: cglle.cce@contato.ufsc.br
   telefone: "(48) 3721-9489"
   sala: Bloco A, 2º andar, Sala 220
-  atendimento: ~
+  atendimento: "seg–sex 9h–12h30 · ter e sex 13h30–18h30 · seg, qua e qui 13h30–20h30"
   site: https://secretariadoexecutivo.ufsc.br/
 atletica: Atlética de Letras UFSC — @atleticale.ufsc
 instagram_curso: "@call.ufsc"
@@ -31,11 +31,11 @@ ultima_verificacao: "agosto/2026"
 
 Secretariado Executivo compartilha secretaria com o curso de Letras Estrangeiras (Departamento de Língua e Literatura Estrangeiras — DLLE).
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://coordlinguasestrangeiras.ufsc.br/secretariado-executivo/>
+- **Coordenadora geral (DLLE):** Prof.ª Dr.ª Amanda Bruno de Mello; coordenadora de área de Secretariado Executivo: Prof.ª Dr.ª Maria Ester Moritz — confirmado em <https://coordlinguasestrangeiras.ufsc.br/equipe/>
 - **E-mail da secretaria:** cglle.cce@contato.ufsc.br
 - **Telefone:** (48) 3721-9489
 - **Sala / prédio:** Bloco A, 2º andar, Sala 220
-- **Atendimento:** _A preencher_ — verificar em <https://secretariadoexecutivo.ufsc.br/>
+- **Atendimento:** segunda a sexta, 9h–12h30; terça e sexta, 13h30–18h30; segunda, quarta e quinta, 13h30–20h30 — fonte: <https://coordlinguasestrangeiras.ufsc.br/> (verificado agosto/2026)
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -43,8 +43,8 @@ Secretariado Executivo compartilha secretaria com o curso de Letras Estrangeiras
 
 - **Centro Acadêmico:** **CALL** (Centro Acadêmico Livre de Letras e Secretariado Executivo) — [@call.ufsc](https://www.instagram.com/call.ufsc/)
 - **Atlética:** **Atlética de Letras UFSC** — [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/)
-- **Empresa júnior:** _A preencher_
-- **Evento tradicional:** _A preencher_ — verificar com o CALL ([@call.ufsc](https://www.instagram.com/call.ufsc/))
+- **Empresa júnior:** **Letraduz** — Serviços de linguagem personalizados (tradução, legendagem, revisão) — [@letraduz.ufsc](https://www.instagram.com/letraduz.ufsc/) — Sala 219, Bloco A, CCE — fonte: <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/>
+- **Evento tradicional:** **Semana de Letras da UFSC** (co-organizado com DLLV e DLLE, geralmente agosto/setembro) e **Jornada de Secretariado** — verificar edições recentes com o CALL ([@call.ufsc](https://www.instagram.com/call.ufsc/))
 - **Instagrams / perfis:**
   - [@call.ufsc](https://www.instagram.com/call.ufsc/) — CALL (Centro Acadêmico)
   - [@atleticale.ufsc](https://www.instagram.com/atleticale.ufsc/) — Atlética de Letras
@@ -63,8 +63,9 @@ Secretariado Executivo compartilha secretaria com o curso de Letras Estrangeiras
 
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cce.md` — dados de coordenação, secretaria, CA e atlética já verificados (julho/2026)
-- <https://secretariadoexecutivo.ufsc.br/> — página oficial e duração do curso (acesso indireto via busca; página não carregou diretamente na verificação)
-- <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=429> — nome oficial do curso confirmando turno noturno (acesso indireto via busca)
-- <https://coordlinguasestrangeiras.ufsc.br/secretariado-executivo/> — coordenação (acesso indireto via busca; nome do(a) coordenador(a) não confirmado com confiança suficiente)
+- <https://coordlinguasestrangeiras.ufsc.br/equipe/> — coordenadora geral Amanda Bruno de Mello; subcoordenadora/coord. área SE: Maria Ester Moritz
+- <https://coordlinguasestrangeiras.ufsc.br/> — horário de atendimento da secretaria
+- <https://noticias.ufsc.br/2024/02/estudantes-de-letras-da-ufsc-criam-empresa-junior-para-servicos-de-traducao-legendagem-e-revisao/> — Letraduz, empresa júnior de Letras
+- <https://secretariadoexecutivo.ufsc.br/eventos-do-curso/> — eventos do curso (última atualização 2014; verificar edições recentes)
 - <https://www.instagram.com/call.ufsc/> — CALL
 - <https://www.instagram.com/atleticale.ufsc/> — Atlética de Letras

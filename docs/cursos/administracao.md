@@ -9,7 +9,7 @@ coordenacao:
   email: administracao@contato.ufsc.br
   telefone: "(48) 3721-9381"
   sala: CSE — Bloco F, Térreo
-  atendimento: ~
+  atendimento: "segunda a sexta, 07h às 19h"
   site: https://administracao.ufsc.br/
 atletica: Atlética ADM UFSC — @atleticaadmufsc
 instagram_curso: "@caad.ufsc"
@@ -35,7 +35,7 @@ ultima_verificacao: "julho/2026"
 - **Telefone:** (48) 3721-9381
 - **WhatsApp:** (48) 3721-3888
 - **Sala / prédio:** CSE — Bloco F, Térreo
-- **Atendimento:** _A preencher_ — verificar em <https://administracao.ufsc.br/>
+- **Atendimento (secretaria integrada):** segunda a sexta, 07h às 19h — CSE, Bloco F, Térreo
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -43,7 +43,7 @@ ultima_verificacao: "julho/2026"
 
 - **Centro Acadêmico:** **CAAD** (Centro Acadêmico de Administração) — [@caad.ufsc](https://www.instagram.com/caad.ufsc/) — <https://caad.ufsc.br/>
 - **Atlética:** **Atlética ADM UFSC** — [@atleticaadmufsc](https://www.instagram.com/atleticaadmufsc/)
-- **Empresa júnior:** _A preencher_
+- **Empresa júnior:** **Ação Júnior** (cursos de ADM, Economia, RI e Contábeis do CSE) — [@acao.junior](https://www.instagram.com/acao.junior/) — <https://acaojr.com.br/>
 - **Festa tradicional:** **Apocalipse** — festa de confraternização semestral organizada em conjunto com o curso de Ciências Econômicas. **SAAD** (Semana Acadêmica de Administração) — evento anual do CAAD, geralmente em outubro.
 - **Instagrams / perfis:**
   - [@caad.ufsc](https://www.instagram.com/caad.ufsc/) — CAAD (Centro Acadêmico)
@@ -61,9 +61,11 @@ ultima_verificacao: "julho/2026"
 
 ---
 
-**Fontes consultadas (julho/2026):**
+**Fontes consultadas (julho/2026 — atualizado agosto/2026):**
 - `docs/centros/cse.md` — dados de coordenação, secretaria, CA e atlética já verificados
 - <https://administracao.ufsc.br/> e <https://administracao.ufsc.br/descricao/> — grau, turnos e resumo do curso (acesso indireto via busca; página não carregou diretamente na verificação)
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=316> — duração do currículo (acesso indireto via busca)
+- <https://administracao.ufsc.br/horarios-de-atendimento/> — horário de atendimento da secretaria integrada (verificado agosto/2026)
 - <https://www.instagram.com/caad.ufsc/> — CAAD
 - <https://www.instagram.com/atleticaadmufsc/> — Atlética ADM
+- <https://acaojr.com.br/> e <https://www.instagram.com/acao.junior/> — Ação Júnior (empresa júnior do CSE)
