@@ -7,7 +7,8 @@ grau: Bacharelado
 turno: Integral
 duracao: "12 semestres"
 coordenacao:
-  nome: ~
+  nome: "Tamiris Dal Bó Martinello"
+  nome_vice: "Camila Carvalho de Souza Amorim Matos"
   email: medicina.ara@contato.ufsc.br
   telefone: "(48) 3721-6936"
   sala: "Bloco B — térreo, Unidade Jardim das Avenidas"
@@ -16,11 +17,11 @@ sig:
   email: sig.cts.ara@contato.ufsc.br
   telefone: "(48) 3721-6936"
   atendimento: "segunda a sexta, 8h às 20h"
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
-instagram_curso: ~
+ca: "CALMED — Centro Acadêmico Livre de Medicina"
+ca_instagram: "@calmed.ufsc"
+atletica: "ATMEDUFSC — Atlética Medicina UFSC Araranguá"
+atletica_instagram: "@atmedufsc"
+instagram_curso: "@medicinaufscara"
 ultima_verificacao: "agosto/2026"
 ---
 
@@ -39,7 +40,8 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://medicina.ararangua.ufsc.br/coordenacao/>
+- **Coordenador(a):** Profa. Tamiris Dal Bó Martinello
+- **Vice-Coordenador(a):** Profa. Camila Carvalho de Souza Amorim Matos
 - **E-mail da coordenação:** medicina.ara@contato.ufsc.br
 - **Secretaria Integrada de Graduação (SIG):**
   - Telefone: (48) 3721-6936
@@ -53,10 +55,11 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://ara.ufsc.br/> ou <https://estrutura.ufsc.br/centros-academicos/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** CALMED — Centro Acadêmico Livre de Medicina · Instagram: [@calmed.ufsc](https://www.instagram.com/calmed.ufsc/)
+- **Atlética:** ATMEDUFSC — Atlética Medicina UFSC Araranguá · Instagram: [@atmedufsc](https://www.instagram.com/atmedufsc/)
+- **Empresa júnior:** _A preencher_ — não identificada fonte oficial para Medicina (Araranguá)
+- **Perfil do curso:** [@medicinaufscara](https://www.instagram.com/medicinaufscara/)
+- **Instagrams / perfis:** [@calmed.ufsc](https://www.instagram.com/calmed.ufsc/) (CA) · [@atmedufsc](https://www.instagram.com/atmedufsc/) (atlética) · [@medicinaufscara](https://www.instagram.com/medicinaufscara/) (curso)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -73,6 +76,11 @@ _A preencher_ — Campus Jardim das Avenidas, Araranguá (ver [Mapa](../mapa.md)
 **Fontes consultadas (agosto/2026):**
 - <https://ara.ufsc.br/ararangua/graduacao/> — turno, duração e vagas do curso
 - <https://medicina.ararangua.ufsc.br/> — site oficial do curso, email da coordenação
+- <https://medicina.ararangua.ufsc.br/coordenacao/> — nome da coordenadora (Profa. Tamiris Dal Bó Martinello) e vice (Profa. Camila Carvalho de Souza Amorim Matos)
 - <https://guiadecursos.ufsc.br/campus-ararangua/> — confirmação do campus
+- <https://www.instagram.com/calmed.ufsc/> — Instagram do CALMED (CA de Medicina de Araranguá)
+- <https://guiadoestudante.ararangua.ufsc.br/centros-academicos/> — lista oficial de CAs do campus; confirma CALMED
+- <https://www.instagram.com/atmedufsc/> — Instagram da ATMEDUFSC (atlética de Medicina de Araranguá; bio confirma "ARU")
+- <https://www.instagram.com/medicinaufscara/> — perfil do curso de Medicina UFSC Araranguá
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

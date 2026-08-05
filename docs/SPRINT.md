@@ -4,6 +4,143 @@
 
 ---
 
+## Sprint 26 — Fichas CTJ + CTS: Vida do Curso (v1.20)
+
+**Objetivo:** Completar a seção "Vida do curso" nas 13 fichas dos campi de Joinville (CTJ, 8
+cursos) e Araranguá (CTS, 5 cursos), pesquisando CA, atlética, empresa júnior e Instagram — dados
+que ficaram como `_A preencher_` quando os centros foram publicados no Sprint 24. Para o CTS,
+incluir também os nomes dos coordenadores que ficaram como `~`. Sprint content-only: nenhum código
+frontend necessário.
+
+Rastreabilidade GitHub: #12 (B-08 continuação).
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CTJ — Vida do curso: CA, atlética, EJ, Instagram (8 fichas) | B-08 (CTJ) | Should / M | content-editor | A fazer |
+| CTS — Vida do curso + coordenadores: CA, atlética, EJ, Instagram (5 fichas) | B-08 (CTS) | Should / M | content-editor | A fazer |
+
+### Critérios de aceite detalhados
+
+**B-08 (CTJ) — 8 fichas de Joinville**
+
+- [ ] Fichas a atualizar (todas com `centro: CTJ`):
+      `ciencia-e-tecnologia-ctj`, `engenharia-aeroespacial`, `engenharia-automotiva`,
+      `engenharia-civil-de-infraestrutura`, `engenharia-de-transportes-e-logistica`,
+      `engenharia-ferroviaria-e-metroviaria`, `engenharia-mecatronica`, `engenharia-naval`.
+- [ ] Para cada ficha: pesquisar CA (Centro Acadêmico), atlética, empresa júnior e Instagram
+      via `portaljoinville.paginas.ufsc.br/representacao-estudantil/`, `joinville.ufsc.br` e busca web.
+- [ ] CTJ pode ter estrutura estudantil unificada por campus: se houver CA ou atlética únicos
+      do campus (não por curso), registrá-los em todas as fichas pertinentes.
+- [ ] Campos confirmados com fonte → preencher; sem fonte verificada → `~` ou `_A preencher_`.
+- [ ] `ultima_verificacao: agosto/2026` atualizado nas fichas modificadas.
+
+**B-08 (CTS) — 5 fichas de Araranguá**
+
+- [ ] Fichas a atualizar (todas com `centro: CTS`):
+      `engenharia-de-computacao-ara`, `engenharia-de-energia`, `fisioterapia`, `medicina-ara`, `tic`.
+- [ ] Para cada ficha: pesquisar coordenador(a) de curso (nome) **e** CA, atlética, empresa júnior e Instagram
+      via `ara.ufsc.br`, sites dos cursos (`enc.ufsc.br`, `ener.ufsc.br`, `fisioterapia.ufsc.br`, etc.)
+      e busca web.
+- [ ] CTS pode ter estrutura estudantil unificada: se houver CA/atlética único do campus,
+      registrá-lo em todas as fichas pertinentes.
+- [ ] Campos confirmados → preencher; sem fonte → `~` ou `_A preencher_` com nota.
+- [ ] `ultima_verificacao: agosto/2026` atualizado.
+
+### Ordem de execução (arquivos completamente disjuntos)
+
+```
+Wave 1 — paralelo (zero dependência entre os dois campi):
+  content-editor A — docs/cursos/{ciencia-e-tecnologia-ctj, engenharia-aeroespacial,
+                                  engenharia-automotiva, engenharia-civil-de-infraestrutura,
+                                  engenharia-de-transportes-e-logistica,
+                                  engenharia-ferroviaria-e-metroviaria,
+                                  engenharia-mecatronica, engenharia-naval}.md
+
+  content-editor B — docs/cursos/{engenharia-de-computacao-ara, engenharia-de-energia,
+                                  fisioterapia, medicina-ara, tic}.md
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (espera ≥ 112 páginas) + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária.
+
+### Fontes prioritárias
+
+**CTJ:**
+- Representação estudantil Joinville: <https://portaljoinville.paginas.ufsc.br/representacao-estudantil/>
+- Site do campus: <https://joinville.ufsc.br/>
+- Instagram oficial: [@ufsc.joinville](https://www.instagram.com/ufsc.joinville/)
+- Sites dos cursos: `automotiva.joinville.ufsc.br`, `aeroespacial.joinville.ufsc.br`, etc.
+
+**CTS:**
+- Site do campus: <https://ara.ufsc.br/>
+- Secretaria Integrada de Graduação: sig.cts.ara@contato.ufsc.br
+- Sites dos cursos: `enc.ufsc.br`, `ener.ufsc.br`, `fisioterapia.ufsc.br`, etc.
+- Guia de Cursos UFSC: <https://guiadecursos.ufsc.br/campus-ararangua/>
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 112 páginas SSG — sem páginas novas)
+- [ ] Playwright 8/8 sem regressões
+- [ ] Fichas CTJ: CA/atlética/EJ preenchidos onde fonte oficial confirmar, `~` onde não
+- [ ] Fichas CTS: nomes dos coordenadores preenchidos + CA/atlética/EJ pesquisados
+- [ ] Issue #12 (B-08) atualizada com o progresso
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Dicas de veterano / Onde estudar | Dependem de submissões reais de veteranos (B-10, B-13 — bloqueados) |
+| Coordenadores CCS/CFH | Não publicados em fontes verificadas — protocolo correto é `~` |
+| B-37/B-50 (banco + histórias) | Horizonte v2 — sem caso de uso desbloqueado |
+| Marcadores CTJ/CTS no mapa | Aguarda coordenadas geográficas verificadas do mantenedor |
+
+### Retrospectiva do Sprint 26
+
+**Concluído em:** 2026-08-05
+
+**Entregue:**
+- **B-08 (CTJ) — 8 fichas de Joinville** — Atlética, CA e EJ preenchidos para todos os 8 cursos:
+  - **Atlética:** Atlética Camaleão (`@camaleaochegou`) — única para todo o campus, aplicada em todos os 8 cursos.
+  - **Centros Acadêmicos:** CALCTEC (C&T), CAAERO (Aeroespacial), CAAUTO (Automotiva), CALNAV (Naval),
+    DALEM — Diretório Acadêmico Livre das Engenharias da Mobilidade (Civil de Infraestrutura, Transportes e
+    Logística, Ferroviária e Metroviária, Mecatrônica).
+  - **Empresas Júnior:** ESATI (`@esatijr`) — cobre a maioria das engenharias; ETECH Jr. (`@etechjr`) — específica de Mecatrônica.
+  - **Perfil de curso adicional:** `@engcivil_ufsc_joinville` (Civil de Infraestrutura).
+  - Ciência e Tecnologia: sem EJ confirmada — mantida como `_A preencher_`.
+
+- **B-08 (CTS) — 5 fichas de Araranguá** — Coordenadores, atlética, CA e EJ pesquisados:
+  - **Coordenadores encontrados:** Eng. Computação (ARA): Antonio Carlos Sobieranski + vice Alison Roberto Panisson;
+    Medicina (ARA): Tamiris Dal Bó Martinello + vice Camila Carvalho de Souza Amorim Matos.
+  - **Atlética:** AAACA — Associação Atlética Acadêmica do Campus Araranguá (`@aaacaufsc`) — cobre todos
+    os cursos exceto Medicina, que tem atlética própria — ATMEDUFSC (`@atmedufsc`).
+  - **Centros Acadêmicos individuais:** CAEC (Computação), CAENE (Energia), CALFISIO (Fisioterapia),
+    CALMED (Medicina), CALTIC (TIC).
+  - **Empresas Júnior:** EJEC (`@ejec_ufsc`) para Computação; ENEjr (`@enejr.eng`) para Energia.
+    Fisioterapia, Medicina e TIC: sem EJ verificada — mantidas como `_A preencher_`.
+  - `@medicinaufscara` — perfil de curso da Medicina Araranguá encontrado.
+
+**Verificações finais:** lint ✅ · build **112 páginas** SSG ✅ (sem novas páginas) · Playwright **8/8** ✅ ·
+ui-ux-review não necessária (sprint content-only).
+
+**O que foi bem:**
+- Estrutura estudantil dos campi encontrada rapidamente via páginas oficiais de representação estudantil.
+- CTJ: DALEM como CA centralizado para 4 cursos do departamento EMB foi um achado não óbvio —
+  evitou 4 fichas com dados inconsistentes entre si.
+- CTS: Medicina tem atlética própria (ATMEDUFSC), separada da AAACA — distinção correta e verificada.
+- Nenhum dado inventado: campos sem fonte ficaram como `~` ou `_A preencher_`.
+
+**Pendências / follow-up:**
+- **B-08** — faltam: dicas de veterano e "onde estudar" (dependem de submissões reais de veteranos).
+- Emails da direção CTJ (exibidos como imagem no site) — candidato para sprint de qualidade futuro
+  com técnica de leitura de imagem anti-spam.
+- Empresa júnior de C&T CTJ, Fisioterapia, Medicina e TIC do CTS: não encontradas em agosto/2026.
+- **B-13 / B-10** — seguem bloqueados sem submissões reais.
+
+---
+
 ## Sprint 25 — Qualidade 2026/2: revisão semestral + fichas CTC + acessibilidade (v1.19)
 
 **Objetivo:** Sprint de qualidade em três frentes paralelas — fechar a revisão semestral 2026/2

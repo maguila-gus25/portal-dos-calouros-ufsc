@@ -63,7 +63,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. Turno, duração (parcial), resumo, CA e EJ preenchidos para todos os 13 cursos. Faltam: dicas de veterano, onde estudar (precisam de veteranos reais), email SIN, durações não confirmadas. |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. **Estado agosto/2026:** 112 fichas publicadas (todos os 13 centros). CTC: 13 fichas completas — coordenação, CA, EJ, atlética verificados. Outros centros (CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS): coordenação e CA preenchidos onde disponíveis. **Falta (Sprint 26):** CA, atlética, EJ, Instagram para CTJ (8 cursos) e CTS (5 cursos). Dicas de veterano e "onde estudar" aguardam submissões reais (B-10, B-13 — bloqueados). |
 | B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 

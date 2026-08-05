@@ -14,10 +14,10 @@ coordenacao:
   sala: U164
   sala_vice: U276
   site: https://mecatronica.ufsc.br/
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+ca: "DALEM — Diretório Acadêmico Livre das Engenharias da Mobilidade"
+ca_instagram: "@dalem.ctj"
+atletica: "Atlética Camaleão"
+atletica_instagram: "@camaleaochegou"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -53,10 +53,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://portaljoinville.paginas.ufsc.br/representacao-estudantil/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** DALEM — Diretório Acadêmico Livre das Engenharias da Mobilidade (representa Mecatrônica, Transportes e Logística, Civil de Infraestrutura e Ferroviária e Metroviária) · E-mail: dalem.cem.jlle@gmail.com · Instagram: [@dalem.ctj](https://www.instagram.com/dalem.ctj/)
+- **Atlética:** Atlética Camaleão (representa todos os cursos do CTJ/UFSC Joinville) · Instagram: [@camaleaochegou](https://www.instagram.com/camaleaochegou/) · fundada em 2012
+- **Empresa júnior:** ETECH Jr. (empresa júnior específica de Mecatrônica — desenvolvimento web e de softwares) · Instagram: [@etechjr](https://www.instagram.com/etechjr/) · Site: <https://etechjr.com.br/> · fundada em agosto de 2020. Também há a ESATI (<https://esati.paginas.ufsc.br/>), que atende todas as 7 engenharias.
+- **Instagrams / perfis:** [@dalem.ctj](https://www.instagram.com/dalem.ctj/) (CA) · [@camaleaochegou](https://www.instagram.com/camaleaochegou/) (atlética) · [@etechjr](https://www.instagram.com/etechjr/) (empresa júnior) · [@ufsc.joinville](https://www.instagram.com/ufsc.joinville/) (campus)
 
 ## Dicas de veterano
 
@@ -72,5 +72,8 @@ _A preencher_ — Bloco U, Campus Joinville (ver [Mapa](../mapa.md))
 - <https://joinville.ufsc.br/graduacao/> — turno e duração
 - <https://mecatronica.ufsc.br/coordenacao-de-curso/> — coordenadores, ramais e salas
 - <https://guiadecursos.ufsc.br/campus-joinville/> — vagas e grau
+- <https://joinville.ufsc.br/representacao-estudantil/> — CAs, atlética e Instagram (agosto/2026)
+- <https://joinville.ufsc.br/empresas-juniores/> — ETECH Jr. e ESATI (agosto/2026)
+- <https://etechjr.com.br/> — confirmação da ETECH Jr. (agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

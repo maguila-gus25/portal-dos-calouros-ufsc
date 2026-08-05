@@ -17,10 +17,10 @@ sig:
   email: sig.cts.ara@contato.ufsc.br
   telefone: "(48) 3721-4680"
   atendimento: "segunda a sexta, 8h às 20h"
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+ca: "CALFISIO — Centro Acadêmico Livre de Fisioterapia"
+ca_instagram: "@calfisioufsc"
+atletica: "AAACA — Associação Atlética Acadêmica do Campus Araranguá"
+atletica_instagram: "@aaacaufsc"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -52,10 +52,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://ara.ufsc.br/> ou <https://estrutura.ufsc.br/centros-academicos/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** CALFISIO — Centro Acadêmico Livre de Fisioterapia · Instagram: [@calfisioufsc](https://www.instagram.com/calfisioufsc/)
+- **Atlética:** AAACA — Associação Atlética Acadêmica do Campus Araranguá · Instagram: [@aaacaufsc](https://www.instagram.com/aaacaufsc/) · Site: <https://aaacaufsc.com.br/>
+- **Empresa júnior:** _A preencher_ — não identificada fonte oficial para Fisioterapia
+- **Instagrams / perfis:** [@calfisioufsc](https://www.instagram.com/calfisioufsc/) (CA) · [@aaacaufsc](https://www.instagram.com/aaacaufsc/) (atlética)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -74,5 +74,9 @@ _A preencher_ — Campus Jardim das Avenidas, Araranguá (ver [Mapa](../mapa.md)
 - <https://fisio.ufsc.br/> — site oficial do curso
 - <https://fisio.ufsc.br/coordenacao/> — nome da coordenadora, email da coordenação, contatos da SIG
 - <https://guiadecursos.ufsc.br/fisioterapia/> — confirmação do campus e grau
+- <https://www.instagram.com/calfisioufsc/> — Instagram do CALFISIO (CA de Fisioterapia de Araranguá)
+- <https://guiadoestudante.ararangua.ufsc.br/centros-academicos/> — lista oficial de CAs do campus; confirma CALFISIO
+- <https://aaacaufsc.com.br/> — site da AAACA (atlética do campus Araranguá, @aaacaufsc)
+- <https://guiadoestudante.ararangua.ufsc.br/esportes/> — confirmação de que a AAACA é a atlética unificada do campus
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

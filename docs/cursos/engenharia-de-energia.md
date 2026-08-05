@@ -17,11 +17,13 @@ sig:
   email: sig.cts.ara@contato.ufsc.br
   telefone: "(48) 3721-4680"
   atendimento: "segunda a sexta, 8h às 20h"
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
-instagram_curso: ~
+ca: "CAENE — Centro Acadêmico de Engenharia de Energia"
+ca_instagram: "@caeneufsc"
+atletica: "AAACA — Associação Atlética Acadêmica do Campus Araranguá"
+atletica_instagram: "@aaacaufsc"
+empresa_junior: "ENEjr — Empresa Júnior de Engenharia de Energia"
+empresa_junior_instagram: "@enejr.eng"
+instagram_curso: "@energiaufsc"
 ultima_verificacao: "agosto/2026"
 ---
 
@@ -53,10 +55,11 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://ara.ufsc.br/> ou <https://estrutura.ufsc.br/centros-academicos/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** CAENE — Centro Acadêmico de Engenharia de Energia · Instagram: [@caeneufsc](https://www.instagram.com/caeneufsc/)
+- **Atlética:** AAACA — Associação Atlética Acadêmica do Campus Araranguá · Instagram: [@aaacaufsc](https://www.instagram.com/aaacaufsc/) · Site: <https://aaacaufsc.com.br/>
+- **Empresa júnior:** ENEjr — Empresa Júnior de Engenharia de Energia · Instagram: [@enejr.eng](https://www.instagram.com/enejr.eng/) · Site: <https://enejr.com.br/>
+- **Perfil do curso:** [@energiaufsc](https://www.instagram.com/energiaufsc/)
+- **Instagrams / perfis:** [@caeneufsc](https://www.instagram.com/caeneufsc/) (CA) · [@aaacaufsc](https://www.instagram.com/aaacaufsc/) (atlética) · [@enejr.eng](https://www.instagram.com/enejr.eng/) (empresa júnior) · [@energiaufsc](https://www.instagram.com/energiaufsc/) (curso)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -75,5 +78,12 @@ _A preencher_ — Campus Jardim das Avenidas, Araranguá (ver [Mapa](../mapa.md)
 - <https://ener.ufsc.br/> — site oficial do curso
 - <https://ener.ufsc.br/coordenacao/> — nome do coordenador, email, contatos da SIG
 - <https://guiadecursos.ufsc.br/engenharia-de-energia/> — confirmação do campus e grau
+- <https://ener.ufsc.br/caene-centro-academico-de-engenharia-de-energia/> — Instagram do CAENE (@caeneufsc)
+- <https://www.instagram.com/caeneufsc/> — Instagram do CAENE
+- <https://guiadoestudante.ararangua.ufsc.br/centros-academicos/> — lista oficial de CAs do campus
+- <https://aaacaufsc.com.br/> — site da AAACA (atlética do campus Araranguá, @aaacaufsc)
+- <https://ener.ufsc.br/empresa-junior-enejr/> — página da ENEjr no site do curso
+- <https://enejr.com.br/> — site da ENEjr; Instagram @enejr.eng
+- <https://www.instagram.com/energiaufsc/> — Instagram do curso de Engenharia de Energia UFSC
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
