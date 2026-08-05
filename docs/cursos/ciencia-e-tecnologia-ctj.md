@@ -15,10 +15,10 @@ coordenacao:
   sala: U165
   sala_vice: U258
   site: https://cientec.joinville.ufsc.br/
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+ca: "CALCTEC — Centro Acadêmico Livre de Ciência e Tecnologia"
+ca_instagram: "@calcteccientec"
+atletica: "Atlética Camaleão"
+atletica_instagram: "@camaleaochegou"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -53,10 +53,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://portaljoinville.paginas.ufsc.br/representacao-estudantil/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** CALCTEC — Centro Acadêmico Livre de Ciência e Tecnologia · Instagram: [@calcteccientec](https://www.instagram.com/calcteccientec/)
+- **Atlética:** Atlética Camaleão (representa todos os cursos do CTJ/UFSC Joinville) · Instagram: [@camaleaochegou](https://www.instagram.com/camaleaochegou/) · fundada em 2012
+- **Empresa júnior:** _A preencher_ — o curso de Ciência e Tecnologia é de base interdisciplinar; verificar se há vínculo com ESATI (<https://esati.paginas.ufsc.br/>) ou ETECH Jr. (<https://etechjr.com.br/>)
+- **Instagrams / perfis:** [@calcteccientec](https://www.instagram.com/calcteccientec/) (CA) · [@camaleaochegou](https://www.instagram.com/camaleaochegou/) (atlética) · [@ufsc.joinville](https://www.instagram.com/ufsc.joinville/) (campus)
 
 ## Dicas de veterano
 
@@ -72,5 +72,6 @@ _A preencher_ — Bloco U, Campus Joinville (ver [Mapa](../mapa.md))
 - <https://joinville.ufsc.br/graduacao/> — lista de cursos, turno e duração
 - <https://cientec.joinville.ufsc.br/gestao-de-curso/> — coordenadores, e-mails e salas
 - <https://guiadecursos.ufsc.br/campus-joinville/> — vagas e confirmação do grau
+- <https://joinville.ufsc.br/representacao-estudantil/> — CAs, atlética e Instagram (agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

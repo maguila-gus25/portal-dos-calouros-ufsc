@@ -15,10 +15,10 @@ coordenacao:
   sala: U162
   sala_vice: U287
   site: https://ferroviaria.joinville.ufsc.br/
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+ca: "DALEM — Diretório Acadêmico Livre das Engenharias da Mobilidade"
+ca_instagram: "@dalem.ctj"
+atletica: "Atlética Camaleão"
+atletica_instagram: "@camaleaochegou"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -52,10 +52,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://portaljoinville.paginas.ufsc.br/representacao-estudantil/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** DALEM — Diretório Acadêmico Livre das Engenharias da Mobilidade (representa Ferroviária e Metroviária, Transportes e Logística, Civil de Infraestrutura e Mecatrônica) · E-mail: dalem.cem.jlle@gmail.com · Instagram: [@dalem.ctj](https://www.instagram.com/dalem.ctj/)
+- **Atlética:** Atlética Camaleão (representa todos os cursos do CTJ/UFSC Joinville) · Instagram: [@camaleaochegou](https://www.instagram.com/camaleaochegou/) · fundada em 2012
+- **Empresa júnior:** ESATI — Escritório de Apoio Tecnológico Intermodal (atende todas as 7 engenharias do campus) · Instagram: [@esatijr](https://www.instagram.com/esatijr/) · Site: <https://esati.paginas.ufsc.br/>
+- **Instagrams / perfis:** [@dalem.ctj](https://www.instagram.com/dalem.ctj/) (CA) · [@camaleaochegou](https://www.instagram.com/camaleaochegou/) (atlética) · [@esatijr](https://www.instagram.com/esatijr/) (empresa júnior) · [@ufsc.joinville](https://www.instagram.com/ufsc.joinville/) (campus)
 
 ## Dicas de veterano
 
@@ -71,5 +71,7 @@ _A preencher_ — Bloco U, Campus Joinville (ver [Mapa](../mapa.md))
 - <https://joinville.ufsc.br/graduacao/> — turno e duração
 - <https://ferroviaria.joinville.ufsc.br/contato-coordenacao/> — coordenadores, e-mails, telefones e salas
 - <https://guiadecursos.ufsc.br/campus-joinville/> — vagas e grau
+- <https://joinville.ufsc.br/representacao-estudantil/> — CAs, atlética e Instagram (agosto/2026)
+- <https://esati.paginas.ufsc.br/> — cursos atendidos pela ESATI (agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

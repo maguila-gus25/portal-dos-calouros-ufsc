@@ -18,10 +18,10 @@ sig:
   email: sig.cts.ara@contato.ufsc.br
   telefone: "(48) 3721-4680"
   atendimento: "segunda a sexta, 8h às 20h"
-ca: ~
-ca_instagram: ~
-atletica: ~
-atletica_instagram: ~
+ca: "CALTIC — Centro Acadêmico Livre de Tecnologias da Informação e Comunicação"
+ca_instagram: "@caltic.ufsc"
+atletica: "AAACA — Associação Atlética Acadêmica do Campus Araranguá"
+atletica_instagram: "@aaacaufsc"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -54,10 +54,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 
-- **Centro Acadêmico:** _A preencher_ — verificar em <https://ara.ufsc.br/> ou <https://estrutura.ufsc.br/centros-academicos/>
-- **Atlética:** _A preencher_
-- **Empresa júnior:** _A preencher_
-- **Instagrams / perfis:** _A preencher_
+- **Centro Acadêmico:** CALTIC — Centro Acadêmico Livre de Tecnologias da Informação e Comunicação · Instagram: [@caltic.ufsc](https://www.instagram.com/caltic.ufsc/) · Site: <https://caltic.ufsc.br/>
+- **Atlética:** AAACA — Associação Atlética Acadêmica do Campus Araranguá · Instagram: [@aaacaufsc](https://www.instagram.com/aaacaufsc/) · Site: <https://aaacaufsc.com.br/>
+- **Empresa júnior:** _A preencher_ — não identificada fonte oficial para TIC
+- **Instagrams / perfis:** [@caltic.ufsc](https://www.instagram.com/caltic.ufsc/) (CA) · [@aaacaufsc](https://www.instagram.com/aaacaufsc/) (atlética)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -76,5 +76,10 @@ _A preencher_ — Campus Jardim das Avenidas, Araranguá (ver [Mapa](../mapa.md)
 - <https://tic.ufsc.br/> — site oficial do curso
 - <https://tic.ufsc.br/coordenacao-do-curso/> — nome dos coordenadores, email, contatos da SIG
 - <https://guiadecursos.ufsc.br/tecnologias-da-informacao-e-comunicacao/> — grau, turno, duração (6 semestres mínimo)
+- <https://www.instagram.com/caltic.ufsc/> — Instagram do CALTIC (CA de TIC de Araranguá)
+- <https://caltic.ufsc.br/> — site do CALTIC
+- <https://guiadoestudante.ararangua.ufsc.br/centros-academicos/> — lista oficial de CAs do campus; confirma CALTIC
+- <https://aaacaufsc.com.br/> — site da AAACA (atlética do campus Araranguá, @aaacaufsc)
+- <https://guiadoestudante.ararangua.ufsc.br/esportes/> — confirmação de que a AAACA é a atlética unificada do campus
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
