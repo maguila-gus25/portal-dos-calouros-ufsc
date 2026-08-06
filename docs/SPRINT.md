@@ -4,6 +4,86 @@
 
 ---
 
+## Sprint 28 — Qualidade: CED + CCB + CDS (v1.22)
+
+**Objetivo:** Completar os dados restantes nas fichas dos cursos dos centros **CED**, **CCB** e **CDS** — os três centros com fichas criadas nos Sprints 22–23 que ainda têm campos `_A preencher_` atingíveis por pesquisa web. Foco: corrigir frontmatter de Pedagogia (`duracao: ~` → `"9 semestres"`), pesquisar coordenadores das 4 fichas CED, buscar coordenador(a) de Ciências Biológicas via URL disponível, e confirmar se CAEF (CA de Educação Física) tem Instagram ativo. Sprint content-only: nenhum código frontend necessário.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CED — qualidade das 4 fichas (Pedagogia, Ed. do Campo, Arquivadora, Biblioteconomia) | B-08 (CED) | Should / M | content-editor | Done |
+| CCB + CDS — qualidade (Biológicas, Educação Física) + atualizar centros | B-08 (CCB/CDS) | Should / P | content-editor | Done |
+
+### Critérios de aceite detalhados
+
+**CED — 4 fichas (Story A)**
+
+- [ ] `docs/cursos/pedagogia.md`: corrigir frontmatter `duracao: ~` → `duracao: "9 semestres"` (dado já confirmado no corpo do texto via currículo vigente 2009.1; zero pesquisa necessária).
+- [ ] `docs/cursos/educacao-do-campo.md`, `arquivologia.md`, `biblioteconomia.md`: pesquisar coordenadores(as) em `ced.ufsc.br`, portarias do Boletim Oficial da UFSC e sites dos departamentos; preencher onde disponível com fonte verificada.
+- [ ] Para cada ficha CED: pesquisar atlética (nenhuma verificada até agosto/2026 — tentar novamente via busca web); pesquisar EJ (nenhuma no CGEJ — confirmar que ainda não existe).
+- [ ] Atualizar `docs/centros/ced.md` com qualquer dado novo confirmado.
+- [ ] Campos sem fonte verificada → `~` ou `_A preencher_`. Nunca inventar.
+- [ ] `ultima_verificacao: agosto/2026` nos arquivos modificados.
+
+**CCB + CDS — 2 fichas + centros (Story B)**
+
+- [ ] `docs/cursos/ciencias-biologicas.md`: acessar `cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/` para obter nome do coordenador(a); preencher atendimento presencial via `cienciasbiologicas.grad.ufsc.br/atendimento/`; confirmar EJ via CGEJ.
+- [ ] `docs/cursos/educacao-fisica.md`: buscar Instagram do CAEF (Centro Acadêmico de Educação Física — site histórico inacessível no Sprint 23); pesquisar EJ via CGEJ.
+- [ ] Atualizar `docs/centros/ccb.md` com coordenador(a) de Biológicas e quaisquer dados novos.
+- [ ] Atualizar `docs/centros/cds.md` com dados confirmados (Instagram CAEF se encontrado).
+- [ ] `ultima_verificacao: agosto/2026` em todos os arquivos tocados.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (arquivos completamente disjuntos):
+  content-editor A — docs/cursos/{pedagogia, educacao-do-campo, arquivologia, biblioteconomia}.md
+                     docs/centros/ced.md
+
+  content-editor B — docs/cursos/{ciencias-biologicas, educacao-fisica}.md
+                     docs/centros/{ccb, cds}.md
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (≥ 112 páginas) + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária.
+
+### Fontes prioritárias
+
+**Story A (CED):**
+- CED geral: `ced.ufsc.br/`
+- Portarias de coordenadores: `boletimoficial.ufsc.br/` (buscar "CED" + "coordenador")
+- Educação do Campo: `educacaodocampo.grad.ufsc.br/`
+- Arquivologia / Biblioteconomia: `cin.ufsc.br/` (Departamento de Ciência da Informação)
+- CGEJ EJs: `empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/`
+
+**Story B (CCB + CDS):**
+- CCB: `cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/` e `cienciasbiologicas.grad.ufsc.br/atendimento/`
+- CDS/CAEF: `cds.ufsc.br/` e busca web por "CAEF UFSC" e "@caefufsc" no Instagram
+- CGEJ: confirmar se há EJ de Biológicas ou Educação Física (`empresasjuniores.paginas.ufsc.br/`)
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 112 páginas SSG — sem páginas novas)
+- [ ] Playwright 8/8 sem regressões
+- [ ] `pedagogia.md`: frontmatter `duracao:` corrigido para `"9 semestres"`
+- [ ] CED: coordenadores pesquisados em todas as 4 fichas; `~` onde não verificado
+- [ ] CCB: coordenador(a) de Biológicas documentado (preenchido ou `_A preencher_` com nota de onde buscar)
+- [ ] CDS: CAEF Instagram pesquisado; resultado documentado
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| CFH coordenadores | Sprint 21 confirmou: não publicados em fontes verificadas — padrão estabelecido |
+| CFM durações | Fontes contraditórias — investigação adicional não muda o estado `_A preencher_` sem acesso direto ao CAGR |
+| Dicas de veterano / Onde estudar | Dependem de submissões reais (B-10, B-13 — bloqueados) |
+| B-37/B-50/E13 (banco + auth) | Horizonte v2.0 — requer planejamento conjunto com o mantenedor |
+| Marcadores CTJ/CTS no mapa | Aguarda coordenadas geográficas verificadas do mantenedor |
+
+---
+
 ## Sprint 27 — Qualidade: fichas de centro + coordenadores CCS (v1.21)
 
 **Objetivo:** Duas frentes paralelas de qualidade de conteúdo — (A) propagar os dados do Sprint 26

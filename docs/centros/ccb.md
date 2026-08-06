@@ -53,10 +53,11 @@ O ingresso no turno diurno é unificado: os estudantes cursam um núcleo comum n
 - **E-mail (ajuste de matrícula):** matricula.biologia@contato.ufsc.br
 - **Telefone:** (48) 3721-9235
 - **Localização:** Bloco E, 4º andar (à esquerda) — Rua João Pio Duarte Silva, 241, Córrego Grande, Florianópolis — SC
-- **Coordenador(a):** _A preencher_ — verificar em <https://cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/>
+- **Coordenadora:** Profª. Daniela Cristina De Toni
+- **Subcoordenador:** Prof. Luiz Carlos de Pinho
 - **Site do curso:** <https://cienciasbiologicas.grad.ufsc.br/>
 
-> Fonte: <https://cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/>, <https://portal.ccb.ufsc.br/contatos-principais/coordenadorias/coordenacao-de-curso/> (verificado em agosto/2026)
+> Fonte: <https://cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/> — coordenadora Daniela Cristina De Toni e subcoordenador Luiz Carlos de Pinho; <https://portal.ccb.ufsc.br/contatos-principais/coordenadorias/coordenacao-de-curso/> — localização (verificado em agosto/2026)
 
 ---
 
@@ -81,6 +82,18 @@ O CABio foi fundado em 1984, funciona por autogestão (sem diretoria ou chapa fi
 A atlética leva o nome de Vera Lícia em homenagem a uma estudante do curso. Participa de competições universitárias, incluindo o Interbio (torneio nacional interuniversitário de Biologia).
 
 > Fonte: <https://www.facebook.com/atleticabioufsc/>, <https://www.instagram.com/atleticabioufsc/> (verificado em agosto/2026)
+
+---
+
+## Empresa Júnior
+
+| Curso | Empresa Júnior | Instagram | Site |
+|-------|---------------|-----------|------|
+| Ciências Biológicas | Simbiosis — Empresa Júnior de Ciências Biológicas | [@simbiosisempjr](https://www.instagram.com/simbiosisempjr/) | ejsimbiosis.com.br |
+
+A Simbiosis foi fundada em setembro de 2004 por estudantes de graduação do CCB. Atua nas áreas de Consultoria Ambiental, Educação Ambiental e Paisagismo. Site ejsimbiosis.com.br estava inacessível em agosto/2026 — verificar no Instagram ou na Vitrine UFSC: <https://vitrine.sites.ufsc.br/empresa-junior/simbiosis/>.
+
+> Fonte: <https://www.instagram.com/simbiosisempjr/>, <https://vitrine.sites.ufsc.br/empresa-junior/simbiosis/>, <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> (verificado em agosto/2026)
 
 ---
 

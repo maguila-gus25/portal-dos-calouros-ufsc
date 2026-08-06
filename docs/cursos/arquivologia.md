@@ -7,6 +7,11 @@ turno: Noturno
 duracao: "8 semestres"
 coordenacao:
   nome: "Profa. Dra. Sonali Paula Molin Bedin"
+  email_coordenadora: sonali.bedin@ufsc.br
+  portaria: "nº 2249/2024/GR"
+  subcoordenadora: "Profa. Marli Dias de Souza Pinto"
+  email_subcoordenadora: marli.dias@ufsc.br
+  portaria_subcoordenadora: "nº 2250/2024/GR"
   email: arquivologia@contato.ufsc.br
   telefone: ~
   sala: "Bloco D, Térreo, Sala 001 — CED, Campus Trindade"
@@ -33,8 +38,9 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenadora:** Profa. Dra. Sonali Paula Molin Bedin
-- **E-mail:** arquivologia@contato.ufsc.br (lido da imagem anti-spam em agosto/2026)
+- **Coordenadora:** Profa. Dra. Sonali Paula Molin Bedin (Portaria nº 2249/2024/GR) — sonali.bedin@ufsc.br
+- **Subcoordenadora:** Profa. Marli Dias de Souza Pinto (Portaria nº 2250/2024/GR) — marli.dias@ufsc.br
+- **E-mail (secretaria):** arquivologia@contato.ufsc.br
 - **Telefone:** _A preencher_ — não encontrado em agosto/2026 (verificar em <https://arquivologia.ufsc.br/coordenacao/>)
 - **Sala / prédio:** Bloco D, Térreo, Sala 001 — CED, Campus Trindade, Florianópolis
 - **Atendimento presencial:** 8h às 11h30 (Sala 002, Bloco D, CED)
@@ -65,10 +71,10 @@ _A preencher_ — CED, Bloco D, Campus Trindade (ver [Mapa](../mapa.md))
 **Fontes consultadas (agosto/2026):**
 - <https://guiadecursos.ufsc.br/arquivologia/> — centro (CED), duração (8 semestres), site oficial
 - <https://arquivologia.ufsc.br/> — nome da coordenadora (Profa. Sonali Paula Molin Bedin), localização (Bloco D, Sala 001, CED)
-- <https://arquivologia.ufsc.br/coordenacao/> — horário de atendimento presencial (8h às 11h30, Sala 002), e e-mail exibido apenas em imagem
+- <https://arquivologia.ufsc.br/coordenacao/> — coordenadora (Portaria nº 2249/2024/GR), subcoordenadora Profa. Marli Dias de Souza Pinto (Portaria nº 2250/2024/GR), e-mails institucionais, horário de atendimento (8h às 11h30, Sala 002)
 - <https://ced.ufsc.br/> — vínculo com Departamento de Ciência da Informação (CIN/CED)
 - Busca web agosto/2026 — turno Noturno confirmado (novo currículo 20261, implementado a partir de 2026.1; era Matutino até 2025)
 - <https://www.instagram.com/calarqufsc/> — CALArq (CA de Arquivologia, ativo)
-- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Info Jr. listada como "em reativação"
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Info Jr. listada como "em reativação" (confirmado agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

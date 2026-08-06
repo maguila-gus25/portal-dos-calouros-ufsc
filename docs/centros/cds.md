@@ -65,9 +65,9 @@ Os estudantes ingressam pelo mesmo processo seletivo (ENEM/SiSU ou vestibular un
 
 | Curso | Centro Acadêmico | Sigla | Site | Instagram |
 |-------|-----------------|-------|------|-----------|
-| Educação Física | Centro Acadêmico de Educação Física | CAEF | _A preencher_ — verificar em <http://www.caef.cds.ufsc.br/> | _A preencher_ |
+| Educação Física | Centro Acadêmico de Educação Física | CAEF | _A preencher_ — site histórico `caef.cds.ufsc.br` inacessível | [@caefufsc](https://www.instagram.com/caefufsc/) |
 
-> Fonte: <https://estrutura.ufsc.br/centros-academicos/> — o CAEF consta na listagem oficial de CAs da UFSC. Site histórico do CAEF (`caef.cds.ufsc.br`) estava inacessível em agosto/2026; verificar contato atual no Instagram ou junto ao CDS.
+> Fonte: <https://estrutura.ufsc.br/centros-academicos/> — o CAEF consta na listagem oficial de CAs da UFSC. Instagram [@caefufsc](https://www.instagram.com/caefufsc/) confirmado ativo com ~1.767 seguidores em agosto/2026. Site institucional (`caef.cds.ufsc.br`) estava inacessível em agosto/2026.
 
 ---
 
@@ -80,6 +80,14 @@ Os estudantes ingressam pelo mesmo processo seletivo (ENEM/SiSU ou vestibular un
 A atlética leva o nome de Ada Carina Maliceski em homenagem a uma estudante do curso. Tem presença ativa no Instagram com mais de 2.700 seguidores e mantém grupos vinculados como @halteradaufsc e @bateriaef.
 
 > Fonte: <https://www.instagram.com/aefufsc/> (verificado em agosto/2026)
+
+---
+
+## Empresa Júnior
+
+Nenhuma empresa júnior de Educação Física consta na listagem oficial do CGEJ/UFSC (verificado em agosto/2026).
+
+> Fonte: <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> (verificado em agosto/2026)
 
 ---
 
@@ -102,6 +110,7 @@ O CDS abriga o seguinte departamento:
 - [Coordenadoria de Graduação em Educação Física](https://edfisica.grad.ufsc.br/)
 - [Guia de Cursos UFSC — Educação Física](https://guiadecursos.ufsc.br/educacao-fisica/)
 - [Pós-Graduação em Educação Física (PPGEF)](https://ppgef.ufsc.br/)
+- [CAEF — Centro Acadêmico de Educação Física (@caefufsc)](https://www.instagram.com/caefufsc/)
 - [Atlética AEF UFSC (@aefufsc)](https://www.instagram.com/aefufsc/)
 - [Restaurante Universitário UFSC](https://ru.ufsc.br/)
 - [PRAE — Pró-Reitoria de Permanência e Assuntos Estudantis](https://prae.ufsc.br/)
