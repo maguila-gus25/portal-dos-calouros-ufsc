@@ -7,6 +7,10 @@ turno: Noturno
 duracao: "8 semestres"
 coordenacao:
   nome: "Prof. Dr. Marcelo Minghelli"
+  portaria: "nº 911/2026/GR"
+  subcoordenador: "Prof. Rodrigo de Sales"
+  portaria_subcoordenador: "nº 912/2026/GR (pro tempore, a partir de 23/04/2026)"
+  email_subcoordenador: rodrigo.sales@ufsc.br
   email: biblioteconomia@contato.ufsc.br
   email_estagios: biblioteconomia.estagios@contato.ufsc.br
   telefone: "(48) 3721-4563"
@@ -34,8 +38,9 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador:** Prof. Dr. Marcelo Minghelli
-- **Coordenadora de Estágios:** Profa. Dra. Graziela Martins de Medeiros
+- **Coordenador:** Prof. Dr. Marcelo Minghelli (Portaria nº 911/2026/GR)
+- **Subcoordenador (pro tempore):** Prof. Rodrigo de Sales (Portaria nº 912/2026/GR, a partir de 23/04/2026) — rodrigo.sales@ufsc.br
+- **Coordenadora de Estágios:** Profa. Dra. Graziela Martins de Medeiros (Portaria nº 099/2026/CED, de 08/07/2026)
 - **E-mail (geral):** biblioteconomia@contato.ufsc.br
 - **E-mail (estágios):** biblioteconomia.estagios@contato.ufsc.br
 - **Telefone:** (48) 3721-4563
@@ -68,10 +73,11 @@ _A preencher_ — CED, Bloco D, Campus Trindade (ver [Mapa](../mapa.md))
 **Fontes consultadas (agosto/2026):**
 - <https://guiadecursos.ufsc.br/biblioteconomia/> — descrição do curso, duração (8 semestres)
 - <https://biblioteconomia.ufsc.br/> — coordenador (Prof. Marcelo Minghelli), e-mail geral, telefone, localização (Bloco D, Sala 001, CED); centro: CED
-- <https://biblioteconomia.ufsc.br/coordenacao/> — coordenadora de estágios (Profa. Graziela Martins de Medeiros) e e-mail de estágios
+- <https://biblioteconomia.ufsc.br/coordenacao/> — coordenadora de estágios (Profa. Graziela Martins de Medeiros, Portaria nº 099/2026/CED) e e-mail de estágios
+- <https://boletimoficial.ufsc.br/2026/04/29/boletim-no-782026-29042026/> — Portaria nº 911/2026/GR (coordenador Marcelo Minghelli) e nº 912/2026/GR (subcoordenador pro tempore Rodrigo de Sales, a partir de 23/04/2026)
 - <https://ced.ufsc.br/> — vínculo com Departamento de Ciência da Informação (CIN/CED)
 - <https://vestibularunificado2020.ufsc.br/cursos-ofertados/> — turno Noturno confirmado
 - <https://www.instagram.com/cabufsc/> — CAB (CA de Biblioteconomia)
-- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Info Jr. listada como "em reativação"
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Info Jr. listada como "em reativação" (confirmado agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

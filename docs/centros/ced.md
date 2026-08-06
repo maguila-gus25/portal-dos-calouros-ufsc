@@ -35,10 +35,17 @@ O CED também é responsável pelo **Colégio de Aplicação (CA)** — escola d
 
 O CED oferece quatro cursos de graduação em Florianópolis:
 
-1. **Pedagogia — Licenciatura** (diurno, Campus Trindade)
-2. **Licenciatura em Educação do Campo** (regime de alternância — Tempo Universidade + Tempo Comunidade, Campus Trindade)
-3. **Arquivologia — Bacharelado** (8 semestres, Campus Trindade)
-4. **Biblioteconomia — Bacharelado** (Campus Trindade)
+| Curso | Coordenador(a) | E-mail |
+|-------|---------------|--------|
+| Pedagogia (Lic.) | Profa. Leila Procópia do Nascimento | pedagogia@contato.ufsc.br |
+| Educação do Campo (Lic.) | Profa. Dra. Marília Carla de Mello Gaia | marilia.gaia@ufsc.br |
+| Arquivologia (Bach.) | Profa. Dra. Sonali Paula Molin Bedin (Port. 2249/2024/GR) | arquivologia@contato.ufsc.br |
+| Biblioteconomia (Bach.) | Prof. Dr. Marcelo Minghelli (Port. 911/2026/GR) | biblioteconomia@contato.ufsc.br |
+
+1. **Pedagogia — Licenciatura** (vespertino, Campus Trindade) — 9 semestres, 100 vagas/ano
+2. **Licenciatura em Educação do Campo** (regime de alternância — Tempo Universidade + Tempo Comunidade, Campus Trindade) — 8 semestres
+3. **Arquivologia — Bacharelado** (noturno a partir de 2026.1, Campus Trindade) — 8 semestres
+4. **Biblioteconomia — Bacharelado** (noturno, Campus Trindade) — 8 semestres
 
 > Fonte: <https://ced.ufsc.br/>, <https://guiadecursos.ufsc.br/pedagogia/>, <https://guiadecursos.ufsc.br/educacao-do-campo/>, <https://guiadecursos.ufsc.br/arquivologia/>, <https://guiadecursos.ufsc.br/biblioteconomia/> (verificado em agosto/2026)
 

@@ -6,7 +6,9 @@ grau: Licenciatura
 turno: Integral (Tempo Universidade — regime de alternância)
 duracao: "8 semestres"
 coordenacao:
-  nome: ~
+  nome: "Profa. Dra. Marília Carla de Mello Gaia"
+  email_coordenadora: marilia.gaia@ufsc.br
+  subcoordenador: "Prof. Dr. Juliano Espezim Soares Faria"
   email: coordenaeducampo@gmail.com
   email_secretaria: educacaodocampo@contato.ufsc.br
   telefone_coordenacao: "(48) 3721-3547"
@@ -44,9 +46,10 @@ ultima_verificacao: "agosto/2026"
   - Quarta: teletrabalho
   - Quinta: presencial
   - Sexta: teletrabalho
-- **Coordenador(a) geral:** _A preencher_ — não encontrado em agosto/2026 (o site lista coordenadores por fase/turma; verificar o coordenador geral diretamente em <https://educampo.grad.ufsc.br/coordenacao/>)
+- **Coordenadora:** Profa. Dra. Marília Carla de Mello Gaia — marilia.gaia@ufsc.br
+- **Subcoordenador:** Prof. Dr. Juliano Espezim Soares Faria
 
-> Nota: O site lista coordenadores por fase/turma (2ª fase: Prof. Juliano Espezim Soares Faria; 4ª fase: Prof. Emeson Tavares da Silva; 6ª fase: Profa. Gabriele Nigra Salgado; 8ª fase: Prof. Elizandro Maurício Brick). O coordenador geral do curso deve ser verificado diretamente em <https://educampo.grad.ufsc.br/coordenacao/>.
+> Fonte: <https://educampo.grad.ufsc.br/equipe/> (verificado em agosto/2026). O site também lista coordenadores por fase/turma (Roberto Finatto, Carolina Cherfem, Emeson Tavares, Elizandro Brick, entre outros).
 
 (ver também [Coordenações](../coordenacoes.md) e a ficha do centro [CED](../centros/ced.md))
 
@@ -73,9 +76,10 @@ _A preencher_ — O curso ocorre predominantemente no CED (Campus Trindade) dura
 **Fontes consultadas (agosto/2026):**
 - <https://guiadecursos.ufsc.br/educacao-do-campo/> — grau, centro e metodologia da alternância
 - <https://educampo.grad.ufsc.br/> — e-mails, telefones, horário de atendimento da secretaria, coordenadores por fase
+- <https://educampo.grad.ufsc.br/equipe/> — coordenadora geral (Profa. Marília Carla de Mello Gaia) e subcoordenador (Prof. Juliano Espezim Soares Faria)
 - <https://ced.ufsc.br/> — vínculo com Departamento de Educação do Campo (EDC/CED)
 - <https://coperve.ufsc.br/processo-seletivo-educacao-do-campo/> — turno Integral durante o Tempo Universidade (regime de alternância presencial)
 - <https://www.instagram.com/peteducampo/> — PET EduCampo UFSC
-- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — nenhuma EJ de Educação do Campo listada
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — nenhuma EJ de Educação do Campo listada (confirmado agosto/2026)
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

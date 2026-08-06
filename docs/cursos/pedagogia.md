@@ -4,7 +4,7 @@ slug: pedagogia
 centro: CED
 grau: Licenciatura
 turno: Vespertino
-duracao: ~
+duracao: "9 semestres"
 coordenacao:
   nome: Profa. Leila Procópia do Nascimento
   email: pedagogia@contato.ufsc.br
