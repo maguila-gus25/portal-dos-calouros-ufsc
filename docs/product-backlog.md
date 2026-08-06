@@ -63,7 +63,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. **Estado agosto/2026:** 112 fichas publicadas (todos os 13 centros). CTC: 13 fichas completas — coordenação, CA, EJ, atlética verificados. Outros centros (CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS): coordenação e CA preenchidos onde disponíveis. **Falta (Sprint 26):** CA, atlética, EJ, Instagram para CTJ (8 cursos) e CTS (5 cursos). Dicas de veterano e "onde estudar" aguardam submissões reais (B-10, B-13 — bloqueados). |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. **Estado agosto/2026 (pós-Sprint 28):** 112 fichas publicadas (todos os 13 centros). CTC ✅ · CCA ✅ · CSE ✅ · CCS ✅ (coordenadores Sprint 27) · CTJ ✅ (atlética/CA/EJ Sprint 26) · CTS ✅ (coordenadores/atlética/CA/EJ Sprint 26) · CCJ ✅ (coordenação Sprint 27) · CCB ✅ (coordenadora Daniela De Toni + EJ Simbiosis — Sprint 28) · CED ✅ (coordenadores dos 4 cursos + duração Pedagogia — Sprint 28) · CDS ✅ (CAEF Instagram — Sprint 28). CFH: coordenadores sistematicamente `~` (não publicados em fontes verificadas — padrão estabelecido Sprint 21). CFM: alguns campos `_A preencher_` (duração contraditória entre fontes). CCE: maioria completa; alguns campos de atendimento `_A preencher_`. Dicas de veterano e "onde estudar" aguardam submissões reais (B-10, B-13 — bloqueados). |
 | B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 
@@ -280,6 +280,11 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 > Alternativa se o mantenedor quiser mais conteúdo antes da refatoração:
 > **B-60 (CCJ + CFH + CFM)** e **B-61 (fichas CSE)** — ambos puramente de conteúdo, zero código.
 
+**Sprint 28 concluído (v1.22):** Qualidade CED + CCB + CDS — coordenadores de
+Educação do Campo, Arquivologia e Biblioteconomia preenchidos; duração de Pedagogia
+corrigida no frontmatter; coordenadora de Ciências Biológicas (Profª. Daniela De Toni)
+e EJ Simbiosis encontrados; CAEF Instagram (@caefufsc) do CDS confirmado.
+
 **Radar (v2.0):**
 
 - **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
@@ -287,16 +292,13 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
   forem planejados juntos.
 - **B-13** — primeiras histórias de veteranos (desbloqueado assim que houver submissões
   reais via `historia-veterano.yml`).
-- **B-71 + B-72** — link de atalho para cursos na página de centro e atualização da documentação técnica (Could, Sprint 15 ou 16).
 
 **Horizonte (v2.0):**
 
 - **B-56 + B-57** — autenticação OAuth + painel de moderação (E13).
 - **B-39 + B-40** — avaliação de professores com moderação (E9, depende de E13).
 - **B-41 + B-42** — simulador de grade de horários (E10).
-- **B-27 + B-28** — modelo genérico de centro reutilizável (E7, agora coberto pela infra multi-centro).
-- **B-60** — restante dos centros: CCJ, CFH, CFM, CCB, CED, CDS, Joinville, Araranguá (CCA, CSE, CCE, CCS feitos).
-- **B-61** — fichas de cursos de todos os centros além do CTC e CCA (🚧 em aberto).
+- **B-37 + B-50 + E13** — formulário de histórias + banco de dados + auth OAuth (requer planejamento conjunto).
 
 ## Critérios de aceite (itens de referência)
 

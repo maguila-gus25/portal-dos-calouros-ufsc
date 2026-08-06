@@ -82,6 +82,40 @@ Wave 2 — após Wave 1:
 | B-37/B-50/E13 (banco + auth) | Horizonte v2.0 — requer planejamento conjunto com o mantenedor |
 | Marcadores CTJ/CTS no mapa | Aguarda coordenadas geográficas verificadas do mantenedor |
 
+### Retrospectiva do Sprint 28
+
+**Concluído em:** 2026-08-06
+
+**Entregue:**
+
+- **CED (Story A) — 4 fichas + centros/ced.md:**
+  - `pedagogia.md`: frontmatter `duracao: ~` → `"9 semestres"` (consistência com o texto).
+  - `educacao-do-campo.md`: coordenadora Profa. Dra. Marília Carla de Mello Gaia e subcoordenador Prof. Dr. Juliano Espezim Soares Faria encontrados via `educampo.grad.ufsc.br/equipe/`.
+  - `arquivologia.md`: subcoordenadora Profa. Marli Dias de Souza Pinto adicionada com portarias nº 2249-2250/2024/GR.
+  - `biblioteconomia.md`: subcoordenador Prof. Rodrigo de Sales adicionado com portaria nº 911-912/2026/GR (a partir de 23/04/2026).
+  - `centros/ced.md`: tabela de coordenadores dos 4 cursos adicionada; turno/duração de Pedagogia e Arquivologia corrigidos.
+  - Atlética e EJ dos cursos CED: nenhuma verificada — `_A preencher_` confirmado via CGEJ.
+
+- **CCB + CDS (Story B) — 2 fichas + centros:**
+  - `ciencias-biologicas.md`: coordenadora Profª. Daniela Cristina De Toni e subcoordenador Prof. Luiz Carlos de Pinho encontrados via `cienciasbiologicas.grad.ufsc.br/coordenacao-do-curso/`; atendimento (teletrabalho parcial + link para escala) documentado; **EJ Simbiosis** (`@simbiosisempjr`) — dado completamente novo, confirmada via CGEJ.
+  - `educacao-fisica.md`: CAEF Instagram `@caefufsc` verificado ativo.
+  - `centros/ccb.md`: coordenadora e EJ Simbiosis adicionados.
+  - `centros/cds.md`: CAEF Instagram adicionado à tabela de representação estudantil.
+
+**Verificações finais:** lint ✅ · build **112 páginas** SSG ✅ · Playwright **8/8** ✅ · ui-ux-review não necessária (sprint content-only).
+
+**O que foi bem:**
+- EJ Simbiosis (CCB) foi um achado inesperado — em sprints anteriores não havia EJ de Biológicas no CGEJ; a busca confirmou a atividade via Instagram.
+- Coordenadora de Biológicas encontrada via URL documentada no `_A preencher_` — evidência do valor de registrar URLs de onde buscar.
+- Inconsistência silenciosa de frontmatter (Pedagogia `duracao: ~`) encontrada e corrigida.
+- Paralelismo Wave 1 sem conflito de arquivo.
+
+**Pendências / follow-up:**
+- Atlética e EJ dos cursos CED: nenhuma verificada — provável ausência real.
+- CFH coordenadores: padrão `~` estabelecido no Sprint 21 — não tentar sem nova pista.
+- CFM durações contraditórias: requer acesso direto ao CAGR sem 403.
+- **B-08** — dicas de veterano e "onde estudar" continuam bloqueados sem submissões reais.
+
 ---
 
 ## Sprint 27 — Qualidade: fichas de centro + coordenadores CCS (v1.21)
