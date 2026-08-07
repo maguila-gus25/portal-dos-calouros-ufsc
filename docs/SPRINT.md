@@ -10,7 +10,7 @@
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| CFM — qualidade das 5 fichas + propagação para o centro | B-08 (CFM) | Should / M | content-editor | Not Started |
+| CFM — qualidade das 5 fichas + propagação para o centro | B-08 (CFM) | Should / M | content-editor | In Progress |
 
 ### Critérios de aceite detalhados
 
