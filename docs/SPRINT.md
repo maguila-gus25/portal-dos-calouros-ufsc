@@ -4,6 +4,77 @@
 
 ---
 
+## Sprint 29 — Qualidade: cluster CFM (Física, Matemática, Química, Oceanografia, Meteorologia) (v1.23)
+
+**Objetivo:** Completar os campos `_A preencher_` alcançáveis nas 5 fichas de curso do **CFM** (Centro de Ciências Físicas e Matemáticas) e propagar os dados novos para `docs/centros/cfm.md`. Foco em dados verificáveis por nova busca: coordenador(a) de Oceanografia, atléticas e empresas júnior via CAs, Instagram do CALF, salas/atendimento das coordenações e nova tentativa de durações contraditórias. Sprint content-only: nenhum código frontend necessário.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| CFM — qualidade das 5 fichas + propagação para o centro | B-08 (CFM) | Should / M | content-editor | Not Started |
+
+### Critérios de aceite detalhados
+
+**B-08 (CFM) — 5 fichas + centro**
+
+- [ ] `docs/cursos/oceanografia.md`: pesquisar **coordenador(a)** em `ocn.cfm.ufsc.br/coordenacao/`; preencher com fonte verificada ou manter `_A preencher_` com nota explícita se a página não publicar o nome; pesquisar atlética (via CA `@cao.ufsc`) e EJ.
+- [ ] `docs/cursos/matematica.md`: pesquisar atlética (via CALMA `@ufsc.calma`), EJ, evento tradicional e duração do Bacharelado; atendimento em `mtm.grad.ufsc.br/horario/`.
+- [ ] `docs/cursos/fisica.md`: pesquisar Instagram do CALF (fallback conhecido: Facebook `calf.ufsc`), EJ e nova tentativa de duração (Bacharelado diurno / Licenciatura noturna) em `fisica.grad.ufsc.br/o-curso/` ou CAGR se acessível.
+- [ ] `docs/cursos/quimica.md`: pesquisar EJ, evento tradicional (via CALQ `@calq.ufsc`) e nova tentativa de duração em `quimica.ufsc.br/cursos/` (retornou 403 antes — tentar fonte alternativa).
+- [ ] `docs/cursos/meteorologia.md`: pesquisar EJ e sala/atendimento em `meteorologia.grad.ufsc.br/`.
+- [ ] Para todas as 5 fichas: pesquisar **sala/prédio** e **horário de atendimento** da coordenação, com fonte.
+- [ ] `docs/centros/cfm.md`: refletir qualquer dado novo confirmado (coordenação de Oceanografia, Instagram CALF, sites CALMA/CALQ, atléticas de Matemática/Oceanografia, eventos tradicionais) — só os fatos, sem duplicar texto longo.
+- [ ] Campos sem fonte verificada permanecem `_A preencher_` **com nota de onde buscar** — nunca inventar.
+- [ ] **NÃO** preencher "onde estudar" nem "disciplinas/dicas do 1º semestre" (rabo bloqueado de B-10/B-13).
+- [ ] `ultima_verificacao: agosto/2026` e rodapé "Última verificação" atualizados nos 6 arquivos tocados.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (arquivos disjuntos, exceto centros/cfm.md que o Editor B consolida):
+  content-editor A — docs/cursos/{fisica, matematica, quimica}.md
+  content-editor B — docs/cursos/{oceanografia, meteorologia}.md
+                     docs/centros/cfm.md  (propaga achados dos dois editores)
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (≥ 112 páginas, sem páginas novas) + Playwright 8/8
+```
+
+> Sprint content-only: sem alterações de frontend → ui-ux-review não necessária.
+> Nota de coordenação: para evitar conflito no arquivo compartilhado `docs/centros/cfm.md`, o Editor B é o único a escrevê-lo, consolidando o que o Editor A reportar. Na prática, os dois editores rodam em paralelo e o Scrum Master aplica os achados do Editor A ao `cfm.md` na consolidação, se necessário.
+
+### Fontes prioritárias
+
+- Oceanografia: `ocn.cfm.ufsc.br/coordenacao/` · CA `@cao.ufsc`
+- Matemática: `mtm.grad.ufsc.br/` · `mtm.grad.ufsc.br/horario/` · CALMA `@ufsc.calma`
+- Física: `fisica.grad.ufsc.br/o-curso/` · CALF (Facebook `calf.ufsc`)
+- Química: `quimica.ufsc.br/cursos/` · `quimica.ufsc.br/coordenadoria/` · CALQ `@calq.ufsc`
+- Meteorologia: `meteorologia.grad.ufsc.br/`
+- Empresas júnior: `empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/`
+- Durações (se acessível): `cagr.sistemas.ufsc.br/`
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (≥ 112 páginas SSG — sem páginas novas)
+- [ ] Playwright 8/8 sem regressões
+- [ ] Coordenador(a) de Oceanografia pesquisado (preenchido ou `_A preencher_` com nota)
+- [ ] Atléticas de Matemática e Oceanografia e EJs das 5 fichas pesquisadas
+- [ ] Instagram do CALF pesquisado; resultado documentado
+- [ ] `docs/centros/cfm.md` atualizado com dados novos confirmados
+- [ ] `docs/product-backlog.md` atualizado com o novo status do B-08
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| "Onde estudar" / dicas do 1º semestre (CFM) | Rabo bloqueado de B-10/B-13 — dependem de submissões reais |
+| CFH coordenadores | Sistematicamente `~` — padrão estabelecido no Sprint 21, sem novo sinal |
+| CCE / CCS (gaps residuais) | Menor densidade de pistas de fonte — radar para sprint futuro |
+| Durações se persistir 403/contradição | Manter `_A preencher_` com nota — não travar o sprint |
+| B-37/B-50/E13 (banco + auth) | Horizonte v2.0 — requer co-planejamento com o mantenedor |
+
+---
+
 ## Sprint 28 — Qualidade: CED + CCB + CDS (v1.22)
 
 **Objetivo:** Completar os dados restantes nas fichas dos cursos dos centros **CED**, **CCB** e **CDS** — os três centros com fichas criadas nos Sprints 22–23 que ainda têm campos `_A preencher_` atingíveis por pesquisa web. Foco: corrigir frontmatter de Pedagogia (`duracao: ~` → `"9 semestres"`), pesquisar coordenadores das 4 fichas CED, buscar coordenador(a) de Ciências Biológicas via URL disponível, e confirmar se CAEF (CA de Educação Física) tem Instagram ativo. Sprint content-only: nenhum código frontend necessário.

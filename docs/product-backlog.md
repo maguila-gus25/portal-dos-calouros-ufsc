@@ -285,6 +285,23 @@ Educação do Campo, Arquivologia e Biblioteconomia preenchidos; duração de Pe
 corrigida no frontmatter; coordenadora de Ciências Biológicas (Profª. Daniela De Toni)
 e EJ Simbiosis encontrados; CAEF Instagram (@caefufsc) do CDS confirmado.
 
+**Sprint 29 — candidatos (grooming em 2026-08-07):** foco no cluster **CFM** (B-08,
+o único conjunto de lacunas sprint-ready sem depender de submissões externas ou do
+mantenedor). Ver `docs/product-backlog.md` seção "Sprint sugerido" acima para o
+racional completo; escopo recomendado ao Scrum Master:
+
+1. **B-08 (cluster CFM)** — `content-editor` × 2 em paralelo (arquivos disjuntos) +
+   `tester`. Fechar os `_A preencher_` alcançáveis em `docs/centros/cfm.md` e nas 5
+   fichas (`fisica.md`, `matematica.md`, `quimica.md`, `oceanografia.md`,
+   `meteorologia.md`): coordenação de Oceanografia, Instagram do CALF, sites do
+   CALMA/CALQ, atléticas de Matemática/Oceanografia, EJs dos 5 cursos, evento
+   tradicional de Matemática/Química/Meteorologia, sala/atendimento das 5
+   coordenações, duração do Bacharelado de Matemática. Duração de Física/Química
+   fica `_A preencher_` se as fontes seguirem contraditórias/403 — não travar o
+   sprint por isso.
+   - Não entram: "onde estudar" e "dicas do 1º semestre" (linhas 54/58 de cada
+     ficha) — são o rabo bloqueado de B-10/B-13, aguardam submissões reais.
+
 **Radar (v2.0):**
 
 - **B-50** — banco de dados Next.js com Prisma + SQLite/Postgres (pré-requisito de B-37
