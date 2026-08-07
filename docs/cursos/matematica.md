@@ -3,7 +3,7 @@ curso: Matemática
 slug: matematica
 centro: CFM
 grau: Licenciatura e Bacharelado
-turno: ~
+turno: "Bacharelado: Diurno · Licenciatura: Diurno ou Noturno"
 coordenacao:
   nome: Felipe Lopes Castro
   email: f.castro@ufsc.br
@@ -20,12 +20,12 @@ ultima_verificacao: "agosto/2026"
 
 ## Sobre o curso
 
-- **Grau / turno:** Licenciatura e Bacharelado. A **Licenciatura é oferecida em dois turnos**: diurno (matutino, 07:30 às 11:50) e noturno (18:30 às 22:00) — o diurno tem 8 semestres e o noturno 10, já que no noturno há uma aula a menos por dia; o conteúdo curricular e a duração da hora/aula (50 minutos) são os mesmos nos dois turnos. Para o **Bacharelado**, não foi encontrada confirmação do(s) turno(s) oferecido(s) em fonte oficial nesta verificação.
-- **Duração:** Licenciatura diurna: 8 semestres. Licenciatura noturna: 10 semestres. Bacharelado: _A preencher_ — uma fonte indireta mencionou duração mínima de 3 anos e meio (7 semestres) e máxima de 7 anos (14 semestres), mas não foi possível confirmar com uma fonte oficial diretamente acessada nesta verificação.
+- **Grau / turno:** Licenciatura e Bacharelado. A **Licenciatura é oferecida em dois turnos**: diurno (matutino, 07:30 às 11:50) e noturno (18:30 às 22:00) — o diurno tem 8 semestres e o noturno 10, já que no noturno há uma aula a menos por dia; o conteúdo curricular e a duração da hora/aula (50 minutos) são os mesmos nos dois turnos. O **Bacharelado é oferecido no período diurno**, com 8 semestres — confirmado por busca cruzando <https://mtm.grad.ufsc.br/projeto-pedagogico/> e <https://guiadecursos.ufsc.br/matematica-bacharelado/> (curso muitas vezes em período integral nas fases iniciais, pela unificação de grades com a Licenciatura diurna).
+- **Duração:** Licenciatura diurna: 8 semestres. Licenciatura noturna: 10 semestres. Bacharelado (diurno): 8 semestres. Fonte: <https://mtm.grad.ufsc.br/projeto-pedagogico/> (acesso por indexação de busca — WebFetch direto a `*.ufsc.br` bloqueado pelo proxy de rede nesta verificação; recomenda-se reconfirmar visitando a página diretamente antes de publicar como definitivo).
 - **Página oficial do curso:** <https://mtm.grad.ufsc.br/>
 - **Resumo:** Forma professores de Matemática para a Educação Básica (Licenciatura) e profissionais/pesquisadores preparados para pós-graduação em Matemática pura ou aplicada, ou para o mercado de trabalho em áreas que exigem sólida formação matemática (Bacharelado). O CFM também oferece o Bacharelado em Computação Científica, habilitação distinta associada ao curso de Matemática (ver `docs/centros/cfm.md`).
 
-> **Nota:** dados de turno e duração da Licenciatura confirmados via busca cruzando páginas do antigo site do curso (mtm.ufsc.br/graduacao). WebFetch direto às páginas `*.ufsc.br` (incluindo guiadecursos.ufsc.br) retornou erro 403 durante a verificação — recomenda-se reconfirmar antes de publicar como definitivo, especialmente o turno e a duração do Bacharelado.
+> **Nota:** dados de turno e duração da Licenciatura confirmados via busca cruzando páginas do antigo site do curso (mtm.ufsc.br/graduacao). Duração do Bacharelado (8 semestres, diurno) obtida em nova tentativa via busca cruzando mtm.grad.ufsc.br/projeto-pedagogico/ e guiadecursos.ufsc.br/matematica-bacharelado/. WebFetch direto às páginas `*.ufsc.br` (incluindo guiadecursos.ufsc.br) é bloqueado pelo proxy de rede desta verificação — recomenda-se reconfirmar antes de publicar como definitivo.
 
 ## Coordenação
 
@@ -34,18 +34,19 @@ ultima_verificacao: "agosto/2026"
 - **E-mail geral:** matematica@contato.ufsc.br
 - **Telefone:** (48) 3721-2960 · WhatsApp: (48) 3721-4612
 - **Sala / prédio:** Sala MTM001, térreo — Campus Universitário Reitor João David Ferreira Lima, Trindade, CEP 88040-900, Florianópolis — SC
-- **Atendimento:** _A preencher_ — verificar em <https://mtm.grad.ufsc.br/horario/>
+- **Atendimento:** _A preencher_ — página <https://mtm.grad.ufsc.br/horario/> existe e cita a secretária responsável (sala MTM001) e o secretário (sala MTM004), mas não foi possível confirmar o horário exato (dias/horas) com confiança suficiente nesta verificação (WebFetch direto bloqueado pelo proxy de rede; buscas indiretas retornaram resultados inconsistentes) — recomenda-se acessar a página diretamente.
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
 - **Centro Acadêmico:** **CALMA** — Centro Acadêmico Livre de Matemática — [@ufsc.calma](https://www.instagram.com/ufsc.calma/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CALMA ([@ufsc.calma](https://www.instagram.com/ufsc.calma/))
-- **Empresa júnior:** _A preencher_
-- **Evento tradicional:** _A preencher_ — verificar eventos tradicionais com o CALMA
+- **Atlética:** _A preencher_ — não encontrada em fontes verificadas nesta nova tentativa. A **AFIM** é a atlética de Física e Meteorologia, não de Matemática — não deve ser usada aqui. Recomenda-se confirmar diretamente com o CALMA ([@ufsc.calma](https://www.instagram.com/ufsc.calma/)) se a Matemática tem atlética própria ou participa de outra.
+- **Empresa júnior:** **Reação Jr** — empresa júnior formada e gerida por estudantes dos cursos de Química, Física e Matemática da UFSC (compartilhada entre os três cursos do CFM) — site <https://reacaojr.ufsc.br/> — e-mail reacaojr@contato.ufsc.br
+- **Evento tradicional:** **FERMAT — Feira Redescobrindo a Matemática**, organizada pelo PET Matemática UFSC em parceria com o CALMA, com apoio do Departamento de Matemática. Feira de divulgação científica voltada a escolas de Florianópolis, realizada anualmente no Colégio de Aplicação da UFSC (XV edição em setembro/2025; XVI edição prevista para 2026). Fonte: <https://noticias.ufsc.br/event/feira-redescobrindo-a-matematica/> e <https://petmatematica.paginas.ufsc.br/>.
 - **Instagrams / perfis:**
   - [@ufsc.calma](https://www.instagram.com/ufsc.calma/) — CALMA (Centro Acadêmico)
+  - [@pet.mtm.ufsc](https://www.instagram.com/pet.mtm.ufsc/) — PET Matemática UFSC (organiza a FERMAT)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -62,5 +63,10 @@ ultima_verificacao: "agosto/2026"
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cfm.md` — coordenação, sub-coordenação, e-mail, telefone, WhatsApp e CALMA já verificados
 - <https://mtm.grad.ufsc.br/coordenacao/> — dados de coordenação e sala (acesso indireto via busca)
-- <http://www.mtm.ufsc.br/graduacao/licenc.html> e <http://www.mtm.ufsc.br/graduacao/bachar.html> — turno e duração da Licenciatura (acesso indireto via busca; Bacharelado não confirmado)
+- <http://www.mtm.ufsc.br/graduacao/licenc.html> e <http://www.mtm.ufsc.br/graduacao/bachar.html> — turno e duração da Licenciatura (acesso indireto via busca)
+- <https://mtm.grad.ufsc.br/projeto-pedagogico/> e <https://guiadecursos.ufsc.br/matematica-bacharelado/> — duração do Bacharelado (8 semestres, diurno) (WebFetch direto bloqueado pelo proxy de rede nesta verificação; dados obtidos por indexação de busca)
+- <https://mtm.grad.ufsc.br/horario/> — página de atendimento localizada, mas horário exato não confirmado com confiança suficiente
 - <https://www.instagram.com/ufsc.calma/> — CALMA
+- <https://reacaojr.ufsc.br/> — Reação Jr, empresa júnior compartilhada entre Química, Física e Matemática
+- <https://noticias.ufsc.br/event/feira-redescobrindo-a-matematica/>, <https://petmatematica.paginas.ufsc.br/> e <https://www.instagram.com/pet.mtm.ufsc/> — evento tradicional FERMAT (PET Matemática + CALMA)
+- Atlética de Matemática: não localizada; busca confirmou apenas que AFIM é exclusiva de Física/Meteorologia, não de Matemática

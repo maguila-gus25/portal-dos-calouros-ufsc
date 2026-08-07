@@ -5,13 +5,13 @@ centro: CFM
 grau: Bacharelado
 turno: Integral
 coordenacao:
-  nome: ~
+  nome: "Profa. Carla Van Der Haagen Custódio Bonetti (coordenadora); Prof. Antônio Fernando Harter Fetter Filho (subcoordenador)"
   email: oceano.cfm@contato.ufsc.br
   telefone: "(48) 3721-3902 / (48) 3721-3532"
-  sala: ~
+  sala: "Prédio da Reitoria II, sala 904 — Rua Desembargador Vitor Lima, 222, Trindade, Florianópolis"
   atendimento: ~
   site: https://ocn.cfm.ufsc.br/
-atletica: ~
+atletica: "ALOHA — Atlética Livre de Oceanografia Henry Avery"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -29,23 +29,25 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/> (não publicado nas fontes verificadas)
+- **Coordenadora:** Profa. Carla Van Der Haagen Custódio Bonetti
+- **Subcoordenador:** Prof. Antônio Fernando Harter Fetter Filho
 - **Telefone da coordenadoria especial:** (48) 3721-3902 — e-mail ocn@contato.ufsc.br
 - **Telefone da coordenação do curso:** (48) 3721-3532 — e-mail oceano.cfm@contato.ufsc.br
-- **Sala / prédio:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
-- **Atendimento:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
+- **Sala / prédio:** Prédio da Reitoria II, sala 904 — Rua Desembargador Vitor Lima, 222, Trindade, Florianópolis, CEP 88040-400
+- **Atendimento:** _A preencher_ — horário não publicado nas fontes verificadas; confirmar em <https://ocn.cfm.ufsc.br/coordenacao/> ou por telefone/e-mail
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
 - **Centro Acadêmico:** **CAO** (Centro Acadêmico de Oceanografia) — [@cao.ufsc](https://www.instagram.com/cao.ufsc/) — <https://oceano.ufsc.br/>
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CAO ([@cao.ufsc](https://www.instagram.com/cao.ufsc/))
-- **Empresa júnior:** _A preencher_ — não encontrada em fontes verificadas
+- **Atlética:** **ALOHA** (Atlética Livre de Oceanografia Henry Avery) — <https://www.facebook.com/alohaufsc/> (perfil de Instagram não localizado nas fontes verificadas)
+- **Empresa júnior:** **Tétis — Empresa Júnior de Oceanografia UFSC** — [@tetis.ej](https://www.instagram.com/tetis.ej/) — <https://tetis.ufsc.br/>
 - **Evento tradicional:** Semana Acadêmica de Oceanografia (SEA), organizada pelo CAO, já em sua IX edição — [@sea.oceanografia.ufsc](https://www.instagram.com/sea.oceanografia.ufsc/)
 - **Instagrams / perfis:**
   - [@cao.ufsc](https://www.instagram.com/cao.ufsc/) — CAO (Centro Acadêmico)
   - [@sea.oceanografia.ufsc](https://www.instagram.com/sea.oceanografia.ufsc/) — Semana Acadêmica de Oceanografia
+  - [@tetis.ej](https://www.instagram.com/tetis.ej/) — Tétis (Empresa Júnior)
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -62,7 +64,10 @@ ultima_verificacao: "agosto/2026"
 **Fontes consultadas (agosto/2026):**
 - `docs/centros/cfm.md` — coordenação, CA (CAO) e evento SEA já verificados (agosto/2026)
 - <https://ocn.cfm.ufsc.br/> — página oficial do curso
+- <https://ocn.cfm.ufsc.br/coordenacao/> e <https://ocn.cfm.ufsc.br/coordenacao-2/> — nome da coordenadora/subcoordenador e sala (acesso indireto via busca; acesso direto bloqueado durante esta verificação)
 - <https://oceano.ufsc.br/> — página do CAO
 - <https://guiadecursos.ufsc.br/oceanografia/> — grau, turno e duração (acesso indireto via busca; página retornou 403 na verificação direta)
 - <https://www.instagram.com/cao.ufsc/> — CAO
 - <https://www.instagram.com/sea.oceanografia.ufsc/> — SEA
+- <https://www.facebook.com/alohaufsc/> — ALOHA (Atlética de Oceanografia)
+- <https://tetis.ufsc.br/> e <https://www.instagram.com/tetis.ej/> — Tétis (Empresa Júnior de Oceanografia)

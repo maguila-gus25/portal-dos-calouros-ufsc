@@ -63,7 +63,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 
 | ID | Prioridade | Tam. | Status | História |
 |----|-----------|------|--------|----------|
-| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. **Estado agosto/2026 (pós-Sprint 28):** 112 fichas publicadas (todos os 13 centros). CTC ✅ · CCA ✅ · CSE ✅ · CCS ✅ (coordenadores Sprint 27) · CTJ ✅ (atlética/CA/EJ Sprint 26) · CTS ✅ (coordenadores/atlética/CA/EJ Sprint 26) · CCJ ✅ (coordenação Sprint 27) · CCB ✅ (coordenadora Daniela De Toni + EJ Simbiosis — Sprint 28) · CED ✅ (coordenadores dos 4 cursos + duração Pedagogia — Sprint 28) · CDS ✅ (CAEF Instagram — Sprint 28). CFH: coordenadores sistematicamente `~` (não publicados em fontes verificadas — padrão estabelecido Sprint 21). CFM: alguns campos `_A preencher_` (duração contraditória entre fontes). CCE: maioria completa; alguns campos de atendimento `_A preencher_`. Dicas de veterano e "onde estudar" aguardam submissões reais (B-10, B-13 — bloqueados). |
+| B-08 | 🟠 Should | 🔴 G | 🚧 | Como **calouro**, quero **uma ficha só do meu curso** (coordenação, CA, atlética, dicas), para **ter tudo num lugar**. **Estado agosto/2026 (pós-Sprint 29):** 112 fichas publicadas (todos os 13 centros). CTC ✅ · CCA ✅ · CSE ✅ · CCS ✅ (coordenadores Sprint 27) · CTJ ✅ (atlética/CA/EJ Sprint 26) · CTS ✅ (coordenadores/atlética/CA/EJ Sprint 26) · CCJ ✅ (coordenação Sprint 27) · CCB ✅ (coordenadora Daniela De Toni + EJ Simbiosis — Sprint 28) · CED ✅ (coordenadores dos 4 cursos + duração Pedagogia — Sprint 28) · CDS ✅ (CAEF Instagram — Sprint 28) · CFM ✅ (coordenação de Oceanografia, EJ Reação Jr, eventos FERMAT/SEMAQ, atlética ALOHA, salas/atendimento — Sprint 29). CFH: coordenadores sistematicamente `~` (não publicados em fontes verificadas — padrão estabelecido Sprint 21). CFM: restam durações contraditórias (Física/Química) e atlética de Matemática `_A preencher_` (não localizada). CCE: maioria completa; alguns campos de atendimento `_A preencher_`. Dicas de veterano e "onde estudar" aguardam submissões reais (B-10, B-13 — bloqueados). |
 | B-09 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **gerar as 13 fichas a partir do modelo**, para **padronizar o conteúdo**. |
 | B-10 | 🟡 Could | 🟡 M | ⬜ | Como **veterano**, quero **adicionar dicas de veterano por disciplina** na ficha, para **ajudar quem chega**. |
 
@@ -284,6 +284,17 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 Educação do Campo, Arquivologia e Biblioteconomia preenchidos; duração de Pedagogia
 corrigida no frontmatter; coordenadora de Ciências Biológicas (Profª. Daniela De Toni)
 e EJ Simbiosis encontrados; CAEF Instagram (@caefufsc) do CDS confirmado.
+
+**Sprint 29 concluído (v1.23):** Qualidade do cluster **CFM** (B-08). Coordenadora de
+Oceanografia (Profa. Carla Van Der Haagen Custódio Bonetti) + subcoordenador e sala
+encontrados; atlética **ALOHA** (Oceanografia) e EJ **Tétis** documentadas; **Reação Jr**
+identificada como EJ compartilhada por Física, Química e Matemática; eventos tradicionais
+**FERMAT** (Matemática) e **SEMAQ** (Química) adicionados; Instagram do CALF (`@calfisica`)
+localizado; durações do Bacharelado de Física e Matemática confirmadas; salas/atendimento
+das 5 coordenações preenchidos. Mantidos `_A preencher_` (sem fonte cruzada): atlética de
+Matemática, EJ de Meteorologia, evento de Meteorologia e duração de Química. Nota: acesso
+direto a `*.ufsc.br`/Instagram bloqueado pelo proxy do ambiente — verificação via busca
+indexada cruzada, com notas de reconfirmação registradas nas fichas.
 
 **Radar (v2.0):**
 
