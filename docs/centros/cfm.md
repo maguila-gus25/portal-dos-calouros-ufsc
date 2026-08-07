@@ -94,12 +94,14 @@ O CFM oferece os seguintes cursos de graduação:
 
 ### Oceanografia
 
-- **Coordenação:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
+- **Coordenadora:** Profa. Carla Van Der Haagen Custódio Bonetti
+- **Subcoordenador:** Prof. Antônio Fernando Harter Fetter Filho
+- **Sala / prédio:** Prédio da Reitoria II, sala 904 — Rua Desembargador Vitor Lima, 222, Trindade, Florianópolis
 - **Telefone da coordenadoria especial:** (48) 3721-3902 — e-mail ocn@contato.ufsc.br
 - **Telefone da coordenação do curso:** (48) 3721-3532 — e-mail oceano.cfm@contato.ufsc.br
 - **Site do curso:** <https://ocn.cfm.ufsc.br/>
 
-> Fonte: <https://ocn.cfm.ufsc.br/coordenacao/>, <https://oceano.ufsc.br/> (verificado em agosto/2026)
+> Fonte: <https://ocn.cfm.ufsc.br/coordenacao/>, <https://ocn.cfm.ufsc.br/coordenacao-2/>, <https://oceano.ufsc.br/> (verificado em agosto/2026 — acesso indireto via busca; acesso direto ao site bloqueado durante esta verificação)
 
 ---
 
@@ -107,7 +109,7 @@ O CFM oferece os seguintes cursos de graduação:
 
 | Curso | Centro Acadêmico | Sigla | Instagram | Site |
 |-------|-------------------|-------|-----------|------|
-| Física | Centro Acadêmico Livre de Física | CALF | _A preencher_ — verificar via [Facebook do CALF](https://www.facebook.com/calf.ufsc/) | <https://calf.ufsc.br/> |
+| Física | Centro Acadêmico Livre de Física | CALF | [@calfisica](https://www.instagram.com/calfisica/) (indexado com nome "CALF"; [Facebook](https://www.facebook.com/calf.ufsc/) ativo — confirmar por acesso direto ao perfil) | <https://calf.ufsc.br/> |
 | Matemática | Centro Acadêmico Livre de Matemática | CALMA | [@ufsc.calma](https://www.instagram.com/ufsc.calma/) | _A preencher_ |
 | Química | Centro Acadêmico Livre de Química | CALQ | [@calq.ufsc](https://www.instagram.com/calq.ufsc/) | _A preencher_ |
 | Meteorologia | Centro Acadêmico Livre de Meteorologia | CALMET | [@meteorologiaufsc](https://www.instagram.com/meteorologiaufsc/) | <https://meteorologia.grad.ufsc.br/centro-academico-calmet/> |
@@ -124,9 +126,9 @@ O CFM oferece os seguintes cursos de graduação:
 | Química | ATQ — Associação Atlética de Química da UFSC | [@atqufsc](https://www.instagram.com/atqufsc/) |
 | Física / Meteorologia | AFIM — Atlética de Física e Meteorologia UFSC | [@afimufsc](https://x.com/afimufsc) |
 | Matemática | _A preencher_ — não encontrada em fontes verificadas; verificar com CALMA (@ufsc.calma) | _A preencher_ |
-| Oceanografia | _A preencher_ — não encontrada em fontes verificadas; verificar com CAO (@cao.ufsc) | _A preencher_ |
+| Oceanografia | **ALOHA** — Atlética Livre de Oceanografia Henry Avery | Instagram não localizado; página oficial: [Facebook @alohaufsc](https://www.facebook.com/alohaufsc/) |
 
-> Fontes: perfis verificados no Instagram (verificado em agosto/2026)
+> Fontes: perfis verificados no Instagram e Facebook (verificado em agosto/2026)
 
 ---
 
@@ -144,9 +146,29 @@ Evento anual organizado pelo CAO com estudantes de Oceanografia, já em sua IX e
 
 - Instagram: [@sea.oceanografia.ufsc](https://www.instagram.com/sea.oceanografia.ufsc/)
 
-### Eventos de Matemática, Química e Meteorologia
+### FERMAT — Feira Redescobrindo a Matemática
 
-_A preencher_ — verificar eventos tradicionais com CALMA (@ufsc.calma), CALQ (@calq.ufsc) e CALMET (@meteorologiaufsc).
+Feira de divulgação científica organizada pelo PET Matemática UFSC em parceria com o CALMA, realizada anualmente no Colégio de Aplicação da UFSC (XV edição em setembro/2025; XVI prevista para 2026).
+
+> Fonte: <https://noticias.ufsc.br/event/feira-redescobrindo-a-matematica/>, <https://petmatematica.paginas.ufsc.br/> (verificado em agosto/2026)
+
+### SEMAQ — Semana Acadêmica de Química
+
+Evento anual organizado pelo CALQ com participação de estudantes, professores e da Reação Jr — minicursos, oficinas, palestras e mesas-redondas (XVII edição em 2023).
+
+> Fonte: <https://semaq.paginas.ufsc.br/>, <https://quimica.ufsc.br/2023/10/03/xvii-semana-academica-de-quimica-e-xii-semana-da-pos-graduacao-da-ufsc/> (verificado em agosto/2026)
+
+### Eventos de Meteorologia
+
+_A preencher_ — não localizado em fontes verificadas; verificar com CALMET (@meteorologiaufsc).
+
+---
+
+## Empresas Júnior
+
+- **Reação Jr** — empresa júnior compartilhada pelos cursos de **Química, Física e Matemática** do CFM. Site: <https://reacaojr.ufsc.br/> — e-mail reacaojr@contato.ufsc.br.
+
+> Fonte: <https://reacaojr.ufsc.br/> (verificado em agosto/2026 — acesso indireto via busca)
 
 ---
 

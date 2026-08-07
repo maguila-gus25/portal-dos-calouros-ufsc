@@ -8,8 +8,8 @@ coordenacao:
   nome: Renato Ramos da Silva
   email: meteorologia@contato.ufsc.br
   telefone: "(48) 3721-2305 / (48) 3721-2306"
-  sala: ~
-  atendimento: ~
+  sala: "Departamento de Física, sala 023 — Centro de Ciências Físicas e Matemáticas (CFM)"
+  atendimento: "Presencial: segunda a quinta-feira, das 14h às 17h; outros horários mediante agendamento"
   site: https://meteorologia.grad.ufsc.br/
 atletica: "AFIM — Atlética de Física e Meteorologia UFSC — @afimufsc"
 instagram_curso: ~
@@ -33,8 +33,8 @@ ultima_verificacao: "agosto/2026"
 - **Sub-coordenador:** Reinaldo Haas
 - **E-mail:** meteorologia@contato.ufsc.br
 - **Telefone:** (48) 3721-2305 ou (48) 3721-2306
-- **Sala / prédio:** _A preencher_ — verificar em <https://meteorologia.grad.ufsc.br/>
-- **Atendimento:** _A preencher_ — verificar em <https://meteorologia.grad.ufsc.br/>
+- **Sala / prédio:** Departamento de Física, sala 023 — Centro de Ciências Físicas e Matemáticas (CFM)
+- **Atendimento:** presencial de segunda a quinta-feira, das 14h às 17h; outros horários mediante agendamento
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -42,7 +42,7 @@ ultima_verificacao: "agosto/2026"
 
 - **Centro Acadêmico:** **CALMET** (Centro Acadêmico Livre de Meteorologia) — [@meteorologiaufsc](https://www.instagram.com/meteorologiaufsc/)
 - **Atlética:** **AFIM** (Atlética de Física e Meteorologia UFSC, compartilhada com o curso de Física) — [@afimufsc](https://x.com/afimufsc)
-- **Empresa júnior:** _A preencher_ — não encontrada em fontes verificadas
+- **Empresa júnior:** _A preencher_ — não localizada empresa júnior específica de Meteorologia na lista da CGEJ; verificar em <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/>
 - **Instagrams / perfis:**
   - [@meteorologiaufsc](https://www.instagram.com/meteorologiaufsc/) — CALMET (Centro Acadêmico)
   - [@afimufsc](https://x.com/afimufsc) — AFIM (Atlética)
@@ -63,7 +63,9 @@ ultima_verificacao: "agosto/2026"
 - `docs/centros/cfm.md` — coordenação, CA (CALMET) e atlética (AFIM) já verificados (agosto/2026)
 - <https://meteorologia.grad.ufsc.br/> — página oficial do curso
 - <https://meteorologia.grad.ufsc.br/2017/03/06/apresentacao-do-coordenador/> — coordenação
+- <https://meteorologia.grad.ufsc.br/2022/03/08/horarios-de-atendimento-presencial/> e <https://meteorologia.grad.ufsc.br/2020/05/15/coleta-de-informacoes-coordenacao-meteorologiaufsc/> — sala e horário de atendimento (acesso indireto via busca; acesso direto bloqueado durante esta verificação)
 - <https://guiadecursos.ufsc.br/meteorologia/> — grau, turno e duração (acesso indireto via busca; página retornou 403 na verificação direta)
 - <https://vestibularunificado2026.ufsc.br/> — confirmação de turno Integral no Vestibular Unificado 2026
 - <https://www.instagram.com/meteorologiaufsc/> — CALMET
 - <https://x.com/afimufsc> — AFIM
+- <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — busca por empresa júnior de Meteorologia (não localizada)
