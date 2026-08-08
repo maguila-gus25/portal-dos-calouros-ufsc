@@ -136,6 +136,10 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.17** — CED publicado (Pedagogia, Ed. do Campo, Arquivologia, Biblioteconomia) + CDS publicado (Educação Física) — 11 centros (Sprint 23)
 - [x] **v1.18** — CTJ/Joinville (8 cursos) + CTS/Araranguá (5 cursos) — 13 centros, B-60 ✅ fechado (Sprint 24)
 - [x] **v1.19** — Revisão semestral 2026/2, fichas CTC completas, audit WCAG AA (Sprint 25)
+- [x] **v1.20** — Vida do curso (CA, atlética, EJ) nas 13 fichas de CTJ e CTS (Sprint 26)
+- [x] **v1.21** — Qualidade: fichas de centro CTJ/CTC/CCJ + coordenadores do CCS (Sprint 27)
+- [x] **v1.22** — Qualidade: coordenadores e dados de CED/CCB/CDS (Sprint 28)
+- [x] **v1.23** — Mensagem de contribuição estilo MyUFSC + auditoria dos campos `_A preencher_` (CFH/CFM/CCE/CCA) (Sprint 29)
 - [ ] **Próximo** — Mapa CTJ/CTS (coordenadas do mantenedor); fichas restantes; ou v2.0 (banco + auth)
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores

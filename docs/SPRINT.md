@@ -16,8 +16,8 @@ bloqueado por submissão real de veterano).
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Mensagem de contribuição estilo MyUFSC no `Footer` | B-35 (revisão) / E5 | Should / P | frontend-dev | In Progress |
-| Auditoria de verificação dos campos `_A preencher_` — preencher localizáveis + categorizar bloqueados | B-08 (auditoria) | Should / G | content-editor | In Progress |
+| Mensagem de contribuição estilo MyUFSC no `Footer` | B-35 (revisão) / E5 | Should / P | frontend-dev | Done |
+| Auditoria de verificação dos campos `_A preencher_` — preencher localizáveis + categorizar bloqueados | B-08 (auditoria) | Should / G | content-editor | Done |
 
 ### Critérios de aceite detalhados
 
@@ -104,6 +104,54 @@ Wave 3 — após Wave 2 (frontend mudou):
 | Durações contraditórias (CFM) sem acesso ao CAGR | Fontes divergem; sem acesso direto ao CAGR não se resolve |
 | E-mails exibidos como imagem anti-spam sem leitura possível | Mantêm `_A preencher_` com nota |
 | B-37/B-50/E13 (banco + auth) | Horizonte v2.0 — requer planejamento com o mantenedor |
+
+### Retrospectiva do Sprint 29
+
+**Concluído em:** 2026-08-08
+
+**Entregue:**
+
+- **História A — Mensagem de contribuição estilo MyUFSC (`Footer`):**
+  - `components/Footer.tsx`: link seco "Contribuir no GitHub" → pílula *"Esse projeto é de código
+    livre, aberto e 100% gratuito!"* + link **Repositório** com ícone `GitFork` (lucide-react).
+  - Disclaimer obrigatório, copyright e nota de analytics **preservados**.
+  - `ui-ux-review`: um finding minor de contraste (mensagem herdava `muted-foreground`, ~4.35:1) —
+    corrigido com `text-foreground`. Sem findings bloqueadores.
+
+- **História B — Auditoria dos campos `_A preencher_` (2 content-editors em paralelo):**
+  - **Partição A (CFH+CFM+CCE) — 21 arquivos:** coordenadores preenchidos com fonte —
+    Geografia (José Messias Bastos, Portaria 2480/2025/GR — **corrige** nome desatualizado),
+    História (Rodrigo Bragio Bonaldo), Antropologia (Alexandra Eliza Vieira Alencar); atlética
+    AAAPsiU (Psicologia); e-mail de Ciências Sociais; salas de Química/Meteorologia; atlética
+    conjunta ATCFH referenciada de forma **hedged** (não confirmada) em 9 fichas; propagação de
+    dados já resolvidos para `cce.md`/`cfm.md`. 3 inconsistências frontmatter↔corpo corrigidas.
+  - **Partição B (CCA + seções + URLs pendentes) — 5 arquivos:** evento SEMAQUI (Eng. de
+    Aquicultura); CALICO (Computação) e CASIN (Sistemas de Informação) no `instagrams.md`; valor
+    do RU (R$ 1,50) no `faq.md`; sala de Odontologia; atendimento de Nutrição.
+  - **Revisão do Scrum Master:** 2 fills fracos foram endurecidos — o @ do DCE (handle de gestão,
+    só via busca) revertido a `_A preencher_`; datas específicas da SEMAQUI 2026 (não confirmadas
+    na fonte) removidas, mantendo evento/site/Instagram.
+  - **Bloqueados por submissão** (dicas de veterano / onde estudar): **~82 blocos** deixados
+    intactos em ~41 fichas — dependem de submissões reais (B-10/B-13).
+
+**Verificações finais:** lint ✅ · build **112 páginas** SSG ✅ · Playwright **8/8** ✅
+(exigiu apontar o binário do Chromium instalado — skew de versão 1194 vs 1228 no ambiente, sem
+alteração no repo) · ui-ux-review sem findings bloqueadores.
+
+**Adiado / não resolvido:**
+- Campos localizáveis que a busca não confirmou com segurança (coordenadores de Psicologia,
+  Filosofia, Geologia, Museologia, Ciências Sociais no CFH; Oceanografia/Matemática no CFM;
+  Letras-Português no CCE) — mantidos `~`/`_A preencher_` com nota.
+- E-mails de coordenação exibidos como imagem anti-spam (vários cursos do CTJ, CCJ) — não lidos.
+- Instagram de CALINUT, CACTA; atléticas de vários cursos — não localizados.
+
+**Para o próximo sprint / processo:**
+- **Limitação de ambiente:** o `WebFetch` foi bloqueado (`EGRESS_BLOCKED`) para todo `*.ufsc.br`
+  e redes sociais nesta sessão; a verificação dependeu só de `WebSearch` (snippets), o que reduz
+  a confiança em fills sem confirmação visual direta. Considerar rodar auditorias de conteúdo em
+  ambiente com egress liberado para os domínios oficiais.
+- Muitos campos restantes são estruturalmente bloqueados (anti-spam por imagem, dados não
+  publicados, submissões de veterano) — o valor marginal de re-auditar cai a cada sprint.
 
 ---
 
