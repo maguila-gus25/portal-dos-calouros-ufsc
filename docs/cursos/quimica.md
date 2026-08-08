@@ -8,8 +8,8 @@ coordenacao:
   nome: Miguel Soriano Balparda Caro
   email: miguel.caro@ufsc.br
   telefone: "(48) 3721-2312"
-  sala: ~
-  atendimento: ~
+  sala: "Sala 116 (coordenador) · Sala 312 (subcoordenador)"
+  atendimento: "8h às 11h15 e 12h15 às 17h (secretaria, Sala 112)"
   site: https://quimica.ufsc.br/
 atletica: ATQ — Associação Atlética de Química da UFSC — @atqufsc
 instagram_curso: "@calq.ufsc"
@@ -33,8 +33,8 @@ ultima_verificacao: "agosto/2026"
 - **Sub-coordenador:** Prof. Luis Henrique da Silveira Lacerda — luis.lacerda@ufsc.br — (48) 3721-3607
 - **E-mail:** miguel.caro@ufsc.br
 - **Telefone:** (48) 3721-2312
-- **Sala / prédio:** _A preencher_ — verificar em <https://quimica.ufsc.br/coordenadoria/>
-- **Atendimento:** _A preencher_ — verificar em <https://quimica.ufsc.br/>
+- **Sala / prédio:** Sala 116 (coordenador) · Sala 312 (subcoordenador) · Sala 112 (secretaria, chefia de expediente) — dado obtido por indexação de busca (WebFetch bloqueado nesta sessão); confirmar em <https://quimica.ufsc.br/coordenadoria/>
+- **Atendimento:** 8h às 11h15 e 12h15 às 17h (secretaria) — mesma fonte; confirmar em <https://quimica.ufsc.br/coordenadoria/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -43,7 +43,7 @@ ultima_verificacao: "agosto/2026"
 - **Centro Acadêmico:** **CALQ** — Centro Acadêmico Livre de Química — [@calq.ufsc](https://www.instagram.com/calq.ufsc/)
 - **Atlética:** **ATQ** — Associação Atlética de Química da UFSC — [@atqufsc](https://www.instagram.com/atqufsc/)
 - **Empresa júnior:** _A preencher_
-- **Evento tradicional:** _A preencher_ — verificar eventos tradicionais com o CALQ ([@calq.ufsc](https://www.instagram.com/calq.ufsc/))
+- **Evento tradicional:** **SEMAQ** — Semana Acadêmica de Química, organizada com o CALQ; edição e datas não confirmadas nesta verificação — verificar com o CALQ ([@calq.ufsc](https://www.instagram.com/calq.ufsc/))
 - **Instagrams / perfis:**
   - [@calq.ufsc](https://www.instagram.com/calq.ufsc/) — CALQ (Centro Acadêmico)
   - [@atqufsc](https://www.instagram.com/atqufsc/) — ATQ (Atlética)
@@ -65,3 +65,5 @@ ultima_verificacao: "agosto/2026"
 - <https://quimica.ufsc.br/coordenadoria/> e <https://quimica.ufsc.br/cursos/> — página oficial do curso (acesso direto bloqueado com erro 403 durante verificação; dados obtidos por indexação de busca, sem confirmação suficiente de turno/duração)
 - <https://www.instagram.com/calq.ufsc/> — CALQ
 - <https://www.instagram.com/atqufsc/> — ATQ
+- <https://quimica.ufsc.br/coordenadoria/> — salas de coordenador/subcoordenador/secretaria e horário de atendimento, indexação de busca; WebFetch direto bloqueado nesta sessão
+- <https://quimica.ufsc.br/calouros/> — menção à SEMAQ (Semana Acadêmica de Química), indexação de busca

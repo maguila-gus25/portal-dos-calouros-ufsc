@@ -9,7 +9,7 @@ coordenacao:
   email: cinema@contato.ufsc.br
   telefone: "(48) 3721-6543"
   sala: Bloco D, Sala 513
-  atendimento: ~
+  atendimento: "segunda a sexta, presencial (regime parcial de teletrabalho desde junho/2023)"
   site: https://cinema.ufsc.br/
 atletica: ~
 instagram_curso: ~
@@ -42,7 +42,7 @@ ultima_verificacao: "agosto/2026"
 
 - **Centro Acadêmico:** **CACine** — Centro Acadêmico de Cinema — [@cacine.ufsc](https://www.instagram.com/cacine.ufsc/)
 - **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CACine ([@cacine.ufsc](https://www.instagram.com/cacine.ufsc/))
-- **Empresa júnior:** _A preencher_ — não encontrado em agosto/2026
+- **Empresa júnior:** _A preencher_ — buscas indicam a "Café e Fita Crepe" (Produtora Júnior de Cinema), fundada em 2013, mas registros de CNPJ mostram baixa/encerramento em 2016; não foi possível confirmar se está ativa atualmente, apesar de a página <https://cinema.ufsc.br/empresa-junior/> ainda existir no site do curso — verificar diretamente
 - **Evento tradicional:** Semana Acadêmica de Cinema (SACine) — realizada anualmente desde 2007; ver [Atléticas e festas](../atleticas-e-festas.md)
 - **Instagrams / perfis:**
   - [@cacine.ufsc](https://www.instagram.com/cacine.ufsc/) — CACine (Centro Acadêmico)
@@ -67,3 +67,4 @@ ultima_verificacao: "agosto/2026"
 - <https://vestibularunificado2024.ufsc.br/cinema/> — duração: 8 fases
 - <https://vestibularunificado2026.ufsc.br/files/2025/09/ANEXO-A1-e-A2-UFSC-2026.pdf> — turno confirmado como "CINEMA — BEL — INTEGRAL"
 - <https://www.instagram.com/cacine.ufsc/> e <https://www.instagram.com/sacine_ufsc/>
+- <https://cinema.ufsc.br/empresa-junior/> e registro de CNPJ (Casa dos Dados) — Café e Fita Crepe, empresa júnior de Cinema, com indício de baixa em 2016; status atual não confirmado (indexação de busca; WebFetch bloqueado nesta sessão)

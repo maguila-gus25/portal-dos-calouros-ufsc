@@ -34,6 +34,7 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
+- **Coordenador(a):** _A preencher_ — chapa única (Prof.ª Dr.ª Liliana Sayuri Osako, coordenadora, e Prof.ª Dr.ª Manoela Bettarel Bállico, subcoordenadora) foi homologada em 27/04/2026 para o mandato 2026–2028, mas a posse efetiva não pôde ser confirmada de forma independente nesta verificação (WebFetch bloqueado); confirmar em <https://geologia.ufsc.br/curso-de-graduacao-em-geologia/geolcoordenacao/>
 - **E-mail:** coordenacao.geologia@contato.ufsc.br
 - **Telefone / WhatsApp:** (48) 3721-4878
 - **Departamento (contato geral):** dgl@contato.ufsc.br · WhatsApp: (48) 3721-3502
@@ -45,7 +46,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** **CAMP** — Centro Acadêmico Martelo de Prata — site: <https://camp.ufsc.br/> — [@geologiaufsc](https://www.instagram.com/geologiaufsc/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CAMP ([@geologiaufsc](https://www.instagram.com/geologiaufsc/))
+- **Atlética:** _A preencher_ — nenhuma atlética específica de Geologia verificada; o curso pode participar da **ATCFH**, atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/) (verificar com o CAMP, [@geologiaufsc](https://www.instagram.com/geologiaufsc/))
 - **Empresa júnior:** _A preencher_
 - **Evento tradicional:** **SEGESC** — Semana de Estudos Geológicos de Santa Catarina, organizada pelo CAMP em parceria com o Departamento de Geologia.
 - **Instagrams / perfis:**
@@ -70,5 +71,7 @@ _A preencher_ (laboratórios e salas do Departamento de Geologia/CFH — ver [Ma
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=336> — currículo do curso (prazo mínimo/máximo)
 - <https://camp.ufsc.br/> e <https://www.instagram.com/geologiaufsc/> — CAMP verificado
 - <https://prae.ufsc.br/centros-academicos/> — referência PRAE de centros acadêmicos
+- <https://geologia.ufsc.br/2026/04/27/eleicao-para-coordenadora-e-subcoordenadora-do-curso-de-geologia-mandato-2026-2028-chapas-homologadas/> — chapa homologada (Liliana Sayuri Osako / Manoela Bettarel Bállico), indexação de busca; posse não confirmada de forma independente
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH), indexação de busca
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

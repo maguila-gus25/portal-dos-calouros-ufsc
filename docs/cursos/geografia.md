@@ -6,10 +6,10 @@ grau: Licenciatura e Bacharelado
 turno: Diurno e Noturno
 duracao: "Bacharelado: 8 semestres | Licenciatura: 9 semestres"
 coordenacao:
-  nome: ~
+  nome: "José Messias Bastos"
   email: geografia@contato.ufsc.br
   telefone: "(48) 3721-4124"
-  sala: ~
+  sala: "CFH — Bloco F — 3º andar, Campus Trindade"
   atendimento: ~
   site: https://geografia.ufsc.br/
 ca:
@@ -35,17 +35,19 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
+- **Coordenador:** Prof. Dr. José Messias Bastos — Portaria nº 2480/2025/GR, mandato de 2 anos a partir de 15/12/2025 (dado obtido por indexação de busca; WebFetch direto bloqueado nesta sessão — recomenda-se reconfirmar em <https://geografia.ufsc.br/coordenacao/>)
+- **Subcoordenador:** Prof. Dr. Everton da Silva — Portaria nº 2481/2025/GR — everton.silva@ufsc.br
 - **E-mail:** geografia@contato.ufsc.br
 - **Telefone:** (48) 3721-4124
 - **Sala / prédio:** CFH — Bloco F — 3º andar, Campus Trindade, CEP 88040-970, Florianópolis — SC
-- **Atendimento:** _A preencher_ — verificar em <https://geografia.ufsc.br/coordenacao/>
+- **Atendimento:** _A preencher_ — busca indicou horário da secretaria integrada do Departamento de Geociências (seg-qua 8h-12h e 13h-17h; qui-sex 9h-12h e 13h-18h), mas não confirmado como específico da coordenação de Geografia; verificar em <https://geografia.ufsc.br/coordenacao/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
 ## Vida do curso
 
 - **Centro Acadêmico:** **CALIGEO** — Centro Acadêmico Livre de Geografia — [@caligeo.ufsc](https://www.instagram.com/caligeo.ufsc/)
-- **Atlética:** _A preencher_ — não encontrada em fontes verificadas; verificar com o CALIGEO ([@caligeo.ufsc](https://www.instagram.com/caligeo.ufsc/))
+- **Atlética:** _A preencher_ — nenhuma atlética específica de Geografia verificada; o curso pode participar da **ATCFH**, atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/) (verificar com o CALIGEO)
 - **Empresa júnior:** _A preencher_
 - **Instagrams / perfis:**
   - [@caligeo.ufsc](https://www.instagram.com/caligeo.ufsc/) — CALIGEO (Centro Acadêmico)
@@ -67,5 +69,7 @@ _A preencher_ (salas e laboratórios do Departamento de Geociências/CFH — ver
 - <https://geografia.ufsc.br/funcionamento-do-curso/> — turno, duração e vagas (acesso direto)
 - <https://geografia.ufsc.br/equipecontato/> — e-mail e telefone de coordenação (acesso via busca)
 - <https://guiadecursos.ufsc.br/geografia/> — grau e habilitações confirmados
+- <https://gcn.cfh.ufsc.br/jose-messias-bastos/> e <https://gcn.cfh.ufsc.br/everton-da-silva/> — coordenador e subcoordenador (Portarias 2480/2025/GR e 2481/2025/GR), indexação de busca; WebFetch bloqueado nesta sessão
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH), indexação de busca
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

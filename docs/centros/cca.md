@@ -2,7 +2,7 @@
 slug: cca
 titulo: "Centro de Ciências Agrárias (CCA)"
 descricao: "Centro localizado em Itacorubi (Rodovia Admar Gonzaga, 1346), a ~4 km do Campus Trindade. Oferece cursos de Agronomia, Ciência e Tecnologia de Alimentos, Engenharia de Aquicultura e Zootecnia."
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # Centro de Ciências Agrárias (CCA)
@@ -142,9 +142,15 @@ Evento anual com palestras, exposição científica e integração entre estudan
 - Instagram: [@sactaufsc](https://www.instagram.com/sactaufsc/)
 - Já está na XIV edição (2025).
 
-### Semana de Engenharia de Aquicultura
+### SEMAQUI — Semana Acadêmica / Congresso de Engenharia de Aquicultura
 
-_A preencher_ — verificar com o CALEA ([@caeaqui](https://www.instagram.com/caeaqui/)) se há evento acadêmico tradicional do curso.
+Evento anual organizado por estudantes e professores do curso de Engenharia de Aquicultura, geralmente em outubro/novembro. Inclui palestras, minicursos e apresentação de trabalhos científicos, com participação de profissionais e pesquisadores da área.
+
+- Site oficial: <https://semaqui.ufsc.br/>
+- Instagram: [@semaquicultura](https://www.instagram.com/semaquicultura/)
+- Evento anual, tradicionalmente em outubro/novembro. Confirme as datas da edição vigente no site oficial e no Instagram.
+
+> Fontes: <https://semaqui.ufsc.br/>, <https://www.instagram.com/semaquicultura/>, cobertura em <https://noticias.ufsc.br/2023/10/congresso-de-engenharia-de-aquicultura-ocorre-de-6-a-10-de-novembro-na-ufsc/>
 
 ---
 
@@ -200,4 +206,4 @@ Em períodos em que o RU da Trindade está em manutenção, a PRAE disponibiliza
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

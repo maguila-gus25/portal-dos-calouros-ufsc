@@ -38,7 +38,7 @@ ultima_verificacao: "agosto/2026"
 - **Telefone / WhatsApp:** (48) 3721-4879
 - **Telefone alternativo:** (48) 3721-2600
 - **Sala / prédio:** CFH — Bloco D, 1º Piso, Campus Trindade, CEP 88040-900, Florianópolis — SC
-- **Atendimento:** _A preencher_ — verificar em <https://licenciaturaindigena.ufsc.br/>
+- **Atendimento:** _A preencher_ — busca indicou 8h às 13h (presencial) e 14h às 17h (atendimento externo), mas não foi possível confirmar diretamente na página oficial nesta verificação (WebFetch bloqueado); confirmar em <https://licenciaturaindigena.ufsc.br/administracao/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -65,5 +65,6 @@ _A preencher_ (etapas presenciais realizadas no CFH, Bloco D — ver [Mapa](../m
 - <https://licenciaturaindigena.ufsc.br/curso/> — nome completo, grau, duração, carga horária, estrutura de funcionamento (Pedagogia da Alternância, Tempo Universidade / Tempo Comunidade), telefone e endereço (acesso direto)
 - <https://cfh.ufsc.br/> e `docs/centros/cfh.md` — vínculo do curso com o CFH confirmado
 - E-mail exibido como imagem no site oficial — não foi possível extrair o texto; recomenda-se verificação manual em <https://licenciaturaindigena.ufsc.br/>
+- <https://licenciaturaindigena.ufsc.br/administracao/> — horário de atendimento (8h–13h presencial / 14h–17h externo), indexação de busca; WebFetch direto bloqueado nesta sessão. A mesma página lista Dr.ª Maria Dorothea Post Darella e Dr.ª Natália Hanazaki associadas à administração do curso, mas não foi possível confirmar se ocupam o cargo de coordenação — mantido como `_A preencher_` até confirmação
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

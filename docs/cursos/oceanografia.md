@@ -32,8 +32,8 @@ ultima_verificacao: "agosto/2026"
 - **Coordenador(a):** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/> (não publicado nas fontes verificadas)
 - **Telefone da coordenadoria especial:** (48) 3721-3902 — e-mail ocn@contato.ufsc.br
 - **Telefone da coordenação do curso:** (48) 3721-3532 — e-mail oceano.cfm@contato.ufsc.br
-- **Sala / prédio:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
-- **Atendimento:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
+- **Sala / prédio:** _A preencher_ — a Coordenadoria Especial de Oceanografia (OCN) está na Sala 904, Prédio da Reitoria II, Rua Desembargador Vitor Lima, 222; não confirmado se é a mesma sala da "coordenação do curso" (telefone/e-mail distintos) — indexação de busca, WebFetch bloqueado nesta sessão; confirmar em <https://ocn.cfm.ufsc.br/coordenacao-2/>
+- **Atendimento:** _A preencher_ — busca indicou 08h–11h40 e 12h40–17h para a Coordenadoria Especial de Oceanografia (não confirmado como específico da coordenação de curso); confirmar em <https://ocn.cfm.ufsc.br/coordenacao-2/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -66,3 +66,4 @@ ultima_verificacao: "agosto/2026"
 - <https://guiadecursos.ufsc.br/oceanografia/> — grau, turno e duração (acesso indireto via busca; página retornou 403 na verificação direta)
 - <https://www.instagram.com/cao.ufsc/> — CAO
 - <https://www.instagram.com/sea.oceanografia.ufsc/> — SEA
+- <https://ocn.cfm.ufsc.br/coordenacao-2/> — sala (Reitoria II, Sala 904) e horário de atendimento da Coordenadoria Especial de Oceanografia, indexação de busca; WebFetch direto bloqueado nesta sessão

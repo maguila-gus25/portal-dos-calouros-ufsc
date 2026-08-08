@@ -16,7 +16,7 @@ ca:
   nome: Centro Acadêmico Livre de Psicologia
   sigla: CALPsi
   instagram: "@calpsiufsc"
-atletica: ~
+atletica: "AAAPsiU — Associação Atlética Acadêmica de Psicologia UFSC — @aaapsiu"
 instagram_curso: ~
 ultima_verificacao: "agosto/2026"
 ---
@@ -32,7 +32,7 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://psicologia.ufsc.br/>
+- **Coordenador(a):** _A preencher_ — buscas indicam Prof.ª Dr.ª Raquel de Barros Pinto Miguel (coordenadora) e Prof.ª Dr.ª Apoliana Regina Groff (subcoordenadora), mas não foi possível confirmar diretamente na página oficial nesta verificação (WebFetch bloqueado); confirmar em <https://psicologia.ufsc.br/?page_id=4> ou <https://psicologia.ufsc.br/?page_id=282>
 - **E-mail:** curso.psicologia@contato.ufsc.br
 - **Telefone:** (48) 3721-9283
 - **Sala / prédio:** _A preencher_ — verificar em <https://psicologia.ufsc.br/>
@@ -43,7 +43,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** Centro Acadêmico Livre de Psicologia (CALPsi) — [@calpsiufsc](https://www.instagram.com/calpsiufsc/)
-- **Atlética:** _A preencher_ — nenhuma atlética verificada para o CFH (verificar com o CALPsi)
+- **Atlética:** **AAAPsiU** — Associação Atlética Acadêmica de Psicologia UFSC — [@aaapsiu](https://www.instagram.com/aaapsiu/). Também participa da **ATCFH** (Atlética do Centro de Filosofia e Ciências Humanas), atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/)
 - **Empresa júnior:** _A preencher_
 - **Evento tradicional:** **Semana Acadêmica de Psicologia (SEMAPSI)** — evento anual organizado por estudantes com palestras e atividades de formação; Instagram [@semapsiufsc](https://www.instagram.com/semapsiufsc/)
 
@@ -64,5 +64,8 @@ _A preencher_ (Bloco H do CFH, Campus Trindade — ver [Mapa](../mapa.md))
 - <https://psicologia.ufsc.br/?page_id=979> — e-mail da coordenação e horário de atendimento
 - `docs/centros/cfh.md` — CA (CALPsi, @calpsiufsc) e evento SEMAPSI já verificados
 - <https://www.instagram.com/semapsiufsc/> — Semana Acadêmica de Psicologia
+- <https://www.instagram.com/aaapsiu/> e <https://psicologia.cfh.ufsc.br/2023/05/12/evento-de-integracao-entre-professores-e-alunos-do-curso-de-psicologia-da-ufsc-promovido-pela-atletica/> — AAAPsiU (Atlética de Psicologia) (indexação de busca; WebFetch direto a `*.ufsc.br` bloqueado nesta sessão)
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH) (indexação de busca)
+- Busca cruzada (WebFetch bloqueado) — nomes de coordenadora/subcoordenadora não confirmados com fonte primária acessada diretamente
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

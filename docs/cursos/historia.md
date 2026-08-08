@@ -6,9 +6,9 @@ grau: Licenciatura e Bacharelado
 turno: ~
 duracao: 10 semestres
 coordenacao:
-  nome: ~
+  nome: "Rodrigo Bragio Bonaldo"
   email: historia@contato.ufsc.br
-  telefone: ~
+  telefone: "(48) 3721-4048"
   sala: "CFH – Bloco E, 6º andar"
   atendimento: ~
   site: https://historia.grad.ufsc.br/
@@ -37,9 +37,10 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://historia.grad.ufsc.br/administracao/>
+- **Coordenador:** Prof. Dr. Rodrigo Bragio Bonaldo — dado obtido por indexação de busca (WebFetch direto bloqueado nesta sessão); recomenda-se reconfirmar em <https://historia.grad.ufsc.br/administracao/>
+- **Subcoordenador:** Prof. Dr. Fabio Augusto Morales Soares (mesma fonte)
 - **E-mail:** historia@contato.ufsc.br
-- **Telefone:** _A preencher_ — verificar em <https://historia.grad.ufsc.br/administracao/>
+- **Telefone:** (48) 3721-4048 · WhatsApp: (48) 3721-9249 (indexação de busca)
 - **Sala / prédio:** CFH – Bloco E, 6º andar, Campus Trindade
 - **Atendimento:** _A preencher_ — verificar em <https://historia.grad.ufsc.br/>
 
@@ -48,7 +49,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** Centro Acadêmico Livre de História (CALH) — [@calhufsc](https://www.instagram.com/calhufsc/)
-- **Atlética:** _A preencher_ — nenhuma atlética verificada para o CFH (verificar com o CALH)
+- **Atlética:** _A preencher_ — nenhuma atlética específica de História verificada; o curso pode participar da **ATCFH**, atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/) (verificar com o CALH)
 - **Empresa júnior:** _A preencher_
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
@@ -67,5 +68,7 @@ _A preencher_ (Bloco E do CFH, Campus Trindade — ver [Mapa](../mapa.md))
 - <https://historia.grad.ufsc.br/projeto-politico-pedagogico/> — estrutura ABI (5+5 semestres), total de 10 semestres, habilitações Bacharelado e Licenciatura
 - <https://historia.grad.ufsc.br/administracao/> — e-mail historia@contato.ufsc.br e endereço (CFH Bloco E, 6º andar)
 - `docs/centros/cfh.md` — CA (CALH, @calhufsc) já verificado
+- <https://historia.ufsc.br/administracao-contatos/> — coordenador e subcoordenador, telefone (48) 3721-4048, WhatsApp (48) 3721-9249 — indexação de busca; WebFetch bloqueado nesta sessão
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH), indexação de busca
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

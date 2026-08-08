@@ -1,3 +1,5 @@
+import { GitFork } from "lucide-react";
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -10,14 +12,16 @@ export function Footer() {
             </p>
             <p>Informações oficiais devem sempre ser confirmadas nos canais da UFSC.</p>
           </div>
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 flex-wrap rounded-full border border-border bg-background px-3 py-1.5">
+            <span className="text-foreground">Esse projeto é de código livre, aberto e 100% gratuito!</span>
             <a
               href="https://github.com/maguila-gus25/portal-dos-calouros-ufsc"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
+              className="inline-flex items-center gap-1.5 text-primary hover:underline font-medium"
             >
-              Contribuir no GitHub
+              <GitFork size={14} aria-hidden="true" />
+              Repositório
             </a>
           </div>
         </div>
