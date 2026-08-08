@@ -13,7 +13,7 @@ export function Footer() {
             <p>Informações oficiais devem sempre ser confirmadas nos canais da UFSC.</p>
           </div>
           <div className="flex items-center gap-2 shrink-0 flex-wrap rounded-full border border-border bg-background px-3 py-1.5">
-            <span>Esse projeto é de código livre, aberto e 100% gratuito!</span>
+            <span className="text-foreground">Esse projeto é de código livre, aberto e 100% gratuito!</span>
             <a
               href="https://github.com/maguila-gus25/portal-dos-calouros-ufsc"
               target="_blank"
