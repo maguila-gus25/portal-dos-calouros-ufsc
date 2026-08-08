@@ -4,6 +4,109 @@
 
 ---
 
+## Sprint 29 — Mensagem de contribuição estilo MyUFSC + auditoria de campos `_A preencher_` (v1.23)
+
+**Objetivo:** Duas frentes independentes. **(A)** Reformular a mensagem de contribuição do
+portal no estilo do **MyUFSC** — uma faixa amigável *"Esse projeto é de código livre, aberto e
+100% gratuito!"* com um link **Repositório** (ícone de fork), preservando o rodapé obrigatório de
+projeto não oficial. **(B)** Auditar **todos** os ~460 campos `_A preencher_` das 97 fichas/docs:
+re-verificar via web cada campo localizável, preencher os confirmáveis com fonte oficial, e
+produzir um relatório categorizado do que permanece e **por quê** (não publicado nas fontes /
+bloqueado por submissão real de veterano).
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Mensagem de contribuição estilo MyUFSC no `Footer` | B-35 (revisão) / E5 | Should / P | frontend-dev | Not Started |
+| Auditoria de verificação dos campos `_A preencher_` — preencher localizáveis + categorizar bloqueados | B-08 (auditoria) | Should / G | content-editor | Not Started |
+
+### Critérios de aceite detalhados
+
+**História A — Mensagem de contribuição estilo MyUFSC (frontend-dev)**
+
+- [ ] Em `components/Footer.tsx`, substituir o link seco "Contribuir no GitHub" por uma mensagem
+      no estilo MyUFSC: texto *"Esse projeto é de código livre, aberto e 100% gratuito!"* seguido
+      de um link **Repositório** apontando para `https://github.com/maguila-gus25/portal-dos-calouros-ufsc`.
+- [ ] O link **Repositório** usa um ícone de fork (`GitFork` da `lucide-react`, já usada no projeto)
+      à esquerda do texto, `target="_blank"` + `rel="noopener noreferrer"`.
+- [ ] **Regra inegociável preservada:** o rodapé continua exibindo
+      *"Projeto independente feito por estudantes. Não é um site oficial da UFSC."*
+      A mudança é apenas na linha de contribuição — não remover o disclaimer nem a nota de analytics.
+- [ ] Estilização coerente com o design system (branco + azul, `text-primary`, mobile-first);
+      apresentar a mensagem como um bloco/faixa visualmente distinta (pílula ou linha destacada),
+      não apenas um link isolado.
+- [ ] Acessível: link com texto descritivo, ícone `aria-hidden`, contraste WCAG AA.
+
+**História B — Auditoria dos campos `_A preencher_` (content-editor)**
+
+- [ ] Varrer **todas** as ocorrências de `_A preencher_` em `docs/` (cursos, centros e seções) —
+      ~460 em 97 arquivos. Para cada campo:
+  - **Localizável** (tem nota "verificar em <URL>", ou é coordenador/sala/atendimento/telefone/
+    e-mail/Instagram de CA/atlética/EJ): re-verificar via WebFetch/WebSearch na fonte oficial;
+    preencher com o dado + fonte se confirmado.
+  - **Não publicado** (fonte existe mas não expõe o dado, ex.: e-mail como imagem anti-spam,
+    coordenador não listado): manter `_A preencher_`/`~` com nota curta do motivo e onde buscar.
+  - **Bloqueado por submissão real** ("dicas de veterano" / "onde estudar" — B-10/B-13): manter
+    como está; **não** são alvo de preenchimento neste sprint (dependem de submissões).
+- [ ] Prioridade de verificação: centros ainda **não** cobertos por sprints de qualidade —
+      **CFH**, **CFM**, **CCE** e cursos do **CCA** — mais qualquer campo com URL de verificação
+      pendente nas fichas já tocadas.
+- [ ] **Nunca inventar dados.** Todo preenchimento exige fonte oficial verificável.
+- [ ] `ultima_verificacao: agosto/2026` atualizado nas fichas modificadas.
+- [ ] Entregar, na retrospectiva, um **relatório categorizado**: quantos campos preenchidos,
+      quantos confirmados como não publicados, e quantos bloqueados por submissão real.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (arquivos disjuntos):
+  frontend-dev     — components/Footer.tsx (mensagem de contribuição)
+  content-editor A — auditoria: docs/cursos/* dos centros CFH + CFM + CCE
+                     + docs/centros/{cfh, cfm, cce}.md
+  content-editor B — auditoria: docs/cursos/* do CCA + campos com URL pendente
+                     nas demais fichas + docs/seções (mapa, coordenacoes, instagrams…)
+
+Wave 2 — após Wave 1:
+  tester           — npm run lint + npm run build (≥ 112 páginas SSG) + Playwright 8/8
+
+Wave 3 — após Wave 2 (frontend mudou):
+  ui-ux-review     — audit do Footer alterado (contraste, foco, mobile, dark mode)
+```
+
+### Fontes prioritárias (auditoria)
+
+- **CFH:** `cfh.ufsc.br` e sites dos departamentos (psicologia, filosofia, história, geografia,
+  ciências sociais, antropologia, museologia, serviço social) — coordenadores historicamente `~`.
+- **CFM:** `cfm.ufsc.br`, `fisica.grad.ufsc.br`, `mtm.ufsc.br`, `qmc.ufsc.br`, `ocn.cfm.ufsc.br`,
+  `geologia.ufsc.br`, `meteorologia.ufsc.br` — durações contraditórias (Guia de Cursos × CAGR).
+- **CCE:** `cce.ufsc.br` e sites de Letras, Jornalismo, Cinema, Animação, Design, Artes Cênicas.
+- **CCA:** `cca.ufsc.br`, `agronomia.ufsc.br`, `zootecnia.ufsc.br`, `aquicultura.ufsc.br`,
+  `cal.ufsc.br` (Ciência e Tecnologia de Alimentos).
+- **CGEJ (empresas júnior):** `empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/`.
+
+### Definition of Done
+
+- [ ] `npm run lint` passa (frontend)
+- [ ] `npm run build` passa (≥ 112 páginas SSG — sem páginas novas)
+- [ ] Playwright 8/8 sem regressões
+- [ ] `Footer.tsx` com mensagem estilo MyUFSC + disclaimer obrigatório preservado
+- [ ] `ui-ux-review` sem findings bloqueadores no Footer alterado
+- [ ] Auditoria completa: todo campo `_A preencher_` re-verificado; localizáveis preenchidos;
+      bloqueados categorizados com motivo
+- [ ] `docs/product-backlog.md` atualizado (B-08 com novo estado da auditoria)
+- [ ] README atualizado se houve mudança estrutural (v1.23)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Dicas de veterano / Onde estudar | Dependem de submissões reais (B-10, B-13 — bloqueados) |
+| Coordenadores não publicados (CFH) | Padrão `~` estabelecido no Sprint 21 — só muda com nova fonte |
+| Durações contraditórias (CFM) sem acesso ao CAGR | Fontes divergem; sem acesso direto ao CAGR não se resolve |
+| E-mails exibidos como imagem anti-spam sem leitura possível | Mantêm `_A preencher_` com nota |
+| B-37/B-50/E13 (banco + auth) | Horizonte v2.0 — requer planejamento com o mantenedor |
+
+---
+
 ## Sprint 28 — Qualidade: CED + CCB + CDS (v1.22)
 
 **Objetivo:** Completar os dados restantes nas fichas dos cursos dos centros **CED**, **CCB** e **CDS** — os três centros com fichas criadas nos Sprints 22–23 que ainda têm campos `_A preencher_` atingíveis por pesquisa web. Foco: corrigir frontmatter de Pedagogia (`duracao: ~` → `"9 semestres"`), pesquisar coordenadores das 4 fichas CED, buscar coordenador(a) de Ciências Biológicas via URL disponível, e confirmar se CAEF (CA de Educação Física) tem Instagram ativo. Sprint content-only: nenhum código frontend necessário.
