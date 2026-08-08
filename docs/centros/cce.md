@@ -2,7 +2,7 @@
 slug: cce
 titulo: "Centro de Comunicação e Expressão (CCE)"
 descricao: "Centro localizado no Campus Trindade com cursos de Design, Design de Produto, Animação, Jornalismo, Letras Português, Letras Estrangeiras, Secretariado Executivo, Cinema, Artes Cênicas e Letras-Libras."
-ultima_verificacao: "julho/2026"
+ultima_verificacao: "agosto/2026"
 ---
 
 # Centro de Comunicação e Expressão (CCE)
@@ -58,10 +58,11 @@ Os três cursos compartilham a mesma secretaria de graduação (Departamento de 
 - **E-mail da secretaria:** design@contato.ufsc.br — animacao@contato.ufsc.br
 - **Telefone da secretaria:** (48) 3721-3728
 - **Sala:** Bloco A, 1º andar, Sala 140
+- **Atendimento:** 8h às 12h e 13h30 às 17h30
 - **Site do curso de Design:** <https://design.ufsc.br/>
 
 > Nota: os e-mails dos coordenadores são exibidos como imagem no site do curso para evitar spam; usar o e-mail da secretaria para contato geral.
-> Fonte: <https://design.ufsc.br/equipe/> e <https://cce.ufsc.br/coordenadoria-dos-cursos-de-graduacao/> (verificado em julho/2026)
+> Fonte: <https://design.ufsc.br/equipe/>, <https://design.ufsc.br/secretaria/> e <https://cce.ufsc.br/coordenadoria-dos-cursos-de-graduacao/> (verificado em agosto/2026)
 
 ---
 
@@ -82,13 +83,14 @@ Os três cursos compartilham a mesma secretaria de graduação (Departamento de 
 
 Os dois cursos compartilham secretaria (Departamento de Língua e Literatura Estrangeiras — DLLE).
 
-- **Coordenador(a) de Letras Estrangeiras:** _A preencher_ — verificar em <https://dlle.ufsc.br/>
-- **Coordenador(a) de Secretariado Executivo:** _A preencher_ — verificar em <https://dlle.ufsc.br/>
+- **Coordenadora de Letras Estrangeiras:** Prof.ª Dr.ª Amanda Bruno de Mello — subcoordenadora Prof.ª Dr.ª Maria Ester Moritz
+- **Coordenação de Secretariado Executivo:** Amanda Bruno de Mello (coordenação geral do DLLE) / Maria Ester Moritz (coordenação de área de Secretariado Executivo) — mesma equipe da coordenadoria de Letras Estrangeiras
 - **E-mail da secretaria:** cglle.cce@contato.ufsc.br
 - **Telefone:** (48) 3721-9489
 - **Sala:** Bloco A, 2º andar, Sala 220
+- **Atendimento:** seg–sex 9h–12h30 · ter e sex 13h30–18h30 · seg, qua e qui 13h30–20h30
 
-> Fonte: <https://cce.ufsc.br/coordenadoria-dos-cursos-de-graduacao/> (verificado em julho/2026)
+> Fonte: <https://coordlinguasestrangeiras.ufsc.br/equipe/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar (verificado em agosto/2026)
 
 ---
 
@@ -105,13 +107,14 @@ Os dois cursos compartilham secretaria (Departamento de Língua e Literatura Est
 
 ### Cinema
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://cinema.ufsc.br/>
+- **Coordenadora:** Prof.ª Dr.ª Ana Paula Bragaglia — mandato 10/07/2026 a 09/07/2028
 - **E-mail da secretaria:** cinema@contato.ufsc.br
 - **Telefone:** (48) 3721-6543
 - **Sala:** Bloco D, Sala 513
+- **Atendimento:** segunda a sexta, presencial (regime parcial de teletrabalho desde junho/2023)
 - **Site do curso:** <https://cinema.ufsc.br/>
 
-> Fonte: <https://cce.ufsc.br/coordenadoria-dos-cursos-de-graduacao/> (verificado em julho/2026)
+> Fonte: <https://cinema.ufsc.br/colegiado/>, <https://cinema.ufsc.br/secretaria/> — indexação de busca; WebFetch direto bloqueado nesta sessão (verificado em agosto/2026)
 
 ---
 
@@ -149,12 +152,12 @@ Os dois cursos compartilham secretaria (Departamento de Língua e Literatura Est
 | Design, Design de Produto e Animação | CADe — Centro Acadêmico de Design | CADe | [@cade.ufsc](https://www.instagram.com/cade.ufsc/) | [Facebook](https://www.facebook.com/cadesignufsc/) |
 | Jornalismo | Centro Acadêmico Livre de Jornalismo Adelmo Genro Filho | CALJ | [@calj.ufsc](https://www.instagram.com/calj.ufsc/) | — |
 | Letras Estrangeiras e Secretariado Executivo | CALL — Centro Acadêmico Livre de Letras e Secretariado Executivo | CALL | [@call.ufsc](https://www.instagram.com/call.ufsc/) | — |
-| Letras Português | _A preencher_ — verificar com o Dep. de Letras Vernáculas (DLLV) | — | _A preencher_ | — |
+| Letras Português | CALL — Centro Acadêmico Livre de Letras (compartilhado com Letras Estrangeiras e Secretariado Executivo) | CALL | [@call.ufsc](https://www.instagram.com/call.ufsc/) | — |
 | Cinema | CACine — Centro Acadêmico de Cinema | CACine | [@cacine.ufsc](https://www.instagram.com/cacine.ufsc/) | [Facebook](https://www.facebook.com/cacineufsc/) |
 | Artes Cênicas | CAAC — Centro Acadêmico de Artes Cênicas | CAAC | [@caacufsc](https://www.instagram.com/caacufsc/) | [Facebook](https://www.facebook.com/CAcenicasUFSC/) |
 | Letras-Libras | _A preencher_ — verificar com a coordenação de Letras-Libras | — | _A preencher_ | — |
 
-> Fontes: perfis verificados no Instagram e Facebook (julho/2026). Siglas confirmadas nos resultados de busca nos perfis oficiais.
+> Fontes: perfis verificados no Instagram e Facebook (julho/2026); CALL como CA de Letras Português confirmado em <https://estrutura.ufsc.br/centros-academicos/> (indexação de busca, agosto/2026). Siglas confirmadas nos resultados de busca nos perfis oficiais.
 
 ---
 
@@ -185,6 +188,16 @@ Evento acadêmico anual organizado pelos Departamentos de Língua e Literatura V
 
 ---
 
+### MAÇÃ — Mostra Acadêmica de Artes Cênicas
+
+Evento realizado anualmente pelo curso de Artes Cênicas desde 2009, organizado por estudantes em parceria com técnicos e docentes, com foco em experimentação cênica e difusão de projetos acadêmicos. Já na XIII edição, realizada de 16 a 20 de março de 2026.
+
+- Instagram: [@caacufsc](https://www.instagram.com/caacufsc/) / [@artescenicasufsc](https://www.instagram.com/artescenicasufsc/)
+
+> Fonte: <https://noticias.ufsc.br/2026/03/ufsc-recebe-xiii-maca-mostra-academica-de-artes-cenicas-entre-16-e-20-de-marco/>, <https://dac.ufsc.br/2026/03/10/xiii-maca-mostra-academica-de-artes-cenicas/> — indexação de busca (agosto/2026)
+
+---
+
 ### Semana Acadêmica de Cinema (SACine)
 
 Evento cultural, artístico e social realizado anualmente desde 2007, aberto ao público. Promove debates sobre produção audiovisual contemporânea, conectando cineastas, pesquisadores, estudantes e comunidade de Florianópolis. Organizado pelo curso de Cinema e pelo CACine.
@@ -199,7 +212,7 @@ Evento cultural, artístico e social realizado anualmente desde 2007, aberto ao 
 ### Festas e outros eventos
 
 - **Festas dos cursos de Design e Jornalismo:** _A preencher_ — verificar com o CADe (@cade.ufsc) e o CALJ (@calj.ufsc).
-- **Eventos de Artes Cênicas:** o Departamento de Artes (ART/CCE) realiza espetáculos e mostras ao longo do semestre. Acompanhe em [@artescenicasufsc](https://www.instagram.com/artescenicasufsc/).
+- **Eventos de Artes Cênicas:** além da MAÇÃ (ver acima), o Departamento de Artes (ART/CCE) realiza espetáculos e mostras ao longo do semestre. Acompanhe em [@artescenicasufsc](https://www.instagram.com/artescenicasufsc/).
 - **Interatléticas UFSC:** a AAGB (Graus Bons / Jornalismo) já atuou como secretaria organizadora do evento. Acompanhe em [@interatleticasufsc](https://www.instagram.com/interatleticasufsc/).
 
 ---
@@ -222,4 +235,4 @@ Evento cultural, artístico e social realizado anualmente desde 2007, aberto ao 
 
 ---
 
-_Última verificação: julho/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
+_Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

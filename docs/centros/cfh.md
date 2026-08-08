@@ -52,64 +52,65 @@ O CFH oferece nove cursos de graduação:
 
 ### Psicologia
 
-- **Coordenação:** _A preencher_ — verificar em <https://psicologia.ufsc.br/>
+- **Coordenação:** _A preencher_ — buscas indicam Prof.ª Dr.ª Raquel de Barros Pinto Miguel (coordenadora) e Prof.ª Dr.ª Apoliana Regina Groff (subcoordenadora), mas não foi possível confirmar diretamente na página oficial nesta verificação (WebFetch bloqueado)
 - **Site do curso:** <https://psicologia.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://psicologia.ufsc.br/>
+> Fonte: <https://psicologia.ufsc.br/?page_id=4> e <https://psicologia.ufsc.br/?page_id=282> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
 ### História
 
-- **Coordenação:** _A preencher_ — verificar em <https://historia.paginas.ufsc.br/>
-- **Site do curso:** <https://historia.paginas.ufsc.br/>
+- **Coordenação:** Prof. Dr. Rodrigo Bragio Bonaldo (coordenador) e Prof. Dr. Fabio Augusto Morales Soares (subcoordenador) — telefone (48) 3721-4048
+- **Site do curso:** <https://historia.grad.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://historia.paginas.ufsc.br/>
+> Fonte: <https://historia.ufsc.br/administracao-contatos/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
 ### Geografia
 
-- **Coordenação:** _A preencher_ — verificar em <https://geografia.ufsc.br/>
+- **Coordenação:** Prof. Dr. José Messias Bastos (coordenador, Portaria nº 2480/2025/GR) e Prof. Dr. Everton da Silva (subcoordenador, Portaria nº 2481/2025/GR) — mandato de 2 anos a partir de 15/12/2025
 - **Site do curso:** <https://geografia.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://geografia.ufsc.br/>
+> Fonte: <https://gcn.cfh.ufsc.br/jose-messias-bastos/> e <https://gcn.cfh.ufsc.br/everton-da-silva/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
 ### Geologia
 
-- **Coordenação:** _A preencher_ — verificar em <https://geologia.ufsc.br/>
+- **Coordenação:** _A preencher_ — chapa única (Prof.ª Dr.ª Liliana Sayuri Osako, coordenadora, e Prof.ª Dr.ª Manoela Bettarel Bállico, subcoordenadora) homologada em 27/04/2026 para o mandato 2026–2028; posse não confirmada de forma independente nesta verificação
 - **Site do curso:** <https://geologia.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://geologia.ufsc.br/>
+> Fonte: <https://geologia.ufsc.br/2026/04/27/eleicao-para-coordenadora-e-subcoordenadora-do-curso-de-geologia-mandato-2026-2028-chapas-homologadas/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
 ### Filosofia
 
-- **Coordenação:** _A preencher_ — verificar em <https://filosofia.ufsc.br/>
+- **Coordenação:** _A preencher_ — buscas indicam Prof. Ivan Ferreira da Cunha (coordenador) e Prof. Luan Corrêa da Silva (subcoordenador), mas não foi possível confirmar diretamente na página oficial nesta verificação (WebFetch bloqueado)
 - **Site do curso:** <https://filosofia.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://filosofia.ufsc.br/>
+> Fonte: <https://filosofia.ufsc.br/expediente/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
 ### Ciências Sociais
 
-- **Coordenação:** _A preencher_ — verificar em <https://cienciassociais.ufsc.br/>
+- **Coordenação:** _A preencher_ — nome do(a) coordenador(a) não localizado nesta verificação
+- **E-mail:** ciencias.sociais@contato.ufsc.br
 - **Site do curso:** <https://cienciassociais.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://cienciassociais.ufsc.br/>
+> Fonte: <https://cienciassociais.ufsc.br/administracao/> — indexação de busca; WebFetch direto bloqueado nesta sessão
 
 ---
 
 ### Antropologia
 
-- **Coordenação:** _A preencher_ — verificar em <https://antropologia.paginas.ufsc.br/>
+- **Coordenação:** Prof.ª Dr.ª Alexandra Eliza Vieira Alencar (coordenadora, mandato de 2 anos a partir de 12/12/2025) e Prof.ª Dr.ª Flavia Medeiros Santos (subcoordenadora)
 - **Site do curso:** <https://antropologia.paginas.ufsc.br/>
 
-> Fonte: _A preencher_ — verificar em <https://antropologia.paginas.ufsc.br/>
+> Fonte: <https://antropologia.paginas.ufsc.br/coordenacao/>, <https://cfh.ufsc.br/tag/alexandra-eliza-vieira-alencar/> — indexação de busca; WebFetch direto bloqueado nesta sessão; recomenda-se reconfirmar
 
 ---
 
@@ -150,7 +151,11 @@ O CFH oferece nove cursos de graduação:
 
 ## Atléticas
 
-_A preencher_ — não foram encontradas atléticas específicas e verificadas para os cursos do CFH nesta pesquisa. Verificar diretamente com os Centros Acadêmicos de cada curso (ver tabela acima).
+- **ATCFH** — atlética conjunta do Centro de Filosofia e Ciências Humanas, aparentemente reunindo estudantes de vários cursos do CFH (escopo exato não confirmado independentemente) — [@atcfhufsc](https://www.instagram.com/atcfhufsc/)
+- **AAAPsiU** — Associação Atlética Acadêmica de Psicologia UFSC, específica do curso de Psicologia — [@aaapsiu](https://www.instagram.com/aaapsiu/)
+- Para os demais cursos (Filosofia, Geografia, Geologia, História, Ciências Sociais, Antropologia, Museologia), não foram encontradas atléticas próprias e verificadas nesta pesquisa; verificar diretamente com os Centros Acadêmicos de cada curso (ver tabela acima).
+
+> Fonte: <https://www.instagram.com/atcfhufsc/> e <https://www.instagram.com/aaapsiu/> — indexação de busca; WebFetch direto bloqueado nesta sessão
 
 ---
 

@@ -72,11 +72,12 @@ O CFM oferece os seguintes cursos de graduação:
 
 ### Química
 
-- **Coordenador:** Prof. Miguel Soriano Balparda Caro — miguel.caro@ufsc.br — (48) 3721-2312
-- **Sub-coordenador:** Prof. Luis Henrique da Silveira Lacerda — luis.lacerda@ufsc.br — (48) 3721-3607
+- **Coordenador:** Prof. Miguel Soriano Balparda Caro — miguel.caro@ufsc.br — (48) 3721-2312 — Sala 116
+- **Sub-coordenador:** Prof. Luis Henrique da Silveira Lacerda — luis.lacerda@ufsc.br — (48) 3721-3607 — Sala 312
+- **Atendimento (secretaria, Sala 112):** 8h às 11h15 e 12h15 às 17h
 - **Site do curso:** <https://quimica.ufsc.br/>
 
-> Fonte: <https://quimica.ufsc.br/coordenadoria/> (verificado em agosto/2026)
+> Fonte: <https://quimica.ufsc.br/coordenadoria/> — indexação de busca; WebFetch direto bloqueado nesta sessão
 
 ---
 
@@ -86,20 +87,23 @@ O CFM oferece os seguintes cursos de graduação:
 - **Sub-coordenador:** Reinaldo Haas
 - **Telefone:** (48) 3721-2305 ou (48) 3721-2306
 - **E-mail:** meteorologia@contato.ufsc.br
+- **Sala:** Sala 023, Departamento de Física, CFM
+- **Atendimento:** segunda a quinta, 14h às 17h (presencial); outros horários mediante agendamento
 - **Site do curso:** <https://meteorologia.grad.ufsc.br/>
 
-> Fonte: <https://meteorologia.grad.ufsc.br/2017/03/06/apresentacao-do-coordenador/> (verificado em agosto/2026)
+> Fonte: <https://meteorologia.grad.ufsc.br/2017/03/06/apresentacao-do-coordenador/>, <https://meteorologia.grad.ufsc.br/2022/03/08/horarios-de-atendimento-presencial/> — indexação de busca; WebFetch direto bloqueado nesta sessão
 
 ---
 
 ### Oceanografia
 
-- **Coordenação:** _A preencher_ — verificar em <https://ocn.cfm.ufsc.br/coordenacao/>
-- **Telefone da coordenadoria especial:** (48) 3721-3902 — e-mail ocn@contato.ufsc.br
+- **Coordenação:** _A preencher_ — nome do(a) coordenador(a) não localizado nesta verificação
+- **Telefone da coordenadoria especial:** (48) 3721-3902 — e-mail ocn@contato.ufsc.br — Sala 904, Prédio da Reitoria II, Rua Desembargador Vitor Lima, 222
 - **Telefone da coordenação do curso:** (48) 3721-3532 — e-mail oceano.cfm@contato.ufsc.br
+- **Atendimento (Coordenadoria Especial):** 08h–11h40 e 12h40–17h (não confirmado como específico da coordenação de curso)
 - **Site do curso:** <https://ocn.cfm.ufsc.br/>
 
-> Fonte: <https://ocn.cfm.ufsc.br/coordenacao/>, <https://oceano.ufsc.br/> (verificado em agosto/2026)
+> Fonte: <https://ocn.cfm.ufsc.br/coordenacao-2/>, <https://oceano.ufsc.br/> — indexação de busca; WebFetch direto bloqueado nesta sessão
 
 ---
 

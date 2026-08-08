@@ -9,7 +9,7 @@ coordenacao:
   email: animacao@contato.ufsc.br
   telefone: "(48) 3721-3728"
   sala: Bloco A, 1º andar, Sala 140
-  atendimento: ~
+  atendimento: "8h às 12h e 13h30 às 17h30"
   site: https://animacao.ufsc.br/
 atletica: ~
 instagram_curso: ~
@@ -33,7 +33,7 @@ ultima_verificacao: "agosto/2026"
 - **E-mail da secretaria:** animacao@contato.ufsc.br (secretaria compartilhada com Design e Design de Produto — Departamento de Expressão Gráfica, EGR)
 - **Telefone da secretaria:** (48) 3721-3728
 - **Sala:** Bloco A, 1º andar, Sala 140
-- **Atendimento:** _A preencher_ — não encontrado em agosto/2026
+- **Atendimento:** 8h às 12h e 13h30 às 17h30 (Sala 140, secretaria compartilhada com Design e Design de Produto) — dado obtido por indexação de busca (WebFetch bloqueado nesta sessão); confirmar em <https://design.ufsc.br/secretaria/>
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -65,3 +65,4 @@ ultima_verificacao: "agosto/2026"
 - <https://guiadecursos.ufsc.br/animacao/> — duração média de 3,5 anos (corrobora 7 fases)
 - <https://uipi.ufsc.br/> e <https://www.instagram.com/uipi.design/> — Uipi, empresa júnior de Design e Animação
 - <https://www.instagram.com/cade.ufsc/> — CADe
+- <https://design.ufsc.br/secretaria/> — horário de atendimento da secretaria (Sala 140), indexação de busca; WebFetch direto bloqueado nesta sessão

@@ -46,6 +46,7 @@ ultima_verificacao: "agosto/2026"
 - **Evento tradicional:** **Semana Acadêmica da Física (SAF)** — evento técnico-científico e social organizado por acadêmicos do curso com colaboração docente, já em sua XI edição (2024). Site: <https://saf.sites.ufsc.br/>
 - **Instagrams / perfis:**
   - [@afimufsc](https://x.com/afimufsc) — AFIM (Atlética)
+  - [@gradfisicaufsc](https://www.instagram.com/gradfisicaufsc/) — "Cursos de Física da UFSC" (perfil do curso/departamento; distinto do CALF) — indexação de busca
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
 
@@ -65,3 +66,4 @@ ultima_verificacao: "agosto/2026"
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=2> e `?curso=225` — currículos de Bacharelado e Licenciatura (não confirmados com confiança suficiente quanto ao número exato de semestres; informações contraditórias entre buscas)
 - <https://saf.sites.ufsc.br/> — Semana Acadêmica da Física
 - <https://www.facebook.com/calf.ufsc/> — CALF (sem Instagram confirmado)
+- <https://www.instagram.com/gradfisicaufsc/> — perfil oficial do curso/departamento (indexação de busca)

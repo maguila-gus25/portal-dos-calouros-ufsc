@@ -8,8 +8,8 @@ coordenacao:
   nome: Renato Ramos da Silva
   email: meteorologia@contato.ufsc.br
   telefone: "(48) 3721-2305 / (48) 3721-2306"
-  sala: ~
-  atendimento: ~
+  sala: "Sala 023, Departamento de Física, CFM"
+  atendimento: "segunda a quinta, 14h às 17h (presencial); outros horários mediante agendamento"
   site: https://meteorologia.grad.ufsc.br/
 atletica: "AFIM — Atlética de Física e Meteorologia UFSC — @afimufsc"
 instagram_curso: ~
@@ -33,8 +33,8 @@ ultima_verificacao: "agosto/2026"
 - **Sub-coordenador:** Reinaldo Haas
 - **E-mail:** meteorologia@contato.ufsc.br
 - **Telefone:** (48) 3721-2305 ou (48) 3721-2306
-- **Sala / prédio:** _A preencher_ — verificar em <https://meteorologia.grad.ufsc.br/>
-- **Atendimento:** _A preencher_ — verificar em <https://meteorologia.grad.ufsc.br/>
+- **Sala / prédio:** Sala 023, Departamento de Física, CFM — dado obtido por indexação de busca (WebFetch bloqueado nesta sessão); confirmar em <https://meteorologia.grad.ufsc.br/2022/03/08/horarios-de-atendimento-presencial/>
+- **Atendimento:** segunda a quinta, 14h às 17h (presencial); outros horários mediante agendamento — mesma fonte
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -67,3 +67,4 @@ ultima_verificacao: "agosto/2026"
 - <https://vestibularunificado2026.ufsc.br/> — confirmação de turno Integral no Vestibular Unificado 2026
 - <https://www.instagram.com/meteorologiaufsc/> — CALMET
 - <https://x.com/afimufsc> — AFIM
+- <https://meteorologia.grad.ufsc.br/2022/03/08/horarios-de-atendimento-presencial/> — sala e horário de atendimento, indexação de busca; WebFetch direto bloqueado nesta sessão

@@ -43,6 +43,7 @@ ultima_verificacao: "agosto/2026"
 - **Centro Acadêmico:** **CAAC** — Centro Acadêmico de Artes Cênicas — [@caacufsc](https://www.instagram.com/caacufsc/) — [Facebook](https://www.facebook.com/CAcenicasUFSC/)
 - **Atlética:** _A preencher_ — não encontrado em agosto/2026; verificar com o CAAC ([@caacufsc](https://www.instagram.com/caacufsc/))
 - **Empresa júnior:** _A preencher_ — não encontrado em agosto/2026
+- **Evento tradicional:** **MAÇÃ** — Mostra Acadêmica de Artes Cênicas, realizada anualmente desde 2009 pelos estudantes do curso em parceria com técnicos e docentes (já na XIII edição, 16 a 20 de março de 2026) — fonte: <https://noticias.ufsc.br/2026/03/ufsc-recebe-xiii-maca-mostra-academica-de-artes-cenicas-entre-16-e-20-de-marco/>
 - **Eventos:** o Departamento de Artes (ART/CCE) realiza espetáculos e mostras ao longo do semestre; acompanhar em [@artescenicasufsc](https://www.instagram.com/artescenicasufsc/)
 - **Instagrams / perfis:**
   - [@caacufsc](https://www.instagram.com/caacufsc/) — CAAC (Centro Acadêmico)
@@ -66,3 +67,4 @@ ultima_verificacao: "agosto/2026"
 - <https://artescenicas.grad.ufsc.br/curriculo/> — currículo 2013/1 vigente (2008/1 extinto)
 - Anexos oficiais do Vestibular Unificado UFSC 2018 e 2023 — turno confirmado como "ARTES CÊNICAS — BEL — NOTURNO", curso 451
 - <https://www.instagram.com/caacufsc/> e <https://www.instagram.com/artescenicasufsc/>
+- <https://noticias.ufsc.br/2026/03/ufsc-recebe-xiii-maca-mostra-academica-de-artes-cenicas-entre-16-e-20-de-marco/> e <https://dac.ufsc.br/2026/03/10/xiii-maca-mostra-academica-de-artes-cenicas/> — MAÇÃ (Mostra Acadêmica de Artes Cênicas), XIII edição em 2026

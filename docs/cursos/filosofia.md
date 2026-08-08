@@ -36,7 +36,7 @@ ultima_verificacao: "agosto/2026"
 
 ## Coordenação
 
-- **Coordenador(a):** _A preencher_ — verificar em <https://filosofia.ufsc.br/expediente/>
+- **Coordenador(a):** _A preencher_ — buscas indicam Prof. Ivan Ferreira da Cunha (coordenador) e Prof. Luan Corrêa da Silva (subcoordenador), mas não foi possível confirmar diretamente na página oficial nesta verificação (WebFetch bloqueado); confirmar em <https://filosofia.ufsc.br/expediente/>
 - **E-mail:** _A preencher_ — verificar em <https://filosofia.ufsc.br/expediente/> (e-mail exibido como imagem no site, não foi possível capturar nesta verificação)
 - **Telefones:** (48) 3721-4552 / (48) 3721-4142
 - **Sala / prédio:** CFH, 2º andar, Campus Trindade
@@ -47,7 +47,7 @@ ultima_verificacao: "agosto/2026"
 ## Vida do curso
 
 - **Centro Acadêmico:** Centro Acadêmico Livre de Filosofia (CAFIL) — [@cafil_ufsc](https://www.instagram.com/cafil_ufsc/)
-- **Atlética:** _A preencher_ — nenhuma atlética verificada para o CFH (verificar com o CAFIL)
+- **Atlética:** _A preencher_ — nenhuma atlética específica de Filosofia verificada; o curso pode participar da **ATCFH**, atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/) (verificar com o CAFIL)
 - **Empresa júnior:** _A preencher_
 
 (ver também [Atléticas e festas](../atleticas-e-festas.md) e [Instagrams](../instagrams.md))
@@ -64,7 +64,8 @@ _A preencher_ (Bloco B do CFH, Campus Trindade — ver [Mapa](../mapa.md))
 
 **Fontes consultadas (agosto/2026):**
 - <https://filosofia.ufsc.br/apresentacao/> — habilitações (Bacharelado noturno e Licenciatura vespertino-noturno), vagas e estrutura curricular
-- <https://filosofia.ufsc.br/expediente/> — telefones da coordenação e horários de atendimento (acesso via busca)
+- <https://filosofia.ufsc.br/expediente/> — telefones da coordenação, horários de atendimento e nomes de coordenador/subcoordenador (Ivan Ferreira da Cunha / Luan Corrêa da Silva) obtidos por indexação de busca; WebFetch direto bloqueado nesta sessão — recomenda-se reconfirmar
 - `docs/centros/cfh.md` — CA (CAFIL, @cafil_ufsc) já verificado
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH), indexação de busca
 
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_

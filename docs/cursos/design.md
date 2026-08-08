@@ -9,7 +9,7 @@ coordenacao:
   email: design@contato.ufsc.br
   telefone: "(48) 3721-6609"
   sala: Bloco A, 1º andar, Sala 140
-  atendimento: ~
+  atendimento: "8h às 12h e 13h30 às 17h30"
   site: https://design.ufsc.br/
 atletica: ~
 instagram_curso: ~
@@ -34,7 +34,7 @@ ultima_verificacao: "agosto/2026"
 - **E-mail da secretaria:** design@contato.ufsc.br
 - **Telefone da secretaria:** (48) 3721-3728 · telefone da coordenadora: (48) 3721-6609
 - **Sala:** Bloco A, 1º andar, Sala 140
-- **Atendimento:** _A preencher_ — não encontrado em agosto/2026
+- **Atendimento:** 8h às 12h e 13h30 às 17h30 (Sala 140, secretaria) — dado obtido por indexação de busca (WebFetch bloqueado nesta sessão); confirmar em <https://design.ufsc.br/secretaria/>
 
 > Nota: os e-mails de contato direto dos coordenadores são exibidos como imagem no site do curso (para evitar spam); use o e-mail da secretaria para contato geral.
 
@@ -66,3 +66,4 @@ ultima_verificacao: "agosto/2026"
 - <https://vestibularunificado2026.ufsc.br/files/2025/09/ANEXO-A1-e-A2-UFSC-2026.pdf> — turno confirmado como "DESIGN — BEL — INTEGRAL"
 - <https://uipi.ufsc.br/> e <https://www.instagram.com/uipi.design/> — Uipi, empresa júnior de Design e Animação
 - <https://www.instagram.com/cade.ufsc/> — CADe
+- <https://design.ufsc.br/secretaria/> — horário de atendimento da secretaria (Sala 140), indexação de busca; WebFetch direto bloqueado nesta sessão

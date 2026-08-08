@@ -37,7 +37,7 @@ ultima_verificacao: "agosto/2026"
 
 ## Vida do curso
 - **Centro Acadêmico:** Centro Acadêmico Livre de Museologia (CAMUS) — Instagram: _A preencher_ (verificar em https://facebook.com/camusufsc/)
-- **Atlética:** _A preencher_
+- **Atlética:** _A preencher_ — nenhuma atlética específica de Museologia verificada; o curso pode participar da **ATCFH**, atlética conjunta do CFH — [@atcfhufsc](https://www.instagram.com/atcfhufsc/) (verificar com o CAMUS)
 - **Empresa júnior:** _A preencher_
 
 ## Dicas de veterano
@@ -47,4 +47,9 @@ _A preencher_
 _A preencher_
 
 ---
+
+**Fontes consultadas (agosto/2026):**
+- <https://guiadecursos.ufsc.br/museologia/> e <https://museologia.ufsc.br/> — turno não confirmado nesta verificação (WebFetch bloqueado); busca não retornou o dado
+- <https://www.instagram.com/atcfhufsc/> — ATCFH (Atlética do CFH), indexação de busca
+
 _Última verificação: agosto/2026 · [Reportar dado desatualizado](https://github.com/maguila-gus25/portal-dos-calouros-ufsc/issues/new?template=atualizacao-conteudo.yml)_
