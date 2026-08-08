@@ -1,7 +1,7 @@
 ---
 title: FAQ — Perguntas frequentes
 description: Respostas rápidas para as dúvidas mais comuns dos calouros do CTC da UFSC.
-ultima_verificacao: julho/2026
+ultima_verificacao: agosto/2026
 ---
 
 # FAQ — Perguntas frequentes
@@ -140,10 +140,13 @@ Guia completo do RU em [carteira-ru.md](carteira-ru.md).
 
 ### Quanto custa a refeição no RU?
 
-_A preencher_ — o valor é subsidiado pela universidade e muda com o tempo.
-Historicamente o valor para estudantes foi de R$ 1,50, mas pode ter sido reajustado.
+Para estudantes de graduação regularmente matriculados, o valor subsidiado é de
+**R$ 1,50** por refeição (confirmado em agosto/2026). Servidores e comunidade
+externa cadastrada pagam valores diferentes (entre R$ 2,90 e R$ 6,10, variando por
+categoria). Esse valor é definido pela universidade e pode ser reajustado — sempre
+confirme o valor vigente antes de ir.
 
-Confirme o valor atual diretamente no site do RU: <https://ru.ufsc.br/faq/>
+Confirme o valor atual diretamente no site do RU: <https://ru.ufsc.br/venda-de-passe/> ou <https://ru.ufsc.br/faq/>
 
 ---
 
@@ -299,7 +302,7 @@ Como localizar no primeiro dia:
 
 ---
 
-*Última verificação: julho/2026*
+*Última verificação: agosto/2026*
 
 > Este FAQ foi elaborado por estudantes. Para informações oficiais, consulte sempre
 > os canais da UFSC (cagr.ufsc.br, prae.ufsc.br, site da sua coordenação).

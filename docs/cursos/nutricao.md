@@ -9,7 +9,7 @@ coordenacao:
   email: coordenacao.nutricao@contato.ufsc.br
   telefone: "(48) 3721-2222"
   sala: CCS — Bloco C, 2º andar, Campus Universitário, Trindade, 88040-900, Florianópolis — SC
-  atendimento: ~
+  atendimento: "Seg e qui, 08h–12h e 13h–17h (confirmar previamente)"
   site: https://nutricao.ufsc.br/
 atletica: ~
 instagram_curso: ~
@@ -37,7 +37,7 @@ ultima_verificacao: "agosto/2026"
 - **Telefone da coordenação:** (48) 3721-2222
 - **Telefone da secretaria:** (48) 3721-9486
 - **Sala / prédio:** CCS — Bloco C, 2º andar, Campus Universitário, Trindade, 88040-900, Florianópolis — SC
-- **Atendimento:** _A preencher_ — verificar em <https://nutricao.ufsc.br/contato/>
+- **Atendimento:** presencial segunda e quinta-feira, 08h às 12h e 13h às 17h (recomenda-se confirmar previamente, pois pode haver alterações eventuais)
 
 (ver também [Coordenações](../coordenacoes.md))
 
@@ -70,4 +70,5 @@ ultima_verificacao: "agosto/2026"
 - <https://www.instagram.com/nutri_jr/> e <https://nutrijr.ufsc.br/> — Instagram e site da Nutri Jr. (verificado agosto/2026)
 - <https://empresasjuniores.paginas.ufsc.br/lista-de-empresas-juniores-da-ufsc/> — Nutri Jr. listada como EJ de Nutrição (verificado agosto/2026)
 - <https://nutricao.ufsc.br/> e <https://nutricao.ufsc.br/contato/> — página oficial do curso
+- <https://nutricao.ufsc.br/atendimento-ao-publico/> — horário de atendimento presencial (segunda e quinta, 08h–12h e 13h–17h), verificado agosto/2026
 - <https://cagr.sistemas.ufsc.br/relatorios/curriculoCurso?curso=9> — duração do currículo (acesso indireto via busca; página retornou 403 na verificação direta)

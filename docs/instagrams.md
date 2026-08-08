@@ -24,7 +24,7 @@ Perfis falsos existem — confirme sempre no próprio Instagram antes de compart
 |--------|---------|---|
 | **LAUFSC** — Liga das Atléticas | Casa das atléticas UFSC desde 2014 | [@laufsc](https://www.instagram.com/laufsc/) |
 | **Recepção de Calouros UFSC** | Cronograma da recepção | [site oficial](https://calouros.ufsc.br/) |
-| DCE (Diretório Central dos Estudantes) | Representação geral dos alunos | site: <https://dce.ufsc.br/> · Instagram: _A preencher_ (confirmar diretamente com o DCE) |
+| DCE (Diretório Central dos Estudantes) | Representação geral dos alunos | site: <https://dce.ufsc.br/> · Instagram: _A preencher_ — o perfil acompanha a gestão eleita e muda a cada eleição; confirme o @ atual diretamente em <https://dce.ufsc.br/> |
 | Centro Acadêmico do seu curso | Representação do curso | ver tabela por curso abaixo |
 | Atlética do seu curso | Esporte e festas | ver [Atléticas e festas](atleticas-e-festas.md) |
 
@@ -56,8 +56,8 @@ Fonte: [Atléticas e festas](atleticas-e-festas.md).
 | Engenharia Mecânica (Departamento) | Departamento EMC | [@emc.ufsc](https://www.instagram.com/emc.ufsc/) |
 | Engenharia de Controle e Automação | Perfil do curso | [@ecaufscfloripa](https://www.instagram.com/ecaufscfloripa/) |
 | Arquitetura e Urbanismo | Perfil do curso | [@arqurb.ufsc](https://www.instagram.com/arqurb.ufsc/) |
-| Ciências da Computação | _A preencher_ | _A preencher_ |
-| Sistemas de Informação | _A preencher_ | _A preencher_ |
+| Ciências da Computação | CALICO (Centro Acadêmico Livre da Computação) | [@calicoufsc](https://www.instagram.com/calicoufsc/) |
+| Sistemas de Informação | CASIN (Centro Acadêmico de Sistemas de Informação) | [@casin.ufsc](https://www.instagram.com/casin.ufsc/) |
 
 ## Semanas Acadêmicas e eventos
 
