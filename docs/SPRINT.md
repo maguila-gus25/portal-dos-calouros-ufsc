@@ -16,8 +16,8 @@ bloqueado por submissão real de veterano).
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Mensagem de contribuição estilo MyUFSC no `Footer` | B-35 (revisão) / E5 | Should / P | frontend-dev | Not Started |
-| Auditoria de verificação dos campos `_A preencher_` — preencher localizáveis + categorizar bloqueados | B-08 (auditoria) | Should / G | content-editor | Not Started |
+| Mensagem de contribuição estilo MyUFSC no `Footer` | B-35 (revisão) / E5 | Should / P | frontend-dev | In Progress |
+| Auditoria de verificação dos campos `_A preencher_` — preencher localizáveis + categorizar bloqueados | B-08 (auditoria) | Should / G | content-editor | In Progress |
 
 ### Critérios de aceite detalhados
 
