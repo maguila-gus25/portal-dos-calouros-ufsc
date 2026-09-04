@@ -6,6 +6,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Busca — Portal dos Calouros UFSC",
   description: "Busque por coordenação, RU, datas, atléticas, cursos e muito mais no Portal dos Calouros UFSC.",
+  alternates: { canonical: "/busca" },
+  // A busca gera URLs infinitas via ?q=. Indexá-las enche o índice de páginas
+  // finas e quase idênticas; o "follow" mantém os links internos sendo seguidos.
+  robots: { index: false, follow: true },
 };
 
 interface Props {

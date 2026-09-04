@@ -1,19 +1,24 @@
 import { ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { listCenters, listCourses } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
 
 export const metadata: Metadata = {
   title: "Cursos — Portal dos Calouros UFSC",
   description: "Todos os cursos de graduação da UFSC, agrupados por centro de ensino.",
+  alternates: { canonical: "/cursos" },
   openGraph: {
     title: "Cursos — Portal dos Calouros UFSC",
     description: "Todos os cursos de graduação da UFSC, agrupados por centro de ensino.",
     type: "website",
-    url: `${BASE_URL}/cursos`,
+    url: absoluteUrl("/cursos"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cursos — Portal dos Calouros UFSC",
+    description: "Todos os cursos de graduação da UFSC, agrupados por centro de ensino.",
   },
 };
 
@@ -41,6 +46,13 @@ export default function CoursesPage() {
 
   return (
     <div className="space-y-6">
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "Cursos", path: "/cursos" },
+        ])}
+      />
+
       <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os centros

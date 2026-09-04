@@ -2,6 +2,8 @@ import { ArrowRight, ChevronLeft, ChevronRight, GraduationCap } from "lucide-rea
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCenter, listCenters, listCourses } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -12,26 +14,25 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const center = getCenter(slug);
   if (!center) return { title: "Centro não encontrado" };
-  const title = `${center.title} — Portal dos Calouros UFSC`;
+  const title = `${center.title} — ${SITE_NAME}`;
   const description =
     center.description ||
     `Informações sobre o ${center.title} da UFSC para calouros — cursos, coordenações e dicas.`;
   return {
     title,
     description,
+    alternates: { canonical: `/centros/${slug}` },
     openGraph: {
       title,
       description,
-      type: "website",
-      url: `${BASE_URL}/centros/${slug}`,
+      type: "article",
+      url: absoluteUrl(`/centros/${slug}`),
     },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -46,6 +47,14 @@ export default async function CenterPage({ params }: Props) {
 
   return (
     <article className="space-y-4" aria-labelledby="titulo-centro">
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "Centros", path: "/centros" },
+          { name: center.title, path: `/centros/${slug}` },
+        ])}
+      />
+
       <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os centros
