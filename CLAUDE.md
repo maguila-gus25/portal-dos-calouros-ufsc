@@ -245,10 +245,10 @@ completo. Próximas frentes:
 2. **B-13** — histórias de veteranos (desbloqueado assim que houver submissões via `historia-veterano.yml`).
 3. **B-37 + B-50 + E13** — formulário de histórias + banco de dados + auth OAuth (v2.0, planejamento conjunto necessário).
 
-Lacunas técnicas conhecidas, ainda sem história no backlog:
+Lacunas técnicas conhecidas, já no backlog:
 
-- **Sem favicon.** Não existe `app/icon.*` nem `public/favicon.ico`.
-- **Sem imagem de OG.** `openGraph.images` não está definido; links compartilhados
+- **B-79 — sem favicon.** Não existe `app/icon.*` nem `public/favicon.ico`.
+- **B-80 — sem imagem de OG.** `openGraph.images` não está definido; links compartilhados
   no WhatsApp e Discord aparecem sem preview visual.
-- **Sem testes unitários.** Existe e2e em Playwright, mas o loader de `lib/content.ts`
+- **B-81 — sem testes unitários.** Existe e2e em Playwright, mas o loader de `lib/content.ts`
   não tem cobertura unitária.
