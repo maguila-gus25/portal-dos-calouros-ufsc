@@ -6,7 +6,8 @@ Projeto de estudantes para estudantes da UFSC. Reúne em um só lugar tudo que u
 
 ## Estado atual
 
-- **v1 (atual):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
+- **v1 (atual, v1.23 — pós-Sprint 29):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
+- **13 centros publicados** com fichas de curso completas (71 fichas em `docs/cursos/`, 13 em `docs/centros/`).
 - Conteúdo institucional completo em `docs/` (fonte única).
 
 ## Arquitetura
@@ -44,12 +45,18 @@ portal-dos-calouros-ufsc/
 │   │   ├── centros/route.ts
 │   │   ├── centros/[slug]/route.ts
 │   │   └── search/route.ts
-│   ├── busca/page.tsx
+│   ├── busca/page.tsx        ← noindex (gera URLs infinitas via ?q=)
 │   ├── centros/page.tsx      ← índice de todos os centros
 │   ├── centros/[slug]/page.tsx ← página do centro + cursos daquele centro
-│   ├── cursos/page.tsx       ← redirect permanente para /centros
+│   ├── cursos/page.tsx       ← listagem de cursos agrupada por centro
 │   ├── cursos/[slug]/page.tsx
-│   ├── secoes/[slug]/page.tsx
+│   ├── secoes/[slug]/page.tsx ← faq/checklist/mapa daqui redirecionam 308
+│   ├── faq/page.tsx          ← rota canônica do FAQ
+│   ├── checklist/page.tsx    ← rota canônica do checklist
+│   ├── mapa/page.tsx         ← rota canônica do mapa (com mapa interativo)
+│   ├── sitemap.ts
+│   ├── robots.ts
+│   ├── manifest.ts
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx              ← Home
@@ -57,10 +64,13 @@ portal-dos-calouros-ufsc/
 │   └── not-found.tsx
 │
 ├── components/               ← Header, Footer, SearchInput, Badge, NavLinks,
-│                                ThemeToggle, SearchResults…
+│   │                            ThemeToggle, SearchResults, MapView, JsonLd…
+│   └── sections/             ← UI estruturada por seção (Faq, Checklist, Ru,
+│                                Links, Datas, Instagram, Historias…)
 │
 ├── lib/
-│   └── content.ts            ← loader de Markdown (mapa slug→arquivo; listCenters/getCenter)
+│   ├── content.ts            ← loader de Markdown (mapa slug→arquivo; listCenters/getCenter)
+│   └── seo.ts                ← SITE_URL, absoluteUrl e builders de JSON-LD
 │
 ├── docs/                     ← FONTE ÚNICA do conteúdo (Markdown)
 │   │   ── conteúdo servido pela API ──
@@ -72,6 +82,8 @@ portal-dos-calouros-ufsc/
 │   ├── instagrams.md         ← perfis oficiais e estudantis para acompanhar
 │   ├── mapa.md               ← orientação no campus (prédios, RU, BU)
 │   ├── historias-e-feedbacks.md ← relatos de veteranos
+│   ├── faq.md                ← perguntas frequentes (H2 = categoria, H3 = pergunta)
+│   ├── checklist-primeira-semana.md ← passo a passo dos primeiros dias
 │   ├── centros/              ← fichas por centro de ensino (frontmatter YAML)
 │   │   └── <slug-do-centro>.md    (ctc, cca, cse, cce, ccs)
 │   └── cursos/               ← fichas por curso (frontmatter YAML)
@@ -81,11 +93,20 @@ portal-dos-calouros-ufsc/
 │   ├── arquitetura.md
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
+│   ├── SPRINT.md             ← sprint atual + histórico (mantido pelo Product Owner)
+│   ├── deploy.md
 │   └── _modelo-curso.md      ← template para criar novo curso
 │
-├── public/
+├── e2e/                      ← testes Playwright
+├── scripts/                  ← geração de ícones do PWA
+├── public/icons/
+├── playwright.config.ts
+├── lighthouserc.json         ← thresholds do Lighthouse CI
+├── eslint.config.mjs
+├── postcss.config.mjs
 ├── next.config.ts
 ├── package.json
+├── skills-lock.json          ← skills instaladas via `npx skills`
 ├── tailwind.config.ts
 ├── tsconfig.json
 ├── vercel.json
@@ -99,7 +120,7 @@ portal-dos-calouros-ufsc/
 - Campos não confirmados ficam como `_A preencher_` — **nunca inventar dados**.
 - Toda informação exige fonte oficial (link da UFSC, página da coordenação, PDF oficial).
 - Fichas de curso em `docs/cursos/<slug>.md` usam frontmatter YAML (ver `docs/_modelo-curso.md`).
-- Arquivos **não servidos** pela API: `arquitetura.md`, `identidade-visual.md`, `product-backlog.md`, `README.md`, `_modelo-curso.md`.
+- Arquivos **não servidos** pela API: `arquitetura.md`, `identidade-visual.md`, `product-backlog.md`, `SPRINT.md`, `deploy.md`, `README.md`, `_modelo-curso.md`.
 
 ## Mapa de slugs da API
 
@@ -114,6 +135,8 @@ O loader em `lib/content.ts` mapeia slugs para arquivos em `docs/`:
 | `atleticas` | `docs/atleticas-e-festas.md` |
 | `instagrams` | `docs/instagrams.md` |
 | `mapa` | `docs/mapa.md` |
+| `faq` | `docs/faq.md` |
+| `checklist` | `docs/checklist-primeira-semana.md` |
 | `historias` | `docs/historias-e-feedbacks.md` |
 
 ## API (Route Handlers em `app/api/`)
@@ -151,9 +174,10 @@ Paleta principal (`docs/identidade-visual.md` tem o detalhamento completo):
 
 ```bash
 npm install
-npm run dev    # Next.js dev server em localhost:3000
-npm run build  # build de produção
-npm run lint   # ESLint
+npm run dev       # Next.js dev server em localhost:3000
+npm run build     # build de produção
+npm run lint      # ESLint
+npm run test:e2e  # Playwright (e2e/)
 ```
 
 ## Fluxo de trabalho com Git
@@ -181,18 +205,50 @@ Regras inegociáveis:
 
 - CI/CD: push para `main` → Vercel builda e deploya automaticamente.
 
-## Próximos passos (pós-Sprint 26)
+## SEO / AEO / GEO
 
-Sprint 26 entregou: CA, atlética e EJ para as **13 fichas dos campi CTJ (Joinville) e CTS (Araranguá)**.
+O portal tem structured data (JSON-LD) montado em `lib/seo.ts` e injetado por
+`components/JsonLd.tsx`: `Organization` + `WebSite` sitewide, `FAQPage` em `/faq`,
+`Course` nas fichas de curso e `BreadcrumbList` nas páginas aninhadas.
+
+Regras ao mexer nisso:
+
+- O portal é `Organization`, **nunca** `EducationalOrganization`/`CollegeOrUniversity`.
+  Marcá-lo como instituição de ensino faz buscadores e assistentes de IA tratarem
+  ele como fonte oficial da UFSC — viola a regra inegociável.
+- Não declarar `offers`, `hasCourseInstance` ou `courseCode` em `Course`: o portal
+  não tem esses dados confirmados, e structured data inventada é pior que ausente.
+- `robots.ts` libera os crawlers de IA (GPTBot, ClaudeBot, PerplexityBot…) de
+  propósito — ser citado por eles é objetivo do projeto.
+- Cada rota tem uma única URL canônica. `/secoes/faq`, `/secoes/checklist` e
+  `/secoes/mapa` respondem 308 para as rotas dedicadas; não reintroduzir as duas.
+
+Skills disponíveis para esse trabalho: `seo`, `seo-geo`, `seo-aeo-best-practices`.
+
+## Próximos passos (pós-Sprint 29)
+
+Sprint 29 entregou: mensagem de contribuição estilo MyUFSC no rodapé e a auditoria
+dos ~460 campos `_A preencher_` das 97 fichas.
 
 **13 centros publicados:** CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, CTJ, CTS.
 
 **B-60 ✅ fechado** (todos os centros publicados). **B-61 ✅ fechado** (fichas para todos os centros).
 
-**Estado do B-08 (qualidade das fichas):** CTC (13) ✅ completo · demais centros com coordenação ✅ · CTJ e CTS com CA/atlética/EJ ✅ (pós-Sprint 26) · dicas de veterano e "onde estudar" bloqueados (aguardam submissões reais).
+**Estado do B-08 (qualidade das fichas):** campos localizáveis preenchidos com fonte
+oficial na auditoria do Sprint 29 · dicas de veterano e "onde estudar" seguem
+bloqueados (aguardam submissões reais).
 
-Ver `docs/product-backlog.md` para o backlog completo. Próximas frentes:
+Ver `docs/SPRINT.md` para o sprint atual e `docs/product-backlog.md` para o backlog
+completo. Próximas frentes:
 
-1. **B-08 (cauda)** — dicas de veterano e "onde estudar" quando houver submissões reais de veteranos.
+1. **B-08 (cauda)** — dicas de veterano e "onde estudar" quando houver submissões reais.
 2. **B-13** — histórias de veteranos (desbloqueado assim que houver submissões via `historia-veterano.yml`).
 3. **B-37 + B-50 + E13** — formulário de histórias + banco de dados + auth OAuth (v2.0, planejamento conjunto necessário).
+
+Lacunas técnicas conhecidas, ainda sem história no backlog:
+
+- **Sem favicon.** Não existe `app/icon.*` nem `public/favicon.ico`.
+- **Sem imagem de OG.** `openGraph.images` não está definido; links compartilhados
+  no WhatsApp e Discord aparecem sem preview visual.
+- **Sem testes unitários.** Existe e2e em Playwright, mas o loader de `lib/content.ts`
+  não tem cobertura unitária.
