@@ -1,8 +1,12 @@
 import type { MetadataRoute } from "next";
 import { listSections, listCourses, listCenters } from "@/lib/content";
+import { SITE_URL as BASE_URL } from "@/lib/seo";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
+/**
+ * Seções servidas por uma rota dedicada canônica. /secoes/<slug> redireciona
+ * para ela, então listar as duas colocaria um redirect permanente no sitemap.
+ */
+const REDIRECTED_SECTIONS = new Set(["faq", "checklist", "mapa"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const sections = listSections();
@@ -29,12 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/busca`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
       url: `${BASE_URL}/faq`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -54,12 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const sectionRoutes: MetadataRoute.Sitemap = sections.map((section) => ({
-    url: `${BASE_URL}/secoes/${section.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const sectionRoutes: MetadataRoute.Sitemap = sections
+    .filter((section) => !REDIRECTED_SECTIONS.has(section.slug))
+    .map((section) => ({
+      url: `${BASE_URL}/secoes/${section.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
   const courseRoutes: MetadataRoute.Sitemap = courses.map((course) => ({
     url: `${BASE_URL}/cursos/${course.slug}`,

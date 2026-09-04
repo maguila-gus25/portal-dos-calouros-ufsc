@@ -1,17 +1,38 @@
 import { Building2, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { listCenters } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
+const TITLE = "Centros da UFSC — Portal dos Calouros";
+const DESCRIPTION =
+  "Escolha seu centro para encontrar coordenações, cursos, atléticas e dicas.";
+
 export const metadata: Metadata = {
-  title: "Centros da UFSC — Portal dos Calouros",
-  description: "Escolha seu centro para encontrar coordenações, cursos, atléticas e dicas.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/centros" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+    url: absoluteUrl("/centros"),
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
 export default function CentrosPage() {
   const centers = listCenters();
   return (
     <div className="space-y-6">
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "Centros", path: "/centros" },
+        ])}
+      />
+
       {/* Hero igual ao padrão do site */}
       <section className="bg-hero-gradient rounded-lg px-8 py-10 text-white">
         <div className="flex items-center gap-3 mb-2">

@@ -3,6 +3,8 @@ import { type ElementType, type ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCourse, listCourses } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, courseSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -13,8 +15,16 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
+/** Descrição usada tanto na meta tag quanto no JSON-LD — mantém as duas iguais. */
+function courseDescription(course: {
+  title: string;
+  grau?: string | null;
+  centro?: string | null;
+}): string {
+  const grauPart = course.grau ? ` (${course.grau})` : "";
+  const centroPart = course.centro ? ` no ${course.centro}` : "";
+  return `Ficha do curso de ${course.title}${grauPart}${centroPart} da UFSC — coordenação, atlética, CA e dicas para calouros.`;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -23,19 +33,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const titleBase = course.centro
     ? `${course.title} — ${course.centro}`
     : course.title;
-  const title = `${titleBase} — Portal dos Calouros UFSC`;
-  const grauPart = course.grau ? ` (${course.grau})` : "";
-  const centroPart = course.centro ? ` no ${course.centro}` : "";
-  const description = `Ficha do curso de ${course.title}${grauPart}${centroPart} da UFSC — coordenação, atlética, CA e dicas para calouros.`;
+  const title = `${titleBase} — ${SITE_NAME}`;
+  const description = courseDescription(course);
   return {
     title,
     description,
+    alternates: { canonical: `/cursos/${slug}` },
     openGraph: {
       title,
       description,
-      type: "website",
-      url: `${BASE_URL}/cursos/${slug}`,
+      type: "article",
+      url: absoluteUrl(`/cursos/${slug}`),
     },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -64,6 +74,22 @@ export default async function CoursePage({ params }: Props) {
 
   return (
     <article className="space-y-4" aria-labelledby="titulo-curso">
+      <JsonLd
+        schema={courseSchema({
+          slug: course.slug,
+          title: course.title,
+          grau: course.grau,
+          description: courseDescription(course),
+        })}
+      />
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "Cursos", path: "/cursos" },
+          { name: course.title, path: `/cursos/${course.slug}` },
+        ])}
+      />
+
       <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os cursos

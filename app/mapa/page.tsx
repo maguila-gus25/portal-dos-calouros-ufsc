@@ -3,25 +3,26 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSection } from "@/lib/content";
 import MapViewClient from "@/components/MapViewClient";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portal-dos-calouros-ufsc.vercel.app";
 
 export async function generateMetadata(): Promise<Metadata> {
   const section = getSection("mapa");
   if (!section) return { title: "Mapa não encontrado" };
-  const title = `${section.title} — Portal dos Calouros UFSC`;
+  const title = `${section.title} — ${SITE_NAME}`;
   const description = section.description;
   return {
     title,
     description,
+    alternates: { canonical: "/mapa" },
     openGraph: {
       title,
       description,
       type: "website",
-      url: `${BASE_URL}/mapa`,
+      url: absoluteUrl("/mapa"),
     },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -31,6 +32,13 @@ export default function MapaPage() {
 
   return (
     <article className="space-y-4">
+      <JsonLd
+        schema={breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: section.title, path: "/mapa" },
+        ])}
+      />
+
       <Link
         href="/"
         className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
