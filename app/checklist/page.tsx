@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getSection } from "@/lib/content";
 import { ChecklistSection } from "@/components/sections/ChecklistSection";
 import { JsonLd } from "@/components/JsonLd";
+import { SugerirCorrecao } from "@/components/SugerirCorrecao";
 import { breadcrumbSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -50,6 +51,8 @@ export default function ChecklistPage() {
       </header>
 
       <ChecklistSection blocks={section.blocks} />
+
+      <SugerirCorrecao titulo={section.title} caminho="/checklist" />
     </article>
   );
 }

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getSection } from "@/lib/content";
 import MapViewClient from "@/components/MapViewClient";
 import { JsonLd } from "@/components/JsonLd";
+import { SugerirCorrecao } from "@/components/SugerirCorrecao";
 import { breadcrumbSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -69,6 +70,8 @@ export default function MapaPage() {
           dangerouslySetInnerHTML={{ __html: section.content_html }}
         />
       </div>
+
+      <SugerirCorrecao titulo={section.title} caminho="/mapa" />
     </article>
   );
 }
