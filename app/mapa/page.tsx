@@ -22,6 +22,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       type: "website",
       url: absoluteUrl("/mapa"),
+      // Ver comentário equivalente em app/faq/page.tsx: `openGraph` aqui
+      // substitui o herdado do layout raiz, então a imagem precisa ser
+      // reafirmada para não perder o og:image/twitter:image do card padrão.
+      images: [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630 }],
     },
     twitter: { card: "summary_large_image", title, description },
   };
