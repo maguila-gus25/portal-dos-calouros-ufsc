@@ -148,21 +148,17 @@ describe("getSection", () => {
     expect(section?.content_md).toBe(semFrontmatter);
   });
 
-  // BUG REAL encontrado durante a escrita desta suíte: gray-matter lança uma
-  // exceção quando o bloco `---...---` do frontmatter contém YAML inválido
-  // (ex.: uma lista não fechada), e nenhuma das funções deste loader
-  // (getSection/getCourse/getCenter/listCourses/listCenters) protege a
-  // chamada a `matter()` com try/catch. O comportamento correto seria não
-  // derrubar o loader — mas hoje ele derruba. `test.fails` documenta a
-  // expectativa correta sem quebrar o `npm test`; ver relatório do sprint
-  // para o `debugger` acionar o fix.
-  it.fails(
-    "frontmatter malformado não deveria derrubar o loader (bug conhecido — ver relatório)",
+  it(
+    "frontmatter malformado não deveria derrubar o loader — retorna null como slug inexistente",
     () => {
       const frontmatterInvalido = "---\nfoo: [nao fechado\nbar: baz\n---\n\n# Título\n\nTexto.\n";
-      vi.spyOn(fs, "readFileSync").mockReturnValueOnce(frontmatterInvalido);
+      vi.spyOn(fs, "readFileSync").mockReturnValue(frontmatterInvalido);
 
-      expect(() => getSection("faq")).not.toThrow();
+      let section: ReturnType<typeof getSection> | undefined;
+      expect(() => {
+        section = getSection("faq");
+      }).not.toThrow();
+      expect(section).toBeNull();
     }
   );
 });
@@ -230,6 +226,23 @@ describe("listSections / listCourses / listCenters", () => {
         true
       );
     }
+  });
+
+  it("um arquivo de curso com frontmatter malformado é ignorado, sem apagar os demais da lista", () => {
+    const totalNormal = listCourses().length;
+    const originalReadFileSync = fs.readFileSync;
+    let jaAdulterado = false;
+    vi.spyOn(fs, "readFileSync").mockImplementation((...args: Parameters<typeof fs.readFileSync>) => {
+      if (!jaAdulterado) {
+        jaAdulterado = true;
+        return "---\nfoo: [nao fechado\nbar: baz\n---\n\n# Curso\n\nTexto.\n";
+      }
+      return originalReadFileSync(...args);
+    });
+
+    const courses = listCourses();
+
+    expect(courses.length).toBe(totalNormal - 1);
   });
 
   it("listCenters retorna um array não vazio com os campos de frontmatter esperados", () => {
