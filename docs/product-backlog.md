@@ -167,6 +167,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-21 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. 4 templates de issue (história, conteúdo, link quebrado, sugestão) + PR template criados em `.github/`. |
 | B-22 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por todas as áreas. |
 | B-23 | 🟡 Could | 🟢 P | ✅ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. Coberto pelo PR template (`.github/pull_request_template.md`) criado no Sprint 5. |
+| B-82 | 🟡 Could | 🟢 P | ⬜ | Como **calouro que percebe uma informação errada ou desatualizada**, quero **um botão "Sugerir correção" na página**, para **avisar o mantenedor sem precisar saber usar Git/GitHub a fundo**. (issue #46) **Escopo mínimo viável (este sprint):** link/botão nas páginas de conteúdo (seção, curso, centro) que abre o issue template `sugestao.yml` (já existe em `.github/ISSUE_TEMPLATE/`) pré-preenchido via query string do GitHub (`?title=`/`?body=`) com a página de origem — zero backend, reaproveita a infraestrutura de templates do B-21. **Fora de escopo (v2.0):** formulário interno com persistência em banco e fila de moderação — depende de B-50 (Prisma/Postgres) e B-37, e só faz sentido quando planejados junto com E13 (auth). |
 
 ### E6 — Confiabilidade e manutenção
 
@@ -287,6 +288,39 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 Educação do Campo, Arquivologia e Biblioteconomia preenchidos; duração de Pedagogia
 corrigida no frontmatter; coordenadora de Ciências Biológicas (Profª. Daniela De Toni)
 e EJ Simbiosis encontrados; CAEF Instagram (@caefufsc) do CDS confirmado.
+
+**Sprint 29 concluído (v1.23):** Mensagem de contribuição estilo MyUFSC no `Footer`
+(B-35, revisão) + auditoria completa dos ~460 campos `_A preencher_` das 97
+fichas/docs (B-08) — campos localizáveis preenchidos com fonte oficial; restante
+confirmado como estruturalmente bloqueado (coordenadores não publicados em
+CFH/CFM, e-mails anti-spam por imagem, atléticas/EJ inexistentes) ou dependente
+de submissão real de veterano (B-10/B-13). Também abriu B-79, B-80 e B-81 no
+backlog para as lacunas técnicas identificadas (favicon, OG image, testes
+unitários do loader).
+
+**Sprint 30 — candidatos (dívida técnica sprint-ready, zero dependências):**
+
+> Nenhum item de conteúdo novo está desbloqueado (B-08 cauda, B-10 e B-13 seguem
+> aguardando submissões reais de veterano). Este sprint foca em fechar lacunas
+> técnicas conhecidas e entregar a fatia mínima do pedido da issue #46.
+
+1. **B-79** — Favicon próprio (`app/icon.*` / `public/favicon.ico`) (frontend-dev) —
+   Should, P. Zero dependências.
+2. **B-80** — Imagem de OG via `app/opengraph-image.tsx` (`ImageResponse`, 1200×630)
+   (frontend-dev ou ui-ux-designer para o layout do cartão) — Should, P. Zero
+   dependências; completa o escopo que o B-47 deixou pendente.
+3. **B-82** — Botão "Sugerir correção" abrindo `sugestao.yml` pré-preenchido
+   (frontend-dev) — Could, P. Zero dependências; fecha a issue #46 com a fatia
+   entregável hoje (a versão com formulário + banco fica para v2.0).
+4. **B-81** — Testes unitários do loader `lib/content.ts` com Vitest (tester) —
+   Should, M. Zero dependências; maior que os itens acima, pode ficar para o fim
+   do sprint ou abrir sozinho se o sprint priorizar velocidade nos itens visíveis
+   ao calouro (B-79/B-80/B-82) primeiro.
+
+> B-79 + B-80 + B-82 são pequenos e visíveis ao calouro/contribuidor; cabem
+> confortavelmente com B-81 no mesmo sprint. Se o Scrum Master preferir escopo
+> mais enxuto, B-81 é o candidato a ficar para o Sprint 31 — não bloqueia nada e
+> não é visível ao calouro final.
 
 **Radar (v2.0):**
 
