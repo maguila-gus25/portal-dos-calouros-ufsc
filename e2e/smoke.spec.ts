@@ -44,4 +44,28 @@ test.describe("Smoke tests — Portal dos Calouros UFSC", () => {
     await page.goto("/cursos/ciencias-da-computacao");
     await expect(page).toHaveTitle(/Ciências da Computação/i);
   });
+
+  test("página /centros lista os centros", async ({ page }) => {
+    await page.goto("/centros");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    // Ao menos um card de centro linkando para /centros/<slug> — não fixa a
+    // contagem, que muda a cada sprint de conteúdo.
+    await expect(page.locator('a[href^="/centros/"]').first()).toBeVisible();
+  });
+
+  test("página de centro lista os cursos daquele centro", async ({ page }) => {
+    await page.goto("/centros/ctc");
+    await expect(page).toHaveTitle(/CTC|Centro Tecnológico/i);
+    await expect(page.locator('a[href^="/cursos/"]').first()).toBeVisible();
+  });
+
+  test("ficha de curso linka de volta para o centro", async ({ page }) => {
+    await page.goto("/cursos/ciencias-da-computacao");
+    await expect(page.locator('a[href="/centros/ctc"]')).toBeVisible();
+  });
+
+  test("busca encontra centro de ensino", async ({ page }) => {
+    await page.goto("/busca?q=Centro%20Tecnológico");
+    await expect(page.locator('a[href="/centros/ctc"]').first()).toBeVisible();
+  });
 });
