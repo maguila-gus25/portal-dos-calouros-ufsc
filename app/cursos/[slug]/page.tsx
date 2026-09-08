@@ -2,7 +2,7 @@ import { ChevronLeft, Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import { type ElementType, type ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCourse, listCourses } from "@/lib/content";
+import { getCenter, getCourse, listCourses } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import { SugerirCorrecao } from "@/components/SugerirCorrecao";
 import { breadcrumbSchema, courseSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
@@ -76,6 +76,24 @@ export default async function CoursePage({ params }: Props) {
   if (!course) notFound();
 
   const coordenacao = getCoordenacao(course.metadata);
+  // `course.centro` é a sigla do frontmatter (ex.: "CSE"); o slug do centro é
+  // a mesma sigla em minúsculas (ex.: "cse"), confirmado contra docs/centros/.
+  // Buscamos o centro de verdade (não só confiamos no lowercase) para não
+  // gerar link/breadcrumb para uma sigla que não bata com nenhum centro real.
+  const center = course.centro ? getCenter(course.centro.toLowerCase()) : null;
+
+  const breadcrumbCrumbs = center
+    ? [
+        { name: "Início", path: "/" },
+        { name: "Centros", path: "/centros" },
+        { name: center.title, path: `/centros/${center.slug}` },
+        { name: course.title, path: `/cursos/${course.slug}` },
+      ]
+    : [
+        { name: "Início", path: "/" },
+        { name: "Cursos", path: "/cursos" },
+        { name: course.title, path: `/cursos/${course.slug}` },
+      ];
 
   return (
     <article className="space-y-4" aria-labelledby="titulo-curso">
@@ -87,13 +105,7 @@ export default async function CoursePage({ params }: Props) {
           description: courseDescription(course),
         })}
       />
-      <JsonLd
-        schema={breadcrumbSchema([
-          { name: "Início", path: "/" },
-          { name: "Cursos", path: "/cursos" },
-          { name: course.title, path: `/cursos/${course.slug}` },
-        ])}
-      />
+      <JsonLd schema={breadcrumbSchema(breadcrumbCrumbs)} />
 
       <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
         <ChevronLeft size={15} aria-hidden />
@@ -102,7 +114,18 @@ export default async function CoursePage({ params }: Props) {
 
       <header className="card p-6 sm:p-8">
         <div className="flex flex-col gap-1">
-          <p className="text-xs font-medium text-primary uppercase tracking-wide">{course.centro}</p>
+          {center ? (
+            <Link
+              href={`/centros/${center.slug}`}
+              className="-mx-1 -my-2 inline-flex w-fit min-h-[44px] items-center px-1 py-2 text-xs font-medium text-primary-link uppercase tracking-wide hover:underline"
+            >
+              {course.centro}
+            </Link>
+          ) : (
+            course.centro && (
+              <p className="text-xs font-medium text-primary-link uppercase tracking-wide">{course.centro}</p>
+            )
+          )}
           <h1 id="titulo-curso" className="text-2xl font-bold leading-snug">{course.title}</h1>
           <p className="text-muted-foreground text-sm mt-0.5">
             {[course.grau, course.turno].filter(Boolean).join(" · ")}
