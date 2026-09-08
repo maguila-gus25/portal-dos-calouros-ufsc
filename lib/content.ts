@@ -92,6 +92,22 @@ const SLUG_MAP: Record<string, { file: string; title: string; description: strin
   },
 };
 
+/**
+ * Wraps `matter()` so a single file with malformed frontmatter (e.g. an unclosed
+ * YAML list) can't crash the whole loader. Content is community-contributed via
+ * PRs, so a broken frontmatter block is an expected failure mode, not an
+ * exceptional one. Returns `null` on parse failure and logs a warning so the
+ * maintainer can spot the offending file in the build log.
+ */
+function safeMatter(raw: string, filePath: string): matter.GrayMatterFile<string> | null {
+  try {
+    return matter(raw);
+  } catch (error) {
+    console.warn(`[content] frontmatter malformado em ${filePath}, ignorando arquivo:`, error);
+    return null;
+  }
+}
+
 function renderMd(md: string): string {
   const html = marked(md, { async: false }) as string;
   // Strip the leading <h1> — page components render section.title as <h1> already
@@ -190,7 +206,9 @@ export function getSection(slug: string): Section | null {
   if (!meta) return null;
   const filePath = path.join(DOCS_DIR, meta.file);
   if (!fs.existsSync(filePath)) return null;
-  const { content, data } = matter(fs.readFileSync(filePath, "utf-8"));
+  const parsed = safeMatter(fs.readFileSync(filePath, "utf-8"), filePath);
+  if (!parsed) return null;
+  const { content, data } = parsed;
   return {
     slug,
     title: meta.title,
@@ -213,23 +231,29 @@ function iterCourseFiles(): string[] {
 }
 
 export function listCourses(): CourseSummary[] {
-  return iterCourseFiles().map((filePath) => {
-    const { data } = matter(fs.readFileSync(filePath, "utf-8"));
+  const courses: CourseSummary[] = [];
+  for (const filePath of iterCourseFiles()) {
+    const parsed = safeMatter(fs.readFileSync(filePath, "utf-8"), filePath);
+    if (!parsed) continue;
+    const { data } = parsed;
     const slug = String(data.slug ?? path.basename(filePath, ".md"));
-    return {
+    courses.push({
       slug,
       title: String(data.curso ?? slug),
       centro: data.centro ?? null,
       grau: data.grau ?? null,
       turno: data.turno ?? null,
-    };
-  });
+    });
+  }
+  return courses;
 }
 
 export function getCourse(slug: string): Course | null {
   for (const filePath of iterCourseFiles()) {
     const raw = fs.readFileSync(filePath, "utf-8");
-    const { content, data } = matter(raw);
+    const parsed = safeMatter(raw, filePath);
+    if (!parsed) continue;
+    const { content, data } = parsed;
     const currentSlug = String(data.slug ?? path.basename(filePath, ".md"));
     if (currentSlug !== slug) continue;
     return {
@@ -256,21 +280,27 @@ function iterCenterFiles(): string[] {
 }
 
 export function listCenters(): CenterSummary[] {
-  return iterCenterFiles().map((filePath) => {
-    const { data } = matter(fs.readFileSync(filePath, "utf-8"));
+  const centers: CenterSummary[] = [];
+  for (const filePath of iterCenterFiles()) {
+    const parsed = safeMatter(fs.readFileSync(filePath, "utf-8"), filePath);
+    if (!parsed) continue;
+    const { data } = parsed;
     const slug = String(data.slug ?? path.basename(filePath, ".md"));
-    return {
+    centers.push({
       slug,
       title: String(data.titulo ?? slug),
       description: String(data.descricao ?? ""),
-    };
-  });
+    });
+  }
+  return centers;
 }
 
 export function getCenter(slug: string): Center | null {
   for (const filePath of iterCenterFiles()) {
     const raw = fs.readFileSync(filePath, "utf-8");
-    const { content, data } = matter(raw);
+    const parsed = safeMatter(raw, filePath);
+    if (!parsed) continue;
+    const { content, data } = parsed;
     const currentSlug = String(data.slug ?? path.basename(filePath, ".md"));
     if (currentSlug !== slug) continue;
     return {
@@ -310,7 +340,9 @@ export function search(query: string): SearchResult[] {
 
   for (const filePath of iterCourseFiles()) {
     const raw = fs.readFileSync(filePath, "utf-8");
-    const { content, data } = matter(raw);
+    const parsed = safeMatter(raw, filePath);
+    if (!parsed) continue;
+    const { content, data } = parsed;
     const title = String(data.curso ?? path.basename(filePath, ".md"));
     const courseSlug = String(data.slug ?? path.basename(filePath, ".md"));
     if (content.toLowerCase().includes(q) || title.toLowerCase().includes(q)) {

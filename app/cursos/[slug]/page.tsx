@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCourse, listCourses } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
+import { SugerirCorrecao } from "@/components/SugerirCorrecao";
 import { breadcrumbSchema, courseSchema, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -44,6 +45,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: "article",
       url: absoluteUrl(`/cursos/${slug}`),
+      // Ver comentário equivalente em app/faq/page.tsx: `openGraph` aqui
+      // substitui o herdado do layout raiz, então a imagem precisa ser
+      // reafirmada para não perder o og:image/twitter:image do card padrão.
+      images: [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630 }],
     },
     twitter: { card: "summary_large_image", title, description },
   };
@@ -144,6 +149,8 @@ export default async function CoursePage({ params }: Props) {
       <div className="card p-6 sm:p-8">
         <div className="prose-content" dangerouslySetInnerHTML={{ __html: course.content_html }} />
       </div>
+
+      <SugerirCorrecao titulo={course.title} caminho={`/cursos/${course.slug}`} />
     </article>
   );
 }

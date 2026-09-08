@@ -4,6 +4,244 @@
 
 ---
 
+## Sprint 30 — Identidade na aba, preview de link e rede de testes (v1.24)
+
+**Objetivo:** Fechar as três lacunas técnicas conhecidas do portal e entregar a fatia
+mínima do pedido da issue #46. **(A)** O portal ganha **favicon próprio** e **imagem de
+Open Graph**, para ser reconhecível entre dez abas abertas e aparecer com cartão visual
+quando alguém manda o link no grupo do WhatsApp. **(B)** Qualquer visitante ganha um
+botão **"Sugerir correção"** que abre uma issue pré-preenchida — sem precisar saber Git.
+**(C)** O loader `lib/content.ts` ganha **testes unitários (Vitest) no CI**, para o build
+quebrar quando o parse de Markdown regredir, em vez de descobrirmos pela página torta.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Favicon próprio na aba do navegador | B-79 | Should / P | frontend-dev | Done |
+| Imagem de Open Graph (1200×630) para preview de link | B-80 | Should / P | frontend-dev | Done |
+| Botão "Sugerir correção" → issue pré-preenchida (issue #46) | B-82 | Could / P | frontend-dev | Done |
+| Testes unitários do loader `lib/content.ts` (Vitest + CI) | B-81 | Should / M | tester | Done |
+
+### Critérios de aceite detalhados
+
+**História A — Favicon próprio (B-79, frontend-dev)**
+
+- [ ] Criar `app/icon.tsx` gerando o ícone com `ImageResponse` do `next/og` (32×32).
+      Nada de dependência nova: `next/og` já vem com o Next 15.
+- [ ] O símbolo é o **mesmo da identidade já usada no `components/Header.tsx`**: quadrado
+      azul arredondado (`#1877F2` / hero-gradient) com o chapéu de formatura em branco.
+      Redesenhar o chapéu como SVG inline no `ImageResponse` (o `GraduationCap` do
+      `lucide-react` é componente React e não renderiza dentro do `ImageResponse`).
+- [ ] Criar também `app/apple-icon.tsx` (180×180) com o mesmo símbolo, para o atalho no
+      iOS não cair no screenshot genérico da página.
+- [ ] **Regra inegociável:** nunca usar o brasão, o logotipo ou as cores oficiais da UFSC
+      no ícone. O símbolo é do portal, não da instituição.
+- [ ] Não usar fonte externa via fetch em build — `ImageResponse` deve renderizar apenas
+      com formas/SVG (sem texto), para o build não depender de rede.
+- [ ] Não duplicar fonte de verdade: `app/manifest.ts` continua sendo o único dono dos
+      ícones do PWA (`public/icons/*`); o favicon é independente disso.
+
+**História B — Imagem de Open Graph (B-80, frontend-dev)**
+
+- [ ] Criar `app/opengraph-image.tsx` (`ImageResponse`, **1200×630**, `contentType: "image/png"`,
+      `alt` descritivo), servindo o cartão sitewide.
+- [ ] Conteúdo do cartão: fundo azul da identidade + **"Portal dos Calouros UFSC"** em
+      destaque, subtítulo curto ("Guia feito por estudantes para calouros da UFSC —
+      Florianópolis") e, em texto menor mas legível, a linha
+      *"Projeto independente. Não é um site oficial da UFSC."*
+- [ ] **Regra inegociável:** sem brasão, logotipo ou imitação de identidade visual oficial
+      da UFSC. O cartão precisa parecer o portal, não a universidade.
+- [ ] Usar a fonte padrão do `ImageResponse` (sem `fetch` de arquivo de fonte em build).
+- [ ] Não declarar `openGraph.images` manualmente em `app/layout.tsx`: o Next injeta
+      `og:image` (e `twitter:image`, já que o card é `summary_large_image`) a partir da
+      convenção de arquivo. Se alguma rota sobrescrever `openGraph` sem herdar a imagem,
+      corrigir para herdar.
+- [ ] Verificar no build que o HTML de `/`, `/faq` e de uma ficha de curso contém
+      `<meta property="og:image">` apontando para a URL absoluta (via `metadataBase`).
+- [ ] **Fora de escopo:** cartão de OG por curso/centro (imagem dinâmica por rota) —
+      fica para um sprint futuro se houver demanda.
+
+**História C — Botão "Sugerir correção" (B-82 / issue #46, frontend-dev)**
+
+- [ ] Criar `components/SugerirCorrecao.tsx`: link (estilizado como link discreto, não
+      como CTA primário) que abre uma issue nova no repositório em nova aba
+      (`target="_blank"` + `rel="noopener noreferrer"`).
+- [ ] **Template escolhido: `atualizacao-conteudo.yml`** (e não `sugestao.yml`). É o
+      template semanticamente correto para "informação errada ou desatualizada", e já
+      exige o campo **fonte oficial** — o que preserva a regra de ouro do projeto.
+      Manter `sugestao.yml` para ideias/funcionalidades, alcançável pelo `CONTRIBUTING.md`.
+- [ ] Pré-preenchimento via query string do GitHub
+      (`/issues/new?template=atualizacao-conteudo.yml&title=…&dado_atual=…`), com o
+      título da página e a **URL canônica de origem** no corpo, tudo `encodeURIComponent`.
+      **Não** tentar pré-preencher o dropdown `arquivo` (só aceita match exato das opções;
+      valor inválido é ignorado silenciosamente) — a página de origem vai no corpo.
+- [ ] Renderizar o componente ao final do conteúdo em `/secoes/[slug]`, `/cursos/[slug]`,
+      `/centros/[slug]`, `/faq`, `/checklist` e `/mapa`.
+- [ ] Adicionar também um link "Sugerir correção" **genérico** (sem contexto de página) no
+      `components/Footer.tsx`, ao lado de "Repositório", para atender ao critério da issue
+      #46 de estar disponível em todas as páginas.
+- [ ] **Regra inegociável preservada:** o `Footer` continua exibindo *"Projeto independente
+      feito por estudantes. Não é um site oficial da UFSC."*, a pílula de código aberto e a
+      nota de analytics. O texto do link deve deixar claro que a sugestão vai para os
+      **estudantes mantenedores**, não para a UFSC.
+- [ ] Acessível: texto de link descritivo (nada de "clique aqui"), ícone `aria-hidden`,
+      contraste WCAG AA, alvo de toque confortável no mobile.
+- [ ] **Fora de escopo (v2.0):** formulário interno + Route Handler + banco + fila de
+      moderação — depende de B-50 e B-37, e só faz sentido planejado junto com E13.
+
+**História D — Testes unitários do loader (B-81, tester)**
+
+- [ ] Adicionar `vitest` como devDependency, `vitest.config.ts` (environment `node`,
+      alias `@` → raiz do projeto) e o script `"test": "vitest run"` no `package.json`.
+- [ ] **`exclude` obrigatório de `e2e/**` no `vitest.config.ts`** — senão o Vitest tenta
+      coletar os specs do Playwright e o `npm test` quebra.
+- [ ] Testes em `tests/` (ou `lib/__tests__/`), cobrindo no mínimo:
+  - `parseBlocks` (`lib/content.ts`) — função pura: heading, parágrafo, **lista**,
+    **tabela**, bloco de código e Markdown vazio.
+  - `getSection` — slug válido do `SLUG_MAP` retorna conteúdo; **slug inexistente
+    retorna `null`** (não lança).
+  - `getCourse` / `getCenter` — ficha existente vs. slug inexistente (`null`).
+  - `listSections` / `listCourses` / `listCenters` — retornam arrays não vazios e com
+    os campos do frontmatter esperados.
+  - `search` — termo existente retorna resultado com snippet; termo inexistente retorna
+    array vazio; busca vazia não explode.
+  - Frontmatter ausente ou malformado não derruba o loader.
+  - `stripHtml` (`lib/seo.ts`) — cobrir **pelo comportamento de `faqPageSchema`**
+    (a função é privada; **não** exportá-la só para testar).
+- [ ] Novo workflow `.github/workflows/unit.yml` (push + PR → `main`, Node 20, `npm ci`,
+      `npm test`). Não renomear nem reestruturar `e2e.yml` — os checks atuais do PR
+      continuam com o mesmo nome.
+- [ ] Os testes devem passar **sem servidor rodando** (o loader lê `docs/` do disco).
+- [ ] Não alterar o comportamento de `lib/content.ts` nem de `lib/seo.ts` neste sprint.
+      Se um teste revelar bug real, registrar o achado na retrospectiva e acionar o
+      `debugger` — não "ajustar o teste" para o comportamento errado passar.
+
+### Ordem de execução
+
+```
+Wave 1 — paralelo (arquivos disjuntos):
+  frontend-dev A — B-79 + B-80: app/icon.tsx, app/apple-icon.tsx,
+                   app/opengraph-image.tsx  (arquivos novos; não toca package.json)
+  frontend-dev B — B-82: components/SugerirCorrecao.tsx, components/Footer.tsx,
+                   páginas de conteúdo (secoes/cursos/centros/faq/checklist/mapa)
+  tester         — B-81: vitest.config.ts, tests/, package.json,
+                   .github/workflows/unit.yml
+
+Wave 2 — após Wave 1:
+  tester         — npm run lint + npm run build + npm test + Playwright 8/8
+
+Wave 3 — após Wave 2 (frontend mudou):
+  ui-ux-review   — Footer + link "Sugerir correção" (contraste, foco, mobile,
+                   dark mode) e inspeção visual do cartão de OG
+```
+
+> **Nota de coordenação:** só o `tester` toca `package.json` neste sprint (Vitest).
+> `next/og` já vem com o Next 15 — o `frontend-dev` **não** deve instalar nada.
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm run build` passa (nenhuma página de conteúdo perdida; rotas novas de
+      `icon`/`apple-icon`/`opengraph-image` podem somar entradas ao output)
+- [ ] `npm test` (Vitest) passa — e falha de verdade se `lib/content.ts` regredir
+- [ ] Playwright 8/8 sem regressões
+- [ ] Favicon visível na aba (`/icon`) e `og:image` absoluto no HTML de `/`
+- [ ] Link "Sugerir correção" abre a issue pré-preenchida com a página de origem
+- [ ] Disclaimer obrigatório do rodapé preservado em toda página
+- [ ] `ui-ux-review` sem findings bloqueadores
+- [ ] `docs/product-backlog.md` atualizado (B-79, B-80, B-81, B-82)
+- [ ] README/CLAUDE.md atualizados (script `npm test`, novos arquivos em `app/`, v1.24)
+- [ ] Issue #46 comentada/fechada com o escopo entregue e o que ficou para v2.0
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| Formulário interno de sugestões + banco | Depende de B-50 + B-37 + E13 — horizonte v2.0 |
+| Imagem de OG por curso/centro | Cartão sitewide primeiro; por rota só se houver demanda |
+| B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
+| E9 / E10 / E11 / E12 | Futuro, sem pré-requisitos resolvidos |
+| Refatorar `lib/content.ts` | Sprint de cobertura, não de mudança de comportamento |
+
+### Retrospectiva do Sprint 30
+
+**Concluído em:** 2026-09-08
+
+**Entregue:**
+
+- **B-79 — Favicon próprio:** `app/icon.tsx` (32×32) e `app/apple-icon.tsx` (180×180) via
+  `ImageResponse` do `next/og`, sem dependência nova. Símbolo próprio do portal — quadrado com o
+  `hero-gradient` (`#156bf4` → `#8c35e3`, os hex exatos do `tailwind.config.ts`) e chapéu de
+  formatura branco, o mesmo do `Header`, redesenhado como SVG inline porque o Satori não renderiza
+  componentes React. Sem brasão da UFSC.
+- **B-80 — Imagem de Open Graph:** `app/opengraph-image.tsx` (1200×630), fonte padrão do Satori
+  (build sem rede). O cartão carrega a linha *"Projeto independente. Não é um site oficial da UFSC."*
+  **Achado importante:** seis páginas definiam `openGraph` próprio **sem** `images`, o que substitui
+  integralmente o objeto herdado do layout e descartava a imagem — as seis foram corrigidas para
+  herdar. Com isso o **B-47 finalmente fecha completo**.
+- **B-82 — Botão "Sugerir correção" (issue #46):** `components/SugerirCorrecao.tsx` ao fim das seis
+  rotas de conteúdo + link genérico no `Footer`. Aponta para `atualizacao-conteudo.yml` — decisão do
+  Scrum Master que refina a sugestão do Product Owner (`sugestao.yml`): é o template correto para
+  "informação errada/desatualizada" e **exige campo de fonte oficial**, preservando a regra de ouro.
+- **B-81 — Testes unitários:** Vitest + `vitest.config.ts` + script `npm test` + workflow novo
+  `unit.yml`. **42 testes** cobrindo `parseBlocks`, `getSection`/`getCourse`/`getCenter`, as funções
+  de listagem, `search` e `stripHtml` (indiretamente, sem expor a função privada). Suíte validada
+  por quebra intencional do loader.
+
+**Bug real encontrado e corrigido (não estava no escopo planejado):**
+
+A suíte do B-81 revelou que `gray-matter` **lança exceção** com frontmatter YAML malformado e que
+nenhuma função de `lib/content.ts` protegia a chamada. Como `listCourses()`/`listCenters()` varrem
+todos os arquivos, **um único arquivo quebrado em `docs/` derrubava `/api/courses`, `/api/centros`,
+`/cursos`, `/centros` e o próprio `npm run build`** — falha esperada num projeto cujo conteúdo vem
+de PRs da comunidade estudantil. O `tester` registrou o achado como `it.fails` em vez de mascarar;
+o `debugger` corrigiu com um helper `safeMatter()`: busca de item único retorna `null` (igual a
+arquivo inexistente), listagem **pula** o arquivo e continua, e ambos emitem `console.warn` com o
+caminho. O `it.fails` virou teste normal e ganhou um irmão provando que uma ficha quebrada não
+apaga as outras 111.
+
+**Findings do `ui-ux-review` (ambos corrigidos):**
+
+| Severidade | Finding | Correção |
+|------------|---------|----------|
+| major | `text-primary` como cor de texto dá **4.33:1** sobre `--background` — abaixo de AA para o link de 14px semibold. Passava só sobre o card branco (4.75:1), e as seis instâncias em página ficam sobre o fundo do app. | Novo token `--primary-link` (claro `217 91% 45%` = 5.45:1; escuro `217 91% 62%` = 5.25:1), exposto como `text-primary-link`. **`--primary-button` não serve como cor de texto** — no escuro dá 2.97:1, é token de fundo. Ratios em `docs/identidade-visual.md`. |
+| major | `aria-label` fixo dizia "para esta página", mas a instância do rodapé é global e aponta para a home — em qualquer página que não fosse a home, o nome acessível descrevia algo que o link não faz. | Nome acessível agora vem da prop `rotulo`; o `Footer` passa a versão global. |
+| minor | Links pré-existentes (`"Voltar para o início"`) têm o mesmo problema de contraste. | Fora do escopo do sprint — registrado como **B-83**. |
+
+**Verificação final:**
+
+- `npm run lint` → sem warnings ou erros
+- `npm test` → **42/42** passando
+- `npm run build` → **112/112** páginas SSG
+- Playwright → **8/8**
+- Servindo o build: `/icon` → PNG 32×32, `/apple-icon` → PNG 180×180, `/opengraph-image` → PNG
+  1200×630; `og:image` absoluto e `<link rel="icon">`/`apple-touch-icon` presentes no HTML gerado
+
+**Adiado:**
+
+| Item | Motivo |
+|------|--------|
+| B-83 (varredura de contraste dos links antigos) | Descoberto durante o sprint; fora do escopo aprovado |
+| Cartão de OG por curso/centro | Escopo declarado como fora desde o planejamento |
+| Formulário interno de sugestões + banco | Depende de B-50 + B-37 + E13 (v2.0) |
+| B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
+
+**Para o próximo sprint:**
+
+1. **Processo — despachar agentes em paralelo no mesmo working tree é arriscado.** Três agentes
+   commitando ao mesmo tempo produziram uma corrida no índice do git: dois deles absorveram
+   arquivos alheios num commit e tiveram que desfazer com `git reset --soft`. Nada se perdeu (a
+   auditoria final mostrou cada commit com os arquivos certos), mas foi sorte, não desenho. Houve
+   também uma falha transitória de build (`ENOENT pages-manifest.json`) por builds concorrentes no
+   mesmo `.next`. Próximo sprint: ou serializar os commits (agentes entregam sem commitar e o Scrum
+   Master commita), ou usar worktrees isolados por agente.
+2. **O `it.fails` funcionou bem** como forma de registrar bug real sem mascarar nem quebrar o CI —
+   vale adotar como padrão quando um teste revelar defeito fora do escopo.
+3. **O backlog executável está quase vazio.** Só B-83 (P) sobrou. Destravar B-13/B-10/B-08 exige a
+   decisão do mantenedor sobre v2.0 (banco + auth + moderação) — é uma decisão de produto e de
+   custo de infra, não de sprint planning.
+
+---
+
 ## Sprint 29 — Mensagem de contribuição estilo MyUFSC + auditoria de campos `_A preencher_` (v1.23)
 
 **Objetivo:** Duas frentes independentes. **(A)** Reformular a mensagem de contribuição do

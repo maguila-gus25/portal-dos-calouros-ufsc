@@ -20,6 +20,7 @@ const config: Config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          link: "hsl(var(--primary-link))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

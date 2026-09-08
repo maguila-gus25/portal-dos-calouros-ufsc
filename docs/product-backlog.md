@@ -116,8 +116,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-51 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **analytics de privacidade** (Vercel Analytics ou Plausible), para **entender quais seções os calouros mais acessam sem rastrear pessoalmente**. `@vercel/analytics` instalado; `<Analytics />` inserido em `app/layout.tsx` após `{children}`; nota de privacidade no `Footer.tsx`: "Usamos Vercel Analytics para contar visitas sem armazenar dados pessoais.". Sem cookies de rastreio. |
 | B-73 | 🟠 Should | 🔴 G | ✅ | Como **calouro**, quero **que as páginas de seção tenham UI adequada ao tipo de dado** (não markdown renderizado cru), para **consumir a informação mais rápido no celular**. (issue #48) **Sprint 17:** links, datas, ru. **Sprint 18:** instagrams, historias. **Sprint 22:** faq (cards Q&A), checklist (cards com ícone de check por fase), mapa (card CTA → /mapa + prose). Todas as 8 seções com componente dedicado — B-73 ✅ fechado. |
 | B-78 | 🟡 Could | 🟢 P | ✅ | Como **calouro com deficiência visual usando o modo escuro**, quero **que os botões azuis tenham contraste suficiente**, para **ler o texto sobre eles**. (dívida técnica do ui-ux-review) **Sprint 18:** token `--primary-button` — dark `217 91% 45%` → branco 6.00:1 (AA); modo claro inalterado; ratios em `docs/identidade-visual.md`. |
-| B-79 | 🟠 Should | 🟢 P | ⬜ | Como **calouro que salvou o portal nos favoritos**, quero **um favicon próprio na aba do navegador**, para **reconhecer o portal entre dez abas abertas**. Hoje não existe `app/icon.*` nem `public/favicon.ico` — o navegador mostra o ícone genérico. Usar o símbolo da identidade (quadrado azul arredondado + chapéu de formatura, coerente com `components/Header.tsx`), nunca o brasão da UFSC. |
-| B-80 | 🟠 Should | 🟢 P | ⬜ | Como **calouro que manda o portal no grupo do WhatsApp**, quero **que o link apareça com imagem de preview**, para **os colegas entenderem o que é antes de clicar**. `openGraph.images` não está definido, então o link sai sem cartão visual no WhatsApp, Discord e Twitter. Era parte do escopo original do B-47, que fechou sem entregar esta metade. Gerar via `app/opengraph-image.tsx` (`ImageResponse`, 1200×630) — sem brasão ou logotipo oficial da UFSC. |
+| B-79 | 🟠 Should | 🟢 P | ✅ | Como **calouro que salvou o portal nos favoritos**, quero **um favicon próprio na aba do navegador**, para **reconhecer o portal entre dez abas abertas**. Hoje não existe `app/icon.*` nem `public/favicon.ico` — o navegador mostra o ícone genérico. Usar o símbolo da identidade (quadrado azul arredondado + chapéu de formatura, coerente com `components/Header.tsx`), nunca o brasão da UFSC. **Sprint 30:** `app/icon.tsx` (32×32) e `app/apple-icon.tsx` (180×180) via `ImageResponse` do `next/og` — sem dependência nova. Símbolo próprio do portal (quadrado com o `hero-gradient` + chapéu de formatura branco, mesmo do `Header`), redesenhado como SVG inline porque o Satori não renderiza componentes React. Verificado servindo o build: `/icon` → PNG 32×32, `/apple-icon` → PNG 180×180, e `<link rel="icon">` + `<link rel="apple-touch-icon">` presentes em todas as páginas. Sem brasão da UFSC. |
+| B-80 | 🟠 Should | 🟢 P | ✅ | Como **calouro que manda o portal no grupo do WhatsApp**, quero **que o link apareça com imagem de preview**, para **os colegas entenderem o que é antes de clicar**. `openGraph.images` não está definido, então o link sai sem cartão visual no WhatsApp, Discord e Twitter. Era parte do escopo original do B-47, que fechou sem entregar esta metade. Gerar via `app/opengraph-image.tsx` (`ImageResponse`, 1200×630) — sem brasão ou logotipo oficial da UFSC. **Sprint 30:** `app/opengraph-image.tsx` (`ImageResponse`, 1200×630, fonte padrão do Satori, sem `fetch` de fonte em build). Cartão com o símbolo do portal, título, subtítulo e a linha *"Projeto independente. Não é um site oficial da UFSC."*. Seis páginas (`/faq`, `/checklist`, `/mapa`, `/secoes/[slug]`, `/cursos/[slug]`, `/centros/[slug]`) definiam `openGraph` próprio **sem** `images`, o que substituía integralmente o herdado do layout e descartava a imagem — corrigido para herdar. `og:image` absoluto (via `metadataBase`) confirmado no HTML gerado. **B-47 finalmente completo.** |
 
 ### E9 — Avaliação de professores (futuro)
 
@@ -167,6 +167,7 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-21 | 🟠 Should | 🟢 P | ✅ | Como **mantenedor**, quero **um template de issue e de PR**, para **padronizar contribuições**. 4 templates de issue (história, conteúdo, link quebrado, sugestão) + PR template criados em `.github/`. |
 | B-22 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **um CODEOWNERS / lista de responsáveis por área**, para **direcionar revisões**. `.github/CODEOWNERS` criado com `@maguila-gus25` como responsável por todas as áreas. |
 | B-23 | 🟡 Could | 🟢 P | ✅ | Como **contribuidor**, quero **um checklist de "fonte oficial" no PR**, para **garantir a regra de ouro**. Coberto pelo PR template (`.github/pull_request_template.md`) criado no Sprint 5. |
+| B-82 | 🟡 Could | 🟢 P | ✅ | Como **calouro que percebe uma informação errada ou desatualizada**, quero **um botão "Sugerir correção" na página**, para **avisar o mantenedor sem precisar saber usar Git/GitHub a fundo**. (issue #46) **Escopo mínimo viável (este sprint):** link/botão nas páginas de conteúdo (seção, curso, centro) que abre o issue template `sugestao.yml` (já existe em `.github/ISSUE_TEMPLATE/`) pré-preenchido via query string do GitHub (`?title=`/`?body=`) com a página de origem — zero backend, reaproveita a infraestrutura de templates do B-21. **Fora de escopo (v2.0):** formulário interno com persistência em banco e fila de moderação — depende de B-50 (Prisma/Postgres) e B-37, e só faz sentido quando planejados junto com E13 (auth). **Sprint 30:** `components/SugerirCorrecao.tsx` renderizado ao fim de `/secoes/[slug]`, `/cursos/[slug]`, `/centros/[slug]`, `/faq`, `/checklist`, `/mapa` + link genérico no `Footer` (disponível em toda página). Aponta para o template **`atualizacao-conteudo.yml`** (e não `sugestao.yml`): é o semanticamente correto para "informação errada/desatualizada" e já exige o campo **fonte oficial**, preservando a regra de ouro. Pré-preenche `title` e a URL canônica de origem em `dado_atual` via `URLSearchParams`; o dropdown `arquivo` **não** é pré-preenchido de propósito (o GitHub ignora valor fora das opções). Fecha a issue #46 no escopo mínimo viável. |
 
 ### E6 — Confiabilidade e manutenção
 
@@ -177,7 +178,8 @@ mostra as ondas (v0, v0.1…), este backlog detalha os itens.
 | B-26 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **uma rotina semestral de revisão** (issue recorrente), para **atualizar datas e valores**. Workflow `.github/workflows/revisao-semestral.yml` dispara todo 1º de fev. e 1º de ago. |
 | B-54 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **testes E2E com Playwright no CI** (home, busca, seção, curso), para **detectar regressões de UI antes do deploy**. `playwright.config.ts` + `e2e/smoke.spec.ts` (8 testes, 8/8 passed); `.github/workflows/e2e.yml` (push + PR → main, chromium, artifacts). |
 | B-55 | 🟡 Could | 🟢 P | ✅ | Como **mantenedor**, quero **Lighthouse CI** (Core Web Vitals ≥ 90 em Performance, Accessibility, SEO), para **garantir qualidade técnica a cada PR**. `lighthouserc.json` na raiz com assertions performance/accessibility/seo >= 0.9; `.github/workflows/lighthouse.yml` em PRs para main com `npm run build && npx lhci autorun`; artifact do report salvo por 30 dias; `@lhci/cli` adicionado como devDependency. |
-| B-81 | 🟠 Should | 🟡 M | ⬜ | Como **mantenedor**, quero **testes unitários do loader de conteúdo** (`lib/content.ts`), para **quebrar o build quando o parse de Markdown regredir, em vez de descobrir pela página torta**. Hoje só existe e2e em Playwright (B-54), que exercita o loader de fora e não cobre os casos de borda do parser — frontmatter ausente ou malformado, `SLUG_MAP` apontando para arquivo inexistente, blocos de tabela e lista, `stripHtml` do `lib/seo.ts`. Adicionar Vitest, script `npm test` e rodar no CI junto do e2e. |
+| B-81 | 🟠 Should | 🟡 M | ✅ | Como **mantenedor**, quero **testes unitários do loader de conteúdo** (`lib/content.ts`), para **quebrar o build quando o parse de Markdown regredir, em vez de descobrir pela página torta**. Hoje só existe e2e em Playwright (B-54), que exercita o loader de fora e não cobre os casos de borda do parser — frontmatter ausente ou malformado, `SLUG_MAP` apontando para arquivo inexistente, blocos de tabela e lista, `stripHtml` do `lib/seo.ts`. Adicionar Vitest, script `npm test` e rodar no CI junto do e2e. **Sprint 30:** Vitest + `vitest.config.ts` (`environment: node`, alias `@`, `exclude` de `e2e/**` para não coletar os specs do Playwright), script `npm test` e workflow novo `.github/workflows/unit.yml` (o `e2e.yml` não foi renomeado, para os checks do PR manterem o nome). **42 testes** em `tests/content.test.ts` e `tests/seo.test.ts` cobrindo `parseBlocks` (heading/parágrafo/lista/tabela/código/vazio), `getSection`/`getCourse`/`getCenter` (slug inexistente → `null`), `listSections`/`listCourses`/`listCenters`, `search` e `stripHtml` (indiretamente por `faqPageSchema`, sem exportá-la). Suíte validada por quebra intencional do loader. Assertivas por invariante, não por contagem exata. |
+| B-83 | 🟡 Could | 🟢 P | ⬜ | Como **calouro com baixa visão**, quero **que todos os links azuis no corpo das páginas passem em WCAG AA**, para **conseguir lê-los sobre o fundo cinza-claro do app**. (dívida técnica do `ui-ux-review` do Sprint 30) `text-primary` como cor de texto dá **4.33:1** sobre `--background` — passa sobre o card branco (4.75:1), falha no corpo da página. O Sprint 30 criou o token `--primary-link` (`text-primary-link`, 5.45:1 no claro / 5.25:1 no escuro) e o aplicou no `SugerirCorrecao`, mas os links pré-existentes que ainda usam `text-primary` sobre `--background` — ex.: "Voltar para o início" em `/secoes/[slug]`, `/cursos/[slug]`, `/centros/[slug]`, `/faq`, `/checklist`, `/mapa` — seguem em 4.33:1. Varrer e migrar. Ratios em `docs/identidade-visual.md`. |
 
 ### E7 — Expansão para outros centros
 
@@ -287,6 +289,41 @@ Eng. Aquicultura, Zootecnia). B-60 continua 🚧; B-61 passa para 🚧.
 Educação do Campo, Arquivologia e Biblioteconomia preenchidos; duração de Pedagogia
 corrigida no frontmatter; coordenadora de Ciências Biológicas (Profª. Daniela De Toni)
 e EJ Simbiosis encontrados; CAEF Instagram (@caefufsc) do CDS confirmado.
+
+**Sprint 29 concluído (v1.23):** Mensagem de contribuição estilo MyUFSC no `Footer`
+(B-35, revisão) + auditoria completa dos ~460 campos `_A preencher_` das 97
+fichas/docs (B-08) — campos localizáveis preenchidos com fonte oficial; restante
+confirmado como estruturalmente bloqueado (coordenadores não publicados em
+CFH/CFM, e-mails anti-spam por imagem, atléticas/EJ inexistentes) ou dependente
+de submissão real de veterano (B-10/B-13). Também abriu B-79, B-80 e B-81 no
+backlog para as lacunas técnicas identificadas (favicon, OG image, testes
+unitários do loader).
+
+**Sprint 30 concluído (v1.24):** Lacunas técnicas fechadas — **B-79** (favicon
+próprio via `app/icon.tsx` + `app/apple-icon.tsx`), **B-80** (cartão de Open Graph
+1200×630 via `app/opengraph-image.tsx`, completando o escopo que o B-47 deixou
+pendente), **B-82** (botão "Sugerir correção" abrindo issue pré-preenchida — fecha
+a issue #46 no escopo mínimo viável) e **B-81** (Vitest com 42 testes unitários do
+loader + workflow `unit.yml` no CI). A suíte do B-81 revelou um bug real de
+robustez — `gray-matter` lançava exceção com frontmatter YAML malformado e nenhuma
+função de `lib/content.ts` protegia a chamada, então **um único arquivo quebrado em
+`docs/` derrubava `/api/courses`, `/api/centros` e o próprio build**; corrigido pelo
+`debugger` com `safeMatter()`. O `ui-ux-review` achou uma falha de contraste AA
+(`text-primary` em 4.33:1 sobre `--background`), corrigida com o novo token
+`--primary-link`; a varredura dos links pré-existentes virou **B-83**.
+
+**Sprint 31 — candidatos:**
+
+> Continua sem conteúdo desbloqueado (B-08 cauda, B-10 e B-13 seguem aguardando
+> submissões reais de veterano). O backlog executável hoje é pequeno — este é o
+> momento natural para o mantenedor decidir se abre o planejamento conjunto de v2.0.
+
+1. **B-83** — varredura dos links `text-primary` sobre `--background` para
+   `text-primary-link` (frontend-dev) — Could, P. Dívida do `ui-ux-review`.
+2. **B-37 + B-50 + E13** — formulário de histórias + banco + auth OAuth. **Requer
+   decisão do mantenedor**, não do Scrum Master: define custo de infra (Postgres),
+   política de moderação e LGPD. É o único caminho para destravar B-13, B-10 e a
+   cauda do B-08, que hoje bloqueiam ~460 campos e todo o épico de histórias.
 
 **Radar (v2.0):**
 
