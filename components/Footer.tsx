@@ -30,6 +30,7 @@ export function Footer() {
           titulo="Portal dos Calouros UFSC — sugestão geral"
           caminho="/"
           contexto="Achou algo errado ou desatualizado no portal? A sugestão vai direto para os estudantes que mantêm o site, não para a UFSC."
+          rotulo="Sugerir correção no portal aos mantenedores estudantis (abre uma issue no GitHub em nova aba)"
           className="mt-4 pt-4 border-t border-border"
         />
         <p className="text-xs mt-4 text-muted-foreground">

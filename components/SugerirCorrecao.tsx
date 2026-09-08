@@ -16,6 +16,12 @@ interface SugerirCorrecaoProps {
   /** Classe extra opcional para ajustar o encaixe no layout do chamador. */
   className?: string;
   /**
+   * Nome acessível do link. Só precisa ser passado quando o link não se refere
+   * à página em que aparece — é o caso da instância do rodapé, que é global e
+   * aponta sempre para a home, mesmo quando o leitor está numa ficha de curso.
+   */
+  rotulo?: string;
+  /**
    * Texto de introdução, antes do link. Sobrescreve o padrão pensado para o
    * rodapé do site (link genérico, sem contexto de página específica), onde
    * é importante deixar explícito que o destino são os mantenedores
@@ -56,6 +62,7 @@ export function SugerirCorrecao({
   caminho,
   className = "",
   contexto = "Achou algo errado ou desatualizado nesta página?",
+  rotulo = "Sugerir correção para esta página aos mantenedores estudantis (abre uma issue no GitHub em nova aba)",
 }: SugerirCorrecaoProps) {
   const href = buildIssueUrl(titulo, caminho);
 
@@ -66,8 +73,8 @@ export function SugerirCorrecao({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Sugerir correção para esta página aos mantenedores estudantis (abre uma issue no GitHub em nova aba)"
-        className="inline-flex items-center gap-1.5 min-h-[44px] py-2 text-primary hover:underline font-semibold"
+        aria-label={rotulo}
+        className="inline-flex items-center gap-1.5 min-h-[44px] py-2 text-primary-link hover:underline font-semibold"
       >
         <PencilLine size={16} aria-hidden="true" />
         Sugerir correção

@@ -124,6 +124,26 @@ que exige um azul mais escuro para o mesmo contraste — daí o token separado.
 `tailwind.config.ts` (`.btn-primary`) agora usa `hsl(var(--primary-button))`
 em vez de `hsl(var(--primary))`.
 
+**Correção aplicada (Sprint 30, `ui-ux-review`):** `--primary` como **cor de texto**
+passa AA sobre o card branco (**4.75:1**) mas **falha** sobre `--background`
+(`220 13% 96%`) com apenas **4.33:1** — e é justamente sobre `--background` que ficam
+os links no corpo das páginas. Foi introduzido um terceiro token, `--primary-link`,
+exposto no Tailwind como `text-primary-link`:
+
+| Modo | `--primary-link` | sobre `--background` | sobre `--card` |
+|------|------------------|----------------------|----------------|
+| Claro (`:root`) | `217 91% 45%` | **5.45:1** ✅ | **5.98:1** ✅ |
+| Escuro (`.dark`) | `217 91% 62%` | **5.25:1** ✅ | **4.75:1** ✅ |
+
+**Não reaproveitar `--primary-button` como cor de texto:** no modo escuro ele é
+`217 91% 45%`, que sobre o fundo escuro dá apenas **2.97:1**. É um token de *fundo*
+(pensado para texto branco por cima), não de texto — os três tokens têm papéis
+distintos e não são intercambiáveis.
+
+**Dívida remanescente:** os links pré-existentes que ainda usam `text-primary` sobre
+`--background` (ex.: "Voltar para o início" nas páginas de seção/curso/centro) seguem
+em 4.33:1 — varredura registrada como **B-83** no backlog.
+
 ---
 
 ## Tipografia

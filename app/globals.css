@@ -14,6 +14,10 @@
     --primary-foreground: 0 0% 100%;
     /* Dedicated button background token — see `.dark` below for why this isn't just `--primary`. */
     --primary-button: 217 91% 52%;
+    /* Link/text token. `--primary` passa AA sobre o card branco (4.75:1) mas falha sobre
+       `--background` (4.33:1), que é onde ficam os links no corpo das páginas. Este token é
+       escurecido no claro e clareado no escuro para passar AA nas duas superfícies. */
+    --primary-link: 217 91% 45%;
     --secondary: 220 13% 91%;
     --secondary-foreground: 0 0% 9%;
     --muted: 220 13% 91%;
@@ -41,6 +45,10 @@
        lightness makes white-on-primary buttons fail WCAG AA (~3.4:1). Use a darker shade just
        for button backgrounds so `.btn-primary` keeps ≥4.5:1 contrast with white text. */
     --primary-button: 217 91% 45%;
+    /* No escuro o link segue a mesma lightness de `--primary` (5.25:1 sobre o fundo,
+       4.75:1 sobre o card). Não reaproveitar `--primary-button` aqui: como cor de texto
+       ele dá 2.97:1 no escuro — é um token de fundo, não de texto. */
+    --primary-link: 217 91% 62%;
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 18%;
