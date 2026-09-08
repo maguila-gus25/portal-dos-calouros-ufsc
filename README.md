@@ -37,7 +37,8 @@ npm run dev      # servidor Next.js em localhost:3000
 npm run build    # build de produção (SSG)
 npm run lint     # ESLint
 npm test         # testes unitários (Vitest) — loader de conteúdo e SEO
-npm run test:e2e # testes end-to-end (Playwright)
+npm run test:e2e # testes end-to-end (Playwright, sobre o build de produção)
+npm run validate:content # valida o frontmatter das fichas de curso e de centro
 ```
 
 ## Estrutura
@@ -49,7 +50,7 @@ portal-dos-calouros-ufsc/
 │   ├── busca/            ← página de busca
 │   ├── centros/          ← índice de centros (/centros) e página por centro (/centros/[slug])
 │   ├── checklist/        ← checklist da primeira semana
-│   ├── cursos/           ← fichas por curso (/cursos redireciona para /centros)
+│   ├── cursos/           ← listagem global agrupada por centro e ficha por curso
 │   ├── faq/              ← perguntas frequentes
 │   ├── mapa/             ← mapa interativo do campus (Leaflet.js)
 │   ├── secoes/[slug]/    ← seções de conteúdo (RU, links, datas…)
@@ -62,9 +63,10 @@ portal-dos-calouros-ufsc/
 │   └── seo.ts            ← URLs canônicas e builders de JSON-LD
 ├── tests/                ← testes unitários (Vitest) do loader e do SEO
 ├── e2e/                  ← testes end-to-end (Playwright)
+├── scripts/              ← validação do frontmatter das fichas + geração de ícones
 ├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
 │   ├── centros/          ← fichas dos 13 centros publicados
-│   ├── cursos/           ← fichas por curso (112 fichas, todos os centros)
+│   ├── cursos/           ← 71 fichas de curso, cobrindo os 13 centros
 │   ├── arquitetura.md    ← decisões técnicas e ADRs
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
@@ -148,6 +150,7 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.22** — Qualidade: coordenadores e dados de CED/CCB/CDS (Sprint 28)
 - [x] **v1.23** — Mensagem de contribuição estilo MyUFSC + auditoria dos campos `_A preencher_` (CFH/CFM/CCE/CCA) (Sprint 29)
 - [x] **v1.24** — Favicon próprio, imagem de Open Graph, botão "Sugerir correção" e testes unitários do loader (Vitest no CI) (Sprint 30)
+- [x] **v1.25** — Busca encontra centros, ficha de curso linka de volta ao centro, contraste AA dos links e validação de frontmatter no CI (Sprint 31)
 - [ ] **Próximo** — Varredura de contraste dos links antigos (B-83); ou v2.0 (banco + auth), que é o que destrava as histórias de veteranos
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
