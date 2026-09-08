@@ -18,9 +18,15 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    // Serve o build de produção, não `npm run dev`. No dev server cada rota compila
+    // sob demanda na primeira visita, e com vários workers em paralelo essas primeiras
+    // navegações estouravam o timeout — a suíte falhava em 2 ou 3 testes diferentes a
+    // cada rodada, sempre por compilação, nunca por regressão real. Mesma abordagem já
+    // usada pelo Lighthouse CI em `lighthouserc.json`; de quebra, testa o artefato que
+    // de fato vai para a Vercel.
+    command: "npm run build && npm run start",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
+    timeout: 180 * 1000,
   },
 });

@@ -46,9 +46,31 @@ export function SearchResults({ query }: Props) {
   );
 }
 
+function resultHref(result: SearchResult): string {
+  switch (result.type) {
+    case "section":
+      return `/secoes/${result.slug}`;
+    case "course":
+      return `/cursos/${result.slug}`;
+    case "centro":
+      return `/centros/${result.slug}`;
+  }
+}
+
+function resultBadge(type: SearchResult["type"]): string {
+  switch (type) {
+    case "section":
+      return "Seção";
+    case "course":
+      return "Curso";
+    case "centro":
+      return "Centro";
+  }
+}
+
 function ResultItem({ result, query }: { result: SearchResult; query: string }) {
-  const href = result.type === "section" ? `/secoes/${result.slug}` : `/cursos/${result.slug}`;
-  const badge = result.type === "section" ? "Seção" : "Curso";
+  const href = resultHref(result);
+  const badge = resultBadge(result.type);
 
   return (
     <li>

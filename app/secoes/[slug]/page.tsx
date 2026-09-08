@@ -87,7 +87,7 @@ export default async function SectionPage({ params }: Props) {
         ])}
       />
 
-      <Link href="/" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+      <Link href="/" className="inline-flex items-center gap-1 text-sm text-primary-link hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Voltar para o início
       </Link>

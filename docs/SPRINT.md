@@ -4,6 +4,227 @@
 
 ---
 
+## Sprint 31 — Descoberta de conteúdo e rede de segurança do conteúdo (v1.25)
+
+**Objetivo:** O portal tem 13 centros e 112 fichas publicadas, mas o calouro ainda
+não consegue **chegar** neles com facilidade. **(A)** A busca passa a indexar os
+**centros** (hoje `search()` varre só seções e cursos — buscar "CCA" não encontra
+nada). **(B)** A ficha do curso passa a **linkar de volta para o centro**, fechando
+a navegação que hoje é mão única. **(C)** Todos os links azuis do corpo das páginas
+passam a cumprir **WCAG AA** (dívida do `ui-ux-review` do Sprint 30). **(D)** Um PR
+de conteúdo com frontmatter quebrado passa a **falhar no CI** em vez de sumir em
+silêncio do site, e o Playwright passa a cobrir a navegação por centro.
+
+| História | ID | Prioridade / Tam. | Agente | Status |
+|----------|----|-------------------|--------|--------|
+| Busca passa a indexar os 13 centros (loader + testes) | B-84a | Should / P | backend-dev | Done |
+| Busca: `SearchResults` renderiza o tipo "centro" | B-84b | Should / P | frontend-dev | Done |
+| Nome do centro na ficha do curso vira link | B-85 | Should / P | frontend-dev | Done |
+| Varredura de contraste: `text-primary` → `text-primary-link` | B-83 | Could / P | frontend-dev → Scrum Master | Done |
+| Script de validação de frontmatter no CI | B-87 | Should / P | tester | Done |
+| Playwright cobre `/centros` e `/centros/[slug]` | B-88 | Could / P | tester → Scrum Master | Done |
+
+### Critérios de aceite detalhados
+
+**História A — Busca indexa centros (B-84a, backend-dev + B-84b, frontend-dev)**
+
+- [ ] `SearchResult["type"]` em `lib/content.ts` passa a aceitar `"centro"` além de
+      `"section" | "course"`.
+- [ ] `search()` passa a varrer também `docs/centros/*.md` (via `listCenters()`/leitura
+      dos arquivos), aplicando o mesmo critério de match já usado para cursos e seções.
+      Buscar `"CCA"`, `"Agronomia"` ou `"Centro Tecnológico"` retorna o centro.
+- [ ] O loader continua protegido por `safeMatter()` — um centro com YAML quebrado é
+      **pulado**, não derruba a busca. Não reescrever `safeMatter()`.
+- [ ] Testes novos em `tests/content.test.ts`: busca por um centro existente retorna ao
+      menos um resultado com `type: "centro"` e `slug` correspondente ao arquivo em
+      `docs/centros/`. Assertivas por invariante, não por contagem exata (padrão do B-81).
+- [ ] `components/SearchResults.tsx` mapeia `type: "centro"` para `href="/centros/<slug>"`
+      e um badge/rótulo "Centro", coerente com os rótulos já usados para seção e curso.
+      Nenhum resultado pode cair em link quebrado ou badge vazio.
+
+**História B — Centro linkável na ficha do curso (B-85, frontend-dev)**
+
+- [ ] Em `app/cursos/[slug]/page.tsx`, o rótulo `{course.centro}` (hoje `<p>` de texto
+      puro) vira um `<Link href={/centros/${course.centro.toLowerCase()}}>`.
+- [ ] `course.centro` nulo/ausente → renderiza como hoje, **sem** link (não gerar
+      `/centros/undefined`).
+- [ ] Mantém o estilo tipográfico atual do rótulo (uppercase, `text-xs font-medium`), e
+      usa `text-primary-link` — não `text-primary` (ver B-83).
+- [ ] O `breadcrumbSchema` da página **pode** passar a refletir `Início → Centros →
+      {Centro} → {Curso}` se ficar coerente com o fluxo do E14; se ficar ambíguo,
+      **não mexer** — structured data errada é pior que ausente (regra do `CLAUDE.md`).
+
+**História C — Varredura de contraste (B-83, frontend-dev)**
+
+- [ ] Todo `text-primary` usado como **cor de texto de link/rótulo** sobre `--background`
+      migra para `text-primary-link`. Alvos confirmados: `app/faq/page.tsx`,
+      `app/checklist/page.tsx`, `app/mapa/page.tsx`, `app/cursos/page.tsx`,
+      `app/cursos/[slug]/page.tsx`, `app/centros/[slug]/page.tsx`,
+      `app/secoes/[slug]/page.tsx`, `components/Footer.tsx`, e as regras
+      `a { @apply text-primary }` e `.prose-content a` em `app/globals.css`.
+- [ ] **Não** migrar os usos que não são cor de texto sobre o fundo do app:
+      `bg-primary`, `text-primary-foreground`, `group-hover:text-primary` em ícones
+      decorativos, e ícones `aria-hidden`. Contraste AA se aplica a texto, não a
+      decoração — trocar tudo indiscriminadamente empobrece a hierarquia visual.
+- [ ] **Não** reaproveitar `--primary-button` como cor de texto: no escuro dá 2.97:1.
+      É token de fundo. Ratios em `docs/identidade-visual.md`.
+- [ ] Atualizar a seção "Dívida remanescente" de `docs/identidade-visual.md` registrando
+      que a varredura foi feita.
+- [ ] Verificar nos dois modos (claro e escuro).
+
+**História D — Validação de frontmatter no CI (B-87, tester)**
+
+- [ ] Novo `scripts/validate-frontmatter.mjs`: roda `gray-matter` sobre todo
+      `docs/cursos/*.md` e `docs/centros/*.md`; `exit 1` com o caminho do arquivo e a
+      mensagem do erro se o parse lançar exceção.
+- [ ] Valida campos mínimos: fichas de curso exigem `curso`, `slug` e `centro`; fichas de
+      centro exigem `slug` e `titulo`. Campo ausente → falha com o nome do campo e do arquivo.
+- [ ] Campo com valor `_A preencher_` **não** é erro — é a convenção do projeto para dado
+      não confirmado (`CLAUDE.md`). O script não pode empurrar ninguém a inventar dado.
+- [ ] Script novo em `package.json` (ex.: `validate:content`) e job no CI rodando em PRs
+      para `main` (estender `.github/workflows/unit.yml` ou workflow próprio).
+- [ ] Rodar contra o `docs/` atual: **passa** (os 71 cursos + 13 centros estão íntegros).
+      Validar a rede quebrando um arquivo de propósito e desfazendo em seguida.
+- [ ] **Não** alterar `safeMatter()` nem o comportamento de runtime — degradar
+      graciosamente em produção continua certo; isto é a rede no PR, antes do merge.
+
+**História E — Playwright cobre navegação por centro (B-88, tester)**
+
+- [ ] Em `e2e/smoke.spec.ts`, dois casos novos: `/centros` carrega e lista ao menos um
+      card de centro; `/centros/ctc` carrega e contém ao menos um link para `/cursos/<slug>`.
+- [ ] Seletores resilientes (papel/texto acessível), não classes do Tailwind.
+- [ ] Suíte segue verde: 10/10.
+
+### Ordem de execução
+
+O Sprint 30 registrou na retrospectiva que **despachar agentes em paralelo no mesmo
+working tree produziu corrida no índice do git e build concorrente quebrado**. Correção
+de processo adotada aqui: **nenhum agente commita e nenhum agente roda `npm run build`.**
+Os agentes entregam os arquivos; o Scrum Master roda a verificação e commita, em série.
+
+1. **Onda 1 (paralela — arquivos disjuntos):** B-84a (`lib/content.ts`, `tests/`) ‖
+   B-87 (`scripts/`, `.github/workflows/`, `package.json`).
+2. **Onda 2 (paralela — arquivos disjuntos):** B-84b (`components/SearchResults.tsx`) ‖
+   B-85 (`app/cursos/[slug]/page.tsx`).
+3. **Onda 3 (serial):** B-83 — toca `app/cursos/[slug]/page.tsx`, o **mesmo arquivo do
+   B-85**; só entra depois que o B-85 fechou.
+4. **Onda 4:** B-88 (`e2e/smoke.spec.ts`) — depois do B-84b/B-85 para os testes refletirem
+   a navegação já entregue.
+5. **Verificação final:** `tester` roda `npm run lint`, `npm test`, `npm run build` e
+   `npm run test:e2e`.
+
+### Definition of Done
+
+- [ ] `npm run lint` passa
+- [ ] `npm test` (Vitest) passa, incluindo os testes novos de busca por centro
+- [ ] `npm run validate:content` passa e falha de verdade com frontmatter quebrado
+- [ ] `npm run build` passa (112 páginas, nenhuma ficha perdida)
+- [ ] Playwright 10/10
+- [ ] Buscar "CCA" retorna a página do centro; ficha de curso linka para o centro
+- [ ] Nenhum link de corpo de página abaixo de 4.5:1, nos modos claro e escuro
+- [ ] Disclaimer obrigatório do rodapé preservado em toda página
+- [ ] `ui-ux-review` sem findings bloqueadores
+- [ ] `docs/product-backlog.md` atualizado (B-83, B-84, B-85, B-87, B-88)
+- [ ] `README.md`/`CLAUDE.md` sincronizados (script novo, v1.25)
+
+### O que NÃO entra e por quê
+
+| Item | Motivo |
+|------|--------|
+| B-86 (testes das 8 rotas de `app/api/`) | 🟡 M — o único item médio do lote. O sprint já leva cinco entregas; concentrar mais dívida técnica aqui atrasa o valor visível ao calouro (busca e navegação). Primeiro da fila no Sprint 32. |
+| B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
+| B-37 + B-50 + E13 (banco, auth, moderação) | v2.0 — exige decisão do mantenedor sobre custo de infra e LGPD, não é decisão de sprint planning |
+| E9 / E10 / E11 / E12 | Futuro, sem pré-requisitos resolvidos |
+| Refatorar `safeMatter()` | Comportamento correto em produção; o B-87 é rede no PR, não mudança de runtime |
+
+---
+
+### Retrospectiva do Sprint 31
+
+**Concluído em:** 2026-09-08
+
+**Entregue:**
+
+- **B-84 — Busca indexa os 13 centros:** `SearchResult["type"]` aceita `"centro"` e `search()`
+  varre `docs/centros/` espelhando 1:1 o laço de cursos (mesmo critério de match, mesmo
+  `snippet()`, mesma proteção por `safeMatter()`). Na UI, o ternário por tipo virou dois
+  `switch` sem `default` sobre `SearchResult["type"]` — um tipo novo passa a quebrar o
+  build em vez de cair num fallback silencioso. Buscar "CCA", "Agronomia" ou "Centro
+  Tecnológico" agora chega no centro.
+- **B-85 — Centro linkável na ficha do curso:** a navegação curso↔centro deixou de ser mão
+  única. O slug é resolvido por `getCenter()`, não só por `toLowerCase()` — sigla sem
+  centro correspondente cai em texto puro, sem link morto. O breadcrumb passa a
+  `Início → Centros → {Centro} → {Curso}` usando o `center.title` já publicado, e mantém
+  os 3 níveis anteriores quando não há centro resolvido.
+- **B-87 — Validação de frontmatter no CI:** `scripts/validate-frontmatter.mjs` cobre os 84
+  arquivos e falha com mensagem em português para quem não sabe o que é YAML. `_A preencher_`
+  segue válido — a convenção do projeto não pode virar pressão para inventar dado. Roda como
+  step do job `unit` existente, sem somar required check novo à branch protection.
+- **B-88 — Playwright cobre a navegação por centro:** 4 casos novos, sem fixar contagem.
+- **B-83 — Varredura de contraste AA:** links "Voltar…" das seis rotas, `Footer`, `NavLinks`,
+  os seletores `[&_a]` das seções vindas do Markdown e as regras `a`/`.prose-content a` do
+  `globals.css` migrados para `text-primary-link`.
+
+**Achados fora do escopo planejado (os dois valem mais que o escopo original):**
+
+1. **O B-83 escondia uma falha pior que a reportada.** O `ui-ux-review` do Sprint 30 tinha
+   registrado 4.33:1 nos links sobre `--background`. Medindo tudo, os **chips e badges de
+   link** (`LinkCardGrid`, `InstagramSection`) estavam em **4.14:1**, e **3.60:1 no hover** —
+   porque ali o texto fica sobre superfície *tingida de azul* (`bg-primary/10`, `/20`), não
+   sobre o fundo do app. E `--primary-link` **não resolvia**: no escuro ele tem a mesma
+   lightness de `--primary` (62%), e a tinta azul *clareia* o fundo, então o texto precisa ir
+   na direção **oposta** à do modo claro. Daí o quarto token, **`--primary-on-tint`** (claro
+   45%, escuro 70%) — chip 5.22:1 / hover 4.53:1 no claro; 5.51:1 / 4.75:1 no escuro. Os
+   três tokens azuis viraram quatro, cada um com papel documentado e nenhum intercambiável.
+2. **A suíte e2e era flaky e o CI mascarava isso.** Ao somar 4 testes, a suíte passou a falhar
+   em **2 ou 3 testes diferentes a cada rodada** — sempre pré-existentes, sempre por timeout de
+   navegação. Causa: `playwright.config.ts` servia `npm run dev`, onde cada rota compila na
+   primeira visita; com workers em paralelo, as primeiras navegações estouravam o timeout. No CI
+   isso ficava invisível por `workers: 1` + `retries: 2`. Passou a servir o build de produção,
+   como o `lighthouserc.json` já fazia — determinístico, e testa o artefato que vai para a Vercel.
+
+**Findings do `ui-ux-review`:** nenhum blocker ou major. Um **minor pré-existente**: o badge do
+`SearchResults` usa a paleta crua do Tailwind (`bg-blue-100`/`text-blue-700`) em vez dos tokens
+do design system. O B-84b seguiu corretamente o padrão que já estava lá em vez de inventar um
+estilo novo para "Centro". Contraste medido: 5.49:1 no claro, 8.36:1 no escuro — passa AA
+folgado, é inconsistência de sistema, não de acessibilidade. Registrar como dívida e migrar os
+três badges juntos, não só o novo.
+
+**Verificação final:**
+
+- `npm run lint` → sem warnings ou erros
+- `npx tsc --noEmit` → limpo
+- `npm test` → **45/45**
+- `npm run validate:content` → 84/84 arquivos íntegros
+- `npm run build` → **112/112** páginas
+- Playwright → **12/12**, estável em duas rodadas seguidas
+- Tokens novos conferidos no bundle: `text-primary-on-tint{color:hsl(var(--primary-on-tint))}`
+
+**Adiado:**
+
+| Item | Motivo |
+|------|--------|
+| B-86 (testes das 8 rotas de `app/api/`) | Declarado fora de escopo desde o planejamento — único 🟡 M do lote. Primeiro da fila no Sprint 32. |
+| Badges do `SearchResults` em tokens do design system | Dívida pré-existente encontrada no `ui-ux-review`; migrar os três juntos |
+| B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
+| B-37 + B-50 + E13 | v2.0 — decisão do mantenedor sobre infra e LGPD |
+
+**Para o próximo sprint:**
+
+1. **A correção de processo do Sprint 30 funcionou.** Agentes entregaram sem commitar e sem
+   rodar `npm run build`; o Scrum Master verificou e commitou em série. Zero corrida no índice
+   do git e zero build concorrente quebrado, contra três incidentes no sprint passado. **Manter
+   como padrão.**
+2. **Um subagente morreu por limite de sessão (HTTP 429) no meio do B-83** e o trabalho foi
+   concluído pelo Scrum Master direto. Vale saber que o ciclo sobrevive a isso — mas em sprints
+   maiores convém checar o orçamento antes de despachar a última onda.
+3. **Medir antes de migrar valeu o custo.** Se o B-83 tivesse sido uma troca cega de
+   `text-primary` por `text-primary-link`, os chips continuariam reprovando no escuro e o sprint
+   fecharia com a impressão de que a dívida estava paga. Calcular os ratios revelou que o
+   problema não era o token, era a *superfície*.
+
+---
+
 ## Sprint 30 — Identidade na aba, preview de link e rede de testes (v1.24)
 
 **Objetivo:** Fechar as três lacunas técnicas conhecidas do portal e entregar a fatia

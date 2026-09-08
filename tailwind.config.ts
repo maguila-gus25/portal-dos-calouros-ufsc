@@ -21,6 +21,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           link: "hsl(var(--primary-link))",
+          "on-tint": "hsl(var(--primary-on-tint))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

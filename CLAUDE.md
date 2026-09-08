@@ -6,7 +6,7 @@ Projeto de estudantes para estudantes da UFSC. Reúne em um só lugar tudo que u
 
 ## Estado atual
 
-- **v1 (atual, v1.24 — pós-Sprint 30):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
+- **v1 (atual, v1.25 — pós-Sprint 31):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
 - **13 centros publicados** com fichas de curso completas (71 fichas em `docs/cursos/`, 13 em `docs/centros/`).
 - Conteúdo institucional completo em `docs/` (fonte única).
 
@@ -102,7 +102,7 @@ portal-dos-calouros-ufsc/
 │
 ├── e2e/                      ← testes Playwright (end-to-end)
 ├── tests/                    ← testes Vitest (unitários de lib/content.ts e lib/seo.ts)
-├── scripts/                  ← geração de ícones do PWA
+├── scripts/                  ← validate-frontmatter.mjs + geração de ícones do PWA
 ├── public/icons/
 ├── playwright.config.ts
 ├── vitest.config.ts          ← exclui e2e/** para não coletar os specs do Playwright
@@ -183,7 +183,8 @@ npm run dev       # Next.js dev server em localhost:3000
 npm run build     # build de produção
 npm run lint      # ESLint
 npm test          # Vitest (tests/) — unitários do loader e do SEO
-npm run test:e2e  # Playwright (e2e/)
+npm run test:e2e  # Playwright (e2e/) — roda sobre o build de produção
+npm run validate:content  # valida o frontmatter de docs/cursos e docs/centros
 ```
 
 ## Fluxo de trabalho com Git
@@ -231,13 +232,25 @@ Regras ao mexer nisso:
 
 Skills disponíveis para esse trabalho: `seo`, `seo-geo`, `seo-aeo-best-practices`.
 
-## Próximos passos (pós-Sprint 30)
+## Próximos passos (pós-Sprint 31)
 
-Sprint 30 entregou: favicon próprio (B-79), imagem de Open Graph (B-80), botão
-"Sugerir correção" fechando a issue #46 (B-82) e testes unitários do loader com
-Vitest no CI (B-81) — que revelaram e levaram à correção de um bug real: frontmatter
-YAML malformado em um único arquivo de `docs/` derrubava `/api/courses`, `/api/centros`
-e o build inteiro. Agora `lib/content.ts` usa `safeMatter()` e degrada graciosamente.
+Sprint 31 entregou: busca indexando os 13 centros (B-84), ficha de curso linkando de volta
+ao centro (B-85), varredura de contraste AA dos links (B-83), validação de frontmatter no
+CI (B-87) e cobertura Playwright da navegação por centro (B-88).
+
+**Dois achados fora do escopo, ambos corrigidos:**
+
+1. **Quarto token azul, `--primary-on-tint`.** Os chips/badges de link (`LinkCardGrid`,
+   `InstagramSection`) põem texto azul sobre superfície *tingida* (`bg-primary/10`, `/20` no
+   hover) — 4.14:1 e 3.60:1. `--primary-link` **não resolve** isso: no escuro ele tem a mesma
+   lightness de `--primary`, e a tinta *clareia* o fundo, então o texto precisa ir na direção
+   oposta à do modo claro. Os quatro tokens azuis têm papéis distintos e **não** são
+   intercambiáveis — ratios e o que deliberadamente não foi migrado (ícones `aria-hidden`,
+   fundos `bg-primary*`) estão em `docs/identidade-visual.md`.
+2. **A suíte e2e era flaky e o CI mascarava.** `playwright.config.ts` servia `npm run dev`,
+   onde cada rota compila na primeira visita; com workers em paralelo as navegações estouravam
+   o timeout e testes *diferentes* falhavam a cada rodada, invisível no CI por `workers: 1` +
+   `retries: 2`. Agora serve o build de produção, como o `lighthouserc.json` já fazia.
 
 **13 centros publicados:** CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, CTJ, CTS.
 
@@ -250,15 +263,14 @@ bloqueados (aguardam submissões reais).
 Ver `docs/SPRINT.md` para o sprint atual e `docs/product-backlog.md` para o backlog
 completo. Próximas frentes:
 
-1. **B-08 (cauda)** — dicas de veterano e "onde estudar" quando houver submissões reais.
-2. **B-13** — histórias de veteranos (desbloqueado assim que houver submissões via `historia-veterano.yml`).
-3. **B-37 + B-50 + E13** — formulário de histórias + banco de dados + auth OAuth (v2.0, planejamento conjunto necessário).
+1. **B-86** — testes automatizados das 8 rotas de `app/api/` (o `GET()` de cada Route
+   Handler não tem cobertura própria; o e2e só bate em `/api/health`). Primeiro da fila.
+2. **Dívida do `ui-ux-review`** — os badges do `SearchResults` usam a paleta crua do Tailwind
+   (`bg-blue-100`/`text-blue-700`) em vez de tokens. Passa AA (5.49:1 claro, 8.36:1 escuro);
+   é inconsistência de sistema. Migrar os três badges juntos.
+3. **B-08 (cauda)** — dicas de veterano e "onde estudar" quando houver submissões reais.
+4. **B-13** — histórias de veteranos (desbloqueado assim que houver submissões via `historia-veterano.yml`).
+5. **B-37 + B-50 + E13** — formulário de histórias + banco de dados + auth OAuth (v2.0, planejamento conjunto necessário).
 
-Lacunas técnicas conhecidas, já no backlog:
-
-- **B-83 — contraste dos links azuis no corpo das páginas.** `text-primary` como cor de
-  texto dá 4.33:1 sobre `--background` (falha AA). O Sprint 30 criou o token
-  `--primary-link` (`text-primary-link`, 5.45:1 no claro / 5.25:1 no escuro) e o aplicou
-  no `SugerirCorrecao`, mas os links pré-existentes ("Voltar para o início") ainda não
-  foram migrados. **Não** reaproveitar `--primary-button` como cor de texto: no escuro
-  ele dá 2.97:1 — é token de fundo. Ratios em `docs/identidade-visual.md`.
+Lacunas técnicas conhecidas, já no backlog: nenhuma bloqueante no momento — o B-83 fechou a
+dívida de contraste que vinha do Sprint 30.

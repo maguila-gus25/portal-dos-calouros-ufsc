@@ -23,3 +23,6 @@ jobs:
 
       - name: Run unit tests
         run: npm test
+
+      - name: Validate content frontmatter
+        run: npm run validate:content

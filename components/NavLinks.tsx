@@ -9,7 +9,7 @@ export function NavLinks() {
   const linkClass = (href: string, exact = false) => {
     const isActive = exact ? pathname === href : pathname.startsWith(href);
     return `text-sm font-medium transition-colors duration-150 py-2 px-1 ${
-      isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+      isActive ? "text-primary-link" : "text-muted-foreground hover:text-foreground"
     }`;
   };
 

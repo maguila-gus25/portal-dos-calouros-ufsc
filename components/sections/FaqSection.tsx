@@ -136,7 +136,7 @@ function FaqCard({ question }: { question: FaqQuestion }) {
             dangerouslySetInnerHTML={{ __html: heading.html }}
           />
 
-          <div className="space-y-2 text-sm text-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_code]:bg-muted [&_code]:px-1 [&_code]:rounded [&_code]:text-xs [&_code]:font-mono">
+          <div className="space-y-2 text-sm text-foreground leading-relaxed [&_a]:text-primary-link [&_a]:underline [&_strong]:font-semibold [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_code]:bg-muted [&_code]:px-1 [&_code]:rounded [&_code]:text-xs [&_code]:font-mono">
             {mainBody.map((block, i) => (
               <FaqBodyBlock key={i} block={block} />
             ))}
@@ -146,7 +146,7 @@ function FaqCard({ question }: { question: FaqQuestion }) {
             block.type === "blockquote" ? (
               <p
                 key={i}
-                className="mt-3 text-xs text-muted-foreground border-l-2 border-border pl-3 leading-relaxed [&_a]:text-primary [&_a]:underline"
+                className="mt-3 text-xs text-muted-foreground border-l-2 border-border pl-3 leading-relaxed [&_a]:text-primary-link [&_a]:underline"
                 dangerouslySetInnerHTML={{ __html: linkifyContacts(block.html) }}
               />
             ) : null
