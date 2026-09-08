@@ -24,7 +24,9 @@ Act as the **Scrum Master** (`.claude/agents/scrum-master.md`), closing out the 
 
 6. Summarize the sprint outcome for the user.
 
-7. Suggest a preview deploy — **ask first, never deploy automatically**:
-   - **Frontend**: push para `main` dispara auto-deploy na Vercel.
-   - **Backend**: push para `main` dispara auto-deploy no Render.
-   - Se ainda em branch de feature, sugerir abrir o Pull Request e fazer merge para `main`.
+7. Publique o trabalho **sem pedir confirmação**:
+   - Faça `git push` da branch de feature e abra o **Pull Request** para `main` via `gh pr create`,
+     com descrição do que mudou e por quê. Informe a URL do PR ao usuário.
+   - **Não faça o merge.** O `CLAUDE.md` deste repo define GitHub Flow com "merge para `main`
+     após revisão", e o push para `main` dispara auto-deploy em produção na Vercel — essa
+     é a única etapa que continua sendo do mantenedor. Diga isso em uma linha, sem perguntar.

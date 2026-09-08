@@ -33,4 +33,6 @@ Act as the **Scrum Master** (`.claude/agents/scrum-master.md`), running sprint p
    - [ ] README atualizado se houve mudança estrutural
    ```
 
-5. Present the plan to the user and ask for confirmation before they run `/sprint-run`. Do not start implementation in this command.
+5. Present the plan to the user. Do not start implementation in this command.
+
+   > Quando `/sprint-plan` é chamado **sozinho**, pare aqui — o usuário decide quando rodar `/sprint-run`. Quando é chamado **de dentro de `/sprint-cycle`**, não pare e não peça aprovação: siga direto para a execução.
