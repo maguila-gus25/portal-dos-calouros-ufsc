@@ -56,7 +56,7 @@ export interface Course extends CourseSummary {
 }
 
 export interface SearchResult {
-  type: "section" | "course";
+  type: "section" | "course" | "centro";
   slug: string;
   title: string;
   snippet: string;
@@ -347,6 +347,18 @@ export function search(query: string): SearchResult[] {
     const courseSlug = String(data.slug ?? path.basename(filePath, ".md"));
     if (content.toLowerCase().includes(q) || title.toLowerCase().includes(q)) {
       results.push({ type: "course", slug: courseSlug, title, snippet: snippet(content, q) });
+    }
+  }
+
+  for (const filePath of iterCenterFiles()) {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = safeMatter(raw, filePath);
+    if (!parsed) continue;
+    const { content, data } = parsed;
+    const title = String(data.titulo ?? path.basename(filePath, ".md"));
+    const centerSlug = String(data.slug ?? path.basename(filePath, ".md"));
+    if (content.toLowerCase().includes(q) || title.toLowerCase().includes(q)) {
+      results.push({ type: "centro", slug: centerSlug, title, snippet: snippet(content, q) });
     }
   }
 

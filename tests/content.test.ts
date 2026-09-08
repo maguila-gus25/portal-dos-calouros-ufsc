@@ -262,7 +262,7 @@ describe("search", () => {
     const results = search("CAGR");
     expect(results.length).toBeGreaterThan(0);
     for (const result of results) {
-      expect(["section", "course"]).toContain(result.type);
+      expect(["section", "course", "centro"]).toContain(result.type);
       expect(result.slug.length).toBeGreaterThan(0);
       expect(result.title.length).toBeGreaterThan(0);
       expect(result.snippet.length).toBeGreaterThan(0);
@@ -286,5 +286,25 @@ describe("search", () => {
     const upper = search("CAGR");
     const lower = search("cagr");
     expect(lower.length).toBe(upper.length);
+  });
+
+  it("busca por um centro existente retorna resultado type: centro com o slug do arquivo em docs/centros/", () => {
+    const [primeiro] = listCenters();
+    expect(primeiro).toBeDefined();
+    const results = search(primeiro.title);
+    const encontrado = results.find((r) => r.type === "centro" && r.slug === primeiro.slug);
+    expect(encontrado).toBeDefined();
+  });
+
+  it('busca por "Agronomia" retorna o centro CCA', () => {
+    const results = search("Agronomia");
+    const encontrado = results.find((r) => r.type === "centro" && r.slug === "cca");
+    expect(encontrado).toBeDefined();
+  });
+
+  it('busca por "Centro Tecnológico" retorna o centro CTC', () => {
+    const results = search("Centro Tecnológico");
+    const encontrado = results.find((r) => r.type === "centro" && r.slug === "ctc");
+    expect(encontrado).toBeDefined();
   });
 });
