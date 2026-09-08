@@ -45,7 +45,7 @@ function Steps({ list }: { list: ListBlock }) {
             {i + 1}
           </span>
           <div
-            className="flex-1 pt-0.5 text-sm text-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold"
+            className="flex-1 pt-0.5 text-sm text-foreground leading-relaxed [&_a]:text-primary-link [&_a]:underline [&_strong]:font-semibold"
             dangerouslySetInnerHTML={{ __html: linkifyContacts(item.html) }}
           />
         </li>

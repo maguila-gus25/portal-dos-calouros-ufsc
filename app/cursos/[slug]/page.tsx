@@ -107,7 +107,7 @@ export default async function CoursePage({ params }: Props) {
       />
       <JsonLd schema={breadcrumbSchema(breadcrumbCrumbs)} />
 
-      <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+      <Link href="/cursos" className="inline-flex items-center gap-1 text-sm text-primary-link hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os cursos
       </Link>

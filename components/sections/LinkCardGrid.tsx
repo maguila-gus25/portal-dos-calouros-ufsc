@@ -54,7 +54,7 @@ export function LinkCardGrid({ table }: { table: TableBlock }) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-2 min-h-[44px] transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-primary-on-tint bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-2 min-h-[44px] transition-colors"
                 >
                   <ExternalLink size={12} aria-hidden />
                   {hostnameLabel(url)}

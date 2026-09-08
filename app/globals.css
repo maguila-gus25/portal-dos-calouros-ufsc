@@ -18,6 +18,11 @@
        `--background` (4.33:1), que é onde ficam os links no corpo das páginas. Este token é
        escurecido no claro e clareado no escuro para passar AA nas duas superfícies. */
     --primary-link: 217 91% 45%;
+    /* Texto sobre superfície *tingida* de azul (`bg-primary/10`, e `/20` no hover):
+       chips de link e badges. A tinta escurece o fundo o suficiente para derrubar
+       `--primary` a 4.14:1 (3.60:1 no hover) — abaixo de AA. Ver ratios em
+       docs/identidade-visual.md. */
+    --primary-on-tint: 217 91% 45%;
     --secondary: 220 13% 91%;
     --secondary-foreground: 0 0% 9%;
     --muted: 220 13% 91%;
@@ -49,6 +54,10 @@
        4.75:1 sobre o card). Não reaproveitar `--primary-button` aqui: como cor de texto
        ele dá 2.97:1 no escuro — é um token de fundo, não de texto. */
     --primary-link: 217 91% 62%;
+    /* No escuro a tinta azul *clareia* o fundo do chip, então o texto precisa ir na
+       direção oposta ao do modo claro: `--primary-link` aqui daria os mesmos 4.17:1
+       (3.60:1 no hover). Mesmo princípio dos overrides `.dark .icon-*` abaixo. */
+    --primary-on-tint: 217 91% 70%;
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 18%;
@@ -76,7 +85,7 @@
   }
 
   a {
-    @apply text-primary hover:underline;
+    @apply text-primary-link hover:underline;
   }
 }
 
@@ -143,7 +152,7 @@
 }
 
 .prose-content a {
-  @apply text-primary underline underline-offset-2 hover:opacity-80;
+  @apply text-primary-link underline underline-offset-2 hover:opacity-80;
 }
 
 .prose-content strong {

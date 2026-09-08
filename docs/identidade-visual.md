@@ -140,9 +140,38 @@ exposto no Tailwind como `text-primary-link`:
 (pensado para texto branco por cima), não de texto — os três tokens têm papéis
 distintos e não são intercambiáveis.
 
-**Dívida remanescente:** os links pré-existentes que ainda usam `text-primary` sobre
-`--background` (ex.: "Voltar para o início" nas páginas de seção/curso/centro) seguem
-em 4.33:1 — varredura registrada como **B-83** no backlog.
+**Varredura concluída (Sprint 31, B-83):** todos os links pré-existentes que usavam
+`text-primary` como cor de texto migraram para `text-primary-link` — os links "Voltar
+para…" de `/faq`, `/checklist`, `/mapa`, `/cursos`, `/cursos/[slug]`, `/centros/[slug]`
+e `/secoes/[slug]`, o link do `Footer`, o estado ativo do `NavLinks`, os seletores
+`[&_a]` das seções renderizadas a partir do Markdown, e as regras `a` e `.prose-content a`
+do `globals.css`.
+
+**Quarto token, `--primary-on-tint` (Sprint 31):** a varredura revelou uma falha *pior*
+que a original, em chips e badges de link (`LinkCardGrid`, `InstagramSection`), onde o
+texto azul fica sobre uma superfície **tingida de azul** (`bg-primary/10`, `/20` no hover)
+em vez do fundo do app. A tinta aproxima fundo e texto nos **dois** modos:
+
+| Superfície | `--primary` | `--primary-link` | `--primary-on-tint` |
+|------------|-------------|------------------|---------------------|
+| Claro, `bg-primary/10` sobre card | 4.14:1 ❌ | 5.22:1 ✅ | 5.22:1 ✅ |
+| Claro, `bg-primary/20` (hover) | 3.60:1 ❌ | 4.53:1 ✅ | 4.53:1 ✅ |
+| Escuro, `bg-primary/10` sobre card | 4.17:1 ❌ | 4.17:1 ❌ | 5.51:1 ✅ |
+| Escuro, `bg-primary/20` (hover) | 3.60:1 ❌ | 3.60:1 ❌ | 4.75:1 ✅ |
+
+No escuro, `--primary-link` tem a mesma lightness de `--primary` (62%) e portanto **não
+resolve** o caso do chip: a tinta azul *clareia* o fundo, então o texto precisa ir na
+direção oposta à do modo claro. `--primary-on-tint` é `217 91% 45%` no claro e
+`217 91% 70%` no escuro — mesmo princípio dos overrides `.dark .icon-*`.
+
+**Deliberadamente NÃO migrado** (para o próximo `ui-ux-review` não reabrir como
+esquecimento): `bg-primary*` (fundos), `text-primary-foreground` (texto sobre azul), e
+`text-primary`/`group-hover:text-primary` em **ícones decorativos** marcados `aria-hidden`
+— `app/page.tsx`, `app/cursos/page.tsx`, `app/centros/page.tsx`, `app/centros/[slug]/page.tsx`,
+`app/cursos/[slug]/page.tsx` (ícones de contato), `ChecklistSection` (`CheckCircle2`) e
+`HistoriasSection` (`Quote`). O critério de contraste de texto do WCAG AA não se aplica a
+decoração, e migrar tudo indiscriminadamente achataria a hierarquia visual sem ganho de
+acessibilidade.
 
 ---
 

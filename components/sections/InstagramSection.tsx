@@ -92,7 +92,7 @@ function ProfileGrid({ table, badge }: { table: TableBlock; badge?: Badge }) {
                   <span
                     className={
                       badge === "Oficial"
-                        ? "text-[10px] font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+                        ? "text-[10px] font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary-on-tint"
                         : "text-[10px] font-medium px-2 py-0.5 rounded-full bg-muted text-foreground"
                     }
                   >
@@ -114,7 +114,7 @@ function ProfileGrid({ table, badge }: { table: TableBlock; badge?: Badge }) {
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-2 min-h-[44px] transition-colors self-start"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-primary-on-tint bg-primary/10 hover:bg-primary/20 rounded-full px-3 py-2 min-h-[44px] transition-colors self-start"
             >
               <ExternalLink size={12} aria-hidden />
               {profile.handle ?? "Ver perfil"}
@@ -124,7 +124,7 @@ function ProfileGrid({ table, badge }: { table: TableBlock; badge?: Badge }) {
           ) : (
             profile.fallbackHtml && (
               <p
-                className="text-xs text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline"
+                className="text-xs text-muted-foreground leading-relaxed [&_a]:text-primary-link [&_a]:underline"
                 dangerouslySetInnerHTML={{ __html: profile.fallbackHtml }}
               />
             )

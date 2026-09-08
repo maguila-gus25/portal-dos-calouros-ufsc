@@ -19,7 +19,7 @@ export function Footer() {
               href="https://github.com/maguila-gus25/portal-dos-calouros-ufsc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-primary hover:underline font-medium"
+              className="inline-flex items-center gap-1.5 text-primary-link hover:underline font-medium"
             >
               <GitFork size={14} aria-hidden="true" />
               Repositório

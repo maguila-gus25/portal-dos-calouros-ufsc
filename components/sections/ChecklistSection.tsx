@@ -131,7 +131,7 @@ function TaskCardList({ list }: { list: ListBlock }) {
               aria-hidden
             />
             <div
-              className="flex-1 text-sm text-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_code]:bg-muted [&_code]:px-1 [&_code]:rounded [&_code]:text-xs [&_code]:font-mono"
+              className="flex-1 text-sm text-foreground leading-relaxed [&_a]:text-primary-link [&_a]:underline [&_strong]:font-semibold [&_code]:bg-muted [&_code]:px-1 [&_code]:rounded [&_code]:text-xs [&_code]:font-mono"
               dangerouslySetInnerHTML={{ __html: cleanHtml }}
             />
           </li>

@@ -53,7 +53,7 @@ export default function CoursesPage() {
         ])}
       />
 
-      <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+      <Link href="/centros" className="inline-flex items-center gap-1 text-sm text-primary-link hover:underline">
         <ChevronLeft size={15} aria-hidden />
         Todos os centros
       </Link>
