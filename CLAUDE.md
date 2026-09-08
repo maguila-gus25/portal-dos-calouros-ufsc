@@ -6,7 +6,7 @@ Projeto de estudantes para estudantes da UFSC. Reúne em um só lugar tudo que u
 
 ## Estado atual
 
-- **v1 (atual, v1.23 — pós-Sprint 29):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
+- **v1 (atual, v1.24 — pós-Sprint 30):** plataforma Next.js 15 App Router full-stack — frontend e API no mesmo projeto, hospedado inteiramente na Vercel.
 - **13 centros publicados** com fichas de curso completas (71 fichas em `docs/cursos/`, 13 em `docs/centros/`).
 - Conteúdo institucional completo em `docs/` (fonte única).
 
@@ -57,6 +57,9 @@ portal-dos-calouros-ufsc/
 │   ├── sitemap.ts
 │   ├── robots.ts
 │   ├── manifest.ts
+│   ├── icon.tsx              ← favicon 32×32 (ImageResponse do next/og)
+│   ├── apple-icon.tsx        ← ícone 180×180 para o atalho no iOS
+│   ├── opengraph-image.tsx   ← cartão 1200×630 de preview de link
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx              ← Home
@@ -97,10 +100,12 @@ portal-dos-calouros-ufsc/
 │   ├── deploy.md
 │   └── _modelo-curso.md      ← template para criar novo curso
 │
-├── e2e/                      ← testes Playwright
+├── e2e/                      ← testes Playwright (end-to-end)
+├── tests/                    ← testes Vitest (unitários de lib/content.ts e lib/seo.ts)
 ├── scripts/                  ← geração de ícones do PWA
 ├── public/icons/
 ├── playwright.config.ts
+├── vitest.config.ts          ← exclui e2e/** para não coletar os specs do Playwright
 ├── lighthouserc.json         ← thresholds do Lighthouse CI
 ├── eslint.config.mjs
 ├── postcss.config.mjs
@@ -177,6 +182,7 @@ npm install
 npm run dev       # Next.js dev server em localhost:3000
 npm run build     # build de produção
 npm run lint      # ESLint
+npm test          # Vitest (tests/) — unitários do loader e do SEO
 npm run test:e2e  # Playwright (e2e/)
 ```
 
@@ -225,10 +231,13 @@ Regras ao mexer nisso:
 
 Skills disponíveis para esse trabalho: `seo`, `seo-geo`, `seo-aeo-best-practices`.
 
-## Próximos passos (pós-Sprint 29)
+## Próximos passos (pós-Sprint 30)
 
-Sprint 29 entregou: mensagem de contribuição estilo MyUFSC no rodapé e a auditoria
-dos ~460 campos `_A preencher_` das 97 fichas.
+Sprint 30 entregou: favicon próprio (B-79), imagem de Open Graph (B-80), botão
+"Sugerir correção" fechando a issue #46 (B-82) e testes unitários do loader com
+Vitest no CI (B-81) — que revelaram e levaram à correção de um bug real: frontmatter
+YAML malformado em um único arquivo de `docs/` derrubava `/api/courses`, `/api/centros`
+e o build inteiro. Agora `lib/content.ts` usa `safeMatter()` e degrada graciosamente.
 
 **13 centros publicados:** CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, CTJ, CTS.
 
@@ -247,8 +256,9 @@ completo. Próximas frentes:
 
 Lacunas técnicas conhecidas, já no backlog:
 
-- **B-79 — sem favicon.** Não existe `app/icon.*` nem `public/favicon.ico`.
-- **B-80 — sem imagem de OG.** `openGraph.images` não está definido; links compartilhados
-  no WhatsApp e Discord aparecem sem preview visual.
-- **B-81 — sem testes unitários.** Existe e2e em Playwright, mas o loader de `lib/content.ts`
-  não tem cobertura unitária.
+- **B-83 — contraste dos links azuis no corpo das páginas.** `text-primary` como cor de
+  texto dá 4.33:1 sobre `--background` (falha AA). O Sprint 30 criou o token
+  `--primary-link` (`text-primary-link`, 5.45:1 no claro / 5.25:1 no escuro) e o aplicou
+  no `SugerirCorrecao`, mas os links pré-existentes ("Voltar para o início") ainda não
+  foram migrados. **Não** reaproveitar `--primary-button` como cor de texto: no escuro
+  ele dá 2.97:1 — é token de fundo. Ratios em `docs/identidade-visual.md`.

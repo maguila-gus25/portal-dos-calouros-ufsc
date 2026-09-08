@@ -16,10 +16,10 @@ quebrar quando o parse de Markdown regredir, em vez de descobrirmos pela página
 
 | História | ID | Prioridade / Tam. | Agente | Status |
 |----------|----|-------------------|--------|--------|
-| Favicon próprio na aba do navegador | B-79 | Should / P | frontend-dev | Not Started |
-| Imagem de Open Graph (1200×630) para preview de link | B-80 | Should / P | frontend-dev | Not Started |
-| Botão "Sugerir correção" → issue pré-preenchida (issue #46) | B-82 | Could / P | frontend-dev | Not Started |
-| Testes unitários do loader `lib/content.ts` (Vitest + CI) | B-81 | Should / M | tester | Not Started |
+| Favicon próprio na aba do navegador | B-79 | Should / P | frontend-dev | Done |
+| Imagem de Open Graph (1200×630) para preview de link | B-80 | Should / P | frontend-dev | Done |
+| Botão "Sugerir correção" → issue pré-preenchida (issue #46) | B-82 | Could / P | frontend-dev | Done |
+| Testes unitários do loader `lib/content.ts` (Vitest + CI) | B-81 | Should / M | tester | Done |
 
 ### Critérios de aceite detalhados
 
@@ -161,6 +161,84 @@ Wave 3 — após Wave 2 (frontend mudou):
 | B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
 | E9 / E10 / E11 / E12 | Futuro, sem pré-requisitos resolvidos |
 | Refatorar `lib/content.ts` | Sprint de cobertura, não de mudança de comportamento |
+
+### Retrospectiva do Sprint 30
+
+**Concluído em:** 2026-09-08
+
+**Entregue:**
+
+- **B-79 — Favicon próprio:** `app/icon.tsx` (32×32) e `app/apple-icon.tsx` (180×180) via
+  `ImageResponse` do `next/og`, sem dependência nova. Símbolo próprio do portal — quadrado com o
+  `hero-gradient` (`#156bf4` → `#8c35e3`, os hex exatos do `tailwind.config.ts`) e chapéu de
+  formatura branco, o mesmo do `Header`, redesenhado como SVG inline porque o Satori não renderiza
+  componentes React. Sem brasão da UFSC.
+- **B-80 — Imagem de Open Graph:** `app/opengraph-image.tsx` (1200×630), fonte padrão do Satori
+  (build sem rede). O cartão carrega a linha *"Projeto independente. Não é um site oficial da UFSC."*
+  **Achado importante:** seis páginas definiam `openGraph` próprio **sem** `images`, o que substitui
+  integralmente o objeto herdado do layout e descartava a imagem — as seis foram corrigidas para
+  herdar. Com isso o **B-47 finalmente fecha completo**.
+- **B-82 — Botão "Sugerir correção" (issue #46):** `components/SugerirCorrecao.tsx` ao fim das seis
+  rotas de conteúdo + link genérico no `Footer`. Aponta para `atualizacao-conteudo.yml` — decisão do
+  Scrum Master que refina a sugestão do Product Owner (`sugestao.yml`): é o template correto para
+  "informação errada/desatualizada" e **exige campo de fonte oficial**, preservando a regra de ouro.
+- **B-81 — Testes unitários:** Vitest + `vitest.config.ts` + script `npm test` + workflow novo
+  `unit.yml`. **42 testes** cobrindo `parseBlocks`, `getSection`/`getCourse`/`getCenter`, as funções
+  de listagem, `search` e `stripHtml` (indiretamente, sem expor a função privada). Suíte validada
+  por quebra intencional do loader.
+
+**Bug real encontrado e corrigido (não estava no escopo planejado):**
+
+A suíte do B-81 revelou que `gray-matter` **lança exceção** com frontmatter YAML malformado e que
+nenhuma função de `lib/content.ts` protegia a chamada. Como `listCourses()`/`listCenters()` varrem
+todos os arquivos, **um único arquivo quebrado em `docs/` derrubava `/api/courses`, `/api/centros`,
+`/cursos`, `/centros` e o próprio `npm run build`** — falha esperada num projeto cujo conteúdo vem
+de PRs da comunidade estudantil. O `tester` registrou o achado como `it.fails` em vez de mascarar;
+o `debugger` corrigiu com um helper `safeMatter()`: busca de item único retorna `null` (igual a
+arquivo inexistente), listagem **pula** o arquivo e continua, e ambos emitem `console.warn` com o
+caminho. O `it.fails` virou teste normal e ganhou um irmão provando que uma ficha quebrada não
+apaga as outras 111.
+
+**Findings do `ui-ux-review` (ambos corrigidos):**
+
+| Severidade | Finding | Correção |
+|------------|---------|----------|
+| major | `text-primary` como cor de texto dá **4.33:1** sobre `--background` — abaixo de AA para o link de 14px semibold. Passava só sobre o card branco (4.75:1), e as seis instâncias em página ficam sobre o fundo do app. | Novo token `--primary-link` (claro `217 91% 45%` = 5.45:1; escuro `217 91% 62%` = 5.25:1), exposto como `text-primary-link`. **`--primary-button` não serve como cor de texto** — no escuro dá 2.97:1, é token de fundo. Ratios em `docs/identidade-visual.md`. |
+| major | `aria-label` fixo dizia "para esta página", mas a instância do rodapé é global e aponta para a home — em qualquer página que não fosse a home, o nome acessível descrevia algo que o link não faz. | Nome acessível agora vem da prop `rotulo`; o `Footer` passa a versão global. |
+| minor | Links pré-existentes (`"Voltar para o início"`) têm o mesmo problema de contraste. | Fora do escopo do sprint — registrado como **B-83**. |
+
+**Verificação final:**
+
+- `npm run lint` → sem warnings ou erros
+- `npm test` → **42/42** passando
+- `npm run build` → **112/112** páginas SSG
+- Playwright → **8/8**
+- Servindo o build: `/icon` → PNG 32×32, `/apple-icon` → PNG 180×180, `/opengraph-image` → PNG
+  1200×630; `og:image` absoluto e `<link rel="icon">`/`apple-touch-icon` presentes no HTML gerado
+
+**Adiado:**
+
+| Item | Motivo |
+|------|--------|
+| B-83 (varredura de contraste dos links antigos) | Descoberto durante o sprint; fora do escopo aprovado |
+| Cartão de OG por curso/centro | Escopo declarado como fora desde o planejamento |
+| Formulário interno de sugestões + banco | Depende de B-50 + B-37 + E13 (v2.0) |
+| B-08 (cauda), B-10, B-13 | Bloqueados por falta de submissões reais de veterano |
+
+**Para o próximo sprint:**
+
+1. **Processo — despachar agentes em paralelo no mesmo working tree é arriscado.** Três agentes
+   commitando ao mesmo tempo produziram uma corrida no índice do git: dois deles absorveram
+   arquivos alheios num commit e tiveram que desfazer com `git reset --soft`. Nada se perdeu (a
+   auditoria final mostrou cada commit com os arquivos certos), mas foi sorte, não desenho. Houve
+   também uma falha transitória de build (`ENOENT pages-manifest.json`) por builds concorrentes no
+   mesmo `.next`. Próximo sprint: ou serializar os commits (agentes entregam sem commitar e o Scrum
+   Master commita), ou usar worktrees isolados por agente.
+2. **O `it.fails` funcionou bem** como forma de registrar bug real sem mascarar nem quebrar o CI —
+   vale adotar como padrão quando um teste revelar defeito fora do escopo.
+3. **O backlog executável está quase vazio.** Só B-83 (P) sobrou. Destravar B-13/B-10/B-08 exige a
+   decisão do mantenedor sobre v2.0 (banco + auth + moderação) — é uma decisão de produto e de
+   custo de infra, não de sprint planning.
 
 ---
 

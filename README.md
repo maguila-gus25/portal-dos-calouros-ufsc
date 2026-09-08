@@ -36,6 +36,8 @@ npm install
 npm run dev      # servidor Next.js em localhost:3000
 npm run build    # build de produção (SSG)
 npm run lint     # ESLint
+npm test         # testes unitários (Vitest) — loader de conteúdo e SEO
+npm run test:e2e # testes end-to-end (Playwright)
 ```
 
 ## Estrutura
@@ -50,14 +52,19 @@ portal-dos-calouros-ufsc/
 │   ├── cursos/           ← fichas por curso (/cursos redireciona para /centros)
 │   ├── faq/              ← perguntas frequentes
 │   ├── mapa/             ← mapa interativo do campus (Leaflet.js)
-│   └── secoes/[slug]/    ← seções de conteúdo (RU, links, datas…)
+│   ├── secoes/[slug]/    ← seções de conteúdo (RU, links, datas…)
+│   ├── icon.tsx          ← favicon gerado (ImageResponse) — apple-icon.tsx para iOS
+│   └── opengraph-image.tsx ← cartão 1200×630 de preview de link (WhatsApp, Discord…)
 ├── components/           ← Header, Footer, SearchInput, Badge…
 │   └── sections/         ← UI dedicada por seção (links, datas, RU) + fallback prose
 ├── lib/
-│   └── content.ts        ← loader de Markdown: slug → docs/*.md
+│   ├── content.ts        ← loader de Markdown: slug → docs/*.md
+│   └── seo.ts            ← URLs canônicas e builders de JSON-LD
+├── tests/                ← testes unitários (Vitest) do loader e do SEO
+├── e2e/                  ← testes end-to-end (Playwright)
 ├── docs/                 ← FONTE ÚNICA do conteúdo (Markdown)
-│   ├── centros/          ← fichas por centro (ctc, cca, cse, cce, ccs)
-│   ├── cursos/           ← fichas por curso (CTC + CCA + CSE)
+│   ├── centros/          ← fichas dos 13 centros publicados
+│   ├── cursos/           ← fichas por curso (112 fichas, todos os centros)
 │   ├── arquitetura.md    ← decisões técnicas e ADRs
 │   ├── identidade-visual.md
 │   ├── product-backlog.md
@@ -80,7 +87,7 @@ portal-dos-calouros-ufsc/
 | ❓ FAQ | Perguntas frequentes dos calouros | [`faq.md`](docs/faq.md) |
 | ✅ Checklist | O que fazer na primeira semana | [`checklist-primeira-semana.md`](docs/checklist-primeira-semana.md) |
 
-O portal é organizado por **centro**: `/centros` lista todos os centros publicados (CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM) e cada `/centros/<slug>` mostra o conteúdo do centro e os seus cursos. Cada curso tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
+O portal é organizado por **centro**: `/centros` lista os 13 centros publicados (CTC, CCA, CSE, CCE, CCS, CCJ, CFH, CFM, CCB, CED, CDS, CTJ, CTS) e cada `/centros/<slug>` mostra o conteúdo do centro e os seus cursos. Cada curso tem sua ficha em `docs/cursos/<slug>.md` com coordenação, atlética, CA e dicas.
 
 ## Equipe de Agentes
 
@@ -94,7 +101,7 @@ Este projeto é construído e mantido por uma equipe de subagentes do Claude Cod
 | `frontend-dev` | Implementa e modifica UI — páginas Next.js, componentes, Tailwind |
 | `backend-dev` | Lógica server-side — Route Handlers, loader de Markdown, schemas |
 | `content-editor` | Cria e revisa conteúdo em `docs/*.md` com fontes verificadas |
-| `tester` | Roda `npm run lint` + `npm run build` e reporta pass/fail |
+| `tester` | Roda `npm run lint`, `npm run build` e `npm test`, e reporta pass/fail |
 | `debugger` | Investiga e corrige falhas de build, tipo e lint |
 | `ui-ux-designer` | Decisões de design visual, paleta, tipografia, acessibilidade |
 
@@ -140,7 +147,8 @@ Veja [`docs/product-backlog.md`](docs/product-backlog.md) e [`docs/SPRINT.md`](d
 - [x] **v1.21** — Qualidade: fichas de centro CTJ/CTC/CCJ + coordenadores do CCS (Sprint 27)
 - [x] **v1.22** — Qualidade: coordenadores e dados de CED/CCB/CDS (Sprint 28)
 - [x] **v1.23** — Mensagem de contribuição estilo MyUFSC + auditoria dos campos `_A preencher_` (CFH/CFM/CCE/CCA) (Sprint 29)
-- [ ] **Próximo** — Mapa CTJ/CTS (coordenadas do mantenedor); fichas restantes; ou v2.0 (banco + auth)
+- [x] **v1.24** — Favicon próprio, imagem de Open Graph, botão "Sugerir correção" e testes unitários do loader (Vitest no CI) (Sprint 30)
+- [ ] **Próximo** — Varredura de contraste dos links antigos (B-83); ou v2.0 (banco + auth), que é o que destrava as histórias de veteranos
 - [ ] **v2.0** — Banco de dados (Prisma), formulário de histórias, autenticação OAuth, moderação
 - [ ] **Futuro** — Simulador de grade, blog, avaliação de professores
 
